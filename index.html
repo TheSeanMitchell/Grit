@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIT // Operational Console — Alpha 0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0b0d; --bg-2:#101216; --panel:#14161b; --panel-2:#181b21;
+    --line:#23262e; --line-2:#2d313a;
+    --txt:#e6e8ec; --txt-dim:#8b929c; --txt-faint:#5a606b;
+    /* state colors — RESERVED for status only, per UI doctrine */
+    --s-green:#3fb950;   /* monetized / converted / revenue */
+    --s-amber:#d29922;   /* needs attention */
+    --s-red:#f85149;     /* blockage / lost / failure */
+    --s-blue:#4493f8;    /* informational / new */
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --disp:'Saira Condensed',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--txt); font-family:var(--mono);
+    font-size:13px; line-height:1.45; overflow:hidden;
+    background-image:
+      radial-gradient(circle at 12% 0%, rgba(68,147,248,.04), transparent 45%),
+      linear-gradient(0deg, rgba(255,255,255,.012) 1px, transparent 1px);
+    background-size:auto, 100% 3px;
+  }
+  ::selection{background:rgba(68,147,248,.3)}
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:0}
+  ::-webkit-scrollbar-track{background:transparent}
+
+  .app{display:grid;grid-template-columns:248px 1fr;grid-template-rows:46px 1fr;height:100vh}
+
+  /* ── top bar ── */
+  .topbar{grid-column:1/3;display:flex;align-items:center;gap:18px;
+    padding:0 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .brand{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:3px}
+  .brand b{color:var(--s-blue)}
+  .tag-alpha{font-size:10px;color:var(--txt-faint);border:1px solid var(--line-2);
+    padding:2px 6px;letter-spacing:1px}
+  .topstats{margin-left:auto;display:flex;gap:0}
+  .tstat{padding:0 16px;border-left:1px solid var(--line);text-align:right}
+  .tstat .n{font-family:var(--disp);font-size:18px;line-height:1}
+  .tstat .l{font-size:9px;color:var(--txt-faint);letter-spacing:1px;text-transform:uppercase}
+  .tstat.rev .n{color:var(--s-green)}
+
+  /* ── sidebar / directory ── */
+  .side{border-right:1px solid var(--line);background:var(--bg-2);overflow-y:auto;padding:10px 0}
+  .side h3{font-size:9px;color:var(--txt-faint);letter-spacing:1.5px;
+    padding:10px 16px 6px;text-transform:uppercase}
+  .nav-row{display:flex;align-items:center;gap:8px;padding:6px 16px;cursor:pointer;
+    color:var(--txt-dim);border-left:2px solid transparent;user-select:none}
+  .nav-row:hover{background:var(--panel);color:var(--txt)}
+  .nav-row.active{background:var(--panel-2);color:var(--txt);border-left-color:var(--s-blue)}
+  .nav-row .ic{width:14px;text-align:center;opacity:.7}
+  .nav-row .ct{margin-left:auto;font-size:10px;color:var(--txt-faint)}
+  .folder>.nav-row{font-weight:600;color:var(--txt)}
+  .tree{display:none}
+  .folder.open .tree{display:block}
+  .tree .nav-row{padding-left:30px;font-size:12px}
+  .dot{width:8px;height:8px;border-radius:50%;flex:none}
+
+  /* ── main ── */
+  .main{overflow-y:auto;padding:18px 22px 60px}
+  .view-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .view-head h1{font-family:var(--disp);font-weight:600;font-size:26px;letter-spacing:1px}
+  .view-head .sub{font-size:11px;color:var(--txt-faint)}
+  .spacer{margin-left:auto}
+
+  .btn{font-family:var(--mono);font-size:12px;background:var(--panel-2);
+    color:var(--txt);border:1px solid var(--line-2);padding:7px 13px;cursor:pointer;
+    letter-spacing:.5px;transition:.12s}
+  .btn:hover{border-color:var(--s-blue);color:#fff}
+  .btn.primary{background:rgba(68,147,248,.12);border-color:var(--s-blue);color:#cfe2ff}
+  .btn.primary:hover{background:rgba(68,147,248,.22)}
+  .btn.ghost{background:transparent}
+  .btn.sm{padding:4px 9px;font-size:11px}
+  .btn.danger:hover{border-color:var(--s-red);color:var(--s-red)}
+
+  /* empty states */
+  .empty{border:1px dashed var(--line-2);padding:46px 20px;text-align:center;
+    color:var(--txt-faint);background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(255,255,255,.01) 9px,rgba(255,255,255,.01) 18px)}
+  .empty .big{font-family:var(--disp);font-size:22px;color:var(--txt-dim);letter-spacing:1px;margin-bottom:6px}
+  .empty .sm{font-size:11px;max-width:420px;margin:0 auto 16px}
+
+  /* lead cards grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);padding:13px;cursor:pointer;
+    position:relative;transition:.12s;border-left-width:3px}
+  .card:hover{border-color:var(--line-2);background:var(--panel-2)}
+  .card .ctop{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+  .card .cloc{font-size:11px;color:var(--txt-dim)}
+  .card .crow{display:flex;justify-content:space-between;font-size:11px;color:var(--txt-dim);margin-top:4px}
+  .card .cval{font-family:var(--disp);font-size:17px;color:var(--txt)}
+  .card .cnext{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);
+    font-size:11px;color:var(--txt-dim)}
+  .card .cnext b{color:var(--s-amber);font-weight:500}
+
+  .chip{font-size:10px;padding:2px 7px;letter-spacing:.5px;white-space:nowrap;
+    border:1px solid var(--line-2);text-transform:uppercase}
+  .trade-chip{border-left-width:3px;padding-left:6px;background:rgba(255,255,255,.02)}
+  .pill{font-size:10px;padding:2px 8px;border-radius:10px;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+  .pill.discovered{background:rgba(68,147,248,.13);color:var(--s-blue)}
+  .pill.contacted{background:rgba(210,153,34,.13);color:var(--s-amber)}
+  .pill.responded{background:rgba(210,153,34,.16);color:#e8b94a}
+  .pill.quoted{background:rgba(210,153,34,.2);color:#f0c44e}
+  .pill.converted{background:rgba(63,185,80,.15);color:var(--s-green)}
+  .pill.lost{background:rgba(248,81,73,.13);color:var(--s-red)}
+  .prio{margin-left:auto;font-size:10px;color:var(--txt-faint)}
+  .prio b{color:var(--txt)}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;font-size:9px;letter-spacing:1px;color:var(--txt-faint);
+    text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--txt-dim)}
+  tr:hover td{background:var(--panel)}
+  td.mono-num{color:var(--txt);text-align:right}
+
+  /* modal */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;
+    align-items:flex-start;justify-content:center;padding:40px 16px;z-index:50;
+    backdrop-filter:blur(2px);overflow-y:auto}
+  .scrim.on{display:flex}
+  .modal{background:var(--bg-2);border:1px solid var(--line-2);width:100%;max-width:600px;
+    box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .modal.wide{max-width:720px}
+  .mhead{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .mhead h2{font-family:var(--disp);font-size:20px;letter-spacing:1px;font-weight:600}
+  .mclose{margin-left:auto;cursor:pointer;color:var(--txt-faint);font-size:18px;line-height:1}
+  .mclose:hover{color:var(--s-red)}
+  .mbody{padding:18px}
+  .frow{margin-bottom:13px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  label.fl{display:block;font-size:9px;letter-spacing:1px;color:var(--txt-faint);
+    text-transform:uppercase;margin-bottom:5px}
+  input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line-2);
+    color:var(--txt);font-family:var(--mono);font-size:13px;padding:8px 10px;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--s-blue)}
+  textarea{resize:vertical;min-height:62px}
+  .mfoot{padding:14px 18px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+
+  /* job card detail */
+  .jd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+  .jd-field .k{font-size:9px;letter-spacing:1px;color:var(--txt-faint);text-transform:uppercase;margin-bottom:3px}
+  .jd-field .v{font-size:13px;color:var(--txt)}
+  .jd-sec{margin-bottom:18px}
+  .jd-sec h4{font-size:9px;letter-spacing:1.5px;color:var(--txt-faint);text-transform:uppercase;
+    margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+  .timeline{list-style:none}
+  .timeline li{display:flex;gap:10px;padding:6px 0;font-size:12px;color:var(--txt-dim)}
+  .timeline li .ts{color:var(--txt-faint);font-size:11px;flex:none;width:120px}
+  .timeline li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--line-2);
+    flex:none;margin-top:6px}
+  .addline{display:flex;gap:8px;margin-top:8px}
+  .addline input{flex:1}
+  .revtot{font-family:var(--disp);font-size:30px;color:var(--s-green);letter-spacing:1px}
+  .note-warn{font-size:10px;color:var(--txt-faint);margin-top:14px;line-height:1.5;
+    border-top:1px solid var(--line);padding-top:10px}
+  .inline-ic{font-style:normal}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">GR<b>I</b>T</div>
+    <div class="tag-alpha">ALPHA 0.1 · LAS VEGAS</div>
+    <div class="topstats" id="topstats"></div>
+  </div>
+
+  <aside class="side" id="side"></aside>
+
+  <main class="main" id="main"></main>
+</div>
+
+<!-- generic modal -->
+<div class="scrim" id="scrim"><div class="modal" id="modal"></div></div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   GRIT ALPHA 0.1 — operational console
+   Real data only. Starts empty. No synthetic activity ever.
+   Persistence: localStorage (durable on GitHub Pages / local file)
+   + JSON export/import for backup & portability.
+   ════════════════════════════════════════════════════════════ */
+
+const TRADES = {
+  hvac:        {name:'HVAC',          color:'#4a9d9c'},
+  roofing:     {name:'Roofing',       color:'#a87455'},
+  plumbing:    {name:'Plumbing',      color:'#5d7fa3'},
+  electrical:  {name:'Electrical',    color:'#b8923a'},
+  solar:       {name:'Solar',         color:'#c47f3d'},
+  landscaping: {name:'Landscaping',   color:'#5f8f57'},
+  remodeling:  {name:'Remodeling',    color:'#8a6fa3'},
+  pest:        {name:'Pest Control',  color:'#8f8a5a'},
+  security:    {name:'Security',      color:'#6a6f8f'},
+  pools:       {name:'Pools',         color:'#4a8fa3'},
+  concrete:    {name:'Concrete',      color:'#888f96'},
+  fencing:     {name:'Fencing',       color:'#9a7a5a'},
+};
+const STATUS = ['discovered','contacted','responded','quoted','converted','lost'];
+
+/* ── store ── */
+const KEY='grit_alpha_v1';
+let DB = load();
+function load(){
+  try{const r=localStorage.getItem(KEY); if(r) return JSON.parse(r);}catch(e){}
+  return {leads:[], contractors:[], revenue:[]};
+}
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(DB));}catch(e){
+  alert('Storage unavailable in this preview. Download the file and run it from your browser / GitHub Pages for permanent saving — or use Export to back up.');
+}}
+const uid=()=> Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const now=()=> new Date().toISOString();
+const fmtDate=s=> s? new Date(s).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '—';
+const fmtDT=s=> new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+const money=n=> '$'+(Number(n)||0).toLocaleString();
+
+/* ── derived ── */
+const verifiedRevenue=()=> DB.revenue.filter(r=>r.verified).reduce((a,r)=>a+(+r.amount||0),0);
+const leadsByTrade=t=> DB.leads.filter(l=>l.trade===t);
+const contractorName=id=>{const c=DB.contractors.find(c=>c.id===id);return c?c.name:'—';};
+
+/* ── routing ── */
+let VIEW={type:'overview'};
+function go(v){VIEW=v;render();}
+
+/* ════════ RENDER ════════ */
+function render(){ renderTop(); renderSide(); renderMain(); }
+
+function renderTop(){
+  const open=DB.leads.filter(l=>!['converted','lost'].includes(l.status)).length;
+  const conv=DB.leads.filter(l=>l.status==='converted').length;
+  document.getElementById('topstats').innerHTML=`
+    <div class="tstat"><div class="n">${DB.leads.length}</div><div class="l">Leads</div></div>
+    <div class="tstat"><div class="n">${open}</div><div class="l">Open</div></div>
+    <div class="tstat"><div class="n">${conv}</div><div class="l">Converted</div></div>
+    <div class="tstat"><div class="n">${DB.contractors.length}</div><div class="l">Partners</div></div>
+    <div class="tstat rev"><div class="n">${money(verifiedRevenue())}</div><div class="l">Verified Rev</div></div>`;
+}
+
+function renderSide(){
+  const activeTrades=Object.keys(TRADES).filter(t=>leadsByTrade(t).length>0);
+  const folderOpen = VIEW.type==='trade' || VIEW.type==='overview' || VIEW.type==='lead';
+  let tree = activeTrades.length
+    ? activeTrades.map(t=>{
+        const c=leadsByTrade(t).length;
+        const on=VIEW.type==='trade'&&VIEW.trade===t?'active':'';
+        return `<div class="nav-row ${on}" onclick="go({type:'trade',trade:'${t}'})">
+          <span class="dot" style="background:${TRADES[t].color}"></span>${TRADES[t].name}
+          <span class="ct">${c}</span></div>`;
+      }).join('')
+    : `<div class="nav-row" style="color:var(--txt-faint);cursor:default">— no active trades —</div>`;
+
+  document.getElementById('side').innerHTML=`
+    <h3>Console</h3>
+    <div class="nav-row ${VIEW.type==='overview'?'active':''}" onclick="go({type:'overview'})">
+      <span class="ic">▣</span>Overview</div>
+
+    <h3>Industry Directory</h3>
+    <div class="folder ${folderOpen?'open':''}">
+      <div class="nav-row" onclick="this.parentNode.classList.toggle('open')">
+        <span class="ic">▸</span>Home Services <span class="ct">${DB.leads.length}</span></div>
+      <div class="tree">${tree}</div>
+    </div>
+
+    <h3>Operations</h3>
+    <div class="nav-row ${VIEW.type==='contractors'?'active':''}" onclick="go({type:'contractors'})">
+      <span class="ic">⚒</span>Contractors <span class="ct">${DB.contractors.length}</span></div>
+    <div class="nav-row ${VIEW.type==='revenue'?'active':''}" onclick="go({type:'revenue'})">
+      <span class="ic">$</span>Revenue Log <span class="ct">${DB.revenue.length}</span></div>
+
+    <h3>Data</h3>
+    <div class="nav-row" onclick="exportJSON()"><span class="ic">↧</span>Export backup</div>
+    <div class="nav-row" onclick="document.getElementById('importer').click()"><span class="ic">↥</span>Import backup</div>
+    <input type="file" id="importer" accept="application/json" style="display:none" onchange="importJSON(event)">`;
+}
+
+function renderMain(){
+  const m=document.getElementById('main');
+  if(VIEW.type==='overview')   return m.innerHTML=viewOverview();
+  if(VIEW.type==='trade')      return m.innerHTML=viewTrade(VIEW.trade);
+  if(VIEW.type==='contractors')return m.innerHTML=viewContractors();
+  if(VIEW.type==='revenue')    return m.innerHTML=viewRevenue();
+}
+
+/* ── overview ── */
+function viewOverview(){
+  const head=`<div class="view-head">
+    <h1>Overview</h1><span class="sub">// real-time operational state</span>
+    <div class="spacer"></div>
+    <button class="btn primary" onclick="leadForm()">+ Log Lead</button></div>`;
+  if(!DB.leads.length){
+    return head+`<div class="empty">
+      <div class="big">NO LEADS LOGGED</div>
+      <div class="sm">GRIT starts empty by design — no synthetic data, ever. Source one real homeowner demand signal (Craigslist, Marketplace, Nextdoor, a referral), then log it here to open your first loop.</div>
+      <button class="btn primary" onclick="leadForm()">+ Log your first real lead</button>
+    </div>`;
+  }
+  // pipeline counts by status
+  const counts=STATUS.map(s=>`<div class="card" style="cursor:default;border-left-color:var(--line)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="pill ${s}">${s}</span>
+      <span class="cval">${DB.leads.filter(l=>l.status===s).length}</span></div></div>`).join('');
+  // top priority open leads
+  const open=DB.leads.filter(l=>!['converted','lost'].includes(l.status))
+    .sort((a,b)=>(b.priority||0)-(a.priority||0)).slice(0,6);
+  const list=open.length? `<div class="grid">${open.map(leadCard).join('')}</div>`
+    : `<div class="empty"><div class="sm">No open leads. All logged leads are converted or lost.</div></div>`;
+  return head+`
+    <div class="grid" style="grid-template-columns:repeat(6,1fr);margin-bottom:22px">${counts}</div>
+    <div class="view-head"><h1 style="font-size:18px">Priority Queue</h1>
+      <span class="sub">// top open leads by manual score</span></div>
+    ${list}`;
+}
+
+/* ── trade folder ── */
+function viewTrade(t){
+  const tr=TRADES[t]; const leads=leadsByTrade(t);
+  const head=`<div class="view-head">
+    <span class="dot" style="background:${tr.color};width:14px;height:14px"></span>
+    <h1>${tr.name}</h1><span class="sub">// ${leads.length} lead${leads.length!==1?'s':''}</span>
+    <div class="spacer"></div>
+    <button class="btn primary" onclick="leadForm(null,'${t}')">+ Log ${tr.name} Lead</button></div>`;
+  if(!leads.length) return head+`<div class="empty"><div class="sm">No ${tr.name} leads yet.</div></div>`;
+  return head+`<div class="grid">${leads.sort((a,b)=>(b.priority||0)-(a.priority||0)).map(leadCard).join('')}</div>`;
+}
+
+function leadCard(l){
+  const tr=TRADES[l.trade]||{name:l.trade,color:'#888'};
+  const rev=DB.revenue.filter(r=>r.leadId===l.id&&r.verified).reduce((a,r)=>a+(+r.amount||0),0);
+  return `<div class="card" style="border-left-color:${tr.color}" onclick="jobCard('${l.id}')">
+    <div class="ctop">
+      <span class="chip trade-chip" style="border-left-color:${tr.color};color:${tr.color}">${tr.name}</span>
+      <span class="pill ${l.status}">${l.status}</span>
+      <span class="prio">P<b>${l.priority||0}</b></span>
+    </div>
+    <div class="cloc">${l.location||'—'} · ${l.acquisitionMethod||'—'}</div>
+    <div class="crow"><span>${l.dealType==='job_cut'?'Job cut':'Lead fee'}</span>
+      <span class="cval">${rev>0?money(rev):money(l.feeAmount)}</span></div>
+    ${l.nextAction?`<div class="cnext">NEXT: <b>${esc(l.nextAction)}</b></div>`:''}
+  </div>`;
+}
+
+/* ── contractors ── */
+function viewContractors(){
+  const head=`<div class="view-head"><h1>Contractors</h1>
+    <span class="sub">// trusted fulfillment partners</span>
+    <div class="spacer"></div>
+    <button class="btn primary" onclick="contractorForm()">+ Add Contractor</button></div>`;
+  if(!DB.contractors.length) return head+`<div class="empty">
+    <div class="big">NO PARTNERS YET</div>
+    <div class="sm">Lock one buyer before generating demand — a lead with nowhere to route is worth nothing. Add the first contractor who agrees to take leads from you.</div>
+    <button class="btn primary" onclick="contractorForm()">+ Add first contractor</button></div>`;
+  const rows=DB.contractors.map(c=>{
+    const tr=TRADES[c.trade]; const routed=DB.leads.filter(l=>l.contractorId===c.id).length;
+    return `<tr>
+      <td style="color:var(--txt)">${esc(c.name)}</td>
+      <td>${tr?`<span class="chip trade-chip" style="border-left-color:${tr.color};color:${tr.color}">${tr.name}</span>`:'—'}</td>
+      <td>${esc(c.phone||'—')}</td>
+      <td>${esc(c.license||'—')}</td>
+      <td>${routed}</td>
+      <td style="text-align:right">
+        <button class="btn sm ghost" onclick="contractorForm('${c.id}')">edit</button>
+        <button class="btn sm ghost danger" onclick="delContractor('${c.id}')">del</button></td>
+    </tr>`;}).join('');
+  return head+`<table><thead><tr><th>Name</th><th>Trade</th><th>Phone</th><th>License</th><th>Routed</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+/* ── revenue ── */
+function viewRevenue(){
+  const head=`<div class="view-head"><h1>Revenue Log</h1>
+    <span class="sub">// verified income only — no projections</span></div>`;
+  const v=verifiedRevenue();
+  const top=`<div class="card" style="cursor:default;border-left-color:var(--s-green);margin-bottom:18px">
+    <div class="jd-field"><div class="k">Total verified revenue</div>
+    <div class="revtot">${money(v)}</div></div></div>`;
+  if(!DB.revenue.length) return head+top+`<div class="empty">
+    <div class="big">NO REVENUE RECORDED</div>
+    <div class="sm">This number stays at $0 until a contractor actually pays. Record revenue from inside a lead's job card the moment money is confirmed received.</div></div>`;
+  const rows=DB.revenue.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'')).map(r=>{
+    const l=DB.leads.find(x=>x.id===r.leadId); const tr=l?TRADES[l.trade]:null;
+    return `<tr>
+      <td>${fmtDate(r.date)}</td>
+      <td>${tr?`<span class="chip trade-chip" style="border-left-color:${tr.color};color:${tr.color}">${tr.name}</span>`:'—'} ${l?esc(l.location||''):''}</td>
+      <td>${r.verified?'<span class="pill converted">verified</span>':'<span class="pill contacted">pending</span>'}</td>
+      <td class="mono-num">${money(r.amount)}</td></tr>`;}).join('');
+  return head+top+`<table><thead><tr><th>Date</th><th>Source lead</th><th>Status</th><th style="text-align:right">Amount</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+/* ════════ FORMS / MODALS ════════ */
+const scrim=document.getElementById('scrim'), modal=document.getElementById('modal');
+function openModal(html,wide){modal.className='modal'+(wide?' wide':'');modal.innerHTML=html;scrim.classList.add('on');}
+function closeModal(){scrim.classList.remove('on');}
+scrim.addEventListener('click',e=>{if(e.target===scrim)closeModal();});
+
+function tradeOptions(sel){return Object.entries(TRADES).map(([k,v])=>`<option value="${k}" ${k===sel?'selected':''}>${v.name}</option>`).join('');}
+
+function leadForm(id,presetTrade){
+  const l=id?DB.leads.find(x=>x.id===id):{};
+  openModal(`
+    <div class="mhead"><h2>${id?'Edit Lead':'Log Real Lead'}</h2><span class="mclose" onclick="closeModal()">✕</span></div>
+    <div class="mbody">
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Trade</label><select id="f_trade">${tradeOptions(l.trade||presetTrade||'hvac')}</select></div>
+        <div class="frow"><label class="fl">Status</label><select id="f_status">${STATUS.map(s=>`<option ${s===(l.status||'discovered')?'selected':''}>${s}</option>`).join('')}</select></div>
+      </div>
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Location / area</label><input id="f_loc" value="${esc(l.location||'')}" placeholder="e.g. Summerlin 89135"></div>
+        <div class="frow"><label class="fl">Acquisition method</label><input id="f_acq" value="${esc(l.acquisitionMethod||'')}" placeholder="outreach / inbound / referral"></div>
+      </div>
+      <div class="frow"><label class="fl">Lead source (where found)</label><input id="f_src" value="${esc(l.source||'')}" placeholder="e.g. FB group post, Craigslist, referral name"></div>
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Urgency</label><select id="f_urg"><option ${l.urgency==='low'?'selected':''}>low</option><option ${(l.urgency||'medium')==='medium'?'selected':''}>medium</option><option ${l.urgency==='high'?'selected':''}>high</option></select></div>
+        <div class="frow"><label class="fl">Priority score (manual 0–10)</label><input id="f_prio" type="number" min="0" max="10" value="${l.priority??''}" placeholder="0–10"></div>
+      </div>
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Deal type</label><select id="f_deal"><option value="lead_fee" ${l.dealType!=='job_cut'?'selected':''}>Flat lead fee</option><option value="job_cut" ${l.dealType==='job_cut'?'selected':''}>Cut of closed job</option></select></div>
+        <div class="frow"><label class="fl">Expected fee / value ($)</label><input id="f_fee" type="number" min="0" value="${l.feeAmount??''}" placeholder="e.g. 50"></div>
+      </div>
+      <div class="frow"><label class="fl">Route to contractor</label><select id="f_con"><option value="">— unassigned —</option>${DB.contractors.map(c=>`<option value="${c.id}" ${c.id===l.contractorId?'selected':''}>${esc(c.name)} (${TRADES[c.trade]?.name||c.trade})</option>`).join('')}</select></div>
+      <div class="frow"><label class="fl">Homeowner notes</label><textarea id="f_hn" placeholder="What they need, condition, timing...">${esc(l.homeownerNotes||'')}</textarea></div>
+      <div class="frow"><label class="fl">Next action</label><input id="f_next" value="${esc(l.nextAction||'')}" placeholder="e.g. call back at 3pm / send to partner"></div>
+    </div>
+    <div class="mfoot">
+      <button class="btn ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="saveLead('${id||''}')">${id?'Save':'Log Lead'}</button>
+    </div>`,true);
+}
+function saveLead(id){
+  const g=x=>document.getElementById(x).value.trim();
+  const data={
+    trade:g('f_trade'), status:g('f_status'), location:g('f_loc'),
+    acquisitionMethod:g('f_acq'), source:g('f_src'), urgency:g('f_urg'),
+    priority:+g('f_prio')||0, dealType:g('f_deal'), feeAmount:+g('f_fee')||0,
+    contractorId:g('f_con'), homeownerNotes:g('f_hn'), nextAction:g('f_next'),
+  };
+  if(id){
+    const l=DB.leads.find(x=>x.id===id);
+    if(l.status!==data.status) l.timeline.push({ts:now(),label:'Status → '+data.status});
+    Object.assign(l,data);
+  }else{
+    DB.leads.push({id:uid(),createdAt:now(),...data,notes:'',
+      timeline:[{ts:now(),label:'Lead logged'}]});
+  }
+  save();closeModal();render();
+}
+
+function jobCard(id){
+  const l=DB.leads.find(x=>x.id===id); const tr=TRADES[l.trade]||{name:l.trade,color:'#888'};
+  const rev=DB.revenue.filter(r=>r.leadId===id);
+  const revV=rev.filter(r=>r.verified).reduce((a,r)=>a+(+r.amount||0),0);
+  openModal(`
+    <div class="mhead">
+      <span class="dot" style="background:${tr.color};width:12px;height:12px"></span>
+      <h2>${tr.name} Lead</h2>
+      <span class="pill ${l.status}" style="margin-left:4px">${l.status}</span>
+      <span class="mclose" onclick="closeModal()">✕</span>
+    </div>
+    <div class="mbody">
+      <div class="jd-grid">
+        <div class="jd-field"><div class="k">Location</div><div class="v">${esc(l.location||'—')}</div></div>
+        <div class="jd-field"><div class="k">Urgency</div><div class="v">${l.urgency||'—'}</div></div>
+        <div class="jd-field"><div class="k">Lead source</div><div class="v">${esc(l.source||'—')}</div></div>
+        <div class="jd-field"><div class="k">Acquisition</div><div class="v">${esc(l.acquisitionMethod||'—')}</div></div>
+        <div class="jd-field"><div class="k">Deal type</div><div class="v">${l.dealType==='job_cut'?'Cut of closed job':'Flat lead fee'}</div></div>
+        <div class="jd-field"><div class="k">Expected value</div><div class="v">${money(l.feeAmount)}</div></div>
+        <div class="jd-field"><div class="k">Routed to</div><div class="v">${contractorName(l.contractorId)}</div></div>
+        <div class="jd-field"><div class="k">Priority</div><div class="v">${l.priority||0} / 10</div></div>
+      </div>
+
+      ${l.homeownerNotes?`<div class="jd-sec"><h4>Homeowner notes</h4><div style="color:var(--txt-dim);font-size:12px">${esc(l.homeownerNotes)}</div></div>`:''}
+      ${l.nextAction?`<div class="jd-sec"><h4>Next action</h4><div style="color:var(--s-amber);font-size:12px">${esc(l.nextAction)}</div></div>`:''}
+
+      <div class="jd-sec"><h4>Timeline</h4>
+        <ul class="timeline">${(l.timeline||[]).map(e=>`<li><span class="ts">${fmtDT(e.ts)}</span>${esc(e.label)}</li>`).join('')||'<li style="color:var(--txt-faint)">no events</li>'}</ul>
+        <div class="addline">
+          <input id="tl_in" placeholder="add event — e.g. contractor accepted, quote sent...">
+          <button class="btn sm" onclick="addTimeline('${id}')">+ add</button></div>
+      </div>
+
+      <div class="jd-sec"><h4>Revenue (verified only) — ${money(revV)}</h4>
+        ${rev.map(r=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0;color:var(--txt-dim)">
+          <span>${fmtDate(r.date)} ${r.verified?'<span class="pill converted">verified</span>':'<span class="pill contacted">pending</span>'}</span>
+          <span class="cval" style="font-size:14px">${money(r.amount)}</span></div>`).join('')||'<div style="color:var(--txt-faint);font-size:11px">none recorded</div>'}
+        <div class="addline">
+          <input id="rv_amt" type="number" min="0" placeholder="amount $" style="max-width:120px">
+          <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt-dim);white-space:nowrap"><input type="checkbox" id="rv_ver" style="width:auto" checked> payment confirmed</label>
+          <button class="btn sm primary" onclick="addRevenue('${id}')">+ record</button></div>
+      </div>
+    </div>
+    <div class="mfoot">
+      <button class="btn ghost danger" onclick="delLead('${id}')">Delete lead</button>
+      <button class="btn ghost" onclick="leadForm('${id}')">Edit</button>
+      <button class="btn primary" onclick="closeModal()">Done</button>
+    </div>`,true);
+}
+function addTimeline(id){
+  const v=document.getElementById('tl_in').value.trim(); if(!v)return;
+  DB.leads.find(x=>x.id===id).timeline.push({ts:now(),label:v});
+  save();jobCard(id);renderTop();
+}
+function addRevenue(id){
+  const amt=+document.getElementById('rv_amt').value; if(!amt){alert('Enter an amount.');return;}
+  const ver=document.getElementById('rv_ver').checked;
+  DB.revenue.push({id:uid(),leadId:id,amount:amt,date:now(),verified:ver,notes:''});
+  const l=DB.leads.find(x=>x.id===id);
+  l.timeline.push({ts:now(),label:(ver?'Payment received ':'Revenue logged (pending) ')+money(amt)});
+  if(ver&&l.status!=='converted'){l.status='converted';l.timeline.push({ts:now(),label:'Status → converted'});}
+  save();jobCard(id);renderTop();renderSide();
+}
+function delLead(id){
+  if(!confirm('Delete this lead and its revenue records?'))return;
+  DB.leads=DB.leads.filter(l=>l.id!==id);
+  DB.revenue=DB.revenue.filter(r=>r.leadId!==id);
+  save();closeModal();render();
+}
+
+function contractorForm(id){
+  const c=id?DB.contractors.find(x=>x.id===id):{};
+  openModal(`
+    <div class="mhead"><h2>${id?'Edit Contractor':'Add Contractor'}</h2><span class="mclose" onclick="closeModal()">✕</span></div>
+    <div class="mbody">
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Name / business</label><input id="c_name" value="${esc(c.name||'')}"></div>
+        <div class="frow"><label class="fl">Primary trade</label><select id="c_trade">${tradeOptions(c.trade||'hvac')}</select></div>
+      </div>
+      <div class="fgrid">
+        <div class="frow"><label class="fl">Phone</label><input id="c_phone" value="${esc(c.phone||'')}"></div>
+        <div class="frow"><label class="fl">Email</label><input id="c_email" value="${esc(c.email||'')}"></div>
+      </div>
+      <div class="fgrid">
+        <div class="frow"><label class="fl">NV license #</label><input id="c_lic" value="${esc(c.license||'')}" placeholder="if applicable"></div>
+        <div class="frow"><label class="fl">Agreed terms</label><input id="c_terms" value="${esc(c.terms||'')}" placeholder="e.g. $50/qualified lead"></div>
+      </div>
+      <div class="frow"><label class="fl">Notes</label><textarea id="c_notes">${esc(c.notes||'')}</textarea></div>
+    </div>
+    <div class="mfoot"><button class="btn ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="saveContractor('${id||''}')">${id?'Save':'Add'}</button></div>`);
+}
+function saveContractor(id){
+  const g=x=>document.getElementById(x).value.trim();
+  if(!g('c_name')){alert('Name required.');return;}
+  const data={name:g('c_name'),trade:g('c_trade'),phone:g('c_phone'),email:g('c_email'),
+    license:g('c_lic'),terms:g('c_terms'),notes:g('c_notes')};
+  if(id){Object.assign(DB.contractors.find(x=>x.id===id),data);}
+  else{DB.contractors.push({id:uid(),createdAt:now(),...data});}
+  save();closeModal();render();
+}
+function delContractor(id){
+  if(!confirm('Delete this contractor?'))return;
+  DB.contractors=DB.contractors.filter(c=>c.id!==id);
+  DB.leads.forEach(l=>{if(l.contractorId===id)l.contractorId='';});
+  save();render();
+}
+
+/* ── export / import ── */
+function exportJSON(){
+  const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='grit_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();
+}
+function importJSON(e){
+  const f=e.target.files[0]; if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result);
+    if(!d.leads||!d.contractors||!d.revenue)throw 0;
+    if(!confirm('Replace all current data with this backup?'))return;
+    DB=d;save();render();
+  }catch(err){alert('Invalid GRIT backup file.');}};
+  r.readAsText(f);
+}
+
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+render();
+</script>
+</body>
+</html>
