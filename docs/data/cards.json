@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-05-27T00:34:46Z",
+  "harvest": {
+    "status": "no_data",
+    "detail": "No harvest yet. Run `python -m grit discover` to pin the parcel layer, then `python -m grit harvest`."
+  },
+  "count": 0,
+  "cards": []
+}
