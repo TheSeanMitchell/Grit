@@ -76,6 +76,7 @@ CARDS_FILE = "docs/data/cards.json"
 HEALTH_FILE = "docs/data/health.json"
 
 # Politeness: page size + max pages per harvest (keeps the free Action well-behaved).
+CARDS_MAX = 500   # keep only the top-scored leads in the console output
 PAGE_SIZE = 1000
 MAX_PAGES = 5
 HTTP_TIMEOUT = 30

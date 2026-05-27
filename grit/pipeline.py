@@ -147,21 +147,39 @@ def harvest():
         "sources": health,
     })
 
-    # 2) harvest the live API source only (free-runner tier). No layer => no fake cards.
+    # 2) harvest the live API source. Auto-discover the parcel layer if not pinned.
     cards = []
     harvest_meta = {"status": "no_data", "detail": ""}
-    if config.CLARK_PARCEL_LAYER:
-        fields, info = arcgis.layer_meta(config.CLARK_PARCEL_LAYER)
+    layer_url = config.CLARK_PARCEL_LAYER
+    discovered = None
+
+    if not layer_url:
+        try:
+            best = arcgis.find_parcel_layer()
+        except Exception as e:  # noqa: BLE001
+            best = None
+            harvest_meta["detail"] = f"auto-discovery failed: {type(e).__name__}: {e}"
+        if best:
+            layer_url = best["url"]
+            discovered = best
+            _write(f"{config.DATA_DIR}/discovered.json", {
+                "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                **best,
+            })
+
+    if layer_url:
+        fields, info = arcgis.layer_meta(layer_url)
         mapping = build_field_map(fields)
-        feats, meta = arcgis.query_layer(config.CLARK_PARCEL_LAYER)
+        feats, meta = arcgis.query_layer(layer_url)
         cards = [feature_to_card(f, mapping, "clark_gis") for f in feats]
         cards.sort(key=lambda c: c["score"], reverse=True)
+        cards = cards[:config.CARDS_MAX]
         harvest_meta = {"status": "ok", "layer": info.get("name"),
+                        "layer_url": layer_url, "auto_discovered": bool(discovered),
                         "field_map": mapping, **meta}
-    else:
-        harvest_meta["detail"] = ("CLARK_PARCEL_LAYER not set. Run "
-                                  "`python -m grit discover` to find it, then set it "
-                                  "in grit/config.py. Until then: empty (by design).")
+    elif not harvest_meta["detail"]:
+        harvest_meta["detail"] = ("No parcel layer found by auto-discovery. "
+                                  "You can pin one manually via CLARK_PARCEL_LAYER.")
 
     _write(config.CARDS_FILE, {
         "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
