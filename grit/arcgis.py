@@ -29,12 +29,13 @@ def _ssl_ctx():
     return None
 
 
-def _get(url, params=None):
+def _get(url, params=None, timeout=None):
     if params:
         url = url + ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"User-Agent": config.USER_AGENT})
     t0 = time.time()
-    with urllib.request.urlopen(req, timeout=config.HTTP_TIMEOUT, context=_ssl_ctx()) as resp:
+    with urllib.request.urlopen(req, timeout=timeout or config.HTTP_TIMEOUT,
+                                context=_ssl_ctx()) as resp:
         body = resp.read().decode("utf-8", "replace")
     latency_ms = int((time.time() - t0) * 1000)
     return json.loads(body), latency_ms
@@ -54,9 +55,9 @@ def folder(root, name):
     return data.get("services", [])
 
 
-def layer_meta(layer_url):
+def layer_meta(layer_url, timeout=None):
     """Return (fields, info) for a FeatureServer/MapServer layer."""
-    data, _ = _get(layer_url, {"f": "json"})
+    data, _ = _get(layer_url, {"f": "json"}, timeout=timeout)
     fields = [f["name"] for f in data.get("fields", [])]
     info = {
         "name": data.get("name"),
@@ -66,6 +67,74 @@ def layer_meta(layer_url):
         "fields": fields,
     }
     return fields, info
+
+
+# --- auto-discovery: find the best parcel/owner/address layer, bounded -------
+DISCOVERY_TIMEOUT = 10
+DISCOVERY_BUDGET = 120      # max layer probes per harvest
+STRONG_SCORE = 8            # good enough -> stop early
+
+
+def _score_layer(fields, info):
+    low = [f.lower() for f in fields]
+    def has(hints):
+        return any(any(h in f for f in low) for h in hints)
+    s = 0
+    if has(config.FIELD_HINTS["owner_name"]):    s += 3
+    if has(config.FIELD_HINTS["parcel_apn"]):    s += 2
+    if has(config.FIELD_HINTS["situs_address"]): s += 2
+    if has(config.FIELD_HINTS["last_sale_date"]):s += 1
+    name = (info.get("name") or "").lower()
+    if any(k in name for k in ("parcel", "assessor", "ownership", "property")):
+        s += 3
+    if info.get("geometryType") in ("esriGeometryPolygon", "esriGeometryPoint"):
+        s += 1
+    return s
+
+
+def find_parcel_layer(root=None):
+    """
+    Walk the live ArcGIS server (bounded) and return the best candidate:
+    {"url","name","score","fields"} or None. Prioritizes services whose name
+    hints at parcels/assessor so the right layer is found in the first few probes.
+    """
+    root = root or config.CLARK_ARCGIS_ROOT
+    cat = catalog(root)
+
+    services = list(cat.get("services", []))
+    for fld in cat.get("folders", []):
+        try:
+            services += folder(root, fld)
+        except Exception:
+            continue
+    services = [s for s in services if s.get("type") in ("FeatureServer", "MapServer")]
+
+    def name_hint(s):
+        n = (s.get("name") or "").lower()
+        return 0 if any(k in n for k in
+                        ("parcel", "assessor", "ownership", "property", "cadastr")) else 1
+    services.sort(key=name_hint)
+
+    probes, best = 0, None
+    for svc in services:
+        if probes >= DISCOVERY_BUDGET:
+            break
+        base = f"{root}/{svc['name']}/{svc['type']}"
+        for lid in range(0, 20):
+            if probes >= DISCOVERY_BUDGET:
+                break
+            try:
+                fields, info = layer_meta(f"{base}/{lid}", timeout=DISCOVERY_TIMEOUT)
+            except Exception:
+                break  # no more layers in this service
+            probes += 1
+            score = _score_layer(fields, info)
+            if score > 0 and (best is None or score > best["score"]):
+                best = {"url": f"{base}/{lid}", "name": info.get("name"),
+                        "score": score, "fields": fields}
+            if best and best["score"] >= STRONG_SCORE:
+                return best
+    return best
 
 
 def _envelope_param():
