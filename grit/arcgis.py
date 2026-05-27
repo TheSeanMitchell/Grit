@@ -92,48 +92,52 @@ def _score_layer(fields, info):
     return s
 
 
-def find_parcel_layer(root=None):
+def find_parcel_layer(roots=None):
     """
-    Walk the live ArcGIS server (bounded) and return the best candidate:
-    {"url","name","score","fields"} or None. Prioritizes services whose name
-    hints at parcels/assessor so the right layer is found in the first few probes.
+    Crawl the configured ArcGIS servers (bounded) and return the best candidate:
+    {"url","name","score","fields"} or None. Prioritizes Assessor/Address/parcel
+    folders and services so the right layer is found in the first few probes.
     """
-    root = root or config.CLARK_ARCGIS_ROOT
-    cat = catalog(root)
+    roots = roots or getattr(config, "DISCOVERY_ROOTS", [config.CLARK_ARCGIS_ROOT])
+    probes, best = 0, None
 
-    services = list(cat.get("services", []))
-    for fld in cat.get("folders", []):
+    for root in roots:
         try:
-            services += folder(root, fld)
+            cat = catalog(root)
         except Exception:
             continue
-    services = [s for s in services if s.get("type") in ("FeatureServer", "MapServer")]
+        services = list(cat.get("services", []))
+        # prioritize promising folders
+        folders = sorted(cat.get("folders", []),
+                         key=lambda f: 0 if any(k in f.lower() for k in
+                         ("assessor", "address", "parcel", "adminserv")) else 1)
+        for fld in folders:
+            try:
+                services += folder(root, fld)
+            except Exception:
+                continue
+        services = [s for s in services if s.get("type") in ("FeatureServer", "MapServer")]
+        services.sort(key=lambda s: 0 if any(k in (s.get("name") or "").lower() for k in
+                      ("parcel", "assessor", "ownership", "property", "cadastr")) else 1)
 
-    def name_hint(s):
-        n = (s.get("name") or "").lower()
-        return 0 if any(k in n for k in
-                        ("parcel", "assessor", "ownership", "property", "cadastr")) else 1
-    services.sort(key=name_hint)
-
-    probes, best = 0, None
-    for svc in services:
-        if probes >= DISCOVERY_BUDGET:
-            break
-        base = f"{root}/{svc['name']}/{svc['type']}"
-        for lid in range(0, 20):
+        for svc in services:
             if probes >= DISCOVERY_BUDGET:
                 break
-            try:
-                fields, info = layer_meta(f"{base}/{lid}", timeout=DISCOVERY_TIMEOUT)
-            except Exception:
-                break  # no more layers in this service
-            probes += 1
-            score = _score_layer(fields, info)
-            if score > 0 and (best is None or score > best["score"]):
-                best = {"url": f"{base}/{lid}", "name": info.get("name"),
-                        "score": score, "fields": fields}
-            if best and best["score"] >= STRONG_SCORE:
-                return best
+            base = f"{root}/{svc['name']}/{svc['type']}"
+            for lid in range(0, 20):
+                if probes >= DISCOVERY_BUDGET:
+                    break
+                try:
+                    fields, info = layer_meta(f"{base}/{lid}", timeout=DISCOVERY_TIMEOUT)
+                except Exception:
+                    break
+                probes += 1
+                score = _score_layer(fields, info)
+                if score > 0 and (best is None or score > best["score"]):
+                    best = {"url": f"{base}/{lid}", "name": info.get("name"),
+                            "score": score, "fields": fields}
+                if best and best["score"] >= STRONG_SCORE:
+                    return best
     return best
 
 
@@ -185,3 +189,22 @@ def query_layer(layer_url, where="1=1", page_size=None, max_pages=None,
 
     return features, {"records": len(features), "pages": pages,
                       "latency_ms": total_latency}
+
+
+def sample_layer(layer_url, where="1=1", n=40, timeout=None):
+    """Pull a small sample (schema + a few records) to evaluate a candidate."""
+    fields, info = layer_meta(layer_url, timeout=timeout or DISCOVERY_TIMEOUT)
+    params = {
+        "where": where, "outFields": "*", "f": "geojson",
+        "returnGeometry": "false", "resultRecordCount": str(n),
+    }
+    b = config.METRO_BBOX
+    params.update({
+        "geometry": json.dumps({"xmin": b["xmin"], "ymin": b["ymin"],
+                                "xmax": b["xmax"], "ymax": b["ymax"],
+                                "spatialReference": {"wkid": 4326}}),
+        "geometryType": "esriGeometryEnvelope", "inSR": "4326",
+        "spatialRel": "esriSpatialRelIntersects",
+    })
+    data, _ = _get(f"{layer_url}/query", params, timeout=timeout or DISCOVERY_TIMEOUT)
+    return data.get("features", []), fields, info

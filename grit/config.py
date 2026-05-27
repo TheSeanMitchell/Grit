@@ -27,9 +27,43 @@ METRO_BBOX = {
 # ---------------------------------------------------------------------------
 CLARK_ARCGIS_ROOT = "https://gisgate.co.clark.nv.us/arcgis/rest/services"
 
-# A configured layer query URL. Leave as None to force `discover` first.
-# Once `discover` finds the parcel layer, paste its .../FeatureServer/<id> URL here.
-CLARK_PARCEL_LAYER = None  # e.g. ".../SomeService/FeatureServer/13"
+# Servers to crawl during auto-discovery, richest first. maps.clarkcountynv.gov
+# is the modern server with Assessor / BuildingDepartment / Accela folders.
+DISCOVERY_ROOTS = [
+    "https://maps.clarkcountynv.gov/arcgis/rest/services",
+    "https://gisgate.co.clark.nv.us/arcgis/rest/services",
+]
+
+# Manual override: pin one layer and skip everything below. Usually leave None.
+CLARK_PARCEL_LAYER = None
+
+# Ordered, KNOWN parcel/owner candidates. The harvester samples each, checks that
+# owner/address fields are actually POPULATED, and uses the richest one. A candidate
+# may carry an explicit field_map (use when we already know the real column names)
+# and a `where` filter. First good one wins; if all fail, auto-discovery runs.
+PARCEL_CANDIDATES = [
+    {
+        # Fresh county Assessor parcels (modern server). Fields auto-mapped.
+        "name": "Clark Assessor parcels (current)",
+        "url": "https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/AssessorMap/FeatureServer/1",
+        "where": "1=1",
+        "vintage": "current",
+    },
+    {
+        # CONFIRMED schema fallback: statewide parcels w/ real owner + site address.
+        # Vintage 2018 -- owner names may be stale; site address is stable.
+        "name": "NV statewide parcels (owner+address, 2018)",
+        "url": "https://gis.dot.nv.gov/agsphs/rest/services/Reference/Statewide_Parcels/MapServer/0",
+        "where": "County='Clark'",
+        "vintage": "2018-12-31",
+        "field_map": {
+            "parcel_apn": "APN",
+            "owner_name": "OwnerName",
+            "situs_address": "SiteAddress",
+            "city": "SiteCity",
+        },
+    },
+]
 
 # gisgate.co.clark.nv.us serves a hostname-mismatched TLS certificate (confirmed
 # 2026-05). It's a public, read-only government endpoint, so we skip cert
@@ -42,16 +76,28 @@ ARCGIS_INSECURE_SSL = True
 # these fragments (case-insensitive substring) so it adapts to whatever the
 # live layer exposes. Order = priority.
 FIELD_HINTS = {
-    "parcel_apn":    ["apn", "parcelno", "parcel_no", "parcel", "pcl"],
-    "owner_name":    ["owner1", "ownername", "owner_name", "owner"],
-    "owner_mailing": ["mailaddr", "mail_addr", "mailing", "mailadr", "owneraddr"],
-    "situs_address": ["situs", "siteaddr", "site_addr", "propaddr", "address", "location"],
-    "city":          ["situscity", "city"],
-    "zip":           ["situszip", "zip", "zipcode", "postal"],
-    "land_use":      ["landuse", "land_use", "usecode", "usedesc", "property_use", "luse"],
-    "assessed_value":["assessed", "totval", "total_value", "taxvalue", "av_total", "value"],
+    "parcel_apn":    ["apn", "parcelno", "parcel_no", "pcl_no", "parcelid"],
+    "owner_name":    ["owner1", "ownername", "owner_name", "ownerofrec", "owner"],
+    "owner_mailing": ["owneraddress", "owner_addr", "owneraddr", "mailaddr",
+                      "mail_addr", "mailingadd", "mailing"],
+    "situs_address": ["situsaddr", "situs_addr", "situs", "siteaddress",
+                      "site_addr", "siteaddr", "propaddr", "physical_addr",
+                      "address_full", "full_address", "street_address"],
+    "city":          ["situscity", "sitecity", "site_city", "city"],
+    "zip":           ["situszip", "sitezip", "zipcode", "zip", "postal"],
+    "land_use":      ["landuse", "land_use", "usecode", "usedesc",
+                      "property_use", "luse", "luc"],
+    "assessed_value":["assessed", "totval", "total_value", "taxvalue",
+                      "av_total", "totalvalue", "assdvalue"],
     "last_sale_date":["saledate", "sale_date", "lastsale", "deed_date", "recdate"],
-    "last_sale_price":["saleprice", "sale_price", "saleamt", "deed_amt", "price"],
+    "last_sale_price":["saleprice", "sale_price", "saleamt", "deed_amt"],
+}
+
+# Substrings that DISQUALIFY a field from matching the given card field. Stops the
+# "Address_Parcel_Number" -> situs_address false match that produced empty cards.
+FIELD_NEGATIVE = {
+    "situs_address": ["parcel", "number", "apn", "pcl", "_no", "subdivision"],
+    "owner_mailing": ["parcel", "apn"],
 }
 
 # Trade tags inferred from land-use / permit description text (substring match).

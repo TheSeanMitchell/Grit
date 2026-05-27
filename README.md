@@ -8,10 +8,11 @@ Not a CRM. The engine pulls real demand signals; you act on them.
 
 ## What's real and running
 
-- **Clark County GIS** (`gisgate.co.clark.nv.us/arcgis/rest/services`) — a live,
-  free ArcGIS REST API. The harvester queries it for parcels/owners/addresses
-  inside the metro bounding box and turns each into a scored call card. Runs on
-  the **free GitHub Actions runner**, no paid infrastructure, no API key.
+- **Multi-source parcel harvest.** The engine SAMPLES several known owner/address
+  layers (current county Assessor parcels, plus a confirmed statewide owner+address
+  fallback), checks which one actually has populated owner/address data, and harvests
+  the richest. Falls back to bounded auto-discovery only if all known sources fail.
+  Runs free on the **GitHub Actions runner** — no paid infrastructure, no API key.
 
 - **Source Health Matrix** — every source is probed on each run (real reachability,
   latency, record counts, and the actual fields discovered). The console shows it

@@ -14,16 +14,41 @@ from . import config, arcgis, sources
 
 # ---- field auto-mapping ---------------------------------------------------
 def build_field_map(real_fields):
-    """Match a layer's REAL field names to our card fields by substring hint."""
+    """Match a layer's REAL field names to our card fields by substring hint,
+    rejecting fields blocked by FIELD_NEGATIVE (e.g. parcel-number != address)."""
     lowered = {f.lower(): f for f in real_fields}
+    negatives = getattr(config, "FIELD_NEGATIVE", {})
     mapping = {}
     for card_field, hints in config.FIELD_HINTS.items():
+        blocked = negatives.get(card_field, [])
         for hint in hints:
-            match = next((orig for low, orig in lowered.items() if hint in low), None)
+            match = next((orig for low, orig in lowered.items()
+                          if hint in low and not any(b in low for b in blocked)), None)
             if match:
                 mapping[card_field] = match
                 break
     return mapping
+
+
+def populated_richness(features, mapping):
+    """How much real lead data a sample actually contains (not just schema)."""
+    n = len(features) or 1
+    owner = addr = val = 0
+    for f in features:
+        p = f.get("properties", {}) or {}
+        if mapping.get("owner_name") and p.get(mapping["owner_name"]) not in (None, "", " "):
+            owner += 1
+        if mapping.get("situs_address") and p.get(mapping["situs_address"]) not in (None, "", " "):
+            addr += 1
+        if mapping.get("assessed_value") and p.get(mapping["assessed_value"]) not in (None, "", " "):
+            val += 1
+    return {
+        "sample": len(features),
+        "owner_pct": round(owner / n, 2),
+        "address_pct": round(addr / n, 2),
+        "value_pct": round(val / n, 2),
+        "score": round((owner + addr) / n + 0.3 * (val / n), 3),
+    }
 
 
 def _attr(props, mapping, key):
@@ -64,6 +89,13 @@ def infer_trades(*texts):
 # ---- scoring (transparent, deterministic, real-signal only) ---------------
 def score_card(card):
     score, signals = 0, []
+
+    if card.get("owner_name"):
+        score += 5
+    if card.get("situs_address"):
+        score += 5
+    if card.get("owner_name") and card.get("situs_address"):
+        signals.append("contactable: owner + address on file")
 
     sale = card.get("last_sale_date")
     months = _months_since(sale)
@@ -147,39 +179,68 @@ def harvest():
         "sources": health,
     })
 
-    # 2) harvest the live API source. Auto-discover the parcel layer if not pinned.
+    # 2) pick the richest source: evaluate known candidates by SAMPLING real data
+    #    (owner/address actually populated), fall back to auto-discovery only if needed.
     cards = []
     harvest_meta = {"status": "no_data", "detail": ""}
-    layer_url = config.CLARK_PARCEL_LAYER
-    discovered = None
+    chosen = None
+    candidate_report = []
 
-    if not layer_url:
+    candidates = []
+    if config.CLARK_PARCEL_LAYER:
+        candidates.append({"name": "manual override", "url": config.CLARK_PARCEL_LAYER,
+                           "where": "1=1"})
+    candidates += config.PARCEL_CANDIDATES
+
+    for cand in candidates:
+        try:
+            feats, fields, info = arcgis.sample_layer(cand["url"], cand.get("where", "1=1"))
+            mapping = cand.get("field_map") or build_field_map(fields)
+            rich = populated_richness(feats, mapping)
+            candidate_report.append({"name": cand.get("name"), "url": cand["url"],
+                                     "layer": info.get("name"), "richness": rich,
+                                     "mapping": mapping, "vintage": cand.get("vintage")})
+            if rich["owner_pct"] + rich["address_pct"] > 0 and (
+                    chosen is None or rich["score"] > chosen["rich"]["score"]):
+                chosen = {"cand": cand, "mapping": mapping, "info": info, "rich": rich}
+        except Exception as e:  # noqa: BLE001
+            candidate_report.append({"name": cand.get("name"), "url": cand["url"],
+                                     "error": f"{type(e).__name__}: {e}"})
+
+    if chosen is None:  # last resort: crawl the servers for anything with owner data
         try:
             best = arcgis.find_parcel_layer()
+            if best:
+                fields = best.get("fields", [])
+                mapping = build_field_map(fields)
+                chosen = {"cand": {"name": "auto-discovered", "url": best["url"],
+                                   "where": "1=1"}, "mapping": mapping,
+                          "info": {"name": best.get("name")}, "rich": {"score": 0}}
+                candidate_report.append({"name": "auto-discovered", "url": best["url"],
+                                         "layer": best.get("name"), "mapping": mapping})
         except Exception as e:  # noqa: BLE001
-            best = None
-            harvest_meta["detail"] = f"auto-discovery failed: {type(e).__name__}: {e}"
-        if best:
-            layer_url = best["url"]
-            discovered = best
-            _write(f"{config.DATA_DIR}/discovered.json", {
-                "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-                **best,
-            })
+            harvest_meta["detail"] = f"discovery failed: {type(e).__name__}: {e}"
 
-    if layer_url:
-        fields, info = arcgis.layer_meta(layer_url)
-        mapping = build_field_map(fields)
-        feats, meta = arcgis.query_layer(layer_url)
+    _write(f"{config.DATA_DIR}/discovered.json", {
+        "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "selected": chosen["cand"]["url"] if chosen else None,
+        "candidates": candidate_report,
+    })
+
+    if chosen:
+        cand = chosen["cand"]
+        mapping = chosen["mapping"]
+        feats, meta = arcgis.query_layer(cand["url"], where=cand.get("where", "1=1"))
         cards = [feature_to_card(f, mapping, "clark_gis") for f in feats]
         cards.sort(key=lambda c: c["score"], reverse=True)
         cards = cards[:config.CARDS_MAX]
-        harvest_meta = {"status": "ok", "layer": info.get("name"),
-                        "layer_url": layer_url, "auto_discovered": bool(discovered),
-                        "field_map": mapping, **meta}
+        harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
+                        "source_name": cand.get("name"), "vintage": cand.get("vintage"),
+                        "layer_url": cand["url"], "field_map": mapping,
+                        "richness": chosen["rich"], **meta}
     elif not harvest_meta["detail"]:
-        harvest_meta["detail"] = ("No parcel layer found by auto-discovery. "
-                                  "You can pin one manually via CLARK_PARCEL_LAYER.")
+        harvest_meta["detail"] = ("No candidate returned populated owner/address data. "
+                                  "See discovered.json for what each source exposed.")
 
     _write(config.CARDS_FILE, {
         "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
