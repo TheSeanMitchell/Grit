@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-05-27T01:25:53Z",
-  "harvest": {
-    "status": "no_data",
-    "detail": "CLARK_PARCEL_LAYER not set. Run `python -m grit discover` to find it, then set it in grit/config.py. Until then: empty (by design)."
-  },
-  "count": 0,
-  "cards": []
-}
