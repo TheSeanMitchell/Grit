@@ -1,3 +1,0 @@
-# GRIT harvester uses the Python standard library only (urllib, json).
-# No third-party packages required — keeps the free GitHub Action fast and durable.
-# Optional later: 'playwright' for the Accela/NSCB browser-scrape wave (local/residential IP).
