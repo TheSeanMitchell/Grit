@@ -1,6 +1,5 @@
 {
-  "generated_at": "2026-05-27T05:53:00Z",
-  "note": "Initial state. Statuses populate on the first run in your environment (the GitHub Action).",
+  "generated_at": "2026-05-27T06:10:10Z",
   "sources": [
     {
       "key": "clark_gis",
@@ -8,13 +7,13 @@
       "kind": "arcgis_rest",
       "tier": "live",
       "url": "https://gisgate.co.clark.nv.us/arcgis/rest/services",
-      "status": "pending",
+      "note": "server live; parcel layer not yet pinned -- run `python -m grit discover` then set CLARK_PARCEL_LAYER",
+      "status": "reachable",
       "latency_ms": null,
-      "records": null,
+      "records": 56,
       "fields": null,
       "error": null,
-      "note": "Clean ArcGIS REST API. Harvests free from the GitHub runner.",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:07Z"
     },
     {
       "key": "clark_accela",
@@ -22,13 +21,13 @@
       "kind": "accela",
       "tier": "manual",
       "url": "https://aca-prod.accela.com/clarkco/Default.aspx",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Permit events: who pulled what, where, value. ViewState portal -- headless browser; may need a residential IP.",
+      "status": "reachable",
+      "latency_ms": 320,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Permit events: who pulled what, where, value. ViewState portal -- headless browser; may need a residential IP.",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:08Z"
     },
     {
       "key": "nscb",
@@ -36,13 +35,13 @@
       "kind": "aspx",
       "tier": "manual",
       "url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Every licensed contractor by trade = your buyer list + verification.",
+      "status": "reachable",
+      "latency_ms": 292,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Every licensed contractor by trade = your buyer list + verification.",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:08Z"
     },
     {
       "key": "clark_assessor",
@@ -50,13 +49,13 @@
       "kind": "aspx",
       "tier": "manual",
       "url": "https://www.clarkcountynv.gov/government/assessor/",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Authoritative current owner + sale detail; complements the GIS layer.",
+      "status": "reachable",
+      "latency_ms": 26,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Authoritative current owner + sale detail; complements the GIS layer.",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:09Z"
     },
     {
       "key": "clark_recorder",
@@ -64,13 +63,13 @@
       "kind": "aspx",
       "tier": "manual",
       "url": "https://www.clarkcountynv.gov/government/elected_officials/county_recorder/",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Leading indicators: sales (new owners), defaults, mechanics liens.",
+      "status": "reachable",
+      "latency_ms": 92,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Leading indicators: sales (new owners), defaults, mechanics liens.",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:09Z"
     },
     {
       "key": "lv_permits",
@@ -78,13 +77,13 @@
       "kind": "accela",
       "tier": "manual",
       "url": "https://www.lasvegasnevada.gov/",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Incorporated-city permits (separate from county).",
+      "status": "reachable",
+      "latency_ms": 591,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Incorporated-city permits (separate from county).",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:09Z"
     },
     {
       "key": "henderson_permits",
@@ -92,13 +91,13 @@
       "kind": "accela",
       "tier": "manual",
       "url": "https://www.cityofhenderson.com/",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
+      "status": "reachable",
+      "latency_ms": 61,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Incorporated-city permits (separate from county).",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:09Z"
     },
     {
       "key": "nlv_permits",
@@ -106,13 +105,13 @@
       "kind": "accela",
       "tier": "manual",
       "url": "https://www.cityofnorthlasvegas.com/",
-      "status": "pending",
-      "latency_ms": null,
+      "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
+      "status": "reachable",
+      "latency_ms": 45,
       "records": null,
       "fields": null,
       "error": null,
-      "note": "Incorporated-city permits (separate from county).",
-      "checked_at": null
+      "checked_at": "2026-05-27T06:10:09Z"
     }
   ]
 }
