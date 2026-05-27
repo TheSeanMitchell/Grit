@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GRIT // Harvest Console</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   :root{
     --bg:#0a0b0d;--bg2:#101216;--panel:#14161b;--panel2:#181b21;
@@ -22,7 +22,7 @@
     background-size:auto,100% 3px;}
   ::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:var(--line2)}
   .top{display:flex;align-items:center;gap:16px;padding:0 18px;height:48px;
-    border-bottom:1px solid var(--line);background:var(--bg2);position:sticky;top:0;z-index:10}
+    border-bottom:1px solid var(--line);background:var(--bg2);position:sticky;top:0;z-index:1000}
   .brand{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:3px}
   .brand b{color:var(--blue)}
   .tag{font-size:10px;color:var(--faint);border:1px solid var(--line2);padding:2px 7px;letter-spacing:1px}
@@ -31,8 +31,6 @@
   h2.sec{font-family:var(--disp);font-size:13px;letter-spacing:2px;color:var(--faint);
     text-transform:uppercase;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
   h2.sec::after{content:'';flex:1;height:1px;background:var(--line)}
-
-  /* health matrix */
   .matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
   .hcard{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--line2);padding:11px 13px}
   .hcard .hn{display:flex;align-items:center;gap:8px;margin-bottom:6px}
@@ -45,12 +43,17 @@
   .hcard .hmeta{font-size:10px;color:var(--faint);margin-top:3px;word-break:break-word}
   .hcard .hstat{margin-left:auto;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
   .kind{font-size:9px;color:var(--faint);border:1px solid var(--line2);padding:1px 5px;letter-spacing:.5px}
-
-  /* cards */
+  #map{height:420px;border:1px solid var(--line);background:var(--bg2)}
+  .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--bg2);color:var(--txt);
+    border:1px solid var(--line2);border-radius:0;font-family:var(--mono)}
+  .leaflet-popup-content{margin:10px 12px;font-size:12px}
+  .pp-addr{font-size:13px;color:var(--txt);font-weight:600;margin-bottom:4px}
+  .pp-k{color:var(--faint)} .pp-next{color:var(--amber);margin-top:6px}
+  .leaflet-container{background:#0a0b0d}
+  .leaflet-bar a{background:var(--panel2);color:var(--txt);border-color:var(--line2)}
   .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
   .tcount{font-family:var(--disp);font-size:15px;color:var(--txt)}
-  .filt{font-size:11px;color:var(--dim);border:1px solid var(--line2);background:var(--panel2);
-    padding:4px 9px;cursor:pointer}
+  .filt{font-size:11px;color:var(--dim);border:1px solid var(--line2);background:var(--panel2);padding:4px 9px;cursor:pointer}
   .filt.on{border-color:var(--blue);color:#cfe2ff}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
   .card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--blue);padding:13px}
@@ -66,7 +69,7 @@
   .sig{font-size:10px;color:var(--dim);border-top:1px solid var(--line);margin-top:9px;padding-top:8px}
   .sig li{margin-left:14px;margin-bottom:2px}
   .next{font-size:11px;color:var(--amber);margin-top:8px}
-  .empty{border:1px dashed var(--line2);padding:44px 20px;text-align:center;color:var(--faint);
+  .empty{border:1px dashed var(--line2);padding:40px 20px;text-align:center;color:var(--faint);
     background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(255,255,255,.01) 9px,rgba(255,255,255,.01) 18px)}
   .empty .big{font-family:var(--disp);font-size:22px;color:var(--dim);letter-spacing:1px;margin-bottom:8px}
   .empty code{color:var(--blue);background:var(--panel2);padding:1px 6px}
@@ -75,96 +78,85 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag">HARVEST CONSOLE · CLARK COUNTY</div>
-  <div class="stamp" id="stamp">loading…</div>
+  <div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY</div>
+  <div class="stamp" id="stamp">loading&hellip;</div>
 </div>
 <div class="wrap">
+  <h2 class="sec">Lead Map</h2>
+  <div id="map"></div>
   <h2 class="sec">Source Health Matrix</h2>
   <div class="matrix" id="matrix"></div>
-
   <h2 class="sec">Call Cards <span id="harveststate" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
   <div class="toolbar" id="toolbar"></div>
   <div id="cards"></div>
 </div>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const $ = (s)=>document.querySelector(s);
-let CARDS=[], FILTER=null;
-
-async function loadJSON(path){
-  try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) return null; return await r.json(); }
-  catch(e){ return null; }
+const $=(s)=>document.querySelector(s);
+let CARDS=[], FILTER=null, MAP=null, LAYER=null;
+async function loadJSON(p){try{const r=await fetch(p,{cache:'no-store'});if(!r.ok)return null;return await r.json();}catch(e){return null;}}
+function dot(s){return ['live','reachable','pending','down'].includes(s)?s:'pending';}
+function scoreColor(n){return n>=60?'#3fb950':n>=30?'#d29922':'#5a606b';}
+function scoreCls(n){return n>=60?'s-hi':n>=30?'s-mid':'s-lo';}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function row(k,v){return v?'<div class="kv"><span>'+k+'</span><b>'+esc(v)+'</b></div>':'';}
+function initMap(){
+  MAP=L.map('map',{zoomControl:true}).setView([36.12,-115.17],10);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(MAP);
+  LAYER=L.layerGroup().addTo(MAP);
 }
-
-function dot(status){return ['live','reachable','pending','down'].includes(status)?status:'pending';}
-
+function renderMap(){
+  if(!MAP)initMap();
+  LAYER.clearLayers();
+  const pts=[];
+  (FILTER?CARDS.filter(c=>(c.trade_tags||[]).includes(FILTER)):CARDS).filter(c=>c.lat&&c.lng).forEach(c=>{
+    const m=L.circleMarker([c.lat,c.lng],{radius:6,color:scoreColor(c.score),fillColor:scoreColor(c.score),fillOpacity:.8,weight:1.5});
+    m.bindPopup('<div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
+      (c.owner_name?'<div><span class="pp-k">owner</span> '+esc(c.owner_name)+'</div>':'')+
+      '<div><span class="pp-k">score</span> '+c.score+(c.trade_tags&&c.trade_tags.length?' &middot; '+c.trade_tags.join(', '):'')+'</div>'+
+      (c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':''));
+    m.addTo(LAYER);pts.push([c.lat,c.lng]);
+  });
+  if(pts.length)MAP.fitBounds(pts,{padding:[30,30],maxZoom:14});
+}
 function renderHealth(h){
   const m=$('#matrix');
-  if(!h||!h.sources){ m.innerHTML=`<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Run <code>python -m grit health</code> or trigger the GitHub Action.</div>`; return; }
+  if(!h||!h.sources){m.innerHTML='<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Trigger the GitHub Action (Actions tab &rarr; Run workflow).</div>';return;}
   m.innerHTML=h.sources.map(s=>{
     const cls=dot(s.status);
-    const meta=[s.note, s.error?('ERR: '+s.error):'', s.latency_ms!=null?(s.latency_ms+'ms'):'', s.records!=null?(s.records+' items'):'']
-      .filter(Boolean).join(' · ');
-    return `<div class="hcard ${cls}">
-      <div class="hn"><span class="hdot"></span><span class="hname">${esc(s.name)}</span>
-        <span class="hstat">${s.status}</span></div>
-      <div><span class="kind">${s.kind}</span> <span class="kind">${s.tier}</span></div>
-      <div class="hmeta">${esc(meta)}</div></div>`;
+    const meta=[s.note,s.error?('ERR: '+s.error):'',s.latency_ms!=null?(s.latency_ms+'ms'):'',s.records!=null?(s.records+' items'):''].filter(Boolean).join(' \u00b7 ');
+    return '<div class="hcard '+cls+'"><div class="hn"><span class="hdot"></span><span class="hname">'+esc(s.name)+'</span><span class="hstat">'+s.status+'</span></div><div><span class="kind">'+s.kind+'</span> <span class="kind">'+s.tier+'</span></div><div class="hmeta">'+esc(meta)+'</div></div>';
   }).join('');
-  if(h.generated_at) $('#stamp').textContent='health '+h.generated_at;
+  if(h.generated_at)$('#stamp').textContent='health '+h.generated_at;
 }
-
-function scoreCls(n){return n>=60?'s-hi':n>=30?'s-mid':'s-lo';}
-function row(k,v){return v?`<div class="kv"><span>${k}</span><b>${esc(v)}</b></div>`:'';}
-
+function cardHTML(c){
+  const sig=(c.signals||[]).map(s=>'<li>'+esc(s)+'</li>').join('');
+  return '<div class="card"><div class="crow"><span class="addr">'+esc(c.situs_address||'(address unknown)')+'</span><span class="scorebox '+scoreCls(c.score)+'">'+c.score+'</span></div>'+
+    '<div class="apn">APN '+esc(c.parcel_apn||'\u2014')+' \u00b7 '+esc(c.city||'')+' '+esc(c.zip||'')+'</div>'+
+    '<div class="tags">'+(c.trade_tags||[]).map(t=>'<span class="ttag">'+t+'</span>').join('')+'</div>'+
+    row('Owner',c.owner_name)+row('Owner mailing',c.owner_mailing)+row('Land use',c.land_use)+row('Assessed value',c.assessed_value)+row('Last sale',c.last_sale_date)+
+    (sig?'<ul class="sig">'+sig+'</ul>':'')+(c.suggested_action?'<div class="next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';
+}
 function renderCards(){
   const wrap=$('#cards');
-  let list=CARDS;
-  if(FILTER) list=CARDS.filter(c=>(c.trade_tags||[]).includes(FILTER));
-  if(!CARDS.length){
-    wrap.innerHTML=`<div class="empty"><div class="big">NO HARVEST YET</div>
-      The engine is wired and verified, but no records have been pulled. Pin the parcel layer with <code>python -m grit discover</code>, set <code>CLARK_PARCEL_LAYER</code>, then run <code>python -m grit harvest</code> (or the Action). Real data only — nothing is shown until it's harvested.</div>`;
-    return;
-  }
+  let list=FILTER?CARDS.filter(c=>(c.trade_tags||[]).includes(FILTER)):CARDS;
+  if(!CARDS.length){wrap.innerHTML='<div class="empty"><div class="big">NO HARVEST YET</div>The engine is wired, verified, and now auto-finds the parcel layer itself. Trigger a harvest: <b>Actions tab &rarr; "GRIT harvest" &rarr; Run workflow</b>. Cards and map pins appear here after it finishes. Real data only.</div>';return;}
   wrap.innerHTML='<div class="grid">'+list.map(cardHTML).join('')+'</div>';
 }
-
-function cardHTML(c){
-  const sig=(c.signals||[]).map(s=>`<li>${esc(s)}</li>`).join('');
-  return `<div class="card">
-    <div class="crow"><span class="addr">${esc(c.situs_address||'(address unknown)')}</span>
-      <span class="scorebox ${scoreCls(c.score)}">${c.score}</span></div>
-    <div class="apn">APN ${esc(c.parcel_apn||'—')} · ${esc(c.city||'')} ${esc(c.zip||'')}</div>
-    <div class="tags">${(c.trade_tags||[]).map(t=>`<span class="ttag">${t}</span>`).join('')||''}</div>
-    ${row('Owner',c.owner_name)}
-    ${row('Owner mailing',c.owner_mailing)}
-    ${row('Land use',c.land_use)}
-    ${row('Assessed value',c.assessed_value)}
-    ${row('Last sale',c.last_sale_date)}
-    ${sig?`<ul class="sig">${sig}</ul>`:''}
-    ${c.suggested_action?`<div class="next">▸ ${esc(c.suggested_action)}</div>`:''}
-  </div>`;
-}
-
 function renderToolbar(){
   const tb=$('#toolbar');
   const trades=[...new Set(CARDS.flatMap(c=>c.trade_tags||[]))].sort();
-  tb.innerHTML=`<span class="tcount">${CARDS.length} cards</span>`+
-    (trades.length?`<span class="filt ${!FILTER?'on':''}" data-t="">all</span>`+
-      trades.map(t=>`<span class="filt ${FILTER===t?'on':''}" data-t="${t}">${t}</span>`).join(''):'');
-  tb.querySelectorAll('.filt').forEach(el=>el.onclick=()=>{
-    FILTER=el.dataset.t||null; renderToolbar(); renderCards();
-  });
+  tb.innerHTML='<span class="tcount">'+CARDS.length+' cards</span>'+(trades.length?'<span class="filt '+(!FILTER?'on':'')+'" data-t="">all</span>'+trades.map(t=>'<span class="filt '+(FILTER===t?'on':'')+'" data-t="'+t+'">'+t+'</span>').join(''):'');
+  tb.querySelectorAll('.filt').forEach(el=>el.onclick=()=>{FILTER=el.dataset.t||null;renderToolbar();renderCards();renderMap();});
 }
-
-function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-
 (async()=>{
+  initMap();
   renderHealth(await loadJSON('data/health.json'));
   const cd=await loadJSON('data/cards.json');
   CARDS=(cd&&cd.cards)||[];
-  $('#harveststate').textContent=cd?`· ${cd.harvest?.status||''} ${cd.harvest?.detail||''}`:'';
-  renderToolbar(); renderCards();
+  if(cd&&cd.harvest){const h=cd.harvest;$('#harveststate').textContent=h.layer?'\u00b7 source: '+h.layer+(h.auto_discovered?' (auto-found)':'')+' \u00b7 '+cd.count+' records':'\u00b7 '+(h.status||'')+' '+(h.detail||'');}
+  renderToolbar();renderCards();renderMap();
 })();
 </script>
 </body>
