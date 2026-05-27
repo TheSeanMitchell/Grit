@@ -11,7 +11,7 @@ GRIT CLI.
 """
 import sys
 
-from . import arcgis, config, sources, pipeline
+from . import arcgis, config, sources, pipeline, assessor
 
 
 def cmd_health():
@@ -101,13 +101,39 @@ def cmd_selftest():
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
+def cmd_enrich(argv):
+    """Capture a few live Assessor parcel-detail responses for calibration.
+    Reads top APNs from the latest harvest and saves raw HTML to docs/data/."""
+    import json
+    n = 3
+    if "--sample" in argv:
+        try: n = int(argv[argv.index("--sample") + 1])
+        except (IndexError, ValueError): pass
+    try:
+        cards = json.load(open(config.CARDS_FILE)).get("cards", [])
+    except Exception:
+        cards = []
+    apns = [c["parcel_apn"] for c in cards if c.get("parcel_apn")][:n]
+    if not apns:
+        print("No APNs in cards.json yet -- run `harvest` first."); return
+    print(f"Capturing {len(apns)} Assessor samples (calibration): {apns}")
+    for r in assessor.capture_samples(apns):
+        print(" ", r)
+    print("\nSaved raw responses under docs/data/assessor_samples/. "
+          "Upload one so the exact parser can be written -- no parsed data is "
+          "trusted until then (no fake data).")
+
+
 def main(argv):
     cmds = {"health": cmd_health, "discover": cmd_discover,
-            "harvest": cmd_harvest, "selftest": cmd_selftest}
+            "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich}
     if len(argv) < 2 or argv[1] not in cmds:
         print(__doc__)
         return 1
-    cmds[argv[1]]()
+    if argv[1] == 'enrich':
+        cmd_enrich(argv)
+    else:
+        cmds[argv[1]]()
     return 0
 
 

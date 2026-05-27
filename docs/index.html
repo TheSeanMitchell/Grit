@@ -19,149 +19,137 @@
   .brand{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:3px}.brand b{color:var(--blue)}
   .tag{font-size:10px;color:var(--faint);border:1px solid var(--line2);padding:2px 7px;letter-spacing:1px}
   .top .stamp{margin-left:auto;font-size:10px;color:var(--faint)}
-  .wrap{max-width:1180px;margin:0 auto;padding:20px 18px 70px}
-  h2.sec{font-family:var(--disp);font-size:13px;letter-spacing:2px;color:var(--faint);text-transform:uppercase;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .wrap{max-width:1320px;margin:0 auto;padding:18px 18px 70px}
+  h2.sec{font-family:var(--disp);font-size:13px;letter-spacing:2px;color:var(--faint);text-transform:uppercase;margin:22px 0 10px;display:flex;align-items:center;gap:10px}
   h2.sec::after{content:'';flex:1;height:1px;background:var(--line)}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .tcount{font-family:var(--disp);font-size:15px;color:var(--txt);margin-right:6px}
+  .filt{font-size:11px;color:var(--dim);border:1px solid var(--line2);background:var(--panel2);padding:4px 9px;cursor:pointer}
+  .filt.on{border-color:var(--blue);color:#cfe2ff}
+  .btn{font-size:11px;color:var(--dim);border:1px solid var(--line2);background:var(--panel2);padding:4px 10px;cursor:pointer;letter-spacing:.5px}
+  .btn:hover{border-color:var(--blue);color:#cfe2ff}
+  .split{display:flex;gap:12px;align-items:stretch}
+  .pane-map{flex:1 1 56%;min-width:340px}
+  .pane-list{flex:1 1 44%;min-width:320px;display:flex;flex-direction:column;border:1px solid var(--line);background:var(--bg2)}
+  #map{height:580px;border:1px solid var(--line);background:var(--bg2)}
+  .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--bg2);color:var(--txt);border:1px solid var(--line2);border-radius:0;font-family:var(--mono)}
+  .leaflet-popup-content{margin:10px 12px;font-size:12px}.pp-addr{font-size:13px;color:var(--txt);font-weight:600;margin-bottom:4px}
+  .pp-k{color:var(--faint)}.pp-next{color:var(--amber);margin-top:6px}.pp a{color:var(--blue)}
+  .leaflet-container{background:#0a0b0d}.leaflet-bar a{background:var(--panel2);color:var(--txt);border-color:var(--line2)}
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:10px;color:var(--dim)}
+  .legend span{display:inline-flex;align-items:center;gap:4px}.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .lhead{display:flex;font-size:9px;letter-spacing:1px;color:var(--faint);text-transform:uppercase;border-bottom:1px solid var(--line2);background:var(--panel)}
+  .lhead div{padding:8px 8px;cursor:pointer;user-select:none}.lhead div:hover{color:var(--txt)}
+  .lbody{overflow-y:auto;height:540px}
+  .lrow{display:flex;align-items:center;border-bottom:1px solid var(--line);cursor:pointer;font-size:11px}
+  .lrow:hover{background:var(--panel)}.lrow.sel{background:rgba(68,147,248,.14);outline:1px solid var(--blue)}
+  .lrow div{padding:7px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .c-score{width:54px;flex:none;text-align:right;color:var(--txt)}
+  .c-addr{flex:1 1 40%;color:var(--txt)}.c-owner{flex:1 1 36%;color:var(--dim)}
+  .c-trade{width:74px;flex:none;color:var(--dim)}.c-val{width:74px;flex:none;text-align:right}
+  .scoredot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
   .matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
   .hcard{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--line2);padding:11px 13px}
-  .hcard .hn{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-  .hdot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--faint)}
+  .hcard .hn{display:flex;align-items:center;gap:8px;margin-bottom:6px}.hdot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--faint)}
   .hcard.live{border-left-color:var(--green)}.hcard.live .hdot{background:var(--green);box-shadow:0 0 7px var(--green)}
   .hcard.reachable{border-left-color:var(--blue)}.hcard.reachable .hdot{background:var(--blue)}
   .hcard.pending{border-left-color:var(--amber)}.hcard.pending .hdot{background:var(--amber)}
   .hcard.down{border-left-color:var(--red)}.hcard.down .hdot{background:var(--red)}
-  .hcard .hname{font-size:12px;color:var(--txt);font-weight:500}
-  .hcard .hmeta{font-size:10px;color:var(--faint);margin-top:3px;word-break:break-word}
+  .hcard .hname{font-size:12px;color:var(--txt);font-weight:500}.hcard .hmeta{font-size:10px;color:var(--faint);margin-top:3px;word-break:break-word}
   .hcard .hstat{margin-left:auto;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
   .kind{font-size:9px;color:var(--faint);border:1px solid var(--line2);padding:1px 5px;letter-spacing:.5px}
-  #map{height:440px;border:1px solid var(--line);background:var(--bg2)}
-  .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--bg2);color:var(--txt);border:1px solid var(--line2);border-radius:0;font-family:var(--mono)}
-  .leaflet-popup-content{margin:10px 12px;font-size:12px}
-  .pp-addr{font-size:13px;color:var(--txt);font-weight:600;margin-bottom:4px}
-  .pp-k{color:var(--faint)} .pp-next{color:var(--amber);margin-top:6px}
-  .pp a{color:var(--blue)}
-  .leaflet-container{background:#0a0b0d}.leaflet-bar a{background:var(--panel2);color:var(--txt);border-color:var(--line2)}
-  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:10px;color:var(--dim)}
-  .legend span{display:inline-flex;align-items:center;gap:4px}
-  .legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
-  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
-  .tcount{font-family:var(--disp);font-size:15px;color:var(--txt);margin-right:6px}
-  .filt{font-size:11px;color:var(--dim);border:1px solid var(--line2);background:var(--panel2);padding:4px 9px;cursor:pointer}
-  .filt.on{border-color:var(--blue);color:#cfe2ff}
-  .vtoggle{margin-left:auto;display:flex;gap:0;border:1px solid var(--line2)}
-  .vtoggle button{font-family:var(--mono);font-size:11px;background:transparent;color:var(--dim);border:0;padding:5px 12px;cursor:pointer;letter-spacing:1px}
-  .vtoggle button.on{background:var(--panel2);color:#cfe2ff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-  .card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--blue);padding:13px}
-  .card .crow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-  .scorebox{font-family:var(--disp);font-size:24px;line-height:1;margin-left:auto}
-  .s-hi{color:var(--green)}.s-mid{color:var(--amber)}.s-lo{color:var(--dim)}
-  .addr{font-size:14px;color:var(--txt);font-weight:500}.apn{font-size:10px;color:var(--faint)}
-  .kv{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);padding:2px 0}.kv b{color:var(--txt);font-weight:500}
-  .tags{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
-  .ttag{font-size:9px;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border:1px solid var(--line2);color:var(--dim)}
-  .ttag.t{border-left-width:3px}
-  .sig{font-size:10px;color:var(--dim);border-top:1px solid var(--line);margin-top:9px;padding-top:8px}.sig li{margin-left:14px;margin-bottom:2px}
-  .next{font-size:11px;color:var(--amber);margin-top:8px}
-  .cardlinks{margin-top:9px;display:flex;gap:10px}.cardlinks a{font-size:10px;color:var(--blue);text-decoration:none;border:1px solid var(--line2);padding:3px 7px}
-  table{width:100%;border-collapse:collapse;font-size:12px}
-  th{text-align:left;font-size:9px;letter-spacing:1px;color:var(--faint);text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line2);cursor:pointer;user-select:none}
-  th:hover{color:var(--txt)}
-  td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--dim)}
-  tr:hover td{background:var(--panel)}
-  td.num{text-align:right;color:var(--txt)}
-  .scoredot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
   .empty{border:1px dashed var(--line2);padding:40px 20px;text-align:center;color:var(--faint);background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(255,255,255,.01) 9px,rgba(255,255,255,.01) 18px)}
   .empty .big{font-family:var(--disp);font-size:22px;color:var(--dim);letter-spacing:1px;margin-bottom:8px}
-  .empty code{color:var(--blue);background:var(--panel2);padding:1px 6px}
+  @media(max-width:820px){.split{flex-direction:column}#map{height:380px}.lbody{height:360px}}
 </style>
 </head>
 <body>
-<div class="top">
-  <div class="brand">GR<b>I</b>T</div>
-  <div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY</div>
-  <div class="stamp" id="stamp">loading&hellip;</div>
-</div>
+<div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY</div><div class="stamp" id="stamp">loading&hellip;</div></div>
 <div class="wrap">
-  <h2 class="sec">Lead Map</h2>
-  <div id="map"></div>
-  <div class="legend" id="legend"></div>
-  <h2 class="sec">Source Health Matrix</h2>
-  <div class="matrix" id="matrix"></div>
   <h2 class="sec">Leads <span id="harveststate" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
   <div class="toolbar" id="toolbar"></div>
-  <div id="content"></div>
+  <div class="split">
+    <div class="pane-map"><div id="map"></div><div class="legend" id="legend"></div></div>
+    <div class="pane-list" id="pane-list"></div>
+  </div>
+  <h2 class="sec">Source Health Matrix</h2>
+  <div class="matrix" id="matrix"></div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const $=(s)=>document.querySelector(s);
 const TRADE_COLORS={hvac:'#4a9d9c',roofing:'#a87455',plumbing:'#5d7fa3',electrical:'#b8923a',solar:'#c47f3d',landscaping:'#5f8f57',remodeling:'#8a6fa3',pest:'#8f8a5a',security:'#6a6f8f',pools:'#4a8fa3',concrete:'#888f96',fencing:'#9a7a5a'};
 const ASSESSOR='https://maps.clarkcountynv.gov/assessor/AssessorParcelDetail/pcl.aspx';
-let CARDS=[],FILTER=null,VIEW='map',SORT={k:'score',dir:-1},MAP=null,LAYER=null;
+let CARDS=[],FILTER=null,SORT={k:'score',dir:-1},MAP=null,LAYER=null,MARKERS={},SEL=null;
 async function loadJSON(p){try{const r=await fetch(p,{cache:'no-store'});if(!r.ok)return null;return await r.json();}catch(e){return null;}}
 function dot(s){return ['live','reachable','pending','down'].includes(s)?s:'pending';}
 function scoreColor(n){return n>=60?'#3fb950':n>=30?'#d29922':'#5a606b';}
 function leadColor(c){return (c.trade_tags&&c.trade_tags.length&&TRADE_COLORS[c.trade_tags[0]])||scoreColor(c.score);}
-function scoreCls(n){return n>=60?'s-hi':n>=30?'s-mid':'s-lo';}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function row(k,v){return v?'<div class="kv"><span>'+k+'</span><b>'+esc(v)+'</b></div>':'';}
-function filtered(){return FILTER?CARDS.filter(c=>(c.trade_tags||[]).includes(FILTER)):CARDS;}
+function num(v){return parseFloat(String(v==null?'':v).replace(/[^0-9.]/g,''))||0;}
+function filtered(){let l=FILTER?CARDS.filter(c=>(c.trade_tags||[]).includes(FILTER)):CARDS.slice();
+  const k=SORT.k;l.sort((a,b)=>{let va,vb;
+    if(k==='trade'){va=(a.trade_tags||[])[0]||'';vb=(b.trade_tags||[])[0]||'';}
+    else if(k==='score'||k==='assessed_value'){va=num(a[k]);vb=num(b[k]);}
+    else{va=a[k]==null?'':String(a[k]);vb=b[k]==null?'':String(b[k]);}
+    return (va<vb?-1:va>vb?1:0)*SORT.dir;});return l;}
 function initMap(){MAP=L.map('map',{zoomControl:true}).setView([36.12,-115.17],10);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(MAP);
   LAYER=L.layerGroup().addTo(MAP);}
-function renderMap(){if(!MAP)initMap();LAYER.clearLayers();const pts=[];
+function popupHTML(c){return '<div class="pp"><div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
+  (c.owner_name?'<div><span class="pp-k">owner</span> '+esc(c.owner_name)+'</div>':'')+
+  (c.assessed_value?'<div><span class="pp-k">value</span> '+esc(c.assessed_value)+'</div>':'')+
+  (c.last_sale_date?'<div><span class="pp-k">last sale</span> '+esc(c.last_sale_date)+'</div>':'')+
+  '<div><span class="pp-k">score</span> '+c.score+(c.trade_tags&&c.trade_tags.length?' &middot; '+c.trade_tags.join(', '):'')+'</div>'+
+  (c.parcel_apn?'<div style="margin-top:5px"><a href="'+ASSESSOR+'" target="_blank" rel="noopener">Assessor lookup (APN '+esc(c.parcel_apn)+') &#8599;</a></div>':'')+
+  (c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';}
+function renderMap(){if(!MAP)initMap();LAYER.clearLayers();MARKERS={};const pts=[];
   filtered().filter(c=>c.lat&&c.lng).forEach(c=>{
     const m=L.circleMarker([c.lat,c.lng],{radius:6,color:leadColor(c),fillColor:leadColor(c),fillOpacity:.85,weight:1.5});
-    m.bindPopup('<div class="pp">'+'<div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
-      (c.owner_name?'<div><span class="pp-k">owner</span> '+esc(c.owner_name)+'</div>':'')+
-      (c.assessed_value?'<div><span class="pp-k">value</span> '+esc(c.assessed_value)+'</div>':'')+
-      (c.last_sale_date?'<div><span class="pp-k">last sale</span> '+esc(c.last_sale_date)+'</div>':'')+
-      '<div><span class="pp-k">score</span> '+c.score+(c.trade_tags&&c.trade_tags.length?' &middot; '+c.trade_tags.join(', '):'')+'</div>'+
-      (c.parcel_apn?'<div style="margin-top:5px"><a href="'+ASSESSOR+'" target="_blank" rel="noopener">Assessor lookup (APN '+esc(c.parcel_apn)+') &#8599;</a></div>':'')+
-      (c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>');
-    m.addTo(LAYER);pts.push([c.lat,c.lng]);});
+    m.bindPopup(popupHTML(c));m.on('click',()=>selectLead(c.id,true));m.addTo(LAYER);MARKERS[c.id]=m;pts.push([c.lat,c.lng]);});
   if(pts.length)MAP.fitBounds(pts,{padding:[30,30],maxZoom:14});
   const used=[...new Set(CARDS.flatMap(c=>c.trade_tags||[]))];
-  $('#legend').innerHTML=used.length?used.map(t=>'<span><i style="background:'+(TRADE_COLORS[t]||'#888')+'"></i>'+t+'</span>').join('')+'<span style="color:var(--faint)">&middot; untagged colored by score</span>':'<span style="color:var(--faint)">dots colored by score until trade data populates</span>';}
+  $('#legend').innerHTML=used.length?used.map(t=>'<span><i style="background:'+(TRADE_COLORS[t]||'#888')+'"></i>'+t+'</span>').join('')+'<span style="color:var(--faint)">&middot; untagged = score color</span>':'<span style="color:var(--faint)">dots colored by score until trade data populates</span>';}
+function selectLead(id,fromMap){SEL=id;
+  document.querySelectorAll('.lrow').forEach(r=>r.classList.toggle('sel',r.dataset.id===id));
+  const r=document.querySelector('.lrow[data-id="'+CSS.escape(id)+'"]');if(r)r.scrollIntoView({block:'nearest',behavior:'smooth'});
+  const m=MARKERS[id];if(m){if(!fromMap){const ll=m.getLatLng();MAP.panTo(ll);}m.openPopup();}}
+function listHTML(){const cols=[['score','SCORE','c-score'],['situs_address','ADDRESS','c-addr'],['owner_name','OWNER','c-owner'],['trade','TRADE','c-trade'],['assessed_value','VALUE','c-val']];
+  const head='<div class="lhead">'+cols.map(c=>'<div class="'+c[2]+'" data-k="'+c[0]+'">'+c[1]+(SORT.k===c[0]?(SORT.dir>0?' \u25b2':' \u25bc'):'')+'</div>').join('')+'</div>';
+  const rows=filtered().map(c=>'<div class="lrow'+(SEL===c.id?' sel':'')+'" data-id="'+esc(c.id)+'">'+
+    '<div class="c-score"><span class="scoredot" style="background:'+leadColor(c)+'"></span>'+c.score+'</div>'+
+    '<div class="c-addr">'+esc(c.situs_address||'(unknown)')+'</div>'+
+    '<div class="c-owner">'+esc(c.owner_name||'\u2014')+'</div>'+
+    '<div class="c-trade">'+((c.trade_tags||[])[0]||'\u2014')+'</div>'+
+    '<div class="c-val">'+esc(c.assessed_value||'\u2014')+'</div></div>').join('');
+  return head+'<div class="lbody">'+(rows||'<div class="empty" style="border:0">no leads match this filter</div>')+'</div>';}
+function renderList(){const p=$('#pane-list');
+  if(!CARDS.length){p.innerHTML='<div class="empty" style="border:0;height:580px;display:flex;flex-direction:column;justify-content:center"><div class="big">NO HARVEST YET</div>Run the GitHub Action: Actions &rarr; "GRIT harvest" &rarr; Run workflow.</div>';return;}
+  p.innerHTML=listHTML();
+  p.querySelectorAll('.lhead div[data-k]').forEach(h=>h.onclick=()=>{const k=h.dataset.k;SORT.dir=(SORT.k===k?-SORT.dir:-1);SORT.k=k;renderList();});
+  p.querySelectorAll('.lrow').forEach(r=>r.onclick=()=>selectLead(r.dataset.id,false));}
 function renderHealth(h){const m=$('#matrix');
-  if(!h||!h.sources){m.innerHTML='<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Trigger the GitHub Action (Actions tab &rarr; Run workflow).</div>';return;}
+  if(!h||!h.sources){m.innerHTML='<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Trigger the GitHub Action.</div>';return;}
   m.innerHTML=h.sources.map(s=>{const cls=dot(s.status);
     const meta=[s.note,s.error?('ERR: '+s.error):'',s.latency_ms!=null?(s.latency_ms+'ms'):'',s.records!=null?(s.records+' items'):''].filter(Boolean).join(' \u00b7 ');
     return '<div class="hcard '+cls+'"><div class="hn"><span class="hdot"></span><span class="hname">'+esc(s.name)+'</span><span class="hstat">'+s.status+'</span></div><div><span class="kind">'+s.kind+'</span> <span class="kind">'+s.tier+'</span></div><div class="hmeta">'+esc(meta)+'</div></div>';}).join('');
   if(h.generated_at)$('#stamp').textContent='health '+h.generated_at;}
-function cardHTML(c){const sig=(c.signals||[]).map(s=>'<li>'+esc(s)+'</li>').join('');
-  return '<div class="card" style="border-top-color:'+leadColor(c)+'"><div class="crow"><span class="addr">'+esc(c.situs_address||'(address unknown)')+'</span><span class="scorebox '+scoreCls(c.score)+'">'+c.score+'</span></div>'+
-    '<div class="apn">APN '+esc(c.parcel_apn||'\u2014')+' \u00b7 '+esc(c.city||'')+' '+esc(c.zip||'')+'</div>'+
-    '<div class="tags">'+(c.trade_tags||[]).map(t=>'<span class="ttag t" style="border-left-color:'+(TRADE_COLORS[t]||'#888')+';color:'+(TRADE_COLORS[t]||'#888')+'">'+t+'</span>').join('')+'</div>'+
-    row('Owner',c.owner_name)+row('Owner mailing',c.owner_mailing)+row('Land use',c.land_use)+row('Assessed value',c.assessed_value)+row('Last sale',c.last_sale_date)+
-    (sig?'<ul class="sig">'+sig+'</ul>':'')+(c.suggested_action?'<div class="next">&#9656; '+esc(c.suggested_action)+'</div>':'')+
-    (c.parcel_apn?'<div class="cardlinks"><a href="'+ASSESSOR+'" target="_blank" rel="noopener">Assessor &#8599;</a></div>':'')+'</div>';}
-function tableHTML(){const cols=[['score','SCORE'],['trade','TRADE'],['situs_address','ADDRESS'],['owner_name','OWNER'],['assessed_value','VALUE'],['city','CITY']];
-  const rows=filtered().slice().sort((a,b)=>{
-    let k=SORT.k,va,vb;
-    if(k==='trade'){va=(a.trade_tags||[])[0]||'';vb=(b.trade_tags||[])[0]||'';}
-    else{va=a[k]==null?'':a[k];vb=b[k]==null?'':b[k];}
-    if(k==='score'||k==='assessed_value'){va=parseFloat(String(va).replace(/[^0-9.]/g,''))||0;vb=parseFloat(String(vb).replace(/[^0-9.]/g,''))||0;}
-    return (va<vb?-1:va>vb?1:0)*SORT.dir;});
-  return '<table><thead><tr>'+cols.map(c=>'<th data-k="'+c[0]+'">'+c[1]+(SORT.k===c[0]?(SORT.dir>0?' \u25b2':' \u25bc'):'')+'</th>').join('')+'<th></th></tr></thead><tbody>'+
-    rows.map(c=>'<tr><td class="num"><span class="scoredot" style="background:'+leadColor(c)+'"></span>'+c.score+'</td>'+
-      '<td>'+((c.trade_tags||[])[0]||'\u2014')+'</td><td style="color:var(--txt)">'+esc(c.situs_address||'(unknown)')+'</td>'+
-      '<td>'+esc(c.owner_name||'\u2014')+'</td><td class="num">'+esc(c.assessed_value||'\u2014')+'</td><td>'+esc(c.city||'\u2014')+'</td>'+
-      '<td>'+(c.parcel_apn?'<a href="'+ASSESSOR+'" target="_blank" rel="noopener" style="color:var(--blue)">&#8599;</a>':'')+'</td></tr>').join('')+'</tbody></table>';}
-function renderContent(){const wrap=$('#content');
-  if(!CARDS.length){wrap.innerHTML='<div class="empty"><div class="big">NO HARVEST YET</div>The engine now samples multiple owner/address sources and uses the richest. Trigger a harvest: <b>Actions tab &rarr; "GRIT harvest" &rarr; Run workflow</b>. Real data only.</div>';return;}
-  if(VIEW==='map'){wrap.innerHTML='<div class="grid">'+filtered().map(cardHTML).join('')+'</div>';}
-  else{wrap.innerHTML=tableHTML();wrap.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;SORT.dir=(SORT.k===k?-SORT.dir:-1);SORT.k=k;renderContent();});}}
+function exportCSV(){const cols=['score','situs_address','owner_name','owner_mailing','parcel_apn','city','zip','assessed_value','last_sale_date','trade_tags','lat','lng','suggested_action'];
+  const esc2=v=>'"'+String(v==null?'':Array.isArray(v)?v.join('|'):v).replace(/"/g,'""')+'"';
+  const lines=[cols.join(',')].concat(filtered().map(c=>cols.map(k=>esc2(c[k])).join(',')));
+  const blob=new Blob([lines.join('\n')],{type:'text/csv'});const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='grit_leads_'+new Date().toISOString().slice(0,10)+'.csv';a.click();}
 function renderToolbar(){const tb=$('#toolbar');const trades=[...new Set(CARDS.flatMap(c=>c.trade_tags||[]))].sort();
   tb.innerHTML='<span class="tcount">'+filtered().length+' leads</span>'+
     (trades.length?'<span class="filt '+(!FILTER?'on':'')+'" data-t="">all</span>'+trades.map(t=>'<span class="filt '+(FILTER===t?'on':'')+'" data-t="'+t+'">'+t+'</span>').join(''):'')+
-    '<span class="vtoggle"><button data-v="map" class="'+(VIEW==='map'?'on':'')+'">MAP CARDS</button><button data-v="list" class="'+(VIEW==='list'?'on':'')+'">LIST</button></span>';
-  tb.querySelectorAll('.filt').forEach(el=>el.onclick=()=>{FILTER=el.dataset.t||null;renderToolbar();renderContent();renderMap();});
-  tb.querySelectorAll('.vtoggle button').forEach(el=>el.onclick=()=>{VIEW=el.dataset.v;renderToolbar();renderContent();});}
+    '<button class="btn" id="csv">&#8595; CSV</button>';
+  tb.querySelectorAll('.filt').forEach(el=>el.onclick=()=>{FILTER=el.dataset.t||null;renderToolbar();renderList();renderMap();});
+  $('#csv').onclick=exportCSV;}
 (async()=>{initMap();renderHealth(await loadJSON('data/health.json'));
   const cd=await loadJSON('data/cards.json');CARDS=(cd&&cd.cards)||[];
+  CARDS.forEach((c,i)=>{if(!c.id)c.id='c'+i;});
   if(cd&&cd.harvest){const h=cd.harvest;$('#harveststate').textContent=h.layer?'\u00b7 source: '+(h.source_name||h.layer)+(h.vintage?' ('+h.vintage+')':'')+' \u00b7 '+cd.count+' leads':'\u00b7 '+(h.status||'')+' '+(h.detail||'');}
-  renderToolbar();renderContent();renderMap();})();
+  renderToolbar();renderList();renderMap();})();
 </script>
 </body>
 </html>
