@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-27T00:34:46Z",
+  "generated_at": "2026-05-27T01:58:22Z",
   "harvest": {
     "status": "no_data",
-    "detail": "No harvest yet. Run `python -m grit discover` to pin the parcel layer, then `python -m grit harvest`."
+    "detail": "CLARK_PARCEL_LAYER not set. Run `python -m grit discover` to find it, then set it in grit/config.py. Until then: empty (by design)."
   },
   "count": 0,
   "cards": []
