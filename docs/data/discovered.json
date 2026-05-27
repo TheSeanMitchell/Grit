@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-27T04:08:10Z",
+  "url": "https://gisgate.co.clark.nv.us/arcgis/rest/services/AdminServ/SB57_Parcels/FeatureServer/0",
+  "name": "SB57_Parcels",
+  "score": 8,
+  "fields": [
+    "OBJECTID",
+    "APN",
+    "ARC_SingleLine",
+    "Category",
+    "Address_Parcel_Number",
+    "Fine_Lien",
+    "Case_Opened",
+    "CALC_ACRES_1",
+    "ASSR_ACRES_1",
+    "APN_1",
+    "PARCELTYPE_1",
+    "TAX_DIST_1",
+    "Shape__Area",
+    "Shape__Length"
+  ]
+}
