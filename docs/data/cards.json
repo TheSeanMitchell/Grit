@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T06:42:05Z",
+  "generated_at": "2026-05-27T16:48:15Z",
   "harvest": {
     "status": "ok",
     "layer": "All Parcels -2018-12-31",
@@ -21,14 +21,14 @@
     },
     "records": 5000,
     "pages": 5,
-    "latency_ms": 60412
+    "latency_ms": 69150
   },
   "count": 500,
   "cards": [
     {
       "id": "clark_gis:16303715001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16303715001",
       "situs_address": "2135 BERNADINE CT     ",
       "city": "LAS VEGAS",
@@ -65,7 +65,7 @@
     {
       "id": "clark_gis:16301301012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16301301012",
       "situs_address": "1985 DUNEVILLE ST           ",
       "city": "CLARK COUNTY",
@@ -102,7 +102,7 @@
     {
       "id": "clark_gis:18605512005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18605512005",
       "situs_address": "613 MT ELBERT WAY          ",
       "city": "BOULDER CITY",
@@ -139,7 +139,7 @@
     {
       "id": "clark_gis:18605511070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18605511070",
       "situs_address": "597 MT HUNTER WAY          ",
       "city": "BOULDER CITY",
@@ -176,7 +176,7 @@
     {
       "id": "clark_gis:19018417003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018417003",
       "situs_address": "2516 ECLIPSING STARS DR           ",
       "city": "HENDERSON",
@@ -213,7 +213,7 @@
     {
       "id": "clark_gis:12526204008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12526204008",
       "situs_address": "6400 W TROPICAL PKWY       ",
       "city": "LAS VEGAS",
@@ -250,7 +250,7 @@
     {
       "id": "clark_gis:17832510060",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832510060",
       "situs_address": "1835 MOUNTAIN RANCH AVE          ",
       "city": "HENDERSON",
@@ -287,7 +287,7 @@
     {
       "id": "clark_gis:18605512008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18605512008",
       "situs_address": "619 MT ELBERT WAY          ",
       "city": "BOULDER CITY",
@@ -324,7 +324,7 @@
     {
       "id": "clark_gis:17832510093",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832510093",
       "situs_address": "1810 TOWERING MESA AVE          ",
       "city": "HENDERSON",
@@ -361,7 +361,7 @@
     {
       "id": "clark_gis:19018816001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018816001",
       "situs_address": "2405 WEAVERVILLE DR           ",
       "city": "HENDERSON",
@@ -398,7 +398,7 @@
     {
       "id": "clark_gis:16327813007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16327813007",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -435,7 +435,7 @@
     {
       "id": "clark_gis:17610310079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17610310079",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -472,7 +472,7 @@
     {
       "id": "clark_gis:17610302029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17610302029",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -509,7 +509,7 @@
     {
       "id": "clark_gis:17827116001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17827116001",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -546,7 +546,7 @@
     {
       "id": "clark_gis:17808318012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808318012",
       "situs_address": "2033 SHADOW BROOK WAY         ",
       "city": "HENDERSON",
@@ -583,7 +583,7 @@
     {
       "id": "clark_gis:17832510054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832510054",
       "situs_address": "2083 KING MESA DR           ",
       "city": "HENDERSON",
@@ -620,7 +620,7 @@
     {
       "id": "clark_gis:19018814005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018814005",
       "situs_address": "2328 JANESVILLE LN           ",
       "city": "HENDERSON",
@@ -657,7 +657,7 @@
     {
       "id": "clark_gis:19018817030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018817030",
       "situs_address": "2221 SUFFRON HILLS CT           ",
       "city": "HENDERSON",
@@ -694,7 +694,7 @@
     {
       "id": "clark_gis:17808812017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808812017",
       "situs_address": "1904 TOMAHAWK DR ",
       "city": "HENDERSON",
@@ -731,7 +731,7 @@
     {
       "id": "clark_gis:19019512060",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019512060",
       "situs_address": "2368 CANYONVILLE DR           ",
       "city": "HENDERSON",
@@ -768,7 +768,7 @@
     {
       "id": "clark_gis:13713213074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13713213074",
       "situs_address": "2750 FAISS DR           ",
       "city": "LAS VEGAS",
@@ -805,7 +805,7 @@
     {
       "id": "clark_gis:17705303002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17705303002",
       "situs_address": "6920 POLARIS AVE          ",
       "city": "ENTERPRISE",
@@ -842,7 +842,7 @@
     {
       "id": "clark_gis:13933810008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13933810008",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -879,7 +879,7 @@
     {
       "id": "clark_gis:19105211006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19105211006",
       "situs_address": "11717 OAKLAND HILLS DR         ",
       "city": "ENTERPRISE",
@@ -916,7 +916,7 @@
     {
       "id": "clark_gis:19017112083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19017112083",
       "situs_address": "2079 ECHO PARK PL           ",
       "city": "HENDERSON",
@@ -953,7 +953,7 @@
     {
       "id": "clark_gis:16335101018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16335101018",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -990,7 +990,7 @@
     {
       "id": "clark_gis:17725717124",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17725717124",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -1027,7 +1027,7 @@
     {
       "id": "clark_gis:16302601006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16302601006",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -1064,7 +1064,7 @@
     {
       "id": "clark_gis:16302601010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16302601010",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -1101,7 +1101,7 @@
     {
       "id": "clark_gis:16423213040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16423213040",
       "situs_address": "               ",
       "city": "SUMMERLIN",
@@ -1138,7 +1138,7 @@
     {
       "id": "clark_gis:17625412076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17625412076",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -1175,7 +1175,7 @@
     {
       "id": "clark_gis:13909315005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13909315005",
       "situs_address": "3420 CAPITOL REEF DR           ",
       "city": "NORTH LAS VEGAS",
@@ -1212,7 +1212,7 @@
     {
       "id": "clark_gis:14017302008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017302008",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -1249,7 +1249,7 @@
     {
       "id": "clark_gis:19019112034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019112034",
       "situs_address": "2338 PEACEFUL SKY DR           ",
       "city": "HENDERSON",
@@ -1286,7 +1286,7 @@
     {
       "id": "clark_gis:17816712066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816712066",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -1323,7 +1323,7 @@
     {
       "id": "clark_gis:13934601007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934601007",
       "situs_address": "707 FREMONT ST  2270     ",
       "city": "LAS VEGAS",
@@ -1360,7 +1360,7 @@
     {
       "id": "clark_gis:14029411096",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14029411096",
       "situs_address": "4477 COOL VALLEY DR           ",
       "city": "LAS VEGAS",
@@ -1397,7 +1397,7 @@
     {
       "id": "clark_gis:17624101027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17624101027",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -1434,7 +1434,7 @@
     {
       "id": "clark_gis:14029411177",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14029411177",
       "situs_address": "4585 BINGHAM AVE          ",
       "city": "LAS VEGAS",
@@ -1471,7 +1471,7 @@
     {
       "id": "clark_gis:12328401014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12328401014",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -1508,7 +1508,7 @@
     {
       "id": "clark_gis:19124512049",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124512049",
       "situs_address": "2346 PEACEFUL SKY DR           ",
       "city": "HENDERSON",
@@ -1545,7 +1545,7 @@
     {
       "id": "clark_gis:13934410209",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934410209",
       "situs_address": "801 S 6TH ST         ",
       "city": "LAS VEGAS",
@@ -1582,7 +1582,7 @@
     {
       "id": "clark_gis:13934612028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934612028",
       "situs_address": "801 FREMONT ST           ",
       "city": "LAS VEGAS",
@@ -1619,7 +1619,7 @@
     {
       "id": "clark_gis:13934612037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934612037",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -1656,7 +1656,7 @@
     {
       "id": "clark_gis:13934612085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934612085",
       "situs_address": "900 STEWART AVE          ",
       "city": "LAS VEGAS",
@@ -1693,7 +1693,7 @@
     {
       "id": "clark_gis:17814413023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17814413023",
       "situs_address": "863 SUMNER RANCH RD           ",
       "city": "HENDERSON",
@@ -1730,7 +1730,7 @@
     {
       "id": "clark_gis:13813701054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13813701054",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -1767,7 +1767,7 @@
     {
       "id": "clark_gis:16133817035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133817035",
       "situs_address": "803 SECLUSION CIR          ",
       "city": "HENDERSON",
@@ -1804,7 +1804,7 @@
     {
       "id": "clark_gis:17703311006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17703311006",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -1841,7 +1841,7 @@
     {
       "id": "clark_gis:17808318013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808318013",
       "situs_address": "2043 SHADOW BROOK WAY         ",
       "city": "HENDERSON",
@@ -1878,7 +1878,7 @@
     {
       "id": "clark_gis:13713315066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13713315066",
       "situs_address": "2728 DARBY FALLS DR           ",
       "city": "LAS VEGAS",
@@ -1915,7 +1915,7 @@
     {
       "id": "clark_gis:18604410101",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18604410101",
       "situs_address": "               ",
       "city": "BOULDER CITY",
@@ -1952,7 +1952,7 @@
     {
       "id": "clark_gis:13912103044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13912103044",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -1989,7 +1989,7 @@
     {
       "id": "clark_gis:13912103042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13912103042",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -2026,7 +2026,7 @@
     {
       "id": "clark_gis:17612614036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17612614036",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2063,7 +2063,7 @@
     {
       "id": "clark_gis:13924610291",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13924610291",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -2100,7 +2100,7 @@
     {
       "id": "clark_gis:17825811043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17825811043",
       "situs_address": "53 BLAVEN DR           ",
       "city": "HENDERSON",
@@ -2137,7 +2137,7 @@
     {
       "id": "clark_gis:19105117001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19105117001",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2174,7 +2174,7 @@
     {
       "id": "clark_gis:13923311043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13923311043",
       "situs_address": "1832 ROOSEVELT ST           ",
       "city": "NORTH LAS VEGAS",
@@ -2211,7 +2211,7 @@
     {
       "id": "clark_gis:14029415034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14029415034",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -2248,7 +2248,7 @@
     {
       "id": "clark_gis:19018815071",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018815071",
       "situs_address": "2316 WHITES FERRY CT           ",
       "city": "HENDERSON",
@@ -2285,7 +2285,7 @@
     {
       "id": "clark_gis:17827116013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17827116013",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -2322,7 +2322,7 @@
     {
       "id": "clark_gis:16310405014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16310405014",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -2359,7 +2359,7 @@
     {
       "id": "clark_gis:16034112055",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16034112055",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -2396,7 +2396,7 @@
     {
       "id": "clark_gis:12609601012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12609601012",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -2433,7 +2433,7 @@
     {
       "id": "clark_gis:19019116038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019116038",
       "situs_address": "2345 MINOLTA CT           ",
       "city": "HENDERSON",
@@ -2470,7 +2470,7 @@
     {
       "id": "clark_gis:13802110144",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13802110144",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -2507,7 +2507,7 @@
     {
       "id": "clark_gis:19104602018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19104602018",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2544,7 +2544,7 @@
     {
       "id": "clark_gis:17634818030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634818030",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2581,7 +2581,7 @@
     {
       "id": "clark_gis:19019113105",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019113105",
       "situs_address": "2518 STARDUST VALLEY DR           ",
       "city": "HENDERSON",
@@ -2618,7 +2618,7 @@
     {
       "id": "clark_gis:17808319019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808319019",
       "situs_address": "2018 PINION SPRINGS DR         ",
       "city": "HENDERSON",
@@ -2655,7 +2655,7 @@
     {
       "id": "clark_gis:13926811025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13926811025",
       "situs_address": "2425 E MCWILLIAMS AVE        ",
       "city": "LAS VEGAS",
@@ -2692,7 +2692,7 @@
     {
       "id": "clark_gis:17725717123",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17725717123",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -2729,7 +2729,7 @@
     {
       "id": "clark_gis:12607401019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12607401019",
       "situs_address": "14580 GRAND TETON DR           ",
       "city": "CLARK COUNTY",
@@ -2766,7 +2766,7 @@
     {
       "id": "clark_gis:17634115067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634115067",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2803,7 +2803,7 @@
     {
       "id": "clark_gis:17634115066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634115066",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -2840,7 +2840,7 @@
     {
       "id": "clark_gis:17712619002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17712619002",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -2877,7 +2877,7 @@
     {
       "id": "clark_gis:13935211104",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935211104",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -2914,7 +2914,7 @@
     {
       "id": "clark_gis:13927201002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13927201002",
       "situs_address": "951 E ST           ",
       "city": "LAS VEGAS",
@@ -2951,7 +2951,7 @@
     {
       "id": "clark_gis:16106816018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16106816018",
       "situs_address": "4095 E CLEVELAND AVE        ",
       "city": "SUNRISE MANOR",
@@ -2988,7 +2988,7 @@
     {
       "id": "clark_gis:13825104001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13825104001",
       "situs_address": "1570 SMITH ST           ",
       "city": "CLARK COUNTY",
@@ -3025,7 +3025,7 @@
     {
       "id": "clark_gis:17728301018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17728301018",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -3062,7 +3062,7 @@
     {
       "id": "clark_gis:13920710009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13920710009",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -3099,7 +3099,7 @@
     {
       "id": "clark_gis:17615401029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17615401029",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -3136,7 +3136,7 @@
     {
       "id": "clark_gis:17804511009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17804511009",
       "situs_address": "812 SECLUSION CIR          ",
       "city": "HENDERSON",
@@ -3173,7 +3173,7 @@
     {
       "id": "clark_gis:17516301009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17516301009",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -3210,7 +3210,7 @@
     {
       "id": "clark_gis:13712111059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13712111059",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -3247,7 +3247,7 @@
     {
       "id": "clark_gis:16317401024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16317401024",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -3284,7 +3284,7 @@
     {
       "id": "clark_gis:19019111077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019111077",
       "situs_address": "2367 HYDRUS AVE          ",
       "city": "HENDERSON",
@@ -3321,7 +3321,7 @@
     {
       "id": "clark_gis:14034810022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14034810022",
       "situs_address": "86 LAILANI ST           ",
       "city": "SUNRISE MANOR",
@@ -3358,7 +3358,7 @@
     {
       "id": "clark_gis:16331411022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16331411022",
       "situs_address": "9956 STAR LAKE AVE          ",
       "city": "SPRING VALLEY",
@@ -3395,7 +3395,7 @@
     {
       "id": "clark_gis:12525311064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12525311064",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -3432,7 +3432,7 @@
     {
       "id": "clark_gis:14030803002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14030803002",
       "situs_address": "750 N LAMB BLVD       ",
       "city": "LAS VEGAS",
@@ -3469,7 +3469,7 @@
     {
       "id": "clark_gis:17629110082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629110082",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -3506,7 +3506,7 @@
     {
       "id": "clark_gis:13925201001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13925201001",
       "situs_address": "1250 N EASTERN AVE        ",
       "city": "LAS VEGAS",
@@ -3543,7 +3543,7 @@
     {
       "id": "clark_gis:13923210078",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13923210078",
       "situs_address": "2125 DONNA ST           ",
       "city": "NORTH LAS VEGAS",
@@ -3580,7 +3580,7 @@
     {
       "id": "clark_gis:12508602002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12508602002",
       "situs_address": "8751 HOMESTEAD RD           ",
       "city": "CLARK COUNTY",
@@ -3617,7 +3617,7 @@
     {
       "id": "clark_gis:19019116040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019116040",
       "situs_address": "2476 JADE SKY ST           ",
       "city": "HENDERSON",
@@ -3654,7 +3654,7 @@
     {
       "id": "clark_gis:13723511174",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13723511174",
       "situs_address": "2344 SUN CLIFFS ST           ",
       "city": "LAS VEGAS",
@@ -3691,7 +3691,7 @@
     {
       "id": "clark_gis:13823814002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13823814002",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -3728,7 +3728,7 @@
     {
       "id": "clark_gis:13934712001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934712001",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -3765,7 +3765,7 @@
     {
       "id": "clark_gis:17823113167",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17823113167",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -3802,7 +3802,7 @@
     {
       "id": "clark_gis:16027113031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027113031",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -3839,7 +3839,7 @@
     {
       "id": "clark_gis:17927507001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17927507001",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -3876,7 +3876,7 @@
     {
       "id": "clark_gis:16133816005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133816005",
       "situs_address": "815 STILLWATER LN           ",
       "city": "HENDERSON",
@@ -3913,7 +3913,7 @@
     {
       "id": "clark_gis:17803111144",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17803111144",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -3950,7 +3950,7 @@
     {
       "id": "clark_gis:13806803005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13806803005",
       "situs_address": "4065 N CHIEFTAIN ST         ",
       "city": "CLARK COUNTY",
@@ -3987,7 +3987,7 @@
     {
       "id": "clark_gis:13923210071",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13923210071",
       "situs_address": "2055 DONNA ST           ",
       "city": "NORTH LAS VEGAS",
@@ -4024,7 +4024,7 @@
     {
       "id": "clark_gis:13810411007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13810411007",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -4061,7 +4061,7 @@
     {
       "id": "clark_gis:17711310062",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17711310062",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -4098,7 +4098,7 @@
     {
       "id": "clark_gis:19019116107",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019116107",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -4135,7 +4135,7 @@
     {
       "id": "clark_gis:19019513002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019513002",
       "situs_address": "2369 WEAVERVILLE DR           ",
       "city": "HENDERSON",
@@ -4172,7 +4172,7 @@
     {
       "id": "clark_gis:14019301017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14019301017",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -4209,7 +4209,7 @@
     {
       "id": "clark_gis:12426815101",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12426815101",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -4246,7 +4246,7 @@
     {
       "id": "clark_gis:13713315070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13713315070",
       "situs_address": "10909 BUTTON WILLOW DR           ",
       "city": "LAS VEGAS",
@@ -4283,7 +4283,7 @@
     {
       "id": "clark_gis:16135213200",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16135213200",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -4320,7 +4320,7 @@
     {
       "id": "clark_gis:17705206023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17705206023",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -4357,7 +4357,7 @@
     {
       "id": "clark_gis:19019110004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019110004",
       "situs_address": "2440 ANDROMEDA AVE          ",
       "city": "HENDERSON",
@@ -4394,7 +4394,7 @@
     {
       "id": "clark_gis:12427715082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12427715082",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -4431,7 +4431,7 @@
     {
       "id": "clark_gis:16034112054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16034112054",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -4468,7 +4468,7 @@
     {
       "id": "clark_gis:19007618005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19007618005",
       "situs_address": "7 GOLF CREST CT           ",
       "city": "HENDERSON",
@@ -4505,7 +4505,7 @@
     {
       "id": "clark_gis:16304313010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16304313010",
       "situs_address": "8301 BLACK BROTHERS CT           ",
       "city": "LAS VEGAS",
@@ -4542,7 +4542,7 @@
     {
       "id": "clark_gis:13823813005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13823813005",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -4579,7 +4579,7 @@
     {
       "id": "clark_gis:17829811040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17829811040",
       "situs_address": "1851 MOUNTAIN RANCH AVE          ",
       "city": "HENDERSON",
@@ -4616,7 +4616,7 @@
     {
       "id": "clark_gis:14019315224",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14019315224",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -4653,7 +4653,7 @@
     {
       "id": "clark_gis:16131103001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16131103001",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -4690,7 +4690,7 @@
     {
       "id": "clark_gis:13927211054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13927211054",
       "situs_address": "923 D ST           ",
       "city": "LAS VEGAS",
@@ -4727,7 +4727,7 @@
     {
       "id": "clark_gis:16325710017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16325710017",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -4764,7 +4764,7 @@
     {
       "id": "clark_gis:16133410002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133410002",
       "situs_address": "1542 PLAIN SIGHT AVE          ",
       "city": "HENDERSON",
@@ -4801,7 +4801,7 @@
     {
       "id": "clark_gis:19006613011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19006613011",
       "situs_address": "1321 ROSSINI ST           ",
       "city": "HENDERSON",
@@ -4838,7 +4838,7 @@
     {
       "id": "clark_gis:17722414007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17722414007",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -4875,7 +4875,7 @@
     {
       "id": "clark_gis:16317515027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16317515027",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -4912,7 +4912,7 @@
     {
       "id": "clark_gis:17927507007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17927507007",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -4949,7 +4949,7 @@
     {
       "id": "clark_gis:17832510059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832510059",
       "situs_address": "1856 MOUNTAIN RANCH AVE          ",
       "city": "HENDERSON",
@@ -4986,7 +4986,7 @@
     {
       "id": "clark_gis:17803111142",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17803111142",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -5023,7 +5023,7 @@
     {
       "id": "clark_gis:13925510060",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13925510060",
       "situs_address": "3201 E OWENS AVE        ",
       "city": "LAS VEGAS",
@@ -5060,7 +5060,7 @@
     {
       "id": "clark_gis:13905114032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13905114032",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -5097,7 +5097,7 @@
     {
       "id": "clark_gis:14017411102",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411102",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -5134,7 +5134,7 @@
     {
       "id": "clark_gis:12407713081",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12407713081",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -5171,7 +5171,7 @@
     {
       "id": "clark_gis:12407814101",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12407814101",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -5208,7 +5208,7 @@
     {
       "id": "clark_gis:16109411007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16109411007",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -5245,7 +5245,7 @@
     {
       "id": "clark_gis:17816712064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816712064",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -5282,7 +5282,7 @@
     {
       "id": "clark_gis:17714713050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17714713050",
       "situs_address": "2115 ZICKER AVE          ",
       "city": "PARADISE",
@@ -5319,7 +5319,7 @@
     {
       "id": "clark_gis:16116514016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16116514016",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -5356,7 +5356,7 @@
     {
       "id": "clark_gis:13714711100",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13714711100",
       "situs_address": "10920 FORT VALLEY AVE          ",
       "city": "LAS VEGAS",
@@ -5393,7 +5393,7 @@
     {
       "id": "clark_gis:12507811030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507811030",
       "situs_address": "9405 MELVA BLUE CT           ",
       "city": "LAS VEGAS",
@@ -5430,7 +5430,7 @@
     {
       "id": "clark_gis:17814413021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17814413021",
       "situs_address": "865 SUMNER RANCH RD           ",
       "city": "HENDERSON",
@@ -5467,7 +5467,7 @@
     {
       "id": "clark_gis:14029601001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14029601001",
       "situs_address": "1395 N NELLIS BLVD       ",
       "city": "LAS VEGAS",
@@ -5504,7 +5504,7 @@
     {
       "id": "clark_gis:13810413005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13810413005",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -5541,7 +5541,7 @@
     {
       "id": "clark_gis:19018814021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018814021",
       "situs_address": "2373 CANYONVILLE DR           ",
       "city": "HENDERSON",
@@ -5578,7 +5578,7 @@
     {
       "id": "clark_gis:19104713059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19104713059",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5615,7 +5615,7 @@
     {
       "id": "clark_gis:16313501016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501016",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -5652,7 +5652,7 @@
     {
       "id": "clark_gis:17808813033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808813033",
       "situs_address": "224 N WHITE CLOUD CIR       ",
       "city": "HENDERSON",
@@ -5689,7 +5689,7 @@
     {
       "id": "clark_gis:17629511172",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511172",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5726,7 +5726,7 @@
     {
       "id": "clark_gis:17629512161",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512161",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5763,7 +5763,7 @@
     {
       "id": "clark_gis:17629512159",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512159",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5800,7 +5800,7 @@
     {
       "id": "clark_gis:13736516001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13736516001",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -5837,7 +5837,7 @@
     {
       "id": "clark_gis:17629414044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629414044",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5874,7 +5874,7 @@
     {
       "id": "clark_gis:17629512166",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512166",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5911,7 +5911,7 @@
     {
       "id": "clark_gis:17629512164",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512164",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5948,7 +5948,7 @@
     {
       "id": "clark_gis:17629512165",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512165",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -5985,7 +5985,7 @@
     {
       "id": "clark_gis:17612614039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17612614039",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6022,7 +6022,7 @@
     {
       "id": "clark_gis:16304615043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16304615043",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -6059,7 +6059,7 @@
     {
       "id": "clark_gis:13907613138",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13907613138",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -6096,7 +6096,7 @@
     {
       "id": "clark_gis:17615610096",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17615610096",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6133,7 +6133,7 @@
     {
       "id": "clark_gis:12517213049",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12517213049",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -6170,7 +6170,7 @@
     {
       "id": "clark_gis:13907613139",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13907613139",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -6207,7 +6207,7 @@
     {
       "id": "clark_gis:17930702001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17930702001",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -6244,7 +6244,7 @@
     {
       "id": "clark_gis:13925301009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13925301009",
       "situs_address": "869 N EASTERN AVE        ",
       "city": "LAS VEGAS",
@@ -6281,7 +6281,7 @@
     {
       "id": "clark_gis:17703803010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17703803010",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -6318,7 +6318,7 @@
     {
       "id": "clark_gis:16313501011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501011",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -6355,7 +6355,7 @@
     {
       "id": "clark_gis:17605201031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17605201031",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -6392,7 +6392,7 @@
     {
       "id": "clark_gis:16336201005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16336201005",
       "situs_address": "6015 W OQUENDO RD         ",
       "city": "SPRING VALLEY",
@@ -6429,7 +6429,7 @@
     {
       "id": "clark_gis:17620213033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17620213033",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6466,7 +6466,7 @@
     {
       "id": "clark_gis:17822316008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17822316008",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -6503,7 +6503,7 @@
     {
       "id": "clark_gis:17620213035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17620213035",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6540,7 +6540,7 @@
     {
       "id": "clark_gis:17802114077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17802114077",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -6577,7 +6577,7 @@
     {
       "id": "clark_gis:17711313005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17711313005",
       "situs_address": "7885 DONLEY CIR          ",
       "city": "PARADISE",
@@ -6614,7 +6614,7 @@
     {
       "id": "clark_gis:12613514041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613514041",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -6651,7 +6651,7 @@
     {
       "id": "clark_gis:17734701009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734701009",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6688,7 +6688,7 @@
     {
       "id": "clark_gis:17634310285",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634310285",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6725,7 +6725,7 @@
     {
       "id": "clark_gis:12429415086",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12429415086",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -6762,7 +6762,7 @@
     {
       "id": "clark_gis:12613614140",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613614140",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -6799,7 +6799,7 @@
     {
       "id": "clark_gis:17629218066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629218066",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -6836,7 +6836,7 @@
     {
       "id": "clark_gis:19017412001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19017412001",
       "situs_address": "2404 WEAVERVILLE DR           ",
       "city": "HENDERSON",
@@ -6873,7 +6873,7 @@
     {
       "id": "clark_gis:14030812014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14030812014",
       "situs_address": "4253 HARRIS AVE          ",
       "city": "LAS VEGAS",
@@ -6910,7 +6910,7 @@
     {
       "id": "clark_gis:17808719001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808719001",
       "situs_address": "223 N WHITE CLOUD CIR       ",
       "city": "HENDERSON",
@@ -6947,7 +6947,7 @@
     {
       "id": "clark_gis:17830419012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17830419012",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -6984,7 +6984,7 @@
     {
       "id": "clark_gis:17734513004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734513004",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -7021,7 +7021,7 @@
     {
       "id": "clark_gis:16207510007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16207510007",
       "situs_address": "4211 W SAHARA AVE  UT G  ",
       "city": "LAS VEGAS",
@@ -7058,7 +7058,7 @@
     {
       "id": "clark_gis:17827116015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17827116015",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -7095,7 +7095,7 @@
     {
       "id": "clark_gis:16120502003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16120502003",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -7132,7 +7132,7 @@
     {
       "id": "clark_gis:12613513117",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613513117",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7169,7 +7169,7 @@
     {
       "id": "clark_gis:12517301008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12517301008",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7206,7 +7206,7 @@
     {
       "id": "clark_gis:16116812055",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16116812055",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -7243,7 +7243,7 @@
     {
       "id": "clark_gis:12435110075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12435110075",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -7280,7 +7280,7 @@
     {
       "id": "clark_gis:13832803003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13832803003",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7317,7 +7317,7 @@
     {
       "id": "clark_gis:16022219031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16022219031",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -7354,7 +7354,7 @@
     {
       "id": "clark_gis:16115412002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16115412002",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -7391,7 +7391,7 @@
     {
       "id": "clark_gis:16229203006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16229203006",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -7428,7 +7428,7 @@
     {
       "id": "clark_gis:12517601003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12517601003",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7465,7 +7465,7 @@
     {
       "id": "clark_gis:17920602017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17920602017",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -7502,7 +7502,7 @@
     {
       "id": "clark_gis:12434513068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12434513068",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -7539,7 +7539,7 @@
     {
       "id": "clark_gis:18608201011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18608201011",
       "situs_address": "               ",
       "city": "BOULDER CITY",
@@ -7576,7 +7576,7 @@
     {
       "id": "clark_gis:19106214023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19106214023",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -7613,7 +7613,7 @@
     {
       "id": "clark_gis:16335301013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16335301013",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -7650,7 +7650,7 @@
     {
       "id": "clark_gis:13812210035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13812210035",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7687,7 +7687,7 @@
     {
       "id": "clark_gis:14034510069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14034510069",
       "situs_address": "6512 BLUE SAPPHIRE AVE          ",
       "city": "SUNRISE MANOR",
@@ -7724,7 +7724,7 @@
     {
       "id": "clark_gis:17829811092",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17829811092",
       "situs_address": "2076 KING MESA DR           ",
       "city": "HENDERSON",
@@ -7761,7 +7761,7 @@
     {
       "id": "clark_gis:17736110185",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17736110185",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -7798,7 +7798,7 @@
     {
       "id": "clark_gis:17706602002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17706602002",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -7835,7 +7835,7 @@
     {
       "id": "clark_gis:17633810134",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17633810134",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -7872,7 +7872,7 @@
     {
       "id": "clark_gis:16203810015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16203810015",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -7909,7 +7909,7 @@
     {
       "id": "clark_gis:17816714092",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816714092",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -7946,7 +7946,7 @@
     {
       "id": "clark_gis:17612613128",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17612613128",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -7983,7 +7983,7 @@
     {
       "id": "clark_gis:16027418043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027418043",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8020,7 +8020,7 @@
     {
       "id": "clark_gis:17816712065",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816712065",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8057,7 +8057,7 @@
     {
       "id": "clark_gis:17723603006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17723603006",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -8094,7 +8094,7 @@
     {
       "id": "clark_gis:17806413034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17806413034",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8131,7 +8131,7 @@
     {
       "id": "clark_gis:17633810135",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17633810135",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8168,7 +8168,7 @@
     {
       "id": "clark_gis:16313501015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501015",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -8205,7 +8205,7 @@
     {
       "id": "clark_gis:13714711150",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13714711150",
       "situs_address": "10901 BUTTON WILLOW DR           ",
       "city": "LAS VEGAS",
@@ -8242,7 +8242,7 @@
     {
       "id": "clark_gis:12514110026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12514110026",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -8279,7 +8279,7 @@
     {
       "id": "clark_gis:17802114076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17802114076",
       "situs_address": "750 BAFFIN ISLAND RD           ",
       "city": "HENDERSON",
@@ -8316,7 +8316,7 @@
     {
       "id": "clark_gis:17633810137",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17633810137",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8353,7 +8353,7 @@
     {
       "id": "clark_gis:13804303001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13804303001",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -8390,7 +8390,7 @@
     {
       "id": "clark_gis:19018815070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018815070",
       "situs_address": "2360 ANDERSON PARK DR           ",
       "city": "HENDERSON",
@@ -8427,7 +8427,7 @@
     {
       "id": "clark_gis:17629210070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629210070",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8464,7 +8464,7 @@
     {
       "id": "clark_gis:17629511171",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511171",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8501,7 +8501,7 @@
     {
       "id": "clark_gis:17629511173",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511173",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8538,7 +8538,7 @@
     {
       "id": "clark_gis:17629512160",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512160",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8575,7 +8575,7 @@
     {
       "id": "clark_gis:17633810138",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17633810138",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8612,7 +8612,7 @@
     {
       "id": "clark_gis:17629511177",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511177",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -8649,7 +8649,7 @@
     {
       "id": "clark_gis:19019110005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019110005",
       "situs_address": "2435 ANDROMEDA AVE          ",
       "city": "HENDERSON",
@@ -8686,7 +8686,7 @@
     {
       "id": "clark_gis:12508418033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12508418033",
       "situs_address": "8012 GALLAGHER ISLAND ST           ",
       "city": "LAS VEGAS",
@@ -8723,7 +8723,7 @@
     {
       "id": "clark_gis:17830419013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17830419013",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8760,7 +8760,7 @@
     {
       "id": "clark_gis:17731817016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17731817016",
       "situs_address": "4086 SAN FRANCHESCA CT  ",
       "city": "ENTERPRISE",
@@ -8797,7 +8797,7 @@
     {
       "id": "clark_gis:13806103004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13806103004",
       "situs_address": "4785 N JENSEN ST         ",
       "city": "CLARK COUNTY",
@@ -8834,7 +8834,7 @@
     {
       "id": "clark_gis:17831621008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17831621008",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8871,7 +8871,7 @@
     {
       "id": "clark_gis:14031120013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14031120013",
       "situs_address": "3933 LIGHTHOUSE AVE          ",
       "city": "LAS VEGAS",
@@ -8908,7 +8908,7 @@
     {
       "id": "clark_gis:19124811103",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124811103",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8945,7 +8945,7 @@
     {
       "id": "clark_gis:17801210056",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17801210056",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -8982,7 +8982,7 @@
     {
       "id": "clark_gis:14029312035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14029312035",
       "situs_address": "868 MARION DR           ",
       "city": "LAS VEGAS",
@@ -9019,7 +9019,7 @@
     {
       "id": "clark_gis:13923211044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13923211044",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -9056,7 +9056,7 @@
     {
       "id": "clark_gis:19124512051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124512051",
       "situs_address": "2358 AMANA DR           ",
       "city": "HENDERSON",
@@ -9093,7 +9093,7 @@
     {
       "id": "clark_gis:12507811010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507811010",
       "situs_address": "9405 SANTANA SIESTA AVE          ",
       "city": "LAS VEGAS",
@@ -9130,7 +9130,7 @@
     {
       "id": "clark_gis:17634812083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634812083",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -9167,7 +9167,7 @@
     {
       "id": "clark_gis:12514811085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12514811085",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -9204,7 +9204,7 @@
     {
       "id": "clark_gis:17816712062",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816712062",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9241,7 +9241,7 @@
     {
       "id": "clark_gis:17802114075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17802114075",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9278,7 +9278,7 @@
     {
       "id": "clark_gis:17629511168",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511168",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -9315,7 +9315,7 @@
     {
       "id": "clark_gis:16133817014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133817014",
       "situs_address": "804 RISING STAR DR           ",
       "city": "HENDERSON",
@@ -9352,7 +9352,7 @@
     {
       "id": "clark_gis:16313501012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501012",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -9389,7 +9389,7 @@
     {
       "id": "clark_gis:19124813150",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124813150",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9426,7 +9426,7 @@
     {
       "id": "clark_gis:16133815033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133815033",
       "situs_address": "1531 WAR PAINT DR           ",
       "city": "HENDERSON",
@@ -9463,7 +9463,7 @@
     {
       "id": "clark_gis:16034112051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16034112051",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9500,7 +9500,7 @@
     {
       "id": "clark_gis:12613412166",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613412166",
       "situs_address": "7355 BRISBANE HILLS ST           ",
       "city": "LAS VEGAS",
@@ -9537,7 +9537,7 @@
     {
       "id": "clark_gis:17803512138",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17803512138",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9574,7 +9574,7 @@
     {
       "id": "clark_gis:14023118019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14023118019",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -9611,7 +9611,7 @@
     {
       "id": "clark_gis:12624516109",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12624516109",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -9648,7 +9648,7 @@
     {
       "id": "clark_gis:19019111083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019111083",
       "situs_address": "2336 HYDRUS AVE          ",
       "city": "HENDERSON",
@@ -9685,7 +9685,7 @@
     {
       "id": "clark_gis:16034112049",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16034112049",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -9722,7 +9722,7 @@
     {
       "id": "clark_gis:17628115078",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17628115078",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -9759,7 +9759,7 @@
     {
       "id": "clark_gis:17814413019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17814413019",
       "situs_address": "867 SUMNER RANCH RD           ",
       "city": "HENDERSON",
@@ -9796,7 +9796,7 @@
     {
       "id": "clark_gis:16128314040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16128314040",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -9833,7 +9833,7 @@
     {
       "id": "clark_gis:12417417005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417417005",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -9870,7 +9870,7 @@
     {
       "id": "clark_gis:17634111028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634111028",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -9907,7 +9907,7 @@
     {
       "id": "clark_gis:16128316038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16128316038",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -9944,7 +9944,7 @@
     {
       "id": "clark_gis:16313501013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501013",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -9981,7 +9981,7 @@
     {
       "id": "clark_gis:17804510001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17804510001",
       "situs_address": "911 BIG DELTA CT           ",
       "city": "HENDERSON",
@@ -10018,7 +10018,7 @@
     {
       "id": "clark_gis:19020311044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19020311044",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -10055,7 +10055,7 @@
     {
       "id": "clark_gis:13910513093",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13910513093",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -10092,7 +10092,7 @@
     {
       "id": "clark_gis:17629210071",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629210071",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -10129,7 +10129,7 @@
     {
       "id": "clark_gis:16313501017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501017",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -10166,7 +10166,7 @@
     {
       "id": "clark_gis:17629511178",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511178",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -10203,7 +10203,7 @@
     {
       "id": "clark_gis:16022616068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16022616068",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -10240,7 +10240,7 @@
     {
       "id": "clark_gis:12430315151",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12430315151",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -10277,7 +10277,7 @@
     {
       "id": "clark_gis:13935816067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816067",
       "situs_address": "242 TOWER ST           ",
       "city": "LAS VEGAS",
@@ -10314,7 +10314,7 @@
     {
       "id": "clark_gis:17635511043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17635511043",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -10351,7 +10351,7 @@
     {
       "id": "clark_gis:12613711009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613711009",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -10388,7 +10388,7 @@
     {
       "id": "clark_gis:12430315150",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12430315150",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -10425,7 +10425,7 @@
     {
       "id": "clark_gis:17627814076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17627814076",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -10462,7 +10462,7 @@
     {
       "id": "clark_gis:18610117066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18610117066",
       "situs_address": "               ",
       "city": "BOULDER CITY",
@@ -10499,7 +10499,7 @@
     {
       "id": "clark_gis:14007210040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14007210040",
       "situs_address": "3519 CLEAR LAKE CT           ",
       "city": "SUNRISE MANOR",
@@ -10536,7 +10536,7 @@
     {
       "id": "clark_gis:12601701012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12601701012",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -10573,7 +10573,7 @@
     {
       "id": "clark_gis:17808717010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808717010",
       "situs_address": "237 GERONIMO CT           ",
       "city": "HENDERSON",
@@ -10610,7 +10610,7 @@
     {
       "id": "clark_gis:16201111039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16201111039",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -10647,7 +10647,7 @@
     {
       "id": "clark_gis:19124512050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124512050",
       "situs_address": "2351 PEACEFUL SKY DR           ",
       "city": "HENDERSON",
@@ -10684,7 +10684,7 @@
     {
       "id": "clark_gis:16313501014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16313501014",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -10721,7 +10721,7 @@
     {
       "id": "clark_gis:12613113150",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613113150",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -10758,7 +10758,7 @@
     {
       "id": "clark_gis:12613514040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613514040",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -10795,7 +10795,7 @@
     {
       "id": "clark_gis:14031120008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14031120008",
       "situs_address": "3953 LIGHTHOUSE AVE          ",
       "city": "LAS VEGAS",
@@ -10832,7 +10832,7 @@
     {
       "id": "clark_gis:19017413037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19017413037",
       "situs_address": "2221 CANYONVILLE DR           ",
       "city": "HENDERSON",
@@ -10869,7 +10869,7 @@
     {
       "id": "clark_gis:12417417006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417417006",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -10906,7 +10906,7 @@
     {
       "id": "clark_gis:17634711081",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634711081",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -10943,7 +10943,7 @@
     {
       "id": "clark_gis:16128316040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16128316040",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -10980,7 +10980,7 @@
     {
       "id": "clark_gis:17734713037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734713037",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -11017,7 +11017,7 @@
     {
       "id": "clark_gis:17621212123",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17621212123",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -11054,7 +11054,7 @@
     {
       "id": "clark_gis:17621716036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17621716036",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -11091,7 +11091,7 @@
     {
       "id": "clark_gis:16117611014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16117611014",
       "situs_address": "4760 SAGUARO WAY          ",
       "city": "PARADISE",
@@ -11128,7 +11128,7 @@
     {
       "id": "clark_gis:17610320016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17610320016",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -11165,7 +11165,7 @@
     {
       "id": "clark_gis:16202810101",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16202810101",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -11202,7 +11202,7 @@
     {
       "id": "clark_gis:13935816028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816028",
       "situs_address": "243 TOWER ST           ",
       "city": "LAS VEGAS",
@@ -11239,7 +11239,7 @@
     {
       "id": "clark_gis:16130212015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16130212015",
       "situs_address": "3715 TENNIS CT  ",
       "city": "PARADISE",
@@ -11276,7 +11276,7 @@
     {
       "id": "clark_gis:12530701004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12530701004",
       "situs_address": "5995 N PARK ST         ",
       "city": "CLARK COUNTY",
@@ -11313,7 +11313,7 @@
     {
       "id": "clark_gis:16015813076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16015813076",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -11350,7 +11350,7 @@
     {
       "id": "clark_gis:19018516001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018516001",
       "situs_address": "2230 BRIGHTON POINT AVE          ",
       "city": "HENDERSON",
@@ -11387,7 +11387,7 @@
     {
       "id": "clark_gis:19019111085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019111085",
       "situs_address": "2347 GARNET STAR ST           ",
       "city": "HENDERSON",
@@ -11424,7 +11424,7 @@
     {
       "id": "clark_gis:12507812008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507812008",
       "situs_address": "8160 STARLING VIEW CT           ",
       "city": "LAS VEGAS",
@@ -11461,7 +11461,7 @@
     {
       "id": "clark_gis:13935816032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816032",
       "situs_address": "227 TOWER ST           ",
       "city": "LAS VEGAS",
@@ -11498,7 +11498,7 @@
     {
       "id": "clark_gis:13935610075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935610075",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -11535,7 +11535,7 @@
     {
       "id": "clark_gis:14007407009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14007407009",
       "situs_address": "3690 E CHEYENNE AVE        ",
       "city": "SUNRISE MANOR",
@@ -11572,7 +11572,7 @@
     {
       "id": "clark_gis:16331411180",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16331411180",
       "situs_address": "6353 PEBBLECREEK LODGE WAY          ",
       "city": "SPRING VALLEY",
@@ -11609,7 +11609,7 @@
     {
       "id": "clark_gis:17734410067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734410067",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -11646,7 +11646,7 @@
     {
       "id": "clark_gis:16027418044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027418044",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -11683,7 +11683,7 @@
     {
       "id": "clark_gis:17730410067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17730410067",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -11720,7 +11720,7 @@
     {
       "id": "clark_gis:16214402002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16214402002",
       "situs_address": "               ",
       "city": "PARADISE",
@@ -11757,7 +11757,7 @@
     {
       "id": "clark_gis:17832210001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832210001",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -11794,7 +11794,7 @@
     {
       "id": "clark_gis:18608312019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18608312019",
       "situs_address": "1629 1/2 BOULDER CITY PKWY     ",
       "city": "BOULDER CITY",
@@ -11831,7 +11831,7 @@
     {
       "id": "clark_gis:17734413131",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734413131",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -11868,7 +11868,7 @@
     {
       "id": "clark_gis:16133815032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16133815032",
       "situs_address": "903 BIG DELTA CT           ",
       "city": "HENDERSON",
@@ -11905,7 +11905,7 @@
     {
       "id": "clark_gis:12504214089",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12504214089",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -11942,7 +11942,7 @@
     {
       "id": "clark_gis:12423814017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12423814017",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -11979,7 +11979,7 @@
     {
       "id": "clark_gis:17808410020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808410020",
       "situs_address": "2050 DEER SPRINGS DR         ",
       "city": "HENDERSON",
@@ -12016,7 +12016,7 @@
     {
       "id": "clark_gis:13736811004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13736811004",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -12053,7 +12053,7 @@
     {
       "id": "clark_gis:17920602016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17920602016",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -12090,7 +12090,7 @@
     {
       "id": "clark_gis:13935816013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816013",
       "situs_address": "242 DOUGRAM AVE          ",
       "city": "LAS VEGAS",
@@ -12127,7 +12127,7 @@
     {
       "id": "clark_gis:17730410059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17730410059",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12164,7 +12164,7 @@
     {
       "id": "clark_gis:18609110019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "18609110019",
       "situs_address": "               ",
       "city": "BOULDER CITY",
@@ -12201,7 +12201,7 @@
     {
       "id": "clark_gis:17734410068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734410068",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -12238,7 +12238,7 @@
     {
       "id": "clark_gis:13701114067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13701114067",
       "situs_address": "10651 LITTLE HORSE CREEK AVE          ",
       "city": "LAS VEGAS",
@@ -12275,7 +12275,7 @@
     {
       "id": "clark_gis:17627814077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17627814077",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12312,7 +12312,7 @@
     {
       "id": "clark_gis:17734410069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17734410069",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -12349,7 +12349,7 @@
     {
       "id": "clark_gis:19018617030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018617030",
       "situs_address": "2120 SILENT ECHOES DR           ",
       "city": "HENDERSON",
@@ -12386,7 +12386,7 @@
     {
       "id": "clark_gis:17629412174",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629412174",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12423,7 +12423,7 @@
     {
       "id": "clark_gis:13907613140",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13907613140",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -12460,7 +12460,7 @@
     {
       "id": "clark_gis:17634310274",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634310274",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12497,7 +12497,7 @@
     {
       "id": "clark_gis:12613412079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613412079",
       "situs_address": "10604 NANTUCKET RIDGE AVE          ",
       "city": "LAS VEGAS",
@@ -12534,7 +12534,7 @@
     {
       "id": "clark_gis:12423813032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12423813032",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -12571,7 +12571,7 @@
     {
       "id": "clark_gis:13918501002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13918501002",
       "situs_address": "4129 W CHEYENNE AVE        ",
       "city": "NORTH LAS VEGAS",
@@ -12608,7 +12608,7 @@
     {
       "id": "clark_gis:12423814016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12423814016",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -12645,7 +12645,7 @@
     {
       "id": "clark_gis:12435315108",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12435315108",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -12682,7 +12682,7 @@
     {
       "id": "clark_gis:17931413083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17931413083",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -12719,7 +12719,7 @@
     {
       "id": "clark_gis:17629511176",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629511176",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12756,7 +12756,7 @@
     {
       "id": "clark_gis:12613117011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613117011",
       "situs_address": "10710 BROXDEN JUNCTION AVE          ",
       "city": "LAS VEGAS",
@@ -12793,7 +12793,7 @@
     {
       "id": "clark_gis:17832110006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832110006",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -12830,7 +12830,7 @@
     {
       "id": "clark_gis:13935816075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816075",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -12867,7 +12867,7 @@
     {
       "id": "clark_gis:13935816072",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816072",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -12904,7 +12904,7 @@
     {
       "id": "clark_gis:13935816073",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13935816073",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -12941,7 +12941,7 @@
     {
       "id": "clark_gis:17627711108",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17627711108",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -12978,7 +12978,7 @@
     {
       "id": "clark_gis:12613616172",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613616172",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13015,7 +13015,7 @@
     {
       "id": "clark_gis:17618618107",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17618618107",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -13052,7 +13052,7 @@
     {
       "id": "clark_gis:17618617102",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17618617102",
       "situs_address": "               ",
       "city": "SPRING VALLEY",
@@ -13089,7 +13089,7 @@
     {
       "id": "clark_gis:17816714091",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816714091",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -13126,7 +13126,7 @@
     {
       "id": "clark_gis:19018814020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018814020",
       "situs_address": "2356 AZTEC RUIN WAY          ",
       "city": "HENDERSON",
@@ -13163,7 +13163,7 @@
     {
       "id": "clark_gis:13927712052",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13927712052",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13200,7 +13200,7 @@
     {
       "id": "clark_gis:19114811279",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19114811279",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -13237,7 +13237,7 @@
     {
       "id": "clark_gis:17620315129",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17620315129",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -13274,7 +13274,7 @@
     {
       "id": "clark_gis:17808712040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17808712040",
       "situs_address": "1846 ESCONDIDO TER          ",
       "city": "HENDERSON",
@@ -13311,7 +13311,7 @@
     {
       "id": "clark_gis:12429415087",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12429415087",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -13348,7 +13348,7 @@
     {
       "id": "clark_gis:17811411017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17811411017",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -13385,7 +13385,7 @@
     {
       "id": "clark_gis:12507816109",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507816109",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13422,7 +13422,7 @@
     {
       "id": "clark_gis:17620212023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17620212023",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -13459,7 +13459,7 @@
     {
       "id": "clark_gis:13923203016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13923203016",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -13496,7 +13496,7 @@
     {
       "id": "clark_gis:17816414011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17816414011",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -13533,7 +13533,7 @@
     {
       "id": "clark_gis:19018617059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018617059",
       "situs_address": "2144 HANSTON CT           ",
       "city": "HENDERSON",
@@ -13570,7 +13570,7 @@
     {
       "id": "clark_gis:17626810127",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17626810127",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -13607,7 +13607,7 @@
     {
       "id": "clark_gis:16202810064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16202810064",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13644,7 +13644,7 @@
     {
       "id": "clark_gis:17613510087",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17613510087",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -13681,7 +13681,7 @@
     {
       "id": "clark_gis:13802110145",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13802110145",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13718,7 +13718,7 @@
     {
       "id": "clark_gis:12624315200",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12624315200",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13755,7 +13755,7 @@
     {
       "id": "clark_gis:19124410008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19124410008",
       "situs_address": "2709 ARDCHONNEL ST           ",
       "city": "HENDERSON",
@@ -13792,7 +13792,7 @@
     {
       "id": "clark_gis:12423712019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12423712019",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -13829,7 +13829,7 @@
     {
       "id": "clark_gis:12423814015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12423814015",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -13866,7 +13866,7 @@
     {
       "id": "clark_gis:13836804011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13836804011",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -13903,7 +13903,7 @@
     {
       "id": "clark_gis:17628115080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17628115080",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -13940,7 +13940,7 @@
     {
       "id": "clark_gis:12417812047",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417812047",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -13977,7 +13977,7 @@
     {
       "id": "clark_gis:12507815065",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507815065",
       "situs_address": "8156 BEGONIA BLUSH DR           ",
       "city": "LAS VEGAS",
@@ -14014,7 +14014,7 @@
     {
       "id": "clark_gis:13802110131",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13802110131",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -14051,7 +14051,7 @@
     {
       "id": "clark_gis:12511610017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12511610017",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -14088,7 +14088,7 @@
     {
       "id": "clark_gis:14017411100",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411100",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -14125,7 +14125,7 @@
     {
       "id": "clark_gis:12613412191",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613412191",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -14162,7 +14162,7 @@
     {
       "id": "clark_gis:13825615053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13825615053",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -14199,7 +14199,7 @@
     {
       "id": "clark_gis:17611516058",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17611516058",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14236,7 +14236,7 @@
     {
       "id": "clark_gis:19018816002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018816002",
       "situs_address": "2401 WEAVERVILLE DR           ",
       "city": "HENDERSON",
@@ -14273,7 +14273,7 @@
     {
       "id": "clark_gis:17629814038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629814038",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14310,7 +14310,7 @@
     {
       "id": "clark_gis:17620313079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17620313079",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14347,7 +14347,7 @@
     {
       "id": "clark_gis:14017411091",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411091",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -14384,7 +14384,7 @@
     {
       "id": "clark_gis:12507713096",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507713096",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -14421,7 +14421,7 @@
     {
       "id": "clark_gis:12422414088",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12422414088",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -14458,7 +14458,7 @@
     {
       "id": "clark_gis:17629413048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629413048",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14495,7 +14495,7 @@
     {
       "id": "clark_gis:16126101009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16126101009",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -14532,7 +14532,7 @@
     {
       "id": "clark_gis:19018712040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19018712040",
       "situs_address": "2193 SILENT ECHOES DR           ",
       "city": "HENDERSON",
@@ -14569,7 +14569,7 @@
     {
       "id": "clark_gis:19106315017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19106315017",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14606,7 +14606,7 @@
     {
       "id": "clark_gis:12434513067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12434513067",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -14643,7 +14643,7 @@
     {
       "id": "clark_gis:14017411093",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411093",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -14680,7 +14680,7 @@
     {
       "id": "clark_gis:19105312017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19105312017",
       "situs_address": "3844 GLASGOW GREEN DR         ",
       "city": "ENTERPRISE",
@@ -14717,7 +14717,7 @@
     {
       "id": "clark_gis:17629814042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629814042",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14754,7 +14754,7 @@
     {
       "id": "clark_gis:16402715086",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16402715086",
       "situs_address": "               ",
       "city": "SUMMERLIN",
@@ -14791,7 +14791,7 @@
     {
       "id": "clark_gis:19105312016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19105312016",
       "situs_address": "3843 GLASGOW GREEN DR         ",
       "city": "ENTERPRISE",
@@ -14828,7 +14828,7 @@
     {
       "id": "clark_gis:17627810024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17627810024",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14865,7 +14865,7 @@
     {
       "id": "clark_gis:17628510115",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17628510115",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14902,7 +14902,7 @@
     {
       "id": "clark_gis:17814413017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17814413017",
       "situs_address": "869 SUMNER RANCH RD           ",
       "city": "HENDERSON",
@@ -14939,7 +14939,7 @@
     {
       "id": "clark_gis:17626810124",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17626810124",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -14976,7 +14976,7 @@
     {
       "id": "clark_gis:13934512002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934512002",
       "situs_address": "329 N LAS VEGAS BLVD       ",
       "city": "LAS VEGAS",
@@ -15013,7 +15013,7 @@
     {
       "id": "clark_gis:17832313016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832313016",
       "situs_address": "2200 DOGWOOD RANCH AVE          ",
       "city": "HENDERSON",
@@ -15050,7 +15050,7 @@
     {
       "id": "clark_gis:12507816102",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507816102",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15087,7 +15087,7 @@
     {
       "id": "clark_gis:17634717080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634717080",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15124,7 +15124,7 @@
     {
       "id": "clark_gis:17634713069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634713069",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15161,7 +15161,7 @@
     {
       "id": "clark_gis:17634310282",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634310282",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15198,7 +15198,7 @@
     {
       "id": "clark_gis:17634310283",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634310283",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15235,7 +15235,7 @@
     {
       "id": "clark_gis:14017411090",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411090",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -15272,7 +15272,7 @@
     {
       "id": "clark_gis:12518212061",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12518212061",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15309,7 +15309,7 @@
     {
       "id": "clark_gis:17612511019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17612511019",
       "situs_address": "7420 DECORO ST           ",
       "city": "ENTERPRISE",
@@ -15346,7 +15346,7 @@
     {
       "id": "clark_gis:12420512066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12420512066",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -15383,7 +15383,7 @@
     {
       "id": "clark_gis:12511506003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12511506003",
       "situs_address": "6220 BRENT LN           ",
       "city": "CLARK COUNTY",
@@ -15420,7 +15420,7 @@
     {
       "id": "clark_gis:12527819099",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12527819099",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15457,7 +15457,7 @@
     {
       "id": "clark_gis:12535310119",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12535310119",
       "situs_address": "6490 CHANCE LN           ",
       "city": "LAS VEGAS",
@@ -15494,7 +15494,7 @@
     {
       "id": "clark_gis:12419210010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12419210010",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -15531,7 +15531,7 @@
     {
       "id": "clark_gis:17920602015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17920602015",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -15568,7 +15568,7 @@
     {
       "id": "clark_gis:13823515019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13823515019",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15605,7 +15605,7 @@
     {
       "id": "clark_gis:17634716069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634716069",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15642,7 +15642,7 @@
     {
       "id": "clark_gis:17621212122",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17621212122",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15679,7 +15679,7 @@
     {
       "id": "clark_gis:17627211054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17627211054",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15716,7 +15716,7 @@
     {
       "id": "clark_gis:12613113149",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613113149",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15753,7 +15753,7 @@
     {
       "id": "clark_gis:17634811065",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634811065",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15790,7 +15790,7 @@
     {
       "id": "clark_gis:12534310075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12534310075",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -15827,7 +15827,7 @@
     {
       "id": "clark_gis:12527815056",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12527815056",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15864,7 +15864,7 @@
     {
       "id": "clark_gis:17626811031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17626811031",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15901,7 +15901,7 @@
     {
       "id": "clark_gis:12507815062",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12507815062",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -15938,7 +15938,7 @@
     {
       "id": "clark_gis:17634714186",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634714186",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -15975,7 +15975,7 @@
     {
       "id": "clark_gis:17832510061",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832510061",
       "situs_address": "1837 MOUNTAIN RANCH AVE          ",
       "city": "HENDERSON",
@@ -16012,7 +16012,7 @@
     {
       "id": "clark_gis:12602402011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12602402011",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -16049,7 +16049,7 @@
     {
       "id": "clark_gis:17713331005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17713331005",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16086,7 +16086,7 @@
     {
       "id": "clark_gis:13810413003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13810413003",
       "situs_address": "7450 W CHEYENNE AVE        ",
       "city": "LAS VEGAS",
@@ -16123,7 +16123,7 @@
     {
       "id": "clark_gis:17629512167",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629512167",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -16160,7 +16160,7 @@
     {
       "id": "clark_gis:16132712026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16132712026",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16197,7 +16197,7 @@
     {
       "id": "clark_gis:12613713235",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12613713235",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -16234,7 +16234,7 @@
     {
       "id": "clark_gis:16015813072",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16015813072",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16271,7 +16271,7 @@
     {
       "id": "clark_gis:19114513166",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19114513166",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16308,7 +16308,7 @@
     {
       "id": "clark_gis:16027213068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027213068",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16345,7 +16345,7 @@
     {
       "id": "clark_gis:14017411092",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411092",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -16382,7 +16382,7 @@
     {
       "id": "clark_gis:12417410019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417410019",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -16419,7 +16419,7 @@
     {
       "id": "clark_gis:16027314056",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027314056",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16456,7 +16456,7 @@
     {
       "id": "clark_gis:16027314057",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027314057",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16493,7 +16493,7 @@
     {
       "id": "clark_gis:16027314059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027314059",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16530,7 +16530,7 @@
     {
       "id": "clark_gis:16027314058",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027314058",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16567,7 +16567,7 @@
     {
       "id": "clark_gis:16027314060",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16027314060",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -16604,7 +16604,7 @@
     {
       "id": "clark_gis:16331411094",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16331411094",
       "situs_address": "6392 GRAYS RIVER CT           ",
       "city": "SPRING VALLEY",
@@ -16641,7 +16641,7 @@
     {
       "id": "clark_gis:12427415029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12427415029",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -16678,7 +16678,7 @@
     {
       "id": "clark_gis:16423613032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16423613032",
       "situs_address": "               ",
       "city": "SUMMERLIN",
@@ -16715,7 +16715,7 @@
     {
       "id": "clark_gis:16413220003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16413220003",
       "situs_address": "               ",
       "city": "SUMMERLIN",
@@ -16752,7 +16752,7 @@
     {
       "id": "clark_gis:17718122038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17718122038",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -16789,7 +16789,7 @@
     {
       "id": "clark_gis:19019512043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019512043",
       "situs_address": "2329 AZTEC RUIN WAY          ",
       "city": "HENDERSON",
@@ -16826,7 +16826,7 @@
     {
       "id": "clark_gis:12417811009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417811009",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -16863,7 +16863,7 @@
     {
       "id": "clark_gis:17711201013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17711201013",
       "situs_address": "1213 SUR ESTE AVE          ",
       "city": "PARADISE",
@@ -16900,7 +16900,7 @@
     {
       "id": "clark_gis:17634716070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634716070",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -16937,7 +16937,7 @@
     {
       "id": "clark_gis:12417811005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12417811005",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -16974,7 +16974,7 @@
     {
       "id": "clark_gis:17629712064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629712064",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17011,7 +17011,7 @@
     {
       "id": "clark_gis:19019111084",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019111084",
       "situs_address": "2362 GARNET STAR ST           ",
       "city": "HENDERSON",
@@ -17048,7 +17048,7 @@
     {
       "id": "clark_gis:14019413048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14019413048",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -17085,7 +17085,7 @@
     {
       "id": "clark_gis:17726420031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17726420031",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17122,7 +17122,7 @@
     {
       "id": "clark_gis:17726420032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17726420032",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17159,7 +17159,7 @@
     {
       "id": "clark_gis:12624113050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12624113050",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -17196,7 +17196,7 @@
     {
       "id": "clark_gis:17634711079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634711079",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17233,7 +17233,7 @@
     {
       "id": "clark_gis:16228211051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16228211051",
       "situs_address": "185 E RENO AVE  B12   ",
       "city": "PARADISE",
@@ -17270,7 +17270,7 @@
     {
       "id": "clark_gis:19019512059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19019512059",
       "situs_address": "2357 CANYONVILLE DR           ",
       "city": "HENDERSON",
@@ -17307,7 +17307,7 @@
     {
       "id": "clark_gis:19105312014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19105312014",
       "situs_address": "3841 WOODSEN BEND DR         ",
       "city": "ENTERPRISE",
@@ -17344,7 +17344,7 @@
     {
       "id": "clark_gis:13825116012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13825116012",
       "situs_address": "               ",
       "city": "CLARK COUNTY",
@@ -17381,7 +17381,7 @@
     {
       "id": "clark_gis:17634816045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634816045",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17418,7 +17418,7 @@
     {
       "id": "clark_gis:16128316041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16128316041",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -17455,7 +17455,7 @@
     {
       "id": "clark_gis:17629712062",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629712062",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17492,7 +17492,7 @@
     {
       "id": "clark_gis:12420613128",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12420613128",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -17529,7 +17529,7 @@
     {
       "id": "clark_gis:14017411103",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14017411103",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -17566,7 +17566,7 @@
     {
       "id": "clark_gis:17634714197",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634714197",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17603,7 +17603,7 @@
     {
       "id": "clark_gis:17832413018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17832413018",
       "situs_address": "2213 BIG BAR DR           ",
       "city": "HENDERSON",
@@ -17640,7 +17640,7 @@
     {
       "id": "clark_gis:19104415052",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19104415052",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17677,7 +17677,7 @@
     {
       "id": "clark_gis:12511610016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12511610016",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -17714,7 +17714,7 @@
     {
       "id": "clark_gis:14019315231",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14019315231",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -17751,7 +17751,7 @@
     {
       "id": "clark_gis:16121715074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16121715074",
       "situs_address": "               ",
       "city": "WHITNEY",
@@ -17788,7 +17788,7 @@
     {
       "id": "clark_gis:17730410066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17730410066",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17825,7 +17825,7 @@
     {
       "id": "clark_gis:17634716067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17634716067",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17862,7 +17862,7 @@
     {
       "id": "clark_gis:14030801010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14030801010",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -17899,7 +17899,7 @@
     {
       "id": "clark_gis:17629711039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629711039",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17936,7 +17936,7 @@
     {
       "id": "clark_gis:17612615080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17612615080",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -17973,7 +17973,7 @@
     {
       "id": "clark_gis:17628610198",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17628610198",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -18010,7 +18010,7 @@
     {
       "id": "clark_gis:14030801009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14030801009",
       "situs_address": "               ",
       "city": "LAS VEGAS",
@@ -18047,7 +18047,7 @@
     {
       "id": "clark_gis:17629710104",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629710104",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -18084,7 +18084,7 @@
     {
       "id": "clark_gis:17827116005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17827116005",
       "situs_address": "1265 VIETTI ST           ",
       "city": "HENDERSON",
@@ -18121,7 +18121,7 @@
     {
       "id": "clark_gis:12532103007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12532103007",
       "situs_address": "9150 W HAMMER LN         ",
       "city": "CLARK COUNTY",
@@ -18158,7 +18158,7 @@
     {
       "id": "clark_gis:13934410055",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "13934410055",
       "situs_address": "1003 S CASINO CENTER BLVD       ",
       "city": "LAS VEGAS",
@@ -18195,7 +18195,7 @@
     {
       "id": "clark_gis:17628610203",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17628610203",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -18232,7 +18232,7 @@
     {
       "id": "clark_gis:16332510005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16332510005",
       "situs_address": "5785 S DURANGO DR         ",
       "city": "SPRING VALLEY",
@@ -18269,7 +18269,7 @@
     {
       "id": "clark_gis:16414415029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "16414415029",
       "situs_address": "               ",
       "city": "SUMMERLIN",
@@ -18306,7 +18306,7 @@
     {
       "id": "clark_gis:12331512027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12331512027",
       "situs_address": "               ",
       "city": "NORTH LAS VEGAS",
@@ -18343,7 +18343,7 @@
     {
       "id": "clark_gis:17626811033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17626811033",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -18380,7 +18380,7 @@
     {
       "id": "clark_gis:19020311043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "19020311043",
       "situs_address": "               ",
       "city": "HENDERSON",
@@ -18417,7 +18417,7 @@
     {
       "id": "clark_gis:17629814037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "17629814037",
       "situs_address": "               ",
       "city": "ENTERPRISE",
@@ -18454,7 +18454,7 @@
     {
       "id": "clark_gis:14028501002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "14028501002",
       "situs_address": "               ",
       "city": "SUNRISE MANOR",
@@ -18491,7 +18491,7 @@
     {
       "id": "clark_gis:12519614117",
       "source": "clark_gis",
-      "harvested_at": "2026-05-27T06:42:05Z",
+      "harvested_at": "2026-05-27T16:48:15Z",
       "parcel_apn": "12519614117",
       "situs_address": "               ",
       "city": "LAS VEGAS",

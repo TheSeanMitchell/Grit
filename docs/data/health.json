@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T06:41:00Z",
+  "generated_at": "2026-05-27T16:47:04Z",
   "sources": [
     {
       "key": "clark_gis",
@@ -13,7 +13,7 @@
       "records": 56,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:02Z"
     },
     {
       "key": "clark_accela",
@@ -23,11 +23,11 @@
       "url": "https://aca-prod.accela.com/clarkco/Default.aspx",
       "note": "Permit events: who pulled what, where, value. ViewState portal -- headless browser; may need a residential IP.",
       "status": "reachable",
-      "latency_ms": 312,
+      "latency_ms": 199,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:03Z"
     },
     {
       "key": "nscb",
@@ -37,11 +37,11 @@
       "url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
       "note": "Every licensed contractor by trade = your buyer list + verification.",
       "status": "reachable",
-      "latency_ms": 91,
+      "latency_ms": 275,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:03Z"
     },
     {
       "key": "clark_assessor",
@@ -51,11 +51,11 @@
       "url": "https://www.clarkcountynv.gov/government/assessor/",
       "note": "Authoritative current owner + sale detail; complements the GIS layer.",
       "status": "reachable",
-      "latency_ms": 221,
+      "latency_ms": 83,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:03Z"
     },
     {
       "key": "clark_recorder",
@@ -65,11 +65,11 @@
       "url": "https://www.clarkcountynv.gov/government/elected_officials/county_recorder/",
       "note": "Leading indicators: sales (new owners), defaults, mechanics liens.",
       "status": "reachable",
-      "latency_ms": 60,
+      "latency_ms": 90,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:03Z"
     },
     {
       "key": "lv_permits",
@@ -79,11 +79,11 @@
       "url": "https://www.lasvegasnevada.gov/",
       "note": "Incorporated-city permits (separate from county).",
       "status": "reachable",
-      "latency_ms": 450,
+      "latency_ms": 567,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:40:59Z"
+      "checked_at": "2026-05-27T16:47:04Z"
     },
     {
       "key": "henderson_permits",
@@ -93,11 +93,11 @@
       "url": "https://www.cityofhenderson.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 42,
+      "latency_ms": 26,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:41:00Z"
+      "checked_at": "2026-05-27T16:47:04Z"
     },
     {
       "key": "nlv_permits",
@@ -107,11 +107,11 @@
       "url": "https://www.cityofnorthlasvegas.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 36,
+      "latency_ms": 62,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-27T06:41:00Z"
+      "checked_at": "2026-05-27T16:47:04Z"
     }
   ]
 }
