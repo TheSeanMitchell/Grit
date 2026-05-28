@@ -1,6 +1,6 @@
 # GRIT — MANIFESTO
 
-> **Alpha 0.101.** This is the canonical mission. All architecture, scope, and
+> **Alpha 0.102.** This is the canonical mission. All architecture, scope, and
 > roadmap decisions defer to this document.
 
 ---
@@ -56,7 +56,15 @@ became more monetizable.
 - A fabricator of data or activity.
 - An over-engineered agent framework built before real acquisition flow exists.
 
-## Where GRIT is going next (post-0.101)
+## Shipped in 0.102
+
+- **Live Assessor enrichment.** Per-APN GET against `parceldetail.aspx` returns
+  CURRENT owner, mailing, situs address, assessed/taxable value, last sale
+  (price/date/type), land use, year built, and structure characteristics — free,
+  deterministic parser, no fabrication. The top leads each harvest are refreshed
+  from 2018 data to today's record, and recorded sales become DEED timeline events.
+
+## Where GRIT is going next (post-0.102)
 
 - Permit ingestion (Accela) from a residential IP.
 - Deed ingestion (Recorder).

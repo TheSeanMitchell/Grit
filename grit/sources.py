@@ -105,7 +105,7 @@ REGISTRY = [
 
     Source("clark_assessor", "Clark County Assessor (parcel / owner / sales)",
            "aspx", "https://www.clarkcountynv.gov/government/assessor/", "manual",
-           "Authoritative current owner + sale detail; complements the GIS layer."),
+           "LIVE per-APN enrichment (0.102): current owner, address, value, last sale, characteristics via parceldetail.aspx GET. Free, deterministic parser."),
 
     Source("clark_recorder", "Clark County Recorder (deeds / NOD / liens)",
            "aspx", "https://www.clarkcountynv.gov/government/elected_officials/"

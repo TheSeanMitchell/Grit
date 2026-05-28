@@ -117,7 +117,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Alpha 0.101 ─────────────────────────────────────────────────────────────
-VERSION = "0.101"
+VERSION = "0.102"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -173,6 +173,8 @@ HEALTH_FILE = "docs/data/health.json"
 
 # Politeness: page size + max pages per harvest (keeps the free Action well-behaved).
 CARDS_MAX = 500   # keep only the top-scored leads in the console output
+CARDS_ENRICH_MAX = 60   # 0.102: live Assessor enrichment for the top N leads/run
+ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 5
 HTTP_TIMEOUT = 30

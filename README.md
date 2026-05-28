@@ -1,4 +1,4 @@
-# GRIT — Alpha 0.101
+# GRIT — Alpha 0.102
 
 **Event-driven acquisition intelligence for Las Vegas / Clark County.**
 Not a CRM. Not a contractor portal. A radar that discovers monetizable local
@@ -9,7 +9,7 @@ state in one file (the foundational bedrock for any future session).
 
 ---
 
-## What's running at 0.101
+## What's running at 0.102
 
 - **Multi-source parcel harvest.** Engine samples known owner/address layers,
   verifies real owner+address data is populated, and uses the richest. Runs free

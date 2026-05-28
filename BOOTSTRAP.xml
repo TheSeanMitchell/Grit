@@ -7,7 +7,7 @@
   and treat it as the single source of truth for what the project is, what it
   is not, what has been built, and what comes next.
 -->
-<grit_bootstrap version="0.101">
+<grit_bootstrap version="0.102">
 
   <identity>
     <name>GRIT</name>
@@ -47,7 +47,7 @@
       produced real, validated flow.</rule>
   </absolute_rules>
 
-  <architecture status="alpha_0_101">
+  <architecture status="alpha_0_102">
     <data_layer>
       <source kind="arcgis_rest" tier="live" runs_on="github_action">
         <name>Clark County parcel candidates</name>
@@ -72,9 +72,17 @@
       <source kind="event_portal" tier="manual_residential_ip" runs_on="local_machine">
         <name>Clark County Recorder — deeds (planned)</name>
       </source>
-      <source kind="aspx_portal" tier="manual_residential_ip" runs_on="local_machine">
-        <name>Clark County Assessor per-APN enrichment (planned)</name>
-        <details>Scaffold at grit/assessor.py; capture-then-parse pattern.</details>
+      <source kind="aspx_get" tier="live" runs_on="github_action_or_local">
+        <name>Clark County Assessor per-APN enrichment (LIVE in 0.102)</name>
+        <details>
+          parceldetail.aspx?hdnparcel=APN&logo=1 returns the CURRENT assessor
+          record via a plain GET. Deterministic label-anchored parser
+          (grit/assessor.py) extracts owner, mailing, situs, current assessed +
+          taxable value, last sale (price/date/type), land use, year built, beds,
+          baths, roof, pool, lot size. Verified from cloud fetch; runs against the
+          top CARDS_ENRICH_MAX leads each harvest, overwriting stale 2018 fields
+          and emitting DEED timeline events. The freshness problem is solved.
+        </details>
       </source>
     </data_layer>
 

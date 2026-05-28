@@ -207,6 +207,45 @@ def feature_to_card(feat, mapping, source_key):
     return score_card(card)
 
 
+def enrich_cards(cards, limit=None):
+    """0.102: enrich the top-scored cards with LIVE Assessor data (current owner,
+    address, value, last sale). Overwrites stale fields, reclassifies the entity,
+    emits a DEED event for the recorded sale, and re-scores. Real data only."""
+    import time
+    from . import assessor, events as events_mod
+    limit = limit if limit is not None else config.CARDS_ENRICH_MAX
+    targets = [c for c in sorted(cards, key=lambda c: c["score"], reverse=True)
+               if c.get("parcel_apn")][:limit]
+    new_events, ok, err = [], 0, 0
+    FRESH = ("owner_name", "owner_mailing", "situs_address", "city",
+             "assessed_value", "land_use", "last_sale_date", "last_sale_price",
+             "last_sale_type", "year_built", "bedrooms", "bathrooms",
+             "roof_type", "pool", "lot_size", "taxable_value")
+    for c in targets:
+        data = assessor.enrich_apn(c["parcel_apn"])
+        if data.get("_error"):
+            err += 1
+            continue
+        for k in FRESH:
+            if data.get(k) not in (None, ""):
+                c[k] = data[k]
+        c["enriched"] = True
+        c["vintage"] = "current"
+        c["entity_type"] = classify_owner(c.get("owner_name"))
+        c["trade_tags"] = infer_trades(c.get("land_use"))
+        if data.get("last_sale_date"):
+            ev = events_mod.Event(
+                kind="DEED", date=data["last_sale_date"], source="clark_assessor",
+                parcel_apn=c["parcel_apn"], address=c.get("situs_address"),
+                description=f"recorded sale {data.get('last_sale_price','')} "
+                            f"({data.get('last_sale_type','')})".strip(),
+                lat=c.get("lat"), lng=c.get("lng"), raw=data)
+            new_events.append(ev)
+        ok += 1
+        time.sleep(config.ENRICH_DELAY)
+    return new_events, {"enriched": ok, "errors": err, "attempted": len(targets)}
+
+
 def assign_cluster_density(cards, radius_m=None):
     """Annotate each card with the count of neighbor cards within radius_m.
     Adds a real geographic-cluster signal (no fake density)."""
@@ -302,14 +341,20 @@ def harvest():
         events_mod.join_to_cards(cards, existing_events)
         # geographic cluster signal (real, computed from harvested points)
         assign_cluster_density(cards)
-        # re-score so cluster_density AND event timeline feed into the final score
         cards = [score_card(c) for c in cards]
+        # keep the top set, then LIVE-enrich those with current Assessor data
         cards.sort(key=lambda c: c["score"], reverse=True)
         cards = cards[:config.CARDS_MAX]
+        enrich_events, enrich_stats = enrich_cards(cards)
+        all_events = existing_events + enrich_events
+        events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales
+        cards = [score_card(c) for c in cards]          # re-score with fresh data
+        cards.sort(key=lambda c: c["score"], reverse=True)
+        events_mod.write(all_events)
         harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
                         "source_name": cand.get("name"), "vintage": cand.get("vintage"),
                         "layer_url": cand["url"], "field_map": mapping,
-                        "richness": chosen["rich"], **meta}
+                        "richness": chosen["rich"], "enrichment": enrich_stats, **meta}
     elif not harvest_meta["detail"]:
         harvest_meta["detail"] = ("No candidate returned populated owner/address data. "
                                   "See discovered.json for what each source exposed.")
@@ -320,8 +365,9 @@ def harvest():
         "count": len(cards),
         "cards": cards,
     })
-    # persist events feed (load_existing returns [] if no prior file)
-    events_mod.write(existing_events)
+    # persist events feed only if harvest didn't already write fresh ones
+    if not chosen:
+        events_mod.write(existing_events)
     return len(cards), harvest_meta
 
 

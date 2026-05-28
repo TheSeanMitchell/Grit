@@ -65,7 +65,7 @@
 </style>
 </head>
 <body>
-<div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY &middot; v0.101</div><div class="stamp" id="stamp">loading&hellip;</div></div>
+<div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY &middot; v0.102</div><div class="stamp" id="stamp">loading&hellip;</div></div>
 <div class="wrap">
   <h2 class="sec">Leads <span id="harveststate" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
   <div class="toolbar" id="toolbar"></div>
@@ -102,11 +102,11 @@ function initMap(){MAP=L.map('map',{zoomControl:true}).setView([36.12,-115.17],1
   LAYER=L.layerGroup().addTo(MAP);}
 function popupHTML(c){return '<div class="pp"><div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
   (c.owner_name?'<div><span class="pp-k">owner</span> '+esc(c.owner_name)+'</div>':'')+
-  (c.assessed_value?'<div><span class="pp-k">value</span> '+esc(c.assessed_value)+'</div>':'')+
+  (c.vintage==='current'?'<div style="color:var(--green)">\u25cf live assessor data</div>':'')+(c.assessed_value?'<div><span class="pp-k">value</span> '+esc(c.assessed_value)+(c.last_sale_price?' &middot; sold '+esc(c.last_sale_price):'')+'</div>':'')+(c.year_built?'<div><span class="pp-k">built</span> '+esc(c.year_built)+(c.bedrooms?' &middot; '+esc(c.bedrooms)+'bd':'')+(c.bathrooms?'/'+esc(c.bathrooms):'')+(c.roof_type?' &middot; '+esc(c.roof_type):'')+'</div>':'')+
   (c.last_sale_date?'<div><span class="pp-k">last sale</span> '+esc(c.last_sale_date)+'</div>':'')+
   (c.entity_type?'<div><span class="pp-k">entity</span> '+esc(c.entity_type)+'</div>':'')+(c.cluster_density?'<div><span class="pp-k">cluster</span> '+c.cluster_density+' neighbors within 500m</div>':'')+'<div><span class="pp-k">score</span> '+c.score+(c.trade_tags&&c.trade_tags.length?' &middot; '+c.trade_tags.join(', '):'')+'</div>'+
   (c.parcel_apn?'<div style="margin-top:5px"><a href="'+ASSESSOR+'" target="_blank" rel="noopener">Assessor lookup (APN '+esc(c.parcel_apn)+') &#8599;</a></div>':'')+
-  (c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';}
+  ((c.timeline&&c.timeline.length)?'<div style="margin-top:5px;border-top:1px solid var(--line);padding-top:4px">'+c.timeline.slice(0,4).map(e=>'<div style="font-size:11px"><span class="pp-k">'+esc(e.date||'')+'</span> '+esc(e.kind)+(e.description?' &middot; '+esc(e.description):'')+'</div>').join('')+'</div>':'')+(c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';}
 function renderMap(){if(!MAP)initMap();LAYER.clearLayers();MARKERS={};const pts=[];
   filtered().filter(c=>c.lat&&c.lng).forEach(c=>{
     const m=L.circleMarker([c.lat,c.lng],{radius:6,color:leadColor(c),fillColor:leadColor(c),fillOpacity:.85,weight:1.5});
@@ -138,7 +138,7 @@ function renderHealth(h){const m=$('#matrix');
     const meta=[s.note,s.error?('ERR: '+s.error):'',s.latency_ms!=null?(s.latency_ms+'ms'):'',s.records!=null?(s.records+' items'):''].filter(Boolean).join(' \u00b7 ');
     return '<div class="hcard '+cls+'"><div class="hn"><span class="hdot"></span><span class="hname">'+esc(s.name)+'</span><span class="hstat">'+s.status+'</span></div><div><span class="kind">'+s.kind+'</span> <span class="kind">'+s.tier+'</span></div><div class="hmeta">'+esc(meta)+'</div></div>';}).join('');
   if(h.generated_at)$('#stamp').textContent='health '+h.generated_at;}
-function exportCSV(){const cols=['score','situs_address','owner_name','owner_mailing','parcel_apn','city','zip','assessed_value','last_sale_date','trade_tags','lat','lng','suggested_action'];
+function exportCSV(){const cols=['score','entity_type','vintage','situs_address','owner_name','owner_mailing','parcel_apn','city','zip','assessed_value','last_sale_date','last_sale_price','year_built','bedrooms','bathrooms','roof_type','pool','land_use','trade_tags','cluster_density','lat','lng','suggested_action'];
   const esc2=v=>'"'+String(v==null?'':Array.isArray(v)?v.join('|'):v).replace(/"/g,'""')+'"';
   const lines=[cols.join(',')].concat(filtered().map(c=>cols.map(k=>esc2(c[k])).join(',')));
   const blob=new Blob([lines.join('\n')],{type:'text/csv'});const a=document.createElement('a');
