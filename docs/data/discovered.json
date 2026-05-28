@@ -1,5 +1,35 @@
 {
-  "generated_at": "2026-05-28T12:15:14Z",
-  "selected": null,
-  "candidates": []
+  "generated_at": "2026-05-28T12:25:46Z",
+  "selected": "https://maps.clarkcountynv.gov/arcgis/rest/services/AdminServ/Parcel_UnincorpCC/MapServer/0",
+  "candidates": [
+    {
+      "name": "Clark Assessor parcels (current)",
+      "url": "https://maps.clarkcountynv.gov/arcgis/rest/services/GISMO/AssessorMap/FeatureServer/1",
+      "layer": "Parcels",
+      "richness": {
+        "sample": 40,
+        "owner_pct": 0.0,
+        "address_pct": 0.0,
+        "value_pct": 0.0,
+        "score": 0.0
+      },
+      "mapping": {
+        "parcel_apn": "APN"
+      },
+      "vintage": "current"
+    },
+    {
+      "name": "NV statewide parcels (owner+address, 2018)",
+      "url": "https://gis.dot.nv.gov/agsphs/rest/services/Reference/Statewide_Parcels/MapServer/0",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "name": "auto-discovered",
+      "url": "https://maps.clarkcountynv.gov/arcgis/rest/services/AdminServ/Parcel_UnincorpCC/MapServer/0",
+      "layer": "Parcel_UnincorpCC",
+      "mapping": {
+        "parcel_apn": "APN"
+      }
+    }
+  ]
 }
