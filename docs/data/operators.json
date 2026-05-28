@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T22:17:21Z",
+  "generated_at": "2026-05-28T22:27:28Z",
   "version": "0.103",
   "count": 130,
   "portfolios_2plus": 12,
@@ -281,25 +281,6 @@
       "join_key": "O:C P L V PROPERTY OWNER"
     },
     {
-      "id": "8ce8d11867",
-      "name": "S B H",
-      "canonical_mailing": "4 HOMEOWNER'S ASSOCIATION",
-      "entity_mix": {
-        "PERSON": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 0.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "Assessor Description"
-      ],
-      "parcel_apns": [
-        "14019314133"
-      ],
-      "score": 2,
-      "join_key": "M:4 HOMEOWNER'S ASSOCIATION"
-    },
-    {
       "id": "dc693327cb",
       "name": "SANTOS TRUST",
       "canonical_mailing": null,
@@ -319,6 +300,63 @@
       "join_key": "O:SANTOS"
     },
     {
+      "id": "c5b48bff44",
+      "name": "BLYTON ANNA J LIVING TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2713.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19019512060"
+      ],
+      "score": 2,
+      "join_key": "O:BLYTON ANNA J LIVING"
+    },
+    {
+      "id": "757651fccd",
+      "name": "BOLESA LOURDES BARONA LIVING TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 396.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19019110004"
+      ],
+      "score": 2,
+      "join_key": "O:BOLESA LOURDES BARONA LIVING"
+    },
+    {
+      "id": "4d4a67cdaf",
+      "name": "SIMPSON FAMILY TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2170.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19018814021"
+      ],
+      "score": 2,
+      "join_key": "O:SIMPSON FAMILY"
+    },
+    {
       "id": "6e463cbd59",
       "name": "PURPLE ROSE FAMILY TRUST",
       "canonical_mailing": null,
@@ -336,6 +374,139 @@
       ],
       "score": 2,
       "join_key": "O:PURPLE ROSE FAMILY"
+    },
+    {
+      "id": "e369d5a72f",
+      "name": "JENSEN FAMILY TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2170.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19017412001"
+      ],
+      "score": 2,
+      "join_key": "O:JENSEN FAMILY"
+    },
+    {
+      "id": "0adc51e1ce",
+      "name": "NIELSEN STIG TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 130082.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "LAS VEGAS"
+      ],
+      "parcel_apns": [
+        "13935816067"
+      ],
+      "score": 2,
+      "join_key": "O:NIELSEN STIG"
+    },
+    {
+      "id": "43f5434f01",
+      "name": "OSSA FAMILY TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 4340.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19018816002"
+      ],
+      "score": 2,
+      "join_key": "O:OSSA FAMILY"
+    },
+    {
+      "id": "f64e303a78",
+      "name": "WEBSTER LEVARIO REVOCABLE LIVING TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2713.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19019512043"
+      ],
+      "score": 2,
+      "join_key": "O:WEBSTER LEVARIO REVOCABLE LIVING"
+    },
+    {
+      "id": "c80067fb1b",
+      "name": "LEE SCHERR REVOCABLE LIVING TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 4340.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19019512059"
+      ],
+      "score": 2,
+      "join_key": "O:LEE SCHERR REVOCABLE LIVING"
+    },
+    {
+      "id": "2faf1317aa",
+      "name": "DUROUSSEAU PERLEONEA ARLENE LIVING TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2713.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "19018814001"
+      ],
+      "score": 2,
+      "join_key": "O:DUROUSSEAU PERLEONEA ARLENE LIVING"
+    },
+    {
+      "id": "8ce8d11867",
+      "name": "S B H",
+      "canonical_mailing": "4 HOMEOWNER'S ASSOCIATION",
+      "entity_mix": {
+        "PERSON": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 0.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "Assessor Description"
+      ],
+      "parcel_apns": [
+        "14019314133"
+      ],
+      "score": 2,
+      "join_key": "M:4 HOMEOWNER'S ASSOCIATION"
     },
     {
       "id": "54b96519d0",
@@ -659,177 +830,6 @@
       ],
       "score": 2,
       "join_key": "O:DEL HOULE"
-    },
-    {
-      "id": "c5b48bff44",
-      "name": "BLYTON ANNA J LIVING TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2713.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19019512060"
-      ],
-      "score": 2,
-      "join_key": "O:BLYTON ANNA J LIVING"
-    },
-    {
-      "id": "757651fccd",
-      "name": "BOLESA LOURDES BARONA LIVING TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 396.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19019110004"
-      ],
-      "score": 2,
-      "join_key": "O:BOLESA LOURDES BARONA LIVING"
-    },
-    {
-      "id": "4d4a67cdaf",
-      "name": "SIMPSON FAMILY TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2170.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19018814021"
-      ],
-      "score": 2,
-      "join_key": "O:SIMPSON FAMILY"
-    },
-    {
-      "id": "e369d5a72f",
-      "name": "JENSEN FAMILY TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2170.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19017412001"
-      ],
-      "score": 2,
-      "join_key": "O:JENSEN FAMILY"
-    },
-    {
-      "id": "0adc51e1ce",
-      "name": "NIELSEN STIG TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 130082.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "LAS VEGAS"
-      ],
-      "parcel_apns": [
-        "13935816067"
-      ],
-      "score": 2,
-      "join_key": "O:NIELSEN STIG"
-    },
-    {
-      "id": "43f5434f01",
-      "name": "OSSA FAMILY TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 4340.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19018816002"
-      ],
-      "score": 2,
-      "join_key": "O:OSSA FAMILY"
-    },
-    {
-      "id": "f64e303a78",
-      "name": "WEBSTER LEVARIO REVOCABLE LIVING TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2713.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19019512043"
-      ],
-      "score": 2,
-      "join_key": "O:WEBSTER LEVARIO REVOCABLE LIVING"
-    },
-    {
-      "id": "c80067fb1b",
-      "name": "LEE SCHERR REVOCABLE LIVING TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 4340.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19019512059"
-      ],
-      "score": 2,
-      "join_key": "O:LEE SCHERR REVOCABLE LIVING"
-    },
-    {
-      "id": "2faf1317aa",
-      "name": "DUROUSSEAU PERLEONEA ARLENE LIVING TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2713.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "HENDERSON"
-      ],
-      "parcel_apns": [
-        "19018814001"
-      ],
-      "score": 2,
-      "join_key": "O:DUROUSSEAU PERLEONEA ARLENE LIVING"
     },
     {
       "id": "d36e73f8c7",
