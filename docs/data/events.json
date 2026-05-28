@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-28T00:18:49Z",
+  "kinds_supported": [
+    "PERMIT",
+    "DEED",
+    "LICENSE_NEW",
+    "VIOLATION",
+    "LLC_REGISTRATION",
+    "REVIEW_SPIKE",
+    "SERVICE_REQUEST"
+  ],
+  "count": 0,
+  "events": []
+}

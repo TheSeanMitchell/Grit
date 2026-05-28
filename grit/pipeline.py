@@ -87,45 +87,80 @@ def infer_trades(*texts):
 
 
 # ---- scoring (transparent, deterministic, real-signal only) ---------------
+def classify_owner(name):
+    """Normalize an owner name into one of: PERSON / LLC / TRUST / HOA /
+    GOVERNMENT / COMMERCIAL / UNKNOWN. Order matters -- HOA wins over TRUST,
+    LLC wins over TRUST (e.g. 'ABC PROPERTIES LLC TRUSTEE'), etc."""
+    if not name:
+        return "UNKNOWN"
+    n = " " + str(name).upper().replace(",", " ") + " "
+    tokens = config.ENTITY_TOKENS
+    for et in ("HOA", "GOVERNMENT", "LLC"):
+        if any(t in n for t in tokens.get(et, [])):
+            return et
+    if "TRUST" in n:
+        return "TRUST"
+    if any(t in n for t in tokens.get("COMMERCIAL", [])):
+        return "COMMERCIAL"
+    return "PERSON"
+
+
+# ---- scoring (transparent, deterministic, real-signal only) ---------------
 def score_card(card):
-    score, signals = 0, []
+    """Weighted multi-factor scoring. Entity type sets the floor; contactability,
+    recency, value and cluster density build on top. HOAs and government score 0
+    (not leads via this channel). Everything is shown in `signals` for audit."""
+    entity = card.get("entity_type") or classify_owner(card.get("owner_name"))
+    card["entity_type"] = entity
+    base = config.ENTITY_BASE_SCORE.get(entity, 8)
+    score, signals = base, [f"entity: {entity} (+{base})"]
 
-    if card.get("owner_name"):
-        score += 5
+    if entity in ("HOA", "GOVERNMENT"):
+        card["score"] = 0
+        card["signals"] = signals + ["filtered: not an individual-homeowner lead"]
+        card["suggested_action"] = "skip (HOA / government -- not a contractor lead)"
+        return card
+
     if card.get("situs_address"):
-        score += 5
-    if card.get("owner_name") and card.get("situs_address"):
-        signals.append("contactable: owner + address on file")
+        score += 10; signals.append("has situs address (+10)")
+    if card.get("owner_mailing"):
+        score += 5;  signals.append("has owner mailing (+5)")
 
-    sale = card.get("last_sale_date")
-    months = _months_since(sale)
-    if months is not None and months <= 18:
-        score += 30
-        signals.append(f"recent sale (~{months} mo ago) -> likely renovation window")
-
-    lu = (card.get("land_use") or "").lower()
-    if any(k in lu for k in ("single", "sfr", "residential", "res ")):
+    owner = card.get("owner_mailing"); situs = card.get("situs_address")
+    if owner and situs and _addr_differs(owner, situs):
         score += 10
-        signals.append("residential parcel")
+        signals.append("absentee owner -- mailing ≠ situs (+10)")
+
+    months = _months_since(card.get("last_sale_date"))
+    if months is not None and months <= 18:
+        bonus = 25 if months <= 6 else 18 if months <= 12 else 12
+        score += bonus
+        signals.append(f"recent sale (~{months} mo, +{bonus})")
 
     val = _num(card.get("assessed_value"))
     if val is not None:
-        if val >= 750_000:
-            score += 20; signals.append("high-value parcel ($750k+)")
-        elif val >= 400_000:
-            score += 12; signals.append("mid-high value parcel ($400k+)")
-        elif val >= 200_000:
-            score += 6; signals.append("mid value parcel ($200k+)")
-
-    owner = card.get("owner_mailing")
-    situs = card.get("situs_address")
-    if owner and situs and _addr_differs(owner, situs):
-        score += 10
-        signals.append("absentee owner (mailing != situs) -> rental/flip angle")
+        if val >= 750_000: score += 20; signals.append("high-value parcel $750k+ (+20)")
+        elif val >= 400_000: score += 12; signals.append("mid-high value $400k+ (+12)")
+        elif val >= 200_000: score += 6;  signals.append("mid value $200k+ (+6)")
 
     if card.get("trade_tags"):
         score += 8
-        signals.append("trade signal in record: " + ", ".join(card["trade_tags"]))
+        signals.append("trade signal in record (+8): " + ", ".join(card["trade_tags"]))
+
+    cd = card.get("cluster_density") or 0
+    if cd:
+        bonus = min(cd, config.CLUSTER_MAX_BONUS)
+        score += bonus
+        signals.append(f"cluster: {cd} neighbors within {config.CLUSTER_RADIUS_M}m (+{bonus})")
+
+    # event-driven (timeline) bonus -- fires once event sources are live
+    recent_events = [e for e in (card.get("timeline") or [])
+                     if _months_since(e.get("date")) is not None
+                     and _months_since(e.get("date")) <= 3]
+    if recent_events:
+        bonus = min(30 * len(recent_events), 40)
+        score += bonus
+        signals.append(f"{len(recent_events)} event(s) in last 90d (+{bonus})")
 
     card["score"] = min(score, 100)
     card["signals"] = signals
@@ -147,6 +182,7 @@ def feature_to_card(feat, mapping, source_key):
     props = feat.get("properties", {}) or {}
     lat, lng = _centroid(feat.get("geometry"))
     land_use = _attr(props, mapping, "land_use")
+    owner = _attr(props, mapping, "owner_name")
     card = {
         "id": f"{source_key}:{_attr(props, mapping, 'parcel_apn') or id(feat)}",
         "source": source_key,
@@ -155,17 +191,42 @@ def feature_to_card(feat, mapping, source_key):
         "situs_address": _attr(props, mapping, "situs_address"),
         "city": _attr(props, mapping, "city"),
         "zip": _attr(props, mapping, "zip"),
-        "owner_name": _attr(props, mapping, "owner_name"),
+        "owner_name": owner,
         "owner_mailing": _attr(props, mapping, "owner_mailing"),
         "land_use": land_use,
         "assessed_value": _attr(props, mapping, "assessed_value"),
         "last_sale_date": _attr(props, mapping, "last_sale_date"),
         "last_sale_price": _attr(props, mapping, "last_sale_price"),
         "lat": lat, "lng": lng,
+        "entity_type": classify_owner(owner),
         "trade_tags": infer_trades(land_use),
-        "raw": props,  # full provenance for debugging / enrichment
+        "timeline": [],            # event-driven: filled by event ingestion
+        "cluster_density": 0,      # filled in post-pass
+        "raw": props,
     }
     return score_card(card)
+
+
+def assign_cluster_density(cards, radius_m=None):
+    """Annotate each card with the count of neighbor cards within radius_m.
+    Adds a real geographic-cluster signal (no fake density)."""
+    import math
+    r = radius_m or config.CLUSTER_RADIUS_M
+    r2 = r * r
+    for c in cards:
+        if c.get("lat") is None or c.get("lng") is None:
+            c["cluster_density"] = 0; continue
+        lat0, lng0 = c["lat"], c["lng"]
+        cos_lat = math.cos(math.radians(lat0))
+        count = 0
+        for o in cards:
+            if o is c or o.get("lat") is None:
+                continue
+            dy = (o["lat"] - lat0) * 111000.0
+            dx = (o["lng"] - lng0) * 111000.0 * cos_lat
+            if dx * dx + dy * dy <= r2:
+                count += 1
+        c["cluster_density"] = count
 
 
 # ---- orchestration --------------------------------------------------------
@@ -227,11 +288,22 @@ def harvest():
         "candidates": candidate_report,
     })
 
+    # event-driven layer: load any previously-harvested events and join them to
+    # cards by parcel APN, so cards carry their timeline. Empty until event
+    # sources (permits, deeds, etc.) start ingesting.
+    from . import events as events_mod
+    existing_events = events_mod.load_existing()
     if chosen:
         cand = chosen["cand"]
         mapping = chosen["mapping"]
         feats, meta = arcgis.query_layer(cand["url"], where=cand.get("where", "1=1"))
         cards = [feature_to_card(f, mapping, "clark_gis") for f in feats]
+        # event join: attach any harvested events to their parcel cards (timeline)
+        events_mod.join_to_cards(cards, existing_events)
+        # geographic cluster signal (real, computed from harvested points)
+        assign_cluster_density(cards)
+        # re-score so cluster_density AND event timeline feed into the final score
+        cards = [score_card(c) for c in cards]
         cards.sort(key=lambda c: c["score"], reverse=True)
         cards = cards[:config.CARDS_MAX]
         harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
@@ -248,6 +320,8 @@ def harvest():
         "count": len(cards),
         "cards": cards,
     })
+    # persist events feed (load_existing returns [] if no prior file)
+    events_mod.write(existing_events)
     return len(cards), harvest_meta
 
 

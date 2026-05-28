@@ -11,7 +11,7 @@ GRIT CLI.
 """
 import sys
 
-from . import arcgis, config, sources, pipeline, assessor
+from . import arcgis, config, sources, pipeline, assessor, permits
 
 
 def cmd_health():
@@ -101,6 +101,17 @@ def cmd_selftest():
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
+def cmd_permits(argv):
+    """Capture Accela Citizen Access pages for permit-scraper calibration.
+    Run from a residential IP (your machine) -- the cloud runner gets 403d."""
+    print("Capturing Accela permit search pages (residential IP recommended)...")
+    for r in permits.capture_search_form():
+        print(" ", r)
+    print("\nSaved under docs/data/permit_samples/. Upload one so the precise "
+          "permit-event extractor can be written -- no events are published "
+          "until a verified parser exists (no fake data).")
+
+
 def cmd_enrich(argv):
     """Capture a few live Assessor parcel-detail responses for calibration.
     Reads top APNs from the latest harvest and saves raw HTML to docs/data/."""
@@ -126,12 +137,12 @@ def cmd_enrich(argv):
 
 def main(argv):
     cmds = {"health": cmd_health, "discover": cmd_discover,
-            "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich}
+            "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich, "permits": cmd_permits}
     if len(argv) < 2 or argv[1] not in cmds:
         print(__doc__)
         return 1
-    if argv[1] == 'enrich':
-        cmd_enrich(argv)
+    if argv[1] in ('enrich','permits'):
+        cmds[argv[1]](argv)
     else:
         cmds[argv[1]]()
     return 0

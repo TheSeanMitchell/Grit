@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GRIT BOOTSTRAP — Alpha 0.101
+  ---------------------------------------------------------------------------
+  This file is the FOUNDATIONAL BEDROCK for any future conversation that picks
+  up GRIT. A new Opus (or any assistant) should read this file first, in full,
+  and treat it as the single source of truth for what the project is, what it
+  is not, what has been built, and what comes next.
+-->
+<grit_bootstrap version="0.101">
+
+  <identity>
+    <name>GRIT</name>
+    <type>event-driven acquisition intelligence system</type>
+    <market>Las Vegas / Clark County, Nevada</market>
+    <operator>single human, residential Las Vegas IP</operator>
+    <budget>zero paid infrastructure; GitHub Pages + GitHub Actions only</budget>
+  </identity>
+
+  <mission>
+    Harvest public monetizable event signals, normalize the entities behind
+    them, score and cluster opportunities, and route them toward monetization
+    systems — reducing the human labor required to operate multiple local
+    revenue systems simultaneously. The end-state is a durable, location-
+    independent income radar that finds activity earlier and organizes it
+    better than competitors.
+  </mission>
+
+  <what_grit_is_not>
+    <item>a CRM</item>
+    <item>a contractor portal</item>
+    <item>a passive dashboard</item>
+    <item>a theoretical AI / multi-agent framework</item>
+    <item>a fabricator of data, activity, leads, or revenue</item>
+  </what_grit_is_not>
+
+  <absolute_rules>
+    <rule id="real_data">No synthetic data. No fake activity. No fabricated
+      enrichment. Empty states are acceptable; simulated activity is forbidden.</rule>
+    <rule id="revenue_first">Every system must connect to real monetization.
+      Architecture without monetization is forbidden.</rule>
+    <rule id="human_in_loop">Human-in-the-loop execution is the design, not a
+      stopgap. AI compresses labor; humans close transactions.</rule>
+    <rule id="static_first">Free, durable hosting: static HTML, lightweight JS,
+      local JSON, GitHub Pages + GitHub Actions. Degrade gracefully without AI.</rule>
+    <rule id="phase_gating">Do not build for a phase whose predecessor has not
+      produced real, validated flow.</rule>
+  </absolute_rules>
+
+  <architecture status="alpha_0_101">
+    <data_layer>
+      <source kind="arcgis_rest" tier="live" runs_on="github_action">
+        <name>Clark County parcel candidates</name>
+        <details>
+          Engine SAMPLES known owner/address layers, verifies real owner/address
+          data is populated, and harvests the richest. Currently selects the
+          NV statewide parcels (2018) layer because the modern county Assessor
+          GIS layer exposes only APN + geometry. SSL cert verification disabled
+          for gisgate.co.clark.nv.us due to a hostname-mismatched government
+          certificate (documented).
+        </details>
+      </source>
+      <source kind="event_portal" tier="manual_residential_ip" runs_on="local_machine">
+        <name>Accela Citizen Access — permits (planned)</name>
+        <details>
+          ViewState .aspx portal. Datacenter IPs are blocked (verified). Capture
+          scaffold exists at grit/permits.py; calibrated parser comes after real
+          captured samples. No events are published until a verified extractor
+          exists (no fake data).
+        </details>
+      </source>
+      <source kind="event_portal" tier="manual_residential_ip" runs_on="local_machine">
+        <name>Clark County Recorder — deeds (planned)</name>
+      </source>
+      <source kind="aspx_portal" tier="manual_residential_ip" runs_on="local_machine">
+        <name>Clark County Assessor per-APN enrichment (planned)</name>
+        <details>Scaffold at grit/assessor.py; capture-then-parse pattern.</details>
+      </source>
+    </data_layer>
+
+    <pipeline>
+      <step>candidate selection (sample + populated-richness scoring)</step>
+      <step>field auto-mapping with negative guards (prevents false matches)</step>
+      <step>entity normalization (PERSON / LLC / TRUST / HOA / GOVERNMENT / COMMERCIAL)</step>
+      <step>weighted opportunity scoring (entity + contactability + recency + value + cluster + events)</step>
+      <step>geographic cluster density (real radius calc, no fake density)</step>
+      <step>event join by parcel APN (timeline per card)</step>
+      <step>output: cards.json, events.json, health.json, discovered.json</step>
+    </pipeline>
+
+    <ui status="tactical_console">
+      <feature>side-by-side map + sortable spreadsheet list</feature>
+      <feature>two-way reverse-click (dot ↔ row)</feature>
+      <feature>entity-colored markers with HOA/GOV hidden by default</feature>
+      <feature>trade-colored markers when trade data is present</feature>
+      <feature>CSV export</feature>
+      <feature>Source Health Matrix (live + reachable + manual + pending + down)</feature>
+      <feature>per-card Assessor lookup link by APN</feature>
+    </ui>
+  </architecture>
+
+  <event_kinds>
+    <kind>PERMIT</kind>
+    <kind>DEED</kind>
+    <kind>LICENSE_NEW</kind>
+    <kind>VIOLATION</kind>
+    <kind>LLC_REGISTRATION</kind>
+    <kind>REVIEW_SPIKE</kind>
+    <kind>SERVICE_REQUEST</kind>
+  </event_kinds>
+
+  <data_reality_findings>
+    <finding>
+      Free clean GIS APIs cap at parcel geometry + APN (current) and
+      owner/address (2018, ~25% addresses populated, 0% value).
+    </finding>
+    <finding>
+      Everything fresh and project-relevant (permits, deeds, current owner /
+      value / sale) sits behind ViewState portals (Accela ACA, Assessor pcl.aspx,
+      Recorder) that block datacenter IPs and which the county sells in bulk.
+    </finding>
+    <finding>
+      The free path to fresh data is therefore: clean APIs run on the GitHub
+      Action; event-portal scraping runs LOCALLY from the operator's
+      residential Las Vegas IP, low volume.
+    </finding>
+  </data_reality_findings>
+
+  <next_phase_priorities>
+    <priority order="1">Event ingestion architecture (permits first, then deeds).</priority>
+    <priority order="2">Entity normalization (shipped in 0.101).</priority>
+    <priority order="3">Weighted opportunity scoring (shipped in 0.101).</priority>
+    <priority order="4">Property timelines and event histories per parcel.</priority>
+    <priority order="5">Geographic cluster detection (basic version shipped in 0.101).</priority>
+    <priority order="6">Map intelligence / spreadsheet intelligence / event timelines / clustering / monetization routing.</priority>
+  </next_phase_priorities>
+
+  <do_not>
+    <item>endless UI redesign</item>
+    <item>abstract into theoretical AI systems</item>
+    <item>build fake automation</item>
+    <item>fabricate data</item>
+    <item>over-engineer agents before real acquisition flow exists</item>
+  </do_not>
+
+  <files_of_record>
+    <file path="MANIFESTO.md">canonical mission statement</file>
+    <file path="BOOTSTRAP.xml">this file</file>
+    <file path="README.md">operator quickstart and current state</file>
+    <file path="grit/config.py">version, entity tokens, candidate sources, weights</file>
+    <file path="grit/pipeline.py">entity classification + weighted scoring + clustering + harvest</file>
+    <file path="grit/arcgis.py">ArcGIS REST client + discovery + sampling</file>
+    <file path="grit/sources.py">source registry + health probes</file>
+    <file path="grit/events.py">event contract + APN join + persistence</file>
+    <file path="grit/permits.py">Accela permit capture (residential IP)</file>
+    <file path="grit/assessor.py">per-APN Assessor capture (residential IP)</file>
+    <file path="docs/index.html">tactical console (map + spreadsheet + health)</file>
+    <file path=".github/workflows/harvest.yml">scheduled clean-API harvest</file>
+  </files_of_record>
+
+  <judgement_test>
+    Any proposed change must answer YES to at least one:
+    - Does it find money sooner?
+    - Does it organize money better?
+    - Does it reduce labor per dollar?
+    - Does it improve recency, monetizability, repeatability, automation, durability, or cost?
+    If no — do not build it.
+  </judgement_test>
+
+</grit_bootstrap>

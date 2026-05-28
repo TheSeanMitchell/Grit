@@ -1,66 +1,70 @@
-# GRIT — Harvest Engine (Alpha)
+# GRIT — Alpha 0.101
 
-A public-records **opportunity detection engine** for the Las Vegas / Clark County
-home-services market. It harvests real parcel / owner / address data, scores where
-contract work is forming, and builds **call cards** you follow up on personally.
+**Event-driven acquisition intelligence for Las Vegas / Clark County.**
+Not a CRM. Not a contractor portal. A radar that discovers monetizable local
+activity earlier and organizes it better than competitors.
 
-Not a CRM. The engine pulls real demand signals; you act on them.
+Read `MANIFESTO.md` for the mission and `BOOTSTRAP.xml` for the full project
+state in one file (the foundational bedrock for any future session).
 
-## What's real and running
+---
 
-- **Multi-source parcel harvest.** The engine SAMPLES several known owner/address
-  layers (current county Assessor parcels, plus a confirmed statewide owner+address
-  fallback), checks which one actually has populated owner/address data, and harvests
-  the richest. Falls back to bounded auto-discovery only if all known sources fail.
-  Runs free on the **GitHub Actions runner** — no paid infrastructure, no API key.
+## What's running at 0.101
 
-- **Source Health Matrix** — every source is probed on each run (real reachability,
-  latency, record counts, and the actual fields discovered). The console shows it
-  live so you can debug every connection.
+- **Multi-source parcel harvest.** Engine samples known owner/address layers,
+  verifies real owner+address data is populated, and uses the richest. Runs free
+  on the GitHub Actions runner (clean ArcGIS REST).
+- **Entity normalization.** Every record is classified into one of
+  PERSON / LLC / TRUST / COMMERCIAL / HOA / GOVERNMENT / UNKNOWN.
+- **Weighted opportunity scoring.** Entity + contactability + absentee + recent
+  sale + value + cluster + event-timeline signals, capped at 100, all signals
+  shown for audit. No flat scores, no hidden math.
+- **Geographic cluster detection.** Each card carries a real count of neighbor
+  leads within 500m, fed into scoring (no fake density).
+- **Event contract.** First-class `Event` schema (`grit/events.py`) supporting
+  PERMIT / DEED / LICENSE_NEW / VIOLATION / LLC_REGISTRATION / REVIEW_SPIKE /
+  SERVICE_REQUEST. Events are joined to cards by parcel APN, forming per-parcel
+  timelines that feed the score.
+- **Tactical console.** Side-by-side map + sortable spreadsheet list,
+  two-way reverse-click linking, entity-colored markers (with HOA/GOV hidden
+  by default), CSV export, Source Health Matrix, per-card Assessor lookup.
 
-## Sources registered (see `grit/sources.py`)
+## Data reality (the honest map)
 
-| Source | Kind | Tier |
-|---|---|---|
-| Clark County GIS (parcels/owner/address) | ArcGIS REST API | **live — harvests free** |
-| Clark County permits (Accela) | ViewState portal | reachable / **manual wave** |
-| Nevada State Contractors Board | .aspx portal | reachable / **manual wave** |
-| Clark County Assessor / Recorder | .aspx portals | reachable / **manual wave** |
-| Las Vegas / Henderson / N. Las Vegas permits | city portals | reachable / **manual wave** |
+- Free clean APIs cap at parcel geometry + APN (current) and 2018 owner/address.
+- Fresh project-relevant data (permits, deeds, current owner/value/sale) is
+  gated behind ViewState portals that block datacenter IPs and that the county
+  sells in bulk.
+- **The free path is therefore split.** Clean APIs harvest on the cloud
+  (GitHub Action). Portal scraping (permits/deeds/Assessor) runs **locally
+  from the operator's residential Las Vegas IP** — low volume, real-time, free.
 
-The "manual wave" sources are public records with no clean API; they need a headless
-browser and likely a residential IP (the free runner's datacenter IP gets blocked).
-They're probed for health now and harvested in a later pass — per the "free proxy
-first" decision.
-
-## First run (3 steps)
+## Operator commands
 
 ```bash
-# 1. find the exact parcel/owner layer on the live server (no schema guessing)
-python -m grit discover
-#    -> paste the best candidate URL into grit/config.py as CLARK_PARCEL_LAYER
-
-# 2. harvest it into real call cards
-python -m grit harvest        # writes docs/data/cards.json + health.json
-
-# 3. serve docs/ via GitHub Pages and open index.html
+python -m grit health     # probe every registered source
+python -m grit discover   # walk the ArcGIS catalog and list real fields
+python -m grit harvest    # harvest clean APIs -> cards.json + events.json
+python -m grit permits    # LOCAL ONLY: capture Accela pages for calibration
+python -m grit enrich --sample N   # LOCAL ONLY: capture Assessor samples
+python -m grit selftest   # offline verification of transform logic
 ```
 
-After that, the GitHub Action (`.github/workflows/harvest.yml`) re-harvests daily
-and commits fresh data automatically.
+`permits` and `enrich --sample` are **residential-IP** commands — datacenter
+runners get 403'd by those portals. Run them from your own machine in Vegas,
+push the captured samples, and the precise parsers get written against real
+output (capture-then-build, never blind parsing).
 
-## Hard rules (enforced in code)
+## Anti-drift
 
-- **No synthetic data.** Every card field is from a real source attribute or null.
-  No records are shown until they're harvested. `selftest` uses a clearly-labeled
-  fixture that is never written to `docs/data`.
-- Stdlib only. Free hosting. Degrades to empty states without crashing.
+If a proposed change can't answer **yes** to at least one of the following,
+do not build it:
 
-## Commands
+- Does it find money sooner?
+- Does it organize money better?
+- Does it reduce labor per dollar?
+- Does it improve recency / monetizability / repeatability / automation / durability / cost?
 
-```
-python -m grit health     # probe every source -> health.json
-python -m grit discover   # enumerate live ArcGIS layers + real fields
-python -m grit harvest    # health + harvest live API -> cards.json
-python -m grit selftest   # verify transform logic offline (fixture)
-```
+See `MANIFESTO.md` for the full mission and `BOOTSTRAP.xml` for the system
+contract, including event kinds, next-phase priorities, and the data-reality
+findings that shape architecture decisions.
