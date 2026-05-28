@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T12:24:37Z",
+  "generated_at": "2026-05-28T13:08:08Z",
   "sources": [
     {
       "key": "clark_gis",
@@ -13,63 +13,77 @@
       "records": 56,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-28T12:24:35Z"
+      "checked_at": "2026-05-28T13:07:35Z"
+    },
+    {
+      "key": "clark_assessor",
+      "name": "Clark County Assessor (parcel / owner / sales)",
+      "kind": "aspx",
+      "tier": "live",
+      "url": "https://maps.clarkcountynv.gov/assessor/AssessorParcelDetail/parceldetail.aspx",
+      "note": "LIVE per-APN enrichment (0.102): current owner, address, value, last sale, characteristics via parceldetail.aspx GET. Deterministic parser.",
+      "status": "reachable",
+      "latency_ms": 324,
+      "records": null,
+      "fields": null,
+      "error": null,
+      "checked_at": "2026-05-28T13:07:35Z"
+    },
+    {
+      "key": "nv_sos",
+      "name": "Nevada SOS business entities (SilverFlume / ORION)",
+      "kind": "api",
+      "tier": "reachable",
+      "url": "https://esos.nv.gov/EntitySearch/OnlineEntitySearch",
+      "note": "LLC_REGISTRATION + officer/registered-agent graph. Official BULK DOWNLOAD + API exist (sanctioned -- no scraping). Powers entity graph.",
+      "status": "reachable",
+      "latency_ms": 17,
+      "records": null,
+      "fields": null,
+      "error": null,
+      "checked_at": "2026-05-28T13:07:35Z"
+    },
+    {
+      "key": "nscb",
+      "name": "Nevada State Contractors Board (license search)",
+      "kind": "aspx",
+      "tier": "reachable",
+      "url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
+      "note": "Every licensed contractor by trade = buyer list + permit-puller verification + license-status events. Bulk via public-records request.",
+      "status": "reachable",
+      "latency_ms": 287,
+      "records": null,
+      "fields": null,
+      "error": null,
+      "checked_at": "2026-05-28T13:07:35Z"
     },
     {
       "key": "clark_accela",
       "name": "Clark County permits (Accela Citizen Access)",
       "kind": "accela",
       "tier": "manual",
-      "url": "https://aca-prod.accela.com/clarkco/Default.aspx",
-      "note": "Permit events: who pulled what, where, value. ViewState portal -- headless browser; may need a residential IP.",
-      "status": "reachable",
-      "latency_ms": 276,
+      "url": "https://citizenaccess.clarkcountynv.gov/CitizenAccess/Cap/CapHome.aspx?module=Building&TabName=Building",
+      "note": "\u2605 Highest-value signal. PERMIT events (who/where/value/date) + Code Cases. ViewState portal; 403s the runner -- residential capture.",
+      "status": "down",
+      "latency_ms": null,
       "records": null,
       "fields": null,
-      "error": null,
-      "checked_at": "2026-05-28T12:24:36Z"
-    },
-    {
-      "key": "nscb",
-      "name": "Nevada State Contractors Board (license search)",
-      "kind": "aspx",
-      "tier": "manual",
-      "url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
-      "note": "Every licensed contractor by trade = your buyer list + verification.",
-      "status": "reachable",
-      "latency_ms": 307,
-      "records": null,
-      "fields": null,
-      "error": null,
-      "checked_at": "2026-05-28T12:24:36Z"
-    },
-    {
-      "key": "clark_assessor",
-      "name": "Clark County Assessor (parcel / owner / sales)",
-      "kind": "aspx",
-      "tier": "manual",
-      "url": "https://www.clarkcountynv.gov/government/assessor/",
-      "note": "LIVE per-APN enrichment (0.102): current owner, address, value, last sale, characteristics via parceldetail.aspx GET. Free, deterministic parser.",
-      "status": "reachable",
-      "latency_ms": 101,
-      "records": null,
-      "fields": null,
-      "error": null,
-      "checked_at": "2026-05-28T12:24:37Z"
+      "error": "URLError: <urlopen error timed out>",
+      "checked_at": "2026-05-28T13:07:36Z"
     },
     {
       "key": "clark_recorder",
       "name": "Clark County Recorder (deeds / NOD / liens)",
       "kind": "aspx",
       "tier": "manual",
-      "url": "https://www.clarkcountynv.gov/government/elected_officials/county_recorder/",
-      "note": "Leading indicators: sales (new owners), defaults, mechanics liens.",
+      "url": "https://recorderecomm.clarkcountynv.gov/AcclaimWeb/",
+      "note": "\u2605 Distress engine. Search by Document Type + Record Date: DEED, Notice of Default, Trustee's Sale, Lis Pendens, mechanics/tax liens. Signals only -- never resell document copies (NV AG alert).",
       "status": "reachable",
-      "latency_ms": 103,
+      "latency_ms": 342,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-28T12:24:37Z"
+      "checked_at": "2026-05-28T13:08:06Z"
     },
     {
       "key": "lv_permits",
@@ -77,13 +91,13 @@
       "kind": "accela",
       "tier": "manual",
       "url": "https://www.lasvegasnevada.gov/",
-      "note": "Incorporated-city permits (separate from county).",
+      "note": "Incorporated-city permits (separate from county). Same parser as county.",
       "status": "reachable",
       "latency_ms": 574,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-28T12:24:37Z"
+      "checked_at": "2026-05-28T13:08:06Z"
     },
     {
       "key": "henderson_permits",
@@ -93,11 +107,11 @@
       "url": "https://www.cityofhenderson.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 60,
+      "latency_ms": 411,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-28T12:24:37Z"
+      "checked_at": "2026-05-28T13:08:07Z"
     },
     {
       "key": "nlv_permits",
@@ -107,11 +121,25 @@
       "url": "https://www.cityofnorthlasvegas.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 45,
+      "latency_ms": 221,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-28T12:24:37Z"
+      "checked_at": "2026-05-28T13:08:07Z"
+    },
+    {
+      "key": "clark_courts",
+      "name": "Clark County courts (eviction / probate)",
+      "kind": "aspx",
+      "tier": "manual",
+      "url": "https://cvpublicaccess.co.clark.nv.us/eservices/",
+      "note": "Eviction filings (Justice Court) + probate (District Court). NEEDS VALIDATION + compliance read (FCRA line, NRS 645F outreach rules).",
+      "status": "reachable",
+      "latency_ms": 1157,
+      "records": null,
+      "fields": null,
+      "error": null,
+      "checked_at": "2026-05-28T13:08:07Z"
     }
   ]
 }
