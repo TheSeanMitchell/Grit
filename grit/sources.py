@@ -87,34 +87,51 @@ def _now():
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 
-# --- The registry. Every URL here is a real, confirmed public endpoint. -----
+# --- The registry. Every URL here is a real, confirmed public endpoint. ------
+# Tiers (see EVENT_MATRIX.md):
+#   "live"      harvested now, cloud-safe
+#   "reachable" sanctioned channel verified; ingestion is the next build wave
+#   "manual"    ViewState/session portal -> residential IP, low-volume capture
 REGISTRY = [
+    # ── TIER A: clean / sanctioned, cloud-safe ──────────────────────────────
     Source("clark_gis", "Clark County GIS (parcels / owner / address)",
            "arcgis_rest", config.CLARK_ARCGIS_ROOT, "live",
-           "Clean ArcGIS REST API. Harvests free from the GitHub runner."),
+           "Clean ArcGIS REST API + Hub open data (ccgismo). Spatial spine; "
+           "harvests free from the GitHub runner. Do NOT redistribute raw GIS (NRS 250)."),
 
-    Source("clark_accela", "Clark County permits (Accela Citizen Access)",
-           "accela", "https://aca-prod.accela.com/clarkco/Default.aspx", "manual",
-           "Permit events: who pulled what, where, value. ViewState portal -- "
-           "headless browser; may need a residential IP."),
+    Source("clark_assessor", "Clark County Assessor (parcel / owner / sales)",
+           "aspx", "https://maps.clarkcountynv.gov/assessor/AssessorParcelDetail/"
+           "parceldetail.aspx", "live",
+           "LIVE per-APN enrichment (0.102): current owner, address, value, last "
+           "sale, characteristics via parceldetail.aspx GET. Deterministic parser."),
+
+    Source("nv_sos", "Nevada SOS business entities (SilverFlume / ORION)",
+           "api", "https://esos.nv.gov/EntitySearch/OnlineEntitySearch", "reachable",
+           "LLC_REGISTRATION + officer/registered-agent graph. Official BULK "
+           "DOWNLOAD + API exist (sanctioned -- no scraping). Powers entity graph."),
 
     Source("nscb", "Nevada State Contractors Board (license search)",
            "aspx", "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/"
-           "ContractorLicenseSearch/ContractorLicenseSearch.aspx", "manual",
-           "Every licensed contractor by trade = your buyer list + verification."),
+           "ContractorLicenseSearch/ContractorLicenseSearch.aspx", "reachable",
+           "Every licensed contractor by trade = buyer list + permit-puller "
+           "verification + license-status events. Bulk via public-records request."),
 
-    Source("clark_assessor", "Clark County Assessor (parcel / owner / sales)",
-           "aspx", "https://www.clarkcountynv.gov/government/assessor/", "manual",
-           "LIVE per-APN enrichment (0.102): current owner, address, value, last sale, characteristics via parceldetail.aspx GET. Free, deterministic parser."),
+    # ── TIER B: ViewState / session portals (residential, low-volume) ───────
+    Source("clark_accela", "Clark County permits (Accela Citizen Access)",
+           "accela", "https://citizenaccess.clarkcountynv.gov/CitizenAccess/Cap/"
+           "CapHome.aspx?module=Building&TabName=Building", "manual",
+           "★ Highest-value signal. PERMIT events (who/where/value/date) + Code "
+           "Cases. ViewState portal; 403s the runner -- residential capture."),
 
     Source("clark_recorder", "Clark County Recorder (deeds / NOD / liens)",
-           "aspx", "https://www.clarkcountynv.gov/government/elected_officials/"
-           "county_recorder/", "manual",
-           "Leading indicators: sales (new owners), defaults, mechanics liens."),
+           "aspx", "https://recorderecomm.clarkcountynv.gov/AcclaimWeb/", "manual",
+           "★ Distress engine. Search by Document Type + Record Date: DEED, "
+           "Notice of Default, Trustee's Sale, Lis Pendens, mechanics/tax liens. "
+           "Signals only -- never resell document copies (NV AG alert)."),
 
     Source("lv_permits", "City of Las Vegas permits",
            "accela", "https://www.lasvegasnevada.gov/", "manual",
-           "Incorporated-city permits (separate from county)."),
+           "Incorporated-city permits (separate from county). Same parser as county."),
 
     Source("henderson_permits", "City of Henderson permits",
            "accela", "https://www.cityofhenderson.com/", "manual",
@@ -123,6 +140,12 @@ REGISTRY = [
     Source("nlv_permits", "City of North Las Vegas permits",
            "accela", "https://www.cityofnorthlasvegas.com/", "manual",
            "Incorporated-city permits (separate from county)."),
+
+    # ── TIER C: validate-before-build (court / distress) ────────────────────
+    Source("clark_courts", "Clark County courts (eviction / probate)",
+           "aspx", "https://cvpublicaccess.co.clark.nv.us/eservices/", "manual",
+           "Eviction filings (Justice Court) + probate (District Court). NEEDS "
+           "VALIDATION + compliance read (FCRA line, NRS 645F outreach rules)."),
 ]
 
 

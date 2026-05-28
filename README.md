@@ -1,15 +1,17 @@
-# GRIT — Alpha 0.102
+# GRIT — Phase 0.103
 
 **Event-driven acquisition intelligence for Las Vegas / Clark County.**
 Not a CRM. Not a contractor portal. A radar that discovers monetizable local
 activity earlier and organizes it better than competitors.
 
-Read `MANIFESTO.md` for the mission and `BOOTSTRAP.xml` for the full project
-state in one file (the foundational bedrock for any future session).
+Read `MANIFESTO.md` for the mission, `EVENT_MATRIX.md` for the catalogued source
+landscape (tiers / access / freshness / monetization / compliance), and
+`BOOTSTRAP.xml` for the full project state in one file (the foundational bedrock
+for any future session).
 
 ---
 
-## What's running at 0.102
+## What's running at 0.103
 
 - **Multi-source parcel harvest.** Engine samples known owner/address layers,
   verifies real owner+address data is populated, and uses the richest. Runs free

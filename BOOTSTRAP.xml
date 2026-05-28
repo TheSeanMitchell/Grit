@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  GRIT BOOTSTRAP — Alpha 0.101
+  GRIT BOOTSTRAP — Phase 0.103
   ---------------------------------------------------------------------------
   This file is the FOUNDATIONAL BEDROCK for any future conversation that picks
   up GRIT. A new Opus (or any assistant) should read this file first, in full,
   and treat it as the single source of truth for what the project is, what it
-  is not, what has been built, and what comes next.
+  is not, what has been built, and what comes next. Read EVENT_MATRIX.md
+  alongside it -- that is the operating encyclopedia of monetizable sources.
 -->
-<grit_bootstrap version="0.102">
+<grit_bootstrap version="0.103">
 
   <identity>
     <name>GRIT</name>
@@ -45,9 +46,25 @@
       local JSON, GitHub Pages + GitHub Actions. Degrade gracefully without AI.</rule>
     <rule id="phase_gating">Do not build for a phase whose predecessor has not
       produced real, validated flow.</rule>
+    <rule id="stay_clean">Sanctioned channel first: open-data hub > bulk download
+      > documented API > public-records request > polite low-volume residential
+      capture. NEVER IP-evasion or proxy rotation. Output is acquisition/contractor
+      signal, never a consumer report (bright FCRA line). Do not resell raw GIS
+      (NRS 250) or recorded-document copies. Outreach rules (TCPA/DNC, NRS 645F)
+      live at the routing layer, not at harvest. Staying clean IS the durability
+      strategy -- a polite harvester does not get banned.</rule>
   </absolute_rules>
 
-  <architecture status="alpha_0_102">
+  <strategic_shift phase="0.103">
+    The 0.102 Assessor breakthrough solved data FRESHNESS. The bottleneck is now
+    SIGNAL DENSITY. GRIT evolves from "parcel -> current owner" into a continuous
+    city activity radar built on one chain: EVENT -> ENTITY -> MONEY. Something
+    happens in the city, GRIT detects it, identifies who is involved, scores
+    monetization probability, and routes it toward action. The full source
+    landscape is catalogued in EVENT_MATRIX.md.
+  </strategic_shift>
+
+  <architecture status="phase_0_103">
     <data_layer>
       <source kind="arcgis_rest" tier="live" runs_on="github_action">
         <name>Clark County parcel candidates</name>
@@ -134,13 +151,16 @@
     </finding>
   </data_reality_findings>
 
-  <next_phase_priorities>
-    <priority order="1">Event ingestion architecture (permits first, then deeds).</priority>
-    <priority order="2">Entity normalization (shipped in 0.101).</priority>
-    <priority order="3">Weighted opportunity scoring (shipped in 0.101).</priority>
-    <priority order="4">Property timelines and event histories per parcel.</priority>
-    <priority order="5">Geographic cluster detection (basic version shipped in 0.101).</priority>
-    <priority order="6">Map intelligence / spreadsheet intelligence / event timelines / clustering / monetization routing.</priority>
+  <next_phase_priorities phase="0.103">
+    <priority order="1">EVENT_MATRIX.md — canonical source encyclopedia (DONE 0.103).</priority>
+    <priority order="2">County permit ingestion (Accela B1): capture → calibrate parser → ingest PERMIT events (puller/value/date/APN).</priority>
+    <priority order="3">Recorder distress ingestion (B3): DEED / Notice of Default / Trustee's Sale / liens by document-type + date.</priority>
+    <priority order="4">SilverFlume entity ingestion (A3, bulk/API): LLC_REGISTRATION + officer/registered-agent graph.</priority>
+    <priority order="5">NSCB license sync (A4): buyer list + permit-puller verification + license-status events.</priority>
+    <priority order="6">Recency-weighted event scoring (events carry dates; weight by age).</priority>
+    <priority order="7">Entity graph: repeat-entity detection + relationship clustering across permits/deeds/LLCs/licenses.</priority>
+    <priority order="8">Spreadsheet operator console: multi-filter, disposition/contact state, saved searches.</priority>
+    <priority order="9">City permits (B2), then validate C-tier (code/eviction/probate) one at a time with captured samples + compliance reads.</priority>
   </next_phase_priorities>
 
   <do_not>
@@ -154,6 +174,7 @@
   <files_of_record>
     <file path="MANIFESTO.md">canonical mission statement</file>
     <file path="BOOTSTRAP.xml">this file</file>
+    <file path="EVENT_MATRIX.md">operating encyclopedia of monetizable sources (tiers, access, freshness, monetization, compliance)</file>
     <file path="README.md">operator quickstart and current state</file>
     <file path="grit/config.py">version, entity tokens, candidate sources, weights</file>
     <file path="grit/pipeline.py">entity classification + weighted scoring + clustering + harvest</file>

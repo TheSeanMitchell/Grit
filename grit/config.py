@@ -116,8 +116,8 @@ TRADE_KEYWORDS = {
     "pest":        ["pest", "termite"],
 }
 
-# ── Alpha 0.101 ─────────────────────────────────────────────────────────────
-VERSION = "0.102"
+# ── Version ─────────────────────────────────────────────────────────────────
+VERSION = "0.103"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON

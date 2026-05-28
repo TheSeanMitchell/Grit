@@ -1,7 +1,8 @@
 # GRIT — MANIFESTO
 
-> **Alpha 0.102.** This is the canonical mission. All architecture, scope, and
-> roadmap decisions defer to this document.
+> **Phase 0.103.** This is the canonical mission. All architecture, scope, and
+> roadmap decisions defer to this document. See `EVENT_MATRIX.md` for the
+> catalogued source landscape.
 
 ---
 
@@ -56,18 +57,35 @@ became more monetizable.
 - A fabricator of data or activity.
 - An over-engineered agent framework built before real acquisition flow exists.
 
-## Shipped in 0.102
+## The 0.103 shift: signal density
 
-- **Live Assessor enrichment.** Per-APN GET against `parceldetail.aspx` returns
-  CURRENT owner, mailing, situs address, assessed/taxable value, last sale
-  (price/date/type), land use, year built, and structure characteristics — free,
-  deterministic parser, no fabrication. The top leads each harvest are refreshed
-  from 2018 data to today's record, and recorded sales become DEED timeline events.
+0.102 solved data *freshness* (live Assessor enrichment). The bottleneck is now
+*signal density*. GRIT evolves from "parcel → current owner" into a continuous
+city activity radar on one chain: **EVENT → ENTITY → MONEY.** Something happens,
+GRIT detects it, identifies who is involved, scores monetization probability, and
+routes it toward action. The full source landscape lives in `EVENT_MATRIX.md`.
 
-## Where GRIT is going next (post-0.102)
+## Shipped through 0.103
 
-- Permit ingestion (Accela) from a residential IP.
-- Deed ingestion (Recorder).
-- Property timelines and event histories per parcel.
-- Cluster heat detection in the map UI.
-- Monetization routing — opportunity → contractor partner → tracked outcome.
+- **Live Assessor enrichment (0.102).** Per-APN GET returns CURRENT owner, value,
+  last sale, and characteristics — free, deterministic, no fabrication.
+- **EVENT_MATRIX.md (0.103).** Every realistic monetizable signal in Clark County
+  and its cities, scored on freshness, access, anti-bot reality, monetization, and
+  compliance — grounded in verified-live endpoints, not guesses.
+- **Source registry rebuilt** around the matrix (sanctioned channels first).
+
+## Where GRIT is going next (the 0.103 build sequence)
+
+1. County permit ingestion (Accela) — capture, calibrate, ingest PERMIT events.
+2. Recorder distress ingestion — deeds / NOD / trustee sales / liens by type+date.
+3. SilverFlume entity ingestion (bulk/API) — LLC events + officer/agent graph.
+4. NSCB license sync — buyer list + permit-puller verification.
+5. Recency-weighted event scoring, then the entity graph, then the operator console.
+
+## The stay-clean doctrine
+
+Sanctioned channel first (open data → bulk → API → records request → polite
+residential capture); never IP-evasion. Output is acquisition/contractor signal,
+never a consumer report. Don't resell raw GIS or recorded documents. Outreach
+rules (TCPA/DNC, NRS 645F) gate the *contact*, not the harvest. Staying clean is
+the durability strategy.
