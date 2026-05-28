@@ -107,9 +107,12 @@ def classify_owner(name):
 
 # ---- scoring (transparent, deterministic, real-signal only) ---------------
 def score_card(card):
-    """Weighted multi-factor scoring. Entity type sets the floor; contactability,
-    recency, value and cluster density build on top. HOAs and government score 0
-    (not leads via this channel). Everything is shown in `signals` for audit."""
+    """Weighted multi-factor scoring with multi-layer temporal intelligence.
+    Old signals reclassify (IMMEDIATE/WARM/PERSISTENT/HISTORICAL/STRUCTURAL),
+    they never disappear -- the directive's 'old != dead' rule. Cards that
+    belong to a detected operator portfolio get a portfolio bonus ('money
+    moving as a herd'). All contributions are shown in signals[] for audit."""
+    from . import temporal
     entity = card.get("entity_type") or classify_owner(card.get("owner_name"))
     card["entity_type"] = entity
     base = config.ENTITY_BASE_SCORE.get(entity, 8)
@@ -129,13 +132,15 @@ def score_card(card):
     owner = card.get("owner_mailing"); situs = card.get("situs_address")
     if owner and situs and _addr_differs(owner, situs):
         score += 10
-        signals.append("absentee owner -- mailing ≠ situs (+10)")
+        signals.append("absentee owner -- mailing != situs (+10)")
 
-    months = _months_since(card.get("last_sale_date"))
-    if months is not None and months <= 18:
-        bonus = 25 if months <= 6 else 18 if months <= 12 else 12
-        score += bonus
-        signals.append(f"recent sale (~{months} mo, +{bonus})")
+    # Multi-layer temporal classification on the sale signal.
+    state = temporal.classify(card.get("last_sale_date"))
+    card["temporal_state"] = state
+    sale_bonus = temporal.score_signal(state, kind="sale")
+    if sale_bonus:
+        signals.append(f"sale {state.lower()} (+{sale_bonus})")
+        score += sale_bonus
 
     val = _num(card.get("assessed_value"))
     if val is not None:
@@ -153,14 +158,21 @@ def score_card(card):
         score += bonus
         signals.append(f"cluster: {cd} neighbors within {config.CLUSTER_RADIUS_M}m (+{bonus})")
 
+    # Portfolio bonus -- the "herd" signal. Annotated by entities.build_operator_graph.
+    psize = card.get("portfolio_size") or 1
+    if psize >= 2:
+        # bonus saturates: 2 parcels +6, 5 +12, 10 +18, capped at 20
+        pbonus = min(6 + (psize - 2) * 2, 20)
+        score += pbonus
+        signals.append(f"portfolio: operator controls {psize} parcels (+{pbonus})")
+
     # event-driven (timeline) bonus -- fires once event sources are live
     recent_events = [e for e in (card.get("timeline") or [])
-                     if _months_since(e.get("date")) is not None
-                     and _months_since(e.get("date")) <= 3]
+                     if temporal.classify(e.get("date")) in ("IMMEDIATE", "WARM")]
     if recent_events:
         bonus = min(30 * len(recent_events), 40)
         score += bonus
-        signals.append(f"{len(recent_events)} event(s) in last 90d (+{bonus})")
+        signals.append(f"{len(recent_events)} recent event(s) (+{bonus})")
 
     card["score"] = min(score, 100)
     card["signals"] = signals
@@ -210,13 +222,17 @@ def feature_to_card(feat, mapping, source_key):
 def enrich_cards(cards, limit=None):
     """0.102: enrich the top-scored cards with LIVE Assessor data (current owner,
     address, value, last sale). Overwrites stale fields, reclassifies the entity,
-    emits a DEED event for the recorded sale, and re-scores. Real data only."""
+    emits a DEED event for the recorded sale, and re-scores. Real data only.
+
+    0.103: track silent parser misses (fetched but no fields parsed) separately
+    from network errors -- the silent-miss rate is the real density bottleneck."""
     import time
     from . import assessor, events as events_mod
     limit = limit if limit is not None else config.CARDS_ENRICH_MAX
     targets = [c for c in sorted(cards, key=lambda c: c["score"], reverse=True)
                if c.get("parcel_apn")][:limit]
-    new_events, ok, err = [], 0, 0
+    new_events, ok, err, silent = [], 0, 0, 0
+    silent_apns = []
     FRESH = ("owner_name", "owner_mailing", "situs_address", "city",
              "assessed_value", "land_use", "last_sale_date", "last_sale_price",
              "last_sale_type", "year_built", "bedrooms", "bathrooms",
@@ -225,6 +241,10 @@ def enrich_cards(cards, limit=None):
         data = assessor.enrich_apn(c["parcel_apn"])
         if data.get("_error"):
             err += 1
+            continue
+        if data.get("_silent"):
+            silent += 1
+            silent_apns.append(c["parcel_apn"])
             continue
         for k in FRESH:
             if data.get(k) not in (None, ""):
@@ -243,7 +263,11 @@ def enrich_cards(cards, limit=None):
             new_events.append(ev)
         ok += 1
         time.sleep(config.ENRICH_DELAY)
-    return new_events, {"enriched": ok, "errors": err, "attempted": len(targets)}
+    attempted = len(targets)
+    yield_pct = round(100 * ok / attempted, 1) if attempted else 0.0
+    return new_events, {"enriched": ok, "silent_misses": silent, "errors": err,
+                        "attempted": attempted, "yield_pct": yield_pct,
+                        "silent_sample_apns": silent_apns[:5]}
 
 
 def assign_cluster_density(cards, radius_m=None):
@@ -293,19 +317,27 @@ def harvest():
     candidates += config.PARCEL_CANDIDATES
 
     for cand in candidates:
-        try:
-            feats, fields, info = arcgis.sample_layer(cand["url"], cand.get("where", "1=1"))
-            mapping = cand.get("field_map") or build_field_map(fields)
-            rich = populated_richness(feats, mapping)
+        last_err = None
+        for attempt in (1, 2):                          # one retry: rich-owner layers are worth the wait
+            try:
+                feats, fields, info = arcgis.sample_layer(
+                    cand["url"], cand.get("where", "1=1"), timeout=45)
+                mapping = cand.get("field_map") or build_field_map(fields)
+                rich = populated_richness(feats, mapping)
+                candidate_report.append({"name": cand.get("name"), "url": cand["url"],
+                                         "layer": info.get("name"), "richness": rich,
+                                         "mapping": mapping, "vintage": cand.get("vintage"),
+                                         "attempts": attempt})
+                if rich["owner_pct"] + rich["address_pct"] > 0 and (
+                        chosen is None or rich["score"] > chosen["rich"]["score"]):
+                    chosen = {"cand": cand, "mapping": mapping, "info": info, "rich": rich}
+                last_err = None
+                break
+            except Exception as e:  # noqa: BLE001
+                last_err = f"{type(e).__name__}: {e}"
+        if last_err:
             candidate_report.append({"name": cand.get("name"), "url": cand["url"],
-                                     "layer": info.get("name"), "richness": rich,
-                                     "mapping": mapping, "vintage": cand.get("vintage")})
-            if rich["owner_pct"] + rich["address_pct"] > 0 and (
-                    chosen is None or rich["score"] > chosen["rich"]["score"]):
-                chosen = {"cand": cand, "mapping": mapping, "info": info, "rich": rich}
-        except Exception as e:  # noqa: BLE001
-            candidate_report.append({"name": cand.get("name"), "url": cand["url"],
-                                     "error": f"{type(e).__name__}: {e}"})
+                                     "error": last_err, "attempts": 2})
 
     if chosen is None:  # last resort: crawl the servers for anything with owner data
         try:
@@ -348,13 +380,32 @@ def harvest():
         enrich_events, enrich_stats = enrich_cards(cards)
         all_events = existing_events + enrich_events
         events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales
-        cards = [score_card(c) for c in cards]          # re-score with fresh data
+        # 0.103: build the operator graph BEFORE the final re-score so the
+        # portfolio bonus ('money moving as a herd') lands in each card's score.
+        from . import entities
+        operators = entities.build_operator_graph(cards)
+        cards = [score_card(c) for c in cards]          # re-score with fresh data + portfolio
         cards.sort(key=lambda c: c["score"], reverse=True)
         events_mod.write(all_events)
+        _write(f"{config.DATA_DIR}/operators.json", {
+            "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "version": config.VERSION,
+            "count": len(operators),
+            "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2),
+            "operators": operators,
+        })
+        # density telemetry: surface the parser-yield bottleneck in harvest meta
+        owner_pct = round(100 * sum(1 for c in cards if c.get("owner_name")) / max(len(cards),1), 1)
         harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
                         "source_name": cand.get("name"), "vintage": cand.get("vintage"),
                         "layer_url": cand["url"], "field_map": mapping,
-                        "richness": chosen["rich"], "enrichment": enrich_stats, **meta}
+                        "richness": chosen["rich"], "enrichment": enrich_stats,
+                        "density": {"cards_total": len(cards),
+                                    "cards_with_owner": sum(1 for c in cards if c.get("owner_name")),
+                                    "owner_pct": owner_pct,
+                                    "operators_detected": len(operators),
+                                    "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2)},
+                        **meta}
     elif not harvest_meta["detail"]:
         harvest_meta["detail"] = ("No candidate returned populated owner/address data. "
                                   "See discovered.json for what each source exposed.")

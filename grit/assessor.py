@@ -36,6 +36,21 @@ _IGNORE = set(_LABELS) | {"Owner", "and", "Mailing Address", "Month/Year",
                          "Sale Type", "Comments", "Vesting"}
 
 
+def _norm_label(s: str) -> str:
+    """Aggressively normalize for tolerant matching: NBSP -> space, lower-case,
+    strip trailing punctuation, collapse whitespace. Stops the parser from
+    silently missing 'Parcel No' vs 'Parcel No.' vs 'Parcel&nbsp;No.'."""
+    if s is None:
+        return ""
+    t = str(s).replace("\xa0", " ").replace("\u00a0", " ")
+    t = t.strip().rstrip(":.,").strip().lower()
+    return " ".join(t.split())
+
+
+# Pre-normalize the ignore set once for fast tolerant comparison
+_IGNORE_NORM = {_norm_label(x) for x in _IGNORE}
+
+
 def fetch_parcel(apn, timeout=20):
     """GET the live parcel-detail page for one APN. Returns raw HTML text."""
     url = f"{PARCEL_DETAIL}?hdnparcel={urllib.parse.quote(str(apn))}&logo=1"
@@ -47,32 +62,62 @@ def fetch_parcel(apn, timeout=20):
 def _flatten(html_text):
     """HTML -> ordered list of visible text cells (each tag boundary = a break)."""
     t = _html.unescape(html_text)
+    t = t.replace("\xa0", " ").replace("\u00a0", " ")
     t = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", t, flags=re.S | re.I)
     t = re.sub(r"<[^>]+>", "\n", t)
     cells = [re.sub(r"\s+", " ", c).strip() for c in t.split("\n")]
     return [c for c in cells if c]
 
 
-def _value_after(cells, label):
-    """First substantive cell after `label` (skipping glossary-link echoes)."""
+def _find_label(cells, label):
+    """Tolerant label finder. Returns the index of the cell that 'is' the label
+    under normalization, or the cell that STARTS with the label as a word
+    prefix (handles 'Parcel No. 138-99-...' all in one cell). -1 if not found."""
+    target = _norm_label(label)
     for i, c in enumerate(cells):
-        if c == label:
-            for j in range(i + 1, min(i + 6, len(cells))):
-                cand = cells[j]
-                if cand and cand not in _IGNORE and not cand.startswith("["):
-                    return cand
+        nc = _norm_label(c)
+        if nc == target:
+            return i
+        # prefix-as-word: "parcel no" matches the start of "parcel no 138..."
+        if nc.startswith(target + " "):
+            return i
+    return -1
+
+
+def _value_after(cells, label):
+    """First substantive cell after `label`. Handles two layouts:
+      (a) label and value in adjacent cells   -> return the next cell
+      (b) label and value in the SAME cell    -> return the tail after the label
+    Skips glossary echoes (cells starting with '[') and ignored connector words."""
+    i = _find_label(cells, label)
+    if i < 0:
+        return None
+    # (b) same-cell: tail after the label text
+    nc = _norm_label(cells[i])
+    nt = _norm_label(label)
+    if nc != nt and nc.startswith(nt + " "):
+        tail = cells[i][len(label):].lstrip(" .:,\xa0").strip()
+        if tail and _norm_label(tail) not in _IGNORE_NORM and not tail.startswith("["):
+            return tail
+    # (a) adjacent: scan forward a small window
+    for j in range(i + 1, min(i + 6, len(cells))):
+        cand = cells[j]
+        if cand and _norm_label(cand) not in _IGNORE_NORM and not cand.startswith("["):
+            return cand
     return None
 
 
 def _split_owner(cells):
     """Owner + mailing live in one cell: 'NAME  STREET CITY ST ZIP'. The name is
-    the run before the street number; the rest is the mailing address."""
+    the run before the street number; the rest is the mailing address. Tolerant
+    of 'Owner', 'OWNER', 'Owner and Mailing Address', etc."""
     raw = None
     for i, c in enumerate(cells):
-        if c == "Owner" or c.startswith("Owner and"):
+        nc = _norm_label(c)
+        if nc == "owner" or nc.startswith("owner and"):
             for j in range(i + 1, min(i + 8, len(cells))):
                 cand = cells[j]
-                if cand and cand not in _IGNORE and not cand.startswith("["):
+                if cand and _norm_label(cand) not in _IGNORE_NORM and not cand.startswith("["):
                     raw = cand
                     break
             break
@@ -86,16 +131,15 @@ def _split_owner(cells):
 
 def _last_number(cells, label):
     """Two fiscal-year columns; take the later numeric cell (current year)."""
-    for i, c in enumerate(cells):
-        if c == label:
-            nums = []
-            for j in range(i + 1, min(i + 4, len(cells))):
-                v = cells[j].replace(",", "")
-                if re.fullmatch(r"\d+", v):
-                    nums.append(cells[j])
-            if nums:
-                return nums[-1]
-    return None
+    i = _find_label(cells, label)
+    if i < 0:
+        return None
+    nums = []
+    for j in range(i + 1, min(i + 4, len(cells))):
+        v = cells[j].replace(",", "")
+        if re.fullmatch(r"\d+", v):
+            nums.append(cells[j])
+    return nums[-1] if nums else None
 
 
 def _norm_sale_date(s):
@@ -109,11 +153,12 @@ def _norm_sale_date(s):
 def _postprocess_sale(cells, out):
     """'Last Sale Price' cell holds 'PRICE  M/YYYY  SALETYPE' across columns."""
     for i, c in enumerate(cells):
-        if c.startswith("Last Sale Price"):
+        nc = _norm_label(c)
+        if nc.startswith("last sale price"):
             vals = []
             for j in range(i + 1, min(i + 10, len(cells))):
                 cand = cells[j]
-                if cand and cand not in _IGNORE and not cand.startswith("["):
+                if cand and _norm_label(cand) not in _IGNORE_NORM and not cand.startswith("["):
                     vals.append(cand)
                 if len(vals) >= 3:
                     break
@@ -153,8 +198,20 @@ def parse_parcel_detail(html_text):
 
 
 def enrich_apn(apn, timeout=20):
-    """Fetch + parse one parcel. Returns fresh fields, or {'_error':...}."""
+    """Fetch + parse one parcel. Returns one of:
+        {field: value, ...}            -- parsed at least owner_name or situs
+        {"_silent": "no-parse", ...}   -- fetch ok but parser extracted nothing
+                                          (signals a real parser-coverage gap)
+        {"_error": "<type>: <msg>"}    -- fetch failed (network / 404 / timeout)
+    Never raises. Real diagnostic states only -- no fabricated success."""
     try:
-        return parse_parcel_detail(fetch_parcel(apn, timeout=timeout))
+        html_text = fetch_parcel(apn, timeout=timeout)
     except Exception as e:  # noqa: BLE001
         return {"_error": f"{type(e).__name__}: {e}"}
+    parsed = parse_parcel_detail(html_text)
+    # If the page was the "no record found" stub or the labels drifted, the
+    # parser returns an empty dict. Mark that explicitly so the pipeline can
+    # count silent misses and the operator sees parser-yield in the matrix.
+    if not parsed.get("owner_name") and not parsed.get("situs_address"):
+        return {"_silent": "no-parse", "_html_bytes": len(html_text), **parsed}
+    return parsed

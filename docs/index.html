@@ -62,17 +62,41 @@
   .empty{border:1px dashed var(--line2);padding:40px 20px;text-align:center;color:var(--faint);background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(255,255,255,.01) 9px,rgba(255,255,255,.01) 18px)}
   .empty .big{font-family:var(--disp);font-size:22px;color:var(--dim);letter-spacing:1px;margin-bottom:8px}
   @media(max-width:820px){.split{flex-direction:column}#map{height:380px}.lbody{height:360px}}
+  /* 0.103 intelligence surface */
+  .pill{display:inline-block;font-size:9px;letter-spacing:.5px;padding:1px 5px;margin-right:4px;border:1px solid var(--line2);color:var(--dim);vertical-align:middle}
+  .pill.t-IMMEDIATE{color:#7be08c;border-color:#2e6b35}
+  .pill.t-WARM{color:#e8b56d;border-color:#6b4f23}
+  .pill.t-PERSISTENT{color:#9ab8de;border-color:#34465f}
+  .pill.t-HISTORICAL{color:#9aa1ad;border-color:#3a3f48}
+  .pill.t-STRUCTURAL{color:#7c828c;border-color:#2b2f36}
+  .pill.port{color:#c47f3d;border-color:#6a4520;font-weight:600}
+  .why{margin-top:6px;border-top:1px solid var(--line);padding-top:5px;font-size:10px;color:var(--dim)}
+  .why-h{color:var(--faint);letter-spacing:1px;font-size:9px;margin-bottom:3px}
+  .why-row{padding:1px 0}
+  .density{display:flex;gap:14px;font-size:11px;color:var(--dim);margin:6px 0 14px;flex-wrap:wrap}
+  .density b{color:var(--txt);font-weight:600}
+  .density .lo{color:var(--red)}.density .ok{color:var(--green)}.density .mid{color:var(--amber)}
+  .ops{width:100%;border-collapse:collapse;font-size:11px}
+  .ops th{text-align:left;font-size:9px;letter-spacing:1px;color:var(--faint);padding:6px 8px;border-bottom:1px solid var(--line2);text-transform:uppercase;background:var(--panel)}
+  .ops td{padding:7px 8px;border-bottom:1px solid var(--line);color:var(--txt)}
+  .ops tr:hover td{background:var(--panel)}
+  .ops .num{text-align:right;color:var(--dim);font-variant-numeric:tabular-nums}
+  .ops .nm{color:var(--txt);max-width:380px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ops-empty{color:var(--faint);font-size:11px;padding:14px 4px}
 </style>
 </head>
 <body>
 <div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag" id="ver">HARVEST CONSOLE &middot; CLARK COUNTY &middot; v0.103</div><div class="stamp" id="stamp">loading&hellip;</div></div>
 <div class="wrap">
   <h2 class="sec">Leads <span id="harveststate" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
+  <div class="density" id="density"></div>
   <div class="toolbar" id="toolbar"></div>
   <div class="split">
     <div class="pane-map"><div id="map"></div><div class="legend" id="legend"></div></div>
     <div class="pane-list" id="pane-list"></div>
   </div>
+  <h2 class="sec">Operators <span id="opscount" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
+  <div id="operators"></div>
   <h2 class="sec">Source Health Matrix</h2>
   <div class="matrix" id="matrix"></div>
 </div>
@@ -84,14 +108,18 @@ const ENTITY_COLORS={PERSON:'#4493f8',LLC:'#c47f3d',TRUST:'#6fb3b8',COMMERCIAL:'
 const ENTITY_HIDE_DEFAULT=new Set(['HOA','GOVERNMENT']);
 let HIDE_NONLEAD=true;
 const ASSESSOR='https://maps.clarkcountynv.gov/assessor/AssessorParcelDetail/pcl.aspx';
-let CARDS=[],FILTER=null,SORT={k:'score',dir:-1},MAP=null,LAYER=null,MARKERS={},SEL=null;
+let CARDS=[],OPERATORS=[],FILTER=null,TFILTER=null,OPFILTER=null,SORT={k:'score',dir:-1},MAP=null,LAYER=null,MARKERS={},SEL=null;
 async function loadJSON(p){try{const r=await fetch(p,{cache:'no-store'});if(!r.ok)return null;return await r.json();}catch(e){return null;}}
 function dot(s){return ['live','reachable','pending','down'].includes(s)?s:'pending';}
 function scoreColor(n){return n>=60?'#3fb950':n>=30?'#d29922':'#5a606b';}
 function leadColor(c){return (c.trade_tags&&c.trade_tags.length&&TRADE_COLORS[c.trade_tags[0]])||(c.entity_type&&ENTITY_COLORS[c.entity_type])||scoreColor(c.score);}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function num(v){return parseFloat(String(v==null?'':v).replace(/[^0-9.]/g,''))||0;}
-function filtered(){let l=CARDS.slice();if(HIDE_NONLEAD)l=l.filter(c=>!ENTITY_HIDE_DEFAULT.has(c.entity_type||'UNKNOWN'));if(FILTER)l=l.filter(c=>(c.trade_tags||[]).includes(FILTER));
+function filtered(){let l=CARDS.slice();
+  if(HIDE_NONLEAD && !OPFILTER)l=l.filter(c=>!ENTITY_HIDE_DEFAULT.has(c.entity_type||'UNKNOWN'));
+  if(FILTER)l=l.filter(c=>(c.trade_tags||[]).includes(FILTER));
+  if(TFILTER)l=l.filter(c=>c.temporal_state===TFILTER);
+  if(OPFILTER)l=l.filter(c=>c.operator_id===OPFILTER);
   const k=SORT.k;l.sort((a,b)=>{let va,vb;
     if(k==='trade'){va=(a.trade_tags||[])[0]||'';vb=(b.trade_tags||[])[0]||'';}
     else if(k==='score'||k==='assessed_value'){va=num(a[k]);vb=num(b[k]);}
@@ -100,13 +128,20 @@ function filtered(){let l=CARDS.slice();if(HIDE_NONLEAD)l=l.filter(c=>!ENTITY_HI
 function initMap(){MAP=L.map('map',{zoomControl:true}).setView([36.12,-115.17],10);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(MAP);
   LAYER=L.layerGroup().addTo(MAP);}
-function popupHTML(c){return '<div class="pp"><div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
+function popupHTML(c){
+  const badges=(c.temporal_state?'<span class="pill t-'+c.temporal_state+'">'+c.temporal_state+'</span>':'')+
+               (c.portfolio_size>1?'<span class="pill port">PORTFOLIO '+c.portfolio_size+'</span>':'');
+  const why=(c.signals&&c.signals.length)?'<div class="why"><div class="why-h">WHY SURFACED</div>'+c.signals.map(s=>'<div class="why-row">&middot; '+esc(s)+'</div>').join('')+'</div>':'';
+  return '<div class="pp"><div class="pp-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
+  (badges?'<div style="margin-bottom:4px">'+badges+'</div>':'')+
   (c.owner_name?'<div><span class="pp-k">owner</span> '+esc(c.owner_name)+'</div>':'')+
   (c.vintage==='current'?'<div style="color:var(--green)">\u25cf live assessor data</div>':'')+(c.assessed_value?'<div><span class="pp-k">value</span> '+esc(c.assessed_value)+(c.last_sale_price?' &middot; sold '+esc(c.last_sale_price):'')+'</div>':'')+(c.year_built?'<div><span class="pp-k">built</span> '+esc(c.year_built)+(c.bedrooms?' &middot; '+esc(c.bedrooms)+'bd':'')+(c.bathrooms?'/'+esc(c.bathrooms):'')+(c.roof_type?' &middot; '+esc(c.roof_type):'')+'</div>':'')+
   (c.last_sale_date?'<div><span class="pp-k">last sale</span> '+esc(c.last_sale_date)+'</div>':'')+
   (c.entity_type?'<div><span class="pp-k">entity</span> '+esc(c.entity_type)+'</div>':'')+(c.cluster_density?'<div><span class="pp-k">cluster</span> '+c.cluster_density+' neighbors within 500m</div>':'')+'<div><span class="pp-k">score</span> '+c.score+(c.trade_tags&&c.trade_tags.length?' &middot; '+c.trade_tags.join(', '):'')+'</div>'+
   (c.parcel_apn?'<div style="margin-top:5px"><a href="'+ASSESSOR+'" target="_blank" rel="noopener">Assessor lookup (APN '+esc(c.parcel_apn)+') &#8599;</a></div>':'')+
-  ((c.timeline&&c.timeline.length)?'<div style="margin-top:5px;border-top:1px solid var(--line);padding-top:4px">'+c.timeline.slice(0,4).map(e=>'<div style="font-size:11px"><span class="pp-k">'+esc(e.date||'')+'</span> '+esc(e.kind)+(e.description?' &middot; '+esc(e.description):'')+'</div>').join('')+'</div>':'')+(c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';}
+  ((c.timeline&&c.timeline.length)?'<div style="margin-top:5px;border-top:1px solid var(--line);padding-top:4px">'+c.timeline.slice(0,4).map(e=>'<div style="font-size:11px"><span class="pp-k">'+esc(e.date||'')+'</span> '+esc(e.kind)+(e.description?' &middot; '+esc(e.description):'')+'</div>').join('')+'</div>':'')+
+  why+
+  (c.suggested_action?'<div class="pp-next">&#9656; '+esc(c.suggested_action)+'</div>':'')+'</div>';}
 function renderMap(){if(!MAP)initMap();LAYER.clearLayers();MARKERS={};const pts=[];
   filtered().filter(c=>c.lat&&c.lng).forEach(c=>{
     const m=L.circleMarker([c.lat,c.lng],{radius:6,color:leadColor(c),fillColor:leadColor(c),fillOpacity:.85,weight:1.5});
@@ -120,18 +155,56 @@ function selectLead(id,fromMap){SEL=id;
   const m=MARKERS[id];if(m){if(!fromMap){const ll=m.getLatLng();MAP.panTo(ll);}m.openPopup();}}
 function listHTML(){const cols=[['score','SCORE','c-score'],['situs_address','ADDRESS','c-addr'],['owner_name','OWNER','c-owner'],['entity_type','ENTITY','c-ent'],['trade','TRADE','c-trade'],['assessed_value','VALUE','c-val']];
   const head='<div class="lhead">'+cols.map(c=>'<div class="'+c[2]+'" data-k="'+c[0]+'">'+c[1]+(SORT.k===c[0]?(SORT.dir>0?' \u25b2':' \u25bc'):'')+'</div>').join('')+'</div>';
-  const rows=filtered().map(c=>'<div class="lrow'+(SEL===c.id?' sel':'')+'" data-id="'+esc(c.id)+'">'+
+  const rows=filtered().map(c=>{
+    const tp=c.temporal_state?'<span class="pill t-'+c.temporal_state+'">'+c.temporal_state.charAt(0)+'</span>':'';
+    const pp=c.portfolio_size>1?'<span class="pill port">P'+c.portfolio_size+'</span>':'';
+    return '<div class="lrow'+(SEL===c.id?' sel':'')+'" data-id="'+esc(c.id)+'">'+
     '<div class="c-score"><span class="scoredot" style="background:'+leadColor(c)+'"></span>'+c.score+'</div>'+
-    '<div class="c-addr">'+esc(c.situs_address||'(unknown)')+'</div>'+
+    '<div class="c-addr">'+tp+pp+esc(c.situs_address||'(unknown)')+'</div>'+
     '<div class="c-owner">'+esc(c.owner_name||'\u2014')+'</div>'+
     '<div class="c-ent" style="color:'+(ENTITY_COLORS[c.entity_type]||'#888')+'">'+(c.entity_type||'\u2014')+'</div>'+'<div class="c-trade">'+((c.trade_tags||[])[0]||'\u2014')+'</div>'+
-    '<div class="c-val">'+esc(c.assessed_value||'\u2014')+'</div></div>').join('');
+    '<div class="c-val">'+esc(c.assessed_value||'\u2014')+'</div></div>';
+  }).join('');
   return head+'<div class="lbody">'+(rows||'<div class="empty" style="border:0">no leads match this filter</div>')+'</div>';}
 function renderList(){const p=$('#pane-list');
   if(!CARDS.length){p.innerHTML='<div class="empty" style="border:0;height:580px;display:flex;flex-direction:column;justify-content:center"><div class="big">NO HARVEST YET</div>Run the GitHub Action: Actions &rarr; "GRIT harvest" &rarr; Run workflow.</div>';return;}
   p.innerHTML=listHTML();
   p.querySelectorAll('.lhead div[data-k]').forEach(h=>h.onclick=()=>{const k=h.dataset.k;SORT.dir=(SORT.k===k?-SORT.dir:-1);SORT.k=k;renderList();});
   p.querySelectorAll('.lrow').forEach(r=>r.onclick=()=>selectLead(r.dataset.id,false));}
+function renderOperators(){const o=$('#operators');const $c=$('#opscount');
+  if(!OPERATORS||!OPERATORS.length){o.innerHTML='<div class="ops-empty">No operators detected yet. Once Assessor enrichment populates owner names + mailing addresses, repeat owners and shared-mailing clusters appear here.</div>';if($c)$c.textContent='';return;}
+  const portfolios=OPERATORS.filter(op=>op.parcel_count>=2);
+  if($c)$c.textContent='\u00b7 '+OPERATORS.length+' detected \u00b7 '+portfolios.length+' multi-parcel \u00b7 click a row to filter leads to that portfolio';
+  // Operators with >=2 parcels first, then singletons (already sorted by score)
+  const top=portfolios.concat(OPERATORS.filter(op=>op.parcel_count<2)).slice(0,30);
+  const fmt=n=>n>=1e6?('$'+(n/1e6).toFixed(1)+'M'):n>=1e3?('$'+(n/1e3).toFixed(0)+'k'):('$'+n.toFixed(0));
+  o.innerHTML='<table class="ops"><thead><tr><th>OPERATOR</th><th>ENTITY MIX</th><th class="num">PARCELS</th><th class="num">TOTAL VALUE</th><th class="num">RECENT</th><th>CITIES</th><th class="num">SCORE</th></tr></thead><tbody>'+
+    top.map(op=>{
+      const mix=Object.entries(op.entity_mix||{}).map(([k,v])=>k+'\u00d7'+v).join(' ');
+      const sel=op.id===OPFILTER?' style="background:rgba(68,147,248,.18);outline:1px solid var(--blue)"':'';
+      return '<tr data-opid="'+esc(op.id)+'" style="cursor:pointer"'+sel+'><td class="nm">'+esc(op.name)+'</td><td><span class="kind">'+esc(mix||'?')+'</span></td>'+
+        '<td class="num">'+op.parcel_count+'</td>'+
+        '<td class="num">'+(op.total_assessed_value?fmt(op.total_assessed_value):'\u2014')+'</td>'+
+        '<td class="num">'+(op.recent_activity_count||0)+'</td>'+
+        '<td>'+esc((op.cities||[]).slice(0,2).join(', '))+'</td>'+
+        '<td class="num">'+op.score+'</td></tr>';
+    }).join('')+'</tbody></table>';
+  o.querySelectorAll('tr[data-opid]').forEach(tr=>tr.onclick=()=>{
+    const id=tr.dataset.opid;
+    OPFILTER=(OPFILTER===id)?null:id;     // click again to clear
+    renderToolbar();renderList();renderMap();renderOperators();
+    if(OPFILTER){window.scrollTo({top:0,behavior:'smooth'});}
+  });}
+function renderDensity(meta){const d=$('#density');if(!d||!meta||!meta.density&&!meta.enrichment){d.innerHTML='';return;}
+  const den=meta.density||{};const en=meta.enrichment||{};
+  const yieldPct=en.yield_pct!=null?en.yield_pct:null;
+  const yc=yieldPct==null?'':(yieldPct>=70?'ok':yieldPct>=30?'mid':'lo');
+  const oc=den.owner_pct==null?'':(den.owner_pct>=70?'ok':den.owner_pct>=30?'mid':'lo');
+  const parts=[];
+  if(den.cards_with_owner!=null)parts.push('<span>owner data <b class="'+oc+'">'+den.cards_with_owner+' / '+den.cards_total+'</b> ('+(den.owner_pct||0)+'%)</span>');
+  if(yieldPct!=null)parts.push('<span>assessor parser yield <b class="'+yc+'">'+yieldPct+'%</b> ('+(en.enriched||0)+' parsed / '+(en.silent_misses||0)+' silent / '+(en.errors||0)+' err on '+(en.attempted||0)+' attempts)</span>');
+  if(den.operators_detected!=null)parts.push('<span>operators <b>'+den.operators_detected+'</b> ('+(den.portfolios_2plus||0)+' multi-parcel)</span>');
+  d.innerHTML=parts.join('');}
 function renderHealth(h){const m=$('#matrix');
   if(!h||!h.sources){m.innerHTML='<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Trigger the GitHub Action.</div>';return;}
   m.innerHTML=h.sources.map(s=>{const cls=dot(s.status);
@@ -144,17 +217,30 @@ function exportCSV(){const cols=['score','entity_type','vintage','situs_address'
   const blob=new Blob([lines.join('\n')],{type:'text/csv'});const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);a.download='grit_leads_'+new Date().toISOString().slice(0,10)+'.csv';a.click();}
 function renderToolbar(){const tb=$('#toolbar');const trades=[...new Set(CARDS.flatMap(c=>c.trade_tags||[]))].sort();
-  tb.innerHTML='<span class="tcount">'+filtered().length+' leads</span>'+
+  const states=['IMMEDIATE','WARM','PERSISTENT','HISTORICAL','STRUCTURAL'];
+  const tStateCounts={};states.forEach(s=>tStateCounts[s]=CARDS.filter(c=>c.temporal_state===s).length);
+  const lens='<span class="filt '+(!TFILTER?'on':'')+'" data-tlens="">all time</span>'+
+             states.filter(s=>tStateCounts[s]>0).map(s=>'<span class="filt '+(TFILTER===s?'on':'')+'" data-tlens="'+s+'" title="'+tStateCounts[s]+' '+s.toLowerCase()+'">'+s.toLowerCase()+'</span>').join('');
+  let opPill='';
+  if(OPFILTER){
+    const op=(OPERATORS||[]).find(o=>o.id===OPFILTER);
+    if(op)opPill='<span class="filt on" id="opclear" style="border-color:var(--amber);color:var(--amber);cursor:pointer" title="click to clear">operator: '+esc(op.name)+' \u00b7 '+op.parcel_count+'p \u00d7</span>';
+  }
+  tb.innerHTML='<span class="tcount">'+filtered().length+' leads</span>'+opPill+
     (trades.length?'<span class="filt '+(!FILTER?'on':'')+'" data-t="">all</span>'+trades.map(t=>'<span class="filt '+(FILTER===t?'on':'')+'" data-t="'+t+'">'+t+'</span>').join(''):'')+
+    '<span style="color:var(--faint);font-size:10px;margin:0 4px">|</span>'+lens+
     '<button class="btn" id="hide">'+(HIDE_NONLEAD?'show HOA/gov':'hide HOA/gov')+'</button>'+'<button class="btn" id="csv">&#8595; CSV</button>';
-  tb.querySelectorAll('.filt').forEach(el=>el.onclick=()=>{FILTER=el.dataset.t||null;renderToolbar();renderList();renderMap();});
+  tb.querySelectorAll('.filt[data-t]').forEach(el=>el.onclick=()=>{FILTER=el.dataset.t||null;renderToolbar();renderList();renderMap();});
+  tb.querySelectorAll('.filt[data-tlens]').forEach(el=>el.onclick=()=>{TFILTER=el.dataset.tlens||null;renderToolbar();renderList();renderMap();});
+  const oc=$('#opclear');if(oc)oc.onclick=()=>{OPFILTER=null;renderToolbar();renderList();renderMap();renderOperators();};
   $('#csv').onclick=exportCSV;const hb=$('#hide');if(hb)hb.onclick=()=>{HIDE_NONLEAD=!HIDE_NONLEAD;renderToolbar();renderList();renderMap();};}
 (async()=>{initMap();renderHealth(await loadJSON('data/health.json'));
   const cd=await loadJSON('data/cards.json');CARDS=(cd&&cd.cards)||[];
   if(cd&&cd.version)$('#ver').innerHTML='HARVEST CONSOLE &middot; CLARK COUNTY &middot; v'+cd.version;
   CARDS.forEach((c,i)=>{if(!c.id)c.id='c'+i;});
-  if(cd&&cd.harvest){const h=cd.harvest;$('#harveststate').textContent=h.layer?'\u00b7 source: '+(h.source_name||h.layer)+(h.vintage?' ('+h.vintage+')':'')+' \u00b7 '+cd.count+' leads':'\u00b7 '+(h.status||'')+' '+(h.detail||'');}
-  renderToolbar();renderList();renderMap();})();
+  if(cd&&cd.harvest){const h=cd.harvest;$('#harveststate').textContent=h.layer?'\u00b7 source: '+(h.source_name||h.layer)+(h.vintage?' ('+h.vintage+')':'')+' \u00b7 '+cd.count+' leads':'\u00b7 '+(h.status||'')+' '+(h.detail||'');renderDensity(h);}
+  const od=await loadJSON('data/operators.json');OPERATORS=(od&&od.operators)||[];
+  renderToolbar();renderList();renderMap();renderOperators();})();
 </script>
 </body>
 </html>
