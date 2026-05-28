@@ -45,8 +45,16 @@ class Source:
             else:
                 self._probe_http(rec)
         except Exception as e:  # noqa: BLE001 - health must never crash the run
-            rec["status"] = "down"
-            rec["error"] = f"{type(e).__name__}: {e}"
+            # Manual-tier ViewState portals are EXPECTED to refuse/stall bots
+            # (that's why they're manual). A timeout/connection error there is
+            # the expected state, not an outage -- don't flag it red.
+            if self.tier == "manual":
+                rec["status"] = "manual"
+                rec["note"] = (self.note + " [no bot access from here -- "
+                               "residential capture]").strip()
+            else:
+                rec["status"] = "down"
+                rec["error"] = f"{type(e).__name__}: {e}"
         return rec
 
     def _probe_arcgis(self, rec):

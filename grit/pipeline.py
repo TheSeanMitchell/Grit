@@ -361,6 +361,7 @@ def harvest():
 
     _write(config.CARDS_FILE, {
         "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "version": config.VERSION,
         "harvest": harvest_meta,
         "count": len(cards),
         "cards": cards,

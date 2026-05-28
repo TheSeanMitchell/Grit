@@ -65,7 +65,7 @@
 </style>
 </head>
 <body>
-<div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag">HARVEST CONSOLE &middot; CLARK COUNTY &middot; v0.102</div><div class="stamp" id="stamp">loading&hellip;</div></div>
+<div class="top"><div class="brand">GR<b>I</b>T</div><div class="tag" id="ver">HARVEST CONSOLE &middot; CLARK COUNTY &middot; v0.103</div><div class="stamp" id="stamp">loading&hellip;</div></div>
 <div class="wrap">
   <h2 class="sec">Leads <span id="harveststate" style="font-size:10px;color:var(--faint);letter-spacing:0;text-transform:none"></span></h2>
   <div class="toolbar" id="toolbar"></div>
@@ -151,6 +151,7 @@ function renderToolbar(){const tb=$('#toolbar');const trades=[...new Set(CARDS.f
   $('#csv').onclick=exportCSV;const hb=$('#hide');if(hb)hb.onclick=()=>{HIDE_NONLEAD=!HIDE_NONLEAD;renderToolbar();renderList();renderMap();};}
 (async()=>{initMap();renderHealth(await loadJSON('data/health.json'));
   const cd=await loadJSON('data/cards.json');CARDS=(cd&&cd.cards)||[];
+  if(cd&&cd.version)$('#ver').innerHTML='HARVEST CONSOLE &middot; CLARK COUNTY &middot; v'+cd.version;
   CARDS.forEach((c,i)=>{if(!c.id)c.id='c'+i;});
   if(cd&&cd.harvest){const h=cd.harvest;$('#harveststate').textContent=h.layer?'\u00b7 source: '+(h.source_name||h.layer)+(h.vintage?' ('+h.vintage+')':'')+' \u00b7 '+cd.count+' leads':'\u00b7 '+(h.status||'')+' '+(h.detail||'');}
   renderToolbar();renderList();renderMap();})();
