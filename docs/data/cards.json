@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T03:18:06Z",
+  "generated_at": "2026-05-29T03:24:53Z",
   "version": "0.103",
   "harvest": {
     "status": "ok",
@@ -36,14 +36,14 @@
     },
     "records": 5000,
     "pages": 5,
-    "latency_ms": 13775
+    "latency_ms": 13847
   },
   "count": 500,
   "cards": [
     {
       "id": "clark_gis:16105610034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105610034",
       "situs_address": "4995 YUMA AVE",
       "city": "SUNRISE MANOR",
@@ -59,6 +59,37 @@
       "entity_type": "PERSON",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "2026-03-01",
+          "source": "clark_assessor",
+          "parcel_apn": "16105610034",
+          "address": "4995 YUMA AVE",
+          "description": "recorded sale 510000 (R - Recorded Value)",
+          "trade_tag": null,
+          "lat": 36.15529227853121,
+          "lng": -115.06567516903786,
+          "raw": {
+            "parcel_apn": "161-05-610-034",
+            "owner_name": "ROBERT ERICK SANTIAGO",
+            "situs_address": "4995 YUMA AVE",
+            "city": "SUNRISE MANOR",
+            "assessed_value": "116,729",
+            "taxable_value": "333,511",
+            "land_use": "20.110 - Single Family Residential",
+            "year_built": "2005",
+            "lot_size": "0.17 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Mar 6 2026",
+            "bedrooms": "4",
+            "bathrooms": "2 FULL",
+            "roof_type": "Concrete Tile",
+            "pool": "NO",
+            "last_sale_price": "510000",
+            "last_sale_date": "2026-03-01",
+            "last_sale_type": "R - Recorded Value"
+          }
+        },
         {
           "kind": "DEED",
           "date": "2026-03-01",
@@ -204,7 +235,7 @@
         "has situs address (+10)",
         "sale immediate (+25)",
         "cluster: 64 neighbors within 500m (+10)",
-        "4 recent event(s) (+40)"
+        "5 recent event(s) (+40)"
       ],
       "suggested_action": "Pull contact for ROBERT ERICK SANTIAGO; confirm project intent at 4995 YUMA AVE.",
       "last_sale_type": "R - Recorded Value",
@@ -224,7 +255,7 @@
     {
       "id": "clark_gis:16301301012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301301012",
       "situs_address": "1985 DUNEVILLE ST",
       "city": "CLARK COUNTY",
@@ -489,6 +520,37 @@
             "last_sale_date": "2023-09-01",
             "last_sale_type": "R - Recorded Value"
           }
+        },
+        {
+          "kind": "DEED",
+          "date": "2023-09-01",
+          "source": "clark_assessor",
+          "parcel_apn": "16301301012",
+          "address": "1985 DUNEVILLE ST",
+          "description": "recorded sale 328500 (R - Recorded Value)",
+          "trade_tag": null,
+          "lat": 36.15005116591137,
+          "lng": -115.22138791202168,
+          "raw": {
+            "parcel_apn": "163-01-301-012",
+            "owner_name": "SANTOS TRUST",
+            "situs_address": "1985 DUNEVILLE ST",
+            "city": "CLARK COUNTY",
+            "assessed_value": "114,631",
+            "taxable_value": "327,517",
+            "land_use": "31.110 - Multi Family Res: Two SFR Units",
+            "year_built": "1977",
+            "lot_size": "0.47 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Oct 3 2023",
+            "bedrooms": "3",
+            "bathrooms": "2 FULL",
+            "roof_type": "Composition Shingle",
+            "pool": "NO",
+            "last_sale_price": "328500",
+            "last_sale_date": "2023-09-01",
+            "last_sale_type": "R - Recorded Value"
+          }
         }
       ],
       "cluster_density": 17,
@@ -531,7 +593,7 @@
     {
       "id": "clark_gis:19105211006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19105211006",
       "situs_address": "11717 OAKLAND HILLS DR",
       "city": "ENTERPRISE",
@@ -547,6 +609,35 @@
       "entity_type": "PERSON",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "2014-06-01",
+          "source": "clark_assessor",
+          "parcel_apn": "19105211006",
+          "address": "11717 OAKLAND HILLS DR",
+          "description": "recorded sale 1410000 (M - Multiple-Parcel Sale)",
+          "trade_tag": null,
+          "lat": 35.97746396741681,
+          "lng": -115.19006969023008,
+          "raw": {
+            "parcel_apn": "191-05-211-006",
+            "owner_name": "FELLERMAN LINDEN",
+            "situs_address": "11717 OAKLAND HILLS DR",
+            "city": "ENTERPRISE",
+            "land_use": "26.110 - SFR - Auxiliary Area. Secondary parcel from a split lot",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Jan 22 2016",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "1410000",
+            "last_sale_date": "2014-06-01",
+            "last_sale_type": "M - Multiple-Parcel Sale"
+          }
+        },
         {
           "kind": "DEED",
           "date": "2014-06-01",
@@ -702,7 +793,7 @@
     {
       "id": "clark_gis:17612614036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17612614036",
       "situs_address": "ENTERPRISE",
       "city": "Assessor Description",
@@ -718,6 +809,35 @@
       "entity_type": "PERSON",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "2007-02-01",
+          "source": "clark_assessor",
+          "parcel_apn": "17612614036",
+          "address": "ENTERPRISE",
+          "description": "recorded sale 357336 (M - Multiple-Parcel Sale)",
+          "trade_tag": null,
+          "lat": 36.05068396939663,
+          "lng": -115.20890283729739,
+          "raw": {
+            "parcel_apn": "176-12-614-036",
+            "owner_name": "ECHAVARRIA LUIS",
+            "situs_address": "ENTERPRISE",
+            "city": "Assessor Description",
+            "land_use": "27.100 - SFR - Common Area",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Feb 26 2007",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "357336",
+            "last_sale_date": "2007-02-01",
+            "last_sale_type": "M - Multiple-Parcel Sale"
+          }
+        },
         {
           "kind": "DEED",
           "date": "2007-02-01",
@@ -873,7 +993,7 @@
     {
       "id": "clark_gis:19105117001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19105117001",
       "situs_address": "ENTERPRISE",
       "city": "Assessor Description",
@@ -889,6 +1009,35 @@
       "entity_type": "LLC",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "0",
+          "source": "clark_assessor",
+          "parcel_apn": "19105117001",
+          "address": "ENTERPRISE",
+          "description": "recorded sale 12.000 - Vacant - Single Family Residential (Primary Residential Structure)",
+          "trade_tag": null,
+          "lat": 35.981665021570024,
+          "lng": -115.18991371597292,
+          "raw": {
+            "parcel_apn": "191-05-117-001",
+            "owner_name": "SOUTHERN HIGHLANDS CORPORATE CTR",
+            "situs_address": "ENTERPRISE",
+            "city": "Assessor Description",
+            "land_use": "12.000 - Vacant - Single Family Residential",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Sep 29 2004",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "12.000 - Vacant - Single Family Residential",
+            "last_sale_date": "0",
+            "last_sale_type": "Primary Residential Structure"
+          }
+        },
         {
           "kind": "DEED",
           "date": "0",
@@ -1043,7 +1192,7 @@
     {
       "id": "clark_gis:16105599088",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599088",
       "situs_address": null,
       "city": null,
@@ -1086,7 +1235,7 @@
     {
       "id": "clark_gis:16105599089",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599089",
       "situs_address": null,
       "city": null,
@@ -1129,7 +1278,7 @@
     {
       "id": "clark_gis:16105599076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599076",
       "situs_address": null,
       "city": null,
@@ -1172,7 +1321,7 @@
     {
       "id": "clark_gis:16105599081",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599081",
       "situs_address": null,
       "city": null,
@@ -1215,7 +1364,7 @@
     {
       "id": "clark_gis:16105699070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699070",
       "situs_address": null,
       "city": null,
@@ -1258,7 +1407,7 @@
     {
       "id": "clark_gis:16105699074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699074",
       "situs_address": null,
       "city": null,
@@ -1301,7 +1450,7 @@
     {
       "id": "clark_gis:17721295006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721295006",
       "situs_address": null,
       "city": null,
@@ -1344,7 +1493,7 @@
     {
       "id": "clark_gis:16105599071",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599071",
       "situs_address": null,
       "city": null,
@@ -1387,7 +1536,7 @@
     {
       "id": "clark_gis:16105599059",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599059",
       "situs_address": null,
       "city": null,
@@ -1430,7 +1579,7 @@
     {
       "id": "clark_gis:16105599058",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599058",
       "situs_address": null,
       "city": null,
@@ -1473,7 +1622,7 @@
     {
       "id": "clark_gis:16105599075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599075",
       "situs_address": null,
       "city": null,
@@ -1516,7 +1665,7 @@
     {
       "id": "clark_gis:16105599072",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599072",
       "situs_address": null,
       "city": null,
@@ -1559,7 +1708,7 @@
     {
       "id": "clark_gis:16105599064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599064",
       "situs_address": null,
       "city": null,
@@ -1602,7 +1751,7 @@
     {
       "id": "clark_gis:16105599065",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599065",
       "situs_address": null,
       "city": null,
@@ -1645,7 +1794,7 @@
     {
       "id": "clark_gis:16105599066",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599066",
       "situs_address": null,
       "city": null,
@@ -1688,7 +1837,7 @@
     {
       "id": "clark_gis:16321490002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16321490002",
       "situs_address": null,
       "city": null,
@@ -1731,7 +1880,7 @@
     {
       "id": "clark_gis:16105499023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499023",
       "situs_address": null,
       "city": null,
@@ -1774,7 +1923,7 @@
     {
       "id": "clark_gis:17734599005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17734599005",
       "situs_address": null,
       "city": null,
@@ -1817,7 +1966,7 @@
     {
       "id": "clark_gis:16127199016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199016",
       "situs_address": null,
       "city": null,
@@ -1860,7 +2009,7 @@
     {
       "id": "clark_gis:16401697010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16401697010",
       "situs_address": null,
       "city": null,
@@ -1903,7 +2052,7 @@
     {
       "id": "clark_gis:16105599069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599069",
       "situs_address": null,
       "city": null,
@@ -1946,7 +2095,7 @@
     {
       "id": "clark_gis:16105799043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799043",
       "situs_address": null,
       "city": null,
@@ -1989,7 +2138,7 @@
     {
       "id": "clark_gis:16321496001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16321496001",
       "situs_address": null,
       "city": null,
@@ -2032,7 +2181,7 @@
     {
       "id": "clark_gis:17721299009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721299009",
       "situs_address": null,
       "city": null,
@@ -2075,7 +2224,7 @@
     {
       "id": "clark_gis:16105599091",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599091",
       "situs_address": null,
       "city": null,
@@ -2118,7 +2267,7 @@
     {
       "id": "clark_gis:16128699012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16128699012",
       "situs_address": null,
       "city": null,
@@ -2161,7 +2310,7 @@
     {
       "id": "clark_gis:14019199045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019199045",
       "situs_address": null,
       "city": null,
@@ -2204,7 +2353,7 @@
     {
       "id": "clark_gis:16105499083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499083",
       "situs_address": null,
       "city": null,
@@ -2247,7 +2396,7 @@
     {
       "id": "clark_gis:16105499006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499006",
       "situs_address": null,
       "city": null,
@@ -2290,7 +2439,7 @@
     {
       "id": "clark_gis:16105499030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499030",
       "situs_address": null,
       "city": null,
@@ -2333,7 +2482,7 @@
     {
       "id": "clark_gis:16105399087",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399087",
       "situs_address": null,
       "city": null,
@@ -2376,7 +2525,7 @@
     {
       "id": "clark_gis:16321496002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16321496002",
       "situs_address": null,
       "city": null,
@@ -2419,7 +2568,7 @@
     {
       "id": "clark_gis:16105799080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799080",
       "situs_address": null,
       "city": null,
@@ -2462,7 +2611,7 @@
     {
       "id": "clark_gis:16105799081",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799081",
       "situs_address": null,
       "city": null,
@@ -2505,7 +2654,7 @@
     {
       "id": "clark_gis:16106799015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106799015",
       "situs_address": null,
       "city": null,
@@ -2548,7 +2697,7 @@
     {
       "id": "clark_gis:14019199044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019199044",
       "situs_address": null,
       "city": null,
@@ -2591,7 +2740,7 @@
     {
       "id": "clark_gis:16105499044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499044",
       "situs_address": null,
       "city": null,
@@ -2634,7 +2783,7 @@
     {
       "id": "clark_gis:16105699008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699008",
       "situs_address": null,
       "city": null,
@@ -2677,7 +2826,7 @@
     {
       "id": "clark_gis:16105499029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499029",
       "situs_address": null,
       "city": null,
@@ -2720,7 +2869,7 @@
     {
       "id": "clark_gis:16127299010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299010",
       "situs_address": null,
       "city": null,
@@ -2763,7 +2912,7 @@
     {
       "id": "clark_gis:16317599018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16317599018",
       "situs_address": null,
       "city": null,
@@ -2806,7 +2955,7 @@
     {
       "id": "clark_gis:16127199013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199013",
       "situs_address": null,
       "city": null,
@@ -2849,7 +2998,7 @@
     {
       "id": "clark_gis:16127299012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299012",
       "situs_address": null,
       "city": null,
@@ -2892,7 +3041,7 @@
     {
       "id": "clark_gis:17726899021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17726899021",
       "situs_address": null,
       "city": null,
@@ -2935,7 +3084,7 @@
     {
       "id": "clark_gis:16105899014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899014",
       "situs_address": null,
       "city": null,
@@ -2978,7 +3127,7 @@
     {
       "id": "clark_gis:16105599093",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599093",
       "situs_address": null,
       "city": null,
@@ -3021,7 +3170,7 @@
     {
       "id": "clark_gis:16321490001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16321490001",
       "situs_address": null,
       "city": null,
@@ -3064,7 +3213,7 @@
     {
       "id": "clark_gis:16105599092",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599092",
       "situs_address": null,
       "city": null,
@@ -3107,7 +3256,7 @@
     {
       "id": "clark_gis:17721299008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721299008",
       "situs_address": null,
       "city": null,
@@ -3150,7 +3299,7 @@
     {
       "id": "clark_gis:16221495002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16221495002",
       "situs_address": null,
       "city": null,
@@ -3193,7 +3342,7 @@
     {
       "id": "clark_gis:16311799048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799048",
       "situs_address": null,
       "city": null,
@@ -3236,7 +3385,7 @@
     {
       "id": "clark_gis:16105799044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799044",
       "situs_address": null,
       "city": null,
@@ -3279,7 +3428,7 @@
     {
       "id": "clark_gis:14021299003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021299003",
       "situs_address": null,
       "city": null,
@@ -3322,7 +3471,7 @@
     {
       "id": "clark_gis:14021399023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399023",
       "situs_address": null,
       "city": null,
@@ -3365,7 +3514,7 @@
     {
       "id": "clark_gis:16311699002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699002",
       "situs_address": null,
       "city": null,
@@ -3408,7 +3557,7 @@
     {
       "id": "clark_gis:16105799067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799067",
       "situs_address": null,
       "city": null,
@@ -3451,7 +3600,7 @@
     {
       "id": "clark_gis:16311899023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899023",
       "situs_address": null,
       "city": null,
@@ -3494,7 +3643,7 @@
     {
       "id": "clark_gis:16103197003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16103197003",
       "situs_address": null,
       "city": null,
@@ -3537,7 +3686,7 @@
     {
       "id": "clark_gis:16336199015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199015",
       "situs_address": null,
       "city": null,
@@ -3580,7 +3729,7 @@
     {
       "id": "clark_gis:16105399057",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399057",
       "situs_address": null,
       "city": null,
@@ -3623,7 +3772,7 @@
     {
       "id": "clark_gis:16127299027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299027",
       "situs_address": null,
       "city": null,
@@ -3666,7 +3815,7 @@
     {
       "id": "clark_gis:16225299009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16225299009",
       "situs_address": null,
       "city": null,
@@ -3709,7 +3858,7 @@
     {
       "id": "clark_gis:16225299013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16225299013",
       "situs_address": null,
       "city": null,
@@ -3752,7 +3901,7 @@
     {
       "id": "clark_gis:16311899029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899029",
       "situs_address": null,
       "city": null,
@@ -3795,7 +3944,7 @@
     {
       "id": "clark_gis:17706899008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899008",
       "situs_address": null,
       "city": null,
@@ -3838,7 +3987,7 @@
     {
       "id": "clark_gis:16311799050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799050",
       "situs_address": null,
       "city": null,
@@ -3881,7 +4030,7 @@
     {
       "id": "clark_gis:16121499012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16121499012",
       "situs_address": null,
       "city": null,
@@ -3924,7 +4073,7 @@
     {
       "id": "clark_gis:16105399053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399053",
       "situs_address": null,
       "city": null,
@@ -3967,7 +4116,7 @@
     {
       "id": "clark_gis:16127299011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299011",
       "situs_address": null,
       "city": null,
@@ -4010,7 +4159,7 @@
     {
       "id": "clark_gis:16311899027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899027",
       "situs_address": null,
       "city": null,
@@ -4053,7 +4202,7 @@
     {
       "id": "clark_gis:16105399027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399027",
       "situs_address": null,
       "city": null,
@@ -4096,7 +4245,7 @@
     {
       "id": "clark_gis:16311899044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899044",
       "situs_address": null,
       "city": null,
@@ -4139,7 +4288,7 @@
     {
       "id": "clark_gis:16105499056",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499056",
       "situs_address": null,
       "city": null,
@@ -4182,7 +4331,7 @@
     {
       "id": "clark_gis:16105499025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499025",
       "situs_address": null,
       "city": null,
@@ -4225,7 +4374,7 @@
     {
       "id": "clark_gis:16105499053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499053",
       "situs_address": null,
       "city": null,
@@ -4268,7 +4417,7 @@
     {
       "id": "clark_gis:16127299004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299004",
       "situs_address": null,
       "city": null,
@@ -4311,7 +4460,7 @@
     {
       "id": "clark_gis:16105499045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499045",
       "situs_address": null,
       "city": null,
@@ -4354,7 +4503,7 @@
     {
       "id": "clark_gis:16105399061",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399061",
       "situs_address": null,
       "city": null,
@@ -4397,7 +4546,7 @@
     {
       "id": "clark_gis:16105799072",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799072",
       "situs_address": null,
       "city": null,
@@ -4440,7 +4589,7 @@
     {
       "id": "clark_gis:17718699040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718699040",
       "situs_address": null,
       "city": null,
@@ -4483,7 +4632,7 @@
     {
       "id": "clark_gis:16106799032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106799032",
       "situs_address": null,
       "city": null,
@@ -4526,7 +4675,7 @@
     {
       "id": "clark_gis:16311399041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399041",
       "situs_address": null,
       "city": null,
@@ -4569,7 +4718,7 @@
     {
       "id": "clark_gis:16105699041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699041",
       "situs_address": null,
       "city": null,
@@ -4612,7 +4761,7 @@
     {
       "id": "clark_gis:16105499051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499051",
       "situs_address": null,
       "city": null,
@@ -4655,7 +4804,7 @@
     {
       "id": "clark_gis:16105399050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399050",
       "situs_address": null,
       "city": null,
@@ -4698,7 +4847,7 @@
     {
       "id": "clark_gis:16105499065",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499065",
       "situs_address": null,
       "city": null,
@@ -4741,7 +4890,7 @@
     {
       "id": "clark_gis:16311599028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311599028",
       "situs_address": null,
       "city": null,
@@ -4784,7 +4933,7 @@
     {
       "id": "clark_gis:16105799050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799050",
       "situs_address": null,
       "city": null,
@@ -4827,7 +4976,7 @@
     {
       "id": "clark_gis:16105599052",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599052",
       "situs_address": null,
       "city": null,
@@ -4870,7 +5019,7 @@
     {
       "id": "clark_gis:16128599024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16128599024",
       "situs_address": null,
       "city": null,
@@ -4913,7 +5062,7 @@
     {
       "id": "clark_gis:16105799019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799019",
       "situs_address": null,
       "city": null,
@@ -4956,7 +5105,7 @@
     {
       "id": "clark_gis:17718699024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718699024",
       "situs_address": null,
       "city": null,
@@ -4999,7 +5148,7 @@
     {
       "id": "clark_gis:16105599047",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599047",
       "situs_address": null,
       "city": null,
@@ -5042,7 +5191,7 @@
     {
       "id": "clark_gis:14021499007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021499007",
       "situs_address": null,
       "city": null,
@@ -5085,7 +5234,7 @@
     {
       "id": "clark_gis:14021399024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399024",
       "situs_address": null,
       "city": null,
@@ -5128,7 +5277,7 @@
     {
       "id": "clark_gis:16105799048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799048",
       "situs_address": null,
       "city": null,
@@ -5171,7 +5320,7 @@
     {
       "id": "clark_gis:17605897029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897029",
       "situs_address": null,
       "city": null,
@@ -5214,7 +5363,7 @@
     {
       "id": "clark_gis:16223699028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223699028",
       "situs_address": null,
       "city": null,
@@ -5257,7 +5406,7 @@
     {
       "id": "clark_gis:16225299007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16225299007",
       "situs_address": null,
       "city": null,
@@ -5300,7 +5449,7 @@
     {
       "id": "clark_gis:16105799051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799051",
       "situs_address": null,
       "city": null,
@@ -5343,7 +5492,7 @@
     {
       "id": "clark_gis:16105899021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899021",
       "situs_address": null,
       "city": null,
@@ -5386,7 +5535,7 @@
     {
       "id": "clark_gis:14023299030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14023299030",
       "situs_address": null,
       "city": null,
@@ -5429,7 +5578,7 @@
     {
       "id": "clark_gis:16127199017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199017",
       "situs_address": null,
       "city": null,
@@ -5472,7 +5621,7 @@
     {
       "id": "clark_gis:16106799033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106799033",
       "situs_address": null,
       "city": null,
@@ -5515,7 +5664,7 @@
     {
       "id": "clark_gis:16311799040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799040",
       "situs_address": null,
       "city": null,
@@ -5558,7 +5707,7 @@
     {
       "id": "clark_gis:16105899024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899024",
       "situs_address": null,
       "city": null,
@@ -5601,7 +5750,7 @@
     {
       "id": "clark_gis:16105899040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899040",
       "situs_address": null,
       "city": null,
@@ -5644,7 +5793,7 @@
     {
       "id": "clark_gis:16217199022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16217199022",
       "situs_address": null,
       "city": null,
@@ -5687,7 +5836,7 @@
     {
       "id": "clark_gis:16105799053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799053",
       "situs_address": null,
       "city": null,
@@ -5730,7 +5879,7 @@
     {
       "id": "clark_gis:17608497022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17608497022",
       "situs_address": null,
       "city": null,
@@ -5773,7 +5922,7 @@
     {
       "id": "clark_gis:16311899005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899005",
       "situs_address": null,
       "city": null,
@@ -5816,7 +5965,7 @@
     {
       "id": "clark_gis:14028199009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14028199009",
       "situs_address": null,
       "city": null,
@@ -5859,7 +6008,7 @@
     {
       "id": "clark_gis:16105599085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599085",
       "situs_address": null,
       "city": null,
@@ -5902,7 +6051,7 @@
     {
       "id": "clark_gis:16311799013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799013",
       "situs_address": null,
       "city": null,
@@ -5945,7 +6094,7 @@
     {
       "id": "clark_gis:16107899029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16107899029",
       "situs_address": null,
       "city": null,
@@ -5988,7 +6137,7 @@
     {
       "id": "clark_gis:17706899026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899026",
       "situs_address": null,
       "city": null,
@@ -6031,7 +6180,7 @@
     {
       "id": "clark_gis:16209899006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16209899006",
       "situs_address": null,
       "city": null,
@@ -6074,7 +6223,7 @@
     {
       "id": "clark_gis:16105499032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499032",
       "situs_address": null,
       "city": null,
@@ -6117,7 +6266,7 @@
     {
       "id": "clark_gis:16105599073",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599073",
       "situs_address": null,
       "city": null,
@@ -6160,7 +6309,7 @@
     {
       "id": "clark_gis:16311899030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899030",
       "situs_address": null,
       "city": null,
@@ -6203,7 +6352,7 @@
     {
       "id": "clark_gis:16131299036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16131299036",
       "situs_address": null,
       "city": null,
@@ -6246,7 +6395,7 @@
     {
       "id": "clark_gis:16311399040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399040",
       "situs_address": null,
       "city": null,
@@ -6289,7 +6438,7 @@
     {
       "id": "clark_gis:16311899022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899022",
       "situs_address": null,
       "city": null,
@@ -6332,7 +6481,7 @@
     {
       "id": "clark_gis:14021399032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399032",
       "situs_address": null,
       "city": null,
@@ -6375,7 +6524,7 @@
     {
       "id": "clark_gis:16105599038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599038",
       "situs_address": null,
       "city": null,
@@ -6418,7 +6567,7 @@
     {
       "id": "clark_gis:16105899026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899026",
       "situs_address": null,
       "city": null,
@@ -6461,7 +6610,7 @@
     {
       "id": "clark_gis:16105499042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499042",
       "situs_address": null,
       "city": null,
@@ -6504,7 +6653,7 @@
     {
       "id": "clark_gis:16105799032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799032",
       "situs_address": null,
       "city": null,
@@ -6547,7 +6696,7 @@
     {
       "id": "clark_gis:16105499064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499064",
       "situs_address": null,
       "city": null,
@@ -6590,7 +6739,7 @@
     {
       "id": "clark_gis:16105799018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799018",
       "situs_address": null,
       "city": null,
@@ -6633,7 +6782,7 @@
     {
       "id": "clark_gis:12529899043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12529899043",
       "situs_address": null,
       "city": null,
@@ -6676,7 +6825,7 @@
     {
       "id": "clark_gis:16105399077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399077",
       "situs_address": null,
       "city": null,
@@ -6719,7 +6868,7 @@
     {
       "id": "clark_gis:16301299020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299020",
       "situs_address": null,
       "city": null,
@@ -6762,7 +6911,7 @@
     {
       "id": "clark_gis:16105799041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799041",
       "situs_address": null,
       "city": null,
@@ -6805,7 +6954,7 @@
     {
       "id": "clark_gis:16226299005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16226299005",
       "situs_address": null,
       "city": null,
@@ -6848,7 +6997,7 @@
     {
       "id": "clark_gis:16311899060",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899060",
       "situs_address": null,
       "city": null,
@@ -6891,7 +7040,7 @@
     {
       "id": "clark_gis:16105499020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499020",
       "situs_address": null,
       "city": null,
@@ -6934,7 +7083,7 @@
     {
       "id": "clark_gis:17705299012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17705299012",
       "situs_address": null,
       "city": null,
@@ -6977,7 +7126,7 @@
     {
       "id": "clark_gis:16105799074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799074",
       "situs_address": null,
       "city": null,
@@ -7020,7 +7169,7 @@
     {
       "id": "clark_gis:16311699040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699040",
       "situs_address": null,
       "city": null,
@@ -7063,7 +7212,7 @@
     {
       "id": "clark_gis:14020799025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14020799025",
       "situs_address": null,
       "city": null,
@@ -7106,7 +7255,7 @@
     {
       "id": "clark_gis:16301499018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301499018",
       "situs_address": null,
       "city": null,
@@ -7149,7 +7298,7 @@
     {
       "id": "clark_gis:16105599053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599053",
       "situs_address": null,
       "city": null,
@@ -7192,7 +7341,7 @@
     {
       "id": "clark_gis:14021499008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021499008",
       "situs_address": null,
       "city": null,
@@ -7235,7 +7384,7 @@
     {
       "id": "clark_gis:16105899006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899006",
       "situs_address": null,
       "city": null,
@@ -7278,7 +7427,7 @@
     {
       "id": "clark_gis:16105899033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899033",
       "situs_address": null,
       "city": null,
@@ -7321,7 +7470,7 @@
     {
       "id": "clark_gis:16225299006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16225299006",
       "situs_address": null,
       "city": null,
@@ -7364,7 +7513,7 @@
     {
       "id": "clark_gis:16105699073",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699073",
       "situs_address": null,
       "city": null,
@@ -7407,7 +7556,7 @@
     {
       "id": "clark_gis:16105599096",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599096",
       "situs_address": null,
       "city": null,
@@ -7450,7 +7599,7 @@
     {
       "id": "clark_gis:16105399083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399083",
       "situs_address": null,
       "city": null,
@@ -7493,7 +7642,7 @@
     {
       "id": "clark_gis:16131699030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16131699030",
       "situs_address": null,
       "city": null,
@@ -7536,7 +7685,7 @@
     {
       "id": "clark_gis:16105899078",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899078",
       "situs_address": null,
       "city": null,
@@ -7579,7 +7728,7 @@
     {
       "id": "clark_gis:16311899011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899011",
       "situs_address": null,
       "city": null,
@@ -7622,7 +7771,7 @@
     {
       "id": "clark_gis:16311699021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699021",
       "situs_address": null,
       "city": null,
@@ -7665,7 +7814,7 @@
     {
       "id": "clark_gis:17718599021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718599021",
       "situs_address": null,
       "city": null,
@@ -7708,7 +7857,7 @@
     {
       "id": "clark_gis:16105499054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499054",
       "situs_address": null,
       "city": null,
@@ -7751,7 +7900,7 @@
     {
       "id": "clark_gis:16127299021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299021",
       "situs_address": null,
       "city": null,
@@ -7794,7 +7943,7 @@
     {
       "id": "clark_gis:16311699007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699007",
       "situs_address": null,
       "city": null,
@@ -7837,7 +7986,7 @@
     {
       "id": "clark_gis:12532499041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499041",
       "situs_address": null,
       "city": null,
@@ -7880,7 +8029,7 @@
     {
       "id": "clark_gis:17628699010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17628699010",
       "situs_address": null,
       "city": null,
@@ -7923,7 +8072,7 @@
     {
       "id": "clark_gis:16105399082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399082",
       "situs_address": null,
       "city": null,
@@ -7966,7 +8115,7 @@
     {
       "id": "clark_gis:16105899077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899077",
       "situs_address": null,
       "city": null,
@@ -8009,7 +8158,7 @@
     {
       "id": "clark_gis:16105399084",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399084",
       "situs_address": null,
       "city": null,
@@ -8052,7 +8201,7 @@
     {
       "id": "clark_gis:16127299014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299014",
       "situs_address": null,
       "city": null,
@@ -8095,7 +8244,7 @@
     {
       "id": "clark_gis:16209899041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16209899041",
       "situs_address": null,
       "city": null,
@@ -8138,7 +8287,7 @@
     {
       "id": "clark_gis:16105799083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799083",
       "situs_address": null,
       "city": null,
@@ -8181,7 +8330,7 @@
     {
       "id": "clark_gis:16105799031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799031",
       "situs_address": null,
       "city": null,
@@ -8224,7 +8373,7 @@
     {
       "id": "clark_gis:16106199057",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199057",
       "situs_address": null,
       "city": null,
@@ -8267,7 +8416,7 @@
     {
       "id": "clark_gis:14021399038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399038",
       "situs_address": null,
       "city": null,
@@ -8310,7 +8459,7 @@
     {
       "id": "clark_gis:16105799085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799085",
       "situs_address": null,
       "city": null,
@@ -8353,7 +8502,7 @@
     {
       "id": "clark_gis:16105899082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899082",
       "situs_address": null,
       "city": null,
@@ -8396,7 +8545,7 @@
     {
       "id": "clark_gis:16106199054",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199054",
       "situs_address": null,
       "city": null,
@@ -8439,7 +8588,7 @@
     {
       "id": "clark_gis:12532399022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532399022",
       "situs_address": null,
       "city": null,
@@ -8482,7 +8631,7 @@
     {
       "id": "clark_gis:12532499044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499044",
       "situs_address": null,
       "city": null,
@@ -8525,7 +8674,7 @@
     {
       "id": "clark_gis:12532499047",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499047",
       "situs_address": null,
       "city": null,
@@ -8568,7 +8717,7 @@
     {
       "id": "clark_gis:16105499080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499080",
       "situs_address": null,
       "city": null,
@@ -8611,7 +8760,7 @@
     {
       "id": "clark_gis:16105399068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399068",
       "situs_address": null,
       "city": null,
@@ -8654,7 +8803,7 @@
     {
       "id": "clark_gis:12532499043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499043",
       "situs_address": null,
       "city": null,
@@ -8697,7 +8846,7 @@
     {
       "id": "clark_gis:14034499028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034499028",
       "situs_address": null,
       "city": null,
@@ -8740,7 +8889,7 @@
     {
       "id": "clark_gis:16127199009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199009",
       "situs_address": null,
       "city": null,
@@ -8783,7 +8932,7 @@
     {
       "id": "clark_gis:16105499082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499082",
       "situs_address": null,
       "city": null,
@@ -8826,7 +8975,7 @@
     {
       "id": "clark_gis:16105799086",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799086",
       "situs_address": null,
       "city": null,
@@ -8869,7 +9018,7 @@
     {
       "id": "clark_gis:16105899074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899074",
       "situs_address": null,
       "city": null,
@@ -8912,7 +9061,7 @@
     {
       "id": "clark_gis:16312399020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312399020",
       "situs_address": null,
       "city": null,
@@ -8955,7 +9104,7 @@
     {
       "id": "clark_gis:12532399012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532399012",
       "situs_address": null,
       "city": null,
@@ -8998,7 +9147,7 @@
     {
       "id": "clark_gis:16311399037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399037",
       "situs_address": null,
       "city": null,
@@ -9041,7 +9190,7 @@
     {
       "id": "clark_gis:17629299016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629299016",
       "situs_address": null,
       "city": null,
@@ -9084,7 +9233,7 @@
     {
       "id": "clark_gis:12532699019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532699019",
       "situs_address": null,
       "city": null,
@@ -9127,7 +9276,7 @@
     {
       "id": "clark_gis:14021399037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399037",
       "situs_address": null,
       "city": null,
@@ -9170,7 +9319,7 @@
     {
       "id": "clark_gis:16105799069",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799069",
       "situs_address": null,
       "city": null,
@@ -9213,7 +9362,7 @@
     {
       "id": "clark_gis:16106799034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106799034",
       "situs_address": null,
       "city": null,
@@ -9256,7 +9405,7 @@
     {
       "id": "clark_gis:16105499079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499079",
       "situs_address": null,
       "city": null,
@@ -9299,7 +9448,7 @@
     {
       "id": "clark_gis:16105899083",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899083",
       "situs_address": null,
       "city": null,
@@ -9342,7 +9491,7 @@
     {
       "id": "clark_gis:16105899076",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899076",
       "situs_address": null,
       "city": null,
@@ -9385,7 +9534,7 @@
     {
       "id": "clark_gis:16105899080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899080",
       "situs_address": null,
       "city": null,
@@ -9428,7 +9577,7 @@
     {
       "id": "clark_gis:16105899075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899075",
       "situs_address": null,
       "city": null,
@@ -9471,7 +9620,7 @@
     {
       "id": "clark_gis:16105899079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899079",
       "situs_address": null,
       "city": null,
@@ -9514,7 +9663,7 @@
     {
       "id": "clark_gis:16106199058",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199058",
       "situs_address": null,
       "city": null,
@@ -9557,7 +9706,7 @@
     {
       "id": "clark_gis:17721697014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697014",
       "situs_address": null,
       "city": null,
@@ -9600,7 +9749,7 @@
     {
       "id": "clark_gis:17721697012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697012",
       "situs_address": null,
       "city": null,
@@ -9643,7 +9792,7 @@
     {
       "id": "clark_gis:17721697007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697007",
       "situs_address": null,
       "city": null,
@@ -9686,7 +9835,7 @@
     {
       "id": "clark_gis:17721697013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697013",
       "situs_address": null,
       "city": null,
@@ -9729,7 +9878,7 @@
     {
       "id": "clark_gis:16105699038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699038",
       "situs_address": null,
       "city": null,
@@ -9772,7 +9921,7 @@
     {
       "id": "clark_gis:17721697011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697011",
       "situs_address": null,
       "city": null,
@@ -9815,7 +9964,7 @@
     {
       "id": "clark_gis:17721697010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697010",
       "situs_address": null,
       "city": null,
@@ -9858,7 +10007,7 @@
     {
       "id": "clark_gis:17721697009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697009",
       "situs_address": null,
       "city": null,
@@ -9901,7 +10050,7 @@
     {
       "id": "clark_gis:17721697006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697006",
       "situs_address": null,
       "city": null,
@@ -9944,7 +10093,7 @@
     {
       "id": "clark_gis:17721697005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697005",
       "situs_address": null,
       "city": null,
@@ -9987,7 +10136,7 @@
     {
       "id": "clark_gis:17721697004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17721697004",
       "situs_address": null,
       "city": null,
@@ -10030,7 +10179,7 @@
     {
       "id": "clark_gis:16301399038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301399038",
       "situs_address": null,
       "city": null,
@@ -10073,7 +10222,7 @@
     {
       "id": "clark_gis:16105599094",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599094",
       "situs_address": null,
       "city": null,
@@ -10116,7 +10265,7 @@
     {
       "id": "clark_gis:16105599097",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599097",
       "situs_address": null,
       "city": null,
@@ -10159,7 +10308,7 @@
     {
       "id": "clark_gis:12532299032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532299032",
       "situs_address": null,
       "city": null,
@@ -10202,7 +10351,7 @@
     {
       "id": "clark_gis:16105499084",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499084",
       "situs_address": null,
       "city": null,
@@ -10245,7 +10394,7 @@
     {
       "id": "clark_gis:16105399085",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399085",
       "situs_address": null,
       "city": null,
@@ -10288,7 +10437,7 @@
     {
       "id": "clark_gis:14034899007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034899007",
       "situs_address": null,
       "city": null,
@@ -10331,7 +10480,7 @@
     {
       "id": "clark_gis:16311899051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899051",
       "situs_address": null,
       "city": null,
@@ -10374,7 +10523,7 @@
     {
       "id": "clark_gis:16127199018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199018",
       "situs_address": null,
       "city": null,
@@ -10417,7 +10566,7 @@
     {
       "id": "clark_gis:16105899022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899022",
       "situs_address": null,
       "city": null,
@@ -10460,7 +10609,7 @@
     {
       "id": "clark_gis:16105399086",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399086",
       "situs_address": null,
       "city": null,
@@ -10503,7 +10652,7 @@
     {
       "id": "clark_gis:16105799082",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799082",
       "situs_address": null,
       "city": null,
@@ -10546,7 +10695,7 @@
     {
       "id": "clark_gis:16312199013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312199013",
       "situs_address": null,
       "city": null,
@@ -10589,7 +10738,7 @@
     {
       "id": "clark_gis:16311599044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311599044",
       "situs_address": null,
       "city": null,
@@ -10632,7 +10781,7 @@
     {
       "id": "clark_gis:16118599020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16118599020",
       "situs_address": null,
       "city": null,
@@ -10675,7 +10824,7 @@
     {
       "id": "clark_gis:16105599090",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599090",
       "situs_address": null,
       "city": null,
@@ -10718,7 +10867,7 @@
     {
       "id": "clark_gis:16105399048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399048",
       "situs_address": null,
       "city": null,
@@ -10761,7 +10910,7 @@
     {
       "id": "clark_gis:16105499081",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499081",
       "situs_address": null,
       "city": null,
@@ -10804,7 +10953,7 @@
     {
       "id": "clark_gis:16105599040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599040",
       "situs_address": null,
       "city": null,
@@ -10847,7 +10996,7 @@
     {
       "id": "clark_gis:17706899010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899010",
       "situs_address": null,
       "city": null,
@@ -10890,7 +11039,7 @@
     {
       "id": "clark_gis:16311899057",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899057",
       "situs_address": null,
       "city": null,
@@ -10933,7 +11082,7 @@
     {
       "id": "clark_gis:17718699004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718699004",
       "situs_address": null,
       "city": null,
@@ -10976,7 +11125,7 @@
     {
       "id": "clark_gis:16105499038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499038",
       "situs_address": null,
       "city": null,
@@ -11019,7 +11168,7 @@
     {
       "id": "clark_gis:16105399026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399026",
       "situs_address": null,
       "city": null,
@@ -11062,7 +11211,7 @@
     {
       "id": "clark_gis:16218799003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16218799003",
       "situs_address": null,
       "city": null,
@@ -11105,7 +11254,7 @@
     {
       "id": "clark_gis:16105499067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499067",
       "situs_address": null,
       "city": null,
@@ -11148,7 +11297,7 @@
     {
       "id": "clark_gis:17707299028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17707299028",
       "situs_address": null,
       "city": null,
@@ -11191,7 +11340,7 @@
     {
       "id": "clark_gis:12532499015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499015",
       "situs_address": null,
       "city": null,
@@ -11234,7 +11383,7 @@
     {
       "id": "clark_gis:16105399030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399030",
       "situs_address": null,
       "city": null,
@@ -11277,7 +11426,7 @@
     {
       "id": "clark_gis:16105599077",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599077",
       "situs_address": null,
       "city": null,
@@ -11320,7 +11469,7 @@
     {
       "id": "clark_gis:17613599030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17613599030",
       "situs_address": null,
       "city": null,
@@ -11363,7 +11512,7 @@
     {
       "id": "clark_gis:17705399027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17705399027",
       "situs_address": null,
       "city": null,
@@ -11406,7 +11555,7 @@
     {
       "id": "clark_gis:16311399043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399043",
       "situs_address": null,
       "city": null,
@@ -11449,7 +11598,7 @@
     {
       "id": "clark_gis:16313599044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16313599044",
       "situs_address": null,
       "city": null,
@@ -11492,7 +11641,7 @@
     {
       "id": "clark_gis:14019199047",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019199047",
       "situs_address": null,
       "city": null,
@@ -11535,7 +11684,7 @@
     {
       "id": "clark_gis:16311199025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199025",
       "situs_address": null,
       "city": null,
@@ -11578,7 +11727,7 @@
     {
       "id": "clark_gis:16105799064",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799064",
       "situs_address": null,
       "city": null,
@@ -11621,7 +11770,7 @@
     {
       "id": "clark_gis:16106799030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106799030",
       "situs_address": null,
       "city": null,
@@ -11664,7 +11813,7 @@
     {
       "id": "clark_gis:16311899002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899002",
       "situs_address": null,
       "city": null,
@@ -11707,7 +11856,7 @@
     {
       "id": "clark_gis:16311899007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899007",
       "situs_address": null,
       "city": null,
@@ -11750,7 +11899,7 @@
     {
       "id": "clark_gis:16105399074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399074",
       "situs_address": null,
       "city": null,
@@ -11793,7 +11942,7 @@
     {
       "id": "clark_gis:16105599056",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599056",
       "situs_address": null,
       "city": null,
@@ -11836,7 +11985,7 @@
     {
       "id": "clark_gis:16311899033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899033",
       "situs_address": null,
       "city": null,
@@ -11879,7 +12028,7 @@
     {
       "id": "clark_gis:17608599006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17608599006",
       "situs_address": null,
       "city": null,
@@ -11922,7 +12071,7 @@
     {
       "id": "clark_gis:16301299024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299024",
       "situs_address": null,
       "city": null,
@@ -11965,7 +12114,7 @@
     {
       "id": "clark_gis:16311799027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799027",
       "situs_address": null,
       "city": null,
@@ -12008,7 +12157,7 @@
     {
       "id": "clark_gis:16118599026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16118599026",
       "situs_address": null,
       "city": null,
@@ -12051,7 +12200,7 @@
     {
       "id": "clark_gis:17706499018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706499018",
       "situs_address": null,
       "city": null,
@@ -12094,7 +12243,7 @@
     {
       "id": "clark_gis:16301299001",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299001",
       "situs_address": null,
       "city": null,
@@ -12137,7 +12286,7 @@
     {
       "id": "clark_gis:16105499021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499021",
       "situs_address": null,
       "city": null,
@@ -12180,7 +12329,7 @@
     {
       "id": "clark_gis:17716799030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17716799030",
       "situs_address": null,
       "city": null,
@@ -12223,7 +12372,7 @@
     {
       "id": "clark_gis:16311899021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899021",
       "situs_address": null,
       "city": null,
@@ -12266,7 +12415,7 @@
     {
       "id": "clark_gis:16105599044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599044",
       "situs_address": null,
       "city": null,
@@ -12309,7 +12458,7 @@
     {
       "id": "clark_gis:16223299011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223299011",
       "situs_address": null,
       "city": null,
@@ -12352,7 +12501,7 @@
     {
       "id": "clark_gis:16105399042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399042",
       "situs_address": null,
       "city": null,
@@ -12395,7 +12544,7 @@
     {
       "id": "clark_gis:16105499055",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499055",
       "situs_address": null,
       "city": null,
@@ -12438,7 +12587,7 @@
     {
       "id": "clark_gis:16105399039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399039",
       "situs_address": null,
       "city": null,
@@ -12481,7 +12630,7 @@
     {
       "id": "clark_gis:16105599079",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599079",
       "situs_address": null,
       "city": null,
@@ -12524,7 +12673,7 @@
     {
       "id": "clark_gis:16105899039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899039",
       "situs_address": null,
       "city": null,
@@ -12567,7 +12716,7 @@
     {
       "id": "clark_gis:16105699009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699009",
       "situs_address": null,
       "city": null,
@@ -12610,7 +12759,7 @@
     {
       "id": "clark_gis:16105399014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399014",
       "situs_address": null,
       "city": null,
@@ -12653,7 +12802,7 @@
     {
       "id": "clark_gis:16210899008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16210899008",
       "situs_address": null,
       "city": null,
@@ -12696,7 +12845,7 @@
     {
       "id": "clark_gis:17627299017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17627299017",
       "situs_address": null,
       "city": null,
@@ -12739,7 +12888,7 @@
     {
       "id": "clark_gis:16325899016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325899016",
       "situs_address": null,
       "city": null,
@@ -12782,7 +12931,7 @@
     {
       "id": "clark_gis:16223499022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223499022",
       "situs_address": null,
       "city": null,
@@ -12825,7 +12974,7 @@
     {
       "id": "clark_gis:16223399011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223399011",
       "situs_address": null,
       "city": null,
@@ -12868,7 +13017,7 @@
     {
       "id": "clark_gis:16311199020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199020",
       "situs_address": null,
       "city": null,
@@ -12911,7 +13060,7 @@
     {
       "id": "clark_gis:16105399058",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399058",
       "situs_address": null,
       "city": null,
@@ -12954,7 +13103,7 @@
     {
       "id": "clark_gis:16336199004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199004",
       "situs_address": null,
       "city": null,
@@ -12997,7 +13146,7 @@
     {
       "id": "clark_gis:16105399021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399021",
       "situs_address": null,
       "city": null,
@@ -13040,7 +13189,7 @@
     {
       "id": "clark_gis:16105399063",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399063",
       "situs_address": null,
       "city": null,
@@ -13083,7 +13232,7 @@
     {
       "id": "clark_gis:14034899006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034899006",
       "situs_address": null,
       "city": null,
@@ -13126,7 +13275,7 @@
     {
       "id": "clark_gis:16105799047",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799047",
       "situs_address": null,
       "city": null,
@@ -13169,7 +13318,7 @@
     {
       "id": "clark_gis:16121899013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16121899013",
       "situs_address": null,
       "city": null,
@@ -13212,7 +13361,7 @@
     {
       "id": "clark_gis:16312499014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312499014",
       "situs_address": null,
       "city": null,
@@ -13255,7 +13404,7 @@
     {
       "id": "clark_gis:16132199039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16132199039",
       "situs_address": null,
       "city": null,
@@ -13298,7 +13447,7 @@
     {
       "id": "clark_gis:16104299016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16104299016",
       "situs_address": null,
       "city": null,
@@ -13341,7 +13490,7 @@
     {
       "id": "clark_gis:17706899007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899007",
       "situs_address": null,
       "city": null,
@@ -13384,7 +13533,7 @@
     {
       "id": "clark_gis:16127299020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127299020",
       "situs_address": null,
       "city": null,
@@ -13427,7 +13576,7 @@
     {
       "id": "clark_gis:16311899026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899026",
       "situs_address": null,
       "city": null,
@@ -13470,7 +13619,7 @@
     {
       "id": "clark_gis:16301399040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301399040",
       "situs_address": null,
       "city": null,
@@ -13513,7 +13662,7 @@
     {
       "id": "clark_gis:16336199035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199035",
       "situs_address": null,
       "city": null,
@@ -13556,7 +13705,7 @@
     {
       "id": "clark_gis:17605897033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897033",
       "situs_address": null,
       "city": null,
@@ -13599,7 +13748,7 @@
     {
       "id": "clark_gis:16105899018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899018",
       "situs_address": null,
       "city": null,
@@ -13642,7 +13791,7 @@
     {
       "id": "clark_gis:16312299017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312299017",
       "situs_address": null,
       "city": null,
@@ -13685,7 +13834,7 @@
     {
       "id": "clark_gis:16312499029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312499029",
       "situs_address": null,
       "city": null,
@@ -13728,7 +13877,7 @@
     {
       "id": "clark_gis:16311899039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899039",
       "situs_address": null,
       "city": null,
@@ -13771,7 +13920,7 @@
     {
       "id": "clark_gis:17706899014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899014",
       "situs_address": null,
       "city": null,
@@ -13814,7 +13963,7 @@
     {
       "id": "clark_gis:17716799017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17716799017",
       "situs_address": null,
       "city": null,
@@ -13857,7 +14006,7 @@
     {
       "id": "clark_gis:16215599015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16215599015",
       "situs_address": null,
       "city": null,
@@ -13900,7 +14049,7 @@
     {
       "id": "clark_gis:16211899010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16211899010",
       "situs_address": null,
       "city": null,
@@ -13943,7 +14092,7 @@
     {
       "id": "clark_gis:16105899017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105899017",
       "situs_address": null,
       "city": null,
@@ -13986,7 +14135,7 @@
     {
       "id": "clark_gis:16311499007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311499007",
       "situs_address": null,
       "city": null,
@@ -14029,7 +14178,7 @@
     {
       "id": "clark_gis:16311199037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199037",
       "situs_address": null,
       "city": null,
@@ -14072,7 +14221,7 @@
     {
       "id": "clark_gis:16311699032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699032",
       "situs_address": null,
       "city": null,
@@ -14115,7 +14264,7 @@
     {
       "id": "clark_gis:17605897031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897031",
       "situs_address": null,
       "city": null,
@@ -14158,7 +14307,7 @@
     {
       "id": "clark_gis:14023299031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14023299031",
       "situs_address": null,
       "city": null,
@@ -14201,7 +14350,7 @@
     {
       "id": "clark_gis:16105699023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699023",
       "situs_address": null,
       "city": null,
@@ -14244,7 +14393,7 @@
     {
       "id": "clark_gis:16301299019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299019",
       "situs_address": null,
       "city": null,
@@ -14287,7 +14436,7 @@
     {
       "id": "clark_gis:16336199043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199043",
       "situs_address": null,
       "city": null,
@@ -14330,7 +14479,7 @@
     {
       "id": "clark_gis:17711310062",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17711310062",
       "situs_address": null,
       "city": null,
@@ -14373,7 +14522,7 @@
     {
       "id": "clark_gis:16311899004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899004",
       "situs_address": null,
       "city": null,
@@ -14416,7 +14565,7 @@
     {
       "id": "clark_gis:16223299027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223299027",
       "situs_address": null,
       "city": null,
@@ -14459,7 +14608,7 @@
     {
       "id": "clark_gis:16311199035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199035",
       "situs_address": null,
       "city": null,
@@ -14502,7 +14651,7 @@
     {
       "id": "clark_gis:16223699012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223699012",
       "situs_address": null,
       "city": null,
@@ -14545,7 +14694,7 @@
     {
       "id": "clark_gis:12532599025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532599025",
       "situs_address": null,
       "city": null,
@@ -14588,7 +14737,7 @@
     {
       "id": "clark_gis:17706499005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706499005",
       "situs_address": null,
       "city": null,
@@ -14631,7 +14780,7 @@
     {
       "id": "clark_gis:16105499048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499048",
       "situs_address": null,
       "city": null,
@@ -14674,7 +14823,7 @@
     {
       "id": "clark_gis:16223599039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223599039",
       "situs_address": null,
       "city": null,
@@ -14717,7 +14866,7 @@
     {
       "id": "clark_gis:16301299023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299023",
       "situs_address": null,
       "city": null,
@@ -14760,7 +14909,7 @@
     {
       "id": "clark_gis:16105599055",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599055",
       "situs_address": null,
       "city": null,
@@ -14803,7 +14952,7 @@
     {
       "id": "clark_gis:16311699052",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699052",
       "situs_address": null,
       "city": null,
@@ -14846,7 +14995,7 @@
     {
       "id": "clark_gis:17706899018",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899018",
       "situs_address": null,
       "city": null,
@@ -14889,7 +15038,7 @@
     {
       "id": "clark_gis:16215699012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16215699012",
       "situs_address": null,
       "city": null,
@@ -14932,7 +15081,7 @@
     {
       "id": "clark_gis:12529899020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12529899020",
       "situs_address": null,
       "city": null,
@@ -14975,7 +15124,7 @@
     {
       "id": "clark_gis:16311399038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399038",
       "situs_address": null,
       "city": null,
@@ -15018,7 +15167,7 @@
     {
       "id": "clark_gis:17726499017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17726499017",
       "situs_address": null,
       "city": null,
@@ -15061,7 +15210,7 @@
     {
       "id": "clark_gis:16311799046",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799046",
       "situs_address": null,
       "city": null,
@@ -15104,7 +15253,7 @@
     {
       "id": "clark_gis:16105799039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799039",
       "situs_address": null,
       "city": null,
@@ -15147,7 +15296,7 @@
     {
       "id": "clark_gis:16311199027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199027",
       "situs_address": null,
       "city": null,
@@ -15190,7 +15339,7 @@
     {
       "id": "clark_gis:17705206023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17705206023",
       "situs_address": null,
       "city": null,
@@ -15233,7 +15382,7 @@
     {
       "id": "clark_gis:12532499024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532499024",
       "situs_address": null,
       "city": null,
@@ -15276,7 +15425,7 @@
     {
       "id": "clark_gis:16325199017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325199017",
       "situs_address": null,
       "city": null,
@@ -15319,7 +15468,7 @@
     {
       "id": "clark_gis:16105599041",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599041",
       "situs_address": null,
       "city": null,
@@ -15362,7 +15511,7 @@
     {
       "id": "clark_gis:16325799007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325799007",
       "situs_address": null,
       "city": null,
@@ -15405,7 +15554,7 @@
     {
       "id": "clark_gis:14021499015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021499015",
       "situs_address": null,
       "city": null,
@@ -15448,7 +15597,7 @@
     {
       "id": "clark_gis:16325399007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325399007",
       "situs_address": null,
       "city": null,
@@ -15491,7 +15640,7 @@
     {
       "id": "clark_gis:16311199015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199015",
       "situs_address": null,
       "city": null,
@@ -15534,7 +15683,7 @@
     {
       "id": "clark_gis:16224199009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16224199009",
       "situs_address": null,
       "city": null,
@@ -15577,7 +15726,7 @@
     {
       "id": "clark_gis:12532599026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12532599026",
       "situs_address": null,
       "city": null,
@@ -15620,7 +15769,7 @@
     {
       "id": "clark_gis:16312399030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312399030",
       "situs_address": null,
       "city": null,
@@ -15663,7 +15812,7 @@
     {
       "id": "clark_gis:16336199037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199037",
       "situs_address": null,
       "city": null,
@@ -15706,7 +15855,7 @@
     {
       "id": "clark_gis:16311899053",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899053",
       "situs_address": null,
       "city": null,
@@ -15749,7 +15898,7 @@
     {
       "id": "clark_gis:16223599036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223599036",
       "situs_address": null,
       "city": null,
@@ -15792,7 +15941,7 @@
     {
       "id": "clark_gis:19104497024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497024",
       "situs_address": null,
       "city": null,
@@ -15835,7 +15984,7 @@
     {
       "id": "clark_gis:16105699027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699027",
       "situs_address": null,
       "city": null,
@@ -15878,7 +16027,7 @@
     {
       "id": "clark_gis:16311199029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199029",
       "situs_address": null,
       "city": null,
@@ -15921,7 +16070,7 @@
     {
       "id": "clark_gis:16105599067",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599067",
       "situs_address": null,
       "city": null,
@@ -15964,7 +16113,7 @@
     {
       "id": "clark_gis:16105399046",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105399046",
       "situs_address": null,
       "city": null,
@@ -16007,7 +16156,7 @@
     {
       "id": "clark_gis:16218599004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16218599004",
       "situs_address": null,
       "city": null,
@@ -16050,7 +16199,7 @@
     {
       "id": "clark_gis:16107899017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16107899017",
       "situs_address": null,
       "city": null,
@@ -16093,7 +16242,7 @@
     {
       "id": "clark_gis:16325899015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325899015",
       "situs_address": null,
       "city": null,
@@ -16136,7 +16285,7 @@
     {
       "id": "clark_gis:16311399027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399027",
       "situs_address": null,
       "city": null,
@@ -16179,7 +16328,7 @@
     {
       "id": "clark_gis:16130299010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16130299010",
       "situs_address": null,
       "city": null,
@@ -16222,7 +16371,7 @@
     {
       "id": "clark_gis:16106199045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199045",
       "situs_address": null,
       "city": null,
@@ -16265,7 +16414,7 @@
     {
       "id": "clark_gis:14019699007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019699007",
       "situs_address": null,
       "city": null,
@@ -16308,7 +16457,7 @@
     {
       "id": "clark_gis:16312499007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312499007",
       "situs_address": null,
       "city": null,
@@ -16351,7 +16500,7 @@
     {
       "id": "clark_gis:14018899014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14018899014",
       "situs_address": null,
       "city": null,
@@ -16394,7 +16543,7 @@
     {
       "id": "clark_gis:17706899011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706899011",
       "situs_address": null,
       "city": null,
@@ -16437,7 +16586,7 @@
     {
       "id": "clark_gis:16105599045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599045",
       "situs_address": null,
       "city": null,
@@ -16480,7 +16629,7 @@
     {
       "id": "clark_gis:16105599068",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599068",
       "situs_address": null,
       "city": null,
@@ -16523,7 +16672,7 @@
     {
       "id": "clark_gis:16106199050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199050",
       "situs_address": null,
       "city": null,
@@ -16566,7 +16715,7 @@
     {
       "id": "clark_gis:14020899027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14020899027",
       "situs_address": null,
       "city": null,
@@ -16609,7 +16758,7 @@
     {
       "id": "clark_gis:17634599016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17634599016",
       "situs_address": null,
       "city": null,
@@ -16652,7 +16801,7 @@
     {
       "id": "clark_gis:16128699011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16128699011",
       "situs_address": null,
       "city": null,
@@ -16695,7 +16844,7 @@
     {
       "id": "clark_gis:16311799026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799026",
       "situs_address": null,
       "city": null,
@@ -16738,7 +16887,7 @@
     {
       "id": "clark_gis:16311799045",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799045",
       "situs_address": null,
       "city": null,
@@ -16781,7 +16930,7 @@
     {
       "id": "clark_gis:14034699014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034699014",
       "situs_address": null,
       "city": null,
@@ -16824,7 +16973,7 @@
     {
       "id": "clark_gis:16217199032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16217199032",
       "situs_address": null,
       "city": null,
@@ -16867,7 +17016,7 @@
     {
       "id": "clark_gis:12523599031",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12523599031",
       "situs_address": null,
       "city": null,
@@ -16910,7 +17059,7 @@
     {
       "id": "clark_gis:16311699048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699048",
       "situs_address": null,
       "city": null,
@@ -16953,7 +17102,7 @@
     {
       "id": "clark_gis:17706499009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706499009",
       "situs_address": null,
       "city": null,
@@ -16996,7 +17145,7 @@
     {
       "id": "clark_gis:17714297003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17714297003",
       "situs_address": null,
       "city": null,
@@ -17039,7 +17188,7 @@
     {
       "id": "clark_gis:16105599078",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599078",
       "situs_address": null,
       "city": null,
@@ -17082,7 +17231,7 @@
     {
       "id": "clark_gis:16131699027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16131699027",
       "situs_address": null,
       "city": null,
@@ -17125,7 +17274,7 @@
     {
       "id": "clark_gis:17732299016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17732299016",
       "situs_address": null,
       "city": null,
@@ -17168,7 +17317,7 @@
     {
       "id": "clark_gis:16105699075",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699075",
       "situs_address": null,
       "city": null,
@@ -17211,7 +17360,7 @@
     {
       "id": "clark_gis:16325710017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325710017",
       "situs_address": null,
       "city": null,
@@ -17254,7 +17403,7 @@
     {
       "id": "clark_gis:16312299019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312299019",
       "situs_address": null,
       "city": null,
@@ -17297,7 +17446,7 @@
     {
       "id": "clark_gis:16105599035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599035",
       "situs_address": null,
       "city": null,
@@ -17340,7 +17489,7 @@
     {
       "id": "clark_gis:16336199009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199009",
       "situs_address": null,
       "city": null,
@@ -17383,7 +17532,7 @@
     {
       "id": "clark_gis:14034799010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034799010",
       "situs_address": null,
       "city": null,
@@ -17426,7 +17575,7 @@
     {
       "id": "clark_gis:16105599074",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599074",
       "situs_address": null,
       "city": null,
@@ -17469,7 +17618,7 @@
     {
       "id": "clark_gis:16105599042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599042",
       "situs_address": null,
       "city": null,
@@ -17512,7 +17661,7 @@
     {
       "id": "clark_gis:16122399008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16122399008",
       "situs_address": null,
       "city": null,
@@ -17555,7 +17704,7 @@
     {
       "id": "clark_gis:14034799015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034799015",
       "situs_address": null,
       "city": null,
@@ -17598,7 +17747,7 @@
     {
       "id": "clark_gis:17718599015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718599015",
       "situs_address": null,
       "city": null,
@@ -17641,7 +17790,7 @@
     {
       "id": "clark_gis:16218799007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16218799007",
       "situs_address": null,
       "city": null,
@@ -17684,7 +17833,7 @@
     {
       "id": "clark_gis:16119499012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16119499012",
       "situs_address": null,
       "city": null,
@@ -17727,7 +17876,7 @@
     {
       "id": "clark_gis:14023299032",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14023299032",
       "situs_address": null,
       "city": null,
@@ -17770,7 +17919,7 @@
     {
       "id": "clark_gis:17734699006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17734699006",
       "situs_address": null,
       "city": null,
@@ -17813,7 +17962,7 @@
     {
       "id": "clark_gis:16223599034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223599034",
       "situs_address": null,
       "city": null,
@@ -17856,7 +18005,7 @@
     {
       "id": "clark_gis:16105699005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699005",
       "situs_address": null,
       "city": null,
@@ -17899,7 +18048,7 @@
     {
       "id": "clark_gis:16311199010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199010",
       "situs_address": null,
       "city": null,
@@ -17942,7 +18091,7 @@
     {
       "id": "clark_gis:16311799015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311799015",
       "situs_address": null,
       "city": null,
@@ -17985,7 +18134,7 @@
     {
       "id": "clark_gis:17612697010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17612697010",
       "situs_address": null,
       "city": null,
@@ -18028,7 +18177,7 @@
     {
       "id": "clark_gis:16311199036",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311199036",
       "situs_address": null,
       "city": null,
@@ -18071,7 +18220,7 @@
     {
       "id": "clark_gis:17707299013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17707299013",
       "situs_address": null,
       "city": null,
@@ -18114,7 +18263,7 @@
     {
       "id": "clark_gis:16105699033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699033",
       "situs_address": null,
       "city": null,
@@ -18157,7 +18306,7 @@
     {
       "id": "clark_gis:14019199046",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019199046",
       "situs_address": null,
       "city": null,
@@ -18200,7 +18349,7 @@
     {
       "id": "clark_gis:16215199015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16215199015",
       "situs_address": null,
       "city": null,
@@ -18243,7 +18392,7 @@
     {
       "id": "clark_gis:16127199006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199006",
       "situs_address": null,
       "city": null,
@@ -18286,7 +18435,7 @@
     {
       "id": "clark_gis:14018199011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14018199011",
       "situs_address": null,
       "city": null,
@@ -18329,7 +18478,7 @@
     {
       "id": "clark_gis:16105799084",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105799084",
       "situs_address": null,
       "city": null,
@@ -18372,7 +18521,7 @@
     {
       "id": "clark_gis:16105599080",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599080",
       "situs_address": null,
       "city": null,
@@ -18415,7 +18564,7 @@
     {
       "id": "clark_gis:16317515027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16317515027",
       "situs_address": null,
       "city": null,
@@ -18458,7 +18607,7 @@
     {
       "id": "clark_gis:17716499035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17716499035",
       "situs_address": null,
       "city": null,
@@ -18501,7 +18650,7 @@
     {
       "id": "clark_gis:14018599019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14018599019",
       "situs_address": null,
       "city": null,
@@ -18544,7 +18693,7 @@
     {
       "id": "clark_gis:16105599050",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599050",
       "situs_address": null,
       "city": null,
@@ -18587,7 +18736,7 @@
     {
       "id": "clark_gis:16105599070",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599070",
       "situs_address": null,
       "city": null,
@@ -18630,7 +18779,7 @@
     {
       "id": "clark_gis:16311299022",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311299022",
       "situs_address": null,
       "city": null,
@@ -18673,7 +18822,7 @@
     {
       "id": "clark_gis:17620197010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17620197010",
       "situs_address": null,
       "city": null,
@@ -18716,7 +18865,7 @@
     {
       "id": "clark_gis:16301799043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301799043",
       "situs_address": null,
       "city": null,
@@ -18759,7 +18908,7 @@
     {
       "id": "clark_gis:16119499038",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16119499038",
       "situs_address": null,
       "city": null,
@@ -18802,7 +18951,7 @@
     {
       "id": "clark_gis:16223499010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223499010",
       "situs_address": null,
       "city": null,
@@ -18845,7 +18994,7 @@
     {
       "id": "clark_gis:16105499004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105499004",
       "situs_address": null,
       "city": null,
@@ -18888,7 +19037,7 @@
     {
       "id": "clark_gis:16105599051",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599051",
       "situs_address": null,
       "city": null,
@@ -18931,7 +19080,7 @@
     {
       "id": "clark_gis:16336199033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199033",
       "situs_address": null,
       "city": null,
@@ -18974,7 +19123,7 @@
     {
       "id": "clark_gis:16312499019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312499019",
       "situs_address": null,
       "city": null,
@@ -19017,7 +19166,7 @@
     {
       "id": "clark_gis:16104499008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16104499008",
       "situs_address": null,
       "city": null,
@@ -19060,7 +19209,7 @@
     {
       "id": "clark_gis:16310699048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16310699048",
       "situs_address": null,
       "city": null,
@@ -19103,7 +19252,7 @@
     {
       "id": "clark_gis:14023299034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14023299034",
       "situs_address": null,
       "city": null,
@@ -19146,7 +19295,7 @@
     {
       "id": "clark_gis:17707899003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17707899003",
       "situs_address": null,
       "city": null,
@@ -19189,7 +19338,7 @@
     {
       "id": "clark_gis:16223599033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223599033",
       "situs_address": null,
       "city": null,
@@ -19232,7 +19381,7 @@
     {
       "id": "clark_gis:14019299029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019299029",
       "situs_address": null,
       "city": null,
@@ -19275,7 +19424,7 @@
     {
       "id": "clark_gis:16105599084",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105599084",
       "situs_address": null,
       "city": null,
@@ -19318,7 +19467,7 @@
     {
       "id": "clark_gis:16218799011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16218799011",
       "situs_address": null,
       "city": null,
@@ -19361,7 +19510,7 @@
     {
       "id": "clark_gis:16106199042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199042",
       "situs_address": null,
       "city": null,
@@ -19404,7 +19553,7 @@
     {
       "id": "clark_gis:16325297021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325297021",
       "situs_address": null,
       "city": null,
@@ -19447,7 +19596,7 @@
     {
       "id": "clark_gis:16325297008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16325297008",
       "situs_address": null,
       "city": null,
@@ -19490,7 +19639,7 @@
     {
       "id": "clark_gis:16301399039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301399039",
       "situs_address": null,
       "city": null,
@@ -19533,7 +19682,7 @@
     {
       "id": "clark_gis:19104497028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497028",
       "situs_address": null,
       "city": null,
@@ -19576,7 +19725,7 @@
     {
       "id": "clark_gis:16228199011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16228199011",
       "situs_address": null,
       "city": null,
@@ -19619,7 +19768,7 @@
     {
       "id": "clark_gis:16311299028",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311299028",
       "situs_address": null,
       "city": null,
@@ -19662,7 +19811,7 @@
     {
       "id": "clark_gis:14034899008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14034899008",
       "situs_address": null,
       "city": null,
@@ -19705,7 +19854,7 @@
     {
       "id": "clark_gis:16311399004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399004",
       "situs_address": null,
       "city": null,
@@ -19748,7 +19897,7 @@
     {
       "id": "clark_gis:16207499016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16207499016",
       "situs_address": null,
       "city": null,
@@ -19791,7 +19940,7 @@
     {
       "id": "clark_gis:17629397029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629397029",
       "situs_address": null,
       "city": null,
@@ -19834,7 +19983,7 @@
     {
       "id": "clark_gis:16312199034",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16312199034",
       "situs_address": null,
       "city": null,
@@ -19877,7 +20026,7 @@
     {
       "id": "clark_gis:17703899042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17703899042",
       "situs_address": null,
       "city": null,
@@ -19920,7 +20069,7 @@
     {
       "id": "clark_gis:14019299012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019299012",
       "situs_address": null,
       "city": null,
@@ -19963,7 +20112,7 @@
     {
       "id": "clark_gis:16106199017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199017",
       "situs_address": null,
       "city": null,
@@ -20006,7 +20155,7 @@
     {
       "id": "clark_gis:16311499009",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311499009",
       "situs_address": null,
       "city": null,
@@ -20049,7 +20198,7 @@
     {
       "id": "clark_gis:16131299006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16131299006",
       "situs_address": null,
       "city": null,
@@ -20092,7 +20241,7 @@
     {
       "id": "clark_gis:16310699040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16310699040",
       "situs_address": null,
       "city": null,
@@ -20135,7 +20284,7 @@
     {
       "id": "clark_gis:16128799010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16128799010",
       "situs_address": null,
       "city": null,
@@ -20178,7 +20327,7 @@
     {
       "id": "clark_gis:17620299007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17620299007",
       "situs_address": null,
       "city": null,
@@ -20221,7 +20370,7 @@
     {
       "id": "clark_gis:16311699035",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699035",
       "situs_address": null,
       "city": null,
@@ -20264,7 +20413,7 @@
     {
       "id": "clark_gis:16336199007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16336199007",
       "situs_address": null,
       "city": null,
@@ -20307,7 +20456,7 @@
     {
       "id": "clark_gis:16222899015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16222899015",
       "situs_address": null,
       "city": null,
@@ -20350,7 +20499,7 @@
     {
       "id": "clark_gis:16131699012",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16131699012",
       "situs_address": null,
       "city": null,
@@ -20393,7 +20542,7 @@
     {
       "id": "clark_gis:16217199027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16217199027",
       "situs_address": null,
       "city": null,
@@ -20436,7 +20585,7 @@
     {
       "id": "clark_gis:16128599014",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16128599014",
       "situs_address": null,
       "city": null,
@@ -20479,7 +20628,7 @@
     {
       "id": "clark_gis:16135399007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16135399007",
       "situs_address": null,
       "city": null,
@@ -20522,7 +20671,7 @@
     {
       "id": "clark_gis:12523599033",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "12523599033",
       "situs_address": null,
       "city": null,
@@ -20565,7 +20714,7 @@
     {
       "id": "clark_gis:16216599003",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16216599003",
       "situs_address": null,
       "city": null,
@@ -20608,7 +20757,7 @@
     {
       "id": "clark_gis:14019199043",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14019199043",
       "situs_address": null,
       "city": null,
@@ -20651,7 +20800,7 @@
     {
       "id": "clark_gis:16223199040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223199040",
       "situs_address": null,
       "city": null,
@@ -20694,7 +20843,7 @@
     {
       "id": "clark_gis:19104497025",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497025",
       "situs_address": null,
       "city": null,
@@ -20737,7 +20886,7 @@
     {
       "id": "clark_gis:16311399042",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311399042",
       "situs_address": null,
       "city": null,
@@ -20780,7 +20929,7 @@
     {
       "id": "clark_gis:16311899048",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311899048",
       "situs_address": null,
       "city": null,
@@ -20823,7 +20972,7 @@
     {
       "id": "clark_gis:16311299005",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311299005",
       "situs_address": null,
       "city": null,
@@ -20866,7 +21015,7 @@
     {
       "id": "clark_gis:16209899007",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16209899007",
       "situs_address": null,
       "city": null,
@@ -20909,7 +21058,7 @@
     {
       "id": "clark_gis:16313599037",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16313599037",
       "situs_address": null,
       "city": null,
@@ -20952,7 +21101,7 @@
     {
       "id": "clark_gis:16301299040",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16301299040",
       "situs_address": null,
       "city": null,
@@ -20995,7 +21144,7 @@
     {
       "id": "clark_gis:16105699026",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16105699026",
       "situs_address": null,
       "city": null,
@@ -21038,7 +21187,7 @@
     {
       "id": "clark_gis:17706499011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17706499011",
       "situs_address": null,
       "city": null,
@@ -21081,7 +21230,7 @@
     {
       "id": "clark_gis:16313501016",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16313501016",
       "situs_address": null,
       "city": null,
@@ -21124,7 +21273,7 @@
     {
       "id": "clark_gis:19104497030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497030",
       "situs_address": null,
       "city": null,
@@ -21167,7 +21316,7 @@
     {
       "id": "clark_gis:16223699011",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223699011",
       "situs_address": null,
       "city": null,
@@ -21210,7 +21359,7 @@
     {
       "id": "clark_gis:16223599015",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223599015",
       "situs_address": null,
       "city": null,
@@ -21253,7 +21402,7 @@
     {
       "id": "clark_gis:16311699017",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16311699017",
       "situs_address": null,
       "city": null,
@@ -21296,7 +21445,7 @@
     {
       "id": "clark_gis:17605897013",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897013",
       "situs_address": null,
       "city": null,
@@ -21339,7 +21488,7 @@
     {
       "id": "clark_gis:17629511172",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629511172",
       "situs_address": null,
       "city": null,
@@ -21382,7 +21531,7 @@
     {
       "id": "clark_gis:17629512161",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629512161",
       "situs_address": null,
       "city": null,
@@ -21425,7 +21574,7 @@
     {
       "id": "clark_gis:16106199021",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199021",
       "situs_address": null,
       "city": null,
@@ -21468,7 +21617,7 @@
     {
       "id": "clark_gis:17629512159",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629512159",
       "situs_address": null,
       "city": null,
@@ -21511,7 +21660,7 @@
     {
       "id": "clark_gis:16106199019",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16106199019",
       "situs_address": null,
       "city": null,
@@ -21554,7 +21703,7 @@
     {
       "id": "clark_gis:17629414044",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629414044",
       "situs_address": null,
       "city": null,
@@ -21597,7 +21746,7 @@
     {
       "id": "clark_gis:17731197004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17731197004",
       "situs_address": null,
       "city": null,
@@ -21640,7 +21789,7 @@
     {
       "id": "clark_gis:17731597004",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17731597004",
       "situs_address": null,
       "city": null,
@@ -21683,7 +21832,7 @@
     {
       "id": "clark_gis:17718599024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17718599024",
       "situs_address": null,
       "city": null,
@@ -21726,7 +21875,7 @@
     {
       "id": "clark_gis:16127199008",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16127199008",
       "situs_address": null,
       "city": null,
@@ -21769,7 +21918,7 @@
     {
       "id": "clark_gis:17605897023",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897023",
       "situs_address": null,
       "city": null,
@@ -21812,7 +21961,7 @@
     {
       "id": "clark_gis:17605897024",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17605897024",
       "situs_address": null,
       "city": null,
@@ -21855,7 +22004,7 @@
     {
       "id": "clark_gis:14021399020",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "14021399020",
       "situs_address": null,
       "city": null,
@@ -21898,7 +22047,7 @@
     {
       "id": "clark_gis:19104497029",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497029",
       "situs_address": null,
       "city": null,
@@ -21941,7 +22090,7 @@
     {
       "id": "clark_gis:19104497027",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "19104497027",
       "situs_address": null,
       "city": null,
@@ -21984,7 +22133,7 @@
     {
       "id": "clark_gis:16223699010",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "16223699010",
       "situs_address": null,
       "city": null,
@@ -22027,7 +22176,7 @@
     {
       "id": "clark_gis:17629512166",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629512166",
       "situs_address": null,
       "city": null,
@@ -22070,7 +22219,7 @@
     {
       "id": "clark_gis:17629512164",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629512164",
       "situs_address": null,
       "city": null,
@@ -22113,7 +22262,7 @@
     {
       "id": "clark_gis:17629512165",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17629512165",
       "situs_address": null,
       "city": null,
@@ -22156,7 +22305,7 @@
     {
       "id": "clark_gis:17612614039",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17612614039",
       "situs_address": null,
       "city": null,
@@ -22316,7 +22465,7 @@
     {
       "id": "clark_gis:17705303002",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17705303002",
       "situs_address": "6920 POLARIS AVE",
       "city": "ENTERPRISE",
@@ -22332,6 +22481,35 @@
       "entity_type": "GOVERNMENT",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "0",
+          "source": "clark_assessor",
+          "parcel_apn": "17705303002",
+          "address": "6920 POLARIS AVE",
+          "description": "recorded sale 12.000 - Vacant - Single Family Residential (Primary Residential Structure)",
+          "trade_tag": null,
+          "lat": 36.063849010531186,
+          "lng": -115.18513954040485,
+          "raw": {
+            "parcel_apn": "177-05-303-002",
+            "owner_name": "COUNTY OF CLARK(PUBLIC WORKS)",
+            "situs_address": "6920 POLARIS AVE",
+            "city": "ENTERPRISE",
+            "land_use": "12.000 - Vacant - Single Family Residential",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Nov 2 1995",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "12.000 - Vacant - Single Family Residential",
+            "last_sale_date": "0",
+            "last_sale_type": "Primary Residential Structure"
+          }
+        },
         {
           "kind": "DEED",
           "date": "0",
@@ -22485,7 +22663,7 @@
     {
       "id": "clark_gis:17703311006",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17703311006",
       "situs_address": "PARADISE",
       "city": "Assessor Description",
@@ -22501,6 +22679,37 @@
       "entity_type": "GOVERNMENT",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "0",
+          "source": "clark_assessor",
+          "parcel_apn": "17703311006",
+          "address": "PARADISE",
+          "description": "recorded sale 15.000 - Vacant - Industrial (Primary Residential Structure)",
+          "trade_tag": null,
+          "lat": 36.060740153060046,
+          "lng": -115.14996735652491,
+          "raw": {
+            "parcel_apn": "177-03-311-006",
+            "owner_name": "STATE OF NEVADA ADMINISTRATION",
+            "situs_address": "PARADISE",
+            "city": "Assessor Description",
+            "assessed_value": "200",
+            "taxable_value": "571",
+            "land_use": "15.000 - Vacant - Industrial",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Jul 21 2023",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "15.000 - Vacant - Industrial",
+            "last_sale_date": "0",
+            "last_sale_type": "Primary Residential Structure"
+          }
+        },
         {
           "kind": "DEED",
           "date": "0",
@@ -22663,7 +22872,7 @@
     {
       "id": "clark_gis:17634818030",
       "source": "clark_gis",
-      "harvested_at": "2026-05-29T03:17:24Z",
+      "harvested_at": "2026-05-29T03:24:12Z",
       "parcel_apn": "17634818030",
       "situs_address": "ENTERPRISE",
       "city": "Assessor Description",
@@ -22679,6 +22888,35 @@
       "entity_type": "HOA",
       "trade_tags": [],
       "timeline": [
+        {
+          "kind": "DEED",
+          "date": "2008-04-01",
+          "source": "clark_assessor",
+          "parcel_apn": "17634818030",
+          "address": "ENTERPRISE",
+          "description": "recorded sale 100 (M - Multiple-Parcel Sale)",
+          "trade_tag": null,
+          "lat": 35.98734898220513,
+          "lng": -115.25012623685711,
+          "raw": {
+            "parcel_apn": "176-34-818-030",
+            "owner_name": "MOUNTAIN'S EDGE MASTER ASSN",
+            "situs_address": "ENTERPRISE",
+            "city": "Assessor Description",
+            "land_use": "27.100 - SFR - Common Area",
+            "year_built": "0",
+            "lot_size": "0.00 Acres",
+            "recorded_doc": "*",
+            "recorded_date": "Apr 30 2008",
+            "bedrooms": "0",
+            "bathrooms": "0",
+            "roof_type": "BASEMENT GARAGE SQ. FT.",
+            "pool": "NO",
+            "last_sale_price": "100",
+            "last_sale_date": "2008-04-01",
+            "last_sale_type": "M - Multiple-Parcel Sale"
+          }
+        },
         {
           "kind": "DEED",
           "date": "2008-04-01",
