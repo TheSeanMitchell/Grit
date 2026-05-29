@@ -47,18 +47,56 @@ class Event:
     raw: Optional[Dict[str, Any]] = None  # provenance
 
 
+def _norm_addr(s):
+    """Normalize a street address to its leading 'number street' portion for
+    joining. Permit addresses carry city/state/zip; assessor situs is often
+    street-only -- so we key on the street segment before the city."""
+    if not s:
+        return ""
+    import re as _re
+    a = str(s).split(",")[0]                      # drop ', CITY ST ZIP' tail
+    a = " " + a.upper() + " "
+    a = a.replace(",", " ").replace(".", " ")
+    a = _re.sub(r"\b(APT|UNIT|STE|SUITE|#)\s*\S+", " ", a)
+    a = _re.sub(r"\b(STREET|AVENUE|BOULEVARD|ROAD|DRIVE|LANE|COURT|PARKWAY|"
+                r"HIGHWAY|PLACE|CIRCLE|TERRACE)\b",
+                lambda m: {"STREET":"ST","AVENUE":"AVE","BOULEVARD":"BLVD",
+                           "ROAD":"RD","DRIVE":"DR","LANE":"LN","COURT":"CT",
+                           "PARKWAY":"PKWY","HIGHWAY":"HWY","PLACE":"PL",
+                           "CIRCLE":"CIR","TERRACE":"TER"}.get(m.group(0), m.group(0)), a)
+    a = _re.sub(r"\b[A-Z]{2}\s+\d{5}(-\d{4})?\b", " ", a)     # ST ZIP
+    a = _re.sub(r"\b\d{5}(-\d{4})?\b", " ", a)                # bare ZIP
+    # strip a trailing Clark County city if no comma delimited it out
+    a = _re.sub(r"\s+(NORTH LAS VEGAS|LAS VEGAS|HENDERSON|BOULDER CITY|MESQUITE|"
+                r"ENTERPRISE|SPRING VALLEY|SUNRISE MANOR|PARADISE|WHITNEY|"
+                r"SUMMERLIN|NV|NEVADA)\s*$", " ", a)
+    return _re.sub(r"\s+", " ", a).strip()
+
+
 def join_to_cards(cards: List[dict], events: List[Event]):
-    """Attach events to cards by parcel APN. Mutates cards in place.
-    Only real harvested events are ever joined; no synthetic activity."""
-    by_apn = {}
+    """Attach events to cards by parcel APN OR normalized situs address. Mutates
+    cards in place. Only real harvested events are ever joined; no synthetic
+    activity. (Permits carry address, not APN -- the address join is what lets
+    fresh permit events surface on the right parcels.)"""
+    by_apn, by_addr = {}, {}
     for e in events:
+        d = dc.asdict(e)
         if e.parcel_apn:
-            by_apn.setdefault(e.parcel_apn, []).append(dc.asdict(e))
+            by_apn.setdefault(e.parcel_apn, []).append(d)
+        elif e.address:
+            k = _norm_addr(e.address)
+            if k:
+                by_addr.setdefault(k, []).append(d)
     for c in cards:
+        hits = []
         apn = c.get("parcel_apn")
         if apn and apn in by_apn:
-            c["timeline"] = sorted(by_apn[apn], key=lambda x: x.get("date", ""),
-                                   reverse=True)
+            hits += by_apn[apn]
+        ak = _norm_addr(c.get("situs_address"))
+        if ak and ak in by_addr:
+            hits += by_addr[ak]
+        if hits:
+            c["timeline"] = sorted(hits, key=lambda x: x.get("date", ""), reverse=True)
 
 
 def write(events: List[Event], path: str = EVENTS_FILE):

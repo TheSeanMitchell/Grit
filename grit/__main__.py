@@ -102,14 +102,45 @@ def cmd_selftest():
 
 
 def cmd_permits(argv):
-    """Capture Accela Citizen Access pages for permit-scraper calibration.
-    Run from a residential IP (your machine) -- the cloud runner gets 403d."""
-    print("Capturing Accela permit search pages (residential IP recommended)...")
-    for r in permits.capture_search_form():
-        print(" ", r)
-    print("\nSaved under docs/data/permit_samples/. Upload one so the precise "
-          "permit-event extractor can be written -- no events are published "
-          "until a verified parser exists (no fake data).")
+    """Ingest recent Clark County permits from Accela (run from a residential
+    Vegas IP -- the cloud runner gets 403d). Searches permits issued in the last
+    N days, parses the results grid, and merges PERMIT events into events.json.
+    On a parse miss it saves the raw HTML for one-pass calibration -- never fakes."""
+    from . import events as events_mod
+    days = 14
+    if "--days" in argv:
+        try: days = int(argv[argv.index("--days") + 1])
+        except Exception: pass
+    if "--capture-only" in argv:
+        print("Capturing Accela search page only...")
+        for r in permits.capture_search_form():
+            print(" ", r)
+        return
+    print(f"Ingesting Clark County permits issued in the last {days} days "
+          f"(residential IP required)...")
+    new_events, report = permits.harvest_permits(days_back=days)
+    print("  search:", report.get("search_meta"))
+    print("  step  :", report.get("step"), "| rows:", report.get("rows"),
+          ("| error: " + report["error"]) if report.get("error") else "")
+    if not new_events:
+        if report.get("saved"):
+            print(f"\n  No permit rows parsed. Raw HTML saved under {report['saved']}.")
+            print("  Upload aca_results.html (or aca_search_page.html) and the "
+                  "parser/field-map gets calibrated in one pass. No fake data is "
+                  "ever published.")
+        return
+    # merge with existing events, de-dupe on (kind, date, description)
+    existing = events_mod.load_existing()
+    seen = {(e.kind, e.date, e.description) for e in existing}
+    merged = list(existing) + [e for e in new_events
+                               if (e.kind, e.date, e.description) not in seen]
+    events_mod.write(merged)
+    permit_n = sum(1 for e in new_events)
+    traded = sum(1 for e in new_events if e.trade_tag)
+    print(f"\n  + {permit_n} PERMIT events ({traded} trade-tagged) merged into "
+          f"{config.EVENTS_FILE} ({len(merged)} total).")
+    print("  Commit + push. Next harvest joins them to cards by address/APN; "
+          "fresh permits score IMMEDIATE and rise to the top.")
 
 
 def cmd_enrich(argv):
