@@ -316,12 +316,13 @@ def harvest():
                            "where": "1=1"})
     candidates += config.PARCEL_CANDIDATES
 
+    import time as _time
     for cand in candidates:
         last_err = None
-        for attempt in (1, 2):                          # one retry: rich-owner layers are worth the wait
+        for attempt in (1, 2, 3, 4):                    # owner-rich layers are flaky (5xx/timeout) -- keep trying
             try:
                 feats, fields, info = arcgis.sample_layer(
-                    cand["url"], cand.get("where", "1=1"), timeout=45)
+                    cand["url"], cand.get("where", "1=1"), timeout=60)
                 mapping = cand.get("field_map") or build_field_map(fields)
                 rich = populated_richness(feats, mapping)
                 candidate_report.append({"name": cand.get("name"), "url": cand["url"],
@@ -335,9 +336,17 @@ def harvest():
                 break
             except Exception as e:  # noqa: BLE001
                 last_err = f"{type(e).__name__}: {e}"
+                # retry transient server errors / timeouts with backoff; give up on hard 4xx
+                transient = any(t in last_err for t in
+                                ("500", "502", "503", "504", "timed out", "TimeoutError",
+                                 "URLError", "Connection", "reset"))
+                if attempt < 4 and transient:
+                    _time.sleep(2 * attempt)            # 2s, 4s, 6s backoff
+                    continue
+                break
         if last_err:
             candidate_report.append({"name": cand.get("name"), "url": cand["url"],
-                                     "error": last_err, "attempts": 2})
+                                     "error": last_err, "attempts": attempt})
 
     if chosen is None:  # last resort: crawl the servers for anything with owner data
         try:
@@ -386,15 +395,6 @@ def harvest():
         operators = entities.build_operator_graph(cards)
         cards = [score_card(c) for c in cards]          # re-score with fresh data + portfolio
         cards.sort(key=lambda c: c["score"], reverse=True)
-        events_mod.write(all_events)
-        _write(f"{config.DATA_DIR}/operators.json", {
-            "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "version": config.VERSION,
-            "count": len(operators),
-            "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2),
-            "operators": operators,
-        })
-        # density telemetry: surface the parser-yield bottleneck in harvest meta
         owner_pct = round(100 * sum(1 for c in cards if c.get("owner_name")) / max(len(cards),1), 1)
         harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
                         "source_name": cand.get("name"), "vintage": cand.get("vintage"),
@@ -406,6 +406,44 @@ def harvest():
                                     "operators_detected": len(operators),
                                     "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2)},
                         **meta}
+
+        # ---- REGRESSION GUARD (before ANY data write) ----------------------
+        # A transient 5xx/timeout that drops us to an APN-only layer must never
+        # overwrite a good harvest. If the prior cards.json had real owner
+        # density and this run collapsed, KEEP all prior outputs, quarantine the
+        # bad run, flag it loudly. The failure mode is binary (~67% vs ~1-7%).
+        prev = _read_json(config.CARDS_FILE)
+        prev_pct = (prev or {}).get("harvest", {}).get("density", {}).get("owner_pct")
+        if prev_pct is None and prev and prev.get("cards"):
+            prev_pct = round(100 * sum(1 for c in prev["cards"] if c.get("owner_name")) / max(len(prev["cards"]), 1), 1)
+        if prev_pct is not None and prev_pct >= 30.0 and owner_pct < prev_pct * 0.35:
+            _write(f"{config.DATA_DIR}/cards_quarantine.json", {
+                "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "reason": f"owner density collapsed {prev_pct}% -> {owner_pct}% "
+                          f"(source: {cand.get('name')}); kept prior harvest",
+                "harvest": harvest_meta, "count": len(cards), "cards": cards})
+            _write(config.HEALTH_FILE, {
+                "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "sources": health,
+                "harvest_skipped": {"reason": "regression_guard", "prev_owner_pct": prev_pct,
+                                    "new_owner_pct": owner_pct, "source": cand.get("name")}})
+            print(f"  REGRESSION GUARD: owner density {prev_pct}% -> {owner_pct}%. "
+                  f"Kept prior harvest; bad run quarantined. Transient source "
+                  f"5xx/timeout -- re-run when the owner layer recovers.")
+            return (prev or {}).get("count", 0), {
+                "status": "regression_skipped", "prev_owner_pct": prev_pct,
+                "new_owner_pct": owner_pct,
+                "detail": f"kept prior harvest ({prev_pct}% owners); run collapsed to {owner_pct}%"}
+
+        # passed the guard -> commit all outputs
+        events_mod.write(all_events)
+        _write(f"{config.DATA_DIR}/operators.json", {
+            "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "version": config.VERSION,
+            "count": len(operators),
+            "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2),
+            "operators": operators,
+        })
     elif not harvest_meta["detail"]:
         harvest_meta["detail"] = ("No candidate returned populated owner/address data. "
                                   "See discovered.json for what each source exposed.")
@@ -427,6 +465,14 @@ def harvest():
 def _write(path, obj):
     with open(path, "w") as f:
         json.dump(obj, f, indent=2, default=str)
+
+
+def _read_json(path):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except (FileNotFoundError, ValueError, OSError):
+        return None
 
 
 def _num(v):

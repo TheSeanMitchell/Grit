@@ -173,7 +173,9 @@ HEALTH_FILE = "docs/data/health.json"
 
 # Politeness: page size + max pages per harvest (keeps the free Action well-behaved).
 CARDS_MAX = 500   # keep only the top-scored leads in the console output
-CARDS_ENRICH_MAX = 60   # 0.102: live Assessor enrichment for the top N leads/run
+CARDS_ENRICH_MAX = 150  # live Assessor enrichment for top N leads/run (current
+                        # owner/value/sale). Reliable floor even if the bulk
+                        # owner layer 5xx's. ~75s at ENRICH_DELAY spacing.
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 5
