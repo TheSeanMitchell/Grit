@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T17:59:42Z",
+  "generated_at": "2026-05-29T21:00:06Z",
   "version": "0.103",
   "count": 899,
   "portfolios_2plus": 34,
@@ -895,6 +895,25 @@
       "join_key": "O:899 FREMONT"
     },
     {
+      "id": "64121c3695",
+      "name": "BAGLEY IRREVOCABLE TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 2538.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "LAS VEGAS"
+      ],
+      "parcel_apns": [
+        "13714711100"
+      ],
+      "score": 2,
+      "join_key": "O:BAGLEY IRREVOCABLE"
+    },
+    {
       "id": "dc693327cb",
       "name": "SANTOS TRUST",
       "canonical_mailing": null,
@@ -1520,25 +1539,6 @@
       ],
       "score": 2,
       "join_key": "O:DOUBLE RR ENTERPRISES"
-    },
-    {
-      "id": "64121c3695",
-      "name": "BAGLEY IRREVOCABLE TRUST",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "TRUST": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 2538.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "LAS VEGAS"
-      ],
-      "parcel_apns": [
-        "13714711100"
-      ],
-      "score": 2,
-      "join_key": "O:BAGLEY IRREVOCABLE"
     },
     {
       "id": "05268c848c",
