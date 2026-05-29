@@ -73,28 +73,35 @@ def _norm_addr(s):
     return _re.sub(r"\s+", " ", a).strip()
 
 
+def _norm_apn(apn):
+    return "".join(ch for ch in str(apn or "") if ch.isdigit())
+
+
 def join_to_cards(cards: List[dict], events: List[Event]):
     """Attach events to cards by parcel APN OR normalized situs address. Mutates
     cards in place. Only real harvested events are ever joined; no synthetic
-    activity. (Permits carry address, not APN -- the address join is what lets
-    fresh permit events surface on the right parcels.)"""
+    activity. APNs are matched digit-only (parcel layers use dashes, permit
+    PRCLIDs don't), and every event is indexed by BOTH apn and address so a
+    format mismatch on one still joins on the other."""
     by_apn, by_addr = {}, {}
     for e in events:
         d = dc.asdict(e)
-        if e.parcel_apn:
-            by_apn.setdefault(e.parcel_apn, []).append(d)
-        elif e.address:
-            k = _norm_addr(e.address)
-            if k:
-                by_addr.setdefault(k, []).append(d)
+        ak = _norm_apn(e.parcel_apn)
+        if ak:
+            by_apn.setdefault(ak, []).append(d)
+        adk = _norm_addr(e.address)
+        if adk:
+            by_addr.setdefault(adk, []).append(d)
     for c in cards:
-        hits = []
-        apn = c.get("parcel_apn")
-        if apn and apn in by_apn:
-            hits += by_apn[apn]
-        ak = _norm_addr(c.get("situs_address"))
-        if ak and ak in by_addr:
-            hits += by_addr[ak]
+        hits, seen = [], set()
+        for bucket, key in ((by_apn, _norm_apn(c.get("parcel_apn"))),
+                            (by_addr, _norm_addr(c.get("situs_address")))):
+            if key and key in bucket:
+                for d in bucket[key]:
+                    sig = (d.get("kind"), d.get("date"), d.get("description"))
+                    if sig not in seen:        # don't double-count an event matched by both apn+addr
+                        seen.add(sig)
+                        hits.append(d)
         if hits:
             c["timeline"] = sorted(hits, key=lambda x: x.get("date", ""), reverse=True)
 

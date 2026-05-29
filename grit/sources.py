@@ -113,11 +113,12 @@ REGISTRY = [
            "LIVE per-APN enrichment (0.102): current owner, address, value, last "
            "sale, characteristics via parceldetail.aspx GET. Deterministic parser."),
 
-    Source("clv_permits_socrata", "City of Las Vegas permits (Socrata — LIVE permit flow)",
-           "soda", "https://opendata.lasvegasnevada.gov/resource/wpyf-qpia.json?$limit=1", "live",
-           "★ LIVE PERMIT FLOW. CLV building permits via Socrata SODA API -- cloud-"
-           "native (no ViewState, no residential IP). Pulled every harvest -> PERMIT "
-           "events -> IMMEDIATE scoring. Reports newest-permit date each run."),
+    Source("clv_permits_arcgis", "City of Las Vegas permits (ArcGIS Hub — LIVE permit flow)",
+           "soda", "https://opendataportal-lasvegas.opendata.arcgis.com/", "live",
+           "★ LIVE PERMIT FLOW. CLV building permits via ArcGIS Hub Feature Service "
+           "(portal moved off Socrata). Cloud-native ArcGIS REST -- same transport as "
+           "parcels, no residential IP. Set CLV_PERMITS_FEATURESERVER, then pulled every "
+           "harvest -> PERMIT events -> IMMEDIATE scoring."),
 
     Source("nv_sos", "Nevada SOS business entities (SilverFlume / ORION)",
            "api", "https://esos.nv.gov/EntitySearch/OnlineEntitySearch", "reachable",

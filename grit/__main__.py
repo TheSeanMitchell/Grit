@@ -102,22 +102,27 @@ def cmd_selftest():
 
 
 def cmd_permits_clv(argv):
-    """Pull LIVE City of Las Vegas permits from the Socrata open-data API and
+    """Pull LIVE City of Las Vegas permits from the ArcGIS Hub open-data API and
     merge PERMIT events. Cloud-native -- no residential IP, no ViewState. Run it
     anywhere (your machine OR the GitHub runner). Reports recency + volume so you
     see immediately whether the feed is live and current."""
-    from . import socrata, events as events_mod
+    from . import clv_permits, events as events_mod
     days = config.PERMIT_DAYS_BACK
     if "--days" in argv:
         try: days = int(argv[argv.index("--days") + 1])
         except Exception: pass
-    print(f"Pulling City of Las Vegas permits (last {days} days) via Socrata...")
-    new_events, report = socrata.harvest_clv_permits(days_back=days)
+    print(f"Pulling City of Las Vegas permits (last {days} days) via ArcGIS Hub...")
+    new_events, report = clv_permits.harvest_clv_permits(days_back=days)
     print(f"  dataset : {report['host']}/resource/{report['dataset']}")
+    if report.get("status") == "needs_config":
+        print("  NOT CONFIGURED: paste the CLV Building Permits FeatureServer url into\n"
+              "  config.CLV_PERMITS_FEATURESERVER. Portal: opendataportal-lasvegas.\n"
+              "  opendata.arcgis.com/datasets/building-permits -> API Resources.")
+        return
     if report.get("error"):
         print(f"  ERROR   : {report['error']}")
         print("  If this is a 404/None, the dataset id may have moved -- check "
-              "the portal and update DATASETS['permits'] in grit/socrata.py.")
+              "config.CLV_PERMITS_FEATURESERVER (paste the FeatureServer layer url).")
         return
     print(f"  columns : {report.get('columns')}")
     print(f"  mapping : {report.get('mapping')}")

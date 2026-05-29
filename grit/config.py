@@ -176,7 +176,12 @@ CARDS_MAX = 500   # keep only the top-scored leads in the console output
 CARDS_ENRICH_MAX = 150  # live Assessor enrichment for top N leads/run (current
                         # owner/value/sale). Reliable floor even if the bulk
                         # owner layer 5xx's. ~75s at ENRICH_DELAY spacing.
-PERMIT_DAYS_BACK = 45   # CLV Socrata permit window pulled each harvest (cloud-native)
+PERMIT_DAYS_BACK = 90   # CLV permit window pulled each harvest (cloud-native)
+# Paste the City of Las Vegas "Building Permits" FeatureServer LAYER url here
+# (portal: opendataportal-lasvegas.opendata.arcgis.com/datasets/building-permits
+#  -> "I Want To Use This" -> API Resources -> GeoJSON/FeatureServer url, ending /0).
+# Empty = permit source reports 'needs_config' (no error). ArcGIS REST = cloud-native.
+CLV_PERMITS_FEATURESERVER = "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0"
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 5

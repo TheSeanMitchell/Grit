@@ -173,6 +173,14 @@ def score_card(card):
         bonus = min(30 * len(recent_events), 40)
         score += bonus
         signals.append(f"{len(recent_events)} recent event(s) (+{bonus})")
+        # reflect the freshest event in the temporal lens (permits are activity now)
+        newest = max((e.get("date") for e in card["timeline"] if e.get("date")), default=None)
+        ev_state = temporal.classify(newest)
+        order = ["STRUCTURAL", "HISTORICAL", "PERSISTENT", "WARM", "IMMEDIATE"]
+        def _rank(s):
+            return order.index(s) if s in order else -1
+        if _rank(ev_state) > _rank(card.get("temporal_state")):
+            card["temporal_state"] = ev_state
 
     card["score"] = min(score, 100)
     card["signals"] = signals
@@ -187,6 +195,89 @@ def _next_action(card):
     if card.get("situs_address"):
         return f"Skip-trace owner for {card['situs_address']}, then reach out."
     return "Enrich record (owner + contact) before outreach."
+
+
+# ---- permits as leads (EVENT -> ENTITY -> MONEY) --------------------------
+def permits_to_cards(permits):
+    """Turn recent permits into lead cards. A permit is an active-work signal:
+    owner + site + APN + contractor + valuation + date. Multiple permits on one
+    parcel collapse into a single card (union of trades/contractors, newest date)."""
+    by_key, cards = {}, []
+    for p in permits:
+        owner = p.get("owner_name")
+        entity = classify_owner(owner)
+        if entity in ("HOA", "GOVERNMENT"):       # not contractor leads
+            continue
+        key = p.get("apn") or ("ADDR:" + (p.get("site_address") or p.get("record") or ""))
+        c = by_key.get(key)
+        if c is None:
+            c = {"id": f"clv_permit:{key}", "source": "clv_permit",
+                 "parcel_apn": p.get("apn"), "situs_address": p.get("site_address"),
+                 "situs_city": p.get("city"), "owner_name": owner,
+                 "owner_mailing": p.get("owner_mailing"), "entity_type": entity,
+                 "trade_tags": [], "lat": p.get("lat"), "lng": p.get("lng"),
+                 "permit_count": 0, "contractors": [], "last_permit_date": None,
+                 "permit_value_total": 0.0, "has_permit": True}
+            by_key[key] = c
+            cards.append(c)
+        c["permit_count"] += 1
+        for t in p.get("trades", []):
+            if t not in c["trade_tags"]:
+                c["trade_tags"].append(t)
+        ct = p.get("contractor")
+        if ct and ct not in c["contractors"]:
+            c["contractors"].append(ct)
+        v = _num(p.get("valuation"))
+        if v:
+            c["permit_value_total"] += v
+        d = p.get("date")
+        if d and (not c["last_permit_date"] or d > c["last_permit_date"]):
+            c["last_permit_date"] = d
+        if not c.get("lat") and p.get("lat"):
+            c["lat"], c["lng"] = p.get("lat"), p.get("lng")
+        if not c.get("owner_name") and owner:
+            c["owner_name"], c["entity_type"] = owner, entity
+    return cards
+
+
+def merge_permit_cards(parcel_cards, permit_cards):
+    """Merge permit lead-cards into the parcel set. If a permit's APN matches a
+    parcel card, enrich it (fill owner gaps + attach permit activity); otherwise
+    add the permit as a new lead. Returns the combined list + a small stat dict."""
+    def norm(apn):
+        return "".join(ch for ch in str(apn or "") if ch.isdigit())
+    idx = {}
+    for c in parcel_cards:
+        k = norm(c.get("parcel_apn"))
+        if k:
+            idx[k] = c
+    enriched = added = 0
+    for pc in permit_cards:
+        k = norm(pc.get("parcel_apn"))
+        host = idx.get(k) if k else None
+        if host:
+            if not host.get("owner_name") and pc.get("owner_name"):
+                host["owner_name"], host["entity_type"] = pc["owner_name"], pc["entity_type"]
+            if not host.get("owner_mailing") and pc.get("owner_mailing"):
+                host["owner_mailing"] = pc["owner_mailing"]
+            host.setdefault("trade_tags", [])
+            for t in pc.get("trade_tags", []):
+                if t not in host["trade_tags"]:
+                    host["trade_tags"].append(t)
+            host["contractors"] = pc.get("contractors")
+            host["permit_count"] = pc.get("permit_count")
+            host["permit_value_total"] = pc.get("permit_value_total")
+            host["last_permit_date"] = pc.get("last_permit_date")
+            host["has_permit"] = True
+            if not host.get("lat") and pc.get("lat"):
+                host["lat"], host["lng"] = pc.get("lat"), pc.get("lng")
+            enriched += 1
+        else:
+            parcel_cards.append(pc)
+            if k:
+                idx[k] = pc
+            added += 1
+    return parcel_cards, {"permit_cards_added": added, "permit_cards_enriched_existing": enriched}
 
 
 # ---- card construction ----------------------------------------------------
@@ -387,10 +478,13 @@ def harvest():
         cards.sort(key=lambda c: c["score"], reverse=True)
         cards = cards[:config.CARDS_MAX]
         enrich_events, enrich_stats = enrich_cards(cards)
-        # CLOUD-NATIVE LIVE PERMIT FLOW (City of Las Vegas Socrata; not IP-blocked,
+        # CLOUD-NATIVE LIVE PERMIT FLOW (City of Las Vegas ArcGIS Hub; not IP-blocked,
         # so this runs right here in the GitHub runner -- no residential capture).
-        from . import socrata
-        permit_events, permit_report = socrata.harvest_clv_permits(days_back=config.PERMIT_DAYS_BACK)
+        # Permits ARE leads: each becomes/enriches a lead card (EVENT->ENTITY->MONEY).
+        from . import clv_permits
+        permits, permit_report = clv_permits.fetch_clv_permits(days_back=config.PERMIT_DAYS_BACK)
+        permit_events = clv_permits.to_events(permits)
+        cards, permit_merge = merge_permit_cards(cards, permits_to_cards(permits))
         all_events = existing_events + enrich_events + permit_events
         events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales + permits
         # 0.103: build the operator graph BEFORE the final re-score so the
@@ -409,8 +503,10 @@ def harvest():
                                     "owner_pct": owner_pct,
                                     "operators_detected": len(operators),
                                     "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2)},
-                        "permits": {"source": "City of Las Vegas (Socrata, live)",
+                        "permits": {"source": "City of Las Vegas (ArcGIS Hub)", "status": permit_report.get("status"),
                                     "ingested": len(permit_events),
+                                    "leads_added": permit_merge.get("permit_cards_added"),
+                                    "leads_enriched": permit_merge.get("permit_cards_enriched_existing"),
                                     "trade_tagged": sum(1 for e in permit_events if e.trade_tag),
                                     "newest": permit_report.get("newest"),
                                     "error": permit_report.get("error")},
