@@ -176,6 +176,7 @@ CARDS_MAX = 500   # keep only the top-scored leads in the console output
 CARDS_ENRICH_MAX = 150  # live Assessor enrichment for top N leads/run (current
                         # owner/value/sale). Reliable floor even if the bulk
                         # owner layer 5xx's. ~75s at ENRICH_DELAY spacing.
+PERMIT_DAYS_BACK = 45   # CLV Socrata permit window pulled each harvest (cloud-native)
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 5

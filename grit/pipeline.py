@@ -387,8 +387,12 @@ def harvest():
         cards.sort(key=lambda c: c["score"], reverse=True)
         cards = cards[:config.CARDS_MAX]
         enrich_events, enrich_stats = enrich_cards(cards)
-        all_events = existing_events + enrich_events
-        events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales
+        # CLOUD-NATIVE LIVE PERMIT FLOW (City of Las Vegas Socrata; not IP-blocked,
+        # so this runs right here in the GitHub runner -- no residential capture).
+        from . import socrata
+        permit_events, permit_report = socrata.harvest_clv_permits(days_back=config.PERMIT_DAYS_BACK)
+        all_events = existing_events + enrich_events + permit_events
+        events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales + permits
         # 0.103: build the operator graph BEFORE the final re-score so the
         # portfolio bonus ('money moving as a herd') lands in each card's score.
         from . import entities
@@ -405,6 +409,11 @@ def harvest():
                                     "owner_pct": owner_pct,
                                     "operators_detected": len(operators),
                                     "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2)},
+                        "permits": {"source": "City of Las Vegas (Socrata, live)",
+                                    "ingested": len(permit_events),
+                                    "trade_tagged": sum(1 for e in permit_events if e.trade_tag),
+                                    "newest": permit_report.get("newest"),
+                                    "error": permit_report.get("error")},
                         **meta}
 
         # ---- REGRESSION GUARD (before ANY data write) ----------------------

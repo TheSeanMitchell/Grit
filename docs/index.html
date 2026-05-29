@@ -204,6 +204,11 @@ function renderDensity(meta){const d=$('#density');if(!d||!meta||!meta.density&&
   if(den.cards_with_owner!=null)parts.push('<span>owner data <b class="'+oc+'">'+den.cards_with_owner+' / '+den.cards_total+'</b> ('+(den.owner_pct||0)+'%)</span>');
   if(yieldPct!=null)parts.push('<span>assessor parser yield <b class="'+yc+'">'+yieldPct+'%</b> ('+(en.enriched||0)+' parsed / '+(en.silent_misses||0)+' silent / '+(en.errors||0)+' err on '+(en.attempted||0)+' attempts)</span>');
   if(den.operators_detected!=null)parts.push('<span>operators <b>'+den.operators_detected+'</b> ('+(den.portfolios_2plus||0)+' multi-parcel)</span>');
+  const pm=meta.permits;
+  if(pm){
+    const pc=pm.error?'lo':(pm.ingested>0?'ok':'mid');
+    parts.push('<span>live permits <b class="'+pc+'">'+(pm.error?'ERROR':(pm.ingested||0))+'</b>'+(pm.newest?' (newest '+pm.newest+')':'')+(pm.trade_tagged?' \u00b7 '+pm.trade_tagged+' trade-tagged':'')+' \u00b7 CLV</span>');
+  }
   d.innerHTML=parts.join('');}
 function renderHealth(h){const m=$('#matrix');
   if(!h||!h.sources){m.innerHTML='<div class="empty" style="grid-column:1/-1"><div class="big">HEALTH NOT YET PROBED</div>Trigger the GitHub Action.</div>';return;}

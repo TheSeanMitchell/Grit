@@ -101,6 +101,41 @@ def cmd_selftest():
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
+def cmd_permits_clv(argv):
+    """Pull LIVE City of Las Vegas permits from the Socrata open-data API and
+    merge PERMIT events. Cloud-native -- no residential IP, no ViewState. Run it
+    anywhere (your machine OR the GitHub runner). Reports recency + volume so you
+    see immediately whether the feed is live and current."""
+    from . import socrata, events as events_mod
+    days = config.PERMIT_DAYS_BACK
+    if "--days" in argv:
+        try: days = int(argv[argv.index("--days") + 1])
+        except Exception: pass
+    print(f"Pulling City of Las Vegas permits (last {days} days) via Socrata...")
+    new_events, report = socrata.harvest_clv_permits(days_back=days)
+    print(f"  dataset : {report['host']}/resource/{report['dataset']}")
+    if report.get("error"):
+        print(f"  ERROR   : {report['error']}")
+        print("  If this is a 404/None, the dataset id may have moved -- check "
+              "the portal and update DATASETS['permits'] in grit/socrata.py.")
+        return
+    print(f"  columns : {report.get('columns')}")
+    print(f"  mapping : {report.get('mapping')}")
+    print(f"  rows    : {report['rows']}   newest permit: {report['newest']}")
+    traded = sum(1 for e in new_events if e.trade_tag)
+    from collections import Counter
+    mix = Counter(e.trade_tag for e in new_events if e.trade_tag)
+    print(f"  events  : {len(new_events)} PERMIT ({traded} trade-tagged: {dict(mix)})")
+    if not new_events:
+        return
+    existing = events_mod.load_existing()
+    seen = {(e.kind, e.date, e.description) for e in existing}
+    merged = list(existing) + [e for e in new_events if (e.kind, e.date, e.description) not in seen]
+    events_mod.write(merged)
+    print(f"\n  + merged into {config.EVENTS_FILE} ({len(merged)} total events). "
+          f"Next harvest joins them to cards; fresh permits score IMMEDIATE.")
+
+
 def cmd_permits(argv):
     """Ingest recent Clark County permits from Accela (run from a residential
     Vegas IP -- the cloud runner gets 403d). Searches permits issued in the last
@@ -168,11 +203,12 @@ def cmd_enrich(argv):
 
 def main(argv):
     cmds = {"health": cmd_health, "discover": cmd_discover,
-            "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich, "permits": cmd_permits}
+            "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich,
+            "permits": cmd_permits, "permits-clv": cmd_permits_clv}
     if len(argv) < 2 or argv[1] not in cmds:
         print(__doc__)
         return 1
-    if argv[1] in ('enrich','permits'):
+    if argv[1] in ('enrich', 'permits', 'permits-clv'):
         cmds[argv[1]](argv)
     else:
         cmds[argv[1]]()
