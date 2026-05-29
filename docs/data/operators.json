@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-29T03:24:53Z",
+  "generated_at": "2026-05-29T04:05:20Z",
   "version": "0.103",
-  "count": 2,
+  "count": 1,
   "portfolios_2plus": 0,
   "operators": [
     {
@@ -22,25 +22,6 @@
       ],
       "score": 2,
       "join_key": "O:SANTOS"
-    },
-    {
-      "id": "575fc5ea06",
-      "name": "SOUTHERN HIGHLANDS CORPORATE CTR",
-      "canonical_mailing": null,
-      "entity_mix": {
-        "LLC": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 0.0,
-      "recent_activity_count": 0,
-      "cities": [
-        "Assessor Description"
-      ],
-      "parcel_apns": [
-        "19105117001"
-      ],
-      "score": 2,
-      "join_key": "O:SOUTHERN HIGHLANDS CORPORATE CTR"
     }
   ]
 }
