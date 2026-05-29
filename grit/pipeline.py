@@ -8,6 +8,7 @@ shows it as unknown and any signal that depends on it contributes zero.
 import datetime as dt
 import json
 import os
+from dataclasses import asdict as dc_asdict
 
 from . import config, arcgis, sources
 
@@ -486,22 +487,54 @@ def harvest():
         permit_events = clv_permits.to_events(permits)
         cards, permit_merge = merge_permit_cards(cards, permits_to_cards(permits))
         all_events = existing_events + enrich_events + permit_events
+
+        # 0.105 GEOCODING SPINE -- open the map up. Permits (and some parcels)
+        # arrive without point geometry; resolve their parcel APNs to REAL
+        # centroids so every lead can render on the map. Unresolved APNs stay
+        # coordless (no fabricated pins). This is the single change that turns
+        # the console from a 500-point cluster into a metro-wide activity map.
+        from . import geocode
+        need = {c.get("parcel_apn") for c in cards
+                if (c.get("lat") in (None, "") or c.get("lng") in (None, ""))
+                and c.get("parcel_apn")}
+        need |= {e.parcel_apn for e in all_events
+                 if getattr(e, "lat", None) in (None, "") and e.parcel_apn}
+        geo_lookup, geocode_report = geocode.centroids_for_apns(need)
+        geocode_report["cards_placed"] = geocode.stamp_cards(cards, geo_lookup)
+        geocode_report["events_placed"] = geocode.stamp_events(all_events, geo_lookup)
+
         events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales + permits
         # 0.103: build the operator graph BEFORE the final re-score so the
         # portfolio bonus ('money moving as a herd') lands in each card's score.
         from . import entities
         operators = entities.build_operator_graph(cards)
+        # now that permits carry real centroids, recompute geographic clusters so
+        # permit leads get a true neighbor count (the activity layer, not just parcels)
+        assign_cluster_density(cards)
         cards = [score_card(c) for c in cards]          # re-score with fresh data + portfolio
         cards.sort(key=lambda c: c["score"], reverse=True)
+
+        # 0.105 SIGNAL ENGINE COMPLETION -- every lead explains itself + carries
+        # its full tag set; contractors roll up into a leaderboard. Pure functions
+        # of already-harvested fields (real data only, no fabrication).
+        from . import tagging, leads as leads_mod, contractors as contractors_mod
+        for c in cards:
+            leads_mod.enrich_lead(c)              # stamps location dims + origin
+            c["tags"] = tagging.tags_for_card(c)  # tags can read owner_state etc.
+        contractor_table = contractors_mod.build_contractor_table(cards)
+
         owner_pct = round(100 * sum(1 for c in cards if c.get("owner_name")) / max(len(cards),1), 1)
         harvest_meta = {"status": "ok", "layer": chosen["info"].get("name"),
                         "source_name": cand.get("name"), "vintage": cand.get("vintage"),
                         "layer_url": cand["url"], "field_map": mapping,
                         "richness": chosen["rich"], "enrichment": enrich_stats,
+                        "geocode": geocode_report,
                         "density": {"cards_total": len(cards),
                                     "cards_with_owner": sum(1 for c in cards if c.get("owner_name")),
                                     "owner_pct": owner_pct,
+                                    "cards_mapped": sum(1 for c in cards if c.get("lat") and c.get("lng")),
                                     "operators_detected": len(operators),
+                                    "contractors": len(contractor_table),
                                     "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2)},
                         "permits": {"source": "City of Las Vegas (ArcGIS Hub)", "status": permit_report.get("status"),
                                     "ingested": len(permit_events),
@@ -541,6 +574,16 @@ def harvest():
                 "detail": f"kept prior harvest ({prev_pct}% owners); run collapsed to {owner_pct}%"}
 
         # passed the guard -> commit all outputs
+        # APPEND-ONLY event store (Phase 2): merge every event ever seen, de-dupe
+        # on (kind, date, description, apn) so re-runs never DUPLICATE and never
+        # DROP history. The feed only ever grows.
+        seen, deduped = set(), []
+        for e in all_events:
+            sig = (e.kind, e.date, e.description, geocode.norm_apn(e.parcel_apn))
+            if sig not in seen:
+                seen.add(sig)
+                deduped.append(e)
+        all_events = deduped
         events_mod.write(all_events)
         _write(f"{config.DATA_DIR}/operators.json", {
             "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -549,6 +592,19 @@ def harvest():
             "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2),
             "operators": operators,
         })
+        # Phase 8: contractor leaderboard
+        _write(config.CONTRACTORS_FILE, {
+            "generated_at": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "version": config.VERSION,
+            "count": len(contractor_table),
+            "contractors": contractor_table,
+        })
+        # Phases 1/2/6: coverage + completeness + category matrix + append-only ledger
+        from . import coverage as coverage_mod
+        events_for_cov = [dc_asdict(e) for e in all_events]
+        cov_payload, _ledger = coverage_mod.build(cards, events_for_cov, health,
+                                                  contractor_table, geocode_report)
+        _write(config.COVERAGE_FILE, cov_payload)
     elif not harvest_meta["detail"]:
         harvest_meta["detail"] = ("No candidate returned populated owner/address data. "
                                   "See discovered.json for what each source exposed.")
@@ -558,7 +614,10 @@ def harvest():
         "version": config.VERSION,
         "harvest": harvest_meta,
         "count": len(cards),
-        "cards": cards,
+        # drop the per-card raw source blob from the shipped file -- it's only
+        # needed during the run (assessor parse/audit) and the console never reads
+        # it. Keeps the wider 0.105 card set light over GitHub Pages.
+        "cards": [{k: v for k, v in c.items() if k != "raw"} for c in cards],
     })
     # persist events feed only if harvest didn't already write fresh ones
     if not chosen:

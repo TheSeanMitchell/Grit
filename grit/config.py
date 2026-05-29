@@ -65,6 +65,18 @@ PARCEL_CANDIDATES = [
     },
 ]
 
+# ---------------------------------------------------------------------------
+# Geocoding spine (0.105). Permits ship without usable point geometry, so we
+# resolve each permit's parcel APN to a real centroid here. This is the modern
+# county Assessor parcel layer -- it exposes APN + geometry for EVERY parcel,
+# which is exactly what an APN->point lookup needs (the owner data it lacks is
+# why it isn't the harvest base). Centroids are real; unresolved APNs stay
+# coordless (no fabricated pins). Empty = geocoding reports 'needs_config'.
+# ---------------------------------------------------------------------------
+PARCEL_GEOCODE_LAYER = ("https://maps.clarkcountynv.gov/arcgis/rest/services/"
+                        "GISMO/AssessorMap/FeatureServer/1")
+GEOCODE_DELAY = 0.15    # seconds between geocode batches (be polite)
+
 # gisgate.co.clark.nv.us serves a hostname-mismatched TLS certificate (confirmed
 # 2026-05). It's a public, read-only government endpoint, so we skip cert
 # verification for it to connect. Tradeoff: no protection against tampering in
@@ -117,7 +129,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.103"
+VERSION = "0.105"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -170,9 +182,15 @@ INVESTOR_OWNER_TOKENS = ["LLC", " INC", "INCORPORATED", " LP", "L P", "PROPERTIE
 DATA_DIR = "docs/data"
 CARDS_FILE = "docs/data/cards.json"
 HEALTH_FILE = "docs/data/health.json"
+CONTRACTORS_FILE = "docs/data/contractors.json"   # 0.105 contractor leaderboard
+COVERAGE_FILE = "docs/data/coverage.json"         # 0.105 completeness + category matrix
+WAREHOUSE_DIR = "docs/data/warehouse"             # 0.105 append-only ledger
 
 # Politeness: page size + max pages per harvest (keeps the free Action well-behaved).
-CARDS_MAX = 500   # keep only the top-scored leads in the console output
+# 0.105 opens the map up: keep a much wider parcel base (was 500) so the console
+# shows the whole metro, not just the top-scored new-construction cluster. The
+# permit activity layer (geocoded) spreads across every neighborhood on top.
+CARDS_MAX = 1500  # keep the top-scored leads in the console output (was 500)
 CARDS_ENRICH_MAX = 150  # live Assessor enrichment for top N leads/run (current
                         # owner/value/sale). Reliable floor even if the bulk
                         # owner layer 5xx's. ~75s at ENRICH_DELAY spacing.
@@ -184,6 +202,6 @@ PERMIT_DAYS_BACK = 90   # CLV permit window pulled each harvest (cloud-native)
 CLV_PERMITS_FEATURESERVER = "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0"
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
-MAX_PAGES = 5
+MAX_PAGES = 8           # 0.105: wider candidate pool (was 5) for metro-wide spread
 HTTP_TIMEOUT = 30
 USER_AGENT = "GRIT-harvester/0.1 (public-records research; contact: repo owner)"

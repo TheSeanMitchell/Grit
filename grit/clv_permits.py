@@ -46,6 +46,12 @@ def _get(url, params, timeout=45):
 
 
 # ---- field extraction (exact, verified schema) -----------------------------
+# These are City of Las Vegas building permits, so every record's issuing
+# jurisdiction is Las Vegas. The feed's CITY column is the owner's mailing
+# city (kept for owner_mailing only), NOT the property's city.
+CLV_JURISDICTION = "LAS VEGAS"
+
+
 def _build_site_address(a):
     out = []
     stno = a.get("STNO")
@@ -140,6 +146,15 @@ def _normalize(feature):
     coords = geom.get("coordinates") if isinstance(geom, dict) else None
     lng = coords[0] if isinstance(coords, list) and len(coords) >= 2 else None
     lat = coords[1] if isinstance(coords, list) and len(coords) >= 2 else None
+    # esri-json fallback: some hosted layers return {x,y} instead of GeoJSON
+    # coordinates even when f=geojson is requested. Read it so a permit that
+    # DOES carry a point isn't dropped (APN geocoding covers the rest).
+    if lat is None and isinstance(geom, dict) and geom.get("x") not in (None, "") \
+            and geom.get("y") not in (None, ""):
+        try:
+            lng, lat = float(geom["x"]), float(geom["y"])
+        except (TypeError, ValueError):
+            lng = lat = None
     worktype, aptype = a.get("WORKTYPE"), a.get("APTYPE")
     misc, code = a.get("MISC_FEES"), a.get("CODE_ANALYSIS")
     return {
@@ -149,7 +164,12 @@ def _normalize(feature):
         "date": _norm_date(a.get("ISSDTTM")),
         "valuation": a.get("DECLVLTN"),
         "site_address": _build_site_address(a) or None,
-        "city": (a.get("CITY") or None),
+        # NOTE: the CLV feed's CITY field is the OWNER's mailing city, not the
+        # property's city. These are City of Las Vegas permits, so the SITE
+        # jurisdiction is Las Vegas by definition (the issuing authority). We
+        # set the site city accordingly and keep CITY only for owner_mailing,
+        # so an owner mailing from Chicago no longer mislabels a LV property.
+        "city": CLV_JURISDICTION,
         "apn": _apn_from_prclid(a.get("PRCLID")),
         "owner_name": (a.get("NAME") or None),
         "owner_mailing": _join_mailing(a.get("ADDR1"), a.get("CITY"),

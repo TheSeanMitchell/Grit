@@ -5,6 +5,10 @@ GRIT CLI.
   python -m grit discover   walk the Clark County ArcGIS server, list services
                             and the REAL fields of likely parcel layers
   python -m grit harvest    health + harvest the live API source -> cards.json
+  python -m grit rebuild    re-derive the .105 intelligence layer (tags, why,
+                            contractors, coverage) from existing data, no network
+  python -m grit coverage   print permit-completeness + category health matrix
+  python -m grit contractors  print the contractor leaderboard
   python -m grit selftest   run the transform logic on a fixture (no network)
 
 `discover` is how you pin the exact parcel layer without anyone guessing a schema.
@@ -98,7 +102,131 @@ def cmd_selftest():
         print("  -", s)
     print("suggested:", card["suggested_action"])
     assert card["score"] > 0 and card["trade_tags"], "transform failed"
+
+    # ---- 0.105 transforms (offline, fixture only) -------------------------
+    from . import tagging, leads, geocode, contractors, capital
+    # geocode APN helpers
+    assert geocode.norm_apn("138-99-000-001") == "13899000001", "norm_apn failed"
+    assert geocode.dash_apn("13899000001") == "138-99-000-001", "dash_apn failed"
+    assert geocode.dash_apn("123") is None, "dash_apn should reject non-11-digit"
+    # owner-origin parser: a Las Vegas property owned from out of state
+    origin = capital.parse_owner_origin("100 N STATE ST, CHICAGO IL 60601")
+    assert origin["owner_state"] == "IL" and origin["owner_city"] == "Chicago" \
+        and origin["owner_out_of_state"] and origin["owner_origin_market"] == "Chicago, IL", \
+        "owner-origin parse failed"
+    assert capital.parse_owner_origin("123 S 3RD ST, LAS VEGAS NV 89101")["owner_is_local"], \
+        "local NV owner should be flagged local"
+    # a permit-style fixture lead owned by out-of-state (Chicago) capital
+    permit_card = {
+        "source": "clv_permit",
+        "entity_type": "LLC", "owner_name": "ACME INVEST LLC",
+        "owner_mailing": "100 N STATE ST, CHICAGO IL 60601", "situs_address": "9 TEST ST",
+        "city": "HENDERSON", "land_use": "SINGLE FAMILY RESIDENTIAL",
+        "assessed_value": 820000, "year_built": 1979, "has_permit": True,
+        "permit_count": 2, "contractors": ["ACME ROOFING LLC"],
+        "trade_tags": ["roofing"], "last_permit_date": dt_today_iso(),
+        "permit_value_total": 35000, "portfolio_size": 6, "cluster_density": 7,
+        "temporal_state": "IMMEDIATE", "suggested_action": "Pull contact and confirm intent.",
+        "timeline": [{"kind": "PERMIT", "date": dt_today_iso(), "description": "reroof"}],
+    }
+    # production order: enrich (stamps location dims + origin) THEN tag
+    leads.enrich_lead(permit_card)
+    tags = tagging.tags_for_card(permit_card)
+    print("\n0.105 tags:", ", ".join(tags))
+    for must in ("entity:llc", "ownership:absentee", "ownership:investor",
+                 "permit:active", "trade:roofing", "value:750k-1m",
+                 "monetization:investor-relationship",
+                 "origin:out-of-state", "origin:illinois"):
+        assert must in tags, f"missing tag {must}"
+    # four SEPARATE location dimensions, never collapsed
+    assert permit_card["property_city"] == "LAS VEGAS", "CLV property city should be Las Vegas"
+    assert permit_card["permit_jurisdiction"] == "City of Las Vegas", "permit jurisdiction wrong"
+    assert permit_card["owner_origin_market"] == "Chicago, IL", "owner origin not preserved"
+    print("dimensions: property=", permit_card["property_city"],
+          "| permit_juris=", permit_card["permit_jurisdiction"],
+          "| owner_origin=", permit_card["owner_origin_market"])
+    print("jurisdiction:", permit_card["jurisdiction"], "| property:", permit_card["property_type"])
+    print("occupancy:", permit_card["occupancy_status"])
+    print("WHY THIS MATTERS:\n  " + permit_card["why"])
+    assert "active work" in permit_card["why"].lower(), "why-this-matters failed"
+    assert "Chicago, IL" in permit_card["why"], "why should surface out-of-state origin"
+    ct = contractors.build_contractor_table([permit_card])
+    assert ct and ct[0]["name"] == "ACME ROOFING LLC" and ct[0]["permit_count"] == 2, "contractor rollup failed"
+    print("contractor leaderboard top:", ct[0]["name"], "->", ct[0]["permit_count"], "permits")
+    # capital-flow rollup sees the imported property
+    cf = capital.capital_flow([permit_card])
+    assert cf["totals"]["imported_properties"] == 1 and cf["by_market"][0]["market"] == "Chicago, IL", \
+        "capital-flow rollup failed"
+    print("capital flow: imported", cf["totals"]["imported_properties"],
+          "from", cf["by_market"][0]["market"])
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
+
+
+def dt_today_iso():
+    import datetime as _dt
+    return _dt.date.today().isoformat()
+
+
+def cmd_rebuild(argv):
+    """Re-derive the 0.105 intelligence layer (clusters, operators, universal
+    tags, WHY-THIS-MATTERS, contractor leaderboard, coverage + category matrix,
+    append-only ledger) from the EXISTING harvested data -- NO network harvest.
+
+    Use it to apply changes to tag/why/contractor/coverage logic instantly
+    without re-pulling sources. Reads docs/data/{cards,events}.json, recomputes,
+    and rewrites cards.json + operators/contractors/coverage. Real data only:
+    it never invents fields, only restates what was already harvested.
+    """
+    import json
+    from . import (events as events_mod, entities, tagging, leads as leads_mod,
+                   contractors as contractors_mod, coverage as coverage_mod)
+    cd = pipeline._read_json(config.CARDS_FILE)
+    if not cd or not cd.get("cards"):
+        print("No cards.json to rebuild from -- run `harvest` first."); return
+    cards = cd["cards"]
+    events = events_mod.load_existing()
+    print(f"rebuilding intelligence over {len(cards)} cards / {len(events)} events (offline)...")
+
+    events_mod.join_to_cards(cards, events)
+    pipeline.assign_cluster_density(cards)
+    operators = entities.build_operator_graph(cards)
+    cards = [pipeline.score_card(c) for c in cards]
+    cards.sort(key=lambda c: c["score"], reverse=True)
+    for c in cards:
+        leads_mod.enrich_lead(c)
+        c["tags"] = tagging.tags_for_card(c)
+    contractor_table = contractors_mod.build_contractor_table(cards)
+
+    harvest = cd.get("harvest", {})
+    harvest["density"] = {**harvest.get("density", {}),
+                          "cards_total": len(cards),
+                          "cards_with_owner": sum(1 for c in cards if c.get("owner_name")),
+                          "cards_mapped": sum(1 for c in cards if c.get("lat") and c.get("lng")),
+                          "operators_detected": len(operators),
+                          "contractors": len(contractor_table)}
+    pipeline._write(config.CARDS_FILE, {
+        "generated_at": cd.get("generated_at"), "version": config.VERSION,
+        "harvest": harvest, "count": len(cards),
+        "cards": [{k: v for k, v in c.items() if k != "raw"} for c in cards]})
+    pipeline._write(f"{config.DATA_DIR}/operators.json", {
+        "generated_at": cd.get("generated_at"), "version": config.VERSION,
+        "count": len(operators),
+        "portfolios_2plus": sum(1 for o in operators if o["parcel_count"] >= 2),
+        "operators": operators})
+    pipeline._write(config.CONTRACTORS_FILE, {
+        "generated_at": cd.get("generated_at"), "version": config.VERSION,
+        "count": len(contractor_table), "contractors": contractor_table})
+    health = (pipeline._read_json(config.HEALTH_FILE) or {}).get("sources", [])
+    geo_rep = harvest.get("geocode")
+    ev_dicts = [pipeline.dc_asdict(e) for e in events]
+    cov, _ = coverage_mod.build(cards, ev_dicts, health, contractor_table, geo_rep)
+    pipeline._write(config.COVERAGE_FILE, cov)
+
+    mapped = sum(1 for c in cards if c.get("lat") and c.get("lng"))
+    print(f"  rebuilt: {len(cards)} cards ({mapped} mapped), {len(operators)} operators, "
+          f"{len(contractor_table)} contractors")
+    print(f"  wrote cards.json, operators.json, contractors.json, coverage.json + ledger")
 
 
 def cmd_permits_clv(argv):
@@ -206,14 +334,74 @@ def cmd_enrich(argv):
           "trusted until then (no fake data).")
 
 
+def cmd_coverage(argv):
+    """Print the permit-completeness table + category health matrix from the
+    last build (docs/data/coverage.json). Read-only; no network."""
+    import json
+    cov = pipeline._read_json(config.COVERAGE_FILE)
+    if not cov:
+        print("No coverage.json yet -- run `rebuild` or `harvest` first."); return
+    h = cov.get("headline", {})
+    print(f"COVERAGE  (generated {cov.get('generated_at','?')})")
+    print(f"  {h.get('leads',0)} leads | {h.get('mapped',0)} mapped | "
+          f"{h.get('permit_events',0)} permit events | {h.get('contractors',0)} contractors "
+          f"| {h.get('tagged_pct',0)}% tagged")
+    pc = cov.get("permits", {})
+    print("\nPERMIT COMPLETENESS BY JURISDICTION (top 12)")
+    print(f"  {'jurisdiction':<22}{'parcels':>9}{'permits':>9}{'mapped':>8}"
+          f"{'fresh(d)':>9}{'conf':>6}  newest")
+    for r in pc.get("by_jurisdiction", [])[:12]:
+        print(f"  {r['jurisdiction']:<22}{r['parcels']:>9}{r['permits']:>9}"
+              f"{r['mapped']:>8}{str(r['freshness_days']):>9}{r['confidence']:>6}"
+              f"  {r.get('newest') or '-'}")
+    t = pc.get("total", {})
+    if t:
+        print(f"  {'TOTAL ('+str(t.get('jurisdictions_with_data',0))+' juris)':<22}"
+              f"{t.get('permit_parcels',0):>9}{t.get('permit_events_stored',0):>9}"
+              f"{t.get('mapped',0):>8}{str(t.get('freshness_days','-')):>9}")
+    print("\nCATEGORY HEALTH MATRIX")
+    print(f"  {'category':<16}{'status':<10}{'vol':>7}{'fresh':>10}{'conf':>6}  coverage")
+    for r in cov.get("categories", []):
+        print(f"  {r['category']:<16}{r['status']:<10}{str(r.get('volume','-')):>7}"
+              f"{str(r.get('freshness','-')):>10}{str(r.get('confidence','-')):>6}"
+              f"  {r.get('coverage','')}")
+    w = cov.get("warehouse", {})
+    print(f"\nWAREHOUSE  append_only={w.get('append_only')} | "
+          f"{w.get('event_total',0)} events | {w.get('ledger_entries',0)} ledger entries")
+
+
+def cmd_contractors(argv):
+    """Print the contractor leaderboard from docs/data/contractors.json.
+    Read-only; no network."""
+    n = 25
+    if "--top" in argv:
+        try: n = int(argv[argv.index("--top") + 1])
+        except (IndexError, ValueError): pass
+    data = pipeline._read_json(config.CONTRACTORS_FILE)
+    if not data or not data.get("contractors"):
+        print("No contractors.json yet -- run `rebuild` or `harvest` first."); return
+    rows = data["contractors"][:n]
+    print(f"CONTRACTOR LEADERBOARD  ({data.get('count',len(rows))} total, top {len(rows)})")
+    print(f"  {'#':>3} {'contractor':<34}{'permits':>8}{'recent':>7}"
+          f"{'sites':>6}{'top trade':>14}{'share%':>7}  top city")
+    for i, c in enumerate(rows, 1):
+        print(f"  {i:>3} {(c['name'][:33]):<34}{c['permit_count']:>8}"
+              f"{c['recent_count']:>7}{c['job_sites']:>6}"
+              f"{(c.get('top_trade') or '-'):>14}{c.get('trade_share_pct',0):>7}"
+              f"  {c.get('top_city') or '-'}")
+
+
 def main(argv):
     cmds = {"health": cmd_health, "discover": cmd_discover,
             "harvest": cmd_harvest, "selftest": cmd_selftest, "enrich": cmd_enrich,
-            "permits": cmd_permits, "permits-clv": cmd_permits_clv}
+            "permits": cmd_permits, "permits-clv": cmd_permits_clv,
+            "rebuild": cmd_rebuild, "coverage": cmd_coverage,
+            "contractors": cmd_contractors}
     if len(argv) < 2 or argv[1] not in cmds:
         print(__doc__)
         return 1
-    if argv[1] in ('enrich', 'permits', 'permits-clv'):
+    if argv[1] in ('enrich', 'permits', 'permits-clv', 'rebuild',
+                   'coverage', 'contractors'):
         cmds[argv[1]](argv)
     else:
         cmds[argv[1]]()
