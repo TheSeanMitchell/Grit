@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T20:56:48Z",
+  "generated_at": "2026-05-29T22:42:40Z",
   "selected": "https://gis.dot.nv.gov/agsphs/rest/services/Reference/Statewide_Parcels/MapServer/0",
   "candidates": [
     {
@@ -17,7 +17,7 @@
         "parcel_apn": "APN"
       },
       "vintage": "current",
-      "attempts": 3
+      "attempts": 1
     },
     {
       "name": "NV statewide parcels (owner+address, 2018)",

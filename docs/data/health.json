@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T20:54:39Z",
+  "generated_at": "2026-05-29T22:42:38Z",
   "sources": [
     {
       "key": "clark_gis",
@@ -13,7 +13,7 @@
       "records": 56,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:06Z"
+      "checked_at": "2026-05-29T22:42:04Z"
     },
     {
       "key": "clark_assessor",
@@ -23,11 +23,11 @@
       "url": "https://maps.clarkcountynv.gov/assessor/AssessorParcelDetail/parceldetail.aspx",
       "note": "LIVE per-APN enrichment (0.102): current owner, address, value, last sale, characteristics via parceldetail.aspx GET. Deterministic parser.",
       "status": "reachable",
-      "latency_ms": 226,
+      "latency_ms": 465,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:06Z"
+      "checked_at": "2026-05-29T22:42:04Z"
     },
     {
       "key": "clv_permits_arcgis",
@@ -37,11 +37,11 @@
       "url": "https://opendataportal-lasvegas.opendata.arcgis.com/",
       "note": "\u2605 LIVE PERMIT FLOW. CLV building permits via ArcGIS Hub Feature Service (portal moved off Socrata). Cloud-native ArcGIS REST -- same transport as parcels, no residential IP. Set CLV_PERMITS_FEATURESERVER, then pulled every harvest -> PERMIT events -> IMMEDIATE scoring.",
       "status": "reachable",
-      "latency_ms": 164,
+      "latency_ms": 222,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:07Z"
+      "checked_at": "2026-05-29T22:42:05Z"
     },
     {
       "key": "nv_sos",
@@ -51,11 +51,11 @@
       "url": "https://esos.nv.gov/EntitySearch/OnlineEntitySearch",
       "note": "LLC_REGISTRATION + officer/registered-agent graph. Official BULK DOWNLOAD + API exist (sanctioned -- no scraping). Powers entity graph.",
       "status": "reachable",
-      "latency_ms": 60,
+      "latency_ms": 55,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:07Z"
+      "checked_at": "2026-05-29T22:42:05Z"
     },
     {
       "key": "nscb",
@@ -65,11 +65,11 @@
       "url": "https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx",
       "note": "Every licensed contractor by trade = buyer list + permit-puller verification + license-status events. Bulk via public-records request.",
       "status": "reachable",
-      "latency_ms": 208,
+      "latency_ms": 201,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:07Z"
+      "checked_at": "2026-05-29T22:42:05Z"
     },
     {
       "key": "clark_accela",
@@ -83,7 +83,7 @@
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:07Z"
+      "checked_at": "2026-05-29T22:42:05Z"
     },
     {
       "key": "clark_recorder",
@@ -93,11 +93,11 @@
       "url": "https://recorderecomm.clarkcountynv.gov/AcclaimWeb/",
       "note": "\u2605 Distress engine. Search by Document Type + Record Date: DEED, Notice of Default, Trustee's Sale, Lis Pendens, mechanics/tax liens. Signals only -- never resell document copies (NV AG alert).",
       "status": "reachable",
-      "latency_ms": 373,
+      "latency_ms": 337,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:37Z"
+      "checked_at": "2026-05-29T22:42:35Z"
     },
     {
       "key": "lv_permits",
@@ -107,11 +107,11 @@
       "url": "https://www.lasvegasnevada.gov/",
       "note": "Incorporated-city permits (separate from county). Same parser as county.",
       "status": "reachable",
-      "latency_ms": 459,
+      "latency_ms": 467,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:38Z"
+      "checked_at": "2026-05-29T22:42:36Z"
     },
     {
       "key": "henderson_permits",
@@ -121,11 +121,11 @@
       "url": "https://www.cityofhenderson.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 257,
+      "latency_ms": 451,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:38Z"
+      "checked_at": "2026-05-29T22:42:36Z"
     },
     {
       "key": "nlv_permits",
@@ -135,11 +135,11 @@
       "url": "https://www.cityofnorthlasvegas.com/",
       "note": "Incorporated-city permits (separate from county). [server up; bot-blocked HTTP 403 -- harvest needs browser/residential IP]",
       "status": "reachable",
-      "latency_ms": 271,
+      "latency_ms": 284,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:38Z"
+      "checked_at": "2026-05-29T22:42:37Z"
     },
     {
       "key": "clark_courts",
@@ -149,11 +149,11 @@
       "url": "https://cvpublicaccess.co.clark.nv.us/eservices/",
       "note": "Eviction filings (Justice Court) + probate (District Court). NEEDS VALIDATION + compliance read (FCRA line, NRS 645F outreach rules).",
       "status": "reachable",
-      "latency_ms": 505,
+      "latency_ms": 871,
       "records": null,
       "fields": null,
       "error": null,
-      "checked_at": "2026-05-29T20:54:39Z"
+      "checked_at": "2026-05-29T22:42:37Z"
     }
   ]
 }

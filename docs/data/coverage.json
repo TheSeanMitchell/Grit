@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T22:08:11Z",
+  "generated_at": "2026-05-29T22:46:41Z",
   "version": "0.105",
   "permits": {
     "by_jurisdiction": [
@@ -7,21 +7,21 @@
         "jurisdiction": "Las Vegas",
         "parcels": 912,
         "permits": 994,
-        "mapped": 0,
+        "mapped": 901,
         "newest": "2026-05-22",
         "oldest": "2026-05-11",
         "freshness_days": 7,
-        "mapped_pct": 0.0,
-        "confidence": 65
+        "mapped_pct": 98.8,
+        "confidence": 94
       }
     ],
     "total": {
-      "permit_events_stored": 2000,
+      "permit_events_stored": 1000,
       "permit_parcels": 912,
       "newest": "2026-05-22",
       "oldest": "2026-05-11",
       "freshness_days": 7,
-      "mapped": 0,
+      "mapped": 901,
       "jurisdictions_with_data": 1
     }
   },
@@ -29,48 +29,78 @@
     "by_jurisdiction": [
       {
         "jurisdiction": "Las Vegas",
-        "leads": 979,
-        "mapped": 67,
+        "leads": 1047,
+        "mapped": 1036,
         "permitted": 912,
-        "value_total": 7093597,
+        "value_total": 3449296,
         "newest": "2026-05-22",
-        "mapped_pct": 6.8,
+        "mapped_pct": 98.9,
         "freshness_days": 7
       },
       {
         "jurisdiction": "Unknown jurisdiction",
-        "leads": 213,
-        "mapped": 213,
+        "leads": 512,
+        "mapped": 512,
         "permitted": 0,
-        "value_total": 652484,
+        "value_total": 551484,
         "newest": "2026-01-01",
         "mapped_pct": 100.0,
         "freshness_days": 148
       },
       {
         "jurisdiction": "Henderson",
-        "leads": 95,
-        "mapped": 95,
+        "leads": 184,
+        "mapped": 184,
         "permitted": 0,
-        "value_total": 73519,
+        "value_total": 37553,
         "newest": "2026-04-01",
         "mapped_pct": 100.0,
         "freshness_days": 58
       },
       {
-        "jurisdiction": "Sunrise Manor",
-        "leads": 30,
-        "mapped": 30,
+        "jurisdiction": "North Las Vegas",
+        "leads": 175,
+        "mapped": 175,
         "permitted": 0,
-        "value_total": 1173176,
-        "newest": "2023-11-01",
+        "value_total": 131355,
+        "newest": "2023-07-01",
         "mapped_pct": 100.0,
-        "freshness_days": 940
+        "freshness_days": 1063
+      },
+      {
+        "jurisdiction": "Paradise",
+        "leads": 107,
+        "mapped": 107,
+        "permitted": 0,
+        "value_total": 0,
+        "newest": null,
+        "mapped_pct": 100.0,
+        "freshness_days": null
+      },
+      {
+        "jurisdiction": "Sunrise Manor",
+        "leads": 106,
+        "mapped": 106,
+        "permitted": 0,
+        "value_total": 1014909,
+        "newest": "2026-03-01",
+        "mapped_pct": 100.0,
+        "freshness_days": 89
+      },
+      {
+        "jurisdiction": "Whitney",
+        "leads": 75,
+        "mapped": 75,
+        "permitted": 0,
+        "value_total": 0,
+        "newest": null,
+        "mapped_pct": 100.0,
+        "freshness_days": null
       },
       {
         "jurisdiction": "Enterprise",
-        "leads": 29,
-        "mapped": 29,
+        "leads": 71,
+        "mapped": 71,
         "permitted": 0,
         "value_total": 0,
         "newest": "2014-06-01",
@@ -78,39 +108,39 @@
         "freshness_days": 4380
       },
       {
-        "jurisdiction": "North Las Vegas",
-        "leads": 14,
-        "mapped": 14,
+        "jurisdiction": "Spring Valley",
+        "leads": 45,
+        "mapped": 45,
         "permitted": 0,
-        "value_total": 207344,
-        "newest": "2023-07-01",
+        "value_total": 513709,
+        "newest": "2021-06-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1063
+        "freshness_days": 1823
       },
       {
-        "jurisdiction": "Spring Valley",
-        "leads": 14,
-        "mapped": 14,
+        "jurisdiction": "Winchester",
+        "leads": 28,
+        "mapped": 28,
         "permitted": 0,
-        "value_total": 231513,
-        "newest": "1",
+        "value_total": 0,
+        "newest": null,
         "mapped_pct": 100.0,
         "freshness_days": null
       },
       {
         "jurisdiction": "Clark County",
-        "leads": 13,
-        "mapped": 13,
+        "leads": 24,
+        "mapped": 24,
         "permitted": 0,
-        "value_total": 606829,
+        "value_total": 300895,
         "newest": "2023-09-01",
         "mapped_pct": 100.0,
         "freshness_days": 1001
       },
       {
-        "jurisdiction": "Paradise",
-        "leads": 11,
-        "mapped": 11,
+        "jurisdiction": "Boulder City",
+        "leads": 20,
+        "mapped": 20,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -119,28 +149,8 @@
       },
       {
         "jurisdiction": "Summerlin",
-        "leads": 7,
-        "mapped": 7,
-        "permitted": 0,
-        "value_total": 0,
-        "newest": null,
-        "mapped_pct": 100.0,
-        "freshness_days": null
-      },
-      {
-        "jurisdiction": "Boulder City",
-        "leads": 4,
-        "mapped": 4,
-        "permitted": 0,
-        "value_total": 0,
-        "newest": null,
-        "mapped_pct": 100.0,
-        "freshness_days": null
-      },
-      {
-        "jurisdiction": "Whitney",
-        "leads": 2,
-        "mapped": 2,
+        "leads": 14,
+        "mapped": 14,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -149,8 +159,8 @@
       },
       {
         "jurisdiction": "Moapa Valley",
-        "leads": 1,
-        "mapped": 1,
+        "leads": 4,
+        "mapped": 4,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -158,9 +168,9 @@
         "freshness_days": null
       }
     ],
-    "jurisdictions": 13,
-    "total_leads": 1412,
-    "total_mapped": 500
+    "jurisdictions": 14,
+    "total_leads": 2412,
+    "total_mapped": 2401
   },
   "capital_flow": {
     "by_market": [
@@ -315,7 +325,7 @@
         "owners": 2
       },
       {
-        "market": "San Diego, CA",
+        "market": "Westlake Village, CA",
         "state": "CA",
         "out_of_state": true,
         "properties": 2,
@@ -330,7 +340,7 @@
         "owners": 2
       },
       {
-        "market": "Westlake Village, CA",
+        "market": "San Diego, CA",
         "state": "CA",
         "out_of_state": true,
         "properties": 2,
@@ -605,15 +615,6 @@
         "markets": 3
       },
       {
-        "state": "NY",
-        "name": "New York",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 2815880,
-        "markets": 1
-      },
-      {
         "state": "IN",
         "name": "Indiana",
         "out_of_state": true,
@@ -623,13 +624,13 @@
         "markets": 1
       },
       {
-        "state": "WA",
-        "name": "Washington",
+        "state": "NY",
+        "name": "New York",
         "out_of_state": true,
         "properties": 2,
         "permits": 2,
-        "valuation_total": 40500,
-        "markets": 2
+        "valuation_total": 2815880,
+        "markets": 1
       },
       {
         "state": "CO",
@@ -643,6 +644,15 @@
       {
         "state": "UT",
         "name": "Utah",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 40500,
+        "markets": 2
+      },
+      {
+        "state": "WA",
+        "name": "Washington",
         "out_of_state": true,
         "properties": 2,
         "permits": 2,
@@ -668,8 +678,44 @@
         "markets": 2
       },
       {
+        "state": "TN",
+        "name": "Tennessee",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 45900,
+        "markets": 1
+      },
+      {
+        "state": "PA",
+        "name": "Pennsylvania",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 500,
+        "markets": 1
+      },
+      {
+        "state": "ID",
+        "name": "Idaho",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 500,
+        "markets": 1
+      },
+      {
         "state": "NJ",
         "name": "New Jersey",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 500,
+        "markets": 1
+      },
+      {
+        "state": "MA",
+        "name": "Massachusetts",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
@@ -695,39 +741,12 @@
         "markets": 1
       },
       {
-        "state": "PA",
-        "name": "Pennsylvania",
+        "state": "AR",
+        "name": "Arkansas",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 500,
-        "markets": 1
-      },
-      {
-        "state": "MA",
-        "name": "Massachusetts",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 500,
-        "markets": 1
-      },
-      {
-        "state": "TN",
-        "name": "Tennessee",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
-        "markets": 1
-      },
-      {
-        "state": "ID",
-        "name": "Idaho",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 500,
+        "valuation_total": 600000,
         "markets": 1
       },
       {
@@ -746,15 +765,6 @@
         "properties": 1,
         "permits": 1,
         "valuation_total": 2118602,
-        "markets": 1
-      },
-      {
-        "state": "AR",
-        "name": "Arkansas",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 600000,
         "markets": 1
       },
       {
@@ -874,7 +884,7 @@
         "owners": 2
       },
       {
-        "market": "San Diego, CA",
+        "market": "Westlake Village, CA",
         "state": "CA",
         "out_of_state": true,
         "properties": 2,
@@ -889,7 +899,7 @@
         "owners": 2
       },
       {
-        "market": "Westlake Village, CA",
+        "market": "San Diego, CA",
         "state": "CA",
         "out_of_state": true,
         "properties": 2,
@@ -1146,15 +1156,15 @@
     ],
     "imported_flows": [
       {
-        "origin": "Chicago, IL",
-        "destination": "Las Vegas",
-        "origin_state": "IL",
-        "properties": 4
-      },
-      {
         "origin": "Los Angeles, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
+        "properties": 4
+      },
+      {
+        "origin": "Chicago, IL",
+        "destination": "Las Vegas",
+        "origin_state": "IL",
         "properties": 4
       },
       {
@@ -1164,25 +1174,19 @@
         "properties": 4
       },
       {
-        "origin": "New York, NY",
-        "destination": "Las Vegas",
-        "origin_state": "NY",
-        "properties": 2
-      },
-      {
         "origin": "Indianapolis, IN",
         "destination": "Las Vegas",
         "origin_state": "IN",
         "properties": 2
       },
       {
-        "origin": "San Jose, CA",
+        "origin": "New York, NY",
         "destination": "Las Vegas",
-        "origin_state": "CA",
+        "origin_state": "NY",
         "properties": 2
       },
       {
-        "origin": "San Diego, CA",
+        "origin": "San Jose, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 2
@@ -1194,28 +1198,16 @@
         "properties": 2
       },
       {
-        "origin": "Encino, CA",
+        "origin": "San Diego, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 2
       },
       {
-        "origin": "Irvine, CA",
+        "origin": "Encino, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "South Rockwood, MI",
-        "destination": "Las Vegas",
-        "origin_state": "MI",
-        "properties": 1
-      },
-      {
-        "origin": "Kirkland, WA",
-        "destination": "Las Vegas",
-        "origin_state": "WA",
-        "properties": 1
+        "properties": 2
       },
       {
         "origin": "Mission Viejo, CA",
@@ -1230,19 +1222,31 @@
         "properties": 1
       },
       {
-        "origin": "Glendale, CA",
+        "origin": "Nashville, TN",
+        "destination": "Las Vegas",
+        "origin_state": "TN",
+        "properties": 1
+      },
+      {
+        "origin": "South Rockwood, MI",
+        "destination": "Las Vegas",
+        "origin_state": "MI",
+        "properties": 1
+      },
+      {
+        "origin": "Rancho Santa Margarita, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
       },
       {
-        "origin": "Gilbert, AZ",
+        "origin": "King Of Prussia, PA",
         "destination": "Las Vegas",
-        "origin_state": "AZ",
+        "origin_state": "PA",
         "properties": 1
       },
       {
-        "origin": "Rancho Santa Margarita, CA",
+        "origin": "Irvine, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
@@ -1254,19 +1258,25 @@
         "properties": 1
       },
       {
-        "origin": "Burbank, CA",
+        "origin": "Pomona, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
       },
       {
-        "origin": "East Brunswick, NJ",
+        "origin": "Eagle, ID",
         "destination": "Las Vegas",
-        "origin_state": "NJ",
+        "origin_state": "ID",
         "properties": 1
       },
       {
-        "origin": "Pomona, CA",
+        "origin": "Sylmar, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
+        "properties": 1
+      },
+      {
+        "origin": "Monrovia, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
@@ -1278,21 +1288,15 @@
         "properties": 1
       },
       {
-        "origin": "Carlsbad, NM",
-        "destination": "Las Vegas",
-        "origin_state": "NM",
-        "properties": 1
-      },
-      {
         "origin": "Saratoga, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
       },
       {
-        "origin": "Alexandria, VA",
+        "origin": "East Brunswick, NJ",
         "destination": "Las Vegas",
-        "origin_state": "VA",
+        "origin_state": "NJ",
         "properties": 1
       },
       {
@@ -1302,9 +1306,27 @@
         "properties": 1
       },
       {
-        "origin": "King Of Prussia, PA",
+        "origin": "Agawam, MA",
         "destination": "Las Vegas",
-        "origin_state": "PA",
+        "origin_state": "MA",
+        "properties": 1
+      },
+      {
+        "origin": "Phoenix, AZ",
+        "destination": "Las Vegas",
+        "origin_state": "AZ",
+        "properties": 1
+      },
+      {
+        "origin": "Glendale, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
+        "properties": 1
+      },
+      {
+        "origin": "Burbank, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
         "properties": 1
       },
       {
@@ -1312,24 +1334,12 @@
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
-      },
-      {
-        "origin": "Agawam, MA",
-        "destination": "Las Vegas",
-        "origin_state": "MA",
-        "properties": 1
-      },
-      {
-        "origin": "Sandy, UT",
-        "destination": "Las Vegas",
-        "origin_state": "UT",
-        "properties": 1
       }
     ],
     "totals": {
-      "cards": 1412,
+      "cards": 2412,
       "with_origin": 903,
-      "origin_coverage_pct": 64.0,
+      "origin_coverage_pct": 37.4,
       "distinct_markets": 76,
       "distinct_states": 25,
       "out_of_state_markets": 71,
@@ -1340,45 +1350,45 @@
     }
   },
   "ownership": {
-    "mailing_pct": 64.4,
-    "mailing_city_pct": 64.0,
-    "mailing_state_pct": 64.0,
-    "absentee": 383,
-    "absentee_pct": 42.4,
-    "llc": 342,
-    "llc_pct": 24.2,
-    "trust": 256,
-    "trust_pct": 18.1,
+    "mailing_pct": 37.6,
+    "mailing_city_pct": 37.4,
+    "mailing_state_pct": 37.4,
+    "absentee": 382,
+    "absentee_pct": 42.3,
+    "llc": 544,
+    "llc_pct": 22.6,
+    "trust": 315,
+    "trust_pct": 13.1,
     "out_of_state_owners": 86,
-    "out_of_state_pct": 6.1
+    "out_of_state_pct": 3.6
   },
   "categories": [
     {
       "category": "Permits",
       "status": "live",
-      "volume": 2000,
+      "volume": 1000,
       "freshness": "7d",
-      "coverage": "0 mapped",
+      "coverage": "901 mapped",
       "confidence": 95,
-      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela)."
+      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.9% (907/908 APNs)."
     },
     {
       "category": "Real Estate",
       "status": "live",
-      "volume": 1412,
+      "volume": 2412,
       "freshness": "current",
-      "coverage": "10.5% live-enriched",
-      "confidence": 46,
+      "coverage": "6.2% live-enriched",
+      "confidence": 43,
       "note": "Parcel base + live Assessor enrichment of the top leads (owner/value/sale)."
     },
     {
       "category": "Ownership",
       "status": "live",
-      "volume": 725,
+      "volume": 926,
       "freshness": "current",
-      "coverage": "64.4% mailing / 42.4% absentee",
-      "confidence": 78,
-      "note": "Mailing geo on 64.0% of leads \u00b7 342 LLC (24.2%), 256 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
+      "coverage": "37.6% mailing / 42.3% absentee",
+      "confidence": 62,
+      "note": "Mailing geo on 37.4% of leads \u00b7 544 LLC (22.6%), 315 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
     },
     {
       "category": "Capital Flow",
@@ -1386,7 +1396,7 @@
       "volume": 86,
       "freshness": "current",
       "coverage": "71 out-of-state markets",
-      "confidence": 78,
+      "confidence": 62,
       "note": "86 of 903 owned leads (9.5%) are imported capital from 25 states; $7,733,035 tracked. Origin\u2192metro flows mapped."
     },
     {
@@ -1401,7 +1411,7 @@
     {
       "category": "Distress",
       "status": "live",
-      "volume": 18,
+      "volume": 6,
       "freshness": "current",
       "coverage": "Recorder NOD/lien/trustee",
       "confidence": 60,
@@ -1437,7 +1447,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 2591,
+      "volume": 1219,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1446,7 +1456,7 @@
     {
       "category": "Scoring",
       "status": "live",
-      "volume": 1412,
+      "volume": 2412,
       "freshness": "current",
       "coverage": "100.0% explained",
       "confidence": 100,
@@ -1455,7 +1465,7 @@
     {
       "category": "Tagging",
       "status": "live",
-      "volume": 1412,
+      "volume": 2412,
       "freshness": "current",
       "coverage": "100.0% tagged",
       "confidence": 100,
@@ -1472,20 +1482,20 @@
     }
   ],
   "warehouse": {
-    "ledger_entries": 7,
-    "event_total": 2591,
+    "ledger_entries": 8,
+    "event_total": 1219,
     "append_only": true
   },
   "headline": {
-    "leads": 1412,
-    "mapped": 500,
-    "permit_events": 2000,
+    "leads": 2412,
+    "mapped": 2401,
+    "permit_events": 1000,
     "permit_newest": "2026-05-22",
     "permit_jurisdictions": 1,
-    "jurisdictions": 13,
+    "jurisdictions": 14,
     "contractors": 331,
     "tagged_pct": 100.0,
-    "enriched": 148,
+    "enriched": 149,
     "imported_capital": 86,
     "owner_markets": 76
   }
