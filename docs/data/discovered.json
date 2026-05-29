@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T02:36:42Z",
+  "generated_at": "2026-05-29T03:17:10Z",
   "selected": "https://maps.clarkcountynv.gov/arcgis/rest/services/AdminServ/Parcel_UnincorpCC/MapServer/0",
   "candidates": [
     {
@@ -23,7 +23,7 @@
       "name": "NV statewide parcels (owner+address, 2018)",
       "url": "https://gis.dot.nv.gov/agsphs/rest/services/Reference/Statewide_Parcels/MapServer/0",
       "error": "HTTPError: HTTP Error 500: Internal Server Error",
-      "attempts": 2
+      "attempts": 4
     },
     {
       "name": "auto-discovered",
