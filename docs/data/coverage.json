@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-29T22:46:41Z",
-  "version": "0.105",
+  "generated_at": "2026-05-30T03:09:00Z",
+  "version": "0.106",
   "permits": {
     "by_jurisdiction": [
       {
@@ -10,7 +10,7 @@
         "mapped": 901,
         "newest": "2026-05-22",
         "oldest": "2026-05-11",
-        "freshness_days": 7,
+        "freshness_days": 8,
         "mapped_pct": 98.8,
         "confidence": 94
       }
@@ -20,7 +20,7 @@
       "permit_parcels": 912,
       "newest": "2026-05-22",
       "oldest": "2026-05-11",
-      "freshness_days": 7,
+      "freshness_days": 8,
       "mapped": 901,
       "jurisdictions_with_data": 1
     }
@@ -29,68 +29,48 @@
     "by_jurisdiction": [
       {
         "jurisdiction": "Las Vegas",
-        "leads": 1047,
-        "mapped": 1036,
+        "leads": 1217,
+        "mapped": 1206,
         "permitted": 912,
-        "value_total": 3449296,
+        "value_total": 3998796,
         "newest": "2026-05-22",
-        "mapped_pct": 98.9,
-        "freshness_days": 7
-      },
-      {
-        "jurisdiction": "Unknown jurisdiction",
-        "leads": 512,
-        "mapped": 512,
-        "permitted": 0,
-        "value_total": 551484,
-        "newest": "2026-01-01",
-        "mapped_pct": 100.0,
-        "freshness_days": 148
-      },
-      {
-        "jurisdiction": "Henderson",
-        "leads": 184,
-        "mapped": 184,
-        "permitted": 0,
-        "value_total": 37553,
-        "newest": "2026-04-01",
-        "mapped_pct": 100.0,
-        "freshness_days": 58
+        "mapped_pct": 99.1,
+        "freshness_days": 8
       },
       {
         "jurisdiction": "North Las Vegas",
-        "leads": 175,
-        "mapped": 175,
+        "leads": 251,
+        "mapped": 251,
         "permitted": 0,
         "value_total": 131355,
         "newest": "2023-07-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1063
+        "freshness_days": 1064
       },
       {
-        "jurisdiction": "Paradise",
-        "leads": 107,
-        "mapped": 107,
+        "jurisdiction": "Henderson",
+        "leads": 243,
+        "mapped": 243,
         "permitted": 0,
-        "value_total": 0,
-        "newest": null,
+        "value_total": 39537,
+        "newest": "2026-04-01",
         "mapped_pct": 100.0,
-        "freshness_days": null
+        "freshness_days": 59
       },
       {
         "jurisdiction": "Sunrise Manor",
-        "leads": 106,
-        "mapped": 106,
+        "leads": 203,
+        "mapped": 203,
         "permitted": 0,
         "value_total": 1014909,
         "newest": "2026-03-01",
         "mapped_pct": 100.0,
-        "freshness_days": 89
+        "freshness_days": 90
       },
       {
-        "jurisdiction": "Whitney",
-        "leads": 75,
-        "mapped": 75,
+        "jurisdiction": "Paradise",
+        "leads": 122,
+        "mapped": 122,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -99,28 +79,28 @@
       },
       {
         "jurisdiction": "Enterprise",
-        "leads": 71,
-        "mapped": 71,
+        "leads": 88,
+        "mapped": 88,
         "permitted": 0,
         "value_total": 0,
-        "newest": "2014-06-01",
+        "newest": "2015-08-01",
         "mapped_pct": 100.0,
-        "freshness_days": 4380
+        "freshness_days": 3955
       },
       {
-        "jurisdiction": "Spring Valley",
-        "leads": 45,
-        "mapped": 45,
+        "jurisdiction": "Whitney",
+        "leads": 77,
+        "mapped": 77,
         "permitted": 0,
-        "value_total": 513709,
-        "newest": "2021-06-01",
+        "value_total": 0,
+        "newest": "0",
         "mapped_pct": 100.0,
-        "freshness_days": 1823
+        "freshness_days": null
       },
       {
         "jurisdiction": "Winchester",
-        "leads": 28,
-        "mapped": 28,
+        "leads": 68,
+        "mapped": 68,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -128,29 +108,39 @@
         "freshness_days": null
       },
       {
+        "jurisdiction": "Spring Valley",
+        "leads": 67,
+        "mapped": 67,
+        "permitted": 0,
+        "value_total": 513709,
+        "newest": "2021-06-01",
+        "mapped_pct": 100.0,
+        "freshness_days": 1824
+      },
+      {
         "jurisdiction": "Clark County",
-        "leads": 24,
-        "mapped": 24,
+        "leads": 29,
+        "mapped": 29,
         "permitted": 0,
         "value_total": 300895,
         "newest": "2023-09-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1001
+        "freshness_days": 1002
+      },
+      {
+        "jurisdiction": "Summerlin",
+        "leads": 23,
+        "mapped": 23,
+        "permitted": 0,
+        "value_total": 0,
+        "newest": null,
+        "mapped_pct": 100.0,
+        "freshness_days": null
       },
       {
         "jurisdiction": "Boulder City",
         "leads": 20,
         "mapped": 20,
-        "permitted": 0,
-        "value_total": 0,
-        "newest": null,
-        "mapped_pct": 100.0,
-        "freshness_days": null
-      },
-      {
-        "jurisdiction": "Summerlin",
-        "leads": 14,
-        "mapped": 14,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -168,7 +158,7 @@
         "freshness_days": null
       }
     ],
-    "jurisdictions": 14,
+    "jurisdictions": 13,
     "total_leads": 2412,
     "total_mapped": 2401
   },
@@ -1367,7 +1357,7 @@
       "category": "Permits",
       "status": "live",
       "volume": 1000,
-      "freshness": "7d",
+      "freshness": "8d",
       "coverage": "901 mapped",
       "confidence": 95,
       "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.9% (907/908 APNs)."
@@ -1445,6 +1435,33 @@
       "note": "Service-connect / new-meter signals \u2014 catalogued, not yet ingested."
     },
     {
+      "category": "Planning",
+      "status": "planned",
+      "volume": 0,
+      "freshness": "\u2014",
+      "coverage": "not ingested",
+      "confidence": 0,
+      "note": "Planning applications / land entitlements \u2014 catalogued, not yet ingested."
+    },
+    {
+      "category": "Zoning",
+      "status": "planned",
+      "volume": 0,
+      "freshness": "\u2014",
+      "coverage": "not ingested",
+      "confidence": 0,
+      "note": "Zone changes / variances \u2014 catalogued, not yet ingested."
+    },
+    {
+      "category": "Government Activity",
+      "status": "planned",
+      "volume": 0,
+      "freshness": "\u2014",
+      "coverage": "not ingested",
+      "confidence": 0,
+      "note": "Public works, capital projects, bid awards \u2014 catalogued, not yet ingested."
+    },
+    {
       "category": "Storage",
       "status": "live",
       "volume": 1219,
@@ -1452,6 +1469,15 @@
       "coverage": "events preserved",
       "confidence": 80,
       "note": "Append-only event store + warehouse ledger \u2014 history is never overwritten."
+    },
+    {
+      "category": "Warehouse Integrity",
+      "status": "live",
+      "volume": 1219,
+      "freshness": "append-only",
+      "coverage": "first/last-seen tracked",
+      "confidence": 85,
+      "note": "Per-record first_seen/last_seen history; records are never deleted, only marked dormant."
     },
     {
       "category": "Scoring",
@@ -1481,9 +1507,873 @@
       "note": "Map + playback + lead detail + contractor board + coverage dashboards."
     }
   ],
+  "audit": {
+    "sonv_coverage": {
+      "note": "Counts are real harvested identifications. The true parcel universe per jurisdiction (assessor roll denominator) is not yet ingested, so coverage % is reported against measurable fields (owners identified, mapped) rather than an invented total.",
+      "jurisdictions_with_data": 13,
+      "target_jurisdictions": 19,
+      "rows": [
+        {
+          "jurisdiction": "Las Vegas",
+          "parcels_identified": 1217,
+          "owners_identified": 1051,
+          "owner_coverage_pct": 86.4,
+          "permits": 912,
+          "signals": 1246,
+          "mapped": 1206,
+          "mapped_pct": 99.1,
+          "assessed_value": 3998796,
+          "label_sources": {
+            "situs": 11,
+            "permit-feed": 912,
+            "assessor-city": 135,
+            "coordinate": 159
+          },
+          "confidence": 94
+        },
+        {
+          "jurisdiction": "North Las Vegas",
+          "parcels_identified": 251,
+          "owners_identified": 181,
+          "owner_coverage_pct": 72.1,
+          "permits": 0,
+          "signals": 11,
+          "mapped": 251,
+          "mapped_pct": 100.0,
+          "assessed_value": 131355,
+          "label_sources": {
+            "assessor-city": 175,
+            "situs": 6,
+            "coordinate": 70
+          },
+          "confidence": 78
+        },
+        {
+          "jurisdiction": "Henderson",
+          "parcels_identified": 243,
+          "owners_identified": 212,
+          "owner_coverage_pct": 87.2,
+          "permits": 0,
+          "signals": 76,
+          "mapped": 243,
+          "mapped_pct": 100.0,
+          "assessed_value": 39537,
+          "label_sources": {
+            "assessor-city": 184,
+            "situs": 28,
+            "coordinate": 31
+          },
+          "confidence": 84
+        },
+        {
+          "jurisdiction": "Sunrise Manor",
+          "parcels_identified": 203,
+          "owners_identified": 109,
+          "owner_coverage_pct": 53.7,
+          "permits": 0,
+          "signals": 32,
+          "mapped": 203,
+          "mapped_pct": 100.0,
+          "assessed_value": 1014909,
+          "label_sources": {
+            "assessor-city": 106,
+            "situs": 3,
+            "coordinate": 94
+          },
+          "confidence": 71
+        },
+        {
+          "jurisdiction": "Paradise",
+          "parcels_identified": 122,
+          "owners_identified": 107,
+          "owner_coverage_pct": 87.7,
+          "permits": 0,
+          "signals": 2,
+          "mapped": 122,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 107,
+            "coordinate": 15
+          },
+          "confidence": 85
+        },
+        {
+          "jurisdiction": "Enterprise",
+          "parcels_identified": 88,
+          "owners_identified": 83,
+          "owner_coverage_pct": 94.3,
+          "permits": 0,
+          "signals": 22,
+          "mapped": 88,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 71,
+            "situs": 12,
+            "coordinate": 5
+          },
+          "confidence": 87
+        },
+        {
+          "jurisdiction": "Whitney",
+          "parcels_identified": 77,
+          "owners_identified": 76,
+          "owner_coverage_pct": 98.7,
+          "permits": 0,
+          "signals": 1,
+          "mapped": 77,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 75,
+            "situs": 1,
+            "coordinate": 1
+          },
+          "confidence": 89
+        },
+        {
+          "jurisdiction": "Winchester",
+          "parcels_identified": 68,
+          "owners_identified": 28,
+          "owner_coverage_pct": 41.2,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 68,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 28,
+            "coordinate": 40
+          },
+          "confidence": 66
+        },
+        {
+          "jurisdiction": "Spring Valley",
+          "parcels_identified": 67,
+          "owners_identified": 46,
+          "owner_coverage_pct": 68.7,
+          "permits": 0,
+          "signals": 13,
+          "mapped": 67,
+          "mapped_pct": 100.0,
+          "assessed_value": 513709,
+          "label_sources": {
+            "assessor-city": 45,
+            "situs": 1,
+            "coordinate": 21
+          },
+          "confidence": 77
+        },
+        {
+          "jurisdiction": "Clark County",
+          "parcels_identified": 29,
+          "owners_identified": 27,
+          "owner_coverage_pct": 93.1,
+          "permits": 0,
+          "signals": 11,
+          "mapped": 29,
+          "mapped_pct": 100.0,
+          "assessed_value": 300895,
+          "label_sources": {
+            "assessor-city": 24,
+            "situs": 3,
+            "county": 2
+          },
+          "confidence": 87
+        },
+        {
+          "jurisdiction": "Summerlin",
+          "parcels_identified": 23,
+          "owners_identified": 14,
+          "owner_coverage_pct": 60.9,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 23,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 14,
+            "coordinate": 9
+          },
+          "confidence": 74
+        },
+        {
+          "jurisdiction": "Boulder City",
+          "parcels_identified": 20,
+          "owners_identified": 20,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 1,
+          "mapped": 20,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 20
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Moapa Valley",
+          "parcels_identified": 4,
+          "owners_identified": 4,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 4,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 4
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Mesquite",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        },
+        {
+          "jurisdiction": "Moapa",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        },
+        {
+          "jurisdiction": "Searchlight",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        },
+        {
+          "jurisdiction": "Jean",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        },
+        {
+          "jurisdiction": "Mount Charleston",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        },
+        {
+          "jurisdiction": "Lee Canyon",
+          "parcels_identified": 0,
+          "owners_identified": 0,
+          "owner_coverage_pct": 0.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 0,
+          "mapped_pct": 0.0,
+          "assessed_value": 0,
+          "label_sources": {},
+          "confidence": 0
+        }
+      ]
+    },
+    "source_inventory": [
+      {
+        "source": "Clark County parcel layer (ArcGIS)",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Countywide parcels",
+        "status": "WORKING",
+        "records": 1500,
+        "newest": null,
+        "oldest": null,
+        "frequency": "on demand / daily",
+        "confidence": 85,
+        "fields": [
+          "APN",
+          "situs",
+          "land use",
+          "owner",
+          "value",
+          "centroid"
+        ],
+        "missing": [
+          "incorporated-city flag on some parcels"
+        ],
+        "health": "live",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "City of Las Vegas permits (ArcGIS Hub)",
+        "jurisdiction": "Las Vegas",
+        "coverage_area": "City of Las Vegas",
+        "status": "WORKING",
+        "records": 1000,
+        "newest": "2026-05-22",
+        "oldest": "2026-05-11",
+        "frequency": "daily",
+        "confidence": 90,
+        "fields": [
+          "record",
+          "type",
+          "status",
+          "date",
+          "valuation",
+          "address",
+          "APN",
+          "owner",
+          "contractor",
+          "license",
+          "trades"
+        ],
+        "missing": [
+          "trade tag on ~28% of permits",
+          "APN on a few records"
+        ],
+        "health": "live"
+      },
+      {
+        "source": "Clark County Assessor enrichment + deeds",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Top leads (enriched on demand)",
+        "status": "PARTIAL",
+        "records": 368,
+        "newest": "2026-04-01",
+        "oldest": "1995-04-01",
+        "frequency": "on demand",
+        "confidence": 60,
+        "fields": [
+          "owner",
+          "mailing",
+          "value",
+          "sale date/price",
+          "year built"
+        ],
+        "missing": [
+          "full-roll enrichment (only top leads enriched today)"
+        ],
+        "health": "live",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Clark County Recorder (deeds/NOD/liens/trustee)",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Countywide distress",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "foreclosure",
+          "lien",
+          "trustee",
+          "lis pendens"
+        ],
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Henderson / North Las Vegas / County permits (Accela)",
+        "jurisdiction": "Henderson, NLV, County",
+        "coverage_area": "Other SoNV permit authorities",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "all non-CLV permits"
+        ],
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Nevada SOS business registry (SilverFlume)",
+        "jurisdiction": "Statewide",
+        "coverage_area": "LLC / officer graph",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "business licenses",
+          "officers"
+        ],
+        "health": "planned",
+        "probe_status": "reachable"
+      }
+    ],
+    "signal_matrix": [
+      {
+        "signal": "Permits",
+        "status": "IMPLEMENTED",
+        "current_coverage": 1000,
+        "priority": "HIGH",
+        "note": "City of Las Vegas live; other authorities pending."
+      },
+      {
+        "signal": "Property Sales",
+        "status": "PARTIAL",
+        "current_coverage": 149,
+        "priority": "HIGH",
+        "note": "Captured on enriched leads via Assessor; not full-roll."
+      },
+      {
+        "signal": "Deed Transfers",
+        "status": "PARTIAL",
+        "current_coverage": 219,
+        "priority": "HIGH",
+        "note": "From Assessor sale history."
+      },
+      {
+        "signal": "Ownership",
+        "status": "IMPLEMENTED",
+        "current_coverage": 1958,
+        "priority": "HIGH",
+        "note": "Owner + mailing on identified parcels."
+      },
+      {
+        "signal": "Assessor Records",
+        "status": "PARTIAL",
+        "current_coverage": 149,
+        "priority": "HIGH",
+        "note": "Top leads enriched; full-roll enrichment is the next wave."
+      },
+      {
+        "signal": "Contractors",
+        "status": "IMPLEMENTED",
+        "current_coverage": 912,
+        "priority": "HIGH",
+        "note": "Derived from permit pullers."
+      },
+      {
+        "signal": "Business Licenses",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "NV SOS / city licensing not yet ingested."
+      },
+      {
+        "signal": "Code Enforcement",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Violation feeds catalogued, not ingested."
+      },
+      {
+        "signal": "Planning Applications",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Zoning Activity",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": ""
+      },
+      {
+        "signal": "Demolitions",
+        "status": "PARTIAL",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Will surface from permit types once classified."
+      },
+      {
+        "signal": "Certificates of Occupancy",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Solar Activity",
+        "status": "IMPLEMENTED",
+        "current_coverage": 58,
+        "priority": "MEDIUM",
+        "note": "Tagged from permit trades."
+      },
+      {
+        "signal": "Utility Activity",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Service-connect signals not ingested."
+      },
+      {
+        "signal": "Public Works",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": ""
+      },
+      {
+        "signal": "Foreclosures",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "HIGH",
+        "note": "Recorder NOD/trustee \u2014 high-value distress."
+      },
+      {
+        "signal": "Trustee Sales",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "HIGH",
+        "note": ""
+      },
+      {
+        "signal": "Tax Liens",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Mechanics Liens",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Probate",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Bankruptcy",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": ""
+      },
+      {
+        "signal": "Evictions",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": ""
+      },
+      {
+        "signal": "Crime / Police Activity",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": "Metro feeds catalogued."
+      },
+      {
+        "signal": "Security Signals",
+        "status": "PARTIAL",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": "Tag scaffold exists; no source yet."
+      },
+      {
+        "signal": "Commercial Tenant Improvements",
+        "status": "PARTIAL",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Surfaces from commercial permits."
+      },
+      {
+        "signal": "Government / Capital Projects",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": ""
+      },
+      {
+        "signal": "Public Bid Awards",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": ""
+      },
+      {
+        "signal": "Distress (any)",
+        "status": "PARTIAL",
+        "current_coverage": 6,
+        "priority": "HIGH",
+        "note": "Only code-violation-style events so far."
+      }
+    ],
+    "permit_audit": {
+      "total": 1000,
+      "newest": "2026-05-22",
+      "oldest": "2026-05-11",
+      "this_week": 0,
+      "this_month": 1000,
+      "by_jurisdiction": [
+        {
+          "jurisdiction": "Las Vegas",
+          "permits": 912
+        }
+      ],
+      "by_trade": [
+        {
+          "trade": "hvac",
+          "permits": 275
+        },
+        {
+          "trade": "plumbing",
+          "permits": 188
+        },
+        {
+          "trade": "remodeling",
+          "permits": 75
+        },
+        {
+          "trade": "solar",
+          "permits": 58
+        },
+        {
+          "trade": "patio",
+          "permits": 32
+        },
+        {
+          "trade": "pools",
+          "permits": 25
+        },
+        {
+          "trade": "electrical",
+          "permits": 12
+        },
+        {
+          "trade": "sign",
+          "permits": 11
+        },
+        {
+          "trade": "roofing",
+          "permits": 8
+        },
+        {
+          "trade": "fencing",
+          "permits": 2
+        }
+      ],
+      "quality": {
+        "apn": {
+          "missing": 10,
+          "complete_pct": 99.0
+        },
+        "owner": {
+          "missing": 7,
+          "complete_pct": 99.3
+        },
+        "coordinates": {
+          "missing": 11,
+          "complete_pct": 98.9
+        },
+        "contractor": {
+          "missing": 0,
+          "complete_pct": 100.0
+        },
+        "date": {
+          "missing": 0,
+          "complete_pct": 100.0
+        },
+        "valuation": {
+          "missing": 112,
+          "complete_pct": 88.8
+        },
+        "trade": {
+          "missing": 280,
+          "complete_pct": 72.0
+        }
+      },
+      "flags": [
+        {
+          "flag": "unmappable permit (no APN and no coordinate)",
+          "count": 10,
+          "severity": "high"
+        },
+        {
+          "flag": "permit with no owner matched",
+          "count": 7,
+          "severity": "medium"
+        },
+        {
+          "flag": "permit with no trade classified",
+          "count": 280,
+          "severity": "low"
+        }
+      ]
+    },
+    "data_quality": {
+      "cards": 2412,
+      "fields": [
+        {
+          "field": "property_jurisdiction",
+          "present": 2412,
+          "pct": 100.0
+        },
+        {
+          "field": "property_city",
+          "present": 2412,
+          "pct": 100.0
+        },
+        {
+          "field": "parcel_apn",
+          "present": 2402,
+          "pct": 99.6
+        },
+        {
+          "field": "lat",
+          "present": 2401,
+          "pct": 99.5
+        },
+        {
+          "field": "owner_name",
+          "present": 1958,
+          "pct": 81.2
+        },
+        {
+          "field": "primary_date",
+          "present": 1087,
+          "pct": 45.1
+        },
+        {
+          "field": "owner_mailing",
+          "present": 908,
+          "pct": 37.6
+        },
+        {
+          "field": "owner_origin_market",
+          "present": 903,
+          "pct": 37.4
+        },
+        {
+          "field": "land_use",
+          "present": 149,
+          "pct": 6.2
+        },
+        {
+          "field": "last_sale_date",
+          "present": 138,
+          "pct": 5.7
+        },
+        {
+          "field": "assessed_value",
+          "present": 77,
+          "pct": 3.2
+        },
+        {
+          "field": "year_built",
+          "present": 51,
+          "pct": 2.1
+        }
+      ]
+    },
+    "gap_analysis": {
+      "missing_high_priority": [
+        "Property Sales",
+        "Deed Transfers",
+        "Assessor Records",
+        "Foreclosures",
+        "Trustee Sales",
+        "Distress (any)"
+      ],
+      "unidentified_jurisdiction": 0,
+      "gaps": [
+        {
+          "gap": "Distress signals (foreclosure / NOD / trustee / liens) not ingested",
+          "impact": "Misses the highest-urgency acquisition leads",
+          "priority": "HIGH"
+        },
+        {
+          "gap": "Permit coverage limited to City of Las Vegas",
+          "impact": "Henderson, NLV and unincorporated County permits absent",
+          "priority": "HIGH"
+        },
+        {
+          "gap": "454 parcels have no identified owner",
+          "impact": "Full-roll Assessor enrichment needed for ownership completeness",
+          "priority": "HIGH"
+        },
+        {
+          "gap": "447 parcels have coordinate-derived jurisdiction",
+          "impact": "Authoritative city refinement via parcel-layer city attribute on next harvest",
+          "priority": "MEDIUM"
+        },
+        {
+          "gap": "Business-license / officer graph (NV SOS) not ingested",
+          "impact": "Limits entity resolution and commercial signal",
+          "priority": "MEDIUM"
+        }
+      ],
+      "v107_roadmap": [
+        "v0.107: ingest Clark County Recorder distress (NOD, trustee, lien, lis pendens).",
+        "v0.107: pull parcel-layer incorporated-city attribute during geocode for authoritative jurisdiction.",
+        "v0.107: extend permits to Henderson / NLV / County (Accela).",
+        "v0.107: full-roll Assessor enrichment to lift owner + value coverage toward 100%.",
+        "v0.107: NV SOS business + officer graph for entity resolution and commercial signal."
+      ]
+    }
+  },
   "warehouse": {
-    "ledger_entries": 8,
+    "ledger_entries": 11,
     "event_total": 1219,
+    "records_tracked": 2412,
+    "growth": [
+      {
+        "date": "2026-05-29",
+        "leads": 1412,
+        "mapped": 500,
+        "permit_events": 2000,
+        "contractors": 331,
+        "imported_capital": null
+      },
+      {
+        "date": "2026-05-30",
+        "leads": 2412,
+        "mapped": 2401,
+        "permit_events": 1000,
+        "contractors": 331,
+        "imported_capital": 86
+      }
+    ],
     "append_only": true
   },
   "headline": {
@@ -1492,11 +2382,13 @@
     "permit_events": 1000,
     "permit_newest": "2026-05-22",
     "permit_jurisdictions": 1,
-    "jurisdictions": 14,
+    "jurisdictions": 13,
     "contractors": 331,
     "tagged_pct": 100.0,
     "enriched": 149,
     "imported_capital": 86,
-    "owner_markets": 76
+    "owner_markets": 76,
+    "hot_leads": 0,
+    "sonv_jurisdictions_covered": 13
   }
 }

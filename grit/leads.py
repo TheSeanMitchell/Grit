@@ -126,6 +126,44 @@ def timeline_summary(card):
     return f"{parts}" + (f"; most recent {newest}" if newest else "")
 
 
+def _parse(date_val):
+    try:
+        return dt.datetime.strptime(str(date_val)[:10], "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None
+
+
+def stamp_dates(card):
+    """Date-first display fields (v0.106 Rule 2). Surfaces the freshest
+    meaningful EVENT date, its kind, age in days, a human 'ago', and an urgency
+    tier -- so a card never makes you hunt for time. Event dates are the
+    record's own facts and stay distinct from warehouse first/last-seen."""
+    cand = []
+    if card.get("last_permit_date"):
+        cand.append(("permit", card["last_permit_date"]))
+    if card.get("last_sale_date"):
+        cand.append(("sale", card["last_sale_date"]))
+    for e in (card.get("timeline") or []):
+        if e.get("date"):
+            cand.append(((e.get("kind") or "event").lower(), e["date"]))
+    best = None
+    for kind, dv in cand:
+        d = _parse(dv)
+        if d and (best is None or d > best[0]):
+            best = (d, kind, dv)
+    if best:
+        age = (dt.date.today() - best[0]).days
+        card["primary_date"] = str(best[2])[:10]
+        card["primary_date_kind"] = best[1]
+        card["primary_ago"] = _ago(best[2])
+        card["age_days"] = age if age >= 0 else None
+        card["urgency"] = ("hot" if age <= 7 else "warm" if age <= 30
+                           else "recent" if age <= 90 else "aging" if age <= 365 else "stale")
+    if not card.get("harvested_at"):
+        card["harvested_at"] = card.get("last_seen")
+    return card
+
+
 def why_this_matters(card):
     """A 2-4 sentence briefing for a brand-new rep. Deterministic; real signals
     only, ordered: active work -> owner -> scale/value -> the play."""
@@ -207,8 +245,7 @@ def enrich_lead(card):
     """Attach the Phase-5 lead-card fields + the WHY THIS MATTERS briefing,
     and the four SEPARATE location dimensions (property / permit-jurisdiction /
     owner-mailing / capital-origin). Mutates and returns the card."""
-    from . import capital
-    card["jurisdiction"] = jurisdiction(card)
+    from . import capital, geo
     # CLV permit cards stored the owner's mailing city as situs_city (feed
     # quirk). The site sits in the issuing jurisdiction, so correct the
     # PROPERTY city -- but the owner mailing geography is preserved untouched
@@ -220,12 +257,18 @@ def enrich_lead(card):
     # permit feed, so any card carrying permit events was permitted by the City.
     if card.get("has_permit") or card.get("permit_count"):
         card["permit_jurisdiction"] = "City of Las Vegas"
+    # property jurisdiction resolved from the most authoritative field, with the
+    # method recorded (jurisdiction_source); coordinate-derived labels are flagged.
+    geo.stamp(card)
     # explicit dimension fields (kept distinct on purpose; never collapsed)
     card["property_city"] = card.get("situs_city") or card.get("city")
-    card["property_jurisdiction"] = card["jurisdiction"]
+    if (not card.get("property_city") or card.get("property_city") == "ASSESSOR DESCRIPTION") \
+            and card.get("property_jurisdiction"):
+        card["property_city"] = card["property_jurisdiction"]
     capital.stamp_owner_origin(card)        # owner_city/state/zip + origin market
     card["property_type"] = property_type(card)
     card["occupancy_status"] = occupancy_status(card)
+    stamp_dates(card)                       # date-first display fields
     card["timeline_summary"] = timeline_summary(card)
     card["why"] = why_this_matters(card)
     return card

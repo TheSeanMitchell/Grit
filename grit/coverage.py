@@ -207,9 +207,18 @@ def category_matrix(cards, events, health, contractors, geocode_report=None,
         "Nevada SOS (SilverFlume/ORION) LLC registrations + officer graph — sanctioned bulk pull is the next wave.")
     row("Utilities", "planned", 0, "—", "not ingested", 0,
         "Service-connect / new-meter signals — catalogued, not yet ingested.")
+    row("Planning", "planned", 0, "—", "not ingested", 0,
+        "Planning applications / land entitlements — catalogued, not yet ingested.")
+    row("Zoning", "planned", 0, "—", "not ingested", 0,
+        "Zone changes / variances — catalogued, not yet ingested.")
+    row("Government Activity", "planned", 0, "—", "not ingested", 0,
+        "Public works, capital projects, bid awards — catalogued, not yet ingested.")
     row("Storage", "live", _warehouse_event_total(),
         "append-only", "events preserved", 80,
         "Append-only event store + warehouse ledger — history is never overwritten.")
+    row("Warehouse Integrity", "live", _warehouse_event_total(),
+        "append-only", "first/last-seen tracked", 85,
+        "Per-record first_seen/last_seen history; records are never deleted, only marked dormant.")
 
     row("Scoring", "live", scored, "current",
         f"{round(100*scored/n,1)}% explained",
@@ -311,13 +320,14 @@ def lead_coverage(cards):
 
 def build(cards, events, health, contractors, geocode_report=None):
     """Assemble the full coverage payload and append the ledger row."""
-    from . import capital
+    from . import capital, audit, warehouse
     permits = permit_coverage(cards, events)
     leads = lead_coverage(cards)
     cap = capital.capital_flow(cards)
     ohi = capital.ownership_coverage(cards)
     cats = category_matrix(cards, events, health, contractors, geocode_report,
                            ownership=ohi, cap_flow=cap)
+    aud = audit.build_audit(cards, events, health)
     n = len(cards) or 1
     headline = {
         "leads": len(cards),
@@ -331,8 +341,11 @@ def build(cards, events, health, contractors, geocode_report=None):
         "enriched": sum(1 for c in cards if c.get("vintage") == "current"),
         "imported_capital": cap["totals"]["imported_properties"],
         "owner_markets": cap["totals"]["distinct_markets"],
+        "hot_leads": sum(1 for c in cards if c.get("urgency") == "hot"),
+        "sonv_jurisdictions_covered": aud["sonv_coverage"]["jurisdictions_with_data"],
     }
     ledger = append_ledger(headline)
+    wh_records = warehouse.load_records()
     return {
         "generated_at": _now(),
         "version": config.VERSION,
@@ -341,8 +354,11 @@ def build(cards, events, health, contractors, geocode_report=None):
         "capital_flow": cap,
         "ownership": ohi,
         "categories": cats,
+        "audit": aud,
         "warehouse": {"ledger_entries": len(ledger),
                       "event_total": _warehouse_event_total(),
+                      "records_tracked": wh_records.get("count", 0),
+                      "growth": warehouse.growth_series(ledger),
                       "append_only": True},
         "headline": headline,
     }, ledger

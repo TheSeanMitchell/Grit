@@ -521,6 +521,13 @@ def harvest():
         for c in cards:
             leads_mod.enrich_lead(c)              # stamps location dims + origin
             c["tags"] = tagging.tags_for_card(c)  # tags can read owner_state etc.
+        from . import warehouse as warehouse_mod
+        wh_store, wh_stats = warehouse_mod.update(cards)   # append-only per-record history
+        warehouse_mod.save(wh_store)
+        for c in cards:
+            warehouse_mod.stamp(c, wh_store)
+            if not c.get("harvested_at"):
+                c["harvested_at"] = c.get("last_seen")
         contractor_table = contractors_mod.build_contractor_table(cards)
 
         owner_pct = round(100 * sum(1 for c in cards if c.get("owner_name")) / max(len(cards),1), 1)

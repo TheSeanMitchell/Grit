@@ -192,6 +192,24 @@ def tags_for_card(card):
             slug = _STATE_NAME.get(o_state, o_state).lower().replace(" ", "-")
             t.add(f"origin:{slug}")
 
+    # ── urgency (date-first, v0.106) -- derived from the freshest event age ──
+    u = card.get("urgency")
+    if u:
+        t.add(f"urgency:{u}")
+    ad = card.get("age_days")
+    if isinstance(ad, int):
+        if ad <= 1:
+            t.add("urgency:today")
+        elif ad <= 7:
+            t.add("urgency:this-week")
+        elif ad <= 30:
+            t.add("urgency:this-month")
+
+    # ── jurisdiction (property jurisdiction, searchable/exportable) ─────────
+    pj = card.get("property_jurisdiction")
+    if pj:
+        t.add("jurisdiction:" + pj.lower().replace(" ", "-"))
+
     # ── distress (REAL events only -- never inferred) ─────────────────────
     for ev in (card.get("timeline") or []):
         kind = (ev.get("kind") or "").upper()
@@ -229,5 +247,5 @@ NAMESPACE_LABELS = {
     "temporal": "Recency", "geo": "Geography", "distress": "Distress",
     "security": "Security", "economic-activity": "Economic Activity",
     "monetization": "Monetization", "contractor": "Contractor",
-    "origin": "Owner Origin",
+    "origin": "Owner Origin", "urgency": "Urgency", "jurisdiction": "Jurisdiction",
 }

@@ -160,6 +160,30 @@ def cmd_selftest():
     print("capital flow: imported", cf["totals"]["imported_properties"],
           "from", cf["by_market"][0]["market"])
 
+    # ---- 0.106 transforms: jurisdiction resolution, dates, warehouse, audit --
+    from . import geo, warehouse as wh, audit
+    assert geo.jurisdiction_for_coord(36.17, -115.14) is not None, "coord resolver failed in valley"
+    assert geo.jurisdiction_for_coord(40.0, -80.0) is None, "coord resolver should reject out-of-region"
+    # a coordinate-only parcel with a blank city resolves to a SoNV jurisdiction (flagged)
+    coord_card = {"source": "clark_gis", "lat": 36.0, "lng": -114.85, "id": "selftest-bc"}
+    geo.stamp(coord_card)
+    assert coord_card.get("property_jurisdiction") and coord_card.get("jurisdiction_source") == "coordinate", \
+        "coordinate jurisdiction not stamped/flagged"
+    # date-first fields present on the permit fixture
+    assert permit_card.get("primary_date") and permit_card.get("age_days") is not None \
+        and permit_card.get("urgency"), "date-first stamping failed"
+    assert "urgency:" in " ".join(tags) and "jurisdiction:" in " ".join(tags), "urgency/jurisdiction tags missing"
+    # per-record warehouse initialises first/last seen
+    store, stats = wh.update([dict(permit_card, id="selftest-1")])
+    assert stats["tracked"] >= 1 and stats["new"] >= 1, "warehouse update failed"
+    # audit reports build and reflect real shape
+    aud = audit.build_audit([dict(permit_card, id="a1")], [], [])
+    for k in ("sonv_coverage", "source_inventory", "signal_matrix", "permit_audit",
+              "data_quality", "gap_analysis"):
+        assert k in aud, f"audit missing {k}"
+    assert any(s["status"] == "IMPLEMENTED" for s in aud["signal_matrix"]), "signal matrix empty"
+    print("0.106: jurisdiction-resolve + date-first + warehouse + audit OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
@@ -196,6 +220,15 @@ def cmd_rebuild(argv):
     for c in cards:
         leads_mod.enrich_lead(c)
         c["tags"] = tagging.tags_for_card(c)
+    from . import warehouse as warehouse_mod
+    wh_store, wh_stats = warehouse_mod.update(cards)   # append-only per-record history
+    warehouse_mod.save(wh_store)
+    for c in cards:
+        warehouse_mod.stamp(c, wh_store)               # first_seen / last_seen / last_updated
+        if not c.get("harvested_at"):
+            c["harvested_at"] = c.get("last_seen")
+    print(f"  warehouse: {wh_stats['tracked']} records tracked "
+          f"({wh_stats['new']} new, {wh_stats['changed']} changed, {wh_stats['dormant']} dormant)")
     contractor_table = contractors_mod.build_contractor_table(cards)
 
     harvest = cd.get("harvest", {})

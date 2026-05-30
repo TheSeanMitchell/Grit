@@ -185,13 +185,49 @@
   .tlitem .td{color:var(--faint);font-size:10px}.tlitem .tk{color:var(--txt)}
   .sig{font-size:11px;color:var(--dim);padding:2px 0}
   .dr-link{display:inline-block;margin-top:8px;font-size:11px}
-  @media(max-width:860px){.split{flex-direction:column}#map{height:380px}.lbody{height:340px}.dims{grid-template-columns:1fr}.kpi{min-width:33%}}
+  /* date-first */
+  .c-age{width:60px;flex:none;text-align:right;font-variant-numeric:tabular-nums}
+  .age{font-size:10px;letter-spacing:.3px;padding:1px 5px;border:1px solid var(--line2);color:var(--dim);white-space:nowrap}
+  .age.u-hot{color:#7be08c;border-color:#2e6b35;background:rgba(63,185,80,.08)}
+  .age.u-warm{color:#e8b56d;border-color:#6b4f23}
+  .age.u-recent{color:#9ab8de;border-color:#34465f}
+  .age.u-aging{color:#9aa1ad;border-color:#3a3f48}
+  .age.u-stale{color:#7c828c;border-color:#2b2f36}
+  .age.u-none{color:var(--faint);border-color:transparent}
+  .urg-banner{display:flex;align-items:center;gap:9px;padding:9px 12px;margin-top:4px;border:1px solid var(--line2);border-left:3px solid var(--faint)}
+  .urg-banner.u-hot{border-left-color:var(--green);background:rgba(63,185,80,.06)}
+  .urg-banner.u-warm{border-left-color:var(--amber);background:rgba(210,153,34,.05)}
+  .urg-banner.u-recent{border-left-color:var(--blue)}
+  .urg-banner .ue{font-family:var(--disp);font-size:16px;letter-spacing:.5px;color:var(--txt)}
+  .urg-banner .ua{margin-left:auto;font-family:var(--disp);font-size:15px;color:var(--dim)}
+  .datesgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .dcell{background:var(--panel);padding:7px 10px}.dcell .dk{font-size:9px;letter-spacing:.5px;color:var(--faint);text-transform:uppercase}.dcell .dv{font-size:12px;color:var(--txt);margin-top:1px}
+  /* audit: signal matrix + status tables */
+  .sigmatrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+  .sigcard{border:1px solid var(--line);border-left:3px solid var(--faint);background:var(--panel);padding:9px 11px}
+  .sigcard.implemented{border-left-color:var(--green)}.sigcard.partial{border-left-color:var(--amber)}.sigcard.missing{border-left-color:var(--faint);opacity:.8}
+  .sigcard .sn{font-size:12px;color:var(--txt);display:flex;justify-content:space-between;gap:6px;align-items:center}
+  .sigcard .sst{font-size:8px;letter-spacing:.8px;padding:1px 5px;border:1px solid var(--line2);color:var(--dim)}
+  .sigcard.implemented .sst{color:#7be08c;border-color:#2e6b35}.sigcard.partial .sst{color:#e8b56d;border-color:#6b4f23}
+  .sigcard .smeta{font-size:9px;color:var(--faint);margin-top:5px;line-height:1.5}
+  .sigcard .pri{font-size:8px;letter-spacing:.5px;color:var(--faint)}.sigcard .pri.HIGH{color:#e88}
+  .stbadge{font-size:8px;letter-spacing:.8px;padding:2px 6px;border:1px solid var(--line2);white-space:nowrap}
+  .stbadge.WORKING{color:#7be08c;border-color:#2e6b35}.stbadge.PARTIAL{color:#e8b56d;border-color:#6b4f23}
+  .stbadge.BROKEN{color:var(--red);border-color:#6a2f2f}.stbadge.NOT{color:var(--faint)}
+  .qbar{height:5px;background:var(--line2);margin-top:3px}.qbar i{display:block;height:5px;background:var(--green)}
+  .flag{font-size:11px;padding:5px 9px;border:1px solid var(--line2);border-left:3px solid var(--amber);margin-bottom:5px;color:var(--dim)}
+  .flag.high{border-left-color:var(--red)}.flag b{color:var(--txt)}
+  .gap{font-size:12px;padding:7px 11px;border:1px solid var(--line);border-left:3px solid var(--amber);margin-bottom:6px}
+  .gap.HIGH{border-left-color:var(--red)}.gap .gp{font-size:9px;letter-spacing:1px;color:var(--faint)}.gap b{color:var(--txt)}.gap .gi{color:var(--dim);font-size:11px;margin-top:2px}
+  .roadmap li{font-size:12px;color:var(--dim);margin:5px 0 5px 18px}
+  .lsrc{font-size:9px;color:var(--faint)}
+  @media(max-width:860px){.split{flex-direction:column}#map{height:380px}.lbody{height:340px}.dims,.datesgrid{grid-template-columns:1fr}.kpi{min-width:33%}}
 </style>
 </head>
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.105</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.106</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -231,6 +267,9 @@
 
   <!-- COVERAGE -->
   <section class="view" id="v-coverage"></section>
+
+  <!-- AUDIT -->
+  <section class="view" id="v-audit"></section>
 </div>
 
 <!-- lead drawer -->
@@ -268,6 +307,7 @@ function filtered(){let l=CARDS.slice();
   if(TAGSET.size)l=l.filter(c=>{const t=new Set(c.tags||[]);for(const tag of TAGSET)if(!t.has(tag))return false;return true;});
   const k=SORT.k;l.sort((a,b)=>{let va,vb;
     if(k==='trade'){va=(a.trade_tags||[])[0]||'';vb=(b.trade_tags||[])[0]||'';}
+    else if(k==='age_days'){va=(a.age_days==null?1e9:a.age_days);vb=(b.age_days==null?1e9:b.age_days);}
     else if(k==='score'||k==='assessed_value'){va=num(a[k]);vb=num(b[k]);}
     else{va=a[k]==null?'':String(a[k]);vb=b[k]==null?'':String(b[k]);}
     return (va<vb?-1:va>vb?1:0)*SORT.dir;});return l;}
@@ -356,13 +396,14 @@ function stopPlay(){PLAY.on=false;if(PLAY.timer){clearInterval(PLAY.timer);PLAY.
 function exitPlay(){stopPlay();if(MAP&&PLAYLAYER&&MAP.hasLayer(PLAYLAYER)){MAP.removeLayer(PLAYLAYER);MAP.addLayer(LAYER);}}
 
 /* ---------- list ---------- */
-function listHTML(){const cols=[['score','SCORE','c-score'],['situs_address','ADDRESS','c-addr'],['owner_name','OWNER','c-owner'],['entity_type','ENTITY','c-ent'],['trade','TRADE','c-trade'],['assessed_value','VALUE','c-val']];
+function listHTML(){const cols=[['score','SCORE','c-score'],['age_days','AGE','c-age'],['situs_address','ADDRESS','c-addr'],['owner_name','OWNER','c-owner'],['entity_type','ENTITY','c-ent'],['trade','TRADE','c-trade'],['assessed_value','VALUE','c-val']];
   const head='<div class="lhead">'+cols.map(c=>'<div class="'+c[2]+'" data-k="'+c[0]+'">'+c[1]+(SORT.k===c[0]?(SORT.dir>0?' ▲':' ▼'):'')+'</div>').join('')+'</div>';
   const rows=filtered().map(c=>{
     const tp=c.temporal_state?'<span class="pill t-'+c.temporal_state+'">'+c.temporal_state.charAt(0)+'</span>':'';
     const pp=c.portfolio_size>1?'<span class="pill port">P'+c.portfolio_size+'</span>':'';
     return '<div class="lrow'+(SEL===c.id?' sel':'')+'" data-id="'+esc(c.id)+'">'+
     '<div class="c-score"><span class="scoredot" style="background:'+leadColor(c)+'"></span>'+c.score+'</div>'+
+    '<div class="c-age">'+ageCell(c)+'</div>'+
     '<div class="c-addr">'+tp+pp+esc(c.situs_address||'(unknown)')+(c.owner_out_of_state?'<span class="oos" title="out-of-state owner: '+esc(c.owner_origin_market||'')+'"></span>':'')+'</div>'+
     '<div class="c-owner">'+esc(c.owner_name||'—')+'</div>'+
     '<div class="c-ent" style="color:'+(ENTITY_COLORS[c.entity_type]||'#888')+'">'+(c.entity_type||'—')+'</div>'+
@@ -373,7 +414,7 @@ function listHTML(){const cols=[['score','SCORE','c-score'],['situs_address','AD
 function renderList(){[['#pane-list',480],['#pane-list2',640]].forEach(([sel,h])=>{const p=$(sel);if(!p)return;
   if(!CARDS.length){p.innerHTML='<div class="empty" style="border:0;height:'+h+'px;display:flex;flex-direction:column;justify-content:center"><div class="big">NO HARVEST YET</div>Run the GitHub Action: Actions → "GRIT harvest" → Run workflow.</div>';return;}
   p.innerHTML=listHTML();const lb=p.querySelector('.lbody');if(lb)lb.style.height=h+'px';
-  p.querySelectorAll('.lhead div[data-k]').forEach(hh=>hh.onclick=()=>{const k=hh.dataset.k;SORT.dir=(SORT.k===k?-SORT.dir:-1);SORT.k=k;renderList();});
+  p.querySelectorAll('.lhead div[data-k]').forEach(hh=>hh.onclick=()=>{const k=hh.dataset.k;SORT.dir=(SORT.k===k?-SORT.dir:(k==='age_days'?1:-1));SORT.k=k;renderList();});
   p.querySelectorAll('.lrow').forEach(r=>{r.onclick=()=>{selectLead(r.dataset.id,false);openDrawer(r.dataset.id);};});});}
 function selectLead(id,fromMap){SEL=id;
   $$('.lrow').forEach(r=>r.classList.toggle('sel',r.dataset.id===id));
@@ -404,6 +445,10 @@ function renderToolbar(){const trades=[...new Set(CARDS.flatMap(c=>c.trade_tags|
     tb.querySelector('[data-csv]').onclick=exportCSV;
     tb.querySelector('[data-hide]').onclick=()=>{HIDE_NONLEAD=!HIDE_NONLEAD;refreshFilters();};});}
 const po=p0; // alias to the real number formatter
+function ageShort(days){if(days==null)return '';if(days<=0)return 'today';if(days===1)return '1d';if(days<14)return days+'d';if(days<60)return Math.floor(days/7)+'w';if(days<730)return Math.floor(days/30)+'mo';return Math.floor(days/365)+'y';}
+function urg(c){return c.urgency||'none';}
+function ageCell(c){const d=c.age_days;const lbl=d!=null?ageShort(d):(c.first_seen?'seen':'—');
+  return '<span class="age u-'+urg(c)+'" title="'+(c.primary_date_kind?esc(c.primary_date_kind.toUpperCase()+' '+(c.primary_ago||'')):'first seen '+esc(c.first_seen||''))+'">'+lbl+'</span>';}
 function renderFacets(){const counts={};
   CARDS.forEach(c=>(c.tags||[]).forEach(t=>{counts[t]=(counts[t]||0)+1;}));
   const byNs={};Object.keys(counts).forEach(t=>{const ns=t.split(':')[0];(byNs[ns]=byNs[ns]||[]).push(t);});
@@ -422,7 +467,7 @@ function refreshFilters(){renderToolbar();renderFacets();renderList();if(MAP&&MA
 function renderPlaybackIfActive(){if($('#v-map').classList.contains('on'))renderPlayback();}
 
 /* ---------- CSV (all four location dimensions preserved) ---------- */
-function exportCSV(){const cols=['score','entity_type','situs_address','property_city','property_jurisdiction','permit_jurisdiction','owner_name','owner_mailing','owner_city','owner_state','owner_zip','owner_origin_market','owner_out_of_state','parcel_apn','assessed_value','last_sale_date','last_sale_price','year_built','trade_tags','permit_count','last_permit_date','contractors','temporal_state','cluster_density','lat','lng','tags','suggested_action'];
+function exportCSV(){const cols=['score','urgency','primary_date','primary_date_kind','age_days','first_seen','last_seen','last_updated','entity_type','situs_address','property_city','property_jurisdiction','jurisdiction_source','permit_jurisdiction','owner_name','owner_mailing','owner_city','owner_state','owner_zip','owner_origin_market','owner_out_of_state','parcel_apn','assessed_value','last_sale_date','last_sale_price','year_built','trade_tags','permit_count','last_permit_date','contractors','temporal_state','cluster_density','lat','lng','tags','suggested_action'];
   const q=v=>'"'+String(v==null?'':Array.isArray(v)?v.join('|'):v).replace(/"/g,'""')+'"';
   const lines=[cols.join(',')].concat(filtered().map(c=>cols.map(k=>q(c[k])).join(',')));
   dl(lines.join('\n'),'grit_leads_'+new Date().toISOString().slice(0,10)+'.csv');}
@@ -438,6 +483,16 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
     dim('Property jurisdiction',c.property_jurisdiction||c.jurisdiction||'—')+
     dim('Permit jurisdiction',c.permit_jurisdiction||'—')+
     dim('Owner origin market',(c.owner_origin_market||'—'),c.owner_out_of_state)+'</div>';
+  // date-first block: the freshest event up top, then warehouse observation dates
+  const kindLbl=(c.primary_date_kind||'').toUpperCase();
+  const banner=c.primary_date?('<div class="urg-banner u-'+urg(c)+'"><span class="ue">'+esc(kindLbl||'EVENT')+' — '+esc((c.primary_ago||'').toUpperCase())+'</span><span class="ua">'+esc(c.primary_date)+'</span></div>'):'';
+  const dcell=(k,val)=>'<div class="dcell"><div class="dk">'+esc(k)+'</div><div class="dv">'+esc(val||'—')+'</div></div>';
+  const datesBlock='<div class="dr-sec"><div class="dr-h">Dates · urgency '+esc(urg(c))+'</div>'+banner+
+    '<div class="datesgrid" style="margin-top:'+(banner?'6px':'0')+'">'+
+    dcell('Event date',c.primary_date)+dcell('Age',c.age_days!=null?(c.age_days+' days'):'—')+
+    dcell('First seen',c.first_seen)+dcell('Last updated',c.last_updated)+
+    dcell('Last seen',c.last_seen)+dcell('Source timestamp',(c.harvested_at||'').slice(0,10))+
+    '</div></div>';
   const facts=[['Owner',c.owner_name],['Entity type',c.entity_type],['Occupancy',c.occupancy_status],
     ['Property type',c.property_type],['Assessed value',c.assessed_value?('$'+c.assessed_value):null],
     ['Last sale',c.last_sale_date?(c.last_sale_date+(c.last_sale_price?(' · $'+c.last_sale_price):'')):null],
@@ -455,7 +510,7 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
     '<div class="dr-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
     '<div class="dr-score">SCORE '+c.score+(c.trade_tags&&c.trade_tags.length?' · '+esc(c.trade_tags.join(', ')):'')+'</div>'+
     '<div style="margin-top:6px">'+badges+'</div></div>'+
-    '<div class="dr-body">'+dims+why+
+    '<div class="dr-body">'+dims+datesBlock+why+
     '<div class="dr-sec"><div class="dr-h">Lead facts</div>'+facts+link+'</div>'+
     tags+tl+sig+'</div>';
   $('#drx').onclick=closeDrawer;$('#scrim').classList.add('open');$('#drawer').classList.add('open');
@@ -569,27 +624,77 @@ function renderCoverage(){const v=$('#v-coverage');if(!COV){v.innerHTML=emptyBox
         '<div class="hrowmeta"><span>vol <b>'+po(c.volume||0)+'</b></span><span>fresh <b>'+esc(c.freshness||'—')+'</b></span><span>conf <b>'+conf+'</b></span></div>'+
         '<div class="hbar"><i style="width:'+conf+'%;background:'+(conf>=70?'var(--green)':conf>=40?'var(--amber)':'var(--faint)')+'"></i></div>'+
         '<div class="hmeta">'+esc(c.coverage||'')+(c.note?' — '+esc(c.note):'')+'</div></div>';}).join('')+'</div>';
-  // warehouse + sources
-  const w=COV.warehouse||{};
-  const wh='<h2 class="sec">Append-Only Warehouse</h2><div class="statgrid">'+
-    stat(po(w.event_total||0),'Events preserved')+stat(w.append_only?'YES':'—','Append-only')+stat(po(w.ledger_entries||0),'Ledger entries')+'</div>';
-  v.innerHTML=kpis+pcTbl+lcTbl+mat+wh;}
+  // Southern Nevada coverage report (per-jurisdiction)
+  const sc=(COV.audit&&COV.audit.sonv_coverage)||{rows:[]};
+  const scRows=(sc.rows||[]).map(r=>{const ls=Object.entries(r.label_sources||{}).map(([k,v])=>k+':'+v).join(' ');
+    return '<tr><td class="nm">'+esc(r.jurisdiction)+'</td><td class="num">'+po(r.parcels_identified)+'</td><td class="num">'+po(r.owners_identified)+'</td><td class="num">'+r.owner_coverage_pct+'%</td><td class="num">'+po(r.permits)+'</td><td class="num">'+po(r.signals)+'</td><td class="num">'+r.mapped_pct+'%</td><td class="num">'+r.confidence+'</td><td class="lsrc">'+esc(ls)+'</td></tr>';}).join('');
+  const sonvTbl='<h2 class="sec">Southern Nevada Coverage Report <span class="note">'+(sc.jurisdictions_with_data||0)+' of '+(sc.target_jurisdictions||19)+' target jurisdictions carry data · real harvested identifications</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Jurisdiction</th><th class="num">Parcels</th><th class="num">Owners</th><th class="num">Owner&nbsp;%</th><th class="num">Permits</th><th class="num">Signals</th><th class="num">Mapped&nbsp;%</th><th class="num">Conf.</th><th>Label source</th></tr></thead><tbody>'+scRows+'</tbody></table></div>'+
+    '<div style="font-size:10px;color:var(--faint);margin-top:6px">'+esc(sc.note||'')+'</div>';
+  // warehouse growth
+  const w=COV.warehouse||{};const g=w.growth||[];
+  const gRows=g.map(r=>'<tr><td class="nm">'+esc(r.date||'—')+'</td><td class="num">'+po(r.leads||0)+'</td><td class="num">'+po(r.mapped||0)+'</td><td class="num">'+po(r.permit_events||0)+'</td><td class="num">'+po(r.contractors||0)+'</td></tr>').join('');
+  const wh='<h2 class="sec">Append-Only Warehouse <span class="note">history is never overwritten — growth is the feature</span></h2><div class="statgrid">'+
+    stat(po(w.records_tracked||0),'Records tracked','first/last-seen')+stat(po(w.event_total||0),'Events preserved')+stat(w.append_only?'YES':'—','Append-only')+stat(po(w.ledger_entries||0),'Harvest snapshots')+'</div>'+
+    (gRows?'<div class="tblwrap" style="margin-top:8px"><table class="tbl"><thead><tr><th>Harvest date</th><th class="num">Leads</th><th class="num">Mapped</th><th class="num">Permit events</th><th class="num">Contractors</th></tr></thead><tbody>'+gRows+'</tbody></table></div>':'');
+  v.innerHTML=kpis+sonvTbl+pcTbl+lcTbl+mat+wh;}
 
 function emptyBox(big,sub){return '<div class="empty"><div class="big">'+big+'</div>'+sub+'</div>';}
+
+/* ---------- audit ---------- */
+function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=emptyBox('AUDIT NOT BUILT','Run a harvest or rebuild to compute the coverage audit.');return;}
+  const a=COV.audit;
+  const stat=(val,lbl,s)=>'<div class="stat"><div class="v">'+val+'</div><div class="l">'+lbl+'</div>'+(s?'<div style="font-size:10px;color:var(--dim);margin-top:2px">'+s+'</div>':'')+'</div>';
+  // source inventory
+  const si=a.source_inventory||[];
+  const stb=s=>{const st=(s.status||'').replace(' ','').replace('NOTIMPLEMENTED','NOT');return '<span class="stbadge '+st+'">'+esc(s.status)+'</span>';};
+  const siRows=si.map(s=>'<tr><td class="nm">'+esc(s.source)+'</td><td>'+stb(s)+'</td><td class="mut">'+esc(s.coverage_area||'')+'</td><td class="num">'+po(s.records||0)+'</td><td class="mut">'+esc(s.newest||'—')+'</td><td class="num">'+(s.confidence||0)+'</td><td class="mut" style="font-size:10px">'+esc((s.missing||[]).join(', ')||'—')+'</td></tr>').join('');
+  const siTbl='<h2 class="sec">Source Inventory <span class="note">every feed: status · records · recency · confidence · gaps</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Source</th><th>Status</th><th>Coverage area</th><th class="num">Records</th><th>Newest</th><th class="num">Conf.</th><th>Missing fields</th></tr></thead><tbody>'+siRows+'</tbody></table></div>';
+  // signal matrix
+  const sm=a.signal_matrix||[];const order={IMPLEMENTED:0,PARTIAL:1,MISSING:2};
+  const smSorted=sm.slice().sort((x,y)=>(order[x.status]-order[y.status])|| (x.priority<y.priority?-1:1));
+  const smCards=smSorted.map(s=>'<div class="sigcard '+s.status.toLowerCase()+'"><div class="sn">'+esc(s.signal)+'<span class="sst">'+esc(s.status)+'</span></div>'+
+    '<div class="smeta">'+(s.current_coverage?('<b style="color:var(--txt)">'+po(s.current_coverage)+'</b> captured · '):'')+'<span class="pri '+s.priority+'">'+esc(s.priority)+' priority</span>'+(s.note?(' · '+esc(s.note)):'')+'</div></div>').join('');
+  const counts=sm.reduce((m,s)=>{m[s.status]=(m[s.status]||0)+1;return m;},{});
+  const smBlock='<h2 class="sec">Signal Acquisition Matrix <span class="note">'+(counts.IMPLEMENTED||0)+' implemented · '+(counts.PARTIAL||0)+' partial · '+(counts.MISSING||0)+' missing</span></h2><div class="sigmatrix">'+smCards+'</div>';
+  // permit completeness + quality
+  const pa=a.permit_audit||{};const q=pa.quality||{};
+  const pkpi='<div class="statgrid">'+stat(po(pa.total||0),'Permits harvested')+stat(pa.newest||'—','Newest permit')+stat(po(pa.this_week||0),'This week')+stat(po(pa.this_month||0),'This month')+stat(pa.oldest||'—','Oldest permit')+'</div>';
+  const qRows=Object.entries(q).map(([k,val])=>'<tr><td class="nm">'+esc(k)+'</td><td class="num">'+po(val.missing)+'</td><td class="num">'+val.complete_pct+'%</td><td style="width:140px"><div class="qbar"><i style="width:'+val.complete_pct+'%;background:'+(val.complete_pct>=95?'var(--green)':val.complete_pct>=80?'var(--amber)':'var(--red)')+'"></i></div></td></tr>').join('');
+  const flags=(pa.flags||[]).map(f=>'<div class="flag '+(f.severity==='high'?'high':'')+'"><b>'+po(f.count)+'</b> · '+esc(f.flag)+'</div>').join('');
+  const pBlock='<h2 class="sec">Permit Completeness &amp; Quality <span class="note">proof of completeness — every missing field counted, every suspected error flagged</span></h2>'+pkpi+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Field</th><th class="num">Missing</th><th class="num">Complete</th><th>Quality</th></tr></thead><tbody>'+qRows+'</tbody></table></div>'+
+    (flags?'<div style="margin-top:8px">'+flags+'</div>':'');
+  // data quality
+  const dq=a.data_quality||{fields:[]};
+  const dqRows=(dq.fields||[]).map(r=>'<tr><td class="nm">'+esc(r.field)+'</td><td class="num">'+po(r.present)+'</td><td class="num">'+r.pct+'%</td><td style="width:160px"><div class="qbar"><i style="width:'+r.pct+'%;background:'+(r.pct>=70?'var(--green)':r.pct>=30?'var(--amber)':'var(--red)')+'"></i></div></td></tr>').join('');
+  const dqBlock='<h2 class="sec">Data Quality <span class="note">field completeness across '+po(dq.cards||0)+' records — low % is an honest gap, not a hidden failure</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Field</th><th class="num">Present</th><th class="num">Coverage</th><th>&nbsp;</th></tr></thead><tbody>'+dqRows+'</tbody></table></div>';
+  // gap analysis + roadmap
+  const ga=a.gap_analysis||{gaps:[],v107_roadmap:[]};
+  const gaps=(ga.gaps||[]).map(g=>'<div class="gap '+g.priority+'"><div class="gp">'+esc(g.priority)+' PRIORITY</div><b>'+esc(g.gap)+'</b><div class="gi">'+esc(g.impact||'')+'</div></div>').join('');
+  const road=(ga.v107_roadmap||[]).map(r=>'<li>'+esc(r)+'</li>').join('');
+  const gaBlock='<h2 class="sec">Gap Analysis &amp; v0.107 Roadmap <span class="note">the distance to complete Southern Nevada coverage</span></h2>'+gaps+
+    (road?'<h2 class="sec" style="margin-top:14px">Next: v0.107</h2><ul class="roadmap">'+road+'</ul>':'');
+  v.innerHTML=siTbl+smBlock+pBlock+dqBlock+gaBlock;}
 
 /* ---------- KPIs + tabs ---------- */
 function renderKPIs(){const h=(COV&&COV.headline)||{};
   const mapped=CARDS.filter(c=>c.lat&&c.lng).length;
-  const k=(cls,v,l,s,tab)=>'<div class="kpi '+cls+(tab?' clk':'')+'"'+(tab?' data-tab="'+tab+'"':'')+'><div class="v">'+v+'</div><div class="l">'+l+'</div>'+(s?'<div class="s">'+s+'</div>':'')+'</div>';
+  const fresh=CARDS.filter(c=>c.urgency==='hot'||c.urgency==='warm').length;
+  const k=(cls,v,l,s,tab,extra)=>'<div class="kpi '+cls+(tab||extra?' clk':'')+'"'+(tab?' data-tab="'+tab+'"':'')+(extra?' '+extra:'')+'><div class="v">'+v+'</div><div class="l">'+l+'</div>'+(s?'<div class="s">'+s+'</div>':'')+'</div>';
   $('#kpis').innerHTML=
     k('',po(CARDS.length),'Leads','warehouse','leads')+
     k('k-permit',po(h.permit_events||0),'Permit events',(h.permit_newest?'newest '+h.permit_newest:'live CLV feed'),'coverage')+
-    k('',po(mapped),'Mapped',(CARDS.filter(c=>(c.has_permit||c.permit_count)&&!c.lat).length?po(CARDS.filter(c=>(c.has_permit||c.permit_count)&&!c.lat).length)+' awaiting geocode':'property pins'),'map')+
+    k('',po(mapped),'Mapped',(CARDS.filter(c=>(c.has_permit||c.permit_count)&&!c.lat).length?po(CARDS.filter(c=>(c.has_permit||c.permit_count)&&!c.lat).length)+' awaiting geocode':'all property pins'),'map')+
+    k('k-permit',po(fresh),'Active ≤30d','freshest leads first','',`data-fresh="1"`)+
     k('k-import',po(h.imported_capital||0),'Imported capital',(h.owner_markets||0)+' origin markets','capital')+
     k('',po(h.contractors||0),'Contractors','live permit pullers','contractors')+
     k('',h.jurisdictions||0,'SoNV jurisdictions','property footprint','coverage');
-  $('#kpis').querySelectorAll('[data-tab]').forEach(el=>el.onclick=()=>switchTab(el.dataset.tab));}
-const TABS=[['map','Map'],['leads','Leads'],['capital','Capital Flow'],['contractors','Contractors'],['operators','Operators'],['coverage','Coverage']];
+  $('#kpis').querySelectorAll('[data-tab]').forEach(el=>el.onclick=()=>switchTab(el.dataset.tab));
+  const fk=$('#kpis').querySelector('[data-fresh]');if(fk)fk.onclick=()=>{SORT={k:'age_days',dir:1};switchTab('leads');};}
+const TABS=[['map','Map'],['leads','Leads'],['capital','Capital Flow'],['contractors','Contractors'],['operators','Operators'],['coverage','Coverage'],['audit','Audit']];
 function renderTabs(){$('#tabs').innerHTML=TABS.map(([id,lbl],i)=>{
   const b=id==='leads'?CARDS.length:id==='contractors'?CONTRACTORS.length:id==='operators'?OPERATORS.length:id==='capital'?((COV&&COV.headline&&COV.headline.imported_capital)||''):'';
   return '<div class="tab'+(i===0?' on':'')+'" data-tab="'+id+'">'+lbl+(b!==''&&b!=null?'<span class="b">'+po(b)+'</span>':'')+'</div>';}).join('');
@@ -604,7 +709,8 @@ function switchTab(id){if(id==='map')ORIGIN_FILTER=null;
   else if(id==='capital'){renderCapital();}
   else if(id==='contractors'){renderContractors();}
   else if(id==='operators'){renderOperators();}
-  else if(id==='coverage'){renderCoverage();}}
+  else if(id==='coverage'){renderCoverage();}
+  else if(id==='audit'){renderAudit();}}
 
 /* ---------- boot ---------- */
 (async()=>{initMap();
