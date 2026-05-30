@@ -271,4 +271,6 @@ def enrich_lead(card):
     stamp_dates(card)                       # date-first display fields
     card["timeline_summary"] = timeline_summary(card)
     card["why"] = why_this_matters(card)
+    from . import confidence
+    confidence.annotate(card)               # per-field provenance + confidence
     return card

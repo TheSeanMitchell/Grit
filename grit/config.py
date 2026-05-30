@@ -100,9 +100,26 @@ FIELD_HINTS = {
     "land_use":      ["landuse", "land_use", "usecode", "usedesc",
                       "property_use", "luse", "luc"],
     "assessed_value":["assessed", "totval", "total_value", "taxvalue",
-                      "av_total", "totalvalue", "assdvalue"],
-    "last_sale_date":["saledate", "sale_date", "lastsale", "deed_date", "recdate"],
-    "last_sale_price":["saleprice", "sale_price", "saleamt", "deed_amt"],
+                      "av_total", "totalvalue", "assdvalue", "totlvalue", "fullvalue"],
+    "land_value":    ["landval", "land_value", "landvalue", "av_land", "lndvalue", "assdland"],
+    "improvement_value":["imprval", "improvement", "imp_value", "av_imp", "impvalue",
+                      "improvementvalue", "bldgvalue", "assdimp"],
+    "building_sqft": ["bldgsqft", "buildingsqft", "sqft", "sqft_living", "livingarea",
+                      "totsqft", "bldg_sqft", "gross_sqft", "finsqft", "structsqft"],
+    "lot_sqft":      ["lotsqft", "lot_sqft", "lotsize", "land_sqft", "parcelsqft",
+                      "lot_size", "acreage", "acres", "landsqft"],
+    "year_built":    ["yearbuilt", "year_built", "yrblt", "actyrblt", "constyear",
+                      "yearblt", "effyrblt", "yr_built"],
+    "bedrooms":      ["bedrooms", "beds", "bedroom", "bedrm", "bdrm", "nbed",
+                      "num_bed", "bed_rms", "bedrms", "bed"],
+    "bathrooms":     ["bathrooms", "baths", "bathroom", "bathrm", "nbath",
+                      "num_bath", "bath_rms", "bathrms", "fullbath", "bath"],
+    "property_use_code":["usecode", "use_code", "luc", "luccode", "proptype",
+                      "propertyuse", "use_cd", "class"],
+    "last_sale_date":["saledate", "sale_date", "lastsale", "deed_date", "recdate",
+                      "salesdate", "transferdate", "doc_date"],
+    "last_sale_price":["saleprice", "sale_price", "saleamt", "deed_amt", "salesprice",
+                      "transferamt", "doc_amt", "saleamount"],
 }
 
 # Substrings that DISQUALIFY a field from matching the given card field. Stops the
@@ -129,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.106"
+VERSION = "0.107"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON

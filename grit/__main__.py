@@ -184,6 +184,35 @@ def cmd_selftest():
     assert any(s["status"] == "IMPLEMENTED" for s in aud["signal_matrix"]), "signal matrix empty"
     print("0.106: jurisdiction-resolve + date-first + warehouse + audit OK")
 
+    # ---- 0.107: full-roll enrichment mapping, confidence, denominators -------
+    from . import confidence
+    attrs = {"PARCELNO": "138-99-000-001", "OWNERNAME": "SMITH JOHN R",
+             "SITUSADDR": "9 TEST ST", "SITUSCITY": "LAS VEGAS",
+             "TOTLVALUE": "452000", "LANDVAL": "120000", "IMPRVAL": "332000",
+             "BLDGSQFT": "2150", "LOTSQFT": "6534", "YEARBLT": "1998",
+             "BEDRMS": "4", "BATHS": "3", "USECODE": "110",
+             "SALEDATE": "2021-06-15", "SALEPRICE": "415000", "NULLCOL": "0"}
+    m = geocode.map_attrs(attrs)
+    for f in ("assessed_value", "land_value", "improvement_value", "building_sqft",
+              "lot_sqft", "year_built", "bedrooms", "bathrooms", "last_sale_price"):
+        assert m.get(f), f"parcel-layer attr mapping missed {f}"
+    blank = {"parcel_apn": "13899000001", "assessed_value": None}
+    rep = geocode.enrich_from_parcels([blank], {"13899000001": {"ll": (36.1, -115.1), "attrs": attrs}})
+    assert rep["cards_enriched"] == 1 and blank.get("assessed_value") == "452000" \
+        and blank.get("enriched_from") == "parcel_layer", "full-roll enrichment failed"
+    # confidence annotation classes
+    confidence.annotate(permit_card)
+    conf = permit_card.get("confidence", {})
+    assert conf.get("authoritative", 0) >= 1 and "score" in conf, "confidence annotation failed"
+    assert permit_card["field_confidence"].get("permit_count", {}).get("c") == "authoritative", \
+        "permit field should be authoritative"
+    # audit's new sections
+    aud2 = audit.build_audit([dict(permit_card, id="x1"), dict(coord_card, id="x2", owner_name="ACME LLC", assessed_value=300000)], [], [])
+    for k in ("denominators", "confidence", "ownership_networks"):
+        assert k in aud2, f"audit missing {k}"
+    assert "pct" in aud2["confidence"] and aud2["confidence"]["pct"].get("unknown") is not None, "confidence dist failed"
+    print("0.107: full-roll enrichment + confidence + denominators + networks OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 

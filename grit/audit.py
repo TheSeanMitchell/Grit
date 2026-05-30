@@ -132,24 +132,42 @@ def source_inventory(cards, events, health):
          "fields": ["owner", "mailing", "value", "sale date/price", "year built"],
          "missing": ["full-roll enrichment (only top leads enriched today)"],
          "health": "live"},
-        {"source": "Clark County Recorder (deeds/NOD/liens/trustee)", "jurisdiction": "Clark County",
-         "coverage_area": "Countywide distress", "status": "NOT IMPLEMENTED",
-         "records": 0, "newest": None, "oldest": None,
-         "frequency": "—", "confidence": 0,
-         "fields": [], "missing": ["foreclosure", "lien", "trustee", "lis pendens"],
-         "health": "planned"},
-        {"source": "Henderson / North Las Vegas / County permits (Accela)", "jurisdiction": "Henderson, NLV, County",
-         "coverage_area": "Other SoNV permit authorities", "status": "NOT IMPLEMENTED",
-         "records": 0, "newest": None, "oldest": None,
-         "frequency": "—", "confidence": 0,
-         "fields": [], "missing": ["all non-CLV permits"],
-         "health": "planned"},
-        {"source": "Nevada SOS business registry (SilverFlume)", "jurisdiction": "Statewide",
-         "coverage_area": "LLC / officer graph", "status": "NOT IMPLEMENTED",
-         "records": 0, "newest": None, "oldest": None,
-         "frequency": "—", "confidence": 0,
-         "fields": [], "missing": ["business licenses", "officers"],
-         "health": "planned"},
+    ]
+    # ── candidate sources (v0.107 Priority 2/3/4 feasibility audit) ──────────
+    # Honest availability assessment, not fabricated connectors. Each carries a
+    # feasibility read + the access method a live integration would use. records=0
+    # until actually integrated; nothing here is presented as captured data.
+    def cand(source, juris, area, fields, feasibility, access, priority):
+        return {"source": source, "jurisdiction": juris, "coverage_area": area,
+                "status": "NOT IMPLEMENTED", "records": 0, "newest": None,
+                "oldest": None, "frequency": "—", "confidence": 0, "fields": [],
+                "missing": fields, "would_provide": fields, "feasibility": feasibility,
+                "access": access, "priority": priority, "health": "planned"}
+    inv += [
+        cand("Henderson permits", "Henderson", "City of Henderson",
+             ["permit date", "value", "contractor", "trade", "status", "APN"],
+             "MEDIUM", "Accela Citizen Access / city open-data portal — probe required", "HIGH"),
+        cand("North Las Vegas permits", "North Las Vegas", "City of North Las Vegas",
+             ["permit date", "value", "contractor", "trade", "status", "APN"],
+             "MEDIUM", "Accela / city GIS permit layer — probe required", "HIGH"),
+        cand("Clark County permits", "Clark County", "Unincorporated County",
+             ["permit date", "value", "contractor", "trade", "status", "APN"],
+             "MEDIUM", "County ePlan / building-permit dataset — probe required", "HIGH"),
+        cand("Boulder City permits", "Boulder City", "City of Boulder City",
+             ["permit date", "value", "trade", "status"],
+             "LOW", "Smaller jurisdiction; portal availability uncertain — probe required", "MEDIUM"),
+        cand("Mesquite permits", "Mesquite", "City of Mesquite",
+             ["permit date", "value", "trade", "status"],
+             "LOW", "Smaller jurisdiction; portal availability uncertain — probe required", "MEDIUM"),
+        cand("Clark County Recorder — distress", "Clark County", "Countywide distress",
+             ["NOD", "trustee sale", "lis pendens", "lien", "record date"],
+             "LOW", "Recorder document search; bulk access restricted — feasibility study required", "HIGH"),
+        cand("Clark County Recorder — deed transfers", "Clark County", "Countywide ownership transfers",
+             ["grantor", "grantee", "deed date", "doc type"],
+             "MEDIUM", "Recorder/Assessor sale history — partially available via Assessor today", "HIGH"),
+        cand("Nevada SOS business registry (SilverFlume/ORION)", "Statewide", "LLC / registered agent / officers",
+             ["entity", "registered agent", "officers", "status", "formation date"],
+             "MEDIUM", "SilverFlume business search / bulk dataset — probe required", "MEDIUM"),
     ]
     # fold in any reachability the health probe already measured
     hmap = {(s.get("key") or "").lower(): s for s in (health or [])}
@@ -318,6 +336,106 @@ def gap_analysis(cards, events, sig_matrix):
             "gaps": gaps, "v107_roadmap": roadmap}
 
 
+# ── Coverage denominators (v0.107 Priority 5) ──────────────────────────────
+# Published reference universes, clearly sourced and labelled. Only the county
+# parcel roll is well-published; per-city / permit / owner universes are NOT
+# asserted (left "not established") rather than invent a denominator. Coverage %
+# against the county roll is INDICATIVE and tagged as such.
+REFERENCE_UNIVERSE = {
+    "clark_county_parcels": {
+        "universe": 800000,
+        "source": "Clark County Assessor secured roll (approximate published figure)",
+        "confidence": "reference-approximate",
+    },
+}
+
+
+def coverage_denominators(cards):
+    parcels_identified = len(cards)
+    owners_identified = sum(1 for c in cards if c.get("owner_name"))
+    ref = REFERENCE_UNIVERSE["clark_county_parcels"]
+    uni = ref["universe"]
+    rows = [
+        {"scope": "Clark County parcels", "captured": parcels_identified,
+         "universe": uni, "universe_source": ref["source"],
+         "universe_confidence": ref["confidence"],
+         "coverage_pct": round(100 * parcels_identified / uni, 3),
+         "basis": "indicative — vs approximate published county roll"},
+        {"scope": "Owners identified", "captured": owners_identified,
+         "universe": uni, "universe_source": ref["source"],
+         "universe_confidence": ref["confidence"],
+         "coverage_pct": round(100 * owners_identified / uni, 3),
+         "basis": "indicative — owners ≈ parcels universe"},
+        {"scope": "Permits captured", "captured": sum(1 for c in cards if c.get("has_permit") or c.get("permit_count")),
+         "universe": None, "universe_source": None, "universe_confidence": "unknown",
+         "coverage_pct": None,
+         "basis": "universe not established — total SoNV permits issued is not yet enumerated"},
+    ]
+    return {"note": ("Coverage % is shown only where a sourced universe exists. The county "
+                     "parcel roll is an approximate published reference; per-jurisdiction, "
+                     "permit, and owner universes are not yet established and are left blank "
+                     "rather than estimated."),
+            "rows": rows}
+
+
+def confidence_summary(cards):
+    """Warehouse confidence distribution (v0.107 Priority 6)."""
+    from . import confidence
+    return confidence.distribution(cards)
+
+
+# ── Ownership networks (v0.107 Priority 4, offline-computable portion) ──────
+def ownership_networks(cards):
+    """Multi-property ownership networks from real harvested owners. Groups
+    parcels by normalized owner, summarises portfolio size / value / spread and
+    flags out-of-state-controlled networks. The LLC / registered-agent / officer
+    layer (NV SOS) is a separate, not-yet-ingested source (see source inventory)."""
+    def norm(n):
+        return " ".join((n or "").upper().split())
+    nets = {}
+    for c in cards:
+        o = norm(c.get("owner_name"))
+        if not o:
+            continue
+        n = nets.setdefault(o, {"owner": c.get("owner_name"), "parcels": 0,
+                                "value": 0.0, "jurisdictions": set(),
+                                "entity_type": c.get("entity_type"),
+                                "out_of_state": False, "origin": None,
+                                "permits": 0, "sample": []})
+        n["parcels"] += 1
+        n["value"] += _num(c.get("assessed_value"))
+        if c.get("property_jurisdiction"):
+            n["jurisdictions"].add(c["property_jurisdiction"])
+        if c.get("owner_out_of_state"):
+            n["out_of_state"] = True
+            n["origin"] = c.get("owner_origin_market")
+        if c.get("has_permit") or c.get("permit_count"):
+            n["permits"] += 1
+        if len(n["sample"]) < 4 and c.get("situs_address"):
+            n["sample"].append(c["situs_address"])
+    rows = []
+    for o, n in nets.items():
+        if n["parcels"] < 2:
+            continue
+        rows.append({"owner": n["owner"], "entity_type": n["entity_type"],
+                     "parcels": n["parcels"], "value": round(n["value"]),
+                     "jurisdictions": sorted(n["jurisdictions"]),
+                     "jurisdiction_count": len(n["jurisdictions"]),
+                     "permits": n["permits"], "out_of_state": n["out_of_state"],
+                     "origin": n["origin"], "sample_addresses": n["sample"]})
+    rows.sort(key=lambda r: (r["parcels"], r["value"]), reverse=True)
+    multi = len(rows)
+    controlled = sum(r["parcels"] for r in rows)
+    return {
+        "networks": rows[:50],
+        "multi_property_owners": multi,
+        "parcels_in_networks": controlled,
+        "network_concentration_pct": round(100 * controlled / (len(cards) or 1), 1),
+        "cross_jurisdiction_networks": sum(1 for r in rows if r["jurisdiction_count"] > 1),
+        "out_of_state_networks": sum(1 for r in rows if r["out_of_state"]),
+    }
+
+
 def build_audit(cards, events, health):
     sig = signal_matrix(cards, events)
     return {
@@ -326,5 +444,8 @@ def build_audit(cards, events, health):
         "signal_matrix": sig,
         "permit_audit": permit_audit(cards, events),
         "data_quality": data_quality(cards),
+        "denominators": coverage_denominators(cards),
+        "confidence": confidence_summary(cards),
+        "ownership_networks": ownership_networks(cards),
         "gap_analysis": gap_analysis(cards, events, sig),
     }

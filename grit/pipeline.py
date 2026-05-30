@@ -494,14 +494,21 @@ def harvest():
         # coordless (no fabricated pins). This is the single change that turns
         # the console from a 500-point cluster into a metro-wide activity map.
         from . import geocode
-        need = {c.get("parcel_apn") for c in cards
-                if (c.get("lat") in (None, "") or c.get("lng") in (None, ""))
-                and c.get("parcel_apn")}
-        need |= {e.parcel_apn for e in all_events
-                 if getattr(e, "lat", None) in (None, "") and e.parcel_apn}
-        geo_lookup, geocode_report = geocode.centroids_for_apns(need)
-        geocode_report["cards_placed"] = geocode.stamp_cards(cards, geo_lookup)
-        geocode_report["events_placed"] = geocode.stamp_events(all_events, geo_lookup)
+        # query the parcel layer for EVERY card's APN (mapped or not): one batched
+        # pass returns both centroids AND the parcel's assessor attributes, so
+        # geocoding and full-roll enrichment happen together (v0.107 Priority 1).
+        all_apns = {c.get("parcel_apn") for c in cards if c.get("parcel_apn")}
+        all_apns |= {e.parcel_apn for e in all_events if e.parcel_apn}
+        rich_lookup, geocode_report = geocode.parcels_for_apns(all_apns)
+        ll_lookup = {k: v["ll"] for k, v in rich_lookup.items() if v.get("ll")}
+        geocode_report["cards_placed"] = geocode.stamp_cards(cards, ll_lookup)
+        geocode_report["events_placed"] = geocode.stamp_events(all_events, ll_lookup)
+        # full-roll enrichment from the parcel layer's attributes (value, land,
+        # improvement, sqft, year, beds, baths, use, sale) -- fills MISSING fields
+        # on every parcel, not a sampled top-N. Per-APN scraping below remains a
+        # fallback for fields the layer doesn't expose.
+        layer_enrich = geocode.enrich_from_parcels(cards, rich_lookup)
+        geocode_report["layer_enrichment"] = layer_enrich
 
         events_mod.join_to_cards(cards, all_events)   # re-join incl. fresh sales + permits
         # 0.103: build the operator graph BEFORE the final re-score so the

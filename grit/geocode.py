@@ -94,11 +94,11 @@ def _resolve_apn_field(layer_url):
     return None
 
 
-def _query_batch(layer_url, apn_field, apns_dashed, apns_digit, timeout=45):
-    """Query one batch of APNs and return {digits: (lat,lng)}. Tries the dashed
-    form first (typical for county parcel layers); if a batch comes back empty,
-    retries with the raw-digit form (some layers store APN without dashes).
-    Results are indexed by digits-only, so the query format never matters."""
+def _query_batch(layer_url, apn_field, apns_dashed, apns_digit, out_fields="*", timeout=45):
+    """Query one batch of APNs -> {digits: {"ll": (lat,lng)|None, "attrs": {...}}}.
+    Tries the dashed APN form first, then the raw-digit form. Pulls the full
+    attribute set (out_fields='*') so the same request that finds a centroid also
+    carries the parcel's assessor attributes -- enrichment for free, no scraping."""
     out = {}
     for values in (apns_dashed, apns_digit):
         values = [v for v in values if v]
@@ -107,7 +107,7 @@ def _query_batch(layer_url, apn_field, apns_dashed, apns_digit, timeout=45):
         in_list = ",".join("'" + v.replace("'", "''") + "'" for v in values)
         params = {
             "where": f"{apn_field} IN ({in_list})",
-            "outFields": apn_field,
+            "outFields": out_fields,
             "returnGeometry": "true",
             "outSR": "4326",
             "f": "geojson",
@@ -120,24 +120,20 @@ def _query_batch(layer_url, apn_field, apns_dashed, apns_digit, timeout=45):
         feats = data.get("features", []) or []
         for f in feats:
             props = f.get("properties") or f.get("attributes") or {}
-            apn = props.get(apn_field)
+            k = norm_apn(props.get(apn_field))
             ll = _centroid(f.get("geometry"))
-            k = norm_apn(apn)
-            if k and ll and k not in out:
-                out[k] = ll
+            if k and k not in out:
+                out[k] = {"ll": ll, "attrs": props}
         if out:                 # dashed form worked -> don't double-query
             break
     return out
 
 
-def centroids_for_apns(apns, layer_url=None, batch=80, max_batches=60):
-    """Build {digits_apn: (lat,lng)} for the given APNs from the parcel layer.
-
-    Returns (lookup, report). Bounded by max_batches so a huge APN set can't run
-    the Action forever; report.resolved/requested makes the geocode yield visible
-    every harvest (a low yield means the layer or APN format moved -- not a fake
-    coordinate). Real centroids only.
-    """
+def parcels_for_apns(apns, layer_url=None, batch=80, max_batches=80, out_fields="*"):
+    """Build {digits_apn: {"ll": (lat,lng)|None, "attrs": {...}}} from the parcel
+    layer. Returns (rich_lookup, report). One batched pass yields BOTH centroids
+    and the parcel-layer attributes for every APN -- the basis for full-roll
+    enrichment instead of per-APN scraping. Real layer data only."""
     layer_url = (layer_url or getattr(config, "PARCEL_GEOCODE_LAYER", "")
                  or "").strip().rstrip("/")
     want = sorted({norm_apn(a) for a in apns if norm_apn(a)})
@@ -146,15 +142,13 @@ def centroids_for_apns(apns, layer_url=None, batch=80, max_batches=60):
     if not layer_url or not want:
         report["status"] = "needs_config" if not layer_url else "no_apns"
         return {}, report
-
     apn_field = _resolve_apn_field(layer_url)
     report["apn_field"] = apn_field
     if not apn_field:
         report["status"] = "no_apn_field"
         report["error"] = "could not resolve an APN field on the geocode layer"
         return {}, report
-
-    lookup = {}
+    rich = {}
     try:
         for i in range(0, len(want), batch):
             if report["batches"] >= max_batches:
@@ -162,16 +156,93 @@ def centroids_for_apns(apns, layer_url=None, batch=80, max_batches=60):
                 break
             chunk = want[i:i + batch]
             dashed = [dash_apn(d) for d in chunk]
-            got = _query_batch(layer_url, apn_field, dashed, chunk)
-            lookup.update(got)
+            got = _query_batch(layer_url, apn_field, dashed, chunk, out_fields=out_fields)
+            rich.update(got)
             report["batches"] += 1
             time.sleep(getattr(config, "GEOCODE_DELAY", 0.15))
     except Exception as e:  # noqa: BLE001
         report["status"] = "error"
         report["error"] = f"{type(e).__name__}: {e}"
-    report["resolved"] = len(lookup)
-    report["yield_pct"] = round(100 * len(lookup) / len(want), 1) if want else 0.0
+    report["resolved"] = sum(1 for v in rich.values() if v.get("ll"))
+    report["yield_pct"] = round(100 * report["resolved"] / len(want), 1) if want else 0.0
+    return rich, report
+
+
+def centroids_for_apns(apns, layer_url=None, batch=80, max_batches=80):
+    """Backward-compatible {digits_apn: (lat,lng)} view over parcels_for_apns."""
+    rich, report = parcels_for_apns(apns, layer_url, batch, max_batches)
+    lookup = {k: v["ll"] for k, v in rich.items() if v.get("ll")}
     return lookup, report
+
+
+# Fields we try to fill from the parcel layer's attributes, in priority order.
+_ENRICH_FIELDS = ["owner_name", "owner_mailing", "situs_address", "city", "zip",
+                  "land_use", "property_use_code", "assessed_value", "land_value",
+                  "improvement_value", "building_sqft", "lot_sqft", "year_built",
+                  "bedrooms", "bathrooms", "last_sale_date", "last_sale_price"]
+
+
+def _match_attr(attrs, hints):
+    """Return the first attribute value whose key matches a hint (exact, then
+    substring), skipping blanks/zeros that ArcGIS uses as null sentinels."""
+    low = {str(k).lower(): k for k in attrs}
+    for h in hints:
+        if h in low and _usable(attrs[low[h]]):
+            return attrs[low[h]]
+    for h in hints:
+        for lk, orig in low.items():
+            if h in lk and _usable(attrs[orig]):
+                return attrs[orig]
+    return None
+
+
+def _usable(v):
+    if v in (None, "", " "):
+        return False
+    s = str(v).strip()
+    return s not in ("0", "0.0", "0.00", "null", "None", "<Null>")
+
+
+def map_attrs(attrs):
+    """Map a parcel-layer attribute record -> GRIT enrichment fields, using the
+    configured FIELD_HINTS. Only returns fields actually present on the layer."""
+    hints = getattr(config, "FIELD_HINTS", {})
+    out = {}
+    for field in _ENRICH_FIELDS:
+        if field in hints:
+            v = _match_attr(attrs, hints[field])
+            if v is not None:
+                out[field] = v
+    return out
+
+
+def enrich_from_parcels(cards, rich_lookup):
+    """Full-roll enrichment: fill MISSING fields on every card whose APN is in the
+    parcel-layer lookup, from that layer's authoritative attributes. Mutates in
+    place. Returns {cards_enriched, fields_filled, by_field}. Never overwrites a
+    value that is already present (append-only spirit) and never invents data."""
+    enriched = 0
+    by_field = {}
+    for c in cards:
+        rec = rich_lookup.get(norm_apn(c.get("parcel_apn")))
+        if not rec or not rec.get("attrs"):
+            continue
+        mapped = map_attrs(rec["attrs"])
+        if not mapped:
+            continue
+        filled_any = False
+        for k, v in mapped.items():
+            if not _usable(c.get(k)):
+                c[k] = v
+                by_field[k] = by_field.get(k, 0) + 1
+                filled_any = True
+        if filled_any:
+            c["enriched"] = True
+            c["vintage"] = "current"
+            c["enriched_from"] = "parcel_layer"
+            enriched += 1
+    return {"cards_enriched": enriched,
+            "fields_filled": sum(by_field.values()), "by_field": by_field}
 
 
 def stamp_cards(cards, lookup):

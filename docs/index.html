@@ -227,7 +227,7 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.106</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.107</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -467,7 +467,7 @@ function refreshFilters(){renderToolbar();renderFacets();renderList();if(MAP&&MA
 function renderPlaybackIfActive(){if($('#v-map').classList.contains('on'))renderPlayback();}
 
 /* ---------- CSV (all four location dimensions preserved) ---------- */
-function exportCSV(){const cols=['score','urgency','primary_date','primary_date_kind','age_days','first_seen','last_seen','last_updated','entity_type','situs_address','property_city','property_jurisdiction','jurisdiction_source','permit_jurisdiction','owner_name','owner_mailing','owner_city','owner_state','owner_zip','owner_origin_market','owner_out_of_state','parcel_apn','assessed_value','last_sale_date','last_sale_price','year_built','trade_tags','permit_count','last_permit_date','contractors','temporal_state','cluster_density','lat','lng','tags','suggested_action'];
+function exportCSV(){const cols=['score','confidence_score','urgency','primary_date','primary_date_kind','age_days','first_seen','last_seen','last_updated','entity_type','situs_address','property_city','property_jurisdiction','jurisdiction_source','permit_jurisdiction','owner_name','owner_mailing','owner_city','owner_state','owner_zip','owner_origin_market','owner_out_of_state','parcel_apn','assessed_value','last_sale_date','last_sale_price','year_built','trade_tags','permit_count','last_permit_date','contractors','temporal_state','cluster_density','lat','lng','tags','suggested_action'];
   const q=v=>'"'+String(v==null?'':Array.isArray(v)?v.join('|'):v).replace(/"/g,'""')+'"';
   const lines=[cols.join(',')].concat(filtered().map(c=>cols.map(k=>q(c[k])).join(',')));
   dl(lines.join('\n'),'grit_leads_'+new Date().toISOString().slice(0,10)+'.csv');}
@@ -505,6 +505,12 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
   const tl=(c.timeline&&c.timeline.length)?'<div class="dr-sec"><div class="dr-h">Event timeline · '+c.timeline.length+'</div><div class="tl">'+
     c.timeline.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).map(e=>'<div class="tlitem"><div class="td">'+esc(e.date||'')+' · '+esc(e.kind||'')+'</div><div class="tk">'+esc(e.description||e.address||'')+'</div></div>').join('')+'</div></div>':'';
   const sig=(c.signals&&c.signals.length)?'<div class="dr-sec"><div class="dr-h">Score build · '+c.score+'</div>'+c.signals.map(s=>'<div class="sig">· '+esc(s)+'</div>').join('')+'</div>':'';
+  // provenance & confidence (v0.107 Priority 6)
+  const CC={authoritative:'var(--green)',derived:'var(--blue)',inferred:'var(--amber)'};
+  const fcm=c.field_confidence||{};const conf=c.confidence||{};
+  const provRows=Object.keys(fcm).map(f=>{const d=fcm[f];return '<div class="kv"><span class="k">'+esc(f)+'</span><span class="v" style="color:'+(CC[d.c]||'var(--dim)')+'">'+esc(d.c)+'<span style="color:var(--faint)"> · '+esc(d.s||'')+'</span></span></div>';}).join('');
+  const prov=Object.keys(fcm).length?'<div class="dr-sec"><div class="dr-h">Provenance &amp; confidence · '+(conf.score!=null?conf.score+'/100':'')+'</div>'+
+    '<div style="font-size:10px;color:var(--dim);margin-bottom:6px">auth '+(conf.authoritative||0)+' · derived '+(conf.derived||0)+' · inferred '+(conf.inferred||0)+' · unknown '+(conf.unknown||0)+'</div>'+provRows+'</div>':'';
   const link=c.parcel_apn?'<a class="dr-link" href="'+ASSESSOR+'" target="_blank" rel="noopener">Open Assessor parcel detail (APN '+esc(c.parcel_apn)+') ↗</a>':'';
   $('#drawer-inner').innerHTML='<div class="dr-head"><div class="dr-x" id="drx">✕</div>'+
     '<div class="dr-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
@@ -512,7 +518,7 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
     '<div style="margin-top:6px">'+badges+'</div></div>'+
     '<div class="dr-body">'+dims+datesBlock+why+
     '<div class="dr-sec"><div class="dr-h">Lead facts</div>'+facts+link+'</div>'+
-    tags+tl+sig+'</div>';
+    tags+tl+sig+prov+'</div>';
   $('#drx').onclick=closeDrawer;$('#scrim').classList.add('open');$('#drawer').classList.add('open');
   $$('.lrow').forEach(r=>r.classList.toggle('sel',r.dataset.id===id));}
 function dim(k,v,imp){return '<div class="dim'+(imp?' import':'')+'"><div class="dk">'+esc(k)+'</div><div class="dv">'+esc(v)+'</div></div>';}
@@ -648,9 +654,10 @@ function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=em
   // source inventory
   const si=a.source_inventory||[];
   const stb=s=>{const st=(s.status||'').replace(' ','').replace('NOTIMPLEMENTED','NOT');return '<span class="stbadge '+st+'">'+esc(s.status)+'</span>';};
-  const siRows=si.map(s=>'<tr><td class="nm">'+esc(s.source)+'</td><td>'+stb(s)+'</td><td class="mut">'+esc(s.coverage_area||'')+'</td><td class="num">'+po(s.records||0)+'</td><td class="mut">'+esc(s.newest||'—')+'</td><td class="num">'+(s.confidence||0)+'</td><td class="mut" style="font-size:10px">'+esc((s.missing||[]).join(', ')||'—')+'</td></tr>').join('');
-  const siTbl='<h2 class="sec">Source Inventory <span class="note">every feed: status · records · recency · confidence · gaps</span></h2>'+
-    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Source</th><th>Status</th><th>Coverage area</th><th class="num">Records</th><th>Newest</th><th class="num">Conf.</th><th>Missing fields</th></tr></thead><tbody>'+siRows+'</tbody></table></div>';
+  const fb=s=>s.feasibility?'<span class="stbadge '+(s.feasibility==='HIGH'?'WORKING':s.feasibility==='MEDIUM'?'PARTIAL':'NOT')+'">'+esc(s.feasibility)+'</span>':'<span class="num">'+(s.confidence||0)+'</span>';
+  const siRows=si.map(s=>'<tr><td class="nm">'+esc(s.source)+'</td><td>'+stb(s)+'</td><td class="mut">'+esc(s.coverage_area||'')+'</td><td class="num">'+po(s.records||0)+'</td><td class="mut">'+esc(s.newest||'—')+'</td><td>'+fb(s)+'</td><td class="lsrc">'+esc(s.priority||'')+'</td><td class="mut" style="font-size:10px">'+esc((s.access||(s.would_provide||s.missing||[]).join(', '))||'—')+'</td></tr>').join('');
+  const siTbl='<h2 class="sec">Source Inventory &amp; Feasibility <span class="note">live feeds + candidate sources audited for availability (Priority 2/3)</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Source</th><th>Status</th><th>Coverage area</th><th class="num">Records</th><th>Newest</th><th>Feas/Conf</th><th>Priority</th><th>Access / fields</th></tr></thead><tbody>'+siRows+'</tbody></table></div>';
   // signal matrix
   const sm=a.signal_matrix||[];const order={IMPLEMENTED:0,PARTIAL:1,MISSING:2};
   const smSorted=sm.slice().sort((x,y)=>(order[x.status]-order[y.status])|| (x.priority<y.priority?-1:1));
@@ -671,13 +678,34 @@ function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=em
   const dqRows=(dq.fields||[]).map(r=>'<tr><td class="nm">'+esc(r.field)+'</td><td class="num">'+po(r.present)+'</td><td class="num">'+r.pct+'%</td><td style="width:160px"><div class="qbar"><i style="width:'+r.pct+'%;background:'+(r.pct>=70?'var(--green)':r.pct>=30?'var(--amber)':'var(--red)')+'"></i></div></td></tr>').join('');
   const dqBlock='<h2 class="sec">Data Quality <span class="note">field completeness across '+po(dq.cards||0)+' records — low % is an honest gap, not a hidden failure</span></h2>'+
     '<div class="tblwrap"><table class="tbl"><thead><tr><th>Field</th><th class="num">Present</th><th class="num">Coverage</th><th>&nbsp;</th></tr></thead><tbody>'+dqRows+'</tbody></table></div>';
+  // confidence distribution (Priority 6)
+  const cf=a.confidence||{pct:{},by_field:[],totals:{}};const cp=cf.pct||{};
+  const segC={authoritative:'var(--green)',derived:'var(--blue)',inferred:'var(--amber)',unknown:'var(--line2)'};
+  const seg=Object.keys(segC).map(k=>'<div title="'+k+' '+(cp[k]||0)+'%" style="width:'+(cp[k]||0)+'%;background:'+segC[k]+';height:100%"></div>').join('');
+  const legend=Object.keys(segC).map(k=>'<span style="display:inline-flex;align-items:center;gap:4px;margin-right:12px;font-size:10px;color:var(--dim)"><i style="width:9px;height:9px;background:'+segC[k]+';display:inline-block"></i>'+k+' '+(cp[k]||0)+'%</span>').join('');
+  const cfFields=(cf.by_field||[]);const cfTop=cfFields.slice(0,6).concat(cfFields.slice(-6));
+  const cfRows=cfTop.map(r=>'<tr><td class="nm">'+esc(r.field)+'</td><td class="num">'+r.known_pct+'%</td><td style="width:200px"><div class="qbar"><i style="width:'+r.known_pct+'%;background:'+(r.known_pct>=70?'var(--green)':r.known_pct>=30?'var(--amber)':'var(--red)')+'"></i></div></td><td class="lsrc">auth '+po(r.authoritative)+' · der '+po(r.derived)+' · inf '+po(r.inferred)+' · unk '+po(r.unknown)+'</td></tr>').join('');
+  const confBlock='<h2 class="sec">Confidence Architecture <span class="note">every significant field carries a class · '+(cf.avg_card_confidence||0)+'/100 avg card confidence across '+po(cf.field_instances||0)+' field instances</span></h2>'+
+    '<div style="height:22px;display:flex;border:1px solid var(--line);margin-bottom:6px">'+seg+'</div><div style="margin-bottom:10px">'+legend+'</div>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Field</th><th class="num">Known</th><th>Coverage</th><th>Class breakdown</th></tr></thead><tbody>'+cfRows+'</tbody></table></div>';
+  // coverage denominators (Priority 5)
+  const dn=a.denominators||{rows:[]};
+  const dnRows=(dn.rows||[]).map(r=>'<tr><td class="nm">'+esc(r.scope)+'</td><td class="num">'+po(r.captured)+'</td><td class="num">'+(r.universe?po(r.universe):'—')+'</td><td class="num">'+(r.coverage_pct!=null?r.coverage_pct+'%':'—')+'</td><td class="mut" style="font-size:10px">'+esc(r.basis||'')+'</td></tr>').join('');
+  const dnBlock='<h2 class="sec">Coverage Denominators <span class="note">% against sourced universes where they exist — counts shown otherwise, never as coverage</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Scope</th><th class="num">Captured</th><th class="num">Universe</th><th class="num">Coverage</th><th>Basis</th></tr></thead><tbody>'+dnRows+'</tbody></table></div>'+
+    '<div style="font-size:10px;color:var(--faint);margin-top:6px">'+esc(dn.note||'')+'</div>';
+  // ownership networks (Priority 4)
+  const on=a.ownership_networks||{networks:[]};
+  const onRows=(on.networks||[]).map(r=>'<tr><td class="nm">'+(r.out_of_state?'<span class="oos"></span> ':'')+esc(r.owner)+'</td><td>'+esc(r.entity_type||'—')+'</td><td class="num">'+r.parcels+'</td><td class="num">'+(r.value?money(r.value):'—')+'</td><td class="num">'+r.jurisdiction_count+'</td><td class="num">'+r.permits+'</td><td class="mut" style="font-size:10px">'+esc((r.jurisdictions||[]).slice(0,3).join(', '))+'</td></tr>').join('');
+  const onBlock='<h2 class="sec">Ownership Networks <span class="note">'+po(on.multi_property_owners||0)+' multi-property owners control '+po(on.parcels_in_networks||0)+' parcels ('+(on.network_concentration_pct||0)+'%) · '+po(on.out_of_state_networks||0)+' out-of-state · LLC/agent graph pending NV SOS</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Owner network</th><th>Entity</th><th class="num">Parcels</th><th class="num">Value</th><th class="num">Juris.</th><th class="num">Permits</th><th>Jurisdictions</th></tr></thead><tbody>'+onRows+'</tbody></table></div>';
   // gap analysis + roadmap
   const ga=a.gap_analysis||{gaps:[],v107_roadmap:[]};
   const gaps=(ga.gaps||[]).map(g=>'<div class="gap '+g.priority+'"><div class="gp">'+esc(g.priority)+' PRIORITY</div><b>'+esc(g.gap)+'</b><div class="gi">'+esc(g.impact||'')+'</div></div>').join('');
   const road=(ga.v107_roadmap||[]).map(r=>'<li>'+esc(r)+'</li>').join('');
-  const gaBlock='<h2 class="sec">Gap Analysis &amp; v0.107 Roadmap <span class="note">the distance to complete Southern Nevada coverage</span></h2>'+gaps+
-    (road?'<h2 class="sec" style="margin-top:14px">Next: v0.107</h2><ul class="roadmap">'+road+'</ul>':'');
-  v.innerHTML=siTbl+smBlock+pBlock+dqBlock+gaBlock;}
+  const gaBlock='<h2 class="sec">Gap Analysis &amp; Roadmap <span class="note">the distance to complete Southern Nevada coverage</span></h2>'+gaps+
+    (road?'<h2 class="sec" style="margin-top:14px">Next coverage targets</h2><ul class="roadmap">'+road+'</ul>':'');
+  v.innerHTML=confBlock+dnBlock+siTbl+smBlock+pBlock+dqBlock+onBlock+gaBlock;}
 
 /* ---------- KPIs + tabs ---------- */
 function renderKPIs(){const h=(COV&&COV.headline)||{};

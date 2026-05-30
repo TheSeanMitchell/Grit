@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T03:22:31Z",
-  "version": "0.106",
+  "generated_at": "2026-05-30T08:04:59Z",
+  "version": "0.107",
   "permits": {
     "by_jurisdiction": [
       {
@@ -1848,7 +1848,161 @@
         "probe_status": "reachable"
       },
       {
-        "source": "Clark County Recorder (deeds/NOD/liens/trustee)",
+        "source": "Henderson permits",
+        "jurisdiction": "Henderson",
+        "coverage_area": "City of Henderson",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "would_provide": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "Accela Citizen Access / city open-data portal \u2014 probe required",
+        "priority": "HIGH",
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "North Las Vegas permits",
+        "jurisdiction": "North Las Vegas",
+        "coverage_area": "City of North Las Vegas",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "would_provide": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "Accela / city GIS permit layer \u2014 probe required",
+        "priority": "HIGH",
+        "health": "planned"
+      },
+      {
+        "source": "Clark County permits",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Unincorporated County",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "would_provide": [
+          "permit date",
+          "value",
+          "contractor",
+          "trade",
+          "status",
+          "APN"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "County ePlan / building-permit dataset \u2014 probe required",
+        "priority": "HIGH",
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Boulder City permits",
+        "jurisdiction": "Boulder City",
+        "coverage_area": "City of Boulder City",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "permit date",
+          "value",
+          "trade",
+          "status"
+        ],
+        "would_provide": [
+          "permit date",
+          "value",
+          "trade",
+          "status"
+        ],
+        "feasibility": "LOW",
+        "access": "Smaller jurisdiction; portal availability uncertain \u2014 probe required",
+        "priority": "MEDIUM",
+        "health": "planned"
+      },
+      {
+        "source": "Mesquite permits",
+        "jurisdiction": "Mesquite",
+        "coverage_area": "City of Mesquite",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "permit date",
+          "value",
+          "trade",
+          "status"
+        ],
+        "would_provide": [
+          "permit date",
+          "value",
+          "trade",
+          "status"
+        ],
+        "feasibility": "LOW",
+        "access": "Smaller jurisdiction; portal availability uncertain \u2014 probe required",
+        "priority": "MEDIUM",
+        "health": "planned"
+      },
+      {
+        "source": "Clark County Recorder \u2014 distress",
         "jurisdiction": "Clark County",
         "coverage_area": "Countywide distress",
         "status": "NOT IMPLEMENTED",
@@ -1859,18 +2013,29 @@
         "confidence": 0,
         "fields": [],
         "missing": [
-          "foreclosure",
+          "NOD",
+          "trustee sale",
+          "lis pendens",
           "lien",
-          "trustee",
-          "lis pendens"
+          "record date"
         ],
+        "would_provide": [
+          "NOD",
+          "trustee sale",
+          "lis pendens",
+          "lien",
+          "record date"
+        ],
+        "feasibility": "LOW",
+        "access": "Recorder document search; bulk access restricted \u2014 feasibility study required",
+        "priority": "HIGH",
         "health": "planned",
         "probe_status": "reachable"
       },
       {
-        "source": "Henderson / North Las Vegas / County permits (Accela)",
-        "jurisdiction": "Henderson, NLV, County",
-        "coverage_area": "Other SoNV permit authorities",
+        "source": "Clark County Recorder \u2014 deed transfers",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Countywide ownership transfers",
         "status": "NOT IMPLEMENTED",
         "records": 0,
         "newest": null,
@@ -1879,15 +2044,27 @@
         "confidence": 0,
         "fields": [],
         "missing": [
-          "all non-CLV permits"
+          "grantor",
+          "grantee",
+          "deed date",
+          "doc type"
         ],
+        "would_provide": [
+          "grantor",
+          "grantee",
+          "deed date",
+          "doc type"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "Recorder/Assessor sale history \u2014 partially available via Assessor today",
+        "priority": "HIGH",
         "health": "planned",
         "probe_status": "reachable"
       },
       {
-        "source": "Nevada SOS business registry (SilverFlume)",
+        "source": "Nevada SOS business registry (SilverFlume/ORION)",
         "jurisdiction": "Statewide",
-        "coverage_area": "LLC / officer graph",
+        "coverage_area": "LLC / registered agent / officers",
         "status": "NOT IMPLEMENTED",
         "records": 0,
         "newest": null,
@@ -1896,9 +2073,22 @@
         "confidence": 0,
         "fields": [],
         "missing": [
-          "business licenses",
-          "officers"
+          "entity",
+          "registered agent",
+          "officers",
+          "status",
+          "formation date"
         ],
+        "would_provide": [
+          "entity",
+          "registered agent",
+          "officers",
+          "status",
+          "formation date"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "SilverFlume business search / bulk dataset \u2014 probe required",
+        "priority": "MEDIUM",
         "health": "planned",
         "probe_status": "reachable"
       }
@@ -2268,6 +2458,631 @@
         }
       ]
     },
+    "denominators": {
+      "note": "Coverage % is shown only where a sourced universe exists. The county parcel roll is an approximate published reference; per-jurisdiction, permit, and owner universes are not yet established and are left blank rather than estimated.",
+      "rows": [
+        {
+          "scope": "Clark County parcels",
+          "captured": 2412,
+          "universe": 800000,
+          "universe_source": "Clark County Assessor secured roll (approximate published figure)",
+          "universe_confidence": "reference-approximate",
+          "coverage_pct": 0.301,
+          "basis": "indicative \u2014 vs approximate published county roll"
+        },
+        {
+          "scope": "Owners identified",
+          "captured": 915,
+          "universe": 800000,
+          "universe_source": "Clark County Assessor secured roll (approximate published figure)",
+          "universe_confidence": "reference-approximate",
+          "coverage_pct": 0.114,
+          "basis": "indicative \u2014 owners \u2248 parcels universe"
+        },
+        {
+          "scope": "Permits captured",
+          "captured": 912,
+          "universe": null,
+          "universe_source": null,
+          "universe_confidence": "unknown",
+          "coverage_pct": null,
+          "basis": "universe not established \u2014 total SoNV permits issued is not yet enumerated"
+        }
+      ]
+    },
+    "confidence": {
+      "totals": {
+        "authoritative": 11898,
+        "derived": 7636,
+        "inferred": 3312,
+        "unknown": 47102
+      },
+      "pct": {
+        "authoritative": 17.0,
+        "derived": 10.9,
+        "inferred": 4.7,
+        "unknown": 67.3
+      },
+      "field_instances": 69948,
+      "avg_card_confidence": 24.9,
+      "by_field": [
+        {
+          "field": "property_jurisdiction",
+          "authoritative": 922,
+          "derived": 1490,
+          "inferred": 0,
+          "unknown": 0,
+          "known_pct": 100.0
+        },
+        {
+          "field": "entity_type",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 2412,
+          "unknown": 0,
+          "known_pct": 100.0
+        },
+        {
+          "field": "score",
+          "authoritative": 0,
+          "derived": 2409,
+          "inferred": 0,
+          "unknown": 3,
+          "known_pct": 99.9
+        },
+        {
+          "field": "parcel_apn",
+          "authoritative": 2402,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 10,
+          "known_pct": 99.6
+        },
+        {
+          "field": "lat",
+          "authoritative": 2401,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 11,
+          "known_pct": 99.5
+        },
+        {
+          "field": "urgency",
+          "authoritative": 0,
+          "derived": 958,
+          "inferred": 0,
+          "unknown": 1454,
+          "known_pct": 39.7
+        },
+        {
+          "field": "primary_date",
+          "authoritative": 0,
+          "derived": 958,
+          "inferred": 0,
+          "unknown": 1454,
+          "known_pct": 39.7
+        },
+        {
+          "field": "temporal_state",
+          "authoritative": 0,
+          "derived": 918,
+          "inferred": 0,
+          "unknown": 1494,
+          "known_pct": 38.1
+        },
+        {
+          "field": "situs_address",
+          "authoritative": 917,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1495,
+          "known_pct": 38.0
+        },
+        {
+          "field": "owner_name",
+          "authoritative": 915,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1497,
+          "known_pct": 37.9
+        },
+        {
+          "field": "permit_count",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1500,
+          "known_pct": 37.8
+        },
+        {
+          "field": "last_permit_date",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1500,
+          "known_pct": 37.8
+        },
+        {
+          "field": "contractors",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1500,
+          "known_pct": 37.8
+        },
+        {
+          "field": "owner_mailing",
+          "authoritative": 905,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1507,
+          "known_pct": 37.5
+        },
+        {
+          "field": "owner_origin_market",
+          "authoritative": 0,
+          "derived": 903,
+          "inferred": 0,
+          "unknown": 1509,
+          "known_pct": 37.4
+        },
+        {
+          "field": "occupancy_status",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 900,
+          "unknown": 1512,
+          "known_pct": 37.3
+        },
+        {
+          "field": "trade_tags",
+          "authoritative": 656,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 1756,
+          "known_pct": 27.2
+        },
+        {
+          "field": "land_use",
+          "authoritative": 10,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2402,
+          "known_pct": 0.4
+        },
+        {
+          "field": "last_sale_price",
+          "authoritative": 10,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2402,
+          "known_pct": 0.4
+        },
+        {
+          "field": "last_sale_date",
+          "authoritative": 7,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2405,
+          "known_pct": 0.3
+        },
+        {
+          "field": "assessed_value",
+          "authoritative": 5,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2407,
+          "known_pct": 0.2
+        },
+        {
+          "field": "year_built",
+          "authoritative": 4,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2408,
+          "known_pct": 0.2
+        },
+        {
+          "field": "bedrooms",
+          "authoritative": 4,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2408,
+          "known_pct": 0.2
+        },
+        {
+          "field": "bathrooms",
+          "authoritative": 4,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2408,
+          "known_pct": 0.2
+        },
+        {
+          "field": "land_value",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2412,
+          "known_pct": 0.0
+        },
+        {
+          "field": "improvement_value",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2412,
+          "known_pct": 0.0
+        },
+        {
+          "field": "building_sqft",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2412,
+          "known_pct": 0.0
+        },
+        {
+          "field": "lot_sqft",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2412,
+          "known_pct": 0.0
+        },
+        {
+          "field": "property_use_code",
+          "authoritative": 0,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 2412,
+          "known_pct": 0.0
+        }
+      ]
+    },
+    "ownership_networks": {
+      "networks": [
+        {
+          "owner": "D R HORTON INC",
+          "entity_type": "LLC",
+          "parcels": 31,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 31,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "989 DESERT SPRUCE ST",
+            "985 DESERT SPRUCE ST",
+            "998 DESERT SPRUCE ST",
+            "989 APPIAN WAY"
+          ]
+        },
+        {
+          "owner": "TRI POINTE HOMES NEVADA INC",
+          "entity_type": "LLC",
+          "parcels": 18,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 18,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "10472 PRICKLY POPPY AVE",
+            "34 PICKETT GROVE ST",
+            "10473 PRICKLY POPPY AVE",
+            "10488 PRICKLY POPPY AVE"
+          ]
+        },
+        {
+          "owner": "WOODSIDE HOMES NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 16,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 16,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "9100 HEMISPHERE ST",
+            "9424 OKUL AVE",
+            "9110 HEMISPHERE ST",
+            "9101 HEMISPHERE ST"
+          ]
+        },
+        {
+          "owner": "K B HOME LAS VEGAS INC",
+          "entity_type": "LLC",
+          "parcels": 16,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 16,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "1192 CLOUDBREAK COVE DR",
+            "1201 CLOUDBREAK COVE DR",
+            "1193 CLOUDBREAK COVE DR",
+            "197 SILVER RUN LN"
+          ]
+        },
+        {
+          "owner": "TAXPAYER",
+          "entity_type": "PERSON",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 7,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "6321 MALACHITE BAY AVE",
+            "6127 VILLA DE PICASSO AVE",
+            "8305 BRITTANY HARBOR DR",
+            "10810 EDGESTONE AVE"
+          ]
+        },
+        {
+          "owner": "P N II INC",
+          "entity_type": "LLC",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 7,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "12267 BRANTLEY COVE DR",
+            "12255 BRANTLEY COVE DR",
+            "917 ESTATES BEND CT",
+            "12314 BRANTLEY COVE DR"
+          ]
+        },
+        {
+          "owner": "TOLL SOUTH LV L L C",
+          "entity_type": "LLC",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 7,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "450 GRAND PARK BLVD",
+            "651 TALON RIDGE ST",
+            "659 TALON RIDGE ST",
+            "655 TALON RIDGE ST"
+          ]
+        },
+        {
+          "owner": "RICHMOND AMERICAN HOMES NEVADA INC",
+          "entity_type": "LLC",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 7,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "132 VERNALIS AVE",
+            "8476 CASCONE MEADOWS CT",
+            "1364 FOXTAIL AGAVE DR",
+            "1412 FOXTAIL AGAVE DR"
+          ]
+        },
+        {
+          "owner": "K L L B BUY 5 L L C",
+          "entity_type": "LLC",
+          "parcels": 6,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 6,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "1921 HYDRANGEA PL",
+            "1925 HYDRANGEA PL",
+            "1919 HYDRANGEA PL",
+            "1923 HYDRANGEA PL"
+          ]
+        },
+        {
+          "owner": "RICHMOND AMERICAN HOMES",
+          "entity_type": "COMMERCIAL",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 5,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "10441 CELESTIAL POLE ST",
+            "10500 CELESTIAL POLE ST",
+            "10524 CELESTIAL POLE ST",
+            "10488 CELESTIAL POLE ST"
+          ]
+        },
+        {
+          "owner": "CONTOUR VESPER L L C",
+          "entity_type": "LLC",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 5,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "4890 SWEET VESPER CT",
+            "4884 SWEET VESPER CT",
+            "4878 SWEET VESPER CT",
+            "4896 SWEET VESPER CT"
+          ]
+        },
+        {
+          "owner": "CENTURY COMMUNITIES NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 4,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "9001 SHEEP MOUNTAIN PKWY",
+            "8272 VANHOY CREEK ST",
+            "10813 ALAMINO AVE",
+            "8449 TANTON RIDGE ST"
+          ]
+        },
+        {
+          "owner": "GREYSTONE NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 4,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "12475 SKY VISTA DR",
+            "170 ELMWOOD ECHO ST",
+            "194 ELMWOOD ECHO ST",
+            "5197 DUSK SKYSCAPE ST"
+          ]
+        },
+        {
+          "owner": "K B HOME LAS VEGAS",
+          "entity_type": "PERSON",
+          "parcels": 3,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 3,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "439 PRESTON OAK LN",
+            "12478 PAINTED FALL PL",
+            "512 LA VISTA ACRES LN"
+          ]
+        },
+        {
+          "owner": "TOLL NORTH L V L L C",
+          "entity_type": "LLC",
+          "parcels": 3,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 3,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "5738 EVENING JEWEL AVE",
+            "5912 VALIANT VALLEY AVE",
+            "5733 EVENING JEWEL AVE"
+          ]
+        },
+        {
+          "owner": "F B L V DISTRICT 2 L L C",
+          "entity_type": "LLC",
+          "parcels": 2,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 2,
+          "out_of_state": true,
+          "origin": "New York, NY",
+          "sample_addresses": [
+            "3071 S RANCHO DR",
+            "3031 RIGEL AVE"
+          ]
+        },
+        {
+          "owner": "HOWARD HUGHES COMPANY L L C",
+          "entity_type": "LLC",
+          "parcels": 2,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 2,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "11895 FLIGHT RANGE AVE",
+            "1601 ORROCK ST"
+          ]
+        },
+        {
+          "owner": "S H ACQ2020 L L C",
+          "entity_type": "LLC",
+          "parcels": 2,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 2,
+          "out_of_state": true,
+          "origin": "Scottsdale, AZ",
+          "sample_addresses": [
+            "9680 GARNET FIRE LN",
+            "10228 SAFFRON SPICE PL"
+          ]
+        }
+      ],
+      "multi_property_owners": 18,
+      "parcels_in_networks": 145,
+      "network_concentration_pct": 6.0,
+      "cross_jurisdiction_networks": 0,
+      "out_of_state_networks": 2
+    },
     "gap_analysis": {
       "missing_high_priority": [
         "Property Sales",
@@ -2315,7 +3130,7 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 12,
+    "ledger_entries": 15,
     "event_total": 1219,
     "records_tracked": 3703,
     "growth": [
