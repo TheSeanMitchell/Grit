@@ -1,8 +1,19 @@
 {
-  "generated_at": "2026-05-30T20:36:54Z",
+  "generated_at": "2026-05-30T21:02:15Z",
   "version": "0.110",
   "permits": {
     "by_jurisdiction": [
+      {
+        "jurisdiction": "Henderson",
+        "parcels": 3220,
+        "permits": 3942,
+        "mapped": 3007,
+        "newest": "2026-05-02",
+        "oldest": "2026-03-05",
+        "freshness_days": 28,
+        "mapped_pct": 93.4,
+        "confidence": 78
+      },
       {
         "jurisdiction": "Las Vegas",
         "parcels": 912,
@@ -16,17 +27,27 @@
       }
     ],
     "total": {
-      "permit_events_stored": 1000,
-      "permit_parcels": 912,
+      "permit_events_stored": 4992,
+      "permit_parcels": 4132,
       "newest": "2026-05-22",
-      "oldest": "2026-05-11",
+      "oldest": "2026-03-05",
       "freshness_days": 8,
-      "mapped": 901,
-      "jurisdictions_with_data": 1
+      "mapped": 3908,
+      "jurisdictions_with_data": 2
     }
   },
   "leads": {
     "by_jurisdiction": [
+      {
+        "jurisdiction": "Henderson",
+        "leads": 4178,
+        "mapped": 3965,
+        "permitted": 3220,
+        "value_total": 102007,
+        "newest": "2026-05-02",
+        "mapped_pct": 94.9,
+        "freshness_days": 28
+      },
       {
         "jurisdiction": "Las Vegas",
         "leads": 1702,
@@ -36,16 +57,6 @@
         "newest": "2026-05-22",
         "mapped_pct": 99.4,
         "freshness_days": 8
-      },
-      {
-        "jurisdiction": "Henderson",
-        "leads": 968,
-        "mapped": 968,
-        "permitted": 0,
-        "value_total": 102007,
-        "newest": "2026-04-01",
-        "mapped_pct": 100.0,
-        "freshness_days": 59
       },
       {
         "jurisdiction": "Whitney",
@@ -159,8 +170,8 @@
       }
     ],
     "jurisdictions": 13,
-    "total_leads": 5001,
-    "total_mapped": 4990
+    "total_leads": 8211,
+    "total_mapped": 7987
   },
   "capital_flow": {
     "by_market": [
@@ -180,6 +191,21 @@
         "owners": 680
       },
       {
+        "market": "1081 Whitney Ranch Dr Ste 141 Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 47,
+        "permits": 47,
+        "valuation_total": 2509983,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 47
+          }
+        ],
+        "owners": 2
+      },
+      {
         "market": "Henderson, NV",
         "state": "NV",
         "out_of_state": false,
@@ -195,6 +221,201 @@
         "owners": 5
       },
       {
+        "market": "7255 S Tenaya Way Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 14,
+        "permits": 14,
+        "valuation_total": 777489,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 14
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "9275 W Russell Rd Ste 400 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 12,
+        "permits": 12,
+        "valuation_total": 5567,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 12
+          }
+        ],
+        "owners": 6
+      },
+      {
+        "market": "7895 W Sunset Rd Ste 110 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 9,
+        "permits": 9,
+        "valuation_total": 1119925,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 9
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "9275 W Russell Rd #400 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 9,
+        "permits": 9,
+        "valuation_total": 700,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 9
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "2490 Paseo Verde Pkwy Ste 120 Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 8,
+        "permits": 8,
+        "valuation_total": 844474,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 8
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "5795 W Badura Ave Ste 180 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 7,
+        "permits": 7,
+        "valuation_total": 3091,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 7
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "6345 S Jones Blvd Ste 400 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 353240,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "10845 Griffith Peak # 200 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 44234,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "7770 S Dean Martin Dr Ste 308 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 1713,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 3
+      },
+      {
+        "market": "2580 St Rose Pkwy # 125 Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 1312,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 5
+      },
+      {
+        "market": "5655 Badura Ave Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 700,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 3
+      },
+      {
+        "market": "2490 Paseo Verde Pkwy #120 Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 700,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "177 E Colorado Blvd #500 Pasadena, CA",
+        "state": "CA",
+        "out_of_state": true,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 0,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 2
+      },
+      {
         "market": "North Las Vegas, NV",
         "state": "NV",
         "out_of_state": false,
@@ -208,6 +429,36 @@
           }
         ],
         "owners": 5
+      },
+      {
+        "market": "500 S Grand Central Pkwy Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 5,
+        "permits": 5,
+        "valuation_total": 453,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 5
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "801 S Rancho Dr # E-4 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 439003,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 4
+          }
+        ],
+        "owners": 1
       },
       {
         "market": "Los Angeles, CA",
@@ -240,6 +491,36 @@
         "owners": 4
       },
       {
+        "market": "2920 Delano Dr Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 5548,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 4
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "770 E Warm Springs Rd Ste 240 Las Vegas, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 2019,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 4
+          }
+        ],
+        "owners": 1
+      },
+      {
         "market": "Scottsdale, AZ",
         "state": "AZ",
         "out_of_state": true,
@@ -255,289 +536,19 @@
         "owners": 3
       },
       {
-        "market": "New York, NY",
-        "state": "NY",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 2815880,
+        "market": "2360 Corporate Cir # 330 Henderson, NV",
+        "state": "NV",
+        "out_of_state": false,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 1391,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
+            "jurisdiction": "Henderson",
+            "properties": 4
           }
         ],
-        "owners": 1
-      },
-      {
-        "market": "Indianapolis, IN",
-        "state": "IN",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 460550,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
-          }
-        ],
-        "owners": 2
-      },
-      {
-        "market": "San Jose, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 26160,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
-          }
-        ],
-        "owners": 2
-      },
-      {
-        "market": "Encino, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 5323,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
-          }
-        ],
-        "owners": 2
-      },
-      {
-        "market": "Westlake Village, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 1000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
-          }
-        ],
-        "owners": 2
-      },
-      {
-        "market": "San Diego, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 1000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 2
-          }
-        ],
-        "owners": 2
-      },
-      {
-        "market": "Minneapolis, MN",
-        "state": "MN",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 2118602,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Bentonville, AR",
-        "state": "AR",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 600000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Medford, OR",
-        "state": "OR",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 519223,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "San Dimas, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 215000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Boca Raton, FL",
-        "state": "FL",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 100000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Oakland, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 100000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Carlsbad, NM",
-        "state": "NM",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 75000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Nashville, TN",
-        "state": "TN",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Dallas, TX",
-        "state": "TX",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Salt Lake City, UT",
-        "state": "UT",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Alexandria, VA",
-        "state": "VA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Seattle, WA",
-        "state": "WA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Overland Park, KS",
-        "state": "KS",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 35000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
+        "owners": 4
       }
     ],
     "by_state": [
@@ -545,37 +556,154 @@
         "state": "NV",
         "name": "Nevada",
         "out_of_state": false,
-        "properties": 817,
-        "permits": 817,
-        "valuation_total": 17551154,
-        "markets": 5
+        "properties": 1782,
+        "permits": 1782,
+        "valuation_total": 35024624,
+        "markets": 757
       },
       {
         "state": "CA",
         "name": "California",
         "out_of_state": true,
-        "properties": 39,
-        "permits": 39,
-        "valuation_total": 740880,
-        "markets": 32
+        "properties": 135,
+        "permits": 135,
+        "valuation_total": 788786,
+        "markets": 116
+      },
+      {
+        "state": "TX",
+        "name": "Texas",
+        "out_of_state": true,
+        "properties": 19,
+        "permits": 19,
+        "valuation_total": 46735,
+        "markets": 18
       },
       {
         "state": "IL",
         "name": "Illinois",
         "out_of_state": true,
-        "properties": 7,
-        "permits": 7,
-        "valuation_total": 37000,
-        "markets": 4
+        "properties": 18,
+        "permits": 18,
+        "valuation_total": 38804,
+        "markets": 15
+      },
+      {
+        "state": "OR",
+        "name": "Oregon",
+        "out_of_state": true,
+        "properties": 17,
+        "permits": 17,
+        "valuation_total": 519223,
+        "markets": 11
+      },
+      {
+        "state": "UT",
+        "name": "Utah",
+        "out_of_state": true,
+        "properties": 13,
+        "permits": 13,
+        "valuation_total": 43801,
+        "markets": 13
       },
       {
         "state": "AZ",
         "name": "Arizona",
         "out_of_state": true,
+        "properties": 13,
+        "permits": 13,
+        "valuation_total": 2937,
+        "markets": 7
+      },
+      {
+        "state": "FL",
+        "name": "Florida",
+        "out_of_state": true,
+        "properties": 11,
+        "permits": 11,
+        "valuation_total": 110771,
+        "markets": 10
+      },
+      {
+        "state": "OH",
+        "name": "Ohio",
+        "out_of_state": true,
+        "properties": 9,
+        "permits": 9,
+        "valuation_total": 1437,
+        "markets": 8
+      },
+      {
+        "state": "NY",
+        "name": "New York",
+        "out_of_state": true,
+        "properties": 8,
+        "permits": 8,
+        "valuation_total": 2949399,
+        "markets": 7
+      },
+      {
+        "state": "CO",
+        "name": "Colorado",
+        "out_of_state": true,
         "properties": 6,
         "permits": 6,
-        "valuation_total": 2500,
-        "markets": 3
+        "valuation_total": 20917,
+        "markets": 5
+      },
+      {
+        "state": "WA",
+        "name": "Washington",
+        "out_of_state": true,
+        "properties": 5,
+        "permits": 5,
+        "valuation_total": 40921,
+        "markets": 4
+      },
+      {
+        "state": "MO",
+        "name": "Missouri",
+        "out_of_state": true,
+        "properties": 5,
+        "permits": 5,
+        "valuation_total": 712,
+        "markets": 5
+      },
+      {
+        "state": "MN",
+        "name": "Minnesota",
+        "out_of_state": true,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 2120274,
+        "markets": 4
+      },
+      {
+        "state": "KY",
+        "name": "Kentucky",
+        "out_of_state": true,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 437,
+        "markets": 2
+      },
+      {
+        "state": "HI",
+        "name": "Hawaii",
+        "out_of_state": true,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 1000,
+        "markets": 4
+      },
+      {
+        "state": "MA",
+        "name": "Massachusetts",
+        "out_of_state": true,
+        "properties": 4,
+        "permits": 4,
+        "valuation_total": 500,
+        "markets": 4
       },
       {
         "state": "MI",
@@ -587,103 +715,85 @@
         "markets": 3
       },
       {
-        "state": "FL",
-        "name": "Florida",
-        "out_of_state": true,
-        "properties": 3,
-        "permits": 3,
-        "valuation_total": 103500,
-        "markets": 3
-      },
-      {
-        "state": "TX",
-        "name": "Texas",
-        "out_of_state": true,
-        "properties": 3,
-        "permits": 3,
-        "valuation_total": 46000,
-        "markets": 3
-      },
-      {
         "state": "IN",
         "name": "Indiana",
         "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 460550,
-        "markets": 1
-      },
-      {
-        "state": "NY",
-        "name": "New York",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 2815880,
-        "markets": 1
-      },
-      {
-        "state": "UT",
-        "name": "Utah",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 40500,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 460987,
         "markets": 2
       },
       {
-        "state": "CO",
-        "name": "Colorado",
+        "state": "NC",
+        "name": "North Carolina",
         "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 6500,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 437,
+        "markets": 3
+      },
+      {
+        "state": "TN",
+        "name": "Tennessee",
+        "out_of_state": true,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 45981,
+        "markets": 3
+      },
+      {
+        "state": "AR",
+        "name": "Arkansas",
+        "out_of_state": true,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 600000,
         "markets": 2
       },
       {
-        "state": "WA",
-        "name": "Washington",
+        "state": "GA",
+        "name": "Georgia",
         "out_of_state": true,
         "properties": 2,
         "permits": 2,
-        "valuation_total": 40500,
-        "markets": 2
-      },
-      {
-        "state": "HI",
-        "name": "Hawaii",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 1000,
-        "markets": 2
-      },
-      {
-        "state": "OH",
-        "name": "Ohio",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 1000,
+        "valuation_total": 0,
         "markets": 2
       },
       {
         "state": "ID",
         "name": "Idaho",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
+        "properties": 2,
+        "permits": 2,
         "valuation_total": 500,
-        "markets": 1
+        "markets": 2
       },
       {
-        "state": "TN",
-        "name": "Tennessee",
+        "state": "VA",
+        "name": "Virginia",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
-        "markets": 1
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 40000,
+        "markets": 2
+      },
+      {
+        "state": "DE",
+        "name": "Delaware",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 1601465,
+        "markets": 2
+      },
+      {
+        "state": "WI",
+        "name": "Wisconsin",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 0,
+        "markets": 2
       },
       {
         "state": "NJ",
@@ -704,12 +814,12 @@
         "markets": 1
       },
       {
-        "state": "MA",
-        "name": "Massachusetts",
+        "state": "NH",
+        "name": "New Hampshire",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 500,
+        "valuation_total": 0,
         "markets": 1
       },
       {
@@ -722,39 +832,39 @@
         "markets": 1
       },
       {
-        "state": "VA",
-        "name": "Virginia",
+        "state": "SC",
+        "name": "South Carolina",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 40000,
+        "valuation_total": 27725,
         "markets": 1
       },
       {
-        "state": "AR",
-        "name": "Arkansas",
+        "state": "OK",
+        "name": "Oklahoma",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 600000,
+        "valuation_total": 437,
         "markets": 1
       },
       {
-        "state": "OR",
-        "name": "Oregon",
+        "state": "NE",
+        "name": "Nebraska",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 519223,
+        "valuation_total": 700,
         "markets": 1
       },
       {
-        "state": "MN",
-        "name": "Minnesota",
+        "state": "CT",
+        "name": "Connecticut",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
-        "valuation_total": 2118602,
+        "valuation_total": 0,
         "markets": 1
       },
       {
@@ -765,9 +875,42 @@
         "permits": 1,
         "valuation_total": 35000,
         "markets": 1
+      },
+      {
+        "state": "ND",
+        "name": "North Dakota",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 81,
+        "markets": 1
+      },
+      {
+        "state": "MD",
+        "name": "Maryland",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 0,
+        "markets": 1
       }
     ],
     "imported": [
+      {
+        "market": "177 E Colorado Blvd #500 Pasadena, CA",
+        "state": "CA",
+        "out_of_state": true,
+        "properties": 6,
+        "permits": 6,
+        "valuation_total": 0,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 6
+          }
+        ],
+        "owners": 2
+      },
       {
         "market": "Los Angeles, CA",
         "state": "CA",
@@ -812,6 +955,51 @@
           }
         ],
         "owners": 3
+      },
+      {
+        "market": "2415 E Cambelback Rd Ste 100 Phoenix, AZ",
+        "state": "AZ",
+        "out_of_state": true,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 437,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 3
+          }
+        ],
+        "owners": 1
+      },
+      {
+        "market": "1121 Sw Salmon St # 500 Portland, OR",
+        "state": "OR",
+        "out_of_state": true,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 0,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 3
+          }
+        ],
+        "owners": 2
+      },
+      {
+        "market": "Po Box 2708 Portland, OR",
+        "state": "OR",
+        "out_of_state": true,
+        "properties": 3,
+        "permits": 3,
+        "valuation_total": 0,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 3
+          }
+        ],
+        "owners": 1
       },
       {
         "market": "New York, NY",
@@ -859,6 +1047,21 @@
         "owners": 2
       },
       {
+        "market": "225 Ne 34th St # 201 Miami, FL",
+        "state": "FL",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 6834,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 2
+          }
+        ],
+        "owners": 1
+      },
+      {
         "market": "Encino, CA",
         "state": "CA",
         "out_of_state": true,
@@ -904,247 +1107,184 @@
         "owners": 2
       },
       {
-        "market": "Minneapolis, MN",
-        "state": "MN",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 2118602,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Bentonville, AR",
-        "state": "AR",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 600000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Medford, OR",
-        "state": "OR",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 519223,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "San Dimas, CA",
+        "market": "468 N Camden Dr # 300 Beverly Hills, CA",
         "state": "CA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 215000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
-        "owners": 1
+        "owners": 2
       },
       {
-        "market": "Boca Raton, FL",
-        "state": "FL",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 100000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Oakland, CA",
+        "market": "2416 Wilshire Blvd Santa Monica, CA",
         "state": "CA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 100000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Carlsbad, NM",
-        "state": "NM",
+        "market": "2 Summit Park Dr Ste 540 Cleveland, OH",
+        "state": "OH",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 75000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Nashville, TN",
-        "state": "TN",
+        "market": "30021 Tomas Rd Ste 130 Rancho Santa Margarita, CA",
+        "state": "CA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Dallas, TX",
-        "state": "TX",
+        "market": "24 N Marengo Ave Pasadena, CA",
+        "state": "CA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
-        "owners": 1
+        "owners": 2
       },
       {
-        "market": "Salt Lake City, UT",
-        "state": "UT",
+        "market": "30240 Rancho Viejo Rd # B San Juan Capistrano, CA",
+        "state": "CA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
-        "owners": 1
+        "owners": 2
       },
       {
-        "market": "Alexandria, VA",
-        "state": "VA",
+        "market": "500 N Hurstbourne Pkwy Ste 200 Louisville, KY",
+        "state": "KY",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 437,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Seattle, WA",
+        "market": "999 Lake Dr Issaquah, WA",
         "state": "WA",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 421,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
+          }
+        ],
+        "owners": 2
+      },
+      {
+        "market": "1121 Sw Salmon 5th Floor Portland, OR",
+        "state": "OR",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 0,
+        "destinations": [
+          {
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Overland Park, KS",
-        "state": "KS",
+        "market": "8390 E Crescent Pkwy #650 Greenwood Village, CO",
+        "state": "CO",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 35000,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 0,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       },
       {
-        "market": "Irvine, CA",
-        "state": "CA",
+        "market": "1121 Sw Salmon St Portland, OR",
+        "state": "OR",
         "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 19500,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 0,
         "destinations": [
           {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Santa Monica, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 12808,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Burbank, CA",
-        "state": "CA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 6100,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
+            "jurisdiction": "Henderson",
+            "properties": 2
           }
         ],
         "owners": 1
       }
     ],
     "imported_flows": [
+      {
+        "origin": "177 E Colorado Blvd #500 Pasadena, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 6
+      },
+      {
+        "origin": "Scottsdale, AZ",
+        "destination": "Las Vegas",
+        "origin_state": "AZ",
+        "properties": 4
+      },
       {
         "origin": "Los Angeles, CA",
         "destination": "Las Vegas",
@@ -1158,10 +1298,22 @@
         "properties": 4
       },
       {
-        "origin": "Scottsdale, AZ",
-        "destination": "Las Vegas",
+        "origin": "2415 E Cambelback Rd Ste 100 Phoenix, AZ",
+        "destination": "Henderson",
         "origin_state": "AZ",
-        "properties": 4
+        "properties": 3
+      },
+      {
+        "origin": "1121 Sw Salmon St # 500 Portland, OR",
+        "destination": "Henderson",
+        "origin_state": "OR",
+        "properties": 3
+      },
+      {
+        "origin": "Po Box 2708 Portland, OR",
+        "destination": "Henderson",
+        "origin_state": "OR",
+        "properties": 3
       },
       {
         "origin": "Indianapolis, IN",
@@ -1173,6 +1325,90 @@
         "origin": "New York, NY",
         "destination": "Las Vegas",
         "origin_state": "NY",
+        "properties": 2
+      },
+      {
+        "origin": "1121 Sw Salmon 5th Floor Portland, OR",
+        "destination": "Henderson",
+        "origin_state": "OR",
+        "properties": 2
+      },
+      {
+        "origin": "8390 E Crescent Pkwy #650 Greenwood Village, CO",
+        "destination": "Henderson",
+        "origin_state": "CO",
+        "properties": 2
+      },
+      {
+        "origin": "1121 Sw Salmon St Portland, OR",
+        "destination": "Henderson",
+        "origin_state": "OR",
+        "properties": 2
+      },
+      {
+        "origin": "468 N Camden Dr # 300 Beverly Hills, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "225 Ne 34th St # 201 Miami, FL",
+        "destination": "Henderson",
+        "origin_state": "FL",
+        "properties": 2
+      },
+      {
+        "origin": "Po Box 4900 Scottsdale, AZ",
+        "destination": "Henderson",
+        "origin_state": "AZ",
+        "properties": 2
+      },
+      {
+        "origin": "999 Lake Dr Issaquah, WA",
+        "destination": "Henderson",
+        "origin_state": "WA",
+        "properties": 2
+      },
+      {
+        "origin": "2416 Wilshire Blvd Santa Monica, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "2 Summit Park Dr Ste 540 Cleveland, OH",
+        "destination": "Henderson",
+        "origin_state": "OH",
+        "properties": 2
+      },
+      {
+        "origin": "Po Box 54288 Lexington, KY",
+        "destination": "Henderson",
+        "origin_state": "KY",
+        "properties": 2
+      },
+      {
+        "origin": "30021 Tomas Rd Ste 130 Rancho Santa Margarita, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "3501 Jamboree Rd # 4200 Newport Beach, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "13155 Railroad Ave City Of Industry, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "24 N Marengo Ave Pasadena, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
         "properties": 2
       },
       {
@@ -1188,220 +1424,112 @@
         "properties": 2
       },
       {
+        "origin": "30240 Rancho Viejo Rd # B San Juan Capistrano, CA",
+        "destination": "Henderson",
+        "origin_state": "CA",
+        "properties": 2
+      },
+      {
+        "origin": "500 N Hurstbourne Pkwy Ste 200 Louisville, KY",
+        "destination": "Henderson",
+        "origin_state": "KY",
+        "properties": 2
+      },
+      {
+        "origin": "Po Box 8050 Ms 0555 Bentonville, AR",
+        "destination": "Henderson",
+        "origin_state": "AR",
+        "properties": 2
+      },
+      {
         "origin": "San Diego, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 2
       },
       {
-        "origin": "Encino, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 2
-      },
-      {
-        "origin": "Mission Viejo, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "South Rockwood, MI",
-        "destination": "Las Vegas",
-        "origin_state": "MI",
-        "properties": 1
-      },
-      {
-        "origin": "Rancho Santa Margarita, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Vernon Hills, IL",
-        "destination": "Las Vegas",
-        "origin_state": "IL",
-        "properties": 1
-      },
-      {
-        "origin": "Irvine, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Santa Rosa, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Miami, FL",
-        "destination": "Las Vegas",
-        "origin_state": "FL",
-        "properties": 1
-      },
-      {
-        "origin": "Eagle, ID",
-        "destination": "Las Vegas",
-        "origin_state": "ID",
-        "properties": 1
-      },
-      {
-        "origin": "Mountain View, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Saratoga, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Salt Lake City, UT",
-        "destination": "Las Vegas",
-        "origin_state": "UT",
-        "properties": 1
-      },
-      {
-        "origin": "Redondo Beach, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Pomona, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Nashville, TN",
-        "destination": "Las Vegas",
-        "origin_state": "TN",
-        "properties": 1
-      },
-      {
-        "origin": "East Brunswick, NJ",
-        "destination": "Las Vegas",
-        "origin_state": "NJ",
-        "properties": 1
-      },
-      {
-        "origin": "King Of Prussia, PA",
-        "destination": "Las Vegas",
-        "origin_state": "PA",
-        "properties": 1
-      },
-      {
-        "origin": "Agawam, MA",
-        "destination": "Las Vegas",
-        "origin_state": "MA",
-        "properties": 1
-      },
-      {
-        "origin": "Dallas, TX",
-        "destination": "Las Vegas",
+        "origin": "Po Box 800729 Dallas, TX",
+        "destination": "Henderson",
         "origin_state": "TX",
-        "properties": 1
-      },
-      {
-        "origin": "Phoenix, AZ",
-        "destination": "Las Vegas",
-        "origin_state": "AZ",
-        "properties": 1
-      },
-      {
-        "origin": "Glendale, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Colorado Springs, CO",
-        "destination": "Las Vegas",
-        "origin_state": "CO",
-        "properties": 1
+        "properties": 2
       }
     ],
     "totals": {
-      "cards": 5001,
-      "with_origin": 903,
-      "origin_coverage_pct": 18.1,
-      "distinct_markets": 76,
-      "distinct_states": 25,
-      "out_of_state_markets": 71,
-      "local_properties": 817,
-      "imported_properties": 86,
-      "imported_pct": 9.5,
-      "imported_valuation": 7733035
+      "cards": 8211,
+      "with_origin": 2093,
+      "origin_coverage_pct": 25.5,
+      "distinct_markets": 1024,
+      "distinct_states": 38,
+      "out_of_state_markets": 267,
+      "local_properties": 1782,
+      "imported_properties": 311,
+      "imported_pct": 14.9,
+      "imported_valuation": 9577463
     }
   },
   "ownership": {
-    "mailing_pct": 18.2,
-    "mailing_city_pct": 18.1,
-    "mailing_state_pct": 18.1,
-    "absentee": 384,
-    "absentee_pct": 42.4,
-    "llc": 239,
-    "llc_pct": 4.8,
-    "trust": 222,
-    "trust_pct": 4.4,
-    "out_of_state_owners": 86,
-    "out_of_state_pct": 1.7
+    "mailing_pct": 33.5,
+    "mailing_city_pct": 25.5,
+    "mailing_state_pct": 25.5,
+    "absentee": 1749,
+    "absentee_pct": 64.9,
+    "llc": 809,
+    "llc_pct": 9.9,
+    "trust": 379,
+    "trust_pct": 4.6,
+    "out_of_state_owners": 311,
+    "out_of_state_pct": 3.8
   },
   "categories": [
     {
       "category": "Permits",
       "status": "live",
-      "volume": 1000,
+      "volume": 4992,
       "freshness": "8d",
-      "coverage": "901 mapped",
+      "coverage": "3908 mapped",
       "confidence": 95,
-      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.8% (5021/5031 APNs)."
+      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 77.6% (6366/8207 APNs)."
     },
     {
       "category": "Real Estate",
       "status": "live",
-      "volume": 5001,
+      "volume": 8211,
       "freshness": "current",
-      "coverage": "99.6% live-enriched",
-      "confidence": 99,
+      "coverage": "77.2% live-enriched",
+      "confidence": 86,
       "note": "Parcel base + live Assessor enrichment of the top leads (owner/value/sale)."
     },
     {
       "category": "Ownership",
       "status": "live",
-      "volume": 623,
+      "volume": 2558,
       "freshness": "current",
-      "coverage": "18.2% mailing / 42.4% absentee",
-      "confidence": 50,
-      "note": "Mailing geo on 18.1% of leads \u00b7 239 LLC (4.8%), 222 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
+      "coverage": "33.5% mailing / 64.9% absentee",
+      "confidence": 60,
+      "note": "Mailing geo on 25.5% of leads \u00b7 809 LLC (9.9%), 379 trust, 311 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
     },
     {
       "category": "Capital Flow",
       "status": "live",
-      "volume": 86,
+      "volume": 311,
       "freshness": "current",
-      "coverage": "71 out-of-state markets",
-      "confidence": 50,
-      "note": "86 of 903 owned leads (9.5%) are imported capital from 25 states; $7,733,035 tracked. Origin\u2192metro flows mapped."
+      "coverage": "267 out-of-state markets",
+      "confidence": 55,
+      "note": "311 of 2093 owned leads (14.9%) are imported capital from 38 states; $9,577,463 tracked. Origin\u2192metro flows mapped."
     },
     {
       "category": "Contractors",
       "status": "live",
-      "volume": 331,
+      "volume": 921,
       "freshness": "current",
-      "coverage": "331 ranked",
+      "coverage": "921 ranked",
       "confidence": 70,
       "note": "Derived from live permit pullers. NSCB bulk license sync is the next wave."
     },
     {
       "category": "Distress",
       "status": "live",
-      "volume": 7,
+      "volume": 8,
       "freshness": "current",
       "coverage": "Recorder NOD/lien/trustee",
       "confidence": 60,
@@ -1464,7 +1592,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 1747,
+      "volume": 5739,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1473,7 +1601,7 @@
     {
       "category": "Warehouse Integrity",
       "status": "live",
-      "volume": 1747,
+      "volume": 5739,
       "freshness": "append-only",
       "coverage": "first/last-seen tracked",
       "confidence": 85,
@@ -1482,7 +1610,7 @@
     {
       "category": "Scoring",
       "status": "live",
-      "volume": 5001,
+      "volume": 8211,
       "freshness": "current",
       "coverage": "100.0% explained",
       "confidence": 100,
@@ -1491,7 +1619,7 @@
     {
       "category": "Tagging",
       "status": "live",
-      "volume": 5001,
+      "volume": 8211,
       "freshness": "current",
       "coverage": "100.0% tagged",
       "confidence": 100,
@@ -1514,12 +1642,28 @@
       "target_jurisdictions": 19,
       "rows": [
         {
+          "jurisdiction": "Henderson",
+          "parcels_identified": 4178,
+          "owners_identified": 2166,
+          "owner_coverage_pct": 51.8,
+          "permits": 3220,
+          "signals": 4267,
+          "mapped": 3965,
+          "mapped_pct": 94.9,
+          "assessed_value": 102007,
+          "label_sources": {
+            "assessor-city": 4174,
+            "situs": 4
+          },
+          "confidence": 78
+        },
+        {
           "jurisdiction": "Las Vegas",
           "parcels_identified": 1702,
           "owners_identified": 1651,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1297,
+          "signals": 1299,
           "mapped": 1691,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -1530,22 +1674,6 @@
             "coordinate": 44
           },
           "confidence": 98
-        },
-        {
-          "jurisdiction": "Henderson",
-          "parcels_identified": 968,
-          "owners_identified": 968,
-          "owner_coverage_pct": 100.0,
-          "permits": 0,
-          "signals": 80,
-          "mapped": 968,
-          "mapped_pct": 100.0,
-          "assessed_value": 102007,
-          "label_sources": {
-            "assessor-city": 964,
-            "situs": 4
-          },
-          "confidence": 90
         },
         {
           "jurisdiction": "Whitney",
@@ -1833,9 +1961,9 @@
         "jurisdiction": "Las Vegas",
         "coverage_area": "City of Las Vegas",
         "status": "WORKING",
-        "records": 1000,
+        "records": 4992,
         "newest": "2026-05-22",
-        "oldest": "2026-05-11",
+        "oldest": "2026-03-05",
         "frequency": "daily",
         "confidence": 90,
         "fields": [
@@ -1862,7 +1990,7 @@
         "jurisdiction": "Henderson",
         "coverage_area": "City of Henderson (DSC permits, all types)",
         "status": "WORKING",
-        "records": 0,
+        "records": 3210,
         "newest": null,
         "oldest": null,
         "frequency": "daily",
@@ -1890,7 +2018,7 @@
         "jurisdiction": "Clark County",
         "coverage_area": "Top leads (enriched on demand)",
         "status": "PARTIAL",
-        "records": 5222,
+        "records": 6581,
         "newest": "2026-04-01",
         "oldest": "1995-04-01",
         "frequency": "on demand",
@@ -2236,7 +2364,7 @@
       {
         "signal": "Permits",
         "status": "IMPLEMENTED",
-        "current_coverage": 1000,
+        "current_coverage": 4992,
         "priority": "HIGH",
         "note": "City of Las Vegas + City of Henderson (Socrata) live; NLV/County (Accela) pending."
       },
@@ -2257,21 +2385,21 @@
       {
         "signal": "Ownership",
         "status": "IMPLEMENTED",
-        "current_coverage": 4902,
+        "current_coverage": 6100,
         "priority": "HIGH",
         "note": "Owner + mailing on identified parcels."
       },
       {
         "signal": "Assessor Records",
         "status": "PARTIAL",
-        "current_coverage": 4981,
+        "current_coverage": 6340,
         "priority": "HIGH",
         "note": "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."
       },
       {
         "signal": "Contractors",
         "status": "IMPLEMENTED",
-        "current_coverage": 912,
+        "current_coverage": 2887,
         "priority": "HIGH",
         "note": "Derived from permit pullers."
       },
@@ -2425,18 +2553,22 @@
       {
         "signal": "Distress (any)",
         "status": "PARTIAL",
-        "current_coverage": 97,
+        "current_coverage": 98,
         "priority": "HIGH",
         "note": "Only code-violation-style events so far."
       }
     ],
     "permit_audit": {
-      "total": 1000,
+      "total": 4992,
       "newest": "2026-05-22",
-      "oldest": "2026-05-11",
+      "oldest": "2026-03-05",
       "this_week": 0,
-      "this_month": 1000,
+      "this_month": 1176,
       "by_jurisdiction": [
+        {
+          "jurisdiction": "Henderson",
+          "permits": 3220
+        },
         {
           "jurisdiction": "Las Vegas",
           "permits": 912
@@ -2444,12 +2576,16 @@
       ],
       "by_trade": [
         {
+          "trade": "plumbing",
+          "permits": 285
+        },
+        {
           "trade": "hvac",
           "permits": 275
         },
         {
-          "trade": "plumbing",
-          "permits": 188
+          "trade": "electrical",
+          "permits": 147
         },
         {
           "trade": "remodeling",
@@ -2468,10 +2604,6 @@
           "permits": 25
         },
         {
-          "trade": "electrical",
-          "permits": 12
-        },
-        {
           "trade": "sign",
           "permits": 11
         },
@@ -2486,114 +2618,114 @@
       ],
       "quality": {
         "apn": {
-          "missing": 10,
-          "complete_pct": 99.0
+          "missing": 65,
+          "complete_pct": 98.7
         },
         "owner": {
-          "missing": 7,
-          "complete_pct": 99.3
+          "missing": 2280,
+          "complete_pct": 54.3
         },
         "coordinates": {
-          "missing": 11,
-          "complete_pct": 98.9
+          "missing": 278,
+          "complete_pct": 94.4
         },
         "contractor": {
-          "missing": 0,
-          "complete_pct": 100.0
+          "missing": 1458,
+          "complete_pct": 70.8
         },
         "date": {
           "missing": 0,
           "complete_pct": 100.0
         },
         "valuation": {
-          "missing": 112,
-          "complete_pct": 88.8
+          "missing": 2702,
+          "complete_pct": 45.9
         },
         "trade": {
-          "missing": 280,
-          "complete_pct": 72.0
+          "missing": 4028,
+          "complete_pct": 19.3
         }
       },
       "flags": [
         {
           "flag": "unmappable permit (no APN and no coordinate)",
-          "count": 10,
+          "count": 65,
           "severity": "high"
         },
         {
           "flag": "permit with no owner matched",
-          "count": 7,
+          "count": 2280,
           "severity": "medium"
         },
         {
           "flag": "permit with no trade classified",
-          "count": 280,
+          "count": 4028,
           "severity": "low"
         }
       ]
     },
     "data_quality": {
-      "cards": 5001,
+      "cards": 8211,
       "fields": [
         {
           "field": "property_jurisdiction",
-          "present": 5001,
+          "present": 8211,
           "pct": 100.0
         },
         {
           "field": "property_city",
-          "present": 5001,
+          "present": 8211,
           "pct": 100.0
         },
         {
-          "field": "lat",
-          "present": 4990,
-          "pct": 99.8
+          "field": "parcel_apn",
+          "present": 8149,
+          "pct": 99.2
         },
         {
-          "field": "parcel_apn",
-          "present": 4991,
-          "pct": 99.8
+          "field": "lat",
+          "present": 7987,
+          "pct": 97.3
         },
         {
           "field": "owner_name",
-          "present": 4902,
-          "pct": 98.0
+          "present": 6100,
+          "pct": 74.3
         },
         {
           "field": "primary_date",
-          "present": 1187,
-          "pct": 23.7
+          "present": 4407,
+          "pct": 53.7
         },
         {
           "field": "owner_mailing",
-          "present": 910,
-          "pct": 18.2
+          "present": 2747,
+          "pct": 33.5
         },
         {
           "field": "owner_origin_market",
-          "present": 903,
-          "pct": 18.1
+          "present": 2093,
+          "pct": 25.5
         },
         {
           "field": "land_use",
           "present": 149,
-          "pct": 3.0
+          "pct": 1.8
         },
         {
           "field": "last_sale_date",
           "present": 132,
-          "pct": 2.6
+          "pct": 1.6
         },
         {
           "field": "assessed_value",
           "present": 97,
-          "pct": 1.9
+          "pct": 1.2
         },
         {
           "field": "year_built",
           "present": 50,
-          "pct": 1.0
+          "pct": 0.6
         }
       ]
     },
@@ -2602,16 +2734,16 @@
       "breadth": [
         {
           "scope": "Parcels held vs county roll",
-          "captured": 5001,
+          "captured": 8211,
           "universe": 900000,
           "universe_source": "Clark County Assessor secured roll (approx; ~870k-960k parcels)",
           "universe_confidence": "reference-approximate",
-          "coverage_pct": 0.556,
+          "coverage_pct": 0.912,
           "basis": "BREADTH \u2014 bounded by our cap, not the data (free layer covers the valley)"
         },
         {
           "scope": "Permits held vs Clark new-residential/yr",
-          "captured": 912,
+          "captured": 4132,
           "universe": 16000,
           "universe_source": "U.S. Census Building Permits Survey, Clark County new-residential units/yr (~16k in 2021)",
           "universe_confidence": "reference-partial",
@@ -2622,28 +2754,28 @@
       "depth": [
         {
           "field": "situs_address",
-          "captured": 4996,
-          "pct_of_held": 99.9
+          "captured": 7938,
+          "pct_of_held": 96.7
         },
         {
           "field": "owner_name",
-          "captured": 4902,
-          "pct_of_held": 98.0
+          "captured": 6100,
+          "pct_of_held": 74.3
         },
         {
           "field": "owner_mailing",
-          "captured": 910,
-          "pct_of_held": 18.2
+          "captured": 2747,
+          "pct_of_held": 33.5
         },
         {
           "field": "assessed_value",
           "captured": 97,
-          "pct_of_held": 1.9
+          "pct_of_held": 1.2
         },
         {
           "field": "year_built",
           "captured": 50,
-          "pct_of_held": 1.0
+          "pct_of_held": 0.6
         },
         {
           "field": "building_sqft",
@@ -2653,28 +2785,28 @@
         {
           "field": "bedrooms",
           "captured": 46,
-          "pct_of_held": 0.9
+          "pct_of_held": 0.6
         },
         {
           "field": "last_sale_date",
           "captured": 132,
-          "pct_of_held": 2.6
+          "pct_of_held": 1.6
         }
       ],
-      "held": 5001
+      "held": 8211
     },
     "coverage_reality": {
       "headline": "GRIT now captures essentially everything the FREE public data exposes for the parcels it holds. Remaining gaps are gated by paid or non-API sources, not by GRIT.",
       "breadth_ceiling": {
-        "held": 5001,
+        "held": 8211,
         "universe_approx": 900000,
         "limit": "self-imposed cap (CARDS_MAX). The free parcel layer carries address+owner+mailing+land-use for the whole valley.",
         "free": true,
         "note": "Raising the cap adds address+owner pins for free, but ~900k parcels cannot render as individual pins on a static site \u2014 needs slim records or vector tiles past ~10-15k."
       },
       "depth_ceiling": {
-        "owner_pct": 98.0,
-        "value_pct": 1.9,
+        "owner_pct": 74.3,
+        "value_pct": 1.2,
         "limit": "value / sqft / beds / baths / year are NOT in any free public API. Clark County sells them as the AOEXTRACT (ownership+value) and AORES (sqft/beds/baths) bulk extracts (signed letter + subscription). The free GIS layer has owner+mailing+land-use only.",
         "free": false
       },
@@ -2707,23 +2839,23 @@
     },
     "confidence": {
       "totals": {
-        "authoritative": 35128,
-        "derived": 9401,
-        "inferred": 5906,
-        "unknown": 94594
+        "authoritative": 61527,
+        "derived": 23461,
+        "inferred": 10907,
+        "unknown": 142224
       },
       "pct": {
-        "authoritative": 24.2,
-        "derived": 6.5,
-        "inferred": 4.1,
-        "unknown": 65.2
+        "authoritative": 25.8,
+        "derived": 9.9,
+        "inferred": 4.6,
+        "unknown": 59.7
       },
-      "field_instances": 145029,
-      "avg_card_confidence": 29.4,
+      "field_instances": 238119,
+      "avg_card_confidence": 33.1,
       "by_field": [
         {
           "field": "property_jurisdiction",
-          "authoritative": 4909,
+          "authoritative": 8119,
           "derived": 92,
           "inferred": 0,
           "unknown": 0,
@@ -2733,208 +2865,208 @@
           "field": "entity_type",
           "authoritative": 0,
           "derived": 0,
-          "inferred": 5001,
+          "inferred": 8211,
           "unknown": 0,
           "known_pct": 100.0
         },
         {
           "field": "score",
           "authoritative": 0,
-          "derived": 4999,
+          "derived": 8209,
           "inferred": 0,
           "unknown": 2,
           "known_pct": 100.0
         },
         {
-          "field": "situs_address",
-          "authoritative": 4996,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 5,
-          "known_pct": 99.9
-        },
-        {
           "field": "parcel_apn",
-          "authoritative": 4991,
+          "authoritative": 8149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 10,
-          "known_pct": 99.8
+          "unknown": 62,
+          "known_pct": 99.2
         },
         {
           "field": "lat",
-          "authoritative": 4990,
+          "authoritative": 7987,
           "derived": 0,
           "inferred": 0,
-          "unknown": 11,
-          "known_pct": 99.8
+          "unknown": 224,
+          "known_pct": 97.3
+        },
+        {
+          "field": "situs_address",
+          "authoritative": 7938,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 273,
+          "known_pct": 96.7
         },
         {
           "field": "property_use_code",
-          "authoritative": 4981,
+          "authoritative": 6317,
           "derived": 0,
           "inferred": 0,
-          "unknown": 20,
-          "known_pct": 99.6
+          "unknown": 1894,
+          "known_pct": 76.9
         },
         {
           "field": "owner_name",
-          "authoritative": 4902,
+          "authoritative": 6100,
           "derived": 0,
           "inferred": 0,
-          "unknown": 99,
-          "known_pct": 98.0
+          "unknown": 2111,
+          "known_pct": 74.3
         },
         {
           "field": "urgency",
           "authoritative": 0,
-          "derived": 1187,
+          "derived": 4407,
           "inferred": 0,
-          "unknown": 3814,
-          "known_pct": 23.7
+          "unknown": 3804,
+          "known_pct": 53.7
         },
         {
           "field": "primary_date",
           "authoritative": 0,
-          "derived": 1187,
+          "derived": 4407,
           "inferred": 0,
-          "unknown": 3814,
-          "known_pct": 23.7
+          "unknown": 3804,
+          "known_pct": 53.7
         },
         {
           "field": "temporal_state",
           "authoritative": 0,
-          "derived": 1033,
+          "derived": 4253,
           "inferred": 0,
-          "unknown": 3968,
-          "known_pct": 20.7
-        },
-        {
-          "field": "owner_mailing",
-          "authoritative": 910,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 4091,
-          "known_pct": 18.2
+          "unknown": 3958,
+          "known_pct": 51.8
         },
         {
           "field": "permit_count",
-          "authoritative": 912,
+          "authoritative": 4132,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4089,
-          "known_pct": 18.2
+          "unknown": 4079,
+          "known_pct": 50.3
         },
         {
           "field": "last_permit_date",
-          "authoritative": 912,
+          "authoritative": 4132,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4089,
-          "known_pct": 18.2
+          "unknown": 4079,
+          "known_pct": 50.3
         },
         {
           "field": "contractors",
-          "authoritative": 912,
+          "authoritative": 2887,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4089,
-          "known_pct": 18.2
+          "unknown": 5324,
+          "known_pct": 35.2
         },
         {
-          "field": "owner_origin_market",
-          "authoritative": 0,
-          "derived": 903,
+          "field": "owner_mailing",
+          "authoritative": 2747,
+          "derived": 0,
           "inferred": 0,
-          "unknown": 4098,
-          "known_pct": 18.1
+          "unknown": 5464,
+          "known_pct": 33.5
         },
         {
           "field": "occupancy_status",
           "authoritative": 0,
           "derived": 0,
-          "inferred": 905,
-          "unknown": 4096,
-          "known_pct": 18.1
+          "inferred": 2696,
+          "unknown": 5515,
+          "known_pct": 32.8
         },
         {
-          "field": "trade_tags",
-          "authoritative": 674,
-          "derived": 0,
+          "field": "owner_origin_market",
+          "authoritative": 0,
+          "derived": 2093,
           "inferred": 0,
-          "unknown": 4327,
-          "known_pct": 13.5
+          "unknown": 6118,
+          "known_pct": 25.5
         },
         {
           "field": "lot_sqft",
-          "authoritative": 370,
+          "authoritative": 1450,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4631,
-          "known_pct": 7.4
+          "unknown": 6761,
+          "known_pct": 17.7
+        },
+        {
+          "field": "trade_tags",
+          "authoritative": 900,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 7311,
+          "known_pct": 11.0
         },
         {
           "field": "land_use",
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4852,
-          "known_pct": 3.0
+          "unknown": 8062,
+          "known_pct": 1.8
         },
         {
           "field": "last_sale_price",
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4852,
-          "known_pct": 3.0
+          "unknown": 8062,
+          "known_pct": 1.8
         },
         {
           "field": "last_sale_date",
           "authoritative": 132,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4869,
-          "known_pct": 2.6
+          "unknown": 8079,
+          "known_pct": 1.6
         },
         {
           "field": "assessed_value",
           "authoritative": 97,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4904,
-          "known_pct": 1.9
+          "unknown": 8114,
+          "known_pct": 1.2
         },
         {
           "field": "year_built",
           "authoritative": 50,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4951,
-          "known_pct": 1.0
+          "unknown": 8161,
+          "known_pct": 0.6
         },
         {
           "field": "bedrooms",
           "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4955,
-          "known_pct": 0.9
+          "unknown": 8165,
+          "known_pct": 0.6
         },
         {
           "field": "bathrooms",
           "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4955,
-          "known_pct": 0.9
+          "unknown": 8165,
+          "known_pct": 0.6
         },
         {
           "field": "land_value",
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 5001,
+          "unknown": 8211,
           "known_pct": 0.0
         },
         {
@@ -2942,7 +3074,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 5001,
+          "unknown": 8211,
           "known_pct": 0.0
         },
         {
@@ -2950,7 +3082,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 5001,
+          "unknown": 8211,
           "known_pct": 0.0
         }
       ]
@@ -2979,13 +3111,14 @@
         {
           "owner": "D R HORTON INC",
           "entity_type": "LLC",
-          "parcels": 31,
+          "parcels": 79,
           "value": 0,
           "jurisdictions": [
+            "Henderson",
             "Las Vegas"
           ],
-          "jurisdiction_count": 1,
-          "permits": 31,
+          "jurisdiction_count": 2,
+          "permits": 79,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
@@ -3015,6 +3148,46 @@
           ]
         },
         {
+          "owner": "WOODSIDE HOMES NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 28,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 28,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "9100 HEMISPHERE ST",
+            "9424 OKUL AVE",
+            "9110 HEMISPHERE ST",
+            "9101 HEMISPHERE ST"
+          ]
+        },
+        {
+          "owner": "GREYSTONE NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 28,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 28,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "12475 SKY VISTA DR",
+            "170 ELMWOOD ECHO ST",
+            "5197 DUSK SKYSCAPE ST",
+            "194 ELMWOOD ECHO ST"
+          ]
+        },
+        {
           "owner": "YUN SUNG & CHRISTINE M",
           "entity_type": "PERSON",
           "parcels": 28,
@@ -3034,16 +3207,37 @@
           ]
         },
         {
+          "owner": "P N II INC",
+          "entity_type": "LLC",
+          "parcels": 26,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 26,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "12267 BRANTLEY COVE DR",
+            "12255 BRANTLEY COVE DR",
+            "917 ESTATES BEND CT",
+            "12314 BRANTLEY COVE DR"
+          ]
+        },
+        {
           "owner": "TAXPAYER",
           "entity_type": "PERSON",
-          "parcels": 18,
+          "parcels": 23,
           "value": 4411,
           "jurisdictions": [
+            "Henderson",
             "Las Vegas",
             "Sunrise Manor"
           ],
-          "jurisdiction_count": 2,
-          "permits": 7,
+          "jurisdiction_count": 3,
+          "permits": 12,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
@@ -3054,15 +3248,56 @@
           ]
         },
         {
-          "owner": "TRI POINTE HOMES NEVADA INC",
+          "owner": "K B HOME LAS VEGAS INC",
           "entity_type": "LLC",
-          "parcels": 18,
+          "parcels": 23,
           "value": 0,
           "jurisdictions": [
+            "Henderson",
             "Las Vegas"
           ],
-          "jurisdiction_count": 1,
-          "permits": 18,
+          "jurisdiction_count": 2,
+          "permits": 23,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "1192 CLOUDBREAK COVE DR",
+            "1201 CLOUDBREAK COVE DR",
+            "1193 CLOUDBREAK COVE DR",
+            "197 SILVER RUN LN"
+          ]
+        },
+        {
+          "owner": "RICHMOND AMERICAN HOMES NEVADA INC",
+          "entity_type": "LLC",
+          "parcels": 21,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 21,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "132 VERNALIS AVE",
+            "8476 CASCONE MEADOWS CT",
+            "1364 FOXTAIL AGAVE DR",
+            "1412 FOXTAIL AGAVE DR"
+          ]
+        },
+        {
+          "owner": "TRI POINTE HOMES NEVADA INC",
+          "entity_type": "LLC",
+          "parcels": 19,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 19,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
@@ -3073,41 +3308,42 @@
           ]
         },
         {
-          "owner": "WOODSIDE HOMES NEVADA L L C",
+          "owner": "CENTURY COMMUNITIES NEVADA L L C",
           "entity_type": "LLC",
-          "parcels": 16,
+          "parcels": 13,
           "value": 0,
           "jurisdictions": [
+            "Henderson",
             "Las Vegas"
           ],
-          "jurisdiction_count": 1,
-          "permits": 16,
-          "out_of_state": false,
-          "origin": null,
+          "jurisdiction_count": 2,
+          "permits": 13,
+          "out_of_state": true,
+          "origin": "8390 E Crescent Pkwy #650 Greenwood Village, CO",
           "sample_addresses": [
-            "9100 HEMISPHERE ST",
-            "9424 OKUL AVE",
-            "9110 HEMISPHERE ST",
-            "9101 HEMISPHERE ST"
+            "9001 SHEEP MOUNTAIN PKWY",
+            "8272 VANHOY CREEK ST",
+            "10813 ALAMINO AVE",
+            "8449 TANTON RIDGE ST"
           ]
         },
         {
-          "owner": "K B HOME LAS VEGAS INC",
+          "owner": "BEAZER HOMES HOLDINGS L L C",
           "entity_type": "LLC",
-          "parcels": 16,
+          "parcels": 10,
           "value": 0,
           "jurisdictions": [
-            "Las Vegas"
+            "Henderson"
           ],
           "jurisdiction_count": 1,
-          "permits": 16,
+          "permits": 10,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "1192 CLOUDBREAK COVE DR",
-            "1201 CLOUDBREAK COVE DR",
-            "1193 CLOUDBREAK COVE DR",
-            "197 SILVER RUN LN"
+            "345 TALLADEGA CT",
+            "316 S ORLEANS ST",
+            "320 S ORLEANS ST",
+            "310 S ORLEANS ST"
           ]
         },
         {
@@ -3130,22 +3366,22 @@
           ]
         },
         {
-          "owner": "P N II INC",
+          "owner": "K B HOME INSPIRADA L L C",
           "entity_type": "LLC",
-          "parcels": 7,
+          "parcels": 8,
           "value": 0,
           "jurisdictions": [
-            "Las Vegas"
+            "Henderson"
           ],
           "jurisdiction_count": 1,
-          "permits": 7,
+          "permits": 8,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "12267 BRANTLEY COVE DR",
-            "12255 BRANTLEY COVE DR",
-            "917 ESTATES BEND CT",
-            "12314 BRANTLEY COVE DR"
+            "2844 ALENGA ST",
+            "3436 FALCIANO CT",
+            "2478 CINGOLI ST",
+            "2910 MONATE CT"
           ]
         },
         {
@@ -3168,22 +3404,61 @@
           ]
         },
         {
-          "owner": "RICHMOND AMERICAN HOMES NEVADA INC",
+          "owner": "HARSCH INVESTMENT PPTYS-NV L L C",
           "entity_type": "LLC",
           "parcels": 7,
           "value": 0,
           "jurisdictions": [
-            "Las Vegas"
+            "Henderson"
           ],
           "jurisdiction_count": 1,
           "permits": 7,
+          "out_of_state": true,
+          "origin": "Po Box 2708 Portland, OR",
+          "sample_addresses": [
+            "950 W WARM SPRINGS RD",
+            "7360 EASTGATE RD",
+            "900 W WARM SPRINGS RD",
+            "7390 EASTGATE RD"
+          ]
+        },
+        {
+          "owner": "PARDEE HOMES NEVADA",
+          "entity_type": "COMMERCIAL",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 7,
+          "out_of_state": true,
+          "origin": "177 E Colorado Blvd #500 Pasadena, CA",
+          "sample_addresses": [
+            "1844 MORGAN VALLEY CT",
+            "217 ABBEY HILL ST",
+            "972 TWILIGHT PEAK AVE",
+            "1073 PARKINGTON AVE"
+          ]
+        },
+        {
+          "owner": "USA",
+          "entity_type": "PERSON",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 6,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "132 VERNALIS AVE",
-            "8476 CASCONE MEADOWS CT",
-            "1364 FOXTAIL AGAVE DR",
-            "1412 FOXTAIL AGAVE DR"
+            "9145 ALPINE RIDGE WAY",
+            "1228 EQUESTRIAN DR",
+            "5901 E RUSSELL RD",
+            "1200 BERLIN AVE"
           ]
         },
         {
@@ -3260,6 +3535,25 @@
             "1925 HYDRANGEA PL",
             "1919 HYDRANGEA PL",
             "1923 HYDRANGEA PL"
+          ]
+        },
+        {
+          "owner": "KING SERENE L L C",
+          "entity_type": "LLC",
+          "parcels": 6,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 6,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "2823 BELMONT DR",
+            "2827 BELMONT DR",
+            "2831 BELMONT DR",
+            "3061 E SERENE AVE"
           ]
         },
         {
@@ -3374,6 +3668,44 @@
             "10500 CELESTIAL POLE ST",
             "10524 CELESTIAL POLE ST",
             "10488 CELESTIAL POLE ST"
+          ]
+        },
+        {
+          "owner": "RICHMOND AMERICAN HOMES OF NEVADA INC",
+          "entity_type": "LLC",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 5,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "120 CASHMERE WALTZ PL",
+            "339 SILVA PL",
+            "321 AMERICAN QUARTET LN",
+            "172 PACE AVE"
+          ]
+        },
+        {
+          "owner": "TOLL HENDERSON L L C",
+          "entity_type": "LLC",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 5,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "809 CADENCE VIEW WAY",
+            "3367 PEAK VIEW AVE",
+            "3380 LOCHSIDE DR",
+            "2575 AGGRAZIATO ST"
           ]
         },
         {
@@ -3510,41 +3842,41 @@
           ]
         },
         {
-          "owner": "CENTURY COMMUNITIES NEVADA L L C",
+          "owner": "SIGNATURE HOMES JESSUP-RICHMAR L L C",
           "entity_type": "LLC",
           "parcels": 4,
           "value": 0,
           "jurisdictions": [
-            "Las Vegas"
+            "Henderson"
           ],
           "jurisdiction_count": 1,
           "permits": 4,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "9001 SHEEP MOUNTAIN PKWY",
-            "8272 VANHOY CREEK ST",
-            "10813 ALAMINO AVE",
-            "8449 TANTON RIDGE ST"
+            "2904 RICHMAR AVE",
+            "2915 EDGEMONT DR",
+            "2911 EDGEMONT DR",
+            "2920 RICHMAR AVE"
           ]
         },
         {
-          "owner": "GREYSTONE NEVADA L L C",
-          "entity_type": "LLC",
+          "owner": "SEAYNOAH TRUST ETAL",
+          "entity_type": "TRUST",
           "parcels": 4,
           "value": 0,
           "jurisdictions": [
-            "Las Vegas"
+            "Henderson"
           ],
           "jurisdiction_count": 1,
           "permits": 4,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "12475 SKY VISTA DR",
-            "170 ELMWOOD ECHO ST",
-            "194 ELMWOOD ECHO ST",
-            "5197 DUSK SKYSCAPE ST"
+            "Grading permit for lots 1-10.",
+            "2931 CANDELARIA DR",
+            "2932 BELMONT DR",
+            "Water flow report for Mayfield 32 Subdivision. Design and install 13D fire sprinkler system."
           ]
         },
         {
@@ -3663,6 +3995,25 @@
           ]
         },
         {
+          "owner": "FAIRBROOK COMMUNITY ASSOCIATION",
+          "entity_type": "PERSON",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "               ",
+            "               ",
+            "               ",
+            "               "
+          ]
+        },
+        {
           "owner": "CARLISLE MAINTENANCE ASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 4,
@@ -3699,214 +4050,13 @@
             "               ",
             "               "
           ]
-        },
-        {
-          "owner": "FAIRBROOK COMMUNITY ASSOCIATION",
-          "entity_type": "PERSON",
-          "parcels": 4,
-          "value": 0,
-          "jurisdictions": [
-            "Henderson"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "K B HOME LAS VEGAS",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 3,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "439 PRESTON OAK LN",
-            "12478 PAINTED FALL PL",
-            "512 LA VISTA ACRES LN"
-          ]
-        },
-        {
-          "owner": "TOLL NORTH L V L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 3,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "5738 EVENING JEWEL AVE",
-            "5912 VALIANT VALLEY AVE",
-            "5733 EVENING JEWEL AVE"
-          ]
-        },
-        {
-          "owner": "S B H",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Enterprise",
-            "Sunrise Manor"
-          ],
-          "jurisdiction_count": 2,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "ENTERPRISE",
-            "5115 MESA VERDE LN",
-            "SUNRISE MANOR"
-          ]
-        },
-        {
-          "owner": "TOWN CENTER VILLAGE COMMUNITY ASSOCIATION",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "LAS VEGAS",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "SAPPHIRE SPRINGSASSOCIATION",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "HAYNES CARYN",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Sunrise Manor"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "210 BEL PORT DR  214      ",
-            "191 BEL PORT DR  195      ",
-            "191 BEL PORT DR  197      "
-          ]
-        },
-        {
-          "owner": "XIONG MING",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Enterprise"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "9337 RUBY ARROW CT  102      ",
-            "8678 TOM NOON AVE 102      ",
-            "8806 TOMNITZ AVE 103      "
-          ]
-        },
-        {
-          "owner": "EISEL ROGER & REBECCA",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Whitney"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "5964 HIGH STEED ST  102      ",
-            "5900 HIGH STEED ST  102      ",
-            "4662 COLOR UP CT  101      "
-          ]
-        },
-        {
-          "owner": "GRAHAM WILLIE E & NANCY I",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas",
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 2,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "279 N LAMB BLVD UT B  ",
-            "3017 ST GEORGE ST  UT C     ",
-            "3017 ST GEORGE ST  UT B     "
-          ]
-        },
-        {
-          "owner": "OGBENI OLUWASEUN",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "3408 MERCURY ST  UT E     ",
-            "2201 MARS AVE UT G     ",
-            "3420 MERCURY ST  UT F     "
-          ]
         }
       ],
-      "multi_property_owners": 145,
-      "parcels_in_networks": 635,
-      "network_concentration_pct": 12.7,
-      "cross_jurisdiction_networks": 14,
-      "out_of_state_networks": 2
+      "multi_property_owners": 200,
+      "parcels_in_networks": 934,
+      "network_concentration_pct": 11.4,
+      "cross_jurisdiction_networks": 28,
+      "out_of_state_networks": 20
     },
     "gap_analysis": {
       "missing_high_priority": [
@@ -3930,7 +4080,7 @@
           "priority": "HIGH"
         },
         {
-          "gap": "99 parcels have no identified owner",
+          "gap": "2111 parcels have no identified owner",
           "impact": "Full-roll Assessor enrichment needed for ownership completeness",
           "priority": "HIGH"
         },
@@ -3956,9 +4106,9 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 20,
-    "event_total": 1747,
-    "records_tracked": 7210,
+    "ledger_entries": 21,
+    "event_total": 5739,
+    "records_tracked": 10420,
     "growth": [
       {
         "date": "2026-05-29",
@@ -3991,22 +4141,30 @@
         "permit_events": 1000,
         "contractors": 331,
         "imported_capital": 86
+      },
+      {
+        "date": "2026-05-30",
+        "leads": 8211,
+        "mapped": 7987,
+        "permit_events": 4992,
+        "contractors": 921,
+        "imported_capital": 311
       }
     ],
     "append_only": true
   },
   "headline": {
-    "leads": 5001,
-    "mapped": 4990,
-    "permit_events": 1000,
+    "leads": 8211,
+    "mapped": 7987,
+    "permit_events": 4992,
     "permit_newest": "2026-05-22",
-    "permit_jurisdictions": 1,
+    "permit_jurisdictions": 2,
     "jurisdictions": 13,
-    "contractors": 331,
+    "contractors": 921,
     "tagged_pct": 100.0,
-    "enriched": 4981,
-    "imported_capital": 86,
-    "owner_markets": 76,
+    "enriched": 6340,
+    "imported_capital": 311,
+    "owner_markets": 1024,
     "hot_leads": 0,
     "sonv_jurisdictions_covered": 13
   }
