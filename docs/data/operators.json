@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-30T21:02:15Z",
+  "generated_at": "2026-05-30T21:54:35Z",
   "version": "0.110",
-  "count": 1677,
+  "count": 1679,
   "portfolios_2plus": 96,
   "operators": [
     {
       "id": "0d2f7a6112",
-      "name": "RENT CONNECTION",
+      "name": "LOPEZ ANTHONY",
       "canonical_mailing": "HENDERSON NV",
       "entity_mix": {
         "PERSON": 2,
         "UNKNOWN": 642
       },
       "parcel_count": 644,
-      "total_assessed_value": 0.0,
-      "recent_activity_count": 0,
+      "total_assessed_value": 70907.0,
+      "recent_activity_count": 1,
       "cities": [
         "HENDERSON"
       ],
@@ -664,7 +664,7 @@
         "17907714039",
         "17907714040"
       ],
-      "score": 80,
+      "score": 86,
       "join_key": "M:HENDERSON NV"
     },
     {
@@ -1786,6 +1786,25 @@
       "join_key": "O:CAR SPA T H HOLDING"
     },
     {
+      "id": "db5803678a",
+      "name": "JEMJAY INTERNATIONAL HOLDINGS L L C",
+      "canonical_mailing": "4041 E SUNSET RD  HENDERSON NV 89014",
+      "entity_mix": {
+        "LLC": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 985494.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "17806502009"
+      ],
+      "score": 5,
+      "join_key": "O:JEMJAY INTERNATIONAL HOLDINGS"
+    },
+    {
       "id": "2da781ace6",
       "name": "S B H",
       "canonical_mailing": "1 HOMEOWNER'S ASSOCIATION",
@@ -2849,6 +2868,25 @@
       "join_key": "M:8404 TIGER WOODS AVE LAS VEGAS"
     },
     {
+      "id": "baa5967853",
+      "name": "DONATI FAMILY TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 93493.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "HENDERSON"
+      ],
+      "parcel_apns": [
+        "17934713147"
+      ],
+      "score": 2,
+      "join_key": "O:DONATI FAMILY"
+    },
+    {
       "id": "27e2ff424b",
       "name": "TARPINIAN SUSAN",
       "canonical_mailing": "2127 SLEEPY CT, LAS VEGAS NV 89106",
@@ -2885,6 +2923,25 @@
       ],
       "score": 2,
       "join_key": "M:6321 W WASHINGTON AVE LAS VEGAS"
+    },
+    {
+      "id": "1401fe00d4",
+      "name": "SCHMIDT FAMILY TRUST",
+      "canonical_mailing": null,
+      "entity_mix": {
+        "TRUST": 1
+      },
+      "parcel_count": 1,
+      "total_assessed_value": 8231.0,
+      "recent_activity_count": 0,
+      "cities": [
+        "ENTERPRISE"
+      ],
+      "parcel_apns": [
+        "17727410013"
+      ],
+      "score": 2,
+      "join_key": "O:SCHMIDT FAMILY"
     },
     {
       "id": "dc693327cb",
@@ -28937,23 +28994,6 @@
       ],
       "score": 2,
       "join_key": "O:B R E I T HENDERSON PROPERTY OWNER"
-    },
-    {
-      "id": "db5803678a",
-      "name": "JEMJAY INTERNATIONAL HOLDINGS L L C",
-      "canonical_mailing": "4041 E SUNSET RD  HENDERSON NV 89014",
-      "entity_mix": {
-        "LLC": 1
-      },
-      "parcel_count": 1,
-      "total_assessed_value": 0.0,
-      "recent_activity_count": 0,
-      "cities": [],
-      "parcel_apns": [
-        "17806502009"
-      ],
-      "score": 2,
-      "join_key": "O:JEMJAY INTERNATIONAL HOLDINGS"
     },
     {
       "id": "2ee5da997c",

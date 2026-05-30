@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T21:02:15Z",
+  "generated_at": "2026-05-30T21:54:35Z",
   "version": "0.110",
   "count": 921,
   "contractors": [
@@ -585,7 +585,7 @@
       "top_trade": null,
       "trade_share_pct": 0.0,
       "cities": {
-        "HENDERSON": 33
+        "HENDERSON": 32
       },
       "top_city": "Henderson",
       "geo_dominance_pct": 0.8,
@@ -4186,7 +4186,7 @@
       "first_seen": "2026-04-10",
       "last_seen": "2026-04-28",
       "sample_addresses": [
-        "464 SELLERS PL           ",
+        "464 SELLERS PL",
         "541 BURTON ST",
         "615 N LISBON ST",
         "440 BEARDSLEY CIR"
@@ -4339,8 +4339,8 @@
       "sample_addresses": [
         "110 BLAKE BEACON LN",
         "1124 TUSCARORA DR",
-        "1375 TEMPORALE DR",
-        "1681 DERBY DR"
+        "1681 DERBY DR",
+        "1375 TEMPORALE DR"
       ],
       "score": 24
     },
@@ -15148,27 +15148,6 @@
       "score": 6
     },
     {
-      "name": "SNP CONSTRUCTION LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 712.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "HENDERSON": 1
-      },
-      "top_city": "Henderson",
-      "geo_dominance_pct": 0.0,
-      "first_seen": "2026-04-09",
-      "last_seen": "2026-04-09",
-      "sample_addresses": [
-        "2269 ARIA DR"
-      ],
-      "score": 6
-    },
-    {
       "name": "BORMANN DEVELOPMENT INC",
       "permit_count": 1,
       "job_sites": 1,
@@ -15276,6 +15255,27 @@
       "last_seen": "2026-04-13",
       "sample_addresses": [
         "901 PALO VERDE DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "SNP CONSTRUCTION LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 712.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "HENDERSON": 1
+      },
+      "top_city": "Henderson",
+      "geo_dominance_pct": 0.0,
+      "first_seen": "2026-04-09",
+      "last_seen": "2026-04-09",
+      "sample_addresses": [
+        "2269 ARIA DR"
       ],
       "score": 6
     },
@@ -19551,6 +19551,29 @@
       "score": 6
     },
     {
+      "name": "M C S PLUMBING LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 0.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.3,
+      "cities": {
+        "HENDERSON": 1
+      },
+      "top_city": "Henderson",
+      "geo_dominance_pct": 0.0,
+      "first_seen": "2026-04-08",
+      "last_seen": "2026-04-08",
+      "sample_addresses": [
+        "2252 DOGWOOD RANCH AVE"
+      ],
+      "score": 6
+    },
+    {
       "name": "SCOTTYBOY SERVICES LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -19616,29 +19639,6 @@
       "last_seen": "2026-04-28",
       "sample_addresses": [
         "45 PRECIPICE CT"
-      ],
-      "score": 6
-    },
-    {
-      "name": "M C S PLUMBING LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 0.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.3,
-      "cities": {
-        "HENDERSON": 1
-      },
-      "top_city": "Henderson",
-      "geo_dominance_pct": 0.0,
-      "first_seen": "2026-04-08",
-      "last_seen": "2026-04-08",
-      "sample_addresses": [
-        "2252 DOGWOOD RANCH AVE"
       ],
       "score": 6
     },
