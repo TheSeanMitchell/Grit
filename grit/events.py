@@ -30,6 +30,8 @@ KINDS = (
     "LLC_REGISTRATION", # new business entity tied to address
     "REVIEW_SPIKE",     # surge in complaints / reviews
     "SERVICE_REQUEST",  # public service request (311-style)
+    "BUSINESS_LICENSE", # business license issued / status change (CLV open data)
+    "CRIME",            # crime / police incident (LVMPD open data) -- area signal
 )
 
 

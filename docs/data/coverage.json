@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T15:55:26Z",
-  "version": "0.108",
+  "generated_at": "2026-05-30T16:23:12Z",
+  "version": "0.109",
   "permits": {
     "by_jurisdiction": [
       {
@@ -2277,17 +2277,17 @@
       },
       {
         "signal": "Business Licenses",
-        "status": "MISSING",
+        "status": "PARTIAL",
         "current_coverage": 0,
         "priority": "MEDIUM",
-        "note": "NV SOS / city licensing not yet ingested."
+        "note": "WIRED 0.109 \u2014 CLV Business Licenses (free ArcGIS Hub, daily); populates on next harvest."
       },
       {
         "signal": "Code Enforcement",
-        "status": "MISSING",
+        "status": "PARTIAL",
         "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": "Violation feeds catalogued, not ingested."
+        "priority": "HIGH",
+        "note": "WIRED 0.109 \u2014 CLV Code Enforcement Violations (free, APN+coords); distress signal + new leads on next harvest."
       },
       {
         "signal": "Planning Applications",
@@ -2301,7 +2301,7 @@
         "status": "MISSING",
         "current_coverage": 0,
         "priority": "LOW",
-        "note": ""
+        "note": "CLV Zoning FeatureServer is free \u2014 candidate."
       },
       {
         "signal": "Demolitions",
@@ -2392,7 +2392,7 @@
         "status": "MISSING",
         "current_coverage": 0,
         "priority": "MEDIUM",
-        "note": "LVMPD open-data portal (free, ArcGIS Hub) + Henderson 90-day crime search \u2014 ready to wire."
+        "note": "FREE source wired 0.109 \u2014 set LVMPD_CRIME_ITEM (opendata-lvmpd.hub.arcgis.com) to activate as an area signal."
       },
       {
         "signal": "Security Signals",
@@ -3913,6 +3913,7 @@
         "Property Sales",
         "Deed Transfers",
         "Assessor Records",
+        "Code Enforcement",
         "Foreclosures",
         "Trustee Sales",
         "Distress (any)"
@@ -3956,7 +3957,7 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 18,
+    "ledger_entries": 19,
     "event_total": 1241,
     "records_tracked": 7118,
     "growth": [

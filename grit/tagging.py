@@ -216,12 +216,24 @@ def tags_for_card(card):
         desc = (ev.get("description") or "").lower()
         if kind == "VIOLATION":
             t.add("distress:code-violation")
+        if kind == "BUSINESS_LICENSE":
+            t.add("signal:business-license")
+        if kind == "CRIME":
+            t.add("signal:crime-area")
         if "notice of default" in desc or "nod" in desc:
             t.add("distress:notice-of-default")
         if "trustee" in desc or "foreclos" in desc:
             t.add("distress:foreclosure-track")
         if "lien" in desc:
             t.add("distress:lien")
+    # 0.109 free-saturation flags (set from real source records)
+    if card.get("code_enforcement_open"):
+        t.add("distress:code-enforcement-open")
+        t.add("signal:code-enforcement")
+    elif card.get("distress_signal") == "code-enforcement":
+        t.add("signal:code-enforcement")
+    if card.get("business_license_active"):
+        t.add("signal:business-license")
 
     # ── monetization readiness (derived heuristics, clearly tags not facts)
     #    each requires a real supporting field; absence => no tag.

@@ -146,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.108"
+VERSION = "0.109"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -221,6 +221,27 @@ PERMIT_DAYS_BACK = 90   # CLV permit window pulled each harvest (cloud-native)
 #  -> "I Want To Use This" -> API Resources -> GeoJSON/FeatureServer url, ending /0).
 # Empty = permit source reports 'needs_config' (no error). ArcGIS REST = cloud-native.
 CLV_PERMITS_FEATURESERVER = "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0"
+
+# ── 0.109 FREE DATA SATURATION ──────────────────────────────────────────────
+# Every additional FREE signal feed GRIT can pull, by ArcGIS Online item id.
+# The connector (free_sources.py) resolves each item's live FeatureServer URL at
+# harvest time, so we never hardcode a service name that could move. All of these
+# are free public open data on the same ArcGIS Hub platform as the permit feed.
+#   - Code Enforcement Violations (CLV): violation type + status + APN + coords,
+#     since 2015 -> per-property DISTRESS signal (and new distress leads).
+#   - CLV Business Licenses: name + type + status + activity + location, daily
+#     -> commercial / entity signal.
+# Item ids were confirmed from the City of Las Vegas open data portal.
+FREE_SOURCES_ENABLED = True
+FREE_SOURCE_MAX = 4000          # cap records pulled per free source per harvest
+CLV_OPENDATA_ITEMS = {
+    "code_enforcement": "f48d19416d5546e5b9ee12f9746ecaa9",
+    "business_licenses": "f6b923ee5eb9450baf6adebaf0f307ed",
+}
+# LVMPD crime is free too (opendata-lvmpd.hub.arcgis.com) but area-level (incident
+# points, no APN). Paste the crime layer's ArcGIS item id here to wire it as an
+# area signal; left blank by default so an unverified id can't break a harvest.
+LVMPD_CRIME_ITEM = ""
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 16          # 0.105: wider candidate pool (was 5) for metro-wide spread

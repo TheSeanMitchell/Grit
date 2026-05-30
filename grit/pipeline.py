@@ -183,6 +183,17 @@ def score_card(card):
         if _rank(ev_state) > _rank(card.get("temporal_state")):
             card["temporal_state"] = ev_state
 
+    # 0.109 free-saturation signals -- transparent, real-source-driven
+    if card.get("code_enforcement_open"):
+        score += 14
+        signals.append("open code-enforcement case (+14) — distress / motivated owner")
+    elif card.get("distress_signal") == "code-enforcement":
+        score += 6
+        signals.append("prior code-enforcement case (+6)")
+    if card.get("business_license_active"):
+        score += 4
+        signals.append("active business license at site (+4) — commercial activity")
+
     card["score"] = min(score, 100)
     card["signals"] = signals
     card["suggested_action"] = _next_action(card)
@@ -488,6 +499,20 @@ def harvest():
         cards, permit_merge = merge_permit_cards(cards, permits_to_cards(permits))
         all_events = existing_events + enrich_events + permit_events
 
+        # 0.109 FREE DATA SATURATION -- pull every additional FREE signal feed
+        # (CLV code enforcement -> distress + new leads; CLV business licenses ->
+        # commercial/entity; optional LVMPD crime). Isolated + fail-safe: a dead
+        # source never aborts the harvest. New distress leads flow through the
+        # same geocode / enrich / score / warehouse path below.
+        free_report = {"enabled": False}
+        try:
+            from . import free_sources
+            free_events, free_seeds, free_report = free_sources.harvest(cards)
+            cards += free_seeds
+            all_events = all_events + free_events
+        except Exception as _e:  # noqa: BLE001
+            free_report = {"enabled": True, "status": "error", "error": str(_e)}
+
         # 0.105 GEOCODING SPINE -- open the map up. Permits (and some parcels)
         # arrive without point geometry; resolve their parcel APNs to REAL
         # centroids so every lead can render on the map. Unresolved APNs stay
@@ -557,6 +582,7 @@ def harvest():
                                     "trade_tagged": sum(1 for e in permit_events if e.trade_tag),
                                     "newest": permit_report.get("newest"),
                                     "error": permit_report.get("error")},
+                        "free_sources": free_report,
                         **meta}
 
         # ---- REGRESSION GUARD (before ANY data write) ----------------------

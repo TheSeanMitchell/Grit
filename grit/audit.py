@@ -207,10 +207,18 @@ def signal_matrix(cards, events):
                       if (e.get("kind") or "").upper() in ("VIOLATION",) or
                       any(k in (e.get("description") or "").lower()
                           for k in ("default", "lien", "trustee", "foreclos")))
+    code_n = sum(1 for c in cards if c.get("code_enforcement_open")
+                 or c.get("code_enforcement_type") or c.get("distress_signal") == "code-enforcement")
+    biz_n = sum(1 for c in cards if c.get("business_license_active") or c.get("business_activity"))
+    crime_n = sum(1 for c in cards for e in (c.get("timeline") or [])
+                  if (e.get("kind") or "").upper() == "CRIME")
 
     def row(name, status, current, priority, note=""):
         return {"signal": name, "status": status, "current_coverage": current,
                 "priority": priority, "note": note}
+
+    def wired(n):  # IMPLEMENTED once data lands; PARTIAL = connector live, awaiting harvest
+        return "IMPLEMENTED" if n else "PARTIAL"
 
     HIGH, MED, LOW = "HIGH", "MEDIUM", "LOW"
     return [
@@ -223,10 +231,12 @@ def signal_matrix(cards, events):
         row("Assessor Records", "PARTIAL", sum(1 for c in cards if c.get("vintage") == "current"), HIGH,
             "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."),
         row("Contractors", "IMPLEMENTED", contractors, HIGH, "Derived from permit pullers."),
-        row("Business Licenses", "MISSING", 0, MED, "NV SOS / city licensing not yet ingested."),
-        row("Code Enforcement", "MISSING", 0, MED, "Violation feeds catalogued, not ingested."),
+        row("Business Licenses", wired(biz_n), biz_n, MED,
+            "WIRED 0.109 — CLV Business Licenses (free ArcGIS Hub, daily); populates on next harvest."),
+        row("Code Enforcement", wired(code_n), code_n, HIGH,
+            "WIRED 0.109 — CLV Code Enforcement Violations (free, APN+coords); distress signal + new leads on next harvest."),
         row("Planning Applications", "MISSING", 0, MED, ""),
-        row("Zoning Activity", "MISSING", 0, LOW, ""),
+        row("Zoning Activity", "MISSING", 0, LOW, "CLV Zoning FeatureServer is free — candidate."),
         row("Demolitions", "PARTIAL", 0, MED, "Will surface from permit types once classified."),
         row("Certificates of Occupancy", "MISSING", 0, MED, ""),
         row("Solar Activity", "IMPLEMENTED", solar, MED, "Tagged from permit trades."),
@@ -239,8 +249,8 @@ def signal_matrix(cards, events):
         row("Probate", "MISSING", 0, MED, ""),
         row("Bankruptcy", "MISSING", 0, LOW, ""),
         row("Evictions", "MISSING", 0, MED, ""),
-        row("Crime / Police Activity", "MISSING", 0, MED,
-            "LVMPD open-data portal (free, ArcGIS Hub) + Henderson 90-day crime search — ready to wire."),
+        row("Crime / Police Activity", wired(crime_n) if crime_n else "MISSING", crime_n, MED,
+            "FREE source wired 0.109 — set LVMPD_CRIME_ITEM (opendata-lvmpd.hub.arcgis.com) to activate as an area signal."),
         row("Security Signals", "PARTIAL", 0, LOW, "Tag scaffold exists; no source yet."),
         row("Commercial Tenant Improvements", "PARTIAL", 0, MED, "Surfaces from commercial permits."),
         row("Government / Capital Projects", "MISSING", 0, LOW, ""),

@@ -213,6 +213,36 @@ def cmd_selftest():
     assert "pct" in aud2["confidence"] and aud2["confidence"]["pct"].get("unknown") is not None, "confidence dist failed"
     print("0.107: full-roll enrichment + confidence + denominators + networks OK")
 
+    # ---- 0.109: free data saturation connector (pure-function tests) ---------
+    from . import free_sources as fsrc
+    ce_feats = [{"attrs": {"PARCELNO": "138-11-111-001", "SITUS": "9 A ST",
+                           "VIOLATIONTYPE": "Property Maintenance", "CASESTATUS": "Open",
+                           "OPENDATE": "2025-09-01"}, "ll": (36.2, -115.2)},
+                {"attrs": {"APN": "16022002003", "FULLADDRESS": "5 B AVE",
+                           "TYPE": "Trailer/RV", "STATUS": "Closed",
+                           "DATE": 1693526400000}, "ll": (36.1, -115.1)}]
+    ce = fsrc.code_enforcement_records(ce_feats)
+    assert len(ce) == 2 and ce[0]["apn"] == "13811111001" and ce[0]["vtype"], "code-enf mapping failed"
+    assert ce[1]["date"] and ce[1]["date"].startswith("2023"), "epoch-ms date parse failed"
+    bl = fsrc.business_license_records([{"attrs": {"PARCELNO": "138-11-111-001",
+                           "BUSINESSNAME": "ACME LLC", "STATUS": "Active",
+                           "BUSINESSACTIVITY": "Retail", "ISSUEDATE": "2024-01-02"}, "ll": (36.2, -115.2)}])
+    assert bl and bl[0]["name"] == "ACME LLC" and bl[0]["activity"] == "Retail", "biz-license mapping failed"
+    evs = fsrc.to_events(ce, "VIOLATION", "clv_code_enforcement")
+    assert evs and evs[0].kind == "VIOLATION" and evs[0].parcel_apn == "13811111001", "event build failed"
+    seeds = fsrc.seed_cards_from_violations(ce, existing_apns={"16022002003"})
+    assert len(seeds) == 1 and seeds[0]["parcel_apn"] == "13811111001" \
+        and seeds[0]["code_enforcement_open"] and seeds[0]["source"] == "code_enforcement", "seed-lead failed"
+    test_cards = [{"parcel_apn": "16022002003"}, {"parcel_apn": "138-11-111-001"}]
+    applied = fsrc.apply_signals(test_cards, ce, bl)
+    assert applied["code_enforcement_card_hits"] == 2 and applied["business_license_card_hits"] == 1, "apply_signals failed"
+    assert test_cards[1].get("business_license_active") and test_cards[1].get("code_enforcement_open"), "flags not set"
+    # scoring reflects the distress signal transparently
+    from .pipeline import score_card as _score
+    sc = _score({"owner_name": "X", "code_enforcement_open": True, "entity_type": "PERSON"})
+    assert any("code-enforcement" in s for s in sc["signals"]), "distress not scored"
+    print("0.109: free-saturation connector (code-enf + business + events + seeds + scoring) OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
