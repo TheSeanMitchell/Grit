@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T16:23:12Z",
+  "generated_at": "2026-05-30T16:51:14Z",
   "version": "0.109",
   "permits": {
     "by_jurisdiction": [
@@ -29,12 +29,12 @@
     "by_jurisdiction": [
       {
         "jurisdiction": "Las Vegas",
-        "leads": 1658,
-        "mapped": 1647,
+        "leads": 1702,
+        "mapped": 1691,
         "permitted": 912,
         "value_total": 3923209,
         "newest": "2026-05-22",
-        "mapped_pct": 99.3,
+        "mapped_pct": 99.4,
         "freshness_days": 8
       },
       {
@@ -69,8 +69,8 @@
       },
       {
         "jurisdiction": "Sunrise Manor",
-        "leads": 381,
-        "mapped": 381,
+        "leads": 405,
+        "mapped": 405,
         "permitted": 0,
         "value_total": 819434,
         "newest": "2026-03-01",
@@ -79,8 +79,8 @@
       },
       {
         "jurisdiction": "North Las Vegas",
-        "leads": 373,
-        "mapped": 373,
+        "leads": 381,
+        "mapped": 381,
         "permitted": 0,
         "value_total": 131355,
         "newest": "2023-07-01",
@@ -99,8 +99,8 @@
       },
       {
         "jurisdiction": "Winchester",
-        "leads": 103,
-        "mapped": 103,
+        "leads": 114,
+        "mapped": 114,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -119,8 +119,8 @@
       },
       {
         "jurisdiction": "Clark County",
-        "leads": 19,
-        "mapped": 19,
+        "leads": 24,
+        "mapped": 24,
         "permitted": 0,
         "value_total": 606829,
         "newest": "2023-09-01",
@@ -159,8 +159,8 @@
       }
     ],
     "jurisdictions": 13,
-    "total_leads": 4909,
-    "total_mapped": 4898
+    "total_leads": 5001,
+    "total_mapped": 4990
   },
   "capital_flow": {
     "by_market": [
@@ -677,6 +677,15 @@
         "markets": 1
       },
       {
+        "state": "TN",
+        "name": "Tennessee",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 45900,
+        "markets": 1
+      },
+      {
         "state": "NJ",
         "name": "New Jersey",
         "out_of_state": true,
@@ -701,15 +710,6 @@
         "properties": 1,
         "permits": 1,
         "valuation_total": 500,
-        "markets": 1
-      },
-      {
-        "state": "TN",
-        "name": "Tennessee",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
         "markets": 1
       },
       {
@@ -1146,15 +1146,15 @@
     ],
     "imported_flows": [
       {
-        "origin": "Chicago, IL",
-        "destination": "Las Vegas",
-        "origin_state": "IL",
-        "properties": 4
-      },
-      {
         "origin": "Los Angeles, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
+        "properties": 4
+      },
+      {
+        "origin": "Chicago, IL",
+        "destination": "Las Vegas",
+        "origin_state": "IL",
         "properties": 4
       },
       {
@@ -1278,6 +1278,12 @@
         "properties": 1
       },
       {
+        "origin": "Nashville, TN",
+        "destination": "Las Vegas",
+        "origin_state": "TN",
+        "properties": 1
+      },
+      {
         "origin": "East Brunswick, NJ",
         "destination": "Las Vegas",
         "origin_state": "NJ",
@@ -1318,18 +1324,12 @@
         "destination": "Las Vegas",
         "origin_state": "CO",
         "properties": 1
-      },
-      {
-        "origin": "Laguna Niguel, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
       }
     ],
     "totals": {
-      "cards": 4909,
+      "cards": 5001,
       "with_origin": 903,
-      "origin_coverage_pct": 18.4,
+      "origin_coverage_pct": 18.1,
       "distinct_markets": 76,
       "distinct_states": 25,
       "out_of_state_markets": 71,
@@ -1340,17 +1340,17 @@
     }
   },
   "ownership": {
-    "mailing_pct": 18.5,
-    "mailing_city_pct": 18.4,
-    "mailing_state_pct": 18.4,
+    "mailing_pct": 18.2,
+    "mailing_city_pct": 18.1,
+    "mailing_state_pct": 18.1,
     "absentee": 384,
     "absentee_pct": 42.4,
     "llc": 239,
-    "llc_pct": 4.9,
+    "llc_pct": 4.8,
     "trust": 222,
-    "trust_pct": 4.5,
+    "trust_pct": 4.4,
     "out_of_state_owners": 86,
-    "out_of_state_pct": 1.8
+    "out_of_state_pct": 1.7
   },
   "categories": [
     {
@@ -1360,12 +1360,12 @@
       "freshness": "8d",
       "coverage": "901 mapped",
       "confidence": 95,
-      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.8% (4929/4939 APNs)."
+      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.8% (5021/5031 APNs)."
     },
     {
       "category": "Real Estate",
       "status": "live",
-      "volume": 4909,
+      "volume": 5001,
       "freshness": "current",
       "coverage": "99.6% live-enriched",
       "confidence": 99,
@@ -1376,9 +1376,9 @@
       "status": "live",
       "volume": 623,
       "freshness": "current",
-      "coverage": "18.5% mailing / 42.4% absentee",
-      "confidence": 51,
-      "note": "Mailing geo on 18.4% of leads \u00b7 239 LLC (4.9%), 222 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
+      "coverage": "18.2% mailing / 42.4% absentee",
+      "confidence": 50,
+      "note": "Mailing geo on 18.1% of leads \u00b7 239 LLC (4.8%), 222 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
     },
     {
       "category": "Capital Flow",
@@ -1386,7 +1386,7 @@
       "volume": 86,
       "freshness": "current",
       "coverage": "71 out-of-state markets",
-      "confidence": 51,
+      "confidence": 50,
       "note": "86 of 903 owned leads (9.5%) are imported capital from 25 states; $7,733,035 tracked. Origin\u2192metro flows mapped."
     },
     {
@@ -1464,7 +1464,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 1241,
+      "volume": 1747,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1473,7 +1473,7 @@
     {
       "category": "Warehouse Integrity",
       "status": "live",
-      "volume": 1241,
+      "volume": 1747,
       "freshness": "append-only",
       "coverage": "first/last-seen tracked",
       "confidence": 85,
@@ -1482,7 +1482,7 @@
     {
       "category": "Scoring",
       "status": "live",
-      "volume": 4909,
+      "volume": 5001,
       "freshness": "current",
       "coverage": "100.0% explained",
       "confidence": 100,
@@ -1491,7 +1491,7 @@
     {
       "category": "Tagging",
       "status": "live",
-      "volume": 4909,
+      "volume": 5001,
       "freshness": "current",
       "coverage": "100.0% tagged",
       "confidence": 100,
@@ -1515,20 +1515,21 @@
       "rows": [
         {
           "jurisdiction": "Las Vegas",
-          "parcels_identified": 1658,
+          "parcels_identified": 1702,
           "owners_identified": 1651,
-          "owner_coverage_pct": 99.6,
+          "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1252,
-          "mapped": 1647,
-          "mapped_pct": 99.3,
+          "signals": 1299,
+          "mapped": 1691,
+          "mapped_pct": 99.4,
           "assessed_value": 3923209,
           "label_sources": {
             "assessor-city": 737,
             "permit-feed": 909,
-            "situs": 12
+            "situs": 12,
+            "coordinate": 44
           },
-          "confidence": 99
+          "confidence": 98
         },
         {
           "jurisdiction": "Henderson",
@@ -1579,35 +1580,37 @@
         },
         {
           "jurisdiction": "Sunrise Manor",
-          "parcels_identified": 381,
+          "parcels_identified": 405,
           "owners_identified": 381,
-          "owner_coverage_pct": 100.0,
+          "owner_coverage_pct": 94.1,
           "permits": 0,
-          "signals": 35,
-          "mapped": 381,
+          "signals": 59,
+          "mapped": 405,
           "mapped_pct": 100.0,
           "assessed_value": 819434,
           "label_sources": {
             "assessor-city": 379,
-            "situs": 2
+            "situs": 2,
+            "coordinate": 24
           },
-          "confidence": 90
+          "confidence": 87
         },
         {
           "jurisdiction": "North Las Vegas",
-          "parcels_identified": 373,
+          "parcels_identified": 381,
           "owners_identified": 373,
-          "owner_coverage_pct": 100.0,
+          "owner_coverage_pct": 97.9,
           "permits": 0,
-          "signals": 9,
-          "mapped": 373,
+          "signals": 17,
+          "mapped": 381,
           "mapped_pct": 100.0,
           "assessed_value": 131355,
           "label_sources": {
             "assessor-city": 368,
-            "situs": 5
+            "situs": 5,
+            "coordinate": 8
           },
-          "confidence": 90
+          "confidence": 89
         },
         {
           "jurisdiction": "Paradise",
@@ -1627,18 +1630,19 @@
         },
         {
           "jurisdiction": "Winchester",
-          "parcels_identified": 103,
+          "parcels_identified": 114,
           "owners_identified": 103,
-          "owner_coverage_pct": 100.0,
+          "owner_coverage_pct": 90.4,
           "permits": 0,
-          "signals": 0,
-          "mapped": 103,
+          "signals": 11,
+          "mapped": 114,
           "mapped_pct": 100.0,
           "assessed_value": 0,
           "label_sources": {
-            "assessor-city": 103
+            "assessor-city": 103,
+            "coordinate": 11
           },
-          "confidence": 90
+          "confidence": 86
         },
         {
           "jurisdiction": "Spring Valley",
@@ -1658,19 +1662,20 @@
         },
         {
           "jurisdiction": "Clark County",
-          "parcels_identified": 19,
+          "parcels_identified": 24,
           "owners_identified": 19,
-          "owner_coverage_pct": 100.0,
+          "owner_coverage_pct": 79.2,
           "permits": 0,
-          "signals": 10,
-          "mapped": 19,
+          "signals": 15,
+          "mapped": 24,
           "mapped_pct": 100.0,
           "assessed_value": 606829,
           "label_sources": {
             "assessor-city": 17,
-            "situs": 2
+            "situs": 2,
+            "county": 5
           },
-          "confidence": 90
+          "confidence": 81
         },
         {
           "jurisdiction": "Boulder City",
@@ -1857,7 +1862,7 @@
         "jurisdiction": "Clark County",
         "coverage_area": "Top leads (enriched on demand)",
         "status": "PARTIAL",
-        "records": 5130,
+        "records": 5222,
         "newest": "2026-04-01",
         "oldest": "1995-04-01",
         "frequency": "on demand",
@@ -2264,7 +2269,7 @@
       {
         "signal": "Assessor Records",
         "status": "PARTIAL",
-        "current_coverage": 4889,
+        "current_coverage": 4981,
         "priority": "HIGH",
         "note": "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."
       },
@@ -2284,8 +2289,8 @@
       },
       {
         "signal": "Code Enforcement",
-        "status": "PARTIAL",
-        "current_coverage": 0,
+        "status": "IMPLEMENTED",
+        "current_coverage": 93,
         "priority": "HIGH",
         "note": "WIRED 0.109 \u2014 CLV Code Enforcement Violations (free, APN+coords); distress signal + new leads on next harvest."
       },
@@ -2425,7 +2430,7 @@
       {
         "signal": "Distress (any)",
         "status": "PARTIAL",
-        "current_coverage": 4,
+        "current_coverage": 97,
         "priority": "HIGH",
         "note": "Only code-violation-style events so far."
       }
@@ -2533,47 +2538,47 @@
       ]
     },
     "data_quality": {
-      "cards": 4909,
+      "cards": 5001,
       "fields": [
         {
           "field": "property_jurisdiction",
-          "present": 4909,
+          "present": 5001,
           "pct": 100.0
         },
         {
           "field": "property_city",
-          "present": 4909,
+          "present": 5001,
           "pct": 100.0
         },
         {
-          "field": "owner_name",
-          "present": 4902,
-          "pct": 99.9
-        },
-        {
           "field": "lat",
-          "present": 4898,
+          "present": 4990,
           "pct": 99.8
         },
         {
           "field": "parcel_apn",
-          "present": 4899,
+          "present": 4991,
           "pct": 99.8
         },
         {
+          "field": "owner_name",
+          "present": 4902,
+          "pct": 98.0
+        },
+        {
           "field": "primary_date",
-          "present": 1095,
-          "pct": 22.3
+          "present": 1187,
+          "pct": 23.7
         },
         {
           "field": "owner_mailing",
           "present": 910,
-          "pct": 18.5
+          "pct": 18.2
         },
         {
           "field": "owner_origin_market",
           "present": 903,
-          "pct": 18.4
+          "pct": 18.1
         },
         {
           "field": "land_use",
@@ -2583,12 +2588,12 @@
         {
           "field": "last_sale_date",
           "present": 132,
-          "pct": 2.7
+          "pct": 2.6
         },
         {
           "field": "assessed_value",
           "present": 97,
-          "pct": 2.0
+          "pct": 1.9
         },
         {
           "field": "year_built",
@@ -2602,11 +2607,11 @@
       "breadth": [
         {
           "scope": "Parcels held vs county roll",
-          "captured": 4909,
+          "captured": 5001,
           "universe": 900000,
           "universe_source": "Clark County Assessor secured roll (approx; ~870k-960k parcels)",
           "universe_confidence": "reference-approximate",
-          "coverage_pct": 0.545,
+          "coverage_pct": 0.556,
           "basis": "BREADTH \u2014 bounded by our cap, not the data (free layer covers the valley)"
         },
         {
@@ -2622,23 +2627,23 @@
       "depth": [
         {
           "field": "situs_address",
-          "captured": 4904,
+          "captured": 4996,
           "pct_of_held": 99.9
         },
         {
           "field": "owner_name",
           "captured": 4902,
-          "pct_of_held": 99.9
+          "pct_of_held": 98.0
         },
         {
           "field": "owner_mailing",
           "captured": 910,
-          "pct_of_held": 18.5
+          "pct_of_held": 18.2
         },
         {
           "field": "assessed_value",
           "captured": 97,
-          "pct_of_held": 2.0
+          "pct_of_held": 1.9
         },
         {
           "field": "year_built",
@@ -2658,23 +2663,23 @@
         {
           "field": "last_sale_date",
           "captured": 132,
-          "pct_of_held": 2.7
+          "pct_of_held": 2.6
         }
       ],
-      "held": 4909
+      "held": 5001
     },
     "coverage_reality": {
       "headline": "GRIT now captures essentially everything the FREE public data exposes for the parcels it holds. Remaining gaps are gated by paid or non-API sources, not by GRIT.",
       "breadth_ceiling": {
-        "held": 4909,
+        "held": 5001,
         "universe_approx": 900000,
         "limit": "self-imposed cap (CARDS_MAX). The free parcel layer carries address+owner+mailing+land-use for the whole valley.",
         "free": true,
         "note": "Raising the cap adds address+owner pins for free, but ~900k parcels cannot render as individual pins on a static site \u2014 needs slim records or vector tiles past ~10-15k."
       },
       "depth_ceiling": {
-        "owner_pct": 99.9,
-        "value_pct": 2.0,
+        "owner_pct": 98.0,
+        "value_pct": 1.9,
         "limit": "value / sqft / beds / baths / year are NOT in any free public API. Clark County sells them as the AOEXTRACT (ownership+value) and AORES (sqft/beds/baths) bulk extracts (signed letter + subscription). The free GIS layer has owner+mailing+land-use only.",
         "free": false
       },
@@ -2707,24 +2712,24 @@
     },
     "confidence": {
       "totals": {
-        "authoritative": 34739,
-        "derived": 9033,
-        "inferred": 5814,
-        "unknown": 92775
+        "authoritative": 35128,
+        "derived": 9401,
+        "inferred": 5906,
+        "unknown": 94594
       },
       "pct": {
-        "authoritative": 24.4,
-        "derived": 6.3,
+        "authoritative": 24.2,
+        "derived": 6.5,
         "inferred": 4.1,
         "unknown": 65.2
       },
-      "field_instances": 142361,
-      "avg_card_confidence": 29.6,
+      "field_instances": 145029,
+      "avg_card_confidence": 29.4,
       "by_field": [
         {
           "field": "property_jurisdiction",
           "authoritative": 4909,
-          "derived": 0,
+          "derived": 92,
           "inferred": 0,
           "unknown": 0,
           "known_pct": 100.0
@@ -2733,37 +2738,29 @@
           "field": "entity_type",
           "authoritative": 0,
           "derived": 0,
-          "inferred": 4909,
+          "inferred": 5001,
           "unknown": 0,
           "known_pct": 100.0
         },
         {
           "field": "score",
           "authoritative": 0,
-          "derived": 4907,
+          "derived": 4999,
           "inferred": 0,
           "unknown": 2,
           "known_pct": 100.0
         },
         {
           "field": "situs_address",
-          "authoritative": 4904,
+          "authoritative": 4996,
           "derived": 0,
           "inferred": 0,
           "unknown": 5,
           "known_pct": 99.9
         },
         {
-          "field": "owner_name",
-          "authoritative": 4902,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 7,
-          "known_pct": 99.9
-        },
-        {
           "field": "parcel_apn",
-          "authoritative": 4899,
+          "authoritative": 4991,
           "derived": 0,
           "inferred": 0,
           "unknown": 10,
@@ -2771,7 +2768,7 @@
         },
         {
           "field": "lat",
-          "authoritative": 4898,
+          "authoritative": 4990,
           "derived": 0,
           "inferred": 0,
           "unknown": 11,
@@ -2779,106 +2776,114 @@
         },
         {
           "field": "property_use_code",
-          "authoritative": 4889,
+          "authoritative": 4981,
           "derived": 0,
           "inferred": 0,
           "unknown": 20,
           "known_pct": 99.6
         },
         {
+          "field": "owner_name",
+          "authoritative": 4902,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 99,
+          "known_pct": 98.0
+        },
+        {
           "field": "urgency",
           "authoritative": 0,
-          "derived": 1095,
+          "derived": 1187,
           "inferred": 0,
           "unknown": 3814,
-          "known_pct": 22.3
+          "known_pct": 23.7
         },
         {
           "field": "primary_date",
           "authoritative": 0,
-          "derived": 1095,
+          "derived": 1187,
           "inferred": 0,
           "unknown": 3814,
-          "known_pct": 22.3
+          "known_pct": 23.7
         },
         {
           "field": "temporal_state",
           "authoritative": 0,
           "derived": 1033,
           "inferred": 0,
-          "unknown": 3876,
-          "known_pct": 21.0
-        },
-        {
-          "field": "permit_count",
-          "authoritative": 912,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 3997,
-          "known_pct": 18.6
-        },
-        {
-          "field": "last_permit_date",
-          "authoritative": 912,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 3997,
-          "known_pct": 18.6
-        },
-        {
-          "field": "contractors",
-          "authoritative": 912,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 3997,
-          "known_pct": 18.6
+          "unknown": 3968,
+          "known_pct": 20.7
         },
         {
           "field": "owner_mailing",
           "authoritative": 910,
           "derived": 0,
           "inferred": 0,
-          "unknown": 3999,
-          "known_pct": 18.5
+          "unknown": 4091,
+          "known_pct": 18.2
+        },
+        {
+          "field": "permit_count",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 4089,
+          "known_pct": 18.2
+        },
+        {
+          "field": "last_permit_date",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 4089,
+          "known_pct": 18.2
+        },
+        {
+          "field": "contractors",
+          "authoritative": 912,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 4089,
+          "known_pct": 18.2
         },
         {
           "field": "owner_origin_market",
           "authoritative": 0,
           "derived": 903,
           "inferred": 0,
-          "unknown": 4006,
-          "known_pct": 18.4
+          "unknown": 4098,
+          "known_pct": 18.1
         },
         {
           "field": "occupancy_status",
           "authoritative": 0,
           "derived": 0,
           "inferred": 905,
-          "unknown": 4004,
-          "known_pct": 18.4
+          "unknown": 4096,
+          "known_pct": 18.1
         },
         {
           "field": "trade_tags",
           "authoritative": 674,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4235,
-          "known_pct": 13.7
+          "unknown": 4327,
+          "known_pct": 13.5
         },
         {
           "field": "lot_sqft",
-          "authoritative": 349,
+          "authoritative": 370,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4560,
-          "known_pct": 7.1
+          "unknown": 4631,
+          "known_pct": 7.4
         },
         {
           "field": "land_use",
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4760,
+          "unknown": 4852,
           "known_pct": 3.0
         },
         {
@@ -2886,7 +2891,7 @@
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4760,
+          "unknown": 4852,
           "known_pct": 3.0
         },
         {
@@ -2894,23 +2899,23 @@
           "authoritative": 132,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4777,
-          "known_pct": 2.7
+          "unknown": 4869,
+          "known_pct": 2.6
         },
         {
           "field": "assessed_value",
           "authoritative": 97,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4812,
-          "known_pct": 2.0
+          "unknown": 4904,
+          "known_pct": 1.9
         },
         {
           "field": "year_built",
           "authoritative": 50,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4859,
+          "unknown": 4951,
           "known_pct": 1.0
         },
         {
@@ -2918,7 +2923,7 @@
           "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4863,
+          "unknown": 4955,
           "known_pct": 0.9
         },
         {
@@ -2926,7 +2931,7 @@
           "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4863,
+          "unknown": 4955,
           "known_pct": 0.9
         },
         {
@@ -2934,7 +2939,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4909,
+          "unknown": 5001,
           "known_pct": 0.0
         },
         {
@@ -2942,7 +2947,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4909,
+          "unknown": 5001,
           "known_pct": 0.0
         },
         {
@@ -2950,7 +2955,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 4909,
+          "unknown": 5001,
           "known_pct": 0.0
         }
       ]
@@ -3904,7 +3909,7 @@
       ],
       "multi_property_owners": 145,
       "parcels_in_networks": 635,
-      "network_concentration_pct": 12.9,
+      "network_concentration_pct": 12.7,
       "cross_jurisdiction_networks": 14,
       "out_of_state_networks": 2
     },
@@ -3913,7 +3918,6 @@
         "Property Sales",
         "Deed Transfers",
         "Assessor Records",
-        "Code Enforcement",
         "Foreclosures",
         "Trustee Sales",
         "Distress (any)"
@@ -3931,12 +3935,12 @@
           "priority": "HIGH"
         },
         {
-          "gap": "7 parcels have no identified owner",
+          "gap": "99 parcels have no identified owner",
           "impact": "Full-roll Assessor enrichment needed for ownership completeness",
           "priority": "HIGH"
         },
         {
-          "gap": "0 parcels have coordinate-derived jurisdiction",
+          "gap": "92 parcels have coordinate-derived jurisdiction",
           "impact": "Authoritative city refinement via parcel-layer city attribute on next harvest",
           "priority": "MEDIUM"
         },
@@ -3957,9 +3961,9 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 19,
-    "event_total": 1241,
-    "records_tracked": 7118,
+    "ledger_entries": 20,
+    "event_total": 1747,
+    "records_tracked": 7210,
     "growth": [
       {
         "date": "2026-05-29",
@@ -3984,20 +3988,28 @@
         "permit_events": 1000,
         "contractors": 331,
         "imported_capital": 86
+      },
+      {
+        "date": "2026-05-30",
+        "leads": 5001,
+        "mapped": 4990,
+        "permit_events": 1000,
+        "contractors": 331,
+        "imported_capital": 86
       }
     ],
     "append_only": true
   },
   "headline": {
-    "leads": 4909,
-    "mapped": 4898,
+    "leads": 5001,
+    "mapped": 4990,
     "permit_events": 1000,
     "permit_newest": "2026-05-22",
     "permit_jurisdictions": 1,
     "jurisdictions": 13,
     "contractors": 331,
     "tagged_pct": 100.0,
-    "enriched": 4889,
+    "enriched": 4981,
     "imported_capital": 86,
     "owner_markets": 76,
     "hot_leads": 0,
