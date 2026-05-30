@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T14:53:33Z",
-  "version": "0.107",
+  "generated_at": "2026-05-30T09:17:13Z",
+  "version": "0.108",
   "permits": {
     "by_jurisdiction": [
       {
@@ -1880,7 +1880,7 @@
           "year built"
         ],
         "missing": [
-          "full-roll enrichment (only top leads enriched today)"
+          "value/sqft/beds/year require the paid AOEXTRACT/AORES extract \u2014 the free layer carries owner+mailing+land-use only"
         ],
         "health": "live",
         "probe_status": "reachable"
@@ -2129,6 +2129,117 @@
         "priority": "MEDIUM",
         "health": "planned",
         "probe_status": "reachable"
+      },
+      {
+        "source": "LVMPD crime open data",
+        "jurisdiction": "Las Vegas metro",
+        "coverage_area": "Metro crime / calls / traffic",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "incident type",
+          "date",
+          "location",
+          "disposition"
+        ],
+        "would_provide": [
+          "incident type",
+          "date",
+          "location",
+          "disposition"
+        ],
+        "feasibility": "HIGH",
+        "access": "FREE \u2014 opendata-lvmpd.hub.arcgis.com (ArcGIS Hub) \u2014 ready to wire",
+        "priority": "MEDIUM",
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Henderson crime search",
+        "jurisdiction": "Henderson",
+        "coverage_area": "90-day crime within city",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "incident type",
+          "date",
+          "location"
+        ],
+        "would_provide": [
+          "incident type",
+          "date",
+          "location"
+        ],
+        "feasibility": "MEDIUM",
+        "access": "FREE \u2014 maps.cityofhenderson.com 90-day crime map (HTML)",
+        "priority": "LOW",
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "Clark County Assessor bulk extract (AOEXTRACT + AORES)",
+        "jurisdiction": "Clark County",
+        "coverage_area": "Parcel-level value + sqft/beds/baths for ALL parcels",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "assessed/land/improvement value",
+          "sqft",
+          "beds",
+          "baths",
+          "year built",
+          "sale"
+        ],
+        "would_provide": [
+          "assessed/land/improvement value",
+          "sqft",
+          "beds",
+          "baths",
+          "year built",
+          "sale"
+        ],
+        "feasibility": "PAID",
+        "access": "Subscription/purchase \u2014 signed letter to Assessor (702-455-3882); weekly bulk files",
+        "priority": "HIGH",
+        "health": "planned",
+        "probe_status": "reachable"
+      },
+      {
+        "source": "ATTOM / Regrid (commercial)",
+        "jurisdiction": "Nationwide",
+        "coverage_area": "Turnkey parcel + permit + value",
+        "status": "NOT IMPLEMENTED",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "\u2014",
+        "confidence": 0,
+        "fields": [],
+        "missing": [
+          "full property + permit + valuation"
+        ],
+        "would_provide": [
+          "full property + permit + valuation"
+        ],
+        "feasibility": "PAID",
+        "access": "Commercial API license \u2014 fastest path to depth + breadth",
+        "priority": "LOW",
+        "health": "planned"
       }
     ],
     "signal_matrix": [
@@ -2165,7 +2276,7 @@
         "status": "PARTIAL",
         "current_coverage": 2375,
         "priority": "HIGH",
-        "note": "Top leads enriched; full-roll enrichment is the next wave."
+        "note": "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."
       },
       {
         "signal": "Contractors",
@@ -2290,8 +2401,8 @@
         "signal": "Crime / Police Activity",
         "status": "MISSING",
         "current_coverage": 0,
-        "priority": "LOW",
-        "note": "Metro feeds catalogued."
+        "priority": "MEDIUM",
+        "note": "LVMPD open-data portal (free, ArcGIS Hub) + Henderson 90-day crime search \u2014 ready to wire."
       },
       {
         "signal": "Security Signals",
@@ -2497,35 +2608,111 @@
       ]
     },
     "denominators": {
-      "note": "Coverage % is shown only where a sourced universe exists. The county parcel roll is an approximate published reference; per-jurisdiction, permit, and owner universes are not yet established and are left blank rather than estimated.",
-      "rows": [
+      "note": "BREADTH (parcels held) is limited by our own cap \u2014 the free parcel layer carries address+owner+mailing+land-use for the whole ~900k-parcel valley. DEPTH (value/sqft/beds/year) is limited by DATA ACCESS: those fields are sold by the Assessor as paid bulk extracts (AOEXTRACT/AORES) and are not in any free public API. Universes are approximate published references, never invented.",
+      "breadth": [
         {
-          "scope": "Clark County parcels",
+          "scope": "Parcels held vs county roll",
           "captured": 2412,
-          "universe": 800000,
-          "universe_source": "Clark County Assessor secured roll (approximate published figure)",
+          "universe": 900000,
+          "universe_source": "Clark County Assessor secured roll (approx; ~870k-960k parcels)",
           "universe_confidence": "reference-approximate",
-          "coverage_pct": 0.301,
-          "basis": "indicative \u2014 vs approximate published county roll"
+          "coverage_pct": 0.268,
+          "basis": "BREADTH \u2014 bounded by our cap, not the data (free layer covers the valley)"
         },
         {
-          "scope": "Owners identified",
-          "captured": 1958,
-          "universe": 800000,
-          "universe_source": "Clark County Assessor secured roll (approximate published figure)",
-          "universe_confidence": "reference-approximate",
-          "coverage_pct": 0.245,
-          "basis": "indicative \u2014 owners \u2248 parcels universe"
-        },
-        {
-          "scope": "Permits captured",
+          "scope": "Permits held vs Clark new-residential/yr",
           "captured": 912,
-          "universe": null,
-          "universe_source": null,
-          "universe_confidence": "unknown",
+          "universe": 16000,
+          "universe_source": "U.S. Census Building Permits Survey, Clark County new-residential units/yr (~16k in 2021)",
+          "universe_confidence": "reference-partial",
           "coverage_pct": null,
-          "basis": "universe not established \u2014 total SoNV permits issued is not yet enumerated"
+          "basis": "PARTIAL reference \u2014 Census counts new-residential only; all-permit-types universe is not published"
         }
+      ],
+      "depth": [
+        {
+          "field": "situs_address",
+          "captured": 1923,
+          "pct_of_held": 79.7
+        },
+        {
+          "field": "owner_name",
+          "captured": 1958,
+          "pct_of_held": 81.2
+        },
+        {
+          "field": "owner_mailing",
+          "captured": 908,
+          "pct_of_held": 37.6
+        },
+        {
+          "field": "assessed_value",
+          "captured": 77,
+          "pct_of_held": 3.2
+        },
+        {
+          "field": "year_built",
+          "captured": 51,
+          "pct_of_held": 2.1
+        },
+        {
+          "field": "building_sqft",
+          "captured": 0,
+          "pct_of_held": 0.0
+        },
+        {
+          "field": "bedrooms",
+          "captured": 47,
+          "pct_of_held": 1.9
+        },
+        {
+          "field": "last_sale_date",
+          "captured": 138,
+          "pct_of_held": 5.7
+        }
+      ],
+      "held": 2412
+    },
+    "coverage_reality": {
+      "headline": "GRIT now captures essentially everything the FREE public data exposes for the parcels it holds. Remaining gaps are gated by paid or non-API sources, not by GRIT.",
+      "breadth_ceiling": {
+        "held": 2412,
+        "universe_approx": 900000,
+        "limit": "self-imposed cap (CARDS_MAX). The free parcel layer carries address+owner+mailing+land-use for the whole valley.",
+        "free": true,
+        "note": "Raising the cap adds address+owner pins for free, but ~900k parcels cannot render as individual pins on a static site \u2014 needs slim records or vector tiles past ~10-15k."
+      },
+      "depth_ceiling": {
+        "owner_pct": 81.2,
+        "value_pct": 3.2,
+        "limit": "value / sqft / beds / baths / year are NOT in any free public API. Clark County sells them as the AOEXTRACT (ownership+value) and AORES (sqft/beds/baths) bulk extracts (signed letter + subscription). The free GIS layer has owner+mailing+land-use only.",
+        "free": false
+      },
+      "paths": [
+        {
+          "path": "Free, signal-driven (recommended)",
+          "what": "Capture ALL permits/sales/distress across jurisdictions and enrich the parcels behind them; map shows active leads, coverage measured vs universe.",
+          "cost": "$0",
+          "gets": "full SIGNAL coverage; address+owner breadth; no value/sqft depth"
+        },
+        {
+          "path": "Paid Assessor extract",
+          "what": "Subscribe to AOEXTRACT + AORES weekly bulk files for parcel-level value/sqft/beds across all ~900k parcels.",
+          "cost": "Assessor subscription fee + bigger data store (off static-JSON)",
+          "gets": "depth on every parcel"
+        },
+        {
+          "path": "Paid vendor (ATTOM / Regrid)",
+          "what": "Turnkey nationwide parcel + permit + value data via API.",
+          "cost": "$$ commercial license",
+          "gets": "breadth + depth, fastest, least control"
+        }
+      ],
+      "free_signal_wins": [
+        "City of Las Vegas permits \u2014 already live (ArcGIS Hub open data).",
+        "LVMPD crime open data portal \u2014 free, ready to wire (opendata-lvmpd.hub.arcgis.com).",
+        "Henderson 90-day crime search \u2014 free reference.",
+        "More parcel breadth (raise cap) \u2014 free address+owner across the valley."
       ]
     },
     "confidence": {
@@ -3772,16 +3959,17 @@
         }
       ],
       "v107_roadmap": [
-        "v0.107: ingest Clark County Recorder distress (NOD, trustee, lien, lis pendens).",
-        "v0.107: pull parcel-layer incorporated-city attribute during geocode for authoritative jurisdiction.",
-        "v0.107: extend permits to Henderson / NLV / County (Accela).",
-        "v0.107: full-roll Assessor enrichment to lift owner + value coverage toward 100%.",
-        "v0.107: NV SOS business + officer graph for entity resolution and commercial signal."
+        "Wire LVMPD crime open data (FREE, ArcGIS Hub) \u2014 turns the Crime signal green.",
+        "Raise parcel breadth (FREE) \u2014 more address+owner+mailing across the valley.",
+        "DECISION NEEDED: subscribe to Assessor AOEXTRACT + AORES (paid) \u2014 the only route to parcel-level value/sqft/beds depth; free APIs do not expose these.",
+        "Henderson / NLV / County permits via Accela (no free API \u2014 scrape or paid feed).",
+        "Clark County Recorder distress (NOD/trustee/lis pendens) \u2014 feasibility study (no free bulk API).",
+        "NV SOS business + officer graph for entity resolution and commercial signal."
       ]
     }
   },
   "warehouse": {
-    "ledger_entries": 16,
+    "ledger_entries": 17,
     "event_total": 1219,
     "records_tracked": 3703,
     "growth": [

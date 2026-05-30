@@ -227,7 +227,7 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.107</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.108</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -689,11 +689,28 @@ function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=em
     '<div style="height:22px;display:flex;border:1px solid var(--line);margin-bottom:6px">'+seg+'</div><div style="margin-bottom:10px">'+legend+'</div>'+
     '<div class="tblwrap"><table class="tbl"><thead><tr><th>Field</th><th class="num">Known</th><th>Coverage</th><th>Class breakdown</th></tr></thead><tbody>'+cfRows+'</tbody></table></div>';
   // coverage denominators (Priority 5)
-  const dn=a.denominators||{rows:[]};
-  const dnRows=(dn.rows||[]).map(r=>'<tr><td class="nm">'+esc(r.scope)+'</td><td class="num">'+po(r.captured)+'</td><td class="num">'+(r.universe?po(r.universe):'—')+'</td><td class="num">'+(r.coverage_pct!=null?r.coverage_pct+'%':'—')+'</td><td class="mut" style="font-size:10px">'+esc(r.basis||'')+'</td></tr>').join('');
-  const dnBlock='<h2 class="sec">Coverage Denominators <span class="note">% against sourced universes where they exist — counts shown otherwise, never as coverage</span></h2>'+
-    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Scope</th><th class="num">Captured</th><th class="num">Universe</th><th class="num">Coverage</th><th>Basis</th></tr></thead><tbody>'+dnRows+'</tbody></table></div>'+
+  const dn=a.denominators||{breadth:[],depth:[]};
+  const bRows=(dn.breadth||[]).map(r=>'<tr><td class="nm">'+esc(r.scope)+'</td><td class="num">'+po(r.captured)+'</td><td class="num">'+(r.universe?po(r.universe):'—')+'</td><td class="num">'+(r.coverage_pct!=null?r.coverage_pct+'%':'—')+'</td><td class="mut" style="font-size:10px">'+esc(r.basis||'')+'</td></tr>').join('');
+  const depRows=(dn.depth||[]).map(r=>'<tr><td class="nm">'+esc(r.field)+'</td><td class="num">'+po(r.captured)+'</td><td class="num">'+r.pct_of_held+'%</td><td style="width:200px"><div class="qbar"><i style="width:'+r.pct_of_held+'%;background:'+(r.pct_of_held>=70?'var(--green)':r.pct_of_held>=30?'var(--amber)':'var(--red)')+'"></i></div></td></tr>').join('');
+  const dnBlock='<h2 class="sec">Coverage Denominators <span class="note">BREADTH (parcels held vs universe) vs DEPTH (field completeness) — % only against sourced universes</span></h2>'+
+    '<div class="tblwrap"><table class="tbl"><thead><tr><th>Breadth</th><th class="num">Held</th><th class="num">Universe</th><th class="num">Coverage</th><th>Basis</th></tr></thead><tbody>'+bRows+'</tbody></table></div>'+
+    '<div class="tblwrap" style="margin-top:8px"><table class="tbl"><thead><tr><th>Depth (field)</th><th class="num">Present</th><th class="num">% of held</th><th>&nbsp;</th></tr></thead><tbody>'+depRows+'</tbody></table></div>'+
     '<div style="font-size:10px;color:var(--faint);margin-top:6px">'+esc(dn.note||'')+'</div>';
+  // coverage reality — the honest assessment of what full coverage requires
+  const cr=a.coverage_reality;
+  let crBlock='';
+  if(cr){const bc=cr.breadth_ceiling||{},dc=cr.depth_ceiling||{};
+    const pathRows=(cr.paths||[]).map(p=>'<tr><td class="nm">'+esc(p.path)+'</td><td class="mut">'+esc(p.what||'')+'</td><td>'+esc(p.cost||'')+'</td><td class="mut">'+esc(p.gets||'')+'</td></tr>').join('');
+    const wins=(cr.free_signal_wins||[]).map(w=>'<li>'+esc(w)+'</li>').join('');
+    crBlock='<h2 class="sec">Coverage Reality <span class="note">what full coverage actually requires</span></h2>'+
+      '<div class="why-box" style="border-left-color:var(--amber);background:rgba(210,153,34,.05);border-color:rgba(210,153,34,.25)">'+esc(cr.headline||'')+'</div>'+
+      '<div class="statgrid" style="margin-top:10px">'+
+      '<div class="stat"><div class="v" style="color:var(--blue)">'+(bc.free?'FREE':'PAID')+'</div><div class="l">Breadth ceiling</div><div style="font-size:10px;color:var(--dim);margin-top:2px">'+esc(bc.limit||'')+'</div></div>'+
+      '<div class="stat"><div class="v" style="color:var(--import)">'+(dc.free?'FREE':'PAID')+'</div><div class="l">Depth ceiling</div><div style="font-size:10px;color:var(--dim);margin-top:2px">'+esc(dc.limit||'')+'</div></div>'+
+      '</div>'+
+      '<div class="tblwrap" style="margin-top:8px"><table class="tbl"><thead><tr><th>Path forward</th><th>What</th><th>Cost</th><th>Gets you</th></tr></thead><tbody>'+pathRows+'</tbody></table></div>'+
+      (wins?'<div style="margin-top:8px;font-size:11px;color:var(--dim)"><b style="color:var(--green)">Free wins available now:</b><ul class="roadmap">'+wins+'</ul></div>':'');
+  }
   // ownership networks (Priority 4)
   const on=a.ownership_networks||{networks:[]};
   const onRows=(on.networks||[]).map(r=>'<tr><td class="nm">'+(r.out_of_state?'<span class="oos"></span> ':'')+esc(r.owner)+'</td><td>'+esc(r.entity_type||'—')+'</td><td class="num">'+r.parcels+'</td><td class="num">'+(r.value?money(r.value):'—')+'</td><td class="num">'+r.jurisdiction_count+'</td><td class="num">'+r.permits+'</td><td class="mut" style="font-size:10px">'+esc((r.jurisdictions||[]).slice(0,3).join(', '))+'</td></tr>').join('');
@@ -705,7 +722,7 @@ function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=em
   const road=(ga.v107_roadmap||[]).map(r=>'<li>'+esc(r)+'</li>').join('');
   const gaBlock='<h2 class="sec">Gap Analysis &amp; Roadmap <span class="note">the distance to complete Southern Nevada coverage</span></h2>'+gaps+
     (road?'<h2 class="sec" style="margin-top:14px">Next coverage targets</h2><ul class="roadmap">'+road+'</ul>':'');
-  v.innerHTML=confBlock+dnBlock+siTbl+smBlock+pBlock+dqBlock+onBlock+gaBlock;}
+  v.innerHTML=crBlock+confBlock+dnBlock+siTbl+smBlock+pBlock+dqBlock+onBlock+gaBlock;}
 
 /* ---------- KPIs + tabs ---------- */
 function renderKPIs(){const h=(COV&&COV.headline)||{};

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-30T08:04:59Z",
+  "generated_at": "2026-05-30T09:17:13Z",
   "append_only": true,
-  "count": 15,
+  "count": 17,
   "entries": [
     {
       "leads": 1412,
@@ -217,6 +217,38 @@
       "hot_leads": 0,
       "sonv_jurisdictions_covered": 11,
       "at": "2026-05-30T08:04:59Z"
+    },
+    {
+      "leads": 2412,
+      "mapped": 2401,
+      "permit_events": 1000,
+      "permit_newest": "2026-05-22",
+      "permit_jurisdictions": 1,
+      "jurisdictions": 13,
+      "contractors": 331,
+      "tagged_pct": 100.0,
+      "enriched": 2375,
+      "imported_capital": 86,
+      "owner_markets": 76,
+      "hot_leads": 0,
+      "sonv_jurisdictions_covered": 13,
+      "at": "2026-05-30T09:16:26Z"
+    },
+    {
+      "leads": 2412,
+      "mapped": 2401,
+      "permit_events": 1000,
+      "permit_newest": "2026-05-22",
+      "permit_jurisdictions": 1,
+      "jurisdictions": 13,
+      "contractors": 331,
+      "tagged_pct": 100.0,
+      "enriched": 2375,
+      "imported_capital": 86,
+      "owner_markets": 76,
+      "hot_leads": 0,
+      "sonv_jurisdictions_covered": 13,
+      "at": "2026-05-30T09:17:13Z"
     }
   ]
 }

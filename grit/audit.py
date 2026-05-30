@@ -168,7 +168,25 @@ def source_inventory(cards, events, health):
         cand("Nevada SOS business registry (SilverFlume/ORION)", "Statewide", "LLC / registered agent / officers",
              ["entity", "registered agent", "officers", "status", "formation date"],
              "MEDIUM", "SilverFlume business search / bulk dataset — probe required", "MEDIUM"),
+        cand("LVMPD crime open data", "Las Vegas metro", "Metro crime / calls / traffic",
+             ["incident type", "date", "location", "disposition"],
+             "HIGH", "FREE — opendata-lvmpd.hub.arcgis.com (ArcGIS Hub) — ready to wire", "MEDIUM"),
+        cand("Henderson crime search", "Henderson", "90-day crime within city",
+             ["incident type", "date", "location"],
+             "MEDIUM", "FREE — maps.cityofhenderson.com 90-day crime map (HTML)", "LOW"),
+        cand("Clark County Assessor bulk extract (AOEXTRACT + AORES)", "Clark County",
+             "Parcel-level value + sqft/beds/baths for ALL parcels",
+             ["assessed/land/improvement value", "sqft", "beds", "baths", "year built", "sale"],
+             "PAID", "Subscription/purchase — signed letter to Assessor (702-455-3882); weekly bulk files", "HIGH"),
+        cand("ATTOM / Regrid (commercial)", "Nationwide", "Turnkey parcel + permit + value",
+             ["full property + permit + valuation"],
+             "PAID", "Commercial API license — fastest path to depth + breadth", "LOW"),
     ]
+    # the live Assessor enrichment depth is paid-gated -- make that explicit
+    for r in inv:
+        if "Assessor enrichment" in r.get("source", ""):
+            r["missing"] = ["value/sqft/beds/year require the paid AOEXTRACT/AORES extract — "
+                            "the free layer carries owner+mailing+land-use only"]
     # fold in any reachability the health probe already measured
     hmap = {(s.get("key") or "").lower(): s for s in (health or [])}
     for row in inv:
@@ -203,7 +221,7 @@ def signal_matrix(cards, events):
         row("Deed Transfers", "PARTIAL", deed_ev, HIGH, "From Assessor sale history."),
         row("Ownership", "IMPLEMENTED", owners, HIGH, "Owner + mailing on identified parcels."),
         row("Assessor Records", "PARTIAL", sum(1 for c in cards if c.get("vintage") == "current"), HIGH,
-            "Top leads enriched; full-roll enrichment is the next wave."),
+            "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."),
         row("Contractors", "IMPLEMENTED", contractors, HIGH, "Derived from permit pullers."),
         row("Business Licenses", "MISSING", 0, MED, "NV SOS / city licensing not yet ingested."),
         row("Code Enforcement", "MISSING", 0, MED, "Violation feeds catalogued, not ingested."),
@@ -221,7 +239,8 @@ def signal_matrix(cards, events):
         row("Probate", "MISSING", 0, MED, ""),
         row("Bankruptcy", "MISSING", 0, LOW, ""),
         row("Evictions", "MISSING", 0, MED, ""),
-        row("Crime / Police Activity", "MISSING", 0, LOW, "Metro feeds catalogued."),
+        row("Crime / Police Activity", "MISSING", 0, MED,
+            "LVMPD open-data portal (free, ArcGIS Hub) + Henderson 90-day crime search — ready to wire."),
         row("Security Signals", "PARTIAL", 0, LOW, "Tag scaffold exists; no source yet."),
         row("Commercial Tenant Improvements", "PARTIAL", 0, MED, "Surfaces from commercial permits."),
         row("Government / Capital Projects", "MISSING", 0, LOW, ""),
@@ -326,11 +345,13 @@ def gap_analysis(cards, events, sig_matrix):
          "impact": "Limits entity resolution and commercial signal", "priority": "MEDIUM"},
     ]
     roadmap = [
-        "v0.107: ingest Clark County Recorder distress (NOD, trustee, lien, lis pendens).",
-        "v0.107: pull parcel-layer incorporated-city attribute during geocode for authoritative jurisdiction.",
-        "v0.107: extend permits to Henderson / NLV / County (Accela).",
-        "v0.107: full-roll Assessor enrichment to lift owner + value coverage toward 100%.",
-        "v0.107: NV SOS business + officer graph for entity resolution and commercial signal.",
+        "Wire LVMPD crime open data (FREE, ArcGIS Hub) — turns the Crime signal green.",
+        "Raise parcel breadth (FREE) — more address+owner+mailing across the valley.",
+        "DECISION NEEDED: subscribe to Assessor AOEXTRACT + AORES (paid) — the only route to "
+        "parcel-level value/sqft/beds depth; free APIs do not expose these.",
+        "Henderson / NLV / County permits via Accela (no free API — scrape or paid feed).",
+        "Clark County Recorder distress (NOD/trustee/lis pendens) — feasibility study (no free bulk API).",
+        "NV SOS business + officer graph for entity resolution and commercial signal.",
     ]
     return {"missing_high_priority": missing_high, "unidentified_jurisdiction": unident,
             "gaps": gaps, "v107_roadmap": roadmap}
@@ -343,39 +364,110 @@ def gap_analysis(cards, events, sig_matrix):
 # against the county roll is INDICATIVE and tagged as such.
 REFERENCE_UNIVERSE = {
     "clark_county_parcels": {
-        "universe": 800000,
-        "source": "Clark County Assessor secured roll (approximate published figure)",
+        "universe": 900000,
+        "source": "Clark County Assessor secured roll (approx; ~870k-960k parcels)",
         "confidence": "reference-approximate",
+    },
+    "clark_new_residential_permits_yr": {
+        "universe": 16000,
+        "source": "U.S. Census Building Permits Survey, Clark County new-residential units/yr (~16k in 2021)",
+        "confidence": "reference-partial",
     },
 }
 
 
 def coverage_denominators(cards):
-    parcels_identified = len(cards)
-    owners_identified = sum(1 for c in cards if c.get("owner_name"))
+    """Coverage as % against sourced universes (v0.108). Separates BREADTH (how
+    many of the ~900k parcels we hold) from DEPTH (how complete each field is on
+    the parcels we hold), because they are limited by different things: breadth
+    by our own cap (the free layer covers the whole valley), depth by data access
+    (value/sqft/beds are paid-only). Universes are published references, labelled."""
+    n = len(cards)
     ref = REFERENCE_UNIVERSE["clark_county_parcels"]
     uni = ref["universe"]
-    rows = [
-        {"scope": "Clark County parcels", "captured": parcels_identified,
-         "universe": uni, "universe_source": ref["source"],
-         "universe_confidence": ref["confidence"],
-         "coverage_pct": round(100 * parcels_identified / uni, 3),
-         "basis": "indicative — vs approximate published county roll"},
-        {"scope": "Owners identified", "captured": owners_identified,
-         "universe": uni, "universe_source": ref["source"],
-         "universe_confidence": ref["confidence"],
-         "coverage_pct": round(100 * owners_identified / uni, 3),
-         "basis": "indicative — owners ≈ parcels universe"},
-        {"scope": "Permits captured", "captured": sum(1 for c in cards if c.get("has_permit") or c.get("permit_count")),
-         "universe": None, "universe_source": None, "universe_confidence": "unknown",
-         "coverage_pct": None,
-         "basis": "universe not established — total SoNV permits issued is not yet enumerated"},
+
+    def depth(field):
+        have = sum(1 for c in cards if c.get(field) not in (None, "", "0", 0))
+        return {"field": field, "captured": have,
+                "pct_of_held": round(100 * have / (n or 1), 1)}
+
+    breadth = [
+        {"scope": "Parcels held vs county roll", "captured": n, "universe": uni,
+         "universe_source": ref["source"], "universe_confidence": ref["confidence"],
+         "coverage_pct": round(100 * n / uni, 3),
+         "basis": "BREADTH — bounded by our cap, not the data (free layer covers the valley)"},
     ]
-    return {"note": ("Coverage % is shown only where a sourced universe exists. The county "
-                     "parcel roll is an approximate published reference; per-jurisdiction, "
-                     "permit, and owner universes are not yet established and are left blank "
-                     "rather than estimated."),
-            "rows": rows}
+    pref = REFERENCE_UNIVERSE["clark_new_residential_permits_yr"]
+    permits = sum(1 for c in cards if c.get("has_permit") or c.get("permit_count"))
+    breadth.append(
+        {"scope": "Permits held vs Clark new-residential/yr", "captured": permits,
+         "universe": pref["universe"], "universe_source": pref["source"],
+         "universe_confidence": pref["confidence"], "coverage_pct": None,
+         "basis": "PARTIAL reference — Census counts new-residential only; all-permit-types universe is not published"})
+    depth_rows = [depth(f) for f in ("situs_address", "owner_name", "owner_mailing",
+                                     "assessed_value", "year_built", "building_sqft",
+                                     "bedrooms", "last_sale_date")]
+    return {
+        "note": ("BREADTH (parcels held) is limited by our own cap — the free parcel "
+                 "layer carries address+owner+mailing+land-use for the whole ~900k-parcel "
+                 "valley. DEPTH (value/sqft/beds/year) is limited by DATA ACCESS: those "
+                 "fields are sold by the Assessor as paid bulk extracts (AOEXTRACT/AORES) "
+                 "and are not in any free public API. Universes are approximate published "
+                 "references, never invented."),
+        "breadth": breadth,
+        "depth": depth_rows,
+        "held": n,
+    }
+
+
+def coverage_reality(cards):
+    """The honest assessment of what full coverage actually requires (v0.108),
+    grounded in the real Clark County data ecosystem. Two distinct ceilings:
+    breadth (our cap) and depth (paid data). Three real paths forward."""
+    n = len(cards)
+    owners = sum(1 for c in cards if c.get("owner_name"))
+    valued = sum(1 for c in cards if c.get("assessed_value") not in (None, "", "0", 0))
+    return {
+        "headline": ("GRIT now captures essentially everything the FREE public data exposes "
+                     "for the parcels it holds. Remaining gaps are gated by paid or non-API "
+                     "sources, not by GRIT."),
+        "breadth_ceiling": {
+            "held": n, "universe_approx": 900000,
+            "limit": "self-imposed cap (CARDS_MAX). The free parcel layer carries "
+                     "address+owner+mailing+land-use for the whole valley.",
+            "free": True,
+            "note": "Raising the cap adds address+owner pins for free, but ~900k parcels "
+                    "cannot render as individual pins on a static site — needs slim records "
+                    "or vector tiles past ~10-15k."},
+        "depth_ceiling": {
+            "owner_pct": round(100 * owners / (n or 1), 1),
+            "value_pct": round(100 * valued / (n or 1), 1),
+            "limit": "value / sqft / beds / baths / year are NOT in any free public API. "
+                     "Clark County sells them as the AOEXTRACT (ownership+value) and AORES "
+                     "(sqft/beds/baths) bulk extracts (signed letter + subscription). The "
+                     "free GIS layer has owner+mailing+land-use only.",
+            "free": False},
+        "paths": [
+            {"path": "Free, signal-driven (recommended)",
+             "what": "Capture ALL permits/sales/distress across jurisdictions and enrich the "
+                     "parcels behind them; map shows active leads, coverage measured vs universe.",
+             "cost": "$0", "gets": "full SIGNAL coverage; address+owner breadth; no value/sqft depth"},
+            {"path": "Paid Assessor extract",
+             "what": "Subscribe to AOEXTRACT + AORES weekly bulk files for parcel-level "
+                     "value/sqft/beds across all ~900k parcels.",
+             "cost": "Assessor subscription fee + bigger data store (off static-JSON)",
+             "gets": "depth on every parcel"},
+            {"path": "Paid vendor (ATTOM / Regrid)",
+             "what": "Turnkey nationwide parcel + permit + value data via API.",
+             "cost": "$$ commercial license", "gets": "breadth + depth, fastest, least control"},
+        ],
+        "free_signal_wins": [
+            "City of Las Vegas permits — already live (ArcGIS Hub open data).",
+            "LVMPD crime open data portal — free, ready to wire (opendata-lvmpd.hub.arcgis.com).",
+            "Henderson 90-day crime search — free reference.",
+            "More parcel breadth (raise cap) — free address+owner across the valley.",
+        ],
+    }
 
 
 def confidence_summary(cards):
@@ -445,6 +537,7 @@ def build_audit(cards, events, health):
         "permit_audit": permit_audit(cards, events),
         "data_quality": data_quality(cards),
         "denominators": coverage_denominators(cards),
+        "coverage_reality": coverage_reality(cards),
         "confidence": confidence_summary(cards),
         "ownership_networks": ownership_networks(cards),
         "gap_analysis": gap_analysis(cards, events, sig),

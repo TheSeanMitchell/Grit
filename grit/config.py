@@ -146,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.107"
+VERSION = "0.108"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -207,7 +207,11 @@ WAREHOUSE_DIR = "docs/data/warehouse"             # 0.105 append-only ledger
 # 0.105 opens the map up: keep a much wider parcel base (was 500) so the console
 # shows the whole metro, not just the top-scored new-construction cluster. The
 # permit activity layer (geocoded) spreads across every neighborhood on top.
-CARDS_MAX = 1500  # keep the top-scored leads in the console output (was 500)
+CARDS_MAX = 4000  # 0.108: raised from 1500. The free parcel layer carries
+                  # address+owner+mailing+land-use for the whole valley, so
+                  # breadth is bounded by us, not the data. Beyond ~10-15k cards
+                  # the static-JSON/browser-pin model strains (slim records or
+                  # vector tiles become necessary) -- a deliberate ceiling.
 CARDS_ENRICH_MAX = 150  # live Assessor enrichment for top N leads/run (current
                         # owner/value/sale). Reliable floor even if the bulk
                         # owner layer 5xx's. ~75s at ENRICH_DELAY spacing.
@@ -219,6 +223,6 @@ PERMIT_DAYS_BACK = 90   # CLV permit window pulled each harvest (cloud-native)
 CLV_PERMITS_FEATURESERVER = "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0"
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
-MAX_PAGES = 8           # 0.105: wider candidate pool (was 5) for metro-wide spread
+MAX_PAGES = 16          # 0.105: wider candidate pool (was 5) for metro-wide spread
 HTTP_TIMEOUT = 30
 USER_AGENT = "GRIT-harvester/0.1 (public-records research; contact: repo owner)"
