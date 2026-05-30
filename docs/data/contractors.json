@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T22:46:41Z",
+  "generated_at": "2026-05-30T03:22:31Z",
   "version": "0.106",
   "count": 331,
   "contractors": [
@@ -118,8 +118,8 @@
       "recent_count": 23,
       "value_total": 31113.0,
       "trades": {
-        "plumbing": 5,
-        "hvac": 21
+        "hvac": 21,
+        "plumbing": 5
       },
       "top_trade": "hvac",
       "trade_share_pct": 7.5,
@@ -131,10 +131,10 @@
       "first_seen": "2026-05-11",
       "last_seen": "2026-05-22",
       "sample_addresses": [
-        "776 WHITE GROTTO ST",
         "504 IVY SPRING ST",
+        "776 WHITE GROTTO ST",
         "6569 AVON CT",
-        "10648 CAPITOL PEAK AVE",
+        "9504 CLOUDCROFT AVE",
         "7426 BRETTON OAKS ST"
       ],
       "score": 139
@@ -159,11 +159,11 @@
       "first_seen": "2026-05-12",
       "last_seen": "2026-05-22",
       "sample_addresses": [
-        "1520 N EASTERN AVE",
         "909 DESERT OAK CT",
         "2312 EL CORTEZ AVE",
-        "6305 W KRAFT AVE",
-        "3004 ISAAC RIVER DR"
+        "3004 ISAAC RIVER DR",
+        "1520 N EASTERN AVE",
+        "6305 W KRAFT AVE"
       ],
       "score": 132
     },
@@ -241,8 +241,8 @@
         "1301 SQUIRES ST",
         "10532 BROWNSVILLE AVE",
         "7616 LICENSE ST",
-        "544 HIGHLAND BLUFF WAY",
-        "9528 GRENVILLE AVE"
+        "9528 GRENVILLE AVE",
+        "544 HIGHLAND BLUFF WAY"
       ],
       "score": 96
     },
@@ -266,11 +266,11 @@
       "first_seen": "2026-05-11",
       "last_seen": "2026-05-22",
       "sample_addresses": [
-        "7748 CALEY CANYON ST",
         "1309 RAINBOW MEADOWS DR",
+        "7748 CALEY CANYON ST",
         "20 BERNERI DR",
-        "1982 PIN OAK AVE",
-        "725 SPONSELLER ST"
+        "8340 MAPLESTAR RD",
+        "1841 BATHURST LN"
       ],
       "score": 84
     },
@@ -321,8 +321,8 @@
       "sample_addresses": [
         "776 WHITE GROTTO ST",
         "405 BENT CREEK DR",
-        "8501 SILKWOOD CT",
         "10013 PINNACLE PASS DR",
+        "8501 SILKWOOD CT",
         "4605 TERRA ROSA DR"
       ],
       "score": 75
@@ -351,7 +351,7 @@
         "1701 S 15TH ST",
         "2200 S FORT APACHE RD",
         "10404 BRITTON HILL AVE",
-        "7128 ROSECRANS ST"
+        "8424 LEGACY VALLEY AVE"
       ],
       "score": 73
     },
@@ -432,9 +432,9 @@
       "sample_addresses": [
         "337 BREVE CT",
         "5313 BRIGHT SKY CT",
-        "1829 N MALLARD ST",
         "2451 N RAINBOW BLVD",
-        "9013 LOGGERS MILL AVE"
+        "9013 LOGGERS MILL AVE",
+        "1829 N MALLARD ST"
       ],
       "score": 72
     },
@@ -512,10 +512,10 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "8152 LEGER DR",
-        "4528 SODA ASH AVE",
         "8136 CALVIN CREST AVE",
         "10505 CITY CLOUDS CT",
-        "1108 ROYAL PLUM LN"
+        "1108 ROYAL PLUM LN",
+        "4528 SODA ASH AVE"
       ],
       "score": 60
     },
@@ -540,10 +540,10 @@
       "last_seen": "2026-05-22",
       "sample_addresses": [
         "2325 LAURIE DR",
-        "6133 CARL AVE",
         "6130 RACEL ST",
-        "9238 W DORRELL LN",
-        "5041 GLITTERING STAR CT"
+        "6133 CARL AVE",
+        "5041 GLITTERING STAR CT",
+        "3309 RED LODGE DR"
       ],
       "score": 55
     },
@@ -594,8 +594,8 @@
       "sample_addresses": [
         "3744 CACTUS WHEEL CT",
         "9524 RANCHO PALMAS DR",
-        "8136 MOUNTAIN FOREST CT",
         "4020 PAUL ROBARTS CT",
+        "8136 MOUNTAIN FOREST CT",
         "9408 AMBER VALLEY LN"
       ],
       "score": 54
@@ -621,9 +621,9 @@
       "sample_addresses": [
         "9121 WATERMELON SEED AVE",
         "9329 THUNDER BASIN AVE",
-        "2828 DARBY FALLS DR",
         "9048 RICH AMETHYST CT",
-        "12020 ATTIVA AVE"
+        "12020 ATTIVA AVE",
+        "3542 PLATT DR"
       ],
       "score": 54
     },
@@ -646,8 +646,8 @@
       "sample_addresses": [
         "10046 DIANA SUMMIT ST",
         "1111 N LAMB BLVD",
-        "5436 PEPPERPIKE AVE",
         "2104 HOT OAK RIDGE ST",
+        "5436 PEPPERPIKE AVE",
         "5818 FALLING STREAM AVE"
       ],
       "score": 54
@@ -699,10 +699,10 @@
       "last_seen": "2026-05-22",
       "sample_addresses": [
         "1701 CANOSA AVE",
-        "9309 BRIGHT BLUE SKY AVE",
-        "5002 MIRAGE GARDEN ST",
+        "9170 GREEN FROST DR",
         "5727 BLUE JASPER AVE",
-        "9170 GREEN FROST DR"
+        "2601 ISLAND BROOK DR",
+        "9309 BRIGHT BLUE SKY AVE"
       ],
       "score": 49
     },
@@ -727,8 +727,8 @@
       "sample_addresses": [
         "10550 W ALEXANDER RD",
         "4969 CEDAR LAWN WAY",
-        "2220 S PIONEER WAY",
         "1400 WOODMORE ST",
+        "2220 S PIONEER WAY",
         "8933 DRUMMER BAY AVE"
       ],
       "score": 48
@@ -754,8 +754,8 @@
       "sample_addresses": [
         "4218 LORNA PL",
         "7608 TRIMMING CT",
-        "10811 IONA ISLAND AVE",
         "2017 MULE CREEK ST",
+        "10811 IONA ISLAND AVE",
         "8757 CASTLE RIDGE AVE"
       ],
       "score": 48
@@ -808,8 +808,8 @@
       "sample_addresses": [
         "9330 BROOKMONT AVE",
         "10856 LEWIS POINTE AVE",
-        "8709 PAVIA DR",
         "9973 ROLLING HITCH ST",
+        "8709 PAVIA DR",
         "10441 MOUNTAIN ASTER AVE"
       ],
       "score": 43
@@ -862,7 +862,7 @@
         "10473 PRICKLY POPPY AVE",
         "10488 PRICKLY POPPY AVE",
         "10489 PRICKLY POPPY AVE",
-        "2016 PINTO LN"
+        "1555 LILY HANA PL"
       ],
       "score": 42
     },
@@ -911,10 +911,10 @@
       "last_seen": "2026-05-22",
       "sample_addresses": [
         "97 LUPIN CT",
-        "1925 E ST LOUIS AVE",
         "2704 CHOKEBERRY CT",
-        "10271 LODGE PINE AVE",
-        "6612 OLD OXFORD AVE"
+        "1925 E ST LOUIS AVE",
+        "6612 OLD OXFORD AVE",
+        "350 S DURANGO DR"
       ],
       "score": 42
     },
@@ -939,8 +939,8 @@
       "sample_addresses": [
         "77 LOVETT RIDGE ST",
         "11596 GOLDEN ORIOLE AVE",
-        "9961 COLSEN MICHAEL AVE",
         "10869 MILA LANDING AVE",
+        "9961 COLSEN MICHAEL AVE",
         "10943 DIXIE JOHNSON AVE"
       ],
       "score": 42
@@ -1177,37 +1177,10 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "8120 HYDRA LN",
-        "725 S 6TH ST",
         "2217 FIERO DR",
+        "725 S 6TH ST",
         "8025 GOLFERS OASIS DR",
         "9028 PARK FOREST CT"
-      ],
-      "score": 30
-    },
-    {
-      "name": "Ameritek Industries",
-      "permit_count": 5,
-      "job_sites": 5,
-      "recent_count": 5,
-      "value_total": 2500.0,
-      "trades": {
-        "plumbing": 5
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 2.0,
-      "cities": {
-        "LAS VEGAS": 5
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.5,
-      "first_seen": "2026-05-14",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "1201 WYATT AVE",
-        "31 ONYX WAY",
-        "800 S MALLARD ST",
-        "3017 BRAIR KNOLL CT",
-        "3112 SLEEPY HOLLOW WAY"
       ],
       "score": 30
     },
@@ -1233,6 +1206,33 @@
         "4878 SWEET VESPER CT",
         "4896 SWEET VESPER CT",
         "4902 SWEET VESPER CT"
+      ],
+      "score": 30
+    },
+    {
+      "name": "Ameritek Industries",
+      "permit_count": 5,
+      "job_sites": 5,
+      "recent_count": 5,
+      "value_total": 2500.0,
+      "trades": {
+        "plumbing": 5
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 2.0,
+      "cities": {
+        "LAS VEGAS": 5
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.5,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-22",
+      "sample_addresses": [
+        "31 ONYX WAY",
+        "1201 WYATT AVE",
+        "800 S MALLARD ST",
+        "3112 SLEEPY HOLLOW WAY",
+        "3017 BRAIR KNOLL CT"
       ],
       "score": 30
     },
@@ -1282,8 +1282,8 @@
       "first_seen": "2026-05-11",
       "last_seen": "2026-05-19",
       "sample_addresses": [
-        "9405 FOREST EDGE AVE",
         "10045 DIANA SUMMIT ST",
+        "9405 FOREST EDGE AVE",
         "7412 CARDIGAN BAY ST",
         "205 GRANGE CREEK LN"
       ],
@@ -1363,8 +1363,8 @@
       "sample_addresses": [
         "10468 CANYON CLIFF CT",
         "3504 ALEPPO PINE ST",
-        "152 SAPODILLA LN",
-        "8324 OPAL COVE DR"
+        "8324 OPAL COVE DR",
+        "152 SAPODILLA LN"
       ],
       "score": 24
     },
@@ -1523,31 +1523,6 @@
       "score": 19
     },
     {
-      "name": "Airmaster LLC",
-      "permit_count": 3,
-      "job_sites": 3,
-      "recent_count": 3,
-      "value_total": 1500.0,
-      "trades": {
-        "hvac": 3
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 1.1,
-      "cities": {
-        "LAS VEGAS": 3
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "8340 JO MARCY DR",
-        "2010 S BUFFALO DR",
-        "11000 PINE KNOLLS CT"
-      ],
-      "score": 18
-    },
-    {
       "name": "Desert West Services Inc",
       "permit_count": 3,
       "job_sites": 3,
@@ -1598,52 +1573,27 @@
       "score": 18
     },
     {
-      "name": "Royalty Plumbing LLC",
+      "name": "Airmaster LLC",
       "permit_count": 3,
       "job_sites": 3,
       "recent_count": 3,
       "value_total": 1500.0,
       "trades": {
-        "plumbing": 3
+        "hvac": 3
       },
-      "top_trade": "plumbing",
-      "trade_share_pct": 1.2,
+      "top_trade": "hvac",
+      "trade_share_pct": 1.1,
       "cities": {
         "LAS VEGAS": 3
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-18",
-      "sample_addresses": [
-        "8517 DEL REY AVE",
-        "7913 LEAVORITE DR",
-        "10416 BAYS MOUNTAIN AVE"
-      ],
-      "score": 18
-    },
-    {
-      "name": "Solar Guys of Nevada",
-      "permit_count": 3,
-      "job_sites": 3,
-      "recent_count": 3,
-      "value_total": 25500.0,
-      "trades": {
-        "solar": 2
-      },
-      "top_trade": "solar",
-      "trade_share_pct": 3.1,
-      "cities": {
-        "LAS VEGAS": 3
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-13",
+      "first_seen": "2026-05-11",
       "last_seen": "2026-05-22",
       "sample_addresses": [
-        "1508 SAYLOR WAY",
-        "625 LINESHACK LN",
-        "1741 BONITA AVE"
+        "8340 JO MARCY DR",
+        "2010 S BUFFALO DR",
+        "11000 PINE KNOLLS CT"
       ],
       "score": 18
     },
@@ -1698,6 +1648,56 @@
       "score": 18
     },
     {
+      "name": "Royalty Plumbing LLC",
+      "permit_count": 3,
+      "job_sites": 3,
+      "recent_count": 3,
+      "value_total": 1500.0,
+      "trades": {
+        "plumbing": 3
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 1.2,
+      "cities": {
+        "LAS VEGAS": 3
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.3,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-18",
+      "sample_addresses": [
+        "8517 DEL REY AVE",
+        "7913 LEAVORITE DR",
+        "10416 BAYS MOUNTAIN AVE"
+      ],
+      "score": 18
+    },
+    {
+      "name": "Solar Guys of Nevada",
+      "permit_count": 3,
+      "job_sites": 3,
+      "recent_count": 3,
+      "value_total": 25500.0,
+      "trades": {
+        "solar": 2
+      },
+      "top_trade": "solar",
+      "trade_share_pct": 3.1,
+      "cities": {
+        "LAS VEGAS": 3
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.3,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-22",
+      "sample_addresses": [
+        "1508 SAYLOR WAY",
+        "625 LINESHACK LN",
+        "1741 BONITA AVE"
+      ],
+      "score": 18
+    },
+    {
       "name": "TOLL NORTH LV LLC",
       "permit_count": 3,
       "job_sites": 3,
@@ -1746,56 +1746,6 @@
       "score": 18
     },
     {
-      "name": "Number One Plumbing Heating & Air Conditioning",
-      "permit_count": 3,
-      "job_sites": 3,
-      "recent_count": 3,
-      "value_total": 1500.0,
-      "trades": {
-        "hvac": 3
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 1.1,
-      "cities": {
-        "LAS VEGAS": 3
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "1270 BURNHAM AVE",
-        "8450 W CHARLESTON BLVD",
-        "1701 ROCK SPRINGS DR"
-      ],
-      "score": 18
-    },
-    {
-      "name": "BUENOS AIRES AIR CONDITIONING",
-      "permit_count": 3,
-      "job_sites": 3,
-      "recent_count": 3,
-      "value_total": 1500.0,
-      "trades": {
-        "hvac": 3
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 1.1,
-      "cities": {
-        "LAS VEGAS": 3
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "845 W BARTLETT AVE",
-        "1334 EASTWOOD DR",
-        "1705 HILLS OF RED DR"
-      ],
-      "score": 18
-    },
-    {
       "name": "HOT COLD AIR INC",
       "permit_count": 3,
       "job_sites": 3,
@@ -1821,25 +1771,27 @@
       "score": 18
     },
     {
-      "name": "Penny Electric LLC",
+      "name": "Number One Plumbing Heating & Air Conditioning",
       "permit_count": 3,
       "job_sites": 3,
       "recent_count": 3,
-      "value_total": 2000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
+      "value_total": 1500.0,
+      "trades": {
+        "hvac": 3
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 1.1,
       "cities": {
         "LAS VEGAS": 3
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-15",
-      "last_seen": "2026-05-19",
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-22",
       "sample_addresses": [
-        "913 SPROUL CT",
-        "181 SPRINGBOUGH LN",
-        "10313 GRAPEVINE HILL AVE"
+        "8450 W CHARLESTON BLVD",
+        "1701 ROCK SPRINGS DR",
+        "1270 BURNHAM AVE"
       ],
       "score": 18
     },
@@ -1888,8 +1840,56 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "273 ELDER VIEW DR",
-        "12118 HIGHLAND VISTA WAY",
-        "7808 LEAVORITE DR"
+        "7808 LEAVORITE DR",
+        "12118 HIGHLAND VISTA WAY"
+      ],
+      "score": 18
+    },
+    {
+      "name": "BUENOS AIRES AIR CONDITIONING",
+      "permit_count": 3,
+      "job_sites": 3,
+      "recent_count": 3,
+      "value_total": 1500.0,
+      "trades": {
+        "hvac": 3
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 1.1,
+      "cities": {
+        "LAS VEGAS": 3
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.3,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "1705 HILLS OF RED DR",
+        "1334 EASTWOOD DR",
+        "845 W BARTLETT AVE"
+      ],
+      "score": 18
+    },
+    {
+      "name": "Penny Electric LLC",
+      "permit_count": 3,
+      "job_sites": 3,
+      "recent_count": 3,
+      "value_total": 2000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 3
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.3,
+      "first_seen": "2026-05-15",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "913 SPROUL CT",
+        "181 SPRINGBOUGH LN",
+        "10313 GRAPEVINE HILL AVE"
       ],
       "score": 18
     },
@@ -1913,8 +1913,8 @@
       "last_seen": "2026-05-21",
       "sample_addresses": [
         "9057 CAPTIVATING AVE",
-        "7413 OLD COMPTON ST",
-        "10001 MIRADA DR"
+        "10001 MIRADA DR",
+        "7413 OLD COMPTON ST"
       ],
       "score": 18
     },
@@ -1987,8 +1987,31 @@
       "last_seen": "2026-05-15",
       "sample_addresses": [
         "9413 VILLA RIDGE DR",
-        "8645 DEERING BAY DR",
-        "8720 MAGNOLIA RIDGE AVE"
+        "8720 MAGNOLIA RIDGE AVE",
+        "8645 DEERING BAY DR"
+      ],
+      "score": 18
+    },
+    {
+      "name": "ROGUE ELECTRIC LLC",
+      "permit_count": 3,
+      "job_sites": 3,
+      "recent_count": 3,
+      "value_total": 1500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 3
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.3,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "2052 TURQUOISE RIDGE ST",
+        "8119 SOUTHERN COMFORT AVE",
+        "5800 CALM LAGOON AVE"
       ],
       "score": 18
     },
@@ -2014,29 +2037,6 @@
         "5917 LONE RANCH AVE",
         "11538 TERMINI STATION AVE",
         "11508 CANNON FALLS AVE"
-      ],
-      "score": 18
-    },
-    {
-      "name": "ROGUE ELECTRIC LLC",
-      "permit_count": 3,
-      "job_sites": 3,
-      "recent_count": 3,
-      "value_total": 1500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 3
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.3,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "2052 TURQUOISE RIDGE ST",
-        "8119 SOUTHERN COMFORT AVE",
-        "5800 CALM LAGOON AVE"
       ],
       "score": 18
     },
@@ -2280,30 +2280,6 @@
       "score": 12
     },
     {
-      "name": "Pacific Network Solutions Construction LLC",
-      "permit_count": 2,
-      "job_sites": 2,
-      "recent_count": 2,
-      "value_total": 90000.0,
-      "trades": {
-        "remodeling": 2
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 3.5,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
-      "sample_addresses": [
-        "824 S COMMERCE ST",
-        "1399 N RAINBOW BLVD"
-      ],
-      "score": 12
-    },
-    {
       "name": "GRANDVIEW CONSTRUCTION LLC",
       "permit_count": 2,
       "job_sites": 2,
@@ -2449,6 +2425,30 @@
       "score": 12
     },
     {
+      "name": "Pacific Network Solutions Construction LLC",
+      "permit_count": 2,
+      "job_sites": 2,
+      "recent_count": 2,
+      "value_total": 90000.0,
+      "trades": {
+        "remodeling": 2
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 3.5,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
+      "sample_addresses": [
+        "1399 N RAINBOW BLVD",
+        "824 S COMMERCE ST"
+      ],
+      "score": 12
+    },
+    {
       "name": "American Leak Detection",
       "permit_count": 2,
       "job_sites": 2,
@@ -2497,30 +2497,6 @@
       "score": 12
     },
     {
-      "name": "Desert Springs Pools & Spas Inc",
-      "permit_count": 2,
-      "job_sites": 2,
-      "recent_count": 2,
-      "value_total": 159879.0,
-      "trades": {
-        "pools": 2
-      },
-      "top_trade": "pools",
-      "trade_share_pct": 7.4,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "2401 MASON AVE",
-        "9322 ALBUS HILLS AVE"
-      ],
-      "score": 12
-    },
-    {
       "name": "Cool Tech Air Conditioning LLC",
       "permit_count": 2,
       "job_sites": 2,
@@ -2545,24 +2521,26 @@
       "score": 12
     },
     {
-      "name": "Advanced Pro Restoration",
+      "name": "Desert Springs Pools & Spas Inc",
       "permit_count": 2,
       "job_sites": 2,
       "recent_count": 2,
-      "value_total": 66664.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
+      "value_total": 159879.0,
+      "trades": {
+        "pools": 2
+      },
+      "top_trade": "pools",
+      "trade_share_pct": 7.4,
       "cities": {
         "LAS VEGAS": 2
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-19",
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-21",
       "sample_addresses": [
-        "7127 CABIN FEVER ST",
-        "8404 TIGER WOODS AVE"
+        "2401 MASON AVE",
+        "9322 ALBUS HILLS AVE"
       ],
       "score": 12
     },
@@ -2591,11 +2569,11 @@
       "score": 12
     },
     {
-      "name": "EV CHARGER INSTALLATION LV",
+      "name": "Advanced Pro Restoration",
       "permit_count": 2,
       "job_sites": 2,
       "recent_count": 2,
-      "value_total": 8500.0,
+      "value_total": 66664.0,
       "trades": {},
       "top_trade": null,
       "trade_share_pct": 0.0,
@@ -2604,35 +2582,11 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-18",
+      "first_seen": "2026-05-13",
       "last_seen": "2026-05-19",
       "sample_addresses": [
-        "620 MCDERMIT ST",
-        "651 CLARKWAY DR"
-      ],
-      "score": 12
-    },
-    {
-      "name": "Collins Commercial Services LLC",
-      "permit_count": 2,
-      "job_sites": 2,
-      "recent_count": 2,
-      "value_total": 1000.0,
-      "trades": {
-        "plumbing": 2
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.8,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "1601 FAIRGATE CT",
-        "9720 WINTER PALACE DR"
+        "7127 CABIN FEVER ST",
+        "8404 TIGER WOODS AVE"
       ],
       "score": 12
     },
@@ -2657,30 +2611,6 @@
       "sample_addresses": [
         "7401 CHORLEYWOOD WAY",
         "7937 AUBERGINE COVE CT"
-      ],
-      "score": 12
-    },
-    {
-      "name": "Jerezee Construction Inc",
-      "permit_count": 2,
-      "job_sites": 2,
-      "recent_count": 2,
-      "value_total": 47000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-13",
-      "sample_addresses": [
-        "10705 SPRUCEDALE AVE",
-        "2512 ROSEWORTHY ST"
       ],
       "score": 12
     },
@@ -2729,6 +2659,76 @@
       "sample_addresses": [
         "1020 CORAL ISLE WAY",
         "520 SLAYTON DR"
+      ],
+      "score": 12
+    },
+    {
+      "name": "EV CHARGER INSTALLATION LV",
+      "permit_count": 2,
+      "job_sites": 2,
+      "recent_count": 2,
+      "value_total": 8500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-18",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "620 MCDERMIT ST",
+        "651 CLARKWAY DR"
+      ],
+      "score": 12
+    },
+    {
+      "name": "Jerezee Construction Inc",
+      "permit_count": 2,
+      "job_sites": 2,
+      "recent_count": 2,
+      "value_total": 47000.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "10705 SPRUCEDALE AVE",
+        "2512 ROSEWORTHY ST"
+      ],
+      "score": 12
+    },
+    {
+      "name": "Collins Commercial Services LLC",
+      "permit_count": 2,
+      "job_sites": 2,
+      "recent_count": 2,
+      "value_total": 1000.0,
+      "trades": {
+        "plumbing": 2
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.8,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-22",
+      "sample_addresses": [
+        "1601 FAIRGATE CT",
+        "9720 WINTER PALACE DR"
       ],
       "score": 12
     },
@@ -2875,6 +2875,28 @@
       "score": 12
     },
     {
+      "name": "B & D PLUMBING LLC",
+      "permit_count": 2,
+      "job_sites": 2,
+      "recent_count": 2,
+      "value_total": 3500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "9609 CURRANT ROCK LN",
+        "5714 EVENING JEWEL AVE"
+      ],
+      "score": 12
+    },
+    {
       "name": "Excellence Plumbing LLC",
       "permit_count": 2,
       "job_sites": 2,
@@ -2895,28 +2917,6 @@
       "sample_addresses": [
         "8601 KIEL RIDGE CIR",
         "11830 PORTINA DR"
-      ],
-      "score": 12
-    },
-    {
-      "name": "B & D PLUMBING LLC",
-      "permit_count": 2,
-      "job_sites": 2,
-      "recent_count": 2,
-      "value_total": 3500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "9609 CURRANT ROCK LN",
-        "5714 EVENING JEWEL AVE"
       ],
       "score": 12
     },
@@ -3150,52 +3150,6 @@
       "score": 8
     },
     {
-      "name": "Dave's Plumbing & Rooter Service Inc.",
-      "permit_count": 2,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 1000.0,
-      "trades": {
-        "plumbing": 2
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.8,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "6312 CHIMNEY WOOD AVE"
-      ],
-      "score": 7
-    },
-    {
-      "name": "Six Star Electric Inc",
-      "permit_count": 2,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 1000.0,
-      "trades": {
-        "plumbing": 2
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.8,
-      "cities": {
-        "LAS VEGAS": 2
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.2,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "6312 CHIMNEY WOOD AVE"
-      ],
-      "score": 7
-    },
-    {
       "name": "J OR J WELDER LLC",
       "permit_count": 2,
       "job_sites": 1,
@@ -3240,6 +3194,29 @@
       "score": 7
     },
     {
+      "name": "ARMSTRONG GEORGE W JR & MARGARET A TRUST",
+      "permit_count": 2,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 1000.0,
+      "trades": {
+        "plumbing": 2
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.8,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "6130 RACEL ST"
+      ],
+      "score": 7
+    },
+    {
       "name": "Custom Estates LLC",
       "permit_count": 2,
       "job_sites": 1,
@@ -3263,7 +3240,7 @@
       "score": 7
     },
     {
-      "name": "ARMSTRONG GEORGE W JR & MARGARET A TRUST",
+      "name": "Dave's Plumbing & Rooter Service Inc.",
       "permit_count": 2,
       "job_sites": 1,
       "recent_count": 1,
@@ -3281,7 +3258,30 @@
       "first_seen": "2026-05-20",
       "last_seen": "2026-05-20",
       "sample_addresses": [
-        "6130 RACEL ST"
+        "6312 CHIMNEY WOOD AVE"
+      ],
+      "score": 7
+    },
+    {
+      "name": "Six Star Electric Inc",
+      "permit_count": 2,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 1000.0,
+      "trades": {
+        "plumbing": 2
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.8,
+      "cities": {
+        "LAS VEGAS": 2
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.2,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "6312 CHIMNEY WOOD AVE"
       ],
       "score": 7
     },
@@ -3424,27 +3424,6 @@
       "score": 8
     },
     {
-      "name": "Tri-State General Contractors Inc",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 600000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-14",
-      "last_seen": "2026-05-14",
-      "sample_addresses": [
-        "6151 W LAKE MEAD BLVD"
-      ],
-      "score": 8
-    },
-    {
       "name": "T&K ELECTRIC COMPANY LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -3464,6 +3443,27 @@
       "last_seen": "2026-05-13",
       "sample_addresses": [
         "6200 CENTENNIAL CENTER BLVD"
+      ],
+      "score": 8
+    },
+    {
+      "name": "Tri-State General Contractors Inc",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 600000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-14",
+      "sample_addresses": [
+        "6151 W LAKE MEAD BLVD"
       ],
       "score": 8
     },
@@ -3491,29 +3491,6 @@
       "score": 7
     },
     {
-      "name": "MIGNONE DBC LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 300000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "8800 W CHARLESTON BLVD"
-      ],
-      "score": 7
-    },
-    {
       "name": "Stella LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -3533,6 +3510,29 @@
       "last_seen": "2026-05-19",
       "sample_addresses": [
         "2800 W SAHARA AVE"
+      ],
+      "score": 7
+    },
+    {
+      "name": "MIGNONE DBC LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 300000.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "8800 W CHARLESTON BLVD"
       ],
       "score": 7
     },
@@ -3675,52 +3675,6 @@
       "score": 7
     },
     {
-      "name": "RUSS BRIAN N & SHERI J",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "2301 LAURIE DR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "EAGLE EXCAVATION LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 40000.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "4732 N TORREY PINES DR"
-      ],
-      "score": 6
-    },
-    {
       "name": "Nevada Pools Inc",
       "permit_count": 1,
       "job_sites": 1,
@@ -3786,6 +3740,29 @@
       "score": 6
     },
     {
+      "name": "RUSS BRIAN N & SHERI J",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "2301 LAURIE DR"
+      ],
+      "score": 6
+    },
+    {
       "name": "Advanced Lighting Services Inc.",
       "permit_count": 1,
       "job_sites": 1,
@@ -3830,98 +3807,6 @@
       "score": 6
     },
     {
-      "name": "K L A Construction & Development",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 6000.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "1127 S CASINO CENTER BLVD"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Titan Plumbing",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 9085.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "525 FREMONT ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "CENTRAL POWER LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 16.0,
-      "trades": {
-        "electrical": 1
-      },
-      "top_trade": "electrical",
-      "trade_share_pct": 8.3,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "914 S MAIN ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Com Art Signs & Design LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 4440.0,
-      "trades": {
-        "sign": 1
-      },
-      "top_trade": "sign",
-      "trade_share_pct": 6.7,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "401 S 6TH ST"
-      ],
-      "score": 6
-    },
-    {
       "name": "AirDuct LV Heating and Cooling LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -3941,96 +3826,6 @@
       "last_seen": "2026-05-14",
       "sample_addresses": [
         "1400 5TH PL"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Edgewater Custom Pools and Landscaping Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 1750.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
-      "sample_addresses": [
-        "5197 DUSK SKYSCAPE ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "QMS Construction Inc",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 230000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
-      "sample_addresses": [
-        "600 S 8TH ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "BEAST PLUMBING LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "6028 CRYSTAL CASCADE ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "DENALI BUILDERS",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 150438.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "300 S 4TH ST"
       ],
       "score": 6
     },
@@ -4081,29 +3876,6 @@
       "score": 6
     },
     {
-      "name": "Image360",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 19000.0,
-      "trades": {
-        "sign": 1
-      },
-      "top_trade": "sign",
-      "trade_share_pct": 6.7,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "1100 D ST"
-      ],
-      "score": 6
-    },
-    {
       "name": "R L Reed Inc",
       "permit_count": 1,
       "job_sites": 1,
@@ -4146,6 +3918,29 @@
       "last_seen": "2026-05-11",
       "sample_addresses": [
         "5924 SASSA ST"
+      ],
+      "score": 6
+    },
+    {
+      "name": "BEAST PLUMBING LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "6028 CRYSTAL CASCADE ST"
       ],
       "score": 6
     },
@@ -4194,6 +3989,52 @@
       "score": 6
     },
     {
+      "name": "EAGLE EXCAVATION LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 40000.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "4732 N TORREY PINES DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "VALERIO RODOLFO A",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 6500.0,
+      "trades": {
+        "patio": 1
+      },
+      "top_trade": "patio",
+      "trade_share_pct": 3.1,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "2124 MISSION PEAK CIR"
+      ],
+      "score": 6
+    },
+    {
       "name": "FOCUS ELECTRIC",
       "permit_count": 1,
       "job_sites": 1,
@@ -4211,29 +4052,6 @@
       "last_seen": "2026-05-19",
       "sample_addresses": [
         "10228 SAFFRON SPICE PL"
-      ],
-      "score": 6
-    },
-    {
-      "name": "ROYAL FLUSH PLUMBING LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-14",
-      "last_seen": "2026-05-14",
-      "sample_addresses": [
-        "7208 LONDON BRIDGE AVE"
       ],
       "score": 6
     },
@@ -4284,37 +4102,16 @@
       "score": 6
     },
     {
-      "name": "AIR SOLUTION PROVIDER LLC",
+      "name": "ROYAL FLUSH PLUMBING LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
       "value_total": 500.0,
       "trades": {
-        "hvac": 1
+        "plumbing": 1
       },
-      "top_trade": "hvac",
+      "top_trade": "plumbing",
       "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "7919 CANOE LN"
-      ],
-      "score": 6
-    },
-    {
-      "name": "AGUSTIN VINCENT LAYAGAN & JANE",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 30000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
       "cities": {
         "LAS VEGAS": 1
       },
@@ -4323,7 +4120,7 @@
       "first_seen": "2026-05-14",
       "last_seen": "2026-05-14",
       "sample_addresses": [
-        "413 N 9TH ST"
+        "7208 LONDON BRIDGE AVE"
       ],
       "score": 6
     },
@@ -4420,6 +4217,29 @@
       "score": 6
     },
     {
+      "name": "AIR SOLUTION PROVIDER LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "7919 CANOE LN"
+      ],
+      "score": 6
+    },
+    {
       "name": "BUTTERWORTH TOM A",
       "permit_count": 1,
       "job_sites": 1,
@@ -4466,46 +4286,48 @@
       "score": 6
     },
     {
-      "name": "AAPRD LLC",
+      "name": "K L A Construction & Development",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 165000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
+      "value_total": 6000.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
       "sample_addresses": [
-        "1510 ATLANTIC ST"
+        "1127 S CASINO CENTER BLVD"
       ],
       "score": 6
     },
     {
-      "name": "Allure Contracting LLC",
+      "name": "Titan Plumbing",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 88000.0,
+      "value_total": 9085.0,
       "trades": {
-        "remodeling": 1
+        "plumbing": 1
       },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
       "sample_addresses": [
-        "1412 S MAIN ST"
+        "525 FREMONT ST"
       ],
       "score": 6
     },
@@ -4533,34 +4355,11 @@
       "score": 6
     },
     {
-      "name": "VALERIO RODOLFO A",
+      "name": "Allure Contracting LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 6500.0,
-      "trades": {
-        "patio": 1
-      },
-      "top_trade": "patio",
-      "trade_share_pct": 3.1,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "2124 MISSION PEAK CIR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Sacon Construction",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 12520.0,
+      "value_total": 88000.0,
       "trades": {
         "remodeling": 1
       },
@@ -4571,10 +4370,10 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-18",
-      "last_seen": "2026-05-18",
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
       "sample_addresses": [
-        "1415 WESTERN AVE"
+        "1412 S MAIN ST"
       ],
       "score": 6
     },
@@ -4648,6 +4447,29 @@
       "score": 6
     },
     {
+      "name": "Com Art Signs & Design LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 4440.0,
+      "trades": {
+        "sign": 1
+      },
+      "top_trade": "sign",
+      "trade_share_pct": 6.7,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "401 S 6TH ST"
+      ],
+      "score": 6
+    },
+    {
       "name": "DELTA ELECTRIC COMPANY INC.",
       "permit_count": 1,
       "job_sites": 1,
@@ -4671,11 +4493,32 @@
       "score": 6
     },
     {
-      "name": "D & S Plumbing LLC",
+      "name": "AAPRD LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 70000.0,
+      "value_total": 165000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "1510 ATLANTIC ST"
+      ],
+      "score": 6
+    },
+    {
+      "name": "DENALI BUILDERS",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 150438.0,
       "trades": {
         "remodeling": 1
       },
@@ -4686,56 +4529,10 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
       "sample_addresses": [
-        "917 HASSETT AVE"
-      ],
-      "score": 6
-    },
-    {
-      "name": "P1 PLUMBING SOLUTIONS",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-22",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "11040 CLEAR MEADOWS DR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "ABOVE ALL COVERS LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 3200.0,
-      "trades": {
-        "patio": 1
-      },
-      "top_trade": "patio",
-      "trade_share_pct": 3.1,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "6816 N CHIEFTAIN ST"
+        "300 S 4TH ST"
       ],
       "score": 6
     },
@@ -4763,6 +4560,52 @@
       "score": 6
     },
     {
+      "name": "CENTRAL POWER LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 16.0,
+      "trades": {
+        "electrical": 1
+      },
+      "top_trade": "electrical",
+      "trade_share_pct": 8.3,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "914 S MAIN ST"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Sacon Construction",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 12520.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-18",
+      "last_seen": "2026-05-18",
+      "sample_addresses": [
+        "1415 WESTERN AVE"
+      ],
+      "score": 6
+    },
+    {
       "name": "United Pacific Construction",
       "permit_count": 1,
       "job_sites": 1,
@@ -4786,25 +4629,25 @@
       "score": 6
     },
     {
-      "name": "AVILA FRANK JONATHAN V",
+      "name": "D & S Plumbing LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 4500.0,
+      "value_total": 70000.0,
       "trades": {
-        "patio": 1
+        "remodeling": 1
       },
-      "top_trade": "patio",
-      "trade_share_pct": 3.1,
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
       "sample_addresses": [
-        "1925 HOWARD AVE"
+        "917 HASSETT AVE"
       ],
       "score": 6
     },
@@ -4832,27 +4675,6 @@
       "score": 6
     },
     {
-      "name": "AMERICAN FIRE & ELECTRIC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "2304 SUNRISE AVE"
-      ],
-      "score": 6
-    },
-    {
       "name": "ANDERSON PATRICK WARD",
       "permit_count": 1,
       "job_sites": 1,
@@ -4872,27 +4694,6 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "3220 PARAGON POINTE ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "A-1 Action Plumbing and Rooter Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 3000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "616 E CARSON AVE"
       ],
       "score": 6
     },
@@ -4920,48 +4721,46 @@
       "score": 6
     },
     {
-      "name": "Elegant Exteriors LLC",
+      "name": "Edgewater Custom Pools and Landscaping Inc.",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 139865.0,
-      "trades": {
-        "pools": 1
-      },
-      "top_trade": "pools",
-      "trade_share_pct": 3.7,
+      "value_total": 1750.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-15",
-      "last_seen": "2026-05-15",
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
       "sample_addresses": [
-        "5906 CASSIA MEADOW AVE"
+        "5197 DUSK SKYSCAPE ST"
       ],
       "score": 6
     },
     {
-      "name": "BESAW JAMES",
+      "name": "QMS Construction Inc",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 80000.0,
+      "value_total": 230000.0,
       "trades": {
-        "pools": 1
+        "remodeling": 1
       },
-      "top_trade": "pools",
-      "trade_share_pct": 3.7,
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
       "sample_addresses": [
-        "2706 BURTON AVE"
+        "600 S 8TH ST"
       ],
       "score": 6
     },
@@ -5006,29 +4805,6 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "688 WINDOVER CT"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Vinco Inc",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 60000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "333 N RANCHO DR"
       ],
       "score": 6
     },
@@ -5100,16 +4876,16 @@
       "score": 6
     },
     {
-      "name": "Dali Heating and Air Conditioning",
+      "name": "Elegant Exteriors LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
+      "value_total": 139865.0,
       "trades": {
-        "hvac": 1
+        "pools": 1
       },
-      "top_trade": "hvac",
-      "trade_share_pct": 0.4,
+      "top_trade": "pools",
+      "trade_share_pct": 3.7,
       "cities": {
         "LAS VEGAS": 1
       },
@@ -5118,7 +4894,7 @@
       "first_seen": "2026-05-15",
       "last_seen": "2026-05-15",
       "sample_addresses": [
-        "4161 N RANCHO DR"
+        "5906 CASSIA MEADOW AVE"
       ],
       "score": 6
     },
@@ -5167,16 +4943,39 @@
       "score": 6
     },
     {
-      "name": "CLARITY SERVICES LLC",
+      "name": "AVILA FRANK JONATHAN V",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 100000.0,
+      "value_total": 4500.0,
       "trades": {
-        "pools": 1
+        "patio": 1
       },
-      "top_trade": "pools",
-      "trade_share_pct": 3.7,
+      "top_trade": "patio",
+      "trade_share_pct": 3.1,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "1925 HOWARD AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Day One Electric Inc",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 215000.0,
+      "trades": {
+        "electrical": 1
+      },
+      "top_trade": "electrical",
+      "trade_share_pct": 8.3,
       "cities": {
         "LAS VEGAS": 1
       },
@@ -5185,7 +4984,7 @@
       "first_seen": "2026-05-12",
       "last_seen": "2026-05-12",
       "sample_addresses": [
-        "725 S HUALAPAI WAY"
+        "2350 S RAINBOW BLVD"
       ],
       "score": 6
     },
@@ -5236,6 +5035,29 @@
       "score": 6
     },
     {
+      "name": "BESAW JAMES",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 80000.0,
+      "trades": {
+        "pools": 1
+      },
+      "top_trade": "pools",
+      "trade_share_pct": 3.7,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "2706 BURTON AVE"
+      ],
+      "score": 6
+    },
+    {
       "name": "IMAGE ELECTRIC INC",
       "permit_count": 1,
       "job_sites": 1,
@@ -5274,6 +5096,27 @@
       "last_seen": "2026-05-11",
       "sample_addresses": [
         "1129 PLANTATION CT"
+      ],
+      "score": 6
+    },
+    {
+      "name": "AMERICAN FIRE & ELECTRIC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "2304 SUNRISE AVE"
       ],
       "score": 6
     },
@@ -5322,6 +5165,29 @@
       "score": 6
     },
     {
+      "name": "Vinco Inc",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 60000.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "333 N RANCHO DR"
+      ],
+      "score": 6
+    },
+    {
       "name": "NEVADA SIGN",
       "permit_count": 1,
       "job_sites": 1,
@@ -5342,6 +5208,29 @@
       "last_seen": "2026-05-19",
       "sample_addresses": [
         "4000 MEADOWS LN"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Image360",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 19000.0,
+      "trades": {
+        "sign": 1
+      },
+      "top_trade": "sign",
+      "trade_share_pct": 6.7,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "1100 D ST"
       ],
       "score": 6
     },
@@ -5369,6 +5258,29 @@
       "score": 6
     },
     {
+      "name": "Dali Heating and Air Conditioning",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-15",
+      "last_seen": "2026-05-15",
+      "sample_addresses": [
+        "4161 N RANCHO DR"
+      ],
+      "score": 6
+    },
+    {
       "name": "J T CONTRACTING",
       "permit_count": 1,
       "job_sites": 1,
@@ -5392,39 +5304,16 @@
       "score": 6
     },
     {
-      "name": "Carmel Electric LLC",
+      "name": "CLARITY SERVICES LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 85000.0,
+      "value_total": 100000.0,
       "trades": {
-        "solar": 1
+        "pools": 1
       },
-      "top_trade": "solar",
-      "trade_share_pct": 1.5,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
-      "sample_addresses": [
-        "711 MORGAN AVE"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Day One Electric Inc",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 215000.0,
-      "trades": {
-        "electrical": 1
-      },
-      "top_trade": "electrical",
-      "trade_share_pct": 8.3,
+      "top_trade": "pools",
+      "trade_share_pct": 3.7,
       "cities": {
         "LAS VEGAS": 1
       },
@@ -5433,53 +5322,7 @@
       "first_seen": "2026-05-12",
       "last_seen": "2026-05-12",
       "sample_addresses": [
-        "2350 S RAINBOW BLVD"
-      ],
-      "score": 6
-    },
-    {
-      "name": "S C PLUMBING",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 1500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "450 FREMONT ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "NEVADA RESIDENTIAL SERVICES LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "hvac": 1
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "2127 SLEEPY CT"
+        "725 S HUALAPAI WAY"
       ],
       "score": 6
     },
@@ -5526,29 +5369,6 @@
       "last_seen": "2026-05-20",
       "sample_addresses": [
         "6556 DEADWOOD RD"
-      ],
-      "score": 6
-    },
-    {
-      "name": "ARTEAGA EFRAIN",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 23000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "1806 W OAKEY BLVD"
       ],
       "score": 6
     },
@@ -5756,48 +5576,25 @@
       "score": 6
     },
     {
-      "name": "Frontier Plumbing LLC",
+      "name": "ARTEAGA EFRAIN",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
+      "value_total": 23000.0,
       "trades": {
-        "plumbing": 1
+        "remodeling": 1
       },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-22",
-      "last_seen": "2026-05-22",
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
       "sample_addresses": [
-        "7236 ROYAL MELBOURNE DR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Armando Patio's LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 5700.0,
-      "trades": {
-        "patio": 1
-      },
-      "top_trade": "patio",
-      "trade_share_pct": 3.1,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-22",
-      "last_seen": "2026-05-22",
-      "sample_addresses": [
-        "8828 MEDICINE WHEEL AVE"
+        "1806 W OAKEY BLVD"
       ],
       "score": 6
     },
@@ -5842,6 +5639,27 @@
       "last_seen": "2026-05-18",
       "sample_addresses": [
         "2800 ASHBY AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "AGUSTIN VINCENT LAYAGAN & JANE",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 30000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-14",
+      "sample_addresses": [
+        "413 N 9TH ST"
       ],
       "score": 6
     },
@@ -5892,46 +5710,48 @@
       "score": 6
     },
     {
-      "name": "Renaissance Pools & Spas Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 70995.0,
-      "trades": {
-        "pools": 1
-      },
-      "top_trade": "pools",
-      "trade_share_pct": 3.7,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "5804 MENDOZA CT"
-      ],
-      "score": 6
-    },
-    {
-      "name": "MAXCARE ELECTRIC AND AIR LLC",
+      "name": "Frontier Plumbing LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
       "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-22",
       "sample_addresses": [
-        "1617 N MALLARD ST"
+        "7236 ROYAL MELBOURNE DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Armando Patio's LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 5700.0,
+      "trades": {
+        "patio": 1
+      },
+      "top_trade": "patio",
+      "trade_share_pct": 3.1,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-22",
+      "sample_addresses": [
+        "8828 MEDICINE WHEEL AVE"
       ],
       "score": 6
     },
@@ -5955,6 +5775,29 @@
       "last_seen": "2026-05-21",
       "sample_addresses": [
         "9802 SUMMER BLISS AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "NEVADA RESIDENTIAL SERVICES LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "2127 SLEEPY CT"
       ],
       "score": 6
     },
@@ -6070,6 +5913,27 @@
       "score": 6
     },
     {
+      "name": "A-1 Action Plumbing and Rooter Inc.",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 3000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "616 E CARSON AVE"
+      ],
+      "score": 6
+    },
+    {
       "name": "Custom Installations",
       "permit_count": 1,
       "job_sites": 1,
@@ -6110,6 +5974,29 @@
       "last_seen": "2026-05-18",
       "sample_addresses": [
         "96 VERNALIS AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Ruiter Construction LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-18",
+      "last_seen": "2026-05-18",
+      "sample_addresses": [
+        "3604 BUDLONG AVE"
       ],
       "score": 6
     },
@@ -6158,29 +6045,6 @@
       "score": 6
     },
     {
-      "name": "ANZALDO NESTOR DANIEL BERZUNZA",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 212600.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
-      "sample_addresses": [
-        "6271 BULLRING LN"
-      ],
-      "score": 6
-    },
-    {
       "name": "BLAZEK DAVID KYLE & ELIZABETH SHARPE",
       "permit_count": 1,
       "job_sites": 1,
@@ -6204,29 +6068,6 @@
       "score": 6
     },
     {
-      "name": "A/C MEDIC VEGAS LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "hvac": 1
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-13",
-      "last_seen": "2026-05-13",
-      "sample_addresses": [
-        "9741 FERN CANYON AVE"
-      ],
-      "score": 6
-    },
-    {
       "name": "RICHMOND AMERICAN HOMES NEVADA INC",
       "permit_count": 1,
       "job_sites": 1,
@@ -6244,6 +6085,75 @@
       "last_seen": "2026-05-13",
       "sample_addresses": [
         "120 VERNALIS AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Renaissance Pools & Spas Inc.",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 70995.0,
+      "trades": {
+        "pools": 1
+      },
+      "top_trade": "pools",
+      "trade_share_pct": 3.7,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "5804 MENDOZA CT"
+      ],
+      "score": 6
+    },
+    {
+      "name": "P1 PLUMBING SOLUTIONS",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-22",
+      "sample_addresses": [
+        "11040 CLEAR MEADOWS DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "ABOVE ALL COVERS LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 3200.0,
+      "trades": {
+        "patio": 1
+      },
+      "top_trade": "patio",
+      "trade_share_pct": 3.1,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "6816 N CHIEFTAIN ST"
       ],
       "score": 6
     },
@@ -6315,27 +6225,6 @@
       "score": 6
     },
     {
-      "name": "TPM Services",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-18",
-      "last_seen": "2026-05-18",
-      "sample_addresses": [
-        "1511 S CASINO CENTER BLVD"
-      ],
-      "score": 6
-    },
-    {
       "name": "Helix Electric",
       "permit_count": 1,
       "job_sites": 1,
@@ -6355,29 +6244,6 @@
       "last_seen": "2026-05-18",
       "sample_addresses": [
         "12127 CASTILLA RAIN AVE"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Ruiter Construction LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-18",
-      "last_seen": "2026-05-18",
-      "sample_addresses": [
-        "3604 BUDLONG AVE"
       ],
       "score": 6
     },
@@ -6428,6 +6294,52 @@
       "score": 6
     },
     {
+      "name": "ANZALDO NESTOR DANIEL BERZUNZA",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 212600.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "6271 BULLRING LN"
+      ],
+      "score": 6
+    },
+    {
+      "name": "A/C MEDIC VEGAS LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "9741 FERN CANYON AVE"
+      ],
+      "score": 6
+    },
+    {
       "name": "HEREDIA HUMBERTO VALDES",
       "permit_count": 1,
       "job_sites": 1,
@@ -6451,48 +6363,6 @@
       "score": 6
     },
     {
-      "name": "Louis Lionetti Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 5000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "2525 TULIP LN"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Hilco Electric Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-15",
-      "last_seen": "2026-05-15",
-      "sample_addresses": [
-        "228 EARL ST"
-      ],
-      "score": 6
-    },
-    {
       "name": "GALVAN GUSTAVO",
       "permit_count": 1,
       "job_sites": 1,
@@ -6512,6 +6382,71 @@
       "last_seen": "2026-05-11",
       "sample_addresses": [
         "4129 PARK POINT CT"
+      ],
+      "score": 6
+    },
+    {
+      "name": "MAXCARE ELECTRIC AND AIR LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "1617 N MALLARD ST"
+      ],
+      "score": 6
+    },
+    {
+      "name": "TPM Services",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-18",
+      "last_seen": "2026-05-18",
+      "sample_addresses": [
+        "1511 S CASINO CENTER BLVD"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Carmel Electric LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 85000.0,
+      "trades": {
+        "solar": 1
+      },
+      "top_trade": "solar",
+      "trade_share_pct": 1.5,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-13",
+      "last_seen": "2026-05-13",
+      "sample_addresses": [
+        "711 MORGAN AVE"
       ],
       "score": 6
     },
@@ -6558,44 +6493,25 @@
       "score": 6
     },
     {
-      "name": "Green Built Development",
+      "name": "S C PLUMBING",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
+      "value_total": 1500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
       "sample_addresses": [
-        "900 N TONOPAH DR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "SOUTHWEST DOORS & GATES",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 12500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "5249 RICKY RD"
+        "450 FREMONT ST"
       ],
       "score": 6
     },
@@ -6621,34 +6537,11 @@
       "score": 6
     },
     {
-      "name": "LOPEZ EVA M",
+      "name": "Louis Lionetti Inc.",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 45000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
-      "sample_addresses": [
-        "1709 BATTLE CREEK CIR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "CAR CHARGING PROS LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 999.0,
+      "value_total": 5000.0,
       "trades": {},
       "top_trade": null,
       "trade_share_pct": 0.0,
@@ -6657,10 +6550,10 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
       "sample_addresses": [
-        "8017 COOL SPRINGS ST"
+        "2525 TULIP LN"
       ],
       "score": 6
     },
@@ -6686,11 +6579,11 @@
       "score": 6
     },
     {
-      "name": "Tuff Shed Inc",
+      "name": "Hilco Electric Inc.",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 30092.0,
+      "value_total": 500.0,
       "trades": {},
       "top_trade": null,
       "trade_share_pct": 0.0,
@@ -6702,7 +6595,7 @@
       "first_seen": "2026-05-15",
       "last_seen": "2026-05-15",
       "sample_addresses": [
-        "1401 WENGERT AVE"
+        "228 EARL ST"
       ],
       "score": 6
     },
@@ -6749,6 +6642,27 @@
       "score": 6
     },
     {
+      "name": "Green Built Development",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "900 N TONOPAH DR"
+      ],
+      "score": 6
+    },
+    {
       "name": "Beebe Plumbing LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -6772,6 +6686,27 @@
       "score": 6
     },
     {
+      "name": "Lenny Lopez Rodriguez",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "5308 NADIA CT"
+      ],
+      "score": 6
+    },
+    {
       "name": "Alliance Electric LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -6789,6 +6724,50 @@
       "last_seen": "2026-05-15",
       "sample_addresses": [
         "3108 SONIA DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "LOPEZ EVA M",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 45000.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
+      "sample_addresses": [
+        "1709 BATTLE CREEK CIR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "CAR CHARGING PROS LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 999.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
+      "sample_addresses": [
+        "8017 COOL SPRINGS ST"
       ],
       "score": 6
     },
@@ -6948,27 +6927,6 @@
       "score": 6
     },
     {
-      "name": "NATO JULIUS CEZAR OCSAN & KATHLEEN JOY ACEDERA",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 7300.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "6508 COLUMBIDAE AVE"
-      ],
-      "score": 6
-    },
-    {
       "name": "C&C Plumbing LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -6987,6 +6945,27 @@
       "sample_addresses": [
         "3622 MOONCREST CIR"
       ],
+      "score": 6
+    },
+    {
+      "name": "COCO JON E",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [],
       "score": 6
     },
     {
@@ -7013,11 +6992,11 @@
       "score": 6
     },
     {
-      "name": "Fluxho Services",
+      "name": "SOUTHWEST DOORS & GATES",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
+      "value_total": 12500.0,
       "trades": {},
       "top_trade": null,
       "trade_share_pct": 0.0,
@@ -7026,10 +7005,10 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
       "sample_addresses": [
-        "4220 ORION AVE"
+        "5249 RICKY RD"
       ],
       "score": 6
     },
@@ -7080,69 +7059,6 @@
       "score": 6
     },
     {
-      "name": "Lenny Lopez Rodriguez",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "5308 NADIA CT"
-      ],
-      "score": 6
-    },
-    {
-      "name": "CERVANTES EMMANUEL ARELLANO",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 30000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-14",
-      "last_seen": "2026-05-14",
-      "sample_addresses": [
-        "5901 CONDOR AVE"
-      ],
-      "score": 6
-    },
-    {
-      "name": "ATI RESTORATION NORTH LAS VEGAS NV LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 15473.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-14",
-      "last_seen": "2026-05-14",
-      "sample_addresses": [
-        "4732 TRAILHEAD MESA ST"
-      ],
-      "score": 6
-    },
-    {
       "name": "Just in Time",
       "permit_count": 1,
       "job_sites": 1,
@@ -7162,27 +7078,6 @@
       "last_seen": "2026-05-13",
       "sample_addresses": [
         "405 PINNACLE HEIGHTS LN"
-      ],
-      "score": 6
-    },
-    {
-      "name": "George Gekakis Inc.",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 90885.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-12",
-      "last_seen": "2026-05-12",
-      "sample_addresses": [
-        "731 EFFINGER ST"
       ],
       "score": 6
     },
@@ -7254,6 +7149,69 @@
       "score": 6
     },
     {
+      "name": "NATO JULIUS CEZAR OCSAN & KATHLEEN JOY ACEDERA",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 7300.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "6508 COLUMBIDAE AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Fluxho Services",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [
+        "4220 ORION AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "SHERMAN THOMAS W",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "plumbing": 1
+      },
+      "top_trade": "plumbing",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-19",
+      "sample_addresses": [],
+      "score": 6
+    },
+    {
       "name": "GARCIA LIZETTE DIANA",
       "permit_count": 1,
       "job_sites": 1,
@@ -7275,11 +7233,11 @@
       "score": 6
     },
     {
-      "name": "DOMINION ELECTRIC LLC",
+      "name": "Tuff Shed Inc",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
+      "value_total": 30092.0,
       "trades": {},
       "top_trade": null,
       "trade_share_pct": 0.0,
@@ -7288,10 +7246,31 @@
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-18",
-      "last_seen": "2026-05-18",
+      "first_seen": "2026-05-15",
+      "last_seen": "2026-05-15",
       "sample_addresses": [
-        "5751 N TORREY PINES DR"
+        "1401 WENGERT AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "CERVANTES EMMANUEL ARELLANO",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 30000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-14",
+      "sample_addresses": [
+        "5901 CONDOR AVE"
       ],
       "score": 6
     },
@@ -7315,6 +7294,27 @@
       "last_seen": "2026-05-14",
       "sample_addresses": [
         "5928 GOLDEN AROWANA WAY"
+      ],
+      "score": 6
+    },
+    {
+      "name": "ATI RESTORATION NORTH LAS VEGAS NV LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 15473.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-14",
+      "sample_addresses": [
+        "4732 TRAILHEAD MESA ST"
       ],
       "score": 6
     },
@@ -7384,24 +7384,45 @@
       "score": 6
     },
     {
-      "name": "COCO JON E",
+      "name": "DOMINION ELECTRIC LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
       "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
       "cities": {
         "LAS VEGAS": 1
       },
       "top_city": "Las Vegas",
       "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [],
+      "first_seen": "2026-05-18",
+      "last_seen": "2026-05-18",
+      "sample_addresses": [
+        "5751 N TORREY PINES DR"
+      ],
+      "score": 6
+    },
+    {
+      "name": "George Gekakis Inc.",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 90885.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-12",
+      "sample_addresses": [
+        "731 EFFINGER ST"
+      ],
       "score": 6
     },
     {
@@ -7426,16 +7447,14 @@
       "score": 6
     },
     {
-      "name": "SHERMAN THOMAS W",
+      "name": "Citywide Electric & Maintenance LLC",
       "permit_count": 1,
       "job_sites": 1,
       "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "plumbing": 1
-      },
-      "top_trade": "plumbing",
-      "trade_share_pct": 0.4,
+      "value_total": 11000.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
       "cities": {
         "LAS VEGAS": 1
       },
@@ -7443,7 +7462,9 @@
       "geo_dominance_pct": 0.1,
       "first_seen": "2026-05-19",
       "last_seen": "2026-05-19",
-      "sample_addresses": [],
+      "sample_addresses": [
+        "3029 HAWKSDALE DR"
+      ],
       "score": 6
     },
     {
@@ -7468,48 +7489,6 @@
       "score": 6
     },
     {
-      "name": "Blue Collar Plumbing & Mechanical",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-11",
-      "last_seen": "2026-05-11",
-      "sample_addresses": [
-        "8608 DUSTY HOLLOW ST"
-      ],
-      "score": 6
-    },
-    {
-      "name": "Citywide Electric & Maintenance LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 11000.0,
-      "trades": {},
-      "top_trade": null,
-      "trade_share_pct": 0.0,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-19",
-      "sample_addresses": [
-        "3029 HAWKSDALE DR"
-      ],
-      "score": 6
-    },
-    {
       "name": "S R Plumbing",
       "permit_count": 1,
       "job_sites": 1,
@@ -7527,6 +7506,27 @@
       "last_seen": "2026-05-12",
       "sample_addresses": [
         "7310 LAKE FARM AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "Blue Collar Plumbing & Mechanical",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {},
+      "top_trade": null,
+      "trade_share_pct": 0.0,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-11",
+      "sample_addresses": [
+        "8608 DUSTY HOLLOW ST"
       ],
       "score": 6
     },
