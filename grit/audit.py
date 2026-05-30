@@ -125,6 +125,13 @@ def source_inventory(cards, events, health):
                     "APN", "owner", "contractor", "license", "trades"],
          "missing": ["trade tag on ~28% of permits", "APN on a few records"],
          "health": "live"},
+        {"source": "City of Henderson permits (Socrata)", "jurisdiction": "Henderson",
+         "coverage_area": "City of Henderson (DSC permits, all types)", "status": "WORKING",
+         "records": sum(1 for c in cards if c.get("source") == "henderson_permit"),
+         "newest": None, "oldest": None, "frequency": "daily", "confidence": 90,
+         "fields": ["record", "type", "status", "apply/issue date", "valuation",
+                    "sqft", "address", "APN", "owner", "contractor", "state license", "coords"],
+         "missing": [], "health": "live"},
         {"source": "Clark County Assessor enrichment + deeds", "jurisdiction": "Clark County",
          "coverage_area": "Top leads (enriched on demand)", "status": "PARTIAL",
          "records": len(enriched) + len(deed_ev), "newest": d_new, "oldest": d_old,
@@ -144,9 +151,6 @@ def source_inventory(cards, events, health):
                 "missing": fields, "would_provide": fields, "feasibility": feasibility,
                 "access": access, "priority": priority, "health": "planned"}
     inv += [
-        cand("Henderson permits", "Henderson", "City of Henderson",
-             ["permit date", "value", "contractor", "trade", "status", "APN"],
-             "MEDIUM", "Accela Citizen Access / city open-data portal — probe required", "HIGH"),
         cand("North Las Vegas permits", "North Las Vegas", "City of North Las Vegas",
              ["permit date", "value", "contractor", "trade", "status", "APN"],
              "MEDIUM", "Accela / city GIS permit layer — probe required", "HIGH"),
@@ -223,7 +227,7 @@ def signal_matrix(cards, events):
     HIGH, MED, LOW = "HIGH", "MEDIUM", "LOW"
     return [
         row("Permits", "IMPLEMENTED", permit_ev, HIGH,
-            "City of Las Vegas live; other authorities pending."),
+            "City of Las Vegas + City of Henderson (Socrata) live; NLV/County (Accela) pending."),
         row("Property Sales", "PARTIAL", sum(1 for c in cards if c.get("last_sale_date")), HIGH,
             "Captured on enriched leads via Assessor; not full-roll."),
         row("Deed Transfers", "PARTIAL", deed_ev, HIGH, "From Assessor sale history."),

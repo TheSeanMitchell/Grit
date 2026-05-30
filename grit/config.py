@@ -146,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.109"
+VERSION = "0.110"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -233,6 +233,7 @@ CLV_PERMITS_FEATURESERVER = "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgi
 #     -> commercial / entity signal.
 # Item ids were confirmed from the City of Las Vegas open data portal.
 FREE_SOURCES_ENABLED = True
+HENDERSON_PERMITS_ENABLED = True   # 0.110: City of Henderson DSC permits (Socrata)
 FREE_SOURCE_MAX = 4000          # cap records pulled per free source per harvest
 CLV_OPENDATA_ITEMS = {
     "code_enforcement": "f48d19416d5546e5b9ee12f9746ecaa9",

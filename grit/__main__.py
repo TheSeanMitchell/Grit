@@ -243,6 +243,31 @@ def cmd_selftest():
     assert any("code-enforcement" in s for s in sc["signals"]), "distress not scored"
     print("0.109: free-saturation connector (code-enf + business + events + seeds + scoring) OK")
 
+    # ---- 0.110: Henderson permits (Socrata) mapping --------------------------
+    from . import henderson as hend
+    from . import clv_permits as clv_permits_mod
+    from .pipeline import permits_to_cards
+    hrow = {"permitnumber": "BOTH2025372313", "permittype": "BLDG - Wall",
+            "workclass": "Post Hole", "permitstatus": "Active - Issued",
+            "issuedate": "2026-01-12T00:01:00.000", "applydate": "2025-12-31T16:12:00.000",
+            "valuationtotal": "296.63", "parcelnumber": "16034710001",
+            "parceladdressnumber": "920", "parceladdressstreet": "BOULDER",
+            "parceladdressstreettype": "HWY", "parceladdresscity": "HENDERSON",
+            "ownername": "P N II INC", "owneraddress": "7255 S TENAYA WAY LAS VEGAS NV 89113",
+            "professionalname": "HIRSCHI IRON LLC", "professionalstatelicnbr": "0088266",
+            "gisx": "-114.928970", "gisy": "36.078631",
+            "permitsquarefootagetotal": "1200", "permitdescription": "Iron fence"}
+    hp = hend._row_to_permit(hrow)
+    assert hp["record"] == "BOTH2025372313" and hp["apn"] == "16034710001", "henderson apn/record failed"
+    assert hp["contractor"] == "HIRSCHI IRON LLC" and hp["license"] == "0088266", "henderson contractor/license failed"
+    assert hp["date"] == "2026-01-12" and hp["lat"] and hp["lng"], "henderson date/coords failed"
+    assert hp["owner_name"] == "P N II INC" and hp["city"] == "HENDERSON", "henderson owner/city failed"
+    hcards = permits_to_cards([hp], "henderson_permit")
+    assert hcards and hcards[0]["source"] == "henderson_permit" and hcards[0]["parcel_apn"] == "16034710001", "henderson card failed"
+    hev = clv_permits_mod.to_events([hp], source="henderson_permit")
+    assert hev and hev[0].kind == "PERMIT" and hev[0].source == "henderson_permit", "henderson events failed"
+    print("0.110: Henderson permits (Socrata) mapping + cards + events OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T16:51:14Z",
-  "version": "0.109",
+  "generated_at": "2026-05-30T20:36:54Z",
+  "version": "0.110",
   "permits": {
     "by_jurisdiction": [
       {
@@ -1519,7 +1519,7 @@
           "owners_identified": 1651,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1299,
+          "signals": 1297,
           "mapped": 1691,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -1858,6 +1858,34 @@
         "health": "live"
       },
       {
+        "source": "City of Henderson permits (Socrata)",
+        "jurisdiction": "Henderson",
+        "coverage_area": "City of Henderson (DSC permits, all types)",
+        "status": "WORKING",
+        "records": 0,
+        "newest": null,
+        "oldest": null,
+        "frequency": "daily",
+        "confidence": 90,
+        "fields": [
+          "record",
+          "type",
+          "status",
+          "apply/issue date",
+          "valuation",
+          "sqft",
+          "address",
+          "APN",
+          "owner",
+          "contractor",
+          "state license",
+          "coords"
+        ],
+        "missing": [],
+        "health": "live",
+        "probe_status": "reachable"
+      },
+      {
         "source": "Clark County Assessor enrichment + deeds",
         "jurisdiction": "Clark County",
         "coverage_area": "Top leads (enriched on demand)",
@@ -1878,39 +1906,6 @@
           "value/sqft/beds/year require the paid AOEXTRACT/AORES extract \u2014 the free layer carries owner+mailing+land-use only"
         ],
         "health": "live",
-        "probe_status": "reachable"
-      },
-      {
-        "source": "Henderson permits",
-        "jurisdiction": "Henderson",
-        "coverage_area": "City of Henderson",
-        "status": "NOT IMPLEMENTED",
-        "records": 0,
-        "newest": null,
-        "oldest": null,
-        "frequency": "\u2014",
-        "confidence": 0,
-        "fields": [],
-        "missing": [
-          "permit date",
-          "value",
-          "contractor",
-          "trade",
-          "status",
-          "APN"
-        ],
-        "would_provide": [
-          "permit date",
-          "value",
-          "contractor",
-          "trade",
-          "status",
-          "APN"
-        ],
-        "feasibility": "MEDIUM",
-        "access": "Accela Citizen Access / city open-data portal \u2014 probe required",
-        "priority": "HIGH",
-        "health": "planned",
         "probe_status": "reachable"
       },
       {
@@ -2243,7 +2238,7 @@
         "status": "IMPLEMENTED",
         "current_coverage": 1000,
         "priority": "HIGH",
-        "note": "City of Las Vegas live; other authorities pending."
+        "note": "City of Las Vegas + City of Henderson (Socrata) live; NLV/County (Accela) pending."
       },
       {
         "signal": "Property Sales",

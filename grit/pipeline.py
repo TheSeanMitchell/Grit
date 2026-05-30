@@ -210,10 +210,11 @@ def _next_action(card):
 
 
 # ---- permits as leads (EVENT -> ENTITY -> MONEY) --------------------------
-def permits_to_cards(permits):
+def permits_to_cards(permits, source_key="clv_permit"):
     """Turn recent permits into lead cards. A permit is an active-work signal:
     owner + site + APN + contractor + valuation + date. Multiple permits on one
-    parcel collapse into a single card (union of trades/contractors, newest date)."""
+    parcel collapse into a single card (union of trades/contractors, newest date).
+    source_key tags the origin (clv_permit, henderson_permit, ...)."""
     by_key, cards = {}, []
     for p in permits:
         owner = p.get("owner_name")
@@ -223,7 +224,7 @@ def permits_to_cards(permits):
         key = p.get("apn") or ("ADDR:" + (p.get("site_address") or p.get("record") or ""))
         c = by_key.get(key)
         if c is None:
-            c = {"id": f"clv_permit:{key}", "source": "clv_permit",
+            c = {"id": f"{source_key}:{key}", "source": source_key,
                  "parcel_apn": p.get("apn"), "situs_address": p.get("site_address"),
                  "situs_city": p.get("city"), "owner_name": owner,
                  "owner_mailing": p.get("owner_mailing"), "entity_type": entity,
@@ -497,6 +498,23 @@ def harvest():
         permits, permit_report = clv_permits.fetch_clv_permits(days_back=config.PERMIT_DAYS_BACK)
         permit_events = clv_permits.to_events(permits)
         cards, permit_merge = merge_permit_cards(cards, permits_to_cards(permits))
+
+        # 0.110 SECOND PERMIT JURISDICTION -- City of Henderson DSC permits via its
+        # free Socrata open-data feed (the one non-CLV jurisdiction with a clean
+        # API). Same permit shape, so it reuses the merge/event/trade path. Carries
+        # contractor + state license number -> deeper contractor signal. Fail-safe.
+        hend_report = {"status": "skipped"}
+        try:
+            from . import henderson
+            hend_permits, hend_report = henderson.fetch_henderson_permits()
+            hend_events = clv_permits.to_events(hend_permits, source="henderson_permit")
+            cards, hend_merge = merge_permit_cards(cards, permits_to_cards(hend_permits, "henderson_permit"))
+            hend_report["leads_added"] = hend_merge.get("permit_cards_added")
+            hend_report["leads_enriched"] = hend_merge.get("permit_cards_enriched_existing")
+            permit_events = permit_events + hend_events
+        except Exception as _he:  # noqa: BLE001
+            hend_report = {"status": "error", "error": str(_he)}
+
         all_events = existing_events + enrich_events + permit_events
 
         # 0.109 FREE DATA SATURATION -- pull every additional FREE signal feed
@@ -583,6 +601,7 @@ def harvest():
                                     "newest": permit_report.get("newest"),
                                     "error": permit_report.get("error")},
                         "free_sources": free_report,
+                        "henderson_permits": hend_report,
                         **meta}
 
         # ---- REGRESSION GUARD (before ANY data write) ----------------------
