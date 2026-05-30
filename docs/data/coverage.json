@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T09:17:13Z",
+  "generated_at": "2026-05-30T15:55:26Z",
   "version": "0.108",
   "permits": {
     "by_jurisdiction": [
@@ -29,48 +29,28 @@
     "by_jurisdiction": [
       {
         "jurisdiction": "Las Vegas",
-        "leads": 1217,
-        "mapped": 1206,
+        "leads": 1658,
+        "mapped": 1647,
         "permitted": 912,
-        "value_total": 3998796,
+        "value_total": 3923209,
         "newest": "2026-05-22",
-        "mapped_pct": 99.1,
+        "mapped_pct": 99.3,
         "freshness_days": 8
       },
       {
-        "jurisdiction": "North Las Vegas",
-        "leads": 251,
-        "mapped": 251,
-        "permitted": 0,
-        "value_total": 131355,
-        "newest": "2023-07-01",
-        "mapped_pct": 100.0,
-        "freshness_days": 1064
-      },
-      {
         "jurisdiction": "Henderson",
-        "leads": 243,
-        "mapped": 243,
+        "leads": 968,
+        "mapped": 968,
         "permitted": 0,
-        "value_total": 39537,
+        "value_total": 102007,
         "newest": "2026-04-01",
         "mapped_pct": 100.0,
         "freshness_days": 59
       },
       {
-        "jurisdiction": "Sunrise Manor",
-        "leads": 203,
-        "mapped": 203,
-        "permitted": 0,
-        "value_total": 1014909,
-        "newest": "2026-03-01",
-        "mapped_pct": 100.0,
-        "freshness_days": 90
-      },
-      {
-        "jurisdiction": "Paradise",
-        "leads": 122,
-        "mapped": 122,
+        "jurisdiction": "Whitney",
+        "leads": 590,
+        "mapped": 590,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -79,28 +59,48 @@
       },
       {
         "jurisdiction": "Enterprise",
-        "leads": 88,
-        "mapped": 88,
+        "leads": 456,
+        "mapped": 456,
         "permitted": 0,
         "value_total": 0,
-        "newest": "2015-08-01",
+        "newest": "2016-04-01",
         "mapped_pct": 100.0,
-        "freshness_days": 3955
+        "freshness_days": 3711
       },
       {
-        "jurisdiction": "Whitney",
-        "leads": 77,
-        "mapped": 77,
+        "jurisdiction": "Sunrise Manor",
+        "leads": 381,
+        "mapped": 381,
         "permitted": 0,
-        "value_total": 0,
-        "newest": "0",
+        "value_total": 819434,
+        "newest": "2026-03-01",
         "mapped_pct": 100.0,
-        "freshness_days": null
+        "freshness_days": 90
+      },
+      {
+        "jurisdiction": "North Las Vegas",
+        "leads": 373,
+        "mapped": 373,
+        "permitted": 0,
+        "value_total": 131355,
+        "newest": "2023-07-01",
+        "mapped_pct": 100.0,
+        "freshness_days": 1064
+      },
+      {
+        "jurisdiction": "Paradise",
+        "leads": 311,
+        "mapped": 311,
+        "permitted": 0,
+        "value_total": 400,
+        "newest": "2018-02-01",
+        "mapped_pct": 100.0,
+        "freshness_days": 3040
       },
       {
         "jurisdiction": "Winchester",
-        "leads": 68,
-        "mapped": 68,
+        "leads": 103,
+        "mapped": 103,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -109,28 +109,28 @@
       },
       {
         "jurisdiction": "Spring Valley",
-        "leads": 67,
-        "mapped": 67,
+        "leads": 33,
+        "mapped": 33,
         "permitted": 0,
-        "value_total": 513709,
-        "newest": "2021-06-01",
+        "value_total": 605889,
+        "newest": "2022-09-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1824
+        "freshness_days": 1367
       },
       {
         "jurisdiction": "Clark County",
-        "leads": 29,
-        "mapped": 29,
+        "leads": 19,
+        "mapped": 19,
         "permitted": 0,
-        "value_total": 300895,
+        "value_total": 606829,
         "newest": "2023-09-01",
         "mapped_pct": 100.0,
         "freshness_days": 1002
       },
       {
-        "jurisdiction": "Summerlin",
-        "leads": 23,
-        "mapped": 23,
+        "jurisdiction": "Boulder City",
+        "leads": 8,
+        "mapped": 8,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -138,19 +138,19 @@
         "freshness_days": null
       },
       {
-        "jurisdiction": "Boulder City",
-        "leads": 20,
-        "mapped": 20,
+        "jurisdiction": "Summerlin",
+        "leads": 8,
+        "mapped": 8,
         "permitted": 0,
         "value_total": 0,
-        "newest": null,
+        "newest": "2012-05-01",
         "mapped_pct": 100.0,
-        "freshness_days": null
+        "freshness_days": 5142
       },
       {
         "jurisdiction": "Moapa Valley",
-        "leads": 4,
-        "mapped": 4,
+        "leads": 1,
+        "mapped": 1,
         "permitted": 0,
         "value_total": 0,
         "newest": null,
@@ -159,8 +159,8 @@
       }
     ],
     "jurisdictions": 13,
-    "total_leads": 2412,
-    "total_mapped": 2401
+    "total_leads": 4909,
+    "total_mapped": 4898
   },
   "capital_flow": {
     "by_market": [
@@ -170,7 +170,7 @@
         "out_of_state": false,
         "properties": 766,
         "permits": 766,
-        "valuation_total": 17288552,
+        "valuation_total": 17447654,
         "destinations": [
           {
             "jurisdiction": "Las Vegas",
@@ -480,6 +480,21 @@
         "owners": 1
       },
       {
+        "market": "Salt Lake City, UT",
+        "state": "UT",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 40000,
+        "destinations": [
+          {
+            "jurisdiction": "Las Vegas",
+            "properties": 1
+          }
+        ],
+        "owners": 1
+      },
+      {
         "market": "Alexandria, VA",
         "state": "VA",
         "out_of_state": true,
@@ -497,21 +512,6 @@
       {
         "market": "Seattle, WA",
         "state": "WA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Salt Lake City, UT",
-        "state": "UT",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
@@ -547,7 +547,7 @@
         "out_of_state": false,
         "properties": 817,
         "permits": 817,
-        "valuation_total": 17392052,
+        "valuation_total": 17551154,
         "markets": 5
       },
       {
@@ -623,21 +623,21 @@
         "markets": 1
       },
       {
-        "state": "CO",
-        "name": "Colorado",
-        "out_of_state": true,
-        "properties": 2,
-        "permits": 2,
-        "valuation_total": 6500,
-        "markets": 2
-      },
-      {
         "state": "UT",
         "name": "Utah",
         "out_of_state": true,
         "properties": 2,
         "permits": 2,
         "valuation_total": 40500,
+        "markets": 2
+      },
+      {
+        "state": "CO",
+        "name": "Colorado",
+        "out_of_state": true,
+        "properties": 2,
+        "permits": 2,
+        "valuation_total": 6500,
         "markets": 2
       },
       {
@@ -668,24 +668,6 @@
         "markets": 2
       },
       {
-        "state": "TN",
-        "name": "Tennessee",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 45900,
-        "markets": 1
-      },
-      {
-        "state": "PA",
-        "name": "Pennsylvania",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 500,
-        "markets": 1
-      },
-      {
         "state": "ID",
         "name": "Idaho",
         "out_of_state": true,
@@ -704,12 +686,30 @@
         "markets": 1
       },
       {
+        "state": "PA",
+        "name": "Pennsylvania",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 500,
+        "markets": 1
+      },
+      {
         "state": "MA",
         "name": "Massachusetts",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
         "valuation_total": 500,
+        "markets": 1
+      },
+      {
+        "state": "TN",
+        "name": "Tennessee",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 45900,
         "markets": 1
       },
       {
@@ -1039,6 +1039,21 @@
         "owners": 1
       },
       {
+        "market": "Salt Lake City, UT",
+        "state": "UT",
+        "out_of_state": true,
+        "properties": 1,
+        "permits": 1,
+        "valuation_total": 40000,
+        "destinations": [
+          {
+            "jurisdiction": "Las Vegas",
+            "properties": 1
+          }
+        ],
+        "owners": 1
+      },
+      {
         "market": "Alexandria, VA",
         "state": "VA",
         "out_of_state": true,
@@ -1056,21 +1071,6 @@
       {
         "market": "Seattle, WA",
         "state": "WA",
-        "out_of_state": true,
-        "properties": 1,
-        "permits": 1,
-        "valuation_total": 40000,
-        "destinations": [
-          {
-            "jurisdiction": "Las Vegas",
-            "properties": 1
-          }
-        ],
-        "owners": 1
-      },
-      {
-        "market": "Salt Lake City, UT",
-        "state": "UT",
         "out_of_state": true,
         "properties": 1,
         "permits": 1,
@@ -1146,15 +1146,15 @@
     ],
     "imported_flows": [
       {
-        "origin": "Los Angeles, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 4
-      },
-      {
         "origin": "Chicago, IL",
         "destination": "Las Vegas",
         "origin_state": "IL",
+        "properties": 4
+      },
+      {
+        "origin": "Los Angeles, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
         "properties": 4
       },
       {
@@ -1206,18 +1206,6 @@
         "properties": 1
       },
       {
-        "origin": "Santa Rosa, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Nashville, TN",
-        "destination": "Las Vegas",
-        "origin_state": "TN",
-        "properties": 1
-      },
-      {
         "origin": "South Rockwood, MI",
         "destination": "Las Vegas",
         "origin_state": "MI",
@@ -1230,13 +1218,19 @@
         "properties": 1
       },
       {
-        "origin": "King Of Prussia, PA",
+        "origin": "Vernon Hills, IL",
         "destination": "Las Vegas",
-        "origin_state": "PA",
+        "origin_state": "IL",
         "properties": 1
       },
       {
         "origin": "Irvine, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
+        "properties": 1
+      },
+      {
+        "origin": "Santa Rosa, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
@@ -1248,37 +1242,37 @@
         "properties": 1
       },
       {
-        "origin": "Pomona, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
         "origin": "Eagle, ID",
         "destination": "Las Vegas",
         "origin_state": "ID",
         "properties": 1
       },
       {
-        "origin": "Sylmar, CA",
+        "origin": "Mountain View, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Monrovia, CA",
-        "destination": "Las Vegas",
-        "origin_state": "CA",
-        "properties": 1
-      },
-      {
-        "origin": "Vernon Hills, IL",
-        "destination": "Las Vegas",
-        "origin_state": "IL",
         "properties": 1
       },
       {
         "origin": "Saratoga, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
+        "properties": 1
+      },
+      {
+        "origin": "Salt Lake City, UT",
+        "destination": "Las Vegas",
+        "origin_state": "UT",
+        "properties": 1
+      },
+      {
+        "origin": "Redondo Beach, CA",
+        "destination": "Las Vegas",
+        "origin_state": "CA",
+        "properties": 1
+      },
+      {
+        "origin": "Pomona, CA",
         "destination": "Las Vegas",
         "origin_state": "CA",
         "properties": 1
@@ -1290,15 +1284,21 @@
         "properties": 1
       },
       {
-        "origin": "Colorado Springs, CO",
+        "origin": "King Of Prussia, PA",
         "destination": "Las Vegas",
-        "origin_state": "CO",
+        "origin_state": "PA",
         "properties": 1
       },
       {
         "origin": "Agawam, MA",
         "destination": "Las Vegas",
         "origin_state": "MA",
+        "properties": 1
+      },
+      {
+        "origin": "Dallas, TX",
+        "destination": "Las Vegas",
+        "origin_state": "TX",
         "properties": 1
       },
       {
@@ -1314,9 +1314,9 @@
         "properties": 1
       },
       {
-        "origin": "Burbank, CA",
+        "origin": "Colorado Springs, CO",
         "destination": "Las Vegas",
-        "origin_state": "CA",
+        "origin_state": "CO",
         "properties": 1
       },
       {
@@ -1327,9 +1327,9 @@
       }
     ],
     "totals": {
-      "cards": 2412,
+      "cards": 4909,
       "with_origin": 903,
-      "origin_coverage_pct": 37.4,
+      "origin_coverage_pct": 18.4,
       "distinct_markets": 76,
       "distinct_states": 25,
       "out_of_state_markets": 71,
@@ -1340,17 +1340,17 @@
     }
   },
   "ownership": {
-    "mailing_pct": 37.6,
-    "mailing_city_pct": 37.4,
-    "mailing_state_pct": 37.4,
-    "absentee": 382,
-    "absentee_pct": 42.3,
-    "llc": 544,
-    "llc_pct": 22.6,
-    "trust": 315,
-    "trust_pct": 13.1,
+    "mailing_pct": 18.5,
+    "mailing_city_pct": 18.4,
+    "mailing_state_pct": 18.4,
+    "absentee": 384,
+    "absentee_pct": 42.4,
+    "llc": 239,
+    "llc_pct": 4.9,
+    "trust": 222,
+    "trust_pct": 4.5,
     "out_of_state_owners": 86,
-    "out_of_state_pct": 3.6
+    "out_of_state_pct": 1.8
   },
   "categories": [
     {
@@ -1360,25 +1360,25 @@
       "freshness": "8d",
       "coverage": "901 mapped",
       "confidence": 95,
-      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 98.9% (2384/2411 APNs)."
+      "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 99.8% (4929/4939 APNs)."
     },
     {
       "category": "Real Estate",
       "status": "live",
-      "volume": 2412,
+      "volume": 4909,
       "freshness": "current",
-      "coverage": "98.5% live-enriched",
+      "coverage": "99.6% live-enriched",
       "confidence": 99,
       "note": "Parcel base + live Assessor enrichment of the top leads (owner/value/sale)."
     },
     {
       "category": "Ownership",
       "status": "live",
-      "volume": 926,
+      "volume": 623,
       "freshness": "current",
-      "coverage": "37.6% mailing / 42.3% absentee",
-      "confidence": 62,
-      "note": "Mailing geo on 37.4% of leads \u00b7 544 LLC (22.6%), 315 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
+      "coverage": "18.5% mailing / 42.4% absentee",
+      "confidence": 51,
+      "note": "Mailing geo on 18.4% of leads \u00b7 239 LLC (4.9%), 222 trust, 86 out-of-state owners. Owner mailing is intelligence, never a map coordinate."
     },
     {
       "category": "Capital Flow",
@@ -1386,7 +1386,7 @@
       "volume": 86,
       "freshness": "current",
       "coverage": "71 out-of-state markets",
-      "confidence": 62,
+      "confidence": 51,
       "note": "86 of 903 owned leads (9.5%) are imported capital from 25 states; $7,733,035 tracked. Origin\u2192metro flows mapped."
     },
     {
@@ -1401,7 +1401,7 @@
     {
       "category": "Distress",
       "status": "live",
-      "volume": 6,
+      "volume": 7,
       "freshness": "current",
       "coverage": "Recorder NOD/lien/trustee",
       "confidence": 60,
@@ -1464,7 +1464,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 1219,
+      "volume": 1241,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1473,7 +1473,7 @@
     {
       "category": "Warehouse Integrity",
       "status": "live",
-      "volume": 1219,
+      "volume": 1241,
       "freshness": "append-only",
       "coverage": "first/last-seen tracked",
       "confidence": 85,
@@ -1482,7 +1482,7 @@
     {
       "category": "Scoring",
       "status": "live",
-      "volume": 2412,
+      "volume": 4909,
       "freshness": "current",
       "coverage": "100.0% explained",
       "confidence": 100,
@@ -1491,7 +1491,7 @@
     {
       "category": "Tagging",
       "status": "live",
-      "volume": 2412,
+      "volume": 4909,
       "freshness": "current",
       "coverage": "100.0% tagged",
       "confidence": 100,
@@ -1515,216 +1515,206 @@
       "rows": [
         {
           "jurisdiction": "Las Vegas",
-          "parcels_identified": 1217,
-          "owners_identified": 1051,
-          "owner_coverage_pct": 86.4,
+          "parcels_identified": 1658,
+          "owners_identified": 1651,
+          "owner_coverage_pct": 99.6,
           "permits": 912,
-          "signals": 1246,
-          "mapped": 1206,
-          "mapped_pct": 99.1,
-          "assessed_value": 3998796,
+          "signals": 1252,
+          "mapped": 1647,
+          "mapped_pct": 99.3,
+          "assessed_value": 3923209,
           "label_sources": {
-            "situs": 11,
-            "permit-feed": 912,
-            "assessor-city": 135,
-            "coordinate": 159
+            "assessor-city": 737,
+            "permit-feed": 909,
+            "situs": 12
           },
-          "confidence": 94
-        },
-        {
-          "jurisdiction": "North Las Vegas",
-          "parcels_identified": 251,
-          "owners_identified": 181,
-          "owner_coverage_pct": 72.1,
-          "permits": 0,
-          "signals": 11,
-          "mapped": 251,
-          "mapped_pct": 100.0,
-          "assessed_value": 131355,
-          "label_sources": {
-            "assessor-city": 175,
-            "situs": 6,
-            "coordinate": 70
-          },
-          "confidence": 78
+          "confidence": 99
         },
         {
           "jurisdiction": "Henderson",
-          "parcels_identified": 243,
-          "owners_identified": 212,
-          "owner_coverage_pct": 87.2,
+          "parcels_identified": 968,
+          "owners_identified": 968,
+          "owner_coverage_pct": 100.0,
           "permits": 0,
-          "signals": 76,
-          "mapped": 243,
+          "signals": 80,
+          "mapped": 968,
           "mapped_pct": 100.0,
-          "assessed_value": 39537,
+          "assessed_value": 102007,
           "label_sources": {
-            "assessor-city": 184,
-            "situs": 28,
-            "coordinate": 31
+            "assessor-city": 964,
+            "situs": 4
           },
-          "confidence": 84
-        },
-        {
-          "jurisdiction": "Sunrise Manor",
-          "parcels_identified": 203,
-          "owners_identified": 109,
-          "owner_coverage_pct": 53.7,
-          "permits": 0,
-          "signals": 32,
-          "mapped": 203,
-          "mapped_pct": 100.0,
-          "assessed_value": 1014909,
-          "label_sources": {
-            "assessor-city": 106,
-            "situs": 3,
-            "coordinate": 94
-          },
-          "confidence": 71
-        },
-        {
-          "jurisdiction": "Paradise",
-          "parcels_identified": 122,
-          "owners_identified": 107,
-          "owner_coverage_pct": 87.7,
-          "permits": 0,
-          "signals": 2,
-          "mapped": 122,
-          "mapped_pct": 100.0,
-          "assessed_value": 0,
-          "label_sources": {
-            "assessor-city": 107,
-            "coordinate": 15
-          },
-          "confidence": 85
-        },
-        {
-          "jurisdiction": "Enterprise",
-          "parcels_identified": 88,
-          "owners_identified": 83,
-          "owner_coverage_pct": 94.3,
-          "permits": 0,
-          "signals": 22,
-          "mapped": 88,
-          "mapped_pct": 100.0,
-          "assessed_value": 0,
-          "label_sources": {
-            "assessor-city": 71,
-            "situs": 12,
-            "coordinate": 5
-          },
-          "confidence": 87
+          "confidence": 90
         },
         {
           "jurisdiction": "Whitney",
-          "parcels_identified": 77,
-          "owners_identified": 76,
-          "owner_coverage_pct": 98.7,
-          "permits": 0,
-          "signals": 1,
-          "mapped": 77,
-          "mapped_pct": 100.0,
-          "assessed_value": 0,
-          "label_sources": {
-            "assessor-city": 75,
-            "situs": 1,
-            "coordinate": 1
-          },
-          "confidence": 89
-        },
-        {
-          "jurisdiction": "Winchester",
-          "parcels_identified": 68,
-          "owners_identified": 28,
-          "owner_coverage_pct": 41.2,
-          "permits": 0,
-          "signals": 0,
-          "mapped": 68,
-          "mapped_pct": 100.0,
-          "assessed_value": 0,
-          "label_sources": {
-            "assessor-city": 28,
-            "coordinate": 40
-          },
-          "confidence": 66
-        },
-        {
-          "jurisdiction": "Spring Valley",
-          "parcels_identified": 67,
-          "owners_identified": 46,
-          "owner_coverage_pct": 68.7,
-          "permits": 0,
-          "signals": 13,
-          "mapped": 67,
-          "mapped_pct": 100.0,
-          "assessed_value": 513709,
-          "label_sources": {
-            "assessor-city": 45,
-            "situs": 1,
-            "coordinate": 21
-          },
-          "confidence": 77
-        },
-        {
-          "jurisdiction": "Clark County",
-          "parcels_identified": 29,
-          "owners_identified": 27,
-          "owner_coverage_pct": 93.1,
-          "permits": 0,
-          "signals": 11,
-          "mapped": 29,
-          "mapped_pct": 100.0,
-          "assessed_value": 300895,
-          "label_sources": {
-            "assessor-city": 24,
-            "situs": 3,
-            "county": 2
-          },
-          "confidence": 87
-        },
-        {
-          "jurisdiction": "Summerlin",
-          "parcels_identified": 23,
-          "owners_identified": 14,
-          "owner_coverage_pct": 60.9,
-          "permits": 0,
-          "signals": 0,
-          "mapped": 23,
-          "mapped_pct": 100.0,
-          "assessed_value": 0,
-          "label_sources": {
-            "assessor-city": 14,
-            "coordinate": 9
-          },
-          "confidence": 74
-        },
-        {
-          "jurisdiction": "Boulder City",
-          "parcels_identified": 20,
-          "owners_identified": 20,
+          "parcels_identified": 590,
+          "owners_identified": 590,
           "owner_coverage_pct": 100.0,
           "permits": 0,
           "signals": 1,
-          "mapped": 20,
+          "mapped": 590,
           "mapped_pct": 100.0,
           "assessed_value": 0,
           "label_sources": {
-            "assessor-city": 20
+            "assessor-city": 590
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Enterprise",
+          "parcels_identified": 456,
+          "owners_identified": 456,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 24,
+          "mapped": 456,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "situs": 15,
+            "assessor-city": 441
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Sunrise Manor",
+          "parcels_identified": 381,
+          "owners_identified": 381,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 35,
+          "mapped": 381,
+          "mapped_pct": 100.0,
+          "assessed_value": 819434,
+          "label_sources": {
+            "assessor-city": 379,
+            "situs": 2
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "North Las Vegas",
+          "parcels_identified": 373,
+          "owners_identified": 373,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 9,
+          "mapped": 373,
+          "mapped_pct": 100.0,
+          "assessed_value": 131355,
+          "label_sources": {
+            "assessor-city": 368,
+            "situs": 5
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Paradise",
+          "parcels_identified": 311,
+          "owners_identified": 311,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 4,
+          "mapped": 311,
+          "mapped_pct": 100.0,
+          "assessed_value": 400,
+          "label_sources": {
+            "assessor-city": 309,
+            "situs": 2
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Winchester",
+          "parcels_identified": 103,
+          "owners_identified": 103,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 0,
+          "mapped": 103,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 103
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Spring Valley",
+          "parcels_identified": 33,
+          "owners_identified": 33,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 7,
+          "mapped": 33,
+          "mapped_pct": 100.0,
+          "assessed_value": 605889,
+          "label_sources": {
+            "assessor-city": 32,
+            "situs": 1
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Clark County",
+          "parcels_identified": 19,
+          "owners_identified": 19,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 10,
+          "mapped": 19,
+          "mapped_pct": 100.0,
+          "assessed_value": 606829,
+          "label_sources": {
+            "assessor-city": 17,
+            "situs": 2
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Boulder City",
+          "parcels_identified": 8,
+          "owners_identified": 8,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 1,
+          "mapped": 8,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "assessor-city": 8
+          },
+          "confidence": 90
+        },
+        {
+          "jurisdiction": "Summerlin",
+          "parcels_identified": 8,
+          "owners_identified": 8,
+          "owner_coverage_pct": 100.0,
+          "permits": 0,
+          "signals": 2,
+          "mapped": 8,
+          "mapped_pct": 100.0,
+          "assessed_value": 0,
+          "label_sources": {
+            "situs": 2,
+            "assessor-city": 6
           },
           "confidence": 90
         },
         {
           "jurisdiction": "Moapa Valley",
-          "parcels_identified": 4,
-          "owners_identified": 4,
+          "parcels_identified": 1,
+          "owners_identified": 1,
           "owner_coverage_pct": 100.0,
           "permits": 0,
           "signals": 0,
-          "mapped": 4,
+          "mapped": 1,
           "mapped_pct": 100.0,
           "assessed_value": 0,
           "label_sources": {
-            "assessor-city": 4
+            "assessor-city": 1
           },
           "confidence": 90
         },
@@ -1814,7 +1804,7 @@
         "jurisdiction": "Clark County",
         "coverage_area": "Countywide parcels",
         "status": "WORKING",
-        "records": 1500,
+        "records": 4000,
         "newest": null,
         "oldest": null,
         "frequency": "on demand / daily",
@@ -1867,7 +1857,7 @@
         "jurisdiction": "Clark County",
         "coverage_area": "Top leads (enriched on demand)",
         "status": "PARTIAL",
-        "records": 2594,
+        "records": 5130,
         "newest": "2026-04-01",
         "oldest": "1995-04-01",
         "frequency": "on demand",
@@ -2260,21 +2250,21 @@
       {
         "signal": "Deed Transfers",
         "status": "PARTIAL",
-        "current_coverage": 219,
+        "current_coverage": 241,
         "priority": "HIGH",
         "note": "From Assessor sale history."
       },
       {
         "signal": "Ownership",
         "status": "IMPLEMENTED",
-        "current_coverage": 1958,
+        "current_coverage": 4902,
         "priority": "HIGH",
         "note": "Owner + mailing on identified parcels."
       },
       {
         "signal": "Assessor Records",
         "status": "PARTIAL",
-        "current_coverage": 2375,
+        "current_coverage": 4889,
         "priority": "HIGH",
         "note": "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."
       },
@@ -2435,7 +2425,7 @@
       {
         "signal": "Distress (any)",
         "status": "PARTIAL",
-        "current_coverage": 6,
+        "current_coverage": 4,
         "priority": "HIGH",
         "note": "Only code-violation-style events so far."
       }
@@ -2463,7 +2453,7 @@
         },
         {
           "trade": "remodeling",
-          "permits": 75
+          "permits": 70
         },
         {
           "trade": "solar",
@@ -2543,67 +2533,67 @@
       ]
     },
     "data_quality": {
-      "cards": 2412,
+      "cards": 4909,
       "fields": [
         {
           "field": "property_jurisdiction",
-          "present": 2412,
+          "present": 4909,
           "pct": 100.0
         },
         {
           "field": "property_city",
-          "present": 2412,
+          "present": 4909,
           "pct": 100.0
         },
         {
-          "field": "parcel_apn",
-          "present": 2402,
-          "pct": 99.6
+          "field": "owner_name",
+          "present": 4902,
+          "pct": 99.9
         },
         {
           "field": "lat",
-          "present": 2401,
-          "pct": 99.5
+          "present": 4898,
+          "pct": 99.8
         },
         {
-          "field": "owner_name",
-          "present": 1958,
-          "pct": 81.2
+          "field": "parcel_apn",
+          "present": 4899,
+          "pct": 99.8
         },
         {
           "field": "primary_date",
-          "present": 1087,
-          "pct": 45.1
+          "present": 1095,
+          "pct": 22.3
         },
         {
           "field": "owner_mailing",
-          "present": 908,
-          "pct": 37.6
+          "present": 910,
+          "pct": 18.5
         },
         {
           "field": "owner_origin_market",
           "present": 903,
-          "pct": 37.4
+          "pct": 18.4
         },
         {
           "field": "land_use",
           "present": 149,
-          "pct": 6.2
+          "pct": 3.0
         },
         {
           "field": "last_sale_date",
-          "present": 138,
-          "pct": 5.7
+          "present": 132,
+          "pct": 2.7
         },
         {
           "field": "assessed_value",
-          "present": 77,
-          "pct": 3.2
+          "present": 97,
+          "pct": 2.0
         },
         {
           "field": "year_built",
-          "present": 51,
-          "pct": 2.1
+          "present": 50,
+          "pct": 1.0
         }
       ]
     },
@@ -2612,11 +2602,11 @@
       "breadth": [
         {
           "scope": "Parcels held vs county roll",
-          "captured": 2412,
+          "captured": 4909,
           "universe": 900000,
           "universe_source": "Clark County Assessor secured roll (approx; ~870k-960k parcels)",
           "universe_confidence": "reference-approximate",
-          "coverage_pct": 0.268,
+          "coverage_pct": 0.545,
           "basis": "BREADTH \u2014 bounded by our cap, not the data (free layer covers the valley)"
         },
         {
@@ -2632,28 +2622,28 @@
       "depth": [
         {
           "field": "situs_address",
-          "captured": 1923,
-          "pct_of_held": 79.7
+          "captured": 4904,
+          "pct_of_held": 99.9
         },
         {
           "field": "owner_name",
-          "captured": 1958,
-          "pct_of_held": 81.2
+          "captured": 4902,
+          "pct_of_held": 99.9
         },
         {
           "field": "owner_mailing",
-          "captured": 908,
-          "pct_of_held": 37.6
+          "captured": 910,
+          "pct_of_held": 18.5
         },
         {
           "field": "assessed_value",
-          "captured": 77,
-          "pct_of_held": 3.2
+          "captured": 97,
+          "pct_of_held": 2.0
         },
         {
           "field": "year_built",
-          "captured": 51,
-          "pct_of_held": 2.1
+          "captured": 50,
+          "pct_of_held": 1.0
         },
         {
           "field": "building_sqft",
@@ -2662,29 +2652,29 @@
         },
         {
           "field": "bedrooms",
-          "captured": 47,
-          "pct_of_held": 1.9
+          "captured": 46,
+          "pct_of_held": 0.9
         },
         {
           "field": "last_sale_date",
-          "captured": 138,
-          "pct_of_held": 5.7
+          "captured": 132,
+          "pct_of_held": 2.7
         }
       ],
-      "held": 2412
+      "held": 4909
     },
     "coverage_reality": {
       "headline": "GRIT now captures essentially everything the FREE public data exposes for the parcels it holds. Remaining gaps are gated by paid or non-API sources, not by GRIT.",
       "breadth_ceiling": {
-        "held": 2412,
+        "held": 4909,
         "universe_approx": 900000,
         "limit": "self-imposed cap (CARDS_MAX). The free parcel layer carries address+owner+mailing+land-use for the whole valley.",
         "free": true,
         "note": "Raising the cap adds address+owner pins for free, but ~900k parcels cannot render as individual pins on a static site \u2014 needs slim records or vector tiles past ~10-15k."
       },
       "depth_ceiling": {
-        "owner_pct": 81.2,
-        "value_pct": 3.2,
+        "owner_pct": 99.9,
+        "value_pct": 2.0,
         "limit": "value / sqft / beds / baths / year are NOT in any free public API. Clark County sells them as the AOEXTRACT (ownership+value) and AORES (sqft/beds/baths) bulk extracts (signed letter + subscription). The free GIS layer has owner+mailing+land-use only.",
         "free": false
       },
@@ -2717,24 +2707,24 @@
     },
     "confidence": {
       "totals": {
-        "authoritative": 18878,
-        "derived": 6978,
-        "inferred": 3315,
-        "unknown": 40777
+        "authoritative": 34739,
+        "derived": 9033,
+        "inferred": 5814,
+        "unknown": 92775
       },
       "pct": {
-        "authoritative": 27.0,
-        "derived": 10.0,
-        "inferred": 4.7,
-        "unknown": 58.3
+        "authoritative": 24.4,
+        "derived": 6.3,
+        "inferred": 4.1,
+        "unknown": 65.2
       },
-      "field_instances": 69948,
-      "avg_card_confidence": 34.4,
+      "field_instances": 142361,
+      "avg_card_confidence": 29.6,
       "by_field": [
         {
           "field": "property_jurisdiction",
-          "authoritative": 1965,
-          "derived": 447,
+          "authoritative": 4909,
+          "derived": 0,
           "inferred": 0,
           "unknown": 0,
           "known_pct": 100.0
@@ -2743,208 +2733,208 @@
           "field": "entity_type",
           "authoritative": 0,
           "derived": 0,
-          "inferred": 2412,
+          "inferred": 4909,
           "unknown": 0,
           "known_pct": 100.0
         },
         {
           "field": "score",
           "authoritative": 0,
-          "derived": 2412,
+          "derived": 4907,
           "inferred": 0,
-          "unknown": 0,
+          "unknown": 2,
           "known_pct": 100.0
         },
         {
-          "field": "parcel_apn",
-          "authoritative": 2402,
+          "field": "situs_address",
+          "authoritative": 4904,
           "derived": 0,
           "inferred": 0,
-          "unknown": 10,
-          "known_pct": 99.6
-        },
-        {
-          "field": "lat",
-          "authoritative": 2401,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 11,
-          "known_pct": 99.5
-        },
-        {
-          "field": "property_use_code",
-          "authoritative": 2375,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 37,
-          "known_pct": 98.5
+          "unknown": 5,
+          "known_pct": 99.9
         },
         {
           "field": "owner_name",
-          "authoritative": 1958,
+          "authoritative": 4902,
           "derived": 0,
           "inferred": 0,
-          "unknown": 454,
-          "known_pct": 81.2
+          "unknown": 7,
+          "known_pct": 99.9
         },
         {
-          "field": "situs_address",
-          "authoritative": 1923,
+          "field": "parcel_apn",
+          "authoritative": 4899,
           "derived": 0,
           "inferred": 0,
-          "unknown": 489,
-          "known_pct": 79.7
+          "unknown": 10,
+          "known_pct": 99.8
+        },
+        {
+          "field": "lat",
+          "authoritative": 4898,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 11,
+          "known_pct": 99.8
+        },
+        {
+          "field": "property_use_code",
+          "authoritative": 4889,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 20,
+          "known_pct": 99.6
         },
         {
           "field": "urgency",
           "authoritative": 0,
-          "derived": 1087,
+          "derived": 1095,
           "inferred": 0,
-          "unknown": 1325,
-          "known_pct": 45.1
+          "unknown": 3814,
+          "known_pct": 22.3
         },
         {
           "field": "primary_date",
           "authoritative": 0,
-          "derived": 1087,
+          "derived": 1095,
           "inferred": 0,
-          "unknown": 1325,
-          "known_pct": 45.1
+          "unknown": 3814,
+          "known_pct": 22.3
         },
         {
           "field": "temporal_state",
           "authoritative": 0,
-          "derived": 1042,
+          "derived": 1033,
           "inferred": 0,
-          "unknown": 1370,
-          "known_pct": 43.2
+          "unknown": 3876,
+          "known_pct": 21.0
         },
         {
           "field": "permit_count",
           "authoritative": 912,
           "derived": 0,
           "inferred": 0,
-          "unknown": 1500,
-          "known_pct": 37.8
+          "unknown": 3997,
+          "known_pct": 18.6
         },
         {
           "field": "last_permit_date",
           "authoritative": 912,
           "derived": 0,
           "inferred": 0,
-          "unknown": 1500,
-          "known_pct": 37.8
+          "unknown": 3997,
+          "known_pct": 18.6
         },
         {
           "field": "contractors",
           "authoritative": 912,
           "derived": 0,
           "inferred": 0,
-          "unknown": 1500,
-          "known_pct": 37.8
+          "unknown": 3997,
+          "known_pct": 18.6
         },
         {
           "field": "owner_mailing",
-          "authoritative": 908,
+          "authoritative": 910,
           "derived": 0,
           "inferred": 0,
-          "unknown": 1504,
-          "known_pct": 37.6
+          "unknown": 3999,
+          "known_pct": 18.5
         },
         {
           "field": "owner_origin_market",
           "authoritative": 0,
           "derived": 903,
           "inferred": 0,
-          "unknown": 1509,
-          "known_pct": 37.4
+          "unknown": 4006,
+          "known_pct": 18.4
         },
         {
           "field": "occupancy_status",
           "authoritative": 0,
           "derived": 0,
-          "inferred": 903,
-          "unknown": 1509,
-          "known_pct": 37.4
-        },
-        {
-          "field": "lot_sqft",
-          "authoritative": 873,
-          "derived": 0,
-          "inferred": 0,
-          "unknown": 1539,
-          "known_pct": 36.2
+          "inferred": 905,
+          "unknown": 4004,
+          "known_pct": 18.4
         },
         {
           "field": "trade_tags",
-          "authoritative": 679,
+          "authoritative": 674,
           "derived": 0,
           "inferred": 0,
-          "unknown": 1733,
-          "known_pct": 28.2
+          "unknown": 4235,
+          "known_pct": 13.7
+        },
+        {
+          "field": "lot_sqft",
+          "authoritative": 349,
+          "derived": 0,
+          "inferred": 0,
+          "unknown": 4560,
+          "known_pct": 7.1
         },
         {
           "field": "land_use",
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2263,
-          "known_pct": 6.2
+          "unknown": 4760,
+          "known_pct": 3.0
         },
         {
           "field": "last_sale_price",
           "authoritative": 149,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2263,
-          "known_pct": 6.2
+          "unknown": 4760,
+          "known_pct": 3.0
         },
         {
           "field": "last_sale_date",
-          "authoritative": 138,
+          "authoritative": 132,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2274,
-          "known_pct": 5.7
+          "unknown": 4777,
+          "known_pct": 2.7
         },
         {
           "field": "assessed_value",
-          "authoritative": 77,
+          "authoritative": 97,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2335,
-          "known_pct": 3.2
+          "unknown": 4812,
+          "known_pct": 2.0
         },
         {
           "field": "year_built",
-          "authoritative": 51,
+          "authoritative": 50,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2361,
-          "known_pct": 2.1
+          "unknown": 4859,
+          "known_pct": 1.0
         },
         {
           "field": "bedrooms",
-          "authoritative": 47,
+          "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2365,
-          "known_pct": 1.9
+          "unknown": 4863,
+          "known_pct": 0.9
         },
         {
           "field": "bathrooms",
-          "authoritative": 47,
+          "authoritative": 46,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2365,
-          "known_pct": 1.9
+          "unknown": 4863,
+          "known_pct": 0.9
         },
         {
           "field": "land_value",
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2412,
+          "unknown": 4909,
           "known_pct": 0.0
         },
         {
@@ -2952,7 +2942,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2412,
+          "unknown": 4909,
           "known_pct": 0.0
         },
         {
@@ -2960,7 +2950,7 @@
           "authoritative": 0,
           "derived": 0,
           "inferred": 0,
-          "unknown": 2412,
+          "unknown": 4909,
           "known_pct": 0.0
         }
       ]
@@ -2970,7 +2960,7 @@
         {
           "owner": "INSPIRADA COMMUNITY ASSOCIATION",
           "entity_type": "PERSON",
-          "parcels": 61,
+          "parcels": 80,
           "value": 0,
           "jurisdictions": [
             "Henderson"
@@ -2981,22 +2971,20 @@
           "origin": null,
           "sample_addresses": [
             "HENDERSON",
-            "HENDERSON",
-            "HENDERSON",
-            "HENDERSON"
+            "               ",
+            "               ",
+            "               "
           ]
         },
         {
           "owner": "D R HORTON INC",
           "entity_type": "LLC",
-          "parcels": 33,
+          "parcels": 31,
           "value": 0,
           "jurisdictions": [
-            "Henderson",
-            "Las Vegas",
-            "Whitney"
+            "Las Vegas"
           ],
-          "jurisdiction_count": 3,
+          "jurisdiction_count": 1,
           "permits": 31,
           "out_of_state": false,
           "origin": null,
@@ -3008,9 +2996,9 @@
           ]
         },
         {
-          "owner": "PACIFICA NORTH VEGAS L L C",
-          "entity_type": "LLC",
-          "parcels": 27,
+          "owner": "LARSON GLEN",
+          "entity_type": "PERSON",
+          "parcels": 31,
           "value": 0,
           "jurisdictions": [
             "North Las Vegas"
@@ -3020,10 +3008,49 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "5815 NUEVO LEON ST  LOT 11   ",
-            "5865 PALMILLA ST  LOT 11   ",
-            "5835 PALMILLA ST  LOT 11   ",
-            "5825 PALMILLA ST  LOT 2    "
+            "3417 CIVIC CENTER DR  UT B     ",
+            "3405 CIVIC CENTER DR  UT I     ",
+            "3412 MERCURY ST  UT E     ",
+            "3408 MERCURY ST  UT D     "
+          ]
+        },
+        {
+          "owner": "YUN SUNG & CHRISTINE M",
+          "entity_type": "PERSON",
+          "parcels": 28,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "23 N 28TH ST   UT A  ",
+            "21 N 28TH ST   UT C  ",
+            "19 N 28TH ST   UT C  ",
+            "21 N 28TH ST   UT A  "
+          ]
+        },
+        {
+          "owner": "TAXPAYER",
+          "entity_type": "PERSON",
+          "parcels": 18,
+          "value": 4411,
+          "jurisdictions": [
+            "Las Vegas",
+            "Sunrise Manor"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 7,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "6321 MALACHITE BAY AVE",
+            "6127 VILLA DE PICASSO AVE",
+            "8305 BRITTANY HARBOR DR",
+            "10810 EDGESTONE AVE"
           ]
         },
         {
@@ -3084,12 +3111,12 @@
           ]
         },
         {
-          "owner": "L G I HOMES-NEVADA L L C",
-          "entity_type": "LLC",
-          "parcels": 14,
+          "owner": "ALIANTE MASTER ASSOCIATION",
+          "entity_type": "PERSON",
+          "parcels": 9,
           "value": 0,
           "jurisdictions": [
-            "Sunrise Manor"
+            "North Las Vegas"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
@@ -3103,31 +3130,9 @@
           ]
         },
         {
-          "owner": "RICHMOND AMERICAN HOMES NEVADA",
-          "entity_type": "COMMERCIAL",
-          "parcels": 13,
-          "value": 0,
-          "jurisdictions": [
-            "Enterprise",
-            "Las Vegas",
-            "Spring Valley",
-            "Sunrise Manor"
-          ],
-          "jurisdiction_count": 4,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "TAXPAYER",
-          "entity_type": "PERSON",
-          "parcels": 8,
+          "owner": "P N II INC",
+          "entity_type": "LLC",
+          "parcels": 7,
           "value": 0,
           "jurisdictions": [
             "Las Vegas"
@@ -3137,50 +3142,10 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "6321 MALACHITE BAY AVE",
-            "6127 VILLA DE PICASSO AVE",
-            "8305 BRITTANY HARBOR DR",
-            "10810 EDGESTONE AVE"
-          ]
-        },
-        {
-          "owner": "P N II INC",
-          "entity_type": "LLC",
-          "parcels": 8,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas",
-            "Whitney"
-          ],
-          "jurisdiction_count": 2,
-          "permits": 7,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
             "12267 BRANTLEY COVE DR",
             "12255 BRANTLEY COVE DR",
             "917 ESTATES BEND CT",
             "12314 BRANTLEY COVE DR"
-          ]
-        },
-        {
-          "owner": "GREYSTONE NEVADA L L C",
-          "entity_type": "LLC",
-          "parcels": 8,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas",
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 2,
-          "permits": 4,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "12475 SKY VISTA DR",
-            "170 ELMWOOD ECHO ST",
-            "194 ELMWOOD ECHO ST",
-            "5197 DUSK SKYSCAPE ST"
           ]
         },
         {
@@ -3222,15 +3187,14 @@
           ]
         },
         {
-          "owner": "BEAZER HOMES HOLDINGS L L C",
-          "entity_type": "LLC",
+          "owner": "POPOVICH MARKO M",
+          "entity_type": "PERSON",
           "parcels": 7,
           "value": 0,
           "jurisdictions": [
-            "Enterprise",
-            "North Las Vegas"
+            "Enterprise"
           ],
-          "jurisdiction_count": 2,
+          "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
@@ -3242,22 +3206,41 @@
           ]
         },
         {
-          "owner": "A N FINANCIAL CORP",
-          "entity_type": "LLC",
+          "owner": "HASSON GIDEON & MAUREEN",
+          "entity_type": "PERSON",
           "parcels": 7,
           "value": 0,
           "jurisdictions": [
-            "Spring Valley"
+            "Sunrise Manor"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
+            "3863 TERRAZZO AVE          ",
+            "3885 FITZPATRICK DR           ",
+            "3893 SODA SPRINGS DR           ",
+            "3889 SODA SPRINGS DR           "
+          ]
+        },
+        {
+          "owner": "LARSON GLEN LAMAR",
+          "entity_type": "PERSON",
+          "parcels": 7,
+          "value": 0,
+          "jurisdictions": [
+            "North Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "2120 SUN AVE UT A     ",
+            "3420 MERCURY ST  UT I     ",
+            "2112 COMET AVE UT B     ",
+            "3405 CIVIC CENTER DR  UT C     "
           ]
         },
         {
@@ -3280,12 +3263,12 @@
           ]
         },
         {
-          "owner": "HARMONY HOMES NEVADA L L C",
-          "entity_type": "LLC",
+          "owner": "TOWN CENTER VILLAGE COMNTY ASSN",
+          "entity_type": "PERSON",
           "parcels": 6,
           "value": 0,
           "jurisdictions": [
-            "Sunrise Manor"
+            "Las Vegas"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
@@ -3294,49 +3277,84 @@
           "sample_addresses": [
             "               ",
             "               ",
+            "9423 HIGHVIEW ROCK CT           ",
+            "               "
+          ]
+        },
+        {
+          "owner": "KIMMEL ROBERT S & ELLEN H",
+          "entity_type": "PERSON",
+          "parcels": 6,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "1504 FALDO ST           ",
+            "1512 FALDO ST           ",
+            "8429 SLUMAN CT           ",
+            "8400 TIGER WOODS AVE          "
+          ]
+        },
+        {
+          "owner": "MOUNTAINS EDGE MASTER ASSOCIATION",
+          "entity_type": "PERSON",
+          "parcels": 6,
+          "value": 0,
+          "jurisdictions": [
+            "Enterprise"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "ENTERPRISE",
+            "ENTERPRISE",
+            "ENTERPRISE",
+            "ENTERPRISE"
+          ]
+        },
+        {
+          "owner": "RIDGES COMMUNITY ASSOCIATION",
+          "entity_type": "PERSON",
+          "parcels": 6,
+          "value": 0,
+          "jurisdictions": [
+            "Summerlin"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "SUMMERLIN",
+            "               ",
             "               ",
             "               "
           ]
         },
         {
-          "owner": "FRONTIER ESTATES L L C",
-          "entity_type": "LLC",
+          "owner": "CLUB ALIANTE HOMEOWNER'S ASSN",
+          "entity_type": "PERSON",
           "parcels": 6,
           "value": 0,
           "jurisdictions": [
-            "Paradise",
-            "Sunrise Manor",
-            "Winchester"
+            "North Las Vegas"
           ],
-          "jurisdiction_count": 3,
+          "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "2214 E DESERT INN RD         ",
-            "2202 E DESERT INN RD         ",
-            "2174 E DESERT INN RD         ",
-            "7086 BURCOT AVE H8       "
-          ]
-        },
-        {
-          "owner": "CENTURY COMMUNITIES NEVADA L L C",
-          "entity_type": "LLC",
-          "parcels": 5,
-          "value": 0,
-          "jurisdictions": [
-            "Henderson",
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 2,
-          "permits": 4,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "9001 SHEEP MOUNTAIN PKWY",
-            "8272 VANHOY CREEK ST",
-            "10813 ALAMINO AVE",
-            "8449 TANTON RIDGE ST"
+            "NORTH LAS VEGAS",
+            "NORTH LAS VEGAS",
+            "               ",
+            "               "
           ]
         },
         {
@@ -3378,26 +3396,7 @@
           ]
         },
         {
-          "owner": "URBAN LOFTS XVII LTD",
-          "entity_type": "LLC",
-          "parcels": 5,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "242 DOUGRAM AVE          ",
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "MOUNTAINS EDGE MASTER ASSOCIATION",
+          "owner": "ECHAVARRIA LUIS",
           "entity_type": "PERSON",
           "parcels": 5,
           "value": 0,
@@ -3411,8 +3410,84 @@
           "sample_addresses": [
             "ENTERPRISE",
             "ENTERPRISE",
-            "ENTERPRISE",
-            "ENTERPRISE"
+            "               ",
+            "               "
+          ]
+        },
+        {
+          "owner": "YAKUBIK JOSEPH W E & DARCIE A",
+          "entity_type": "PERSON",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "563 SELLERS PL           ",
+            "505 SELLERS PL           ",
+            "494 SELLERS PL           ",
+            "522 SELLERS PL           "
+          ]
+        },
+        {
+          "owner": "LARSON GLEN L",
+          "entity_type": "PERSON",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "North Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "3405 CIVIC CENTER DR  UT F     ",
+            "3420 MERCURY ST  UT D     ",
+            "3412 MERCURY ST  UT I     ",
+            "3405 CIVIC CENTER DR  UT E     "
+          ]
+        },
+        {
+          "owner": "MOODY KATHERINE J",
+          "entity_type": "PERSON",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Sunrise Manor"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "3845 SODA SPRINGS DR           ",
+            "3853 SODA SPRINGS DR           ",
+            "3857 SODA SPRINGS DR           ",
+            "3861 SODA SPRINGS DR           "
+          ]
+        },
+        {
+          "owner": "VILLAS DESERT BREEZE HOWNERS",
+          "entity_type": "PERSON",
+          "parcels": 5,
+          "value": 0,
+          "jurisdictions": [
+            "Spring Valley"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "               ",
+            "               ",
+            "               ",
+            "               "
           ]
         },
         {
@@ -3428,25 +3503,6 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "ENTERPRISE",
-            "ENTERPRISE",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "ALIANTE MASTER ASSOCIATION",
-          "entity_type": "PERSON",
-          "parcels": 5,
-          "value": 0,
-          "jurisdictions": [
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
             "               ",
             "               ",
             "               ",
@@ -3454,28 +3510,45 @@
           ]
         },
         {
-          "owner": "USA",
-          "entity_type": "PERSON",
+          "owner": "CENTURY COMMUNITIES NEVADA L L C",
+          "entity_type": "LLC",
           "parcels": 4,
           "value": 0,
           "jurisdictions": [
-            "Clark County",
-            "Las Vegas",
-            "North Las Vegas"
+            "Las Vegas"
           ],
-          "jurisdiction_count": 3,
-          "permits": 1,
+          "jurisdiction_count": 1,
+          "permits": 4,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "9145 ALPINE RIDGE WAY",
-            "               ",
-            "               ",
-            "               "
+            "9001 SHEEP MOUNTAIN PKWY",
+            "8272 VANHOY CREEK ST",
+            "10813 ALAMINO AVE",
+            "8449 TANTON RIDGE ST"
           ]
         },
         {
-          "owner": "TOWN CENTER VILLAGE COMNTY ASSN",
+          "owner": "GREYSTONE NEVADA L L C",
+          "entity_type": "LLC",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Las Vegas"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 4,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "12475 SKY VISTA DR",
+            "170 ELMWOOD ECHO ST",
+            "194 ELMWOOD ECHO ST",
+            "5197 DUSK SKYSCAPE ST"
+          ]
+        },
+        {
+          "owner": "EMERSON COMMUNITY ASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 4,
           "value": 0,
@@ -3489,7 +3562,7 @@
           "sample_addresses": [
             "LAS VEGAS",
             "               ",
-            "9423 HIGHVIEW ROCK CT           ",
+            "               ",
             "               "
           ]
         },
@@ -3513,46 +3586,66 @@
           ]
         },
         {
-          "owner": "RYLAND HOMES NEVADA L L C",
-          "entity_type": "LLC",
-          "parcels": 4,
-          "value": 0,
-          "jurisdictions": [
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "CLUB ALIANTE HOMEOWNER'S ASSN",
+          "owner": "ERCEGOVAC PETER & MARIA REV TR",
           "entity_type": "PERSON",
           "parcels": 4,
           "value": 0,
           "jurisdictions": [
-            "North Las Vegas"
+            "Whitney"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "NORTH LAS VEGAS",
-            "NORTH LAS VEGAS",
-            "NORTH LAS VEGAS",
-            "               "
+            "4665 DEALERS CHOICE WAY 102      ",
+            "4780 DOUBLE DOWN DR  102      ",
+            "5537 PARLAY WAY 102      ",
+            "4772 DOUBLE DOWN DR  103      "
           ]
         },
         {
-          "owner": "CROIX TOWNHOMES L L C",
-          "entity_type": "LLC",
+          "owner": "HWANG STEVE & ALICIA DU",
+          "entity_type": "PERSON",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Henderson",
+            "Whitney"
+          ],
+          "jurisdiction_count": 2,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "5441 JACKPOT WINNER LN  102      ",
+            "1147 HEAVENLY HARVEST PL  UT 2     ",
+            "1595 WARD FRONTIER LN           ",
+            "6590 TUMBLEWEED RIDGE LN  102      "
+          ]
+        },
+        {
+          "owner": "PHAM ROBERT",
+          "entity_type": "PERSON",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Whitney"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
+            "4637 DEALERS CHOICE WAY 102      ",
+            "6420 EXTREME SHEAR AVE 102      ",
+            "4627 DEALERS CHOICE WAY 103      ",
+            "4686 COLOR UP CT  103      "
+          ]
+        },
+        {
+          "owner": "ALLEN JOSEPH L III & LISA C",
+          "entity_type": "PERSON",
           "parcels": 4,
           "value": 0,
           "jurisdictions": [
@@ -3563,33 +3656,14 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
+            "1070 PLEASURE LN  UT 2     ",
+            "1102 SLATE CROSSING LN  UT 2     ",
+            "1553 RUSTY RIDGE LN           ",
+            "2532 CRAFTY CLINT LN           "
           ]
         },
         {
-          "owner": "VILLAGES AT WINE RIDGE L L C",
-          "entity_type": "LLC",
-          "parcels": 4,
-          "value": 0,
-          "jurisdictions": [
-            "Enterprise"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "S B H 1 HOMEOWNER'S ASSOCIATION",
+          "owner": "CARLISLE MAINTENANCE ASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 4,
           "value": 0,
@@ -3601,6 +3675,25 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
+            "ENTERPRISE",
+            "ENTERPRISE",
+            "               ",
+            "               "
+          ]
+        },
+        {
+          "owner": "MCCARRAN CENTER L C",
+          "entity_type": "PERSON",
+          "parcels": 4,
+          "value": 0,
+          "jurisdictions": [
+            "Paradise"
+          ],
+          "jurisdiction_count": 1,
+          "permits": 0,
+          "out_of_state": false,
+          "origin": null,
+          "sample_addresses": [
             "               ",
             "               ",
             "               ",
@@ -3608,7 +3701,7 @@
           ]
         },
         {
-          "owner": "TUSCANY MASTER ASSOCIATION",
+          "owner": "FAIRBROOK COMMUNITY ASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 4,
           "value": 0,
@@ -3663,61 +3756,26 @@
           ]
         },
         {
-          "owner": "BH-NV LAS VEGAS INVESTMENTS L L C",
-          "entity_type": "LLC",
+          "owner": "S B H",
+          "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
           "jurisdictions": [
-            "Winchester"
+            "Enterprise",
+            "Sunrise Manor"
           ],
-          "jurisdiction_count": 1,
+          "jurisdiction_count": 2,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "2212 E DESERT INN RD         ",
-            "2256 E DESERT INN RD         ",
-            "2176 E DESERT INN RD         "
+            "ENTERPRISE",
+            "5115 MESA VERDE LN",
+            "SUNRISE MANOR"
           ]
         },
         {
-          "owner": "G & V HOLDINGS L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Paradise"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "4770 TOPAZ ST  76       ",
-            "4770 TOPAZ ST  28       ",
-            "4770 TOPAZ ST  3        "
-          ]
-        },
-        {
-          "owner": "LAS VEGAS CONDOS L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "North Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "5975 BARBOSA DR  LOT 2    ",
-            "5975 BARBOSA DR  LOT 11   ",
-            "5935 NUEVO LEON ST  LOT 11   "
-          ]
-        },
-        {
-          "owner": "EMERSON COMMUNITY ASSOCIATION",
+          "owner": "TOWN CENTER VILLAGE COMMUNITY ASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
@@ -3735,25 +3793,7 @@
           ]
         },
         {
-          "owner": "CONGER JOHN",
-          "entity_type": "PERSON",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Boulder City"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "1613 ANN WAY          ",
-            "1615 ANN WAY          ",
-            "1611 ANN WAY          "
-          ]
-        },
-        {
-          "owner": "TOWN CENTER VILLAGE COMMUNITY ASSOCIATION",
+          "owner": "SAPPHIRE SPRINGSASSOCIATION",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
@@ -3766,7 +3806,7 @@
           "origin": null,
           "sample_addresses": [
             "               ",
-            "LAS VEGAS",
+            "               ",
             "               "
           ]
         },
@@ -3789,25 +3829,7 @@
           ]
         },
         {
-          "owner": "HUGHES HOWARD COMPANY L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Las Vegas"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "ECHAVARRIA LUIS",
+          "owner": "XIONG MING",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
@@ -3819,106 +3841,71 @@
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "ENTERPRISE",
-            "ENTERPRISE",
-            "ENTERPRISE"
+            "9337 RUBY ARROW CT  102      ",
+            "8678 TOM NOON AVE 102      ",
+            "8806 TOMNITZ AVE 103      "
           ]
         },
         {
-          "owner": "POPOVICH MARKO M",
+          "owner": "EISEL ROGER & REBECCA",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
           "jurisdictions": [
-            "Enterprise"
+            "Whitney"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
+            "5964 HIGH STEED ST  102      ",
+            "5900 HIGH STEED ST  102      ",
+            "4662 COLOR UP CT  101      "
           ]
         },
         {
-          "owner": "CARNEGIE HEIGHTS L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Henderson"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "CHRISTOPHER HOMES RIDGES L L C",
-          "entity_type": "LLC",
-          "parcels": 3,
-          "value": 0,
-          "jurisdictions": [
-            "Summerlin"
-          ],
-          "jurisdiction_count": 1,
-          "permits": 0,
-          "out_of_state": false,
-          "origin": null,
-          "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
-          ]
-        },
-        {
-          "owner": "RIDGES COMMUNITY ASSOCIATION",
+          "owner": "GRAHAM WILLIE E & NANCY I",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
           "jurisdictions": [
-            "Summerlin"
+            "Las Vegas",
+            "North Las Vegas"
           ],
-          "jurisdiction_count": 1,
+          "jurisdiction_count": 2,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
+            "279 N LAMB BLVD UT B  ",
+            "3017 ST GEORGE ST  UT C     ",
+            "3017 ST GEORGE ST  UT B     "
           ]
         },
         {
-          "owner": "FAIRBROOK COMMUNITY ASSOCIATION",
+          "owner": "OGBENI OLUWASEUN",
           "entity_type": "PERSON",
           "parcels": 3,
           "value": 0,
           "jurisdictions": [
-            "Henderson"
+            "North Las Vegas"
           ],
           "jurisdiction_count": 1,
           "permits": 0,
           "out_of_state": false,
           "origin": null,
           "sample_addresses": [
-            "               ",
-            "               ",
-            "               "
+            "3408 MERCURY ST  UT E     ",
+            "2201 MARS AVE UT G     ",
+            "3420 MERCURY ST  UT F     "
           ]
         }
       ],
-      "multi_property_owners": 95,
-      "parcels_in_networks": 478,
-      "network_concentration_pct": 19.8,
-      "cross_jurisdiction_networks": 9,
+      "multi_property_owners": 145,
+      "parcels_in_networks": 635,
+      "network_concentration_pct": 12.9,
+      "cross_jurisdiction_networks": 14,
       "out_of_state_networks": 2
     },
     "gap_analysis": {
@@ -3943,12 +3930,12 @@
           "priority": "HIGH"
         },
         {
-          "gap": "454 parcels have no identified owner",
+          "gap": "7 parcels have no identified owner",
           "impact": "Full-roll Assessor enrichment needed for ownership completeness",
           "priority": "HIGH"
         },
         {
-          "gap": "447 parcels have coordinate-derived jurisdiction",
+          "gap": "0 parcels have coordinate-derived jurisdiction",
           "impact": "Authoritative city refinement via parcel-layer city attribute on next harvest",
           "priority": "MEDIUM"
         },
@@ -3969,9 +3956,9 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 17,
-    "event_total": 1219,
-    "records_tracked": 3703,
+    "ledger_entries": 18,
+    "event_total": 1241,
+    "records_tracked": 7118,
     "growth": [
       {
         "date": "2026-05-29",
@@ -3988,20 +3975,28 @@
         "permit_events": 1000,
         "contractors": 331,
         "imported_capital": 86
+      },
+      {
+        "date": "2026-05-30",
+        "leads": 4909,
+        "mapped": 4898,
+        "permit_events": 1000,
+        "contractors": 331,
+        "imported_capital": 86
       }
     ],
     "append_only": true
   },
   "headline": {
-    "leads": 2412,
-    "mapped": 2401,
+    "leads": 4909,
+    "mapped": 4898,
     "permit_events": 1000,
     "permit_newest": "2026-05-22",
     "permit_jurisdictions": 1,
     "jurisdictions": 13,
     "contractors": 331,
     "tagged_pct": 100.0,
-    "enriched": 2375,
+    "enriched": 4889,
     "imported_capital": 86,
     "owner_markets": 76,
     "hot_leads": 0,
