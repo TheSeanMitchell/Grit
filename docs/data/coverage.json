@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T07:04:50Z",
+  "generated_at": "2026-05-31T07:39:58Z",
   "version": "0.112",
   "permits": {
     "by_jurisdiction": [
@@ -1675,7 +1675,7 @@
           "owners_identified": 1650,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1297,
+          "signals": 1299,
           "mapped": 1690,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -4185,7 +4185,7 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 26,
+    "ledger_entries": 27,
     "event_total": 5752,
     "records_tracked": 10422,
     "growth": [
