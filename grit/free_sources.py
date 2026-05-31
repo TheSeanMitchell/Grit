@@ -22,6 +22,7 @@ offline; only the two network functions (resolve_layer, _pull) require live acce
 and they fail safe.
 """
 import json
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -222,31 +223,49 @@ def seed_cards_from_violations(records, existing_apns):
     return seeds
 
 
+def _norm_addr(s):
+    """Normalize a street address for fuzzy joining: uppercase, drop unit/suite,
+    strip the city/state/zip tail, collapse whitespace and punctuation."""
+    if not s:
+        return ""
+    a = str(s).upper()
+    a = re.split(r"\b(STE|SUITE|UNIT|APT|#|BLDG)\b", a)[0]
+    a = re.sub(r",.*$", "", a)                       # drop ", LAS VEGAS NV 89..."
+    a = re.sub(r"\b(NV|NEVADA)\b.*$", "", a)
+    a = re.sub(r"\b\d{5}(-\d{4})?\b", "", a)          # strip zip
+    a = re.sub(r"[^A-Z0-9 ]", " ", a)
+    return " ".join(a.split())
+
+
 def apply_signals(cards, ce_records, bl_records):
-    """Attach free-source signals to existing cards by APN. Sets flags the scorer
-    and tagger read, plus timeline/why context. Mutates cards. Returns counts."""
-    ce_by = {}
-    for r in ce_records:
-        if r.get("apn"):
-            ce_by.setdefault(r["apn"], []).append(r)
-    bl_by = {}
-    for r in bl_records:
-        if r.get("apn"):
-            bl_by.setdefault(r["apn"], []).append(r)
+    """Attach free-source signals to cards. Joins by APN first, then by normalized
+    street address (business licenses carry an address but no APN). Mutates cards."""
+    def index(records):
+        by_apn, by_addr = {}, {}
+        for r in records:
+            if r.get("apn"):
+                by_apn.setdefault(r["apn"], []).append(r)
+            na = _norm_addr(r.get("address"))
+            if na:
+                by_addr.setdefault(na, []).append(r)
+        return by_apn, by_addr
+    ce_apn, ce_addr = index(ce_records)
+    bl_apn, bl_addr = index(bl_records)
     ce_hits = bl_hits = 0
     for c in cards:
         apn = _digits(c.get("parcel_apn"))
-        if apn and apn in ce_by:
-            rs = ce_by[apn]
-            c["code_enforcement_open"] = any(_is_open(r.get("status")) for r in rs)
-            c["code_enforcement_type"] = (rs[0].get("vtype") or c.get("code_enforcement_type"))
+        na = _norm_addr(c.get("situs_address"))
+        ce = (ce_apn.get(apn) if apn else None) or (ce_addr.get(na) if na else None)
+        if ce:
+            c["code_enforcement_open"] = any(_is_open(r.get("status")) for r in ce)
+            c["code_enforcement_type"] = ce[0].get("vtype") or c.get("code_enforcement_type")
             c["distress_signal"] = "code-enforcement"
             ce_hits += 1
-        if apn and apn in bl_by:
-            rs = bl_by[apn]
+        bl = (bl_apn.get(apn) if apn else None) or (bl_addr.get(na) if na else None)
+        if bl:
             c["business_license_active"] = any(
-                str(r.get("status") or "").lower() in ("active", "open", "1") for r in rs)
-            c["business_activity"] = rs[0].get("activity") or rs[0].get("name")
+                str(r.get("status") or "").lower() in ("active", "open", "1", "issued") for r in bl)
+            c["business_activity"] = bl[0].get("activity") or bl[0].get("name")
             bl_hits += 1
     return {"code_enforcement_card_hits": ce_hits, "business_license_card_hits": bl_hits}
 
@@ -277,15 +296,20 @@ def harvest(cards):
     except Exception as e:  # noqa: BLE001
         report["sources"]["code_enforcement"] = {"status": "error", "error": str(e)}
 
-    # Business Licenses -> commercial / entity signals
+    # Business Licenses -> commercial / entity signals (CLV + Henderson)
     try:
         url = resolve_layer(items.get("business_licenses"))
         rows = _pull(url, max_records=cap) if url else []
         bl_records = business_license_records(rows)
-        events += to_events(bl_records, "BUSINESS_LICENSE", "clv_business_licenses")
+        # Henderson business licenses (free ArcGIS Hub) -- 0.111
+        hend_items = getattr(config, "HENDERSON_OPENDATA_ITEMS", {}) or {}
+        h_url = resolve_layer(hend_items.get("business_licenses"))
+        if h_url:
+            bl_records = bl_records + business_license_records(_pull(h_url, max_records=cap))
+        events += to_events(bl_records, "BUSINESS_LICENSE", "city_business_licenses")
         report["sources"]["business_licenses"] = {
-            "status": "ok" if url else "unresolved", "layer": url,
-            "records": len(bl_records)}
+            "status": "ok" if (url or h_url) else "unresolved",
+            "records": len(bl_records), "clv_layer": url, "henderson_layer": h_url}
     except Exception as e:  # noqa: BLE001
         report["sources"]["business_licenses"] = {"status": "error", "error": str(e)}
 

@@ -24,6 +24,23 @@ map. This README is the practical guide.
 
 The whole system is a package (`grit/`) plus a static console (`docs/`).
 
+## Installing / updating (drag-and-drop file-size rule)
+
+GRIT is installed and updated by uploading files to GitHub. **GitHub's web
+uploader rejects any single file over 25 MB**, and the generated data grows with
+the warehouse, so this is a hard rule:
+
+- Run **`python -m grit checksize`** before any manual upload. It exits non-zero if
+  any file exceeds 25 MB and tells you which.
+- **`cards.json` is kept lean automatically** — written compact, without the
+  recomputable `raw` / `field_confidence` fields and with trimmed timeline events
+  (e.g. ~40 MB → ~17 MB at 8k+ leads). It's regenerated on every harvest/rebuild,
+  so nothing is lost.
+- **Everything in `docs/data/` is generated.** If a file ever exceeds 25 MB, leave
+  it out of the manual upload and let the **GitHub Action** commit it — a git push
+  from the Action is bound by the 100 MB git limit, not the 25 MB web limit. The
+  site repopulates on the next harvest.
+
 ## Running it
 
 ```bash

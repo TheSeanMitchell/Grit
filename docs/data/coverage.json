@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T21:54:36Z",
-  "version": "0.110",
+  "generated_at": "2026-05-31T02:08:09Z",
+  "version": "0.111",
   "permits": {
     "by_jurisdiction": [
       {
@@ -10,7 +10,7 @@
         "mapped": 3006,
         "newest": "2026-05-02",
         "oldest": "2026-03-05",
-        "freshness_days": 28,
+        "freshness_days": 29,
         "mapped_pct": 93.4,
         "confidence": 78
       },
@@ -21,7 +21,7 @@
         "mapped": 901,
         "newest": "2026-05-22",
         "oldest": "2026-05-11",
-        "freshness_days": 8,
+        "freshness_days": 9,
         "mapped_pct": 98.8,
         "confidence": 94
       },
@@ -32,7 +32,7 @@
         "mapped": 1,
         "newest": "2026-04-27",
         "oldest": "2026-04-27",
-        "freshness_days": 33,
+        "freshness_days": 34,
         "mapped_pct": 100.0,
         "confidence": 70
       }
@@ -42,7 +42,7 @@
       "permit_parcels": 4132,
       "newest": "2026-05-22",
       "oldest": "2026-03-05",
-      "freshness_days": 8,
+      "freshness_days": 9,
       "mapped": 3908,
       "jurisdictions_with_data": 3
     }
@@ -57,7 +57,7 @@
         "value_total": 1878390,
         "newest": "2026-05-02",
         "mapped_pct": 94.9,
-        "freshness_days": 28
+        "freshness_days": 29
       },
       {
         "jurisdiction": "Las Vegas",
@@ -67,7 +67,7 @@
         "value_total": 3923209,
         "newest": "2026-05-22",
         "mapped_pct": 99.4,
-        "freshness_days": 8
+        "freshness_days": 9
       },
       {
         "jurisdiction": "Whitney",
@@ -87,7 +87,7 @@
         "value_total": 8231,
         "newest": "2016-04-01",
         "mapped_pct": 100.0,
-        "freshness_days": 3711
+        "freshness_days": 3712
       },
       {
         "jurisdiction": "Sunrise Manor",
@@ -97,7 +97,7 @@
         "value_total": 541874,
         "newest": "2026-03-01",
         "mapped_pct": 100.0,
-        "freshness_days": 90
+        "freshness_days": 91
       },
       {
         "jurisdiction": "North Las Vegas",
@@ -107,7 +107,7 @@
         "value_total": 131355,
         "newest": "2023-07-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1064
+        "freshness_days": 1065
       },
       {
         "jurisdiction": "Paradise",
@@ -117,7 +117,7 @@
         "value_total": 400,
         "newest": "2018-02-01",
         "mapped_pct": 100.0,
-        "freshness_days": 3040
+        "freshness_days": 3041
       },
       {
         "jurisdiction": "Winchester",
@@ -137,7 +137,7 @@
         "value_total": 517599,
         "newest": "2022-09-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1367
+        "freshness_days": 1368
       },
       {
         "jurisdiction": "Clark County",
@@ -147,7 +147,7 @@
         "value_total": 606829,
         "newest": "2023-09-01",
         "mapped_pct": 100.0,
-        "freshness_days": 1002
+        "freshness_days": 1003
       },
       {
         "jurisdiction": "Boulder City",
@@ -167,7 +167,7 @@
         "value_total": 0,
         "newest": "2012-05-01",
         "mapped_pct": 100.0,
-        "freshness_days": 5142
+        "freshness_days": 5143
       },
       {
         "jurisdiction": "Moapa Valley",
@@ -1496,7 +1496,7 @@
       "category": "Permits",
       "status": "live",
       "volume": 4992,
-      "freshness": "8d",
+      "freshness": "9d",
       "coverage": "3908 mapped",
       "confidence": 95,
       "note": "City of Las Vegas ArcGIS Hub (live). County/Henderson/NLV permits are residential-capture (Accela). Geocode yield 77.6% (6368/8206 APNs)."
@@ -1675,7 +1675,7 @@
           "owners_identified": 1650,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1299,
+          "signals": 1297,
           "mapped": 1690,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -2378,196 +2378,264 @@
         "status": "IMPLEMENTED",
         "current_coverage": 4992,
         "priority": "HIGH",
-        "note": "City of Las Vegas + City of Henderson (Socrata) live; NLV/County (Accela) pending."
-      },
-      {
-        "signal": "Property Sales",
-        "status": "PARTIAL",
-        "current_coverage": 149,
-        "priority": "HIGH",
-        "note": "Captured on enriched leads via Assessor; not full-roll."
-      },
-      {
-        "signal": "Deed Transfers",
-        "status": "PARTIAL",
-        "current_coverage": 254,
-        "priority": "HIGH",
-        "note": "From Assessor sale history."
+        "note": "City of Las Vegas + City of Henderson (Socrata) live.",
+        "blocker": "live-free"
       },
       {
         "signal": "Ownership",
         "status": "IMPLEMENTED",
         "current_coverage": 6098,
         "priority": "HIGH",
-        "note": "Owner + mailing on identified parcels."
-      },
-      {
-        "signal": "Assessor Records",
-        "status": "PARTIAL",
-        "current_coverage": 6347,
-        "priority": "HIGH",
-        "note": "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."
+        "note": "Owner + mailing on identified parcels (free parcel layer).",
+        "blocker": "live-free"
       },
       {
         "signal": "Contractors",
         "status": "IMPLEMENTED",
         "current_coverage": 2887,
         "priority": "HIGH",
-        "note": "Derived from permit pullers."
-      },
-      {
-        "signal": "Business Licenses",
-        "status": "PARTIAL",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": "WIRED 0.109 \u2014 CLV Business Licenses (free ArcGIS Hub, daily); populates on next harvest."
+        "note": "From permit pullers; Henderson adds state license numbers.",
+        "blocker": "live-free"
       },
       {
         "signal": "Code Enforcement",
         "status": "IMPLEMENTED",
         "current_coverage": 93,
         "priority": "HIGH",
-        "note": "WIRED 0.109 \u2014 CLV Code Enforcement Violations (free, APN+coords); distress signal + new leads on next harvest."
+        "note": "CLV Code Enforcement Violations (free) \u2014 distress leads.",
+        "blocker": "live-free"
+      },
+      {
+        "signal": "Public Works",
+        "status": "IMPLEMENTED",
+        "current_coverage": 384,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (384).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Security Signals",
+        "status": "IMPLEMENTED",
+        "current_coverage": 307,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (307). Fire/life-safety systems.",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Demolitions",
+        "status": "IMPLEMENTED",
+        "current_coverage": 10,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (10).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Commercial Tenant Improvements",
+        "status": "IMPLEMENTED",
+        "current_coverage": 128,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (128).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Certificates of Occupancy",
+        "status": "IMPLEMENTED",
+        "current_coverage": 2,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (2).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Solar Activity",
+        "status": "IMPLEMENTED",
+        "current_coverage": 235,
+        "priority": "MEDIUM",
+        "note": "Classified from real CLV+Henderson permit records (235).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "New Construction",
+        "status": "IMPLEMENTED",
+        "current_coverage": 687,
+        "priority": "HIGH",
+        "note": "Classified from real CLV+Henderson permit records (687). Tract/dwelling starts.",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Grading / Site Work",
+        "status": "IMPLEMENTED",
+        "current_coverage": 169,
+        "priority": "HIGH",
+        "note": "Classified from real CLV+Henderson permit records (169). Pre-construction development signal.",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Telecom / Infrastructure",
+        "status": "IMPLEMENTED",
+        "current_coverage": 37,
+        "priority": "LOW",
+        "note": "Classified from real CLV+Henderson permit records (37).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Roofing",
+        "status": "IMPLEMENTED",
+        "current_coverage": 63,
+        "priority": "LOW",
+        "note": "Classified from real CLV+Henderson permit records (63).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Pool / Spa",
+        "status": "IMPLEMENTED",
+        "current_coverage": 165,
+        "priority": "LOW",
+        "note": "Classified from real CLV+Henderson permit records (165).",
+        "blocker": "live-derived"
+      },
+      {
+        "signal": "Distress (any)",
+        "status": "IMPLEMENTED",
+        "current_coverage": 93,
+        "priority": "HIGH",
+        "note": "Code-enforcement cases are the live distress signal; foreclosure/NOD blocked (see below).",
+        "blocker": "live-free"
+      },
+      {
+        "signal": "Business Licenses",
+        "status": "PARTIAL",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "CLV + Henderson business licenses (free); address-join fix in 0.111 \u2014 populates on harvest.",
+        "blocker": "free-wired"
+      },
+      {
+        "signal": "Crime / Police Activity",
+        "status": "PARTIAL",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "LVMPD Open Data (free) wired as area signal; activates on next harvest.",
+        "blocker": "free-wired"
+      },
+      {
+        "signal": "Property Sales",
+        "status": "PARTIAL",
+        "current_coverage": 149,
+        "priority": "HIGH",
+        "note": "Sale history only on enriched leads; full sale data needs the paid Assessor extract.",
+        "blocker": "paid-depth"
+      },
+      {
+        "signal": "Deed Transfers",
+        "status": "PARTIAL",
+        "current_coverage": 254,
+        "priority": "HIGH",
+        "note": "Partial via Assessor sale history; bulk deed feed needs the Recorder (no free API).",
+        "blocker": "no-free-api"
+      },
+      {
+        "signal": "Assessor Records",
+        "status": "PARTIAL",
+        "current_coverage": 6347,
+        "priority": "HIGH",
+        "note": "Owner+mailing+land-use free; value/sqft/beds are paid-only (AOEXTRACT/AORES).",
+        "blocker": "paid-depth"
       },
       {
         "signal": "Planning Applications",
         "status": "MISSING",
         "current_coverage": 0,
         "priority": "MEDIUM",
-        "note": ""
+        "note": "CLV Land Development / Zoning FeatureServer is free \u2014 candidate for 0.112.",
+        "blocker": "free-candidate"
       },
       {
         "signal": "Zoning Activity",
         "status": "MISSING",
         "current_coverage": 0,
-        "priority": "LOW",
-        "note": "CLV Zoning FeatureServer is free \u2014 candidate."
-      },
-      {
-        "signal": "Demolitions",
-        "status": "PARTIAL",
-        "current_coverage": 0,
         "priority": "MEDIUM",
-        "note": "Will surface from permit types once classified."
-      },
-      {
-        "signal": "Certificates of Occupancy",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": ""
-      },
-      {
-        "signal": "Solar Activity",
-        "status": "IMPLEMENTED",
-        "current_coverage": 58,
-        "priority": "MEDIUM",
-        "note": "Tagged from permit trades."
-      },
-      {
-        "signal": "Utility Activity",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": "Service-connect signals not ingested."
-      },
-      {
-        "signal": "Public Works",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "LOW",
-        "note": ""
-      },
-      {
-        "signal": "Foreclosures",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "HIGH",
-        "note": "Recorder NOD/trustee \u2014 high-value distress."
-      },
-      {
-        "signal": "Trustee Sales",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "HIGH",
-        "note": ""
-      },
-      {
-        "signal": "Tax Liens",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": ""
-      },
-      {
-        "signal": "Mechanics Liens",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": ""
-      },
-      {
-        "signal": "Probate",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": ""
-      },
-      {
-        "signal": "Bankruptcy",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "LOW",
-        "note": ""
-      },
-      {
-        "signal": "Evictions",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": ""
-      },
-      {
-        "signal": "Crime / Police Activity",
-        "status": "MISSING",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": "FREE source wired 0.109 \u2014 set LVMPD_CRIME_ITEM (opendata-lvmpd.hub.arcgis.com) to activate as an area signal."
-      },
-      {
-        "signal": "Security Signals",
-        "status": "PARTIAL",
-        "current_coverage": 0,
-        "priority": "LOW",
-        "note": "Tag scaffold exists; no source yet."
-      },
-      {
-        "signal": "Commercial Tenant Improvements",
-        "status": "PARTIAL",
-        "current_coverage": 0,
-        "priority": "MEDIUM",
-        "note": "Surfaces from commercial permits."
+        "note": "CLV + County zoning layers are free \u2014 candidate for 0.112.",
+        "blocker": "free-candidate"
       },
       {
         "signal": "Government / Capital Projects",
         "status": "MISSING",
         "current_coverage": 0,
-        "priority": "LOW",
-        "note": ""
+        "priority": "MEDIUM",
+        "note": "USASpending.gov (federal awards by recipient/zip) is a free API \u2014 candidate for 0.112.",
+        "blocker": "free-candidate"
       },
       {
         "signal": "Public Bid Awards",
         "status": "MISSING",
         "current_coverage": 0,
         "priority": "LOW",
-        "note": ""
+        "note": "Nevada ePro / CCSD bids \u2014 portal, no clean bulk API.",
+        "blocker": "no-free-api"
       },
       {
-        "signal": "Distress (any)",
-        "status": "PARTIAL",
-        "current_coverage": 98,
+        "signal": "Foreclosures",
+        "status": "MISSING",
+        "current_coverage": 0,
         "priority": "HIGH",
-        "note": "Only code-violation-style events so far."
+        "note": "Clark County Recorder NOD/trustee \u2014 no free bulk API; document search only.",
+        "blocker": "no-free-api"
+      },
+      {
+        "signal": "Trustee Sales",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "HIGH",
+        "note": "Recorder / auction portals \u2014 no free bulk; scrape-hostile.",
+        "blocker": "no-free-api"
+      },
+      {
+        "signal": "Tax Liens",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Treasurer/Recorder \u2014 no free bulk API.",
+        "blocker": "no-free-api"
+      },
+      {
+        "signal": "Mechanics Liens",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Recorder \u2014 no free bulk API.",
+        "blocker": "no-free-api"
+      },
+      {
+        "signal": "Probate",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Eighth Judicial District court records \u2014 portal-limited, no bulk.",
+        "blocker": "court-portal"
+      },
+      {
+        "signal": "Evictions",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Justice/District court records \u2014 portal-limited, no bulk.",
+        "blocker": "court-portal"
+      },
+      {
+        "signal": "Bankruptcy",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "LOW",
+        "note": "Federal PACER \u2014 per-page fees (not free).",
+        "blocker": "paid"
+      },
+      {
+        "signal": "Utility Activity",
+        "status": "MISSING",
+        "current_coverage": 0,
+        "priority": "MEDIUM",
+        "note": "Service-connect / shutoff data is not public.",
+        "blocker": "not-public"
       }
     ],
     "permit_audit": {
@@ -2575,7 +2643,7 @@
       "newest": "2026-05-22",
       "oldest": "2026-03-05",
       "this_week": 0,
-      "this_month": 1176,
+      "this_month": 1006,
       "by_jurisdiction": [
         {
           "jurisdiction": "Henderson",
@@ -4076,8 +4144,7 @@
         "Deed Transfers",
         "Assessor Records",
         "Foreclosures",
-        "Trustee Sales",
-        "Distress (any)"
+        "Trustee Sales"
       ],
       "unidentified_jurisdiction": 0,
       "gaps": [
@@ -4118,7 +4185,7 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 21,
+    "ledger_entries": 25,
     "event_total": 5752,
     "records_tracked": 10422,
     "growth": [
@@ -4156,6 +4223,14 @@
       },
       {
         "date": "2026-05-30",
+        "leads": 8209,
+        "mapped": 7985,
+        "permit_events": 4992,
+        "contractors": 921,
+        "imported_capital": 311
+      },
+      {
+        "date": "2026-05-31",
         "leads": 8209,
         "mapped": 7985,
         "permit_events": 4992,

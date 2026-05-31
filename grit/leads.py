@@ -272,5 +272,7 @@ def enrich_lead(card):
     card["timeline_summary"] = timeline_summary(card)
     card["why"] = why_this_matters(card)
     from . import confidence
+    from . import signals as _sig
+    _sig.classify(card)                     # permit-derived signal families
     confidence.annotate(card)               # per-field provenance + confidence
     return card

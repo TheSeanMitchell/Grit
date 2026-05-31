@@ -71,6 +71,28 @@ coverage against the real universe — rather than trying to paint 900,000 dorma
 pins. Depth on every parcel is available only by choosing to pay; that choice is
 the operator's, made with the real cost in view, never made silently.
 
+## Distribution & file-size protocol
+
+GRIT is installed and updated by drag-and-drop upload to GitHub. **GitHub's web
+uploader rejects any single file larger than 25 MB.** This is now a hard rule of
+the project, because the generated data grows with the warehouse:
+
+1. **No shipped file may exceed 25 MB.** `python -m grit checksize` enforces it and
+   must pass before any drag-and-drop install. It exits non-zero if any file is
+   over the limit.
+2. **The console data file stays lean.** `cards.json` is written compact, without
+   the per-card `raw` blob or the recomputable `field_confidence` map, and with
+   timeline events trimmed to what the console renders. All of it is regenerated on
+   the next `harvest`/`rebuild`, so nothing is lost.
+3. **Generated data is regenerated, never hand-carried when large.** Everything in
+   `docs/data/` is a product of the harvest. If a generated file ever approaches
+   25 MB, exclude it from the manual web upload and let the GitHub Action commit it
+   — a git push from the Action is bound by GitHub's 100 MB limit, not the 25 MB web
+   limit. The site repopulates on the next harvest.
+
+Truth-over-appearance applies here too: the slim shipped file is the same data, not
+a sampled or faked subset.
+
 ## What "done" looks like
 
 A living system that, every day, knows more about Southern Nevada than it did

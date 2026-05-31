@@ -146,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.110"
+VERSION = "0.111"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON
@@ -239,10 +239,13 @@ CLV_OPENDATA_ITEMS = {
     "code_enforcement": "f48d19416d5546e5b9ee12f9746ecaa9",
     "business_licenses": "f6b923ee5eb9450baf6adebaf0f307ed",
 }
-# LVMPD crime is free too (opendata-lvmpd.hub.arcgis.com) but area-level (incident
-# points, no APN). Paste the crime layer's ArcGIS item id here to wire it as an
-# area signal; left blank by default so an unverified id can't break a harvest.
-LVMPD_CRIME_ITEM = ""
+# Henderson business licenses (free ArcGIS Hub item) -- 0.111
+HENDERSON_OPENDATA_ITEMS = {
+    "business_licenses": "b86e999491454c4290af161192ad0eba_0",
+}
+# LVMPD crime, free (opendata.lvmpd.com). Calls-for-service, last 30 days, geocoded
+# -> wired as an AREA activity signal in 0.111. Verified item id.
+LVMPD_CRIME_ITEM = "6a371d1a491a4a0794578b031859c768_0"
 ENRICH_DELAY = 0.5      # seconds between per-APN Assessor fetches (be polite)
 PAGE_SIZE = 1000
 MAX_PAGES = 16          # 0.105: wider candidate pool (was 5) for metro-wide spread

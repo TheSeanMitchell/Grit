@@ -234,6 +234,10 @@ def tags_for_card(card):
         t.add("signal:code-enforcement")
     if card.get("business_license_active"):
         t.add("signal:business-license")
+    # 0.111 permit-derived signal families (from real permit records)
+    from .signals import DISPLAY as _SIGDISP
+    for k in (card.get("permit_signals") or []):
+        t.add("signal:" + k.replace("_", "-"))
 
     # ── monetization readiness (derived heuristics, clearly tags not facts)
     #    each requires a real supporting field; absence => no tag.

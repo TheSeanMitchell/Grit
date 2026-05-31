@@ -217,49 +217,98 @@ def signal_matrix(cards, events):
     crime_n = sum(1 for c in cards for e in (c.get("timeline") or [])
                   if (e.get("kind") or "").upper() == "CRIME")
 
-    def row(name, status, current, priority, note=""):
-        return {"signal": name, "status": status, "current_coverage": current,
-                "priority": priority, "note": note}
+# ── 3. Signal acquisition matrix ───────────────────────────────────────────
+def signal_matrix(cards, events):
+    from . import signals as _sig
+    ps = _sig.counts(cards)                       # permit-derived signal counts (real)
+    permit_ev = sum(1 for e in events if e.get("kind") == "PERMIT")
+    deed_ev = sum(1 for e in events if e.get("kind") == "DEED")
+    owners = sum(1 for c in cards if c.get("owner_name"))
+    contractors = sum(1 for c in cards if c.get("contractors"))
+    code_n = sum(1 for c in cards if c.get("code_enforcement_open")
+                 or c.get("code_enforcement_type") or c.get("distress_signal") == "code-enforcement")
+    biz_n = sum(1 for c in cards if c.get("business_license_active") or c.get("business_activity"))
+    crime_n = sum(1 for c in cards for e in (c.get("timeline") or [])
+                  if (e.get("kind") or "").upper() == "CRIME")
 
-    def wired(n):  # IMPLEMENTED once data lands; PARTIAL = connector live, awaiting harvest
-        return "IMPLEMENTED" if n else "PARTIAL"
+    def row(name, status, current, priority, note="", blocker="—"):
+        return {"signal": name, "status": status, "current_coverage": current,
+                "priority": priority, "note": note, "blocker": blocker}
 
     HIGH, MED, LOW = "HIGH", "MEDIUM", "LOW"
+
+    def derived(key, name, priority=MED, extra=""):
+        n = ps.get(key, 0)
+        note = f"Classified from real CLV+Henderson permit records ({n}). {extra}".strip()
+        return row(name, "IMPLEMENTED" if n else "PARTIAL", n, priority, note,
+                   "live-derived" if n else "derived-pending")
+
+    def wired(n):
+        return "IMPLEMENTED" if n else "PARTIAL"
+
     return [
+        # ---- live, real-data signals ----
         row("Permits", "IMPLEMENTED", permit_ev, HIGH,
-            "City of Las Vegas + City of Henderson (Socrata) live; NLV/County (Accela) pending."),
-        row("Property Sales", "PARTIAL", sum(1 for c in cards if c.get("last_sale_date")), HIGH,
-            "Captured on enriched leads via Assessor; not full-roll."),
-        row("Deed Transfers", "PARTIAL", deed_ev, HIGH, "From Assessor sale history."),
-        row("Ownership", "IMPLEMENTED", owners, HIGH, "Owner + mailing on identified parcels."),
-        row("Assessor Records", "PARTIAL", sum(1 for c in cards if c.get("vintage") == "current"), HIGH,
-            "Owner+mailing+land-use free from the parcel layer (now ~81%); value/sqft/beds are paid-only (AOEXTRACT/AORES)."),
-        row("Contractors", "IMPLEMENTED", contractors, HIGH, "Derived from permit pullers."),
-        row("Business Licenses", wired(biz_n), biz_n, MED,
-            "WIRED 0.109 — CLV Business Licenses (free ArcGIS Hub, daily); populates on next harvest."),
+            "City of Las Vegas + City of Henderson (Socrata) live.", "live-free"),
+        row("Ownership", "IMPLEMENTED", owners, HIGH,
+            "Owner + mailing on identified parcels (free parcel layer).", "live-free"),
+        row("Contractors", "IMPLEMENTED", contractors, HIGH,
+            "From permit pullers; Henderson adds state license numbers.", "live-free"),
         row("Code Enforcement", wired(code_n), code_n, HIGH,
-            "WIRED 0.109 — CLV Code Enforcement Violations (free, APN+coords); distress signal + new leads on next harvest."),
-        row("Planning Applications", "MISSING", 0, MED, ""),
-        row("Zoning Activity", "MISSING", 0, LOW, "CLV Zoning FeatureServer is free — candidate."),
-        row("Demolitions", "PARTIAL", 0, MED, "Will surface from permit types once classified."),
-        row("Certificates of Occupancy", "MISSING", 0, MED, ""),
-        row("Solar Activity", "IMPLEMENTED", solar, MED, "Tagged from permit trades."),
-        row("Utility Activity", "MISSING", 0, MED, "Service-connect signals not ingested."),
-        row("Public Works", "MISSING", 0, LOW, ""),
-        row("Foreclosures", "MISSING", 0, HIGH, "Recorder NOD/trustee — high-value distress."),
-        row("Trustee Sales", "MISSING", 0, HIGH, ""),
-        row("Tax Liens", "MISSING", 0, MED, ""),
-        row("Mechanics Liens", "MISSING", 0, MED, ""),
-        row("Probate", "MISSING", 0, MED, ""),
-        row("Bankruptcy", "MISSING", 0, LOW, ""),
-        row("Evictions", "MISSING", 0, MED, ""),
-        row("Crime / Police Activity", wired(crime_n) if crime_n else "MISSING", crime_n, MED,
-            "FREE source wired 0.109 — set LVMPD_CRIME_ITEM (opendata-lvmpd.hub.arcgis.com) to activate as an area signal."),
-        row("Security Signals", "PARTIAL", 0, LOW, "Tag scaffold exists; no source yet."),
-        row("Commercial Tenant Improvements", "PARTIAL", 0, MED, "Surfaces from commercial permits."),
-        row("Government / Capital Projects", "MISSING", 0, LOW, ""),
-        row("Public Bid Awards", "MISSING", 0, LOW, ""),
-        row("Distress (any)", "PARTIAL", distress_ev, HIGH, "Only code-violation-style events so far."),
+            "CLV Code Enforcement Violations (free) — distress leads.", "live-free"),
+        derived("public_works", "Public Works", MED),
+        derived("fire_life_safety", "Security Signals", MED, "Fire/life-safety systems."),
+        derived("demolition", "Demolitions", MED),
+        derived("commercial_ti", "Commercial Tenant Improvements", MED),
+        derived("certificate_of_occupancy", "Certificates of Occupancy", MED),
+        derived("solar", "Solar Activity", MED),
+        derived("new_construction", "New Construction", HIGH, "Tract/dwelling starts."),
+        derived("grading_site", "Grading / Site Work", HIGH, "Pre-construction development signal."),
+        derived("telecom_infrastructure", "Telecom / Infrastructure", LOW),
+        derived("roofing", "Roofing", LOW),
+        derived("pool_spa", "Pool / Spa", LOW),
+        row("Distress (any)", "IMPLEMENTED" if code_n else "PARTIAL", code_n, HIGH,
+            "Code-enforcement cases are the live distress signal; foreclosure/NOD blocked (see below).",
+            "live-free"),
+        # ---- wired free sources, activate on next harvest ----
+        row("Business Licenses", wired(biz_n), biz_n, MED,
+            "CLV + Henderson business licenses (free); address-join fix in 0.111 — populates on harvest.",
+            "live-free" if biz_n else "free-wired"),
+        row("Crime / Police Activity", wired(crime_n) if crime_n else "PARTIAL", crime_n, MED,
+            "LVMPD Open Data (free) wired as area signal; activates on next harvest.",
+            "live-free" if crime_n else "free-wired"),
+        # ---- partial: free gives some, depth is paid ----
+        row("Property Sales", "PARTIAL", sum(1 for c in cards if c.get("last_sale_date")), HIGH,
+            "Sale history only on enriched leads; full sale data needs the paid Assessor extract.", "paid-depth"),
+        row("Deed Transfers", "PARTIAL", deed_ev, HIGH,
+            "Partial via Assessor sale history; bulk deed feed needs the Recorder (no free API).", "no-free-api"),
+        row("Assessor Records", "PARTIAL", sum(1 for c in cards if c.get("vintage") == "current"), HIGH,
+            "Owner+mailing+land-use free; value/sqft/beds are paid-only (AOEXTRACT/AORES).", "paid-depth"),
+        # ---- genuinely blocked free (honest) ----
+        row("Planning Applications", "MISSING", 0, MED,
+            "CLV Land Development / Zoning FeatureServer is free — candidate for 0.112.", "free-candidate"),
+        row("Zoning Activity", "MISSING", 0, MED,
+            "CLV + County zoning layers are free — candidate for 0.112.", "free-candidate"),
+        row("Government / Capital Projects", "MISSING", 0, MED,
+            "USASpending.gov (federal awards by recipient/zip) is a free API — candidate for 0.112.", "free-candidate"),
+        row("Public Bid Awards", "MISSING", 0, LOW,
+            "Nevada ePro / CCSD bids — portal, no clean bulk API.", "no-free-api"),
+        row("Foreclosures", "MISSING", 0, HIGH,
+            "Clark County Recorder NOD/trustee — no free bulk API; document search only.", "no-free-api"),
+        row("Trustee Sales", "MISSING", 0, HIGH,
+            "Recorder / auction portals — no free bulk; scrape-hostile.", "no-free-api"),
+        row("Tax Liens", "MISSING", 0, MED,
+            "Treasurer/Recorder — no free bulk API.", "no-free-api"),
+        row("Mechanics Liens", "MISSING", 0, MED,
+            "Recorder — no free bulk API.", "no-free-api"),
+        row("Probate", "MISSING", 0, MED,
+            "Eighth Judicial District court records — portal-limited, no bulk.", "court-portal"),
+        row("Evictions", "MISSING", 0, MED,
+            "Justice/District court records — portal-limited, no bulk.", "court-portal"),
+        row("Bankruptcy", "MISSING", 0, LOW,
+            "Federal PACER — per-page fees (not free).", "paid"),
+        row("Utility Activity", "MISSING", 0, MED,
+            "Service-connect / shutoff data is not public.", "not-public"),
     ]
 
 

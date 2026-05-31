@@ -227,7 +227,7 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.110</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.111</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -512,11 +512,24 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
   const prov=Object.keys(fcm).length?'<div class="dr-sec"><div class="dr-h">Provenance &amp; confidence · '+(conf.score!=null?conf.score+'/100':'')+'</div>'+
     '<div style="font-size:10px;color:var(--dim);margin-bottom:6px">auth '+(conf.authoritative||0)+' · derived '+(conf.derived||0)+' · inferred '+(conf.inferred||0)+' · unknown '+(conf.unknown||0)+'</div>'+provRows+'</div>':'';
   const link=c.parcel_apn?'<a class="dr-link" href="'+ASSESSOR+'" target="_blank" rel="noopener">Open Assessor parcel detail (APN '+esc(c.parcel_apn)+') ↗</a>':'';
+  // 0.111 signals on this property (permit-derived families)
+  const SIGN={public_works:'Public Works',fire_life_safety:'Fire / Life-Safety',demolition:'Demolition',commercial_ti:'Commercial Tenant Improvement',certificate_of_occupancy:'Certificate of Occupancy',new_construction:'New Construction',grading_site:'Grading / Site Work',telecom_infrastructure:'Telecom / Infrastructure',solar:'Solar',pool_spa:'Pool / Spa',roofing:'Roofing'};
+  const psig=(c.permit_signals||[]);
+  const sigChips=psig.length?'<div class="dr-sec"><div class="dr-h">Signals on this property · '+psig.length+'</div><div style="display:flex;flex-wrap:wrap;gap:6px">'+psig.map(k=>'<span style="font-size:10px;background:rgba(110,168,254,.12);border:1px solid rgba(110,168,254,.35);border-radius:10px;padding:2px 9px;color:var(--txt)">'+esc(SIGN[k]||k)+'</span>').join('')+'</div></div>':'';
+  // 0.111 contactability (real sourced channels only)
+  const contact=[];
+  if(c.owner_name) contact.push(['Owner',esc(c.owner_name)+(c.entity_type&&c.entity_type!=='UNKNOWN'&&c.entity_type!=='PERSON'?' · '+esc(c.entity_type):'')]);
+  if(c.owner_mailing) contact.push(['Owner mailing',esc(c.owner_mailing)]);
+  if(c.owner_origin_market) contact.push(['Capital origin',esc(c.owner_origin_market)+(c.owner_out_of_state?' (out-of-state)':'')]);
+  if(c.contractors&&c.contractors.length) contact.push(['Contractor',esc(c.contractors[0])]);
+  if(c.contractor_phone) contact.push(['Contractor phone',esc(c.contractor_phone)]);
+  if(c.business_activity) contact.push(['Business at site',esc(c.business_activity)]);
+  const contactBlock=contact.length?'<div class="dr-sec"><div class="dr-h">Contact channels</div>'+contact.map(r=>'<div class="kv"><span class="k">'+r[0]+'</span><span class="v">'+r[1]+'</span></div>').join('')+'<div style="font-size:9px;color:var(--faint);margin-top:5px">Real sourced data only — no skip-tracing, no fabricated contacts.</div></div>':'';
   $('#drawer-inner').innerHTML='<div class="dr-head"><div class="dr-x" id="drx">✕</div>'+
     '<div class="dr-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
     '<div class="dr-score">SCORE '+c.score+(c.trade_tags&&c.trade_tags.length?' · '+esc(c.trade_tags.join(', ')):'')+'</div>'+
     '<div style="margin-top:6px">'+badges+'</div></div>'+
-    '<div class="dr-body">'+dims+datesBlock+why+
+    '<div class="dr-body">'+dims+datesBlock+why+sigChips+contactBlock+
     '<div class="dr-sec"><div class="dr-h">Lead facts</div>'+facts+link+'</div>'+
     tags+tl+sig+prov+'</div>';
   $('#drx').onclick=closeDrawer;$('#scrim').classList.add('open');$('#drawer').classList.add('open');
@@ -661,10 +674,13 @@ function renderAudit(){const v=$('#v-audit');if(!COV||!COV.audit){v.innerHTML=em
   // signal matrix
   const sm=a.signal_matrix||[];const order={IMPLEMENTED:0,PARTIAL:1,MISSING:2};
   const smSorted=sm.slice().sort((x,y)=>(order[x.status]-order[y.status])|| (x.priority<y.priority?-1:1));
-  const smCards=smSorted.map(s=>'<div class="sigcard '+s.status.toLowerCase()+'"><div class="sn">'+esc(s.signal)+'<span class="sst">'+esc(s.status)+'</span></div>'+
-    '<div class="smeta">'+(s.current_coverage?('<b style="color:var(--txt)">'+po(s.current_coverage)+'</b> captured · '):'')+'<span class="pri '+s.priority+'">'+esc(s.priority)+' priority</span>'+(s.note?(' · '+esc(s.note)):'')+'</div></div>').join('');
+  const blk={'live-derived':['var(--green)','derived from real permits'],'live-free':['var(--green)','live free source'],'free-wired':['var(--amber)','wired · activates on harvest'],'derived-pending':['var(--amber)','classifier ready'],'paid-depth':['var(--import)','depth is paid (Assessor)'],'no-free-api':['var(--red)','no free API'],'court-portal':['var(--red)','court portal · no bulk'],'paid':['var(--import)','paid'],'not-public':['var(--red)','not public'],'free-candidate':['var(--blue)','free — 0.112 target']};
+  const smCards=smSorted.map(s=>{const b=blk[s.blocker]||['var(--dim)',s.blocker||''];
+    return '<div class="sigcard '+s.status.toLowerCase()+'"><div class="sn">'+esc(s.signal)+'<span class="sst">'+esc(s.status)+'</span></div>'+
+    '<div class="smeta">'+(s.current_coverage?('<b style="color:var(--txt)">'+po(s.current_coverage)+'</b> captured · '):'')+'<span class="pri '+s.priority+'">'+esc(s.priority)+'</span>'+(s.note?(' · '+esc(s.note)):'')+'</div>'+
+    (s.blocker&&s.blocker!=='—'?'<div style="margin-top:4px"><span style="font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:'+b[0]+';border:1px solid '+b[0]+';border-radius:3px;padding:1px 5px">'+esc(b[1])+'</span></div>':'')+'</div>';}).join('');
   const counts=sm.reduce((m,s)=>{m[s.status]=(m[s.status]||0)+1;return m;},{});
-  const smBlock='<h2 class="sec">Signal Acquisition Matrix <span class="note">'+(counts.IMPLEMENTED||0)+' implemented · '+(counts.PARTIAL||0)+' partial · '+(counts.MISSING||0)+' missing</span></h2><div class="sigmatrix">'+smCards+'</div>';
+  const smBlock='<h2 class="sec">Signal Acquisition Matrix <span class="note">'+(counts.IMPLEMENTED||0)+' live · '+(counts.PARTIAL||0)+' partial · '+(counts.MISSING||0)+' blocked — each with its real blocker</span></h2><div class="sigmatrix">'+smCards+'</div>';
   // permit completeness + quality
   const pa=a.permit_audit||{};const q=pa.quality||{};
   const pkpi='<div class="statgrid">'+stat(po(pa.total||0),'Permits harvested')+stat(pa.newest||'—','Newest permit')+stat(po(pa.this_week||0),'This week')+stat(po(pa.this_month||0),'This month')+stat(pa.oldest||'—','Oldest permit')+'</div>';
