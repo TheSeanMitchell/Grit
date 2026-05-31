@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T13:09:43Z",
+  "generated_at": "2026-05-31T15:05:20Z",
   "version": "0.114",
   "permits": {
     "by_jurisdiction": [
@@ -1603,7 +1603,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 5931,
+      "volume": 5983,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1612,7 +1612,7 @@
     {
       "category": "Warehouse Integrity",
       "status": "live",
-      "volume": 5931,
+      "volume": 5983,
       "freshness": "append-only",
       "coverage": "first/last-seen tracked",
       "confidence": 85,
@@ -1658,7 +1658,7 @@
           "owners_identified": 2166,
           "owner_coverage_pct": 51.8,
           "permits": 3220,
-          "signals": 4289,
+          "signals": 4288,
           "mapped": 3965,
           "mapped_pct": 94.9,
           "assessed_value": 1878390,
@@ -1675,7 +1675,7 @@
           "owners_identified": 1650,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1311,
+          "signals": 1312,
           "mapped": 1690,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -1806,14 +1806,14 @@
           "owners_identified": 19,
           "owner_coverage_pct": 79.2,
           "permits": 0,
-          "signals": 15,
+          "signals": 16,
           "mapped": 24,
           "mapped_pct": 100.0,
           "assessed_value": 606829,
           "label_sources": {
+            "county": 5,
             "assessor-city": 17,
-            "situs": 2,
-            "county": 5
+            "situs": 2
           },
           "confidence": 81
         },
@@ -2512,7 +2512,7 @@
       {
         "signal": "Crime / Police Activity",
         "status": "IMPLEMENTED",
-        "current_coverage": 18,
+        "current_coverage": 19,
         "priority": "MEDIUM",
         "note": "LVMPD Open Data (free) wired as area signal; activates on next harvest.",
         "blocker": "live-free"
@@ -2774,7 +2774,7 @@
         },
         {
           "field": "primary_date",
-          "present": 4409,
+          "present": 4410,
           "pct": 53.7
         },
         {
@@ -2920,9 +2920,9 @@
     "confidence": {
       "totals": {
         "authoritative": 61526,
-        "derived": 23456,
+        "derived": 23460,
         "inferred": 10905,
-        "unknown": 142174
+        "unknown": 142170
       },
       "pct": {
         "authoritative": 25.8,
@@ -3000,25 +3000,25 @@
         {
           "field": "urgency",
           "authoritative": 0,
-          "derived": 4409,
+          "derived": 4410,
           "inferred": 0,
-          "unknown": 3800,
+          "unknown": 3799,
           "known_pct": 53.7
         },
         {
           "field": "primary_date",
           "authoritative": 0,
-          "derived": 4409,
+          "derived": 4410,
           "inferred": 0,
-          "unknown": 3800,
+          "unknown": 3799,
           "known_pct": 53.7
         },
         {
           "field": "temporal_state",
           "authoritative": 0,
-          "derived": 4245,
+          "derived": 4247,
           "inferred": 0,
-          "unknown": 3964,
+          "unknown": 3962,
           "known_pct": 51.7
         },
         {
@@ -4186,7 +4186,7 @@
   },
   "warehouse": {
     "ledger_entries": 29,
-    "event_total": 5931,
+    "event_total": 5983,
     "records_tracked": 10422,
     "growth": [
       {
