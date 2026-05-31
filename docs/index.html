@@ -227,7 +227,7 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.112</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.113</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -523,7 +523,9 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
   const chRows=(ctc.channels||[]).map(ch=>{const hot=ch.type==='phone';return '<div class="kv"><span class="k">'+esc(ch.label||ch.type)+'</span><span class="v"'+(hot?' style="color:var(--green);font-weight:600"':'')+'>'+esc(ch.value)+'</span></div>';}).join('');
   const contactBlock=(ctc.channels&&ctc.channels.length)?'<div class="dr-sec"><div class="dr-h">Contact channels <span style="font-size:9px;letter-spacing:.5px;border:1px solid '+tcol+';color:'+tcol+';border-radius:3px;padding:1px 5px;margin-left:4px">'+esc((ctc.tier||'none').toUpperCase())+'</span></div>'+
     (ctc.summary?'<div style="font-size:11px;color:var(--txt);margin-bottom:6px;line-height:1.5">'+esc(ctc.summary)+'</div>':'')+
-    chRows+'<div style="font-size:9px;color:var(--faint);margin-top:5px">Real sourced data only — no skip-tracing, no fabricated contacts. Phone shown is the contractor\'s.</div></div>':'';
+    chRows+
+    (c.contractor_license?'<a class="dr-link" href="https://app.nvcontractorsboard.com/Clients/NVSCB/Public/ContractorLicenseSearch/ContractorLicenseSearch.aspx" target="_blank" rel="noopener">Verify license '+esc(c.contractor_license)+' on NSCB (status · phone · discipline) ↗</a>':'')+
+    '<div style="font-size:9px;color:var(--faint);margin-top:5px">Real sourced data only — no skip-tracing, no fabricated contacts. Phone shown is the contractor\'s.</div></div>':'';
   $('#drawer-inner').innerHTML='<div class="dr-head"><div class="dr-x" id="drx">✕</div>'+
     '<div class="dr-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
     '<div class="dr-score">SCORE '+c.score+(c.trade_tags&&c.trade_tags.length?' · '+esc(c.trade_tags.join(', ')):'')+'</div>'+
@@ -571,6 +573,9 @@ function renderContact(){
   const cfS='font:inherit;font-size:11px;padding:4px 11px;border-radius:6px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--dim)';
   const cfOn=';border-color:var(--blue);color:var(--txt);background:rgba(110,168,254,.12)';
   const btns=Object.keys(FILT).map(k=>'<button data-cf="'+k+'" style="'+cfS+(k===CONTACT_FILTER?cfOn:'')+'">'+esc(FILT[k][0])+' '+po(all.filter(FILT[k][1]).length)+'</button>').join('');
+  const jur={};all.forEach(c=>{const j=c.property_jurisdiction||c.property_city||'Unknown';const d=jur[j]||(jur[j]={j:j,leads:0,phone:0,reach:0});d.leads++;const t=c.contact.tier;if(t==='phone'){d.phone++;d.reach++;}else if(t==='mail')d.reach++;});
+  const jrows=Object.values(jur).sort((a,b)=>(b.phone-a.phone)||(b.leads-a.leads)).slice(0,12).map(d=>'<tr style="border-top:1px solid var(--line)"><td style="padding:5px 8px;color:var(--txt)">'+esc(d.j)+'</td><td style="padding:5px 8px;text-align:right;color:var(--dim)">'+po(d.leads)+'</td><td style="padding:5px 8px;text-align:right;color:var(--green)">'+po(d.phone)+'</td><td style="padding:5px 8px;text-align:right;color:var(--blue)">'+po(d.reach)+'</td><td style="padding:5px 8px;text-align:right;color:var(--dim)">'+(Math.round(1000*d.reach/(d.leads||1))/10)+'%</td></tr>').join('');
+  const jurBlock='<details style="margin-bottom:10px"><summary style="cursor:pointer;font-size:10px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase">▸ Contact density by jurisdiction</summary><div style="overflow:auto;border:1px solid var(--line);border-radius:8px;margin-top:6px"><table style="width:100%;border-collapse:collapse;font-size:11px"><thead><tr style="color:var(--dim);font-size:9px;letter-spacing:.5px;text-transform:uppercase"><th style="padding:6px 8px;text-align:left">Jurisdiction</th><th style="padding:6px 8px;text-align:right">Leads</th><th style="padding:6px 8px;text-align:right">Phone</th><th style="padding:6px 8px;text-align:right">Reachable</th><th style="padding:6px 8px;text-align:right">Reach %</th></tr></thead><tbody>'+jrows+'</tbody></table></div></details>';
   v.innerHTML='<h2 class="sec">Contactability — the call list <span class="note">real channels only · no skip-tracing</span></h2>'+
     '<div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0">'+
       stat(po(all.length),'leads',null)+
@@ -580,6 +585,7 @@ function renderContact(){
       stat(po(nameOnly.length),'name only',null)+
       stat(po(noneT.length),'no channel','var(--faint)')+'</div>'+
     '<div style="font-size:11px;color:var(--faint);margin-bottom:9px;line-height:1.5">Homeowner phone numbers are not in free public records. The reachable channels are the property owner\'s <b style="color:var(--amber)">mailing address</b> and, on active permits, the <b style="color:var(--green)">contractor\'s phone</b> — your way into a live project. Contractor license numbers link to NSCB for status. Phone shown is the contractor\'s, never a fabricated homeowner number.</div>'+
+    jurBlock+
     '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px">'+btns+'<button id="cf-csv" style="'+cfS+'">↓ Call list CSV</button></div>'+
     '<div style="overflow:auto;border:1px solid var(--line);border-radius:8px"><table style="width:100%;border-collapse:collapse;font-size:12px">'+
     '<thead><tr style="text-align:left;color:var(--dim);font-size:9px;letter-spacing:.5px;text-transform:uppercase">'+

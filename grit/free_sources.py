@@ -62,14 +62,27 @@ def _http_json(url, params=None, timeout=45):
         return json.loads(r.read().decode("utf-8", "replace"))
 
 
+def _split_item_id(item_id):
+    """('{itemid}_{N}') -> ('{itemid}', 'N'); bare id -> (id, '0'). Testable."""
+    m = re.match(r"^([0-9a-fA-F]{32})_(\d+)$", str(item_id or ""))
+    return (m.group(1), m.group(2)) if m else (item_id, "0")
+
+
 def resolve_layer(item_id):
     """Resolve an ArcGIS Online item id to a queryable layer URL. Returns the URL
     or None. A feature-layer item's `url` is the layer; a service item's `url` is
-    the FeatureServer root, so we append /0. Fails safe (returns None)."""
+    the FeatureServer root, so we append the layer index. Fails safe (returns None).
+
+    ArcGIS Hub dataset ids arrive as "{itemid}_{layerindex}" (e.g. "...768_0"). The
+    item-metadata API needs the BARE 32-char item id; the trailing _N is the layer
+    index, not part of the id. We split it off for the lookup and use N to target
+    the right layer -- this is what previously broke the crime + Henderson-business
+    sources (their ids carried _0; the CLV ids did not, which is why those worked)."""
     if not item_id:
         return None
+    bare, layer_idx = _split_item_id(item_id)
     try:
-        meta = _http_json(_AGOL_ITEM.format(id=item_id))
+        meta = _http_json(_AGOL_ITEM.format(id=bare))
     except Exception:  # noqa: BLE001
         return None
     url = (meta.get("url") or "").rstrip("/")
@@ -77,7 +90,7 @@ def resolve_layer(item_id):
         return None
     low = url.lower()
     if low.endswith("featureserver") or low.endswith("mapserver"):
-        url += "/0"
+        url += "/" + layer_idx
     return url
 
 

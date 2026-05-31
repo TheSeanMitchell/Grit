@@ -308,6 +308,18 @@ def cmd_selftest():
     assert st["with_phone"] == 1 and st["reachable"] == 2, "contact stats failed"
     print("0.112: contactability engine (tiers + phone norm + channels + summary + stats) OK")
 
+    # ---- 0.113: ArcGIS item-id suffix fix + per-jurisdiction contact density --
+    from . import free_sources as _fs
+    assert _fs._split_item_id("6a371d1a491a4a0794578b031859c768_0") == ("6a371d1a491a4a0794578b031859c768", "0"), "_0 split failed"
+    assert _fs._split_item_id("b86e999491454c4290af161192ad0eba_3") == ("b86e999491454c4290af161192ad0eba", "3"), "_3 split failed"
+    assert _fs._split_item_id("f48d19416d5546e5b9ee12f9746ecaa9") == ("f48d19416d5546e5b9ee12f9746ecaa9", "0"), "bare id changed (regression)"
+    jcards = [{"property_jurisdiction": "City of Henderson", "contact": {"tier": "phone"}},
+              {"property_jurisdiction": "City of Henderson", "contact": {"tier": "mail"}},
+              {"property_jurisdiction": "City of Las Vegas", "contact": {"tier": "name"}}]
+    jr = _contact.by_jurisdiction(jcards)
+    assert jr[0]["jurisdiction"] == "City of Henderson" and jr[0]["phone"] == 1 and jr[0]["reachable"] == 2, "jurisdiction breakdown failed"
+    print("0.113: item-id _N suffix fix (crime + Henderson biz) + per-jurisdiction contact density OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 

@@ -204,3 +204,26 @@ def stats(cards):
         "phone_pct": round(100 * phone / n, 1),
         "hot_phone_immediate": hot,
     }
+
+
+def by_jurisdiction(cards):
+    """Contact density per property jurisdiction -- the directive's per-jurisdiction
+    view. Returns rows sorted by phone coverage."""
+    g = {}
+    for c in cards:
+        j = c.get("property_jurisdiction") or c.get("property_city") or "Unknown"
+        d = g.setdefault(j, {"jurisdiction": j, "leads": 0, "phone": 0, "mail": 0, "name": 0})
+        d["leads"] += 1
+        t = (c.get("contact") or {}).get("tier")
+        if t == "phone":
+            d["phone"] += 1
+        elif t == "mail":
+            d["mail"] += 1
+        elif t == "name":
+            d["name"] += 1
+    rows = list(g.values())
+    for d in rows:
+        d["reachable"] = d["phone"] + d["mail"]
+        d["reachable_pct"] = round(100 * d["reachable"] / (d["leads"] or 1), 1)
+        d["phone_pct"] = round(100 * d["phone"] / (d["leads"] or 1), 1)
+    return sorted(rows, key=lambda r: (-r["phone"], -r["leads"]))
