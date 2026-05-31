@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T21:54:36Z",
+  "generated_at": "2026-05-31T02:21:01Z",
   "version": "0.111",
   "count": 921,
   "contractors": [
@@ -17724,6 +17724,29 @@
       "score": 6
     },
     {
+      "name": "A&J AIR CONDITIONING & HEATING",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "10650 W CHARLESTON BLVD"
+      ],
+      "score": 6
+    },
+    {
       "name": "Nevada Electric Company LLC",
       "permit_count": 1,
       "job_sites": 1,
@@ -18320,29 +18343,6 @@
       "last_seen": "2026-04-14",
       "sample_addresses": [
         "5 KARSTEN CREEK CT"
-      ],
-      "score": 6
-    },
-    {
-      "name": "A&J AIR CONDITIONING & HEATING",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "hvac": 1
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "10650 W CHARLESTON BLVD"
       ],
       "score": 6
     },

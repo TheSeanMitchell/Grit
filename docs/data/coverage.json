@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T02:08:09Z",
+  "generated_at": "2026-05-31T02:21:02Z",
   "version": "0.111",
   "permits": {
     "by_jurisdiction": [
@@ -1675,7 +1675,7 @@
           "owners_identified": 1650,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1297,
+          "signals": 1299,
           "mapped": 1690,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -2503,11 +2503,11 @@
       },
       {
         "signal": "Business Licenses",
-        "status": "PARTIAL",
-        "current_coverage": 0,
+        "status": "IMPLEMENTED",
+        "current_coverage": 3,
         "priority": "MEDIUM",
         "note": "CLV + Henderson business licenses (free); address-join fix in 0.111 \u2014 populates on harvest.",
-        "blocker": "free-wired"
+        "blocker": "live-free"
       },
       {
         "signal": "Crime / Police Activity",
@@ -4185,7 +4185,7 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 25,
+    "ledger_entries": 26,
     "event_total": 5752,
     "records_tracked": 10422,
     "growth": [
