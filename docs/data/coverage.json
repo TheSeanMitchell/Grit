@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T12:19:31Z",
+  "generated_at": "2026-05-31T12:32:46Z",
   "version": "0.113",
   "permits": {
     "by_jurisdiction": [
@@ -1603,7 +1603,7 @@
     {
       "category": "Storage",
       "status": "live",
-      "volume": 5752,
+      "volume": 5931,
       "freshness": "append-only",
       "coverage": "events preserved",
       "confidence": 80,
@@ -1612,7 +1612,7 @@
     {
       "category": "Warehouse Integrity",
       "status": "live",
-      "volume": 5752,
+      "volume": 5931,
       "freshness": "append-only",
       "coverage": "first/last-seen tracked",
       "confidence": 85,
@@ -1658,7 +1658,7 @@
           "owners_identified": 2166,
           "owner_coverage_pct": 51.8,
           "permits": 3220,
-          "signals": 4283,
+          "signals": 4289,
           "mapped": 3965,
           "mapped_pct": 94.9,
           "assessed_value": 1878390,
@@ -1675,7 +1675,7 @@
           "owners_identified": 1650,
           "owner_coverage_pct": 97.0,
           "permits": 912,
-          "signals": 1297,
+          "signals": 1311,
           "mapped": 1690,
           "mapped_pct": 99.4,
           "assessed_value": 3923209,
@@ -2511,11 +2511,11 @@
       },
       {
         "signal": "Crime / Police Activity",
-        "status": "PARTIAL",
-        "current_coverage": 0,
+        "status": "IMPLEMENTED",
+        "current_coverage": 18,
         "priority": "MEDIUM",
         "note": "LVMPD Open Data (free) wired as area signal; activates on next harvest.",
-        "blocker": "free-wired"
+        "blocker": "live-free"
       },
       {
         "signal": "Property Sales",
@@ -4185,8 +4185,8 @@
     }
   },
   "warehouse": {
-    "ledger_entries": 27,
-    "event_total": 5752,
+    "ledger_entries": 28,
+    "event_total": 5931,
     "records_tracked": 10422,
     "growth": [
       {
