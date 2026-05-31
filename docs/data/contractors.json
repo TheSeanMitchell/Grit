@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-31T12:32:45Z",
-  "version": "0.113",
+  "generated_at": "2026-05-31T12:32:46Z",
+  "version": "0.114",
   "count": 921,
   "contractors": [
     {
@@ -12757,29 +12757,6 @@
       "score": 8
     },
     {
-      "name": "MIGNONE DBC LLC",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 300000.0,
-      "trades": {
-        "remodeling": 1
-      },
-      "top_trade": "remodeling",
-      "trade_share_pct": 1.8,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-20",
-      "last_seen": "2026-05-20",
-      "sample_addresses": [
-        "8800 W CHARLESTON BLVD"
-      ],
-      "score": 7
-    },
-    {
       "name": "YACK CONSTRUCTION INC.",
       "permit_count": 1,
       "job_sites": 1,
@@ -12822,6 +12799,29 @@
       "last_seen": "2026-05-14",
       "sample_addresses": [
         "1001 S 1ST ST"
+      ],
+      "score": 7
+    },
+    {
+      "name": "MIGNONE DBC LLC",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 300000.0,
+      "trades": {
+        "remodeling": 1
+      },
+      "top_trade": "remodeling",
+      "trade_share_pct": 1.8,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-20",
+      "sample_addresses": [
+        "8800 W CHARLESTON BLVD"
       ],
       "score": 7
     },
@@ -15188,29 +15188,6 @@
       "last_seen": "2026-03-12",
       "sample_addresses": [
         "403 SUNBURST DR"
-      ],
-      "score": 6
-    },
-    {
-      "name": "A&J AIR CONDITIONING & HEATING",
-      "permit_count": 1,
-      "job_sites": 1,
-      "recent_count": 1,
-      "value_total": 500.0,
-      "trades": {
-        "hvac": 1
-      },
-      "top_trade": "hvac",
-      "trade_share_pct": 0.4,
-      "cities": {
-        "LAS VEGAS": 1
-      },
-      "top_city": "Las Vegas",
-      "geo_dominance_pct": 0.1,
-      "first_seen": "2026-05-21",
-      "last_seen": "2026-05-21",
-      "sample_addresses": [
-        "10650 W CHARLESTON BLVD"
       ],
       "score": 6
     },
@@ -17743,6 +17720,29 @@
       "last_seen": "2026-03-09",
       "sample_addresses": [
         "490 E BRUNER AVE"
+      ],
+      "score": 6
+    },
+    {
+      "name": "A&J AIR CONDITIONING & HEATING",
+      "permit_count": 1,
+      "job_sites": 1,
+      "recent_count": 1,
+      "value_total": 500.0,
+      "trades": {
+        "hvac": 1
+      },
+      "top_trade": "hvac",
+      "trade_share_pct": 0.4,
+      "cities": {
+        "LAS VEGAS": 1
+      },
+      "top_city": "Las Vegas",
+      "geo_dominance_pct": 0.1,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-05-21",
+      "sample_addresses": [
+        "10650 W CHARLESTON BLVD"
       ],
       "score": 6
     },

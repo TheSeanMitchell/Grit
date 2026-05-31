@@ -320,6 +320,20 @@ def cmd_selftest():
     assert jr[0]["jurisdiction"] == "City of Henderson" and jr[0]["phone"] == 1 and jr[0]["reachable"] == 2, "jurisdiction breakdown failed"
     print("0.113: item-id _N suffix fix (crime + Henderson biz) + per-jurisdiction contact density OK")
 
+    # ---- 0.114: contractor-graph contact propagation -------------------------
+    g1 = {"contractors": ["Sandstone Electric Inc."], "contractor_phone": "7022944497",
+          "contractor_license": "0012345", "source": "henderson_permit"}
+    g2 = {"contractors": ["SANDSTONE ELECTRIC LLC"], "source": "clv_permit"}   # same co, no phone
+    g3 = {"contractor_license": "0012345", "source": "clark_gis"}              # match by license
+    g4 = {"contractors": ["Totally Different Co"], "source": "clv_permit"}     # no match
+    rep = _contact.propagate_contractor_contacts([g1, g2, g3, g4])
+    assert g2.get("contractor_phone") == "(702) 294-4497", "name-propagation failed"
+    assert g2.get("contractor_phone_source") == "contractor-graph", "provenance not marked"
+    assert g3.get("contractor_phone") == "(702) 294-4497", "license-propagation failed"
+    assert not g4.get("contractor_phone"), "propagated to a non-matching lead"
+    assert rep["phone_filled"] == 2, f"expected 2 phones filled, got {rep['phone_filled']}"
+    print("0.114: contractor-graph contact propagation (name + license match, provenance) OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 
@@ -356,6 +370,12 @@ def cmd_rebuild(argv):
     for c in cards:
         leads_mod.enrich_lead(c)
         c["tags"] = tagging.tags_for_card(c)
+    from . import contact as _contact_mod
+    contact_graph = _contact_mod.propagate_contractor_contacts(cards)
+    for c in cards:
+        _contact_mod.classify(c)
+    print(f"  contact-graph: +{contact_graph['phone_filled']} phones, "
+          f"+{contact_graph['license_filled']} licenses, +{contact_graph['address_filled']} addresses")
     from . import warehouse as warehouse_mod
     wh_store, wh_stats = warehouse_mod.update(cards)   # append-only per-record history
     warehouse_mod.save(wh_store)

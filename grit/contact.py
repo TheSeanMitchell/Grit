@@ -187,6 +187,70 @@ def classify(card):
     return card["contact"]
 
 
+def _norm_contractor(name):
+    """Normalize a contractor name for cross-permit matching: drop entity suffixes
+    and generic trade words so 'Sandstone Electric Inc.' == 'SANDSTONE ELECTRIC'."""
+    n = re.sub(r"[^a-z0-9 ]", " ", str(name or "").lower())
+    n = re.sub(r"\b(inc|llc|ltd|co|corp|company|the|of|nevada|nv|services|service|"
+               r"construction|contracting|contractors|builders|building)\b", " ", n)
+    return " ".join(n.split())
+
+
+def propagate_contractor_contacts(cards):
+    """Cross-permit contractor-contact propagation (the contact-graph).
+
+    A contractor's phone/license/office disclosed on ONE permit is that contractor's
+    real, publicly-disclosed contact everywhere they work. Many leads name a
+    contractor but carry no phone (e.g. the CLV/Las Vegas feed names the applicant
+    but exposes no phone), while the SAME contractor's number is on file from a
+    Henderson permit. This fills the gap from data already in the warehouse -- no
+    new source, no harvest, no fabrication. Matches by license number first (exact),
+    then by normalized company name. Marks propagated values with provenance.
+
+    Mutates cards; returns counts of fields filled."""
+    by_name, by_lic = {}, {}
+    for c in cards:
+        ph = norm_phone(c.get("contractor_phone"))
+        lic = c.get("contractor_license")
+        lic_d = _digits(lic)
+        addr = c.get("contractor_address")
+        for ct in (c.get("contractors") or []):
+            k = _norm_contractor(ct)
+            if len(k) > 2:
+                d = by_name.setdefault(k, {})
+                d.setdefault("phone", ph) if ph else None
+                d.setdefault("lic", lic) if lic else None
+                d.setdefault("addr", addr) if addr else None
+        if lic_d:
+            d = by_lic.setdefault(lic_d, {})
+            d.setdefault("phone", ph) if ph else None
+            d.setdefault("addr", addr) if addr else None
+    n_phone = n_lic = n_addr = 0
+    for c in cards:
+        hit = {}
+        lic_d = _digits(c.get("contractor_license"))
+        if lic_d and lic_d in by_lic:
+            hit = by_lic[lic_d]
+        if not hit.get("phone"):
+            for ct in (c.get("contractors") or []):
+                k = _norm_contractor(ct)
+                if by_name.get(k, {}).get("phone"):
+                    hit = by_name[k]
+                    break
+        if not norm_phone(c.get("contractor_phone")) and hit.get("phone"):
+            c["contractor_phone"] = hit["phone"]
+            c["contractor_phone_source"] = "contractor-graph"
+            n_phone += 1
+        if not c.get("contractor_license") and hit.get("lic"):
+            c["contractor_license"] = hit["lic"]
+            n_lic += 1
+        if not c.get("contractor_address") and hit.get("addr"):
+            c["contractor_address"] = hit["addr"]
+            n_addr += 1
+    return {"contractors_with_phone": sum(1 for v in by_name.values() if v.get("phone")),
+            "phone_filled": n_phone, "license_filled": n_lic, "address_filled": n_addr}
+
+
 def stats(cards):
     """Warehouse-level contactability coverage for the dashboard header."""
     n = len(cards) or 1

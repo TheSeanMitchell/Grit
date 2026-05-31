@@ -577,6 +577,15 @@ def harvest():
         for c in cards:
             leads_mod.enrich_lead(c)              # stamps location dims + origin
             c["tags"] = tagging.tags_for_card(c)  # tags can read owner_state etc.
+        # 0.114 CONTRACTOR-GRAPH CONTACT PROPAGATION -- a contractor's phone/license
+        # disclosed on one permit is their real contact on every job; fill leads that
+        # name the contractor but lack the number (cross-jurisdiction, esp. Las Vegas
+        # leads whose contractors also work Henderson). Then re-classify contact so
+        # tiers/scores reflect the filled phones. Existing data only; no fabrication.
+        from . import contact as _contact_mod
+        contact_graph = _contact_mod.propagate_contractor_contacts(cards)
+        for c in cards:
+            _contact_mod.classify(c)
         from . import warehouse as warehouse_mod
         wh_store, wh_stats = warehouse_mod.update(cards)   # append-only per-record history
         warehouse_mod.save(wh_store)
@@ -608,6 +617,7 @@ def harvest():
                                     "error": permit_report.get("error")},
                         "free_sources": free_report,
                         "henderson_permits": hend_report,
+                        "contact_graph": contact_graph,
                         **meta}
 
         # ---- REGRESSION GUARD (before ANY data write) ----------------------
