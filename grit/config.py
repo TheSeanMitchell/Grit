@@ -146,7 +146,7 @@ TRADE_KEYWORDS = {
 }
 
 # ── Version ─────────────────────────────────────────────────────────────────
-VERSION = "0.111"
+VERSION = "0.112"
 
 # Entity normalization tokens. Order in pipeline.classify_owner is:
 #   HOA → GOVERNMENT → LLC/INC → TRUST → COMMERCIAL → PERSON

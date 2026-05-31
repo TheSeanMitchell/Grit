@@ -244,6 +244,8 @@ def permits_to_cards(permits, source_key="clv_permit"):
             c["contractor_phone"] = p["contractor_phone"]
         if p.get("license") and not c.get("contractor_license"):
             c["contractor_license"] = p["license"]
+        if p.get("contractor_address") and not c.get("contractor_address"):
+            c["contractor_address"] = p["contractor_address"]
         v = _num(p.get("valuation"))
         if v:
             c["permit_value_total"] += v

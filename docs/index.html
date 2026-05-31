@@ -227,7 +227,7 @@
 <body>
 <div class="top">
   <div class="brand">GR<b>I</b>T</div>
-  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.111</div>
+  <div class="tag" id="ver">INTELLIGENCE CONSOLE · SOUTHERN NEVADA · v0.112</div>
   <div class="stamp" id="stamp">loading…</div>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -258,6 +258,7 @@
 
   <!-- CAPITAL FLOW -->
   <section class="view" id="v-capital"></section>
+  <section class="view" id="v-contact"></section>
 
   <!-- CONTRACTORS -->
   <section class="view" id="v-contractors"></section>
@@ -516,15 +517,13 @@ function openDrawer(id){const c=CARDS.find(x=>x.id===id);if(!c)return;SEL=id;
   const SIGN={public_works:'Public Works',fire_life_safety:'Fire / Life-Safety',demolition:'Demolition',commercial_ti:'Commercial Tenant Improvement',certificate_of_occupancy:'Certificate of Occupancy',new_construction:'New Construction',grading_site:'Grading / Site Work',telecom_infrastructure:'Telecom / Infrastructure',solar:'Solar',pool_spa:'Pool / Spa',roofing:'Roofing'};
   const psig=(c.permit_signals||[]);
   const sigChips=psig.length?'<div class="dr-sec"><div class="dr-h">Signals on this property · '+psig.length+'</div><div style="display:flex;flex-wrap:wrap;gap:6px">'+psig.map(k=>'<span style="font-size:10px;background:rgba(110,168,254,.12);border:1px solid rgba(110,168,254,.35);border-radius:10px;padding:2px 9px;color:var(--txt)">'+esc(SIGN[k]||k)+'</span>').join('')+'</div></div>':'';
-  // 0.111 contactability (real sourced channels only)
-  const contact=[];
-  if(c.owner_name) contact.push(['Owner',esc(c.owner_name)+(c.entity_type&&c.entity_type!=='UNKNOWN'&&c.entity_type!=='PERSON'?' · '+esc(c.entity_type):'')]);
-  if(c.owner_mailing) contact.push(['Owner mailing',esc(c.owner_mailing)]);
-  if(c.owner_origin_market) contact.push(['Capital origin',esc(c.owner_origin_market)+(c.owner_out_of_state?' (out-of-state)':'')]);
-  if(c.contractors&&c.contractors.length) contact.push(['Contractor',esc(c.contractors[0])]);
-  if(c.contractor_phone) contact.push(['Contractor phone',esc(c.contractor_phone)]);
-  if(c.business_activity) contact.push(['Business at site',esc(c.business_activity)]);
-  const contactBlock=contact.length?'<div class="dr-sec"><div class="dr-h">Contact channels</div>'+contact.map(r=>'<div class="kv"><span class="k">'+r[0]+'</span><span class="v">'+r[1]+'</span></div>').join('')+'<div style="font-size:9px;color:var(--faint);margin-top:5px">Real sourced data only — no skip-tracing, no fabricated contacts.</div></div>':'';
+  // 0.112 contactability (real sourced channels only) — driven by the contact engine
+  const ctc=c.contact||{};
+  const tcol={phone:'var(--green)',mail:'var(--blue)',name:'var(--dim)',none:'var(--faint)'}[ctc.tier]||'var(--faint)';
+  const chRows=(ctc.channels||[]).map(ch=>{const hot=ch.type==='phone';return '<div class="kv"><span class="k">'+esc(ch.label||ch.type)+'</span><span class="v"'+(hot?' style="color:var(--green);font-weight:600"':'')+'>'+esc(ch.value)+'</span></div>';}).join('');
+  const contactBlock=(ctc.channels&&ctc.channels.length)?'<div class="dr-sec"><div class="dr-h">Contact channels <span style="font-size:9px;letter-spacing:.5px;border:1px solid '+tcol+';color:'+tcol+';border-radius:3px;padding:1px 5px;margin-left:4px">'+esc((ctc.tier||'none').toUpperCase())+'</span></div>'+
+    (ctc.summary?'<div style="font-size:11px;color:var(--txt);margin-bottom:6px;line-height:1.5">'+esc(ctc.summary)+'</div>':'')+
+    chRows+'<div style="font-size:9px;color:var(--faint);margin-top:5px">Real sourced data only — no skip-tracing, no fabricated contacts. Phone shown is the contractor\'s.</div></div>':'';
   $('#drawer-inner').innerHTML='<div class="dr-head"><div class="dr-x" id="drx">✕</div>'+
     '<div class="dr-addr">'+esc(c.situs_address||'(address unknown)')+'</div>'+
     '<div class="dr-score">SCORE '+c.score+(c.trade_tags&&c.trade_tags.length?' · '+esc(c.trade_tags.join(', ')):'')+'</div>'+
@@ -539,6 +538,64 @@ function closeDrawer(){$('#scrim').classList.remove('open');$('#drawer').classLi
 $('#scrim').onclick=closeDrawer;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 
 /* ---------- capital flow ---------- */
+let CONTACT_FILTER='hot';
+function renderContact(){
+  const v=$('#v-contact');
+  const all=CARDS.filter(c=>c.contact);
+  if(!all.length){v.innerHTML=emptyBox('CONTACTABILITY PENDING','Run a harvest or rebuild to compute contact channels, tiers, and call summaries.');return;}
+  const withPhone=all.filter(c=>c.contact.tier==='phone');
+  const mailOnly=all.filter(c=>c.contact.tier==='mail');
+  const nameOnly=all.filter(c=>c.contact.tier==='name');
+  const noneT=all.filter(c=>c.contact.tier==='none');
+  const reachable=withPhone.length+mailOnly.length;
+  const hot=withPhone.filter(c=>c.age_days!=null&&c.age_days<=30);
+  const pct=x=>Math.round(1000*x/all.length)/10;
+  const stat=(val,l,col)=>'<div style="flex:1;min-width:118px;padding:10px 14px;border:1px solid var(--line);border-radius:8px"><div style="font-size:22px;font-weight:600;color:'+(col||'var(--txt)')+'">'+val+'</div><div style="font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--dim);margin-top:2px">'+l+'</div></div>';
+  const FILT={hot:['Hottest · phone + ≤30d',c=>c.contact.tier==='phone'&&c.age_days!=null&&c.age_days<=30],
+    phone:['Has phone',c=>c.contact.tier==='phone'],
+    reachable:['Reachable',c=>c.contact.reachable],
+    mail:['Mailing only',c=>c.contact.tier==='mail'],
+    all:['All',()=>true]};
+  const pool=all.filter(FILT[CONTACT_FILTER][1]);
+  const rows=pool.slice().sort((a,b)=>(b.contact.score-a.contact.score)||((a.age_days==null?9e9:a.age_days)-(b.age_days==null?9e9:b.age_days))).slice(0,500);
+  const tierBadge=t=>{const m={phone:['PHONE','var(--green)'],mail:['MAIL','var(--blue)'],name:['NAME','var(--dim)'],none:['NONE','var(--faint)']};const x=m[t]||m.none;return '<span style="font-size:9px;letter-spacing:.5px;border:1px solid '+x[1]+';color:'+x[1]+';border-radius:3px;padding:1px 5px">'+x[0]+'</span>';};
+  const row=c=>{const ct=c.contact;const ph=ct.phone?('<b style="color:var(--green)">'+esc(ct.phone)+'</b> <span style="color:var(--faint);font-size:9px">'+esc(ct.phone_owner||'')+'</span>'):(c.owner_mailing?('<span style="color:var(--amber)">'+esc(c.owner_mailing)+'</span>'):'<span style="color:var(--faint)">—</span>');
+    return '<tr data-id="'+esc(c.id)+'" style="cursor:pointer;border-top:1px solid var(--line)">'+
+      '<td style="padding:7px 8px;color:var(--txt);font-weight:600">'+ct.score+'</td>'+
+      '<td style="padding:7px 8px;color:var(--dim)">'+(c.age_days!=null?ageShort(c.age_days):'—')+'</td>'+
+      '<td style="padding:7px 8px">'+tierBadge(ct.tier)+'</td>'+
+      '<td style="padding:7px 8px;color:var(--txt)">'+esc(c.situs_address||'(addr unknown)')+'</td>'+
+      '<td style="padding:7px 8px;color:var(--dim)">'+esc(c.owner_name||'—')+'</td>'+
+      '<td style="padding:7px 8px;white-space:nowrap">'+ph+'</td>'+
+      '<td style="padding:7px 8px;color:var(--dim);max-width:420px">'+esc(ct.summary||'')+'</td></tr>';};
+  const cfS='font:inherit;font-size:11px;padding:4px 11px;border-radius:6px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--dim)';
+  const cfOn=';border-color:var(--blue);color:var(--txt);background:rgba(110,168,254,.12)';
+  const btns=Object.keys(FILT).map(k=>'<button data-cf="'+k+'" style="'+cfS+(k===CONTACT_FILTER?cfOn:'')+'">'+esc(FILT[k][0])+' '+po(all.filter(FILT[k][1]).length)+'</button>').join('');
+  v.innerHTML='<h2 class="sec">Contactability — the call list <span class="note">real channels only · no skip-tracing</span></h2>'+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0">'+
+      stat(po(all.length),'leads',null)+
+      stat(po(withPhone.length)+' <span style="font-size:12px;color:var(--dim)">'+pct(withPhone.length)+'%</span>','have a phone','var(--green)')+
+      stat(po(reachable)+' <span style="font-size:12px;color:var(--dim)">'+pct(reachable)+'%</span>','reachable','var(--blue)')+
+      stat(po(hot.length),'hot · phone + ≤30d','var(--amber)')+
+      stat(po(nameOnly.length),'name only',null)+
+      stat(po(noneT.length),'no channel','var(--faint)')+'</div>'+
+    '<div style="font-size:11px;color:var(--faint);margin-bottom:9px;line-height:1.5">Homeowner phone numbers are not in free public records. The reachable channels are the property owner\'s <b style="color:var(--amber)">mailing address</b> and, on active permits, the <b style="color:var(--green)">contractor\'s phone</b> — your way into a live project. Contractor license numbers link to NSCB for status. Phone shown is the contractor\'s, never a fabricated homeowner number.</div>'+
+    '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px">'+btns+'<button id="cf-csv" style="'+cfS+'">↓ Call list CSV</button></div>'+
+    '<div style="overflow:auto;border:1px solid var(--line);border-radius:8px"><table style="width:100%;border-collapse:collapse;font-size:12px">'+
+    '<thead><tr style="text-align:left;color:var(--dim);font-size:9px;letter-spacing:.5px;text-transform:uppercase">'+
+    '<th style="padding:8px">Call score</th><th style="padding:8px">Age</th><th style="padding:8px">Reach</th><th style="padding:8px">Address</th><th style="padding:8px">Owner</th><th style="padding:8px">Phone / mailing</th><th style="padding:8px">Deal summary</th></tr></thead>'+
+    '<tbody>'+rows.map(row).join('')+'</tbody></table></div>'+
+    '<div style="font-size:10px;color:var(--faint);margin-top:6px">Showing '+rows.length+' of '+pool.length+' in this filter, ranked by call score (reachability + recency + lead score).</div>';
+  v.querySelectorAll('[data-id]').forEach(tr=>tr.onclick=()=>openDrawer(tr.dataset.id));
+  v.querySelectorAll('[data-cf]').forEach(b=>b.onclick=()=>{CONTACT_FILTER=b.dataset.cf;renderContact();});
+  const csv=$('#cf-csv');if(csv)csv.onclick=()=>exportContactCSV(rows);
+}
+function exportContactCSV(rows){
+  const head=['call_score','tier','age_days','address','property_city','owner','entity','phone','phone_owner','owner_mailing','contractor','contractor_license','contractor_phone','summary'];
+  const q=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+  const lines=[head.join(',')].concat(rows.map(c=>{const ct=c.contact||{};return [ct.score,ct.tier,c.age_days,c.situs_address,c.property_city,c.owner_name,c.entity_type,ct.phone,ct.phone_owner,c.owner_mailing,(c.contractors||[])[0],c.contractor_license,c.contractor_phone,ct.summary].map(q).join(',');}));
+  const blob=new Blob([lines.join('\n')],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='grit_call_list.csv';a.click();URL.revokeObjectURL(a.href);
+}
 function renderCapital(){const v=$('#v-capital');if(!COV||!COV.capital_flow){v.innerHTML=emptyBox('CAPITAL FLOW PENDING','Run a harvest to populate owner-origin intelligence.');return;}
   const cf=COV.capital_flow,t=cf.totals;
   const stat=(cls,val,lbl)=>'<div class="stat '+cls+'"><div class="v">'+val+'</div><div class="l">'+lbl+'</div></div>';
@@ -755,9 +812,9 @@ function renderKPIs(){const h=(COV&&COV.headline)||{};
     k('',h.jurisdictions||0,'SoNV jurisdictions','property footprint','coverage');
   $('#kpis').querySelectorAll('[data-tab]').forEach(el=>el.onclick=()=>switchTab(el.dataset.tab));
   const fk=$('#kpis').querySelector('[data-fresh]');if(fk)fk.onclick=()=>{SORT={k:'age_days',dir:1};switchTab('leads');};}
-const TABS=[['map','Map'],['leads','Leads'],['capital','Capital Flow'],['contractors','Contractors'],['operators','Operators'],['coverage','Coverage'],['audit','Audit']];
+const TABS=[['map','Map'],['contact','Contactability'],['leads','Leads'],['capital','Capital Flow'],['contractors','Contractors'],['operators','Operators'],['coverage','Coverage'],['audit','Audit']];
 function renderTabs(){$('#tabs').innerHTML=TABS.map(([id,lbl],i)=>{
-  const b=id==='leads'?CARDS.length:id==='contractors'?CONTRACTORS.length:id==='operators'?OPERATORS.length:id==='capital'?((COV&&COV.headline&&COV.headline.imported_capital)||''):'';
+  const b=id==='leads'?CARDS.length:id==='contractors'?CONTRACTORS.length:id==='operators'?OPERATORS.length:id==='contact'?CARDS.filter(c=>c.contact&&c.contact.reachable).length:id==='capital'?((COV&&COV.headline&&COV.headline.imported_capital)||''):'';
   return '<div class="tab'+(i===0?' on':'')+'" data-tab="'+id+'">'+lbl+(b!==''&&b!=null?'<span class="b">'+po(b)+'</span>':'')+'</div>';}).join('');
   $('#tabs').querySelectorAll('.tab').forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));}
 function switchTab(id){if(id==='map')ORIGIN_FILTER=null;
@@ -765,6 +822,7 @@ function switchTab(id){if(id==='map')ORIGIN_FILTER=null;
   $$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+id).classList.add('on');
   if(id!=='map')exitPlay();
   if(id==='map'){renderToolbar();renderFacets();renderList();renderMap();renderPlayback();setTimeout(()=>MAP&&MAP.invalidateSize(),60);}
+  else if(id==='contact'){renderContact();}
   else if(id==='leads'){renderToolbar();renderFacets();renderList();}
   else if(id==='capital'&&!RENDERED.capital){renderCapital();RENDERED.capital=1;}
   else if(id==='capital'){renderCapital();}

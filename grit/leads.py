@@ -273,6 +273,8 @@ def enrich_lead(card):
     card["why"] = why_this_matters(card)
     from . import confidence
     from . import signals as _sig
+    from . import contact as _contact
     _sig.classify(card)                     # permit-derived signal families
     confidence.annotate(card)               # per-field provenance + confidence
+    _contact.classify(card)                 # contactability: channels, tier, score, summary
     return card

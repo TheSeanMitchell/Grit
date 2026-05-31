@@ -284,6 +284,30 @@ def cmd_selftest():
     assert cc["public_works"] == 2 and cc["fire_life_safety"] == 1, "permit-signal counts failed"
     print("0.111: permit-signal classification (public-works + fire + new-construction + solar) OK")
 
+    # ---- 0.112: contactability engine ---------------------------------------
+    from . import contact as _contact
+    assert _contact.norm_phone("7025551234") == "(702) 555-1234", "phone norm failed"
+    assert _contact.norm_phone("1-702-555-1234") == "(702) 555-1234", "phone 11-digit norm failed"
+    assert _contact.norm_phone("000") is None and _contact.norm_phone("123") is None, "bad phone not rejected"
+    cphone = {"owner_name": "P N II INC", "entity_type": "LLC", "owner_mailing": "7255 S TENAYA WAY",
+              "contractors": ["HIRSCHI IRON LLC"], "contractor_phone": "7025551234",
+              "contractor_license": "0088266", "permit_signals": ["new_construction"],
+              "age_days": 10, "score": 80, "property_city": "HENDERSON"}
+    r = _contact.classify(cphone)
+    assert r["tier"] == "phone" and r["phone"] == "(702) 555-1234" and r["phone_owner"] == "contractor", "tier/phone failed"
+    assert r["reachable"] and r["score"] >= 80, "reachable/score failed"
+    assert any(ch["type"] == "license" for ch in r["channels"]), "license channel missing"
+    assert "HIRSCHI IRON LLC" in r["summary"] and "(702) 555-1234" in r["summary"], "summary missing contact"
+    cmail_card = {"owner_name": "LOPEZ ANTHONY", "owner_mailing": "464 SELDON", "age_days": 400}
+    cmail = _contact.classify(cmail_card)
+    assert cmail["tier"] == "mail" and not cmail["phone"], "mail tier failed"
+    cname_card = {"owner_name": "DOE JANE"}
+    cname = _contact.classify(cname_card)
+    assert cname["tier"] == "name" and not cname["reachable"], "name tier failed"
+    st = _contact.stats([cphone, cmail_card, cname_card])
+    assert st["with_phone"] == 1 and st["reachable"] == 2, "contact stats failed"
+    print("0.112: contactability engine (tiers + phone norm + channels + summary + stats) OK")
+
     print("\nselftest OK (fixture only -- never written to docs/data)")
 
 

@@ -176,6 +176,12 @@ def _normalize(feature):
                                        a.get("STATE"), a.get("ZIP")),
         "contractor": (a.get("APPLICANT") or None),
         "license": _clean_license(a.get("NSCB")),
+        # contractor office address (APL_*) -- a real contact channel for the
+        # contractor; CLV exposes no contractor phone, so this + license is what
+        # we get here (Henderson supplies the phone).
+        "contractor_address": _join_mailing(a.get("APL_ADDRESS"), a.get("APL_CITY"),
+                                            a.get("APL_STATE"), a.get("APL_ZIP")) or None,
+        "contractor_phone": (a.get("APL_PHONE") or a.get("PHONE") or None),
         "description": _desc(misc, code),
         "trades": categorize_permit(worktype, misc, code, aptype),
         "comm": a.get("COMM"), "res": a.get("RES"),

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-31T02:08:09Z",
+  "generated_at": "2026-05-31T07:04:50Z",
   "append_only": true,
-  "count": 25,
+  "count": 26,
   "entries": [
     {
       "leads": 1412,
@@ -377,6 +377,22 @@
       "hot_leads": 0,
       "sonv_jurisdictions_covered": 13,
       "at": "2026-05-31T02:08:09Z"
+    },
+    {
+      "leads": 8209,
+      "mapped": 7985,
+      "permit_events": 4992,
+      "permit_newest": "2026-05-22",
+      "permit_jurisdictions": 3,
+      "jurisdictions": 13,
+      "contractors": 921,
+      "tagged_pct": 100.0,
+      "enriched": 6347,
+      "imported_capital": 311,
+      "owner_markets": 1024,
+      "hot_leads": 0,
+      "sonv_jurisdictions_covered": 13,
+      "at": "2026-05-31T07:04:50Z"
     }
   ]
 }

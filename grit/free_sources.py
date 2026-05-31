@@ -46,6 +46,11 @@ FIELD_HINTS = {
     "bizname":  ["businessname", "business", "dba", "name", "legalname", "licensee"],
     "activity": ["businessactivity", "activity", "naics", "category", "licensetype",
                  "business_type", "classification"],
+    "phone":    ["phone", "phonenumber", "phone_number", "telephone", "businessphone",
+                 "bus_phone", "contactphone", "phone_no", "primaryphone"],
+    "email":    ["email", "emailaddress", "email_address", "contactemail", "e_mail"],
+    "owner":    ["owner", "ownername", "owner_name", "businessowner", "propowner"],
+    "licensee": ["licensee", "licenseename", "license_holder", "holder"],
 }
 
 
@@ -174,6 +179,11 @@ def business_license_records(features):
         recs.append({"apn": _digits(_f(a, "apn")), "address": _f(a, "address"),
                      "date": _date(_f(a, "date")), "status": _f(a, "status"),
                      "name": _f(a, "bizname"), "activity": _f(a, "activity"),
+                     # contact fields -- captured only if the layer exposes them
+                     # (many municipal license layers publish a business phone);
+                     # _f fuzzy-matches the field name, returns None if absent.
+                     "phone": _f(a, "phone"), "email": _f(a, "email"),
+                     "owner": _f(a, "owner") or _f(a, "licensee"),
                      "lat": f["ll"][0], "lng": f["ll"][1]})
     return [r for r in recs if r["apn"] or r["address"]]
 
@@ -266,6 +276,12 @@ def apply_signals(cards, ce_records, bl_records):
             c["business_license_active"] = any(
                 str(r.get("status") or "").lower() in ("active", "open", "1", "issued") for r in bl)
             c["business_activity"] = bl[0].get("activity") or bl[0].get("name")
+            ph = next((r.get("phone") for r in bl if r.get("phone")), None)
+            if ph:
+                c["business_phone"] = ph
+            em = next((r.get("email") for r in bl if r.get("email")), None)
+            if em:
+                c["business_email"] = em
             bl_hits += 1
     return {"code_enforcement_card_hits": ce_hits, "business_license_card_hits": bl_hits}
 
